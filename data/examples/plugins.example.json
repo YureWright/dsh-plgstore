@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "0.1.0",
+  "generatedAt": "2025-01-01T00:00:00Z",
+  "generator": "dsh-market-index@0.1.0 (example)",
+  "stats": {
+    "total": 2,
+    "byTrustLayer": { "official": 1, "curated": 0, "unverified": 1 }
+  },
+  "plugins": [
+    {
+      "id": "@deepseek-ai/dsh-tool-fs",
+      "name": "dsh-tool-fs",
+      "summary": "Filesystem tool set for the DeepSeek Harness agent",
+      "sources": ["official-monorepo", "npm-registry"],
+      "trustLayer": "official",
+      "github": {
+        "owner": "deepseek-ai",
+        "repo": "deepseek-harness",
+        "url": "https://github.com/deepseek-ai/deepseek-harness",
+        "stars": 12345,
+        "topics": ["deepseek-harness", "dsh"],
+        "pushedAt": "2025-01-01T00:00:00Z"
+      },
+      "npm": {
+        "name": "@deepseek-ai/dsh-tool-fs",
+        "version": "0.1.0-rc.6",
+        "downloadsLastMonth": 1200,
+        "keywords": ["dsh", "deepseek-harness", "tool"],
+        "dshDeclarations": { "bundle": false, "client": false }
+      },
+      "score": 8,
+      "firstSeen": "2025-01-01T00:00:00Z",
+      "updatedAt": "2025-01-01T00:00:00Z",
+      "install": { "method": "npm", "packageSpec": "@deepseek-ai/dsh-tool-fs" }
+    },
+    {
+      "id": "some-user/dsh-plugin-cc",
+      "name": "dsh-plugin-cc",
+      "summary": "Bridge DeepSeek Harness into Claude Code for review and delegation",
+      "sources": ["github-topic"],
+      "trustLayer": "unverified",
+      "github": {
+        "owner": "some-user",
+        "repo": "dsh-plugin-cc",
+        "url": "https://github.com/some-user/dsh-plugin-cc",
+        "stars": 42,
+        "topics": ["dsh-plugin", "deepseek-harness"],
+        "pushedAt": "2025-01-01T00:00:00Z"
+      },
+      "npm": {
+        "name": "dsh-plugin-cc",
+        "version": "0.3.1",
+        "downloadsLastMonth": 88,
+        "keywords": ["dsh-plugin"],
+        "dshDeclarations": { "bundle": true, "client": false }
+      },
+      "score": 5,
+      "firstSeen": "2025-01-01T00:00:00Z",
+      "updatedAt": "2025-01-01T00:00:00Z",
+      "install": { "method": "npm", "packageSpec": "dsh-plugin-cc" }
+    }
+  ]
+}

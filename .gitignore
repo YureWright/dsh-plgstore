@@ -1,0 +1,15 @@
+# 密钥与本地配置，绝不入库
+.env
+*.local
+
+# 无关项目残留（不属于本仓库）
+LLMstrategy/
+
+# 依赖
+node_modules/
+
+# 本地缓存与中间产物（可重新生成）
+data/cache/
+data/llm-cache.json
+data/history/
+data/*.backup.json

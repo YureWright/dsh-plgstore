@@ -1,0 +1,332 @@
+{
+  "schemaVersion": "0.1.0",
+  "generator": "dsh-market-index@0.1.0 (merge)",
+  "mergedAt": "2026-08-16T12:14:14Z",
+  "official": {
+    "count": 3
+  },
+  "community": {
+    "count": 36,
+    "crawledCandidates": 336,
+    "processed": 108,
+    "skippedCount": 72,
+    "skipped": [
+      {
+        "id": "nexu-io/open-design",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "volcengine/OpenViking",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "titanwings/colleague-skill",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "Nagi-ovo/voyager",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "tt-a1i/archify",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "freestylefly/awesome-gpt-image-2",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "anywhere-labs/deepseek-harness-desktop",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "Q00/ouroboros",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "ZSeven-W/openpencil",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "Devin-AXIS/iPolloWork",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "awesome-dsh-plugin/awesome-dsh-plugin",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "crafter-station/petdex",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "strukto-ai/mirage",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "zhu1090093659/dsh-web-ui",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "edison7009/EchoBird",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "foryourhealth111-pixel/Vibe-Skills",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "imsai-sh/zhuzhiliao",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "xiaobright/dsh-anchored-standard",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "whiteguo233/OpenBiliClaw",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "GCWing/BitFun",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "hyhmrright/brooks-lint",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "agentrq/agentrq",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "paean-ai/deeptide",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "AdamPlatin123/awesome-dsh-plugins",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "Small-tailqwq/dsh-deep-whale",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "Anionex/agent-vision-toolkit",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "freestylefly/wesight",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "vostride/agent-qa",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "xyTom/coding-tools-mcp",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "hellowind777/helloagents",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "ccch1mneyyy/working-activity",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "yejiming/MuseAI",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "0xsline/awesome-deepseek-harness",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "nutshellai-tech/mobius",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "yogsoth-ai/de-anthropocentric-research-engine",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "EthanYoQ/AI-Novel-Writer",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "Electricitysheep/dsh-handbook",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "morluto/rea",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "PM-Shawn/Abu-Cowork",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "Minara-AI/minara-skills",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "alaliqing/claude-paper",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "text2future/flowix",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "SepineTam/mcp-for-stata",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "openma-ai/open-managed-agents",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "h4dex/opc-nexus",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "zhoushoujianwork/easyeda-agent",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "TencentCloud/tencentmeeting-cli",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "vibeinging/deepseek-harness-desktop-app",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "Lum1104/dsh-browser",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "bruc3van/awesome-dsh-plugin",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "cofy-x/axern",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "zhaoolee/notes",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "humblebanana/open-record-replay",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "Ariestar/sivtr",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "hyqibot/A-share-Ai",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "Ruler4396/dsh-launcher",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "Nagi-ovo/dsh-find-plugins",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "drewnekota/cetus",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "Sikao-Engine/KimiX",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "Vladimir-Human/humanizer-ru",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "ChisaAlter/Deepseek-Harness-Desktop",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "hikariming/dshfind",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "pulseaiclub/phi",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "taxueseek/argo",
+        "reason": "无盖章、无 DSH 核心依赖、非官方"
+      },
+      {
+        "id": "Zhiyuan-Fan/Awesome-DeepSeek-Harness-Plugins",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "orziz/odai",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "Leslie-SSS/seeWxapkg",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "libukai/awesome-deepseek-harness",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "Dominic789654/awesome-deepseek-harness",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "wink-run/tokenbank",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "Tiger3807861189/J-Space-Cognition-Suite-V3.6",
+        "reason": "无 package.json"
+      },
+      {
+        "id": "kuangre123/codex-switch",
+        "reason": "无 package.json"
+      }
+    ],
+    "suspiciousCount": 2,
+    "suspicious": [
+      {
+        "id": "deepseek-ai/deepseek-harness",
+        "type": "other",
+        "confidence": 0.99,
+        "reason": "该仓库是 DeepSeek Harness 核心框架（monorepo 根），并非可安装的 DSH 插件。"
+      },
+      {
+        "id": "fufankeji/deepseek-harness-studio",
+        "type": "other",
+        "confidence": 0.95,
+        "reason": "这是一个基于 Electron 的桌面应用（DeepSeek Harness Studio），并非可安装的 DSH 插件，也没有提供 dsh plugin add 安装方式。"
+      }
+    ],
+    "llm": {
+      "enabled": true,
+      "analyzed": 35,
+      "fromCache": 0,
+      "promptTokens": 132103,
+      "completionTokens": 85425,
+      "estimatedCostCNY": 0.948,
+      "note": "价格按输入 ¥2/百万、输出 ¥8/百万保守估算，以 DeepSeek 官方价格为准"
+    }
+  },
+  "notes": [
+    "菜单 = 官方 3 + 社区 36 合并（id 冲突官方优先）。",
+    "社区部分审计信息（跳过/存疑/成本）见 community 字段。"
+  ]
+}

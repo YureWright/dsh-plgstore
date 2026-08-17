@@ -1,0 +1,10 @@
+# dsh-plgstore 运行要求
+#
+# 运行时：Node.js >= 18（使用内置 fetch/fs，无第三方 npm 依赖）
+# 检查：node --version
+#
+# 可选配置（复制 .env.example 为 .env 后填写）：
+#   DEEPSEEK_API_KEY  LLM 评估必填（DeepSeek 开放平台）
+#   GITHUB_TOKEN      GitHub API 推荐（配额 10→30/min 搜索、60→5000/h 核心）
+#
+# 网络：raw.githubusercontent.com 可能被墙，脚本已改用 jsdelivr CDN + GitHub API 双通道

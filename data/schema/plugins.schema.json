@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://plgstore.dev/schemas/plugins.schema.json",
+  "title": "DSH Plugin Menu (plugins.json)",
+  "description": "The shared plugin menu consumed by the local marketplace plugin and the optional static site. One record per plugin (entity-merged GitHub/npm identity).",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "plugins"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Semver of the menu format; bump on breaking changes."
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC generation time."
+    },
+    "generator": {
+      "type": "string",
+      "description": "Generator identity, e.g. dsh-market-index@0.1.0."
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "byTrustLayer": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "plugins": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/plugin" }
+    }
+  },
+  "$defs": {
+    "plugin": {
+      "type": "object",
+      "required": ["id", "name", "sources", "trustLayer", "score", "firstSeen", "updatedAt", "install"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable id: npm package name when present, otherwise 'owner/repo'."
+        },
+        "name": { "type": "string" },
+        "summary": { "type": "string" },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["official-monorepo", "github-topic", "npm-registry", "awesome-list", "self-submitted"]
+          }
+        },
+        "trustLayer": {
+          "enum": ["official", "curated", "unverified"],
+          "description": "Derived by the generator and stored; consumers read it verbatim."
+        },
+        "github": { "$ref": "#/$defs/githubIdentity" },
+        "npm": { "$ref": "#/$defs/npmIdentity" },
+        "score": {
+          "type": "number",
+          "description": "Multi-signal score computed by the generator; entries below threshold are excluded from the menu."
+        },
+        "firstSeen": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "install": { "$ref": "#/$defs/install" }
+      }
+    },
+    "githubIdentity": {
+      "type": ["object", "null"],
+      "required": ["owner", "repo", "url"],
+      "properties": {
+        "owner": { "type": "string" },
+        "repo": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "stars": { "type": ["integer", "null"], "minimum": 0, "description": "null = 离线/未 enrich 时未知" },
+        "topics": { "type": "array", "items": { "type": "string" } },
+        "pushedAt": { "type": ["string", "null"], "format": "date-time", "description": "null = 未知" }
+      }
+    },
+    "npmIdentity": {
+      "type": ["object", "null"],
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "downloadsLastMonth": { "type": ["integer", "null"], "minimum": 0, "description": "null = 离线/未 enrich 时未知" },
+        "keywords": { "type": "array", "items": { "type": "string" } },
+        "dshDeclarations": {
+          "type": "object",
+          "description": "Official plugin identity markers from package.json.",
+          "properties": {
+            "bundle": { "type": "boolean", "description": "Declares dsh.bundle.patch (is a profile layer)." },
+            "client": { "type": "boolean", "description": "Declares dsh.client and exports ./client (ships web UI)." }
+          }
+        }
+      }
+    },
+    "install": {
+      "type": "object",
+      "required": ["method", "packageSpec"],
+      "properties": {
+        "method": { "enum": ["npm", "git", "tarball", "none"], "description": "none = 未找到安装方式，店面显示'不可一键安装'且不推荐" },
+        "packageSpec": {
+          "type": ["string", "null"],
+          "description": "The exact string to pass to 'dsh plugin --profile <name> add <packageSpec>'; null when method is none."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "dsh-plgstore",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DSH 插件市场：多源发现 + AI 全面评估 + 可交互审阅报告（无第三方依赖）",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build:official": "node scripts/build-index.mjs --source official-local",
+    "build:github": "node scripts/build-index.mjs --source github-topic",
+    "npm:discover": "node scripts/npm-scan.mjs --phase discover",
+    "npm:llm": "node scripts/npm-scan.mjs --phase llm",
+    "process:github": "node scripts/process-github-candidates.mjs",
+    "fix:reports": "node scripts/fix-missing-reports.mjs",
+    "merge": "node scripts/merge-menu.mjs",
+    "query": "node scripts/query-menu.mjs",
+    "report": "node scripts/report-html.mjs"
+  }
+}
