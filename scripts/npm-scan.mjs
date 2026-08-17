@@ -274,7 +274,77 @@ async function phaseLLM() {
   console.log(`   LLM 分析 ${analyzed} 次（缓存 ${slice.length - analyzed}），估算 ¥${costCNY.toFixed(3)}`);
 }
 
+/* ---------------- 增量订阅：只处理上次同步后新发布的包 ---------------- */
+
+async function phaseIncremental() {
+  const SYNC_FILE = join(DATA, "cache", "npm-sync.json");
+  let lastSeq = 0;
+  try {
+    lastSeq = JSON.parse(await readFile(SYNC_FILE, "utf8")).lastSeq ?? 0;
+  } catch {}
+  console.log(`增量同步：上次 lastSeq=${lastSeq}`);
+
+  const menu = JSON.parse(await readFile(MENU, "utf8"));
+  const existingIds = new Set(menu.plugins.map((p) => p.id));
+
+  // 1) 分页追平 changes feed（直到拿不满一页 = 已追平），只取 id + seq；上限防跑飞
+  const newCandidates = [];
+  let checked = 0;
+  let from = lastSeq;
+  let pages = 0;
+  const MAX_PAGES = 60; // 积压过大时停止追平，提示改用全量重扫
+  while (pages < MAX_PAGES) {
+    const changes = await fetchJson(`${CHANGES}?since=${from}&limit=2000`);
+    if (!changes?.results?.length) break;
+    pages++;
+    for (const row of changes.results) {
+      const name = row.id;
+      if (!name || name.startsWith("@deepseek-ai/")) continue;
+      if (existingIds.has(name)) continue;
+      // 名字无 dsh 信号的跳过（快速通道）；完整兜底靠周期性全量重扫（--phase discover，幂等）
+      if (!/dsh|deepseek[- ]?harness|cordis/i.test(name)) continue;
+      checked++;
+      const pkg = await fetchJson(`${REGISTRY}/${encodeURIComponent(name)}/latest`);
+      if (!pkg) continue;
+      const entry = entryCheck(pkg);
+      if (!entry.pass) continue;
+      newCandidates.push({ c: { name, version: pkg.version, description: pkg.description ?? "", keywords: pkg.keywords ?? [], downloadsMonthly: null, repositoryUrl: pkg.repository?.url ?? null }, pkg, gh: githubFromRepo(pkg.repository?.url) });
+      console.log(`  ✅ 新候选：${name}（${entry.signal}）`);
+      await sleep(120);
+    }
+    from = changes.last_seq ?? from;
+    if (changes.results.length < 2000) break; // 追平
+    console.log(`  已处理 ${pages * 2000} 条变更…（lastSeq ${from}）`);
+  }
+  if (pages >= MAX_PAGES) {
+    console.warn(`[warn] 积压超过 ${MAX_PAGES * 2000} 条变更，已停止追平（避免无限跑）。`);
+    console.warn(`       建议：直接跑一次全量重扫 node scripts/npm-scan.mjs --phase discover（幂等），并把基线重置到当前（见 npm-sync.json）。`);
+  }
+  console.log(`变更分页 ${pages} 页，体检 ${checked} 个`);
+
+  // 2) 追加到候选池
+  if (newCandidates.length) {
+    let state = { done: [], newEntries: [], skipped: [], merges: [] };
+    try {
+      state = JSON.parse(await readFile(CAND_FILE, "utf8"));
+    } catch {}
+    const seen = new Set(state.newEntries.map((e) => e.c.name));
+    for (const nc of newCandidates) if (!seen.has(nc.c.name)) state.newEntries.push(nc);
+    await mkdir(join(DATA, "cache"), { recursive: true });
+    await writeFile(CAND_FILE, JSON.stringify(state, null, 2));
+  }
+
+  // 3) 推进 lastSeq
+  await writeFile(
+    SYNC_FILE,
+    JSON.stringify({ lastRun: new Date().toISOString(), lastSeq: from, note: "增量基线（名字无 dsh 信号的靠周期全量重扫兜底）" }, null, 2),
+  );
+  console.log(`\n✅ 增量发现完成：新候选 ${newCandidates.length} 个，lastSeq 推进至 ${from}`);
+  console.log(`   下一步：node scripts/npm-scan.mjs --phase llm（评估新候选并入菜单）`);
+}
+
 /* ---------------- 入口 ---------------- */
 
+if (phase === "incremental") await phaseIncremental();
 if (phase === "discover" || phase === "all") await phaseDiscover();
 if (phase === "llm" || phase === "all") await phaseLLM();

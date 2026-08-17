@@ -21,7 +21,7 @@
 | 设计 | D4 反馈 + 评分机制 | 匿名身份 + 轻量防刷 + 三套信号分离 | ✅ |
 | 地基 | Step 1 菜单格式（索引 schema） | 定 plugins.json 字段，中心化友好 | ✅ |
 | 地基 | Step 2 第一本电话簿（阶段 A） | 官方 + topic 存量抓取，打分过滤，可查可搜可排序 | ✅ |
-| 地基 | Step 3 增量发现（阶段 B） | 蹲产房：npm 发布流 + GitHub 新建，当日发现新插件 | ⬜ |
+| 地基 | Step 3 增量发现（阶段 B） | 存量全量（1108）+ 日常幂等重扫增量 | ✅ |
 | 店面 | Step 4 只读市场 UI | DSH 插件，settings.plugins.tab，浏览/搜索/详情/排行 | ⬜ |
 | 店面 | Step 5 一键安装 | 复用 dsh plugin add + 显式确认 + 边界处理 | ⬜ |
 | 内容 | Step 6 AI 风险报告（店面版） | 本机模型生成 + 本地缓存 + 三档 | ⬜ |
@@ -80,16 +80,15 @@
 **遗留**：deepseek-harness 本体被 LLM 标"other"（monorepo 误判，待定）；全历史 1800+ 需 GITHUB_TOKEN 或 Step 9 中央厨房。
 **关联文档**：04 §二、§三、阶段 A；审阅入口 `report.html`。
 
-### Step 3：增量发现（阶段 B）🔜
+### Step 3：增量发现（阶段 B）✅
 **要做什么**
-- ✅ npm 通道验证通过（2026-08-16）：changes feed（replicate.npmjs.com）、搜索 API、jsdelivr npm 全通；
-- ✅ `scripts/npm-scan.mjs`：两阶段（discover 体检 / llm 评估）+ 检查点断点续跑 + 并发（8/4）+ 实体合并（GitHub↔npm，含"官方仓库防误并"守卫）+ 增量基线 lastSeq；
-- ✅ 阶段1（discover）完成：**npm 存量扫出 418 个 GitHub 标签完全没覆盖的真插件**（GitHub topic 只有 36 个——npm 才是中央点，实锤）；跳过 148；实体合并 7 次（modlens/dsh-TUI/modsearch/vision-router 等）；修正 1 次误并（@yunper/macode 指向官方仓库但非官方 scope）；
-- ⏳ 阶段2（llm）后台运行中：418 个新插件全面评估后并入菜单（约 1 小时，¥11 量级）；
-- ⬜ 增量订阅：以后用 lastSeq 只处理新发布（`--incremental` 待实现）。
-**验收标准（跟踪中）**
-- 新发布到 npm 的插件**当日**进入候选池（changes feed 基线已建立，待增量模式验证）；
-- 不重复处理（检查点 + 缓存）。
+- ✅ npm 通道验证：changes feed / 搜索 API / jsdelivr npm 全通；
+- ✅ `scripts/npm-scan.mjs`：两阶段（discover 体检 / llm 评估）+ 检查点断点续跑 + 并发（8/4）+ 实体合并（含官方防误并守卫）+ `--phase incremental`（best-effort）；
+- ✅ 存量完成（2026-08-17）：npm 418 + GitHub 763 + 官方 3 → **菜单 1108 条**，评估报告覆盖 100%，report.html 升级为分类/筛选/排序/检索；
+- ✅ **增量机制结论（重要）**：`replicate.npmjs.com` 是**快照副本，seq 会跳变/重置**（since=832853 返回 1783991+），不能做严格增量游标 → **可靠日常增量 = 幂等全量重扫**：`node scripts/npm-scan.mjs --phase discover && --phase llm`（检查点去重，只评估新候选，便宜且不遗漏）；GitHub 侧用 `--since <日期>` 增量查询。
+**验收标准**
+- 新发布到 npm 的插件**当日**进入候选池 ✅（日常重扫 + 检查点去重）；
+- 不重复处理 ✅（检查点 + LLM 缓存）。
 **关联文档**：04 §2.2、§五。
 
 ## 四、店面：UI 与安装（Step 4–5）

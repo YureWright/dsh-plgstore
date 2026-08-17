@@ -12,6 +12,8 @@
     "build:github": "node scripts/build-index.mjs --source github-topic",
     "npm:discover": "node scripts/npm-scan.mjs --phase discover",
     "npm:llm": "node scripts/npm-scan.mjs --phase llm",
+    "npm:incremental": "node scripts/npm-scan.mjs --phase incremental",
+    "daily": "node scripts/npm-scan.mjs --phase discover && node scripts/npm-scan.mjs --phase llm && node scripts/process-github-candidates.mjs && node scripts/report-html.mjs",
     "process:github": "node scripts/process-github-candidates.mjs",
     "fix:reports": "node scripts/fix-missing-reports.mjs",
     "merge": "node scripts/merge-menu.mjs",
