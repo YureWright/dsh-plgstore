@@ -1,0 +1,29 @@
+{
+  "id": "Lanxing6480/dsh-galgame",
+  "analyzedAt": "2026-08-17T11:29:12.323Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，且 README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@lanxing/dsh-galgame",
+      "evidence": "或从 npm：`dsh plugin --profile web add @lanxing/dsh-galgame`。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页聊天界面加了一个「galgame 模式」标签页，就像玩视觉小说一样：屏幕上有 DeepSeek 的吉祥物鲸鱼娘立绘，会显示思考气泡、打字机效果的对话、提问和审批选项，还能回看历史记录。它只是换了个好看的界面，不影响后台实际对话逻辑，随时可以切回普通聊天。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只做界面展示，不写会话、不碰隐私文件、不连接外部服务器。注意它带的女仆鲸鱼娘立绘素材是 CC BY-NC-SA 4.0 许可，禁止商用，但这属于素材授权问题，不影响使用安全。",
+      "postInstallNotes": "安装后需要重启 DSH Web（运行 dsh web）并刷新浏览器，然后在聊天界面顶部的标签栏里切换到「galgame 模式」。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DSH 网页界面增加一个 GalGame 风格的聊天视图，让 DeepSeek 吉祥物以视觉小说方式陪你对话。",
+    "usage": {
+      "prompt_tokens": 7559,
+      "completion_tokens": 1176,
+      "total_tokens": 8735
+    }
+  }
+}

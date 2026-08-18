@@ -1,0 +1,37 @@
+{
+  "id": "bill9109/dsh-drag-and-drop",
+  "analyzedAt": "2026-08-17T11:23:43.134Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，README 给出了 dsh plugin 安装命令，并描述为 DeepSeek Harness Web UI 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/dsh-drag-and-drop.git",
+      "evidence": "dsh plugin --profile web add github:omdsh-dev/dsh-drag-and-drop"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 的网页界面用的。你从电脑上拖一个文件或文件夹到网页里，它不会把文件上传或复制，而是自动找出这个文件在电脑上的真实路径，填到当前对话的输入框里。这样 DSH 就能直接读写这个文件，不用你手打路径。",
+      "level": "ok",
+      "risks": "它只在你的电脑本地运行，为了找出拖入文件的真实路径，会查看文件名和大小，并可能在当前工作区、桌面、文档、下载等常见目录以及系统文件索引（macOS Spotlight、Linux locate、Windows Everything）里查找同名文件。这些查找都在本机完成，不会把文件内容传出去。不过，插入的路径会出现在对话内容里，如果 DSH 的对话记录被同步或保存，这些路径可能会被看到。",
+      "postInstallNotes": "装完后需要重启 DSH 的 Web 服务并刷新浏览器页面，插件才会生效。",
+      "notes": "注意：GitHub 仓库地址（bill9109/dsh-drag-and-drop）与 README 中的 omdsh-dev/dsh-drag-and-drop 不一致，安装时可能导致找不到仓库。另外 README 中有合并冲突标记残留，说明维护可能不够细致。"
+    },
+    "summaryZh": "拖拽本地文件到 DSH Web 界面并自动插入真实文件路径，不实际传输文件。",
+    "usage": {
+      "prompt_tokens": 3279,
+      "completion_tokens": 4324,
+      "total_tokens": 7603,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3873
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2639
+    }
+  }
+}

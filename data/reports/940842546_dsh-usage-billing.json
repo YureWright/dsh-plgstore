@@ -1,0 +1,37 @@
+{
+  "id": "940842546/dsh-usage-billing",
+  "analyzedAt": "2026-08-17T11:55:08.706Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 依赖 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，符合 DSH 插件标准。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-usage-billing",
+      "evidence": "dsh plugin --profile web add dsh-usage-billing"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DeepSeek Harness 的用量统计和计费插件。它能自动记录本机上所有会话的模型调用次数和 token 数，按官方价格估算花费，并在主界面和设置页用图表展示用量、预算进度、会话排名等。还能设置每日/每月预算提醒，导出 CSV/JSON 数据，以及拉取 DeepSeek 官方账户余额。不需要写代码，装完就能用。",
+      "level": "ok",
+      "risks": "它会读取本机会话日志来重建历史用量，并把统计数据写到用户主目录下的 .dsh-usage-stats.json 文件。如果你配置了 DeepSeek API Key，它会每 10 分钟连一次 DeepSeek 官方服务器查询余额。除此之外没有发现碰其他隐私或连接第三方服务器的情况。",
+      "postInstallNotes": "装完后需要重启应用并刷新页面，让客户端面板正常显示。另外注意不要同时开两个实例，否则统计文件可能会互相覆盖。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 的用量与消费统计插件，自动计费、展示图表、预算告警，并支持导出数据。",
+    "usage": {
+      "prompt_tokens": 2611,
+      "completion_tokens": 602,
+      "total_tokens": 3213,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 209
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1971
+    }
+  }
+}

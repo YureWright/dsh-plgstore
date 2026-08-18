@@ -1,0 +1,37 @@
+{
+  "id": "@ohoyo/dsh-client-ui-file-mention",
+  "analyzedAt": "2026-08-16T14:54:49.899Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client 配置且依赖 @deepseek-ai/dsh-client-runtime 等核心包，README 明确描述为 DSH web 客户端插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@ohoyo/dsh-client-ui-file-mention",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 网页聊天界面上的一个增强工具：当你在输入框里打 @ 的时候，它会自动弹出当前工作区里的文件和文件夹列表，选中后就能快速插入文件引用，不用手动敲路径。它还做了缓存和优化，让菜单弹出来更快。",
+      "level": "ok",
+      "risks": "它会在你输入 @ 时读取当前工作区的文件/文件夹列表（可能包含文件名和路径）；在文件索引不完整时，还会把你在 @ 后面输入的内容发送到 DSH 后端去查询匹配，所以服务器可能会看到你输入的关键字和你引用的文件名。除此之外没发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 客户端插件：在输入框打 @ 时，快速查找并引用工作区中的文件和文件夹。",
+    "usage": {
+      "prompt_tokens": 2510,
+      "completion_tokens": 1801,
+      "total_tokens": 4311,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1488
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1870
+    }
+  }
+}

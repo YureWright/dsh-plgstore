@@ -1,0 +1,37 @@
+{
+  "id": "Auran-Lu/dsh-client-ui-monitor",
+  "analyzedAt": "2026-08-17T12:09:10.272Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 配置，且代码注册了 DSH 的 sidebar 组件和 API 路由，是明确的 DSH 客户端插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Auran-Lu/dsh-client-ui-monitor",
+      "evidence": "README 原文：`dsh plugin --profile web add github:Auran-Lu/dsh-client-ui-monitor`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 的网页界面左侧边栏底部固定一个仪表盘，实时显示当前会话的 token 用量（输入、缓存读写、输出）、按官方价格估算的费用（可选人民币/美元），以及你的 DeepSeek 账户余额。支持中英文切换、手动刷新余额，每 30 秒自动更新一次。",
+      "level": "ok",
+      "risks": "它会读取你配置的 DeepSeek API Key 并仅发送到 DeepSeek 官方接口（api.deepseek.com）查询余额；还会读取/修改 DSH 配置文件（~/.dsh/profiles/web/cordis.patch.yml）。除此之外未发现明显风险。",
+      "postInstallNotes": "安装后需编辑 ~/.dsh/profiles/web/cordis.patch.yml，添加包含 id: ui-monitor 和 name: '@auranlu/dsh-client-ui-monitor' 的 insert 条目，然后重启 dsh web 服务并展开左侧边栏。",
+      "notes": "README 提示定价等常量在 lib/client.js 中可调，但普通用户无需修改；该插件依赖 DeepSeek API Key 已配置。"
+    },
+    "summaryZh": "为 DeepSeek Harness 侧边栏添加实时 token 用量、费用估算与 API 余额监控的小仪表盘。",
+    "usage": {
+      "prompt_tokens": 1894,
+      "completion_tokens": 3511,
+      "total_tokens": 5405,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3079
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1254
+    }
+  }
+}

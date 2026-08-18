@@ -1,0 +1,37 @@
+{
+  "id": "@dshworks/dsh-meter",
+  "analyzedAt": "2026-08-18T14:50:14.550Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-session-projection，README 还给出了 dsh plugin add 安装命令，是典型 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dshworks/dsh-meter",
+      "evidence": "dsh plugin --profile web add @dshworks/dsh-meter"
+    },
+    "evaluationReport": {
+      "intro": "这个插件相当于给 DeepSeek Harness 装了一块“电表”。它会出现在聊天输入框下方的一行里，告诉你：当前这次会话已经花了多少钱、现在是不是高峰电价（每天有两个高峰时段，其余时间是半价的低谷价）、还有多久会切换到下一个时段。把鼠标悬停上去还能看到更详细的小卡片：一天 24 小时的电价条（按你本地时间显示）、缓存命中省了多少钱、账户余额等等。它按 DeepSeek 官方公布的两套价目表（美元/人民币）分别计价，并根据你账户实际用的货币来显示，不需要手动配置。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你 DeepSeek 账户的余额信息用于显示，但请求是在主机端完成的，浏览器里只拿到处理后的数字，不会接触到密钥。安装时要求本机已有 pnpm（因为 dsh plugin 命令会转发给 pnpm）。",
+      "postInstallNotes": "无（README 说装完即用，无需额外配置；如果不想显示余额，可以在配置里设置 balance: false）。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-meter 是 DeepSeek Harness 的分时计价“电表”插件，在输入框下方实时显示当前会话费用、当前峰谷时段及账户余额。",
+    "usage": {
+      "prompt_tokens": 3837,
+      "completion_tokens": 1542,
+      "total_tokens": 5379,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1102
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3197
+    }
+  }
+}

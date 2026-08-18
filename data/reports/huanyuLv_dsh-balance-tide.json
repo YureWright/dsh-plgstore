@@ -1,0 +1,37 @@
+{
+  "id": "huanyuLv/dsh-balance-tide",
+  "analyzedAt": "2026-08-17T11:56:41.952Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 明确声明了 dsh.bundle / dsh.client，并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-credentials，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-balance-tide",
+      "evidence": "From npm (recommended): dsh plugin --profile web add dsh-balance-tide"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 网页版输入框下方显示一行信息：你的账户余额、本次对话大概花了多少钱，以及当前是不是峰谷计价时段、离下一次切换还有多久，并给出使用建议。它能让你边用边看着成本，不用自己查余额或算价格。",
+      "level": "ok",
+      "risks": "它会读取 DSH 凭据里的 DEEPSEEK_API_KEY，并向 DeepSeek 官方余额接口查询账户余额；这些请求只会发给 DeepSeek 官方，不会发到别处。配置里如果手动填 apiKey，会明文存在配置文件里，README 也建议避免。除此之外没发现明显风险。",
+      "postInstallNotes": "重启 dsh web 生效；如果是从源码或本地目录安装，需要先装 pnpm。可选：在 $DSH_HOME/profiles/web/cordis.patch.yml 里调整刷新间隔、覆盖价格表或配置反向代理域名。",
+      "notes": "无"
+    },
+    "summaryZh": "一个在 DSH 网页版输入框下方显示账户余额、本次会话估算消耗和峰谷计价倒计时的插件。",
+    "usage": {
+      "prompt_tokens": 2996,
+      "completion_tokens": 1057,
+      "total_tokens": 4053,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 661
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2356
+    }
+  }
+}

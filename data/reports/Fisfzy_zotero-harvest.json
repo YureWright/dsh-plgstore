@@ -1,0 +1,37 @@
+{
+  "id": "Fisfzy/zotero-harvest",
+  "analyzedAt": "2026-08-17T11:53:11.960Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明 dsh 引擎并依赖 @deepseek-ai/dsh-tools 与 cordis，README 给出 dshx install 安装命令，属于 DSH 插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Fisfzy/zotero-harvest.git",
+      "evidence": "README 中安装说明为：dshx install zotero-harvest <plugin-dir>（未提供 dsh plugin add 命令）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 Zotero 用的文献采集工具，能自动搜索文献（比如 arXiv、OpenAlex 等免费数据库）、判断收集够不够、下载 PDF，然后把文献存进你电脑上的 Zotero 库，还能让 zotero-wave-rag 搜索到。它提供六个小工具，基本不用 AI 参与。",
+      "level": "ok",
+      "risks": "会访问多个公开学术 API 下载文献元数据和 PDF；可能会向本机 Zotero 的数据库文件（zotero.sqlite）直接写入数据（仅在 Zotero 桌面没运行时）；会读取你的 Zotero 数据目录位置，写入本地配置文件和 inbox 文件夹。",
+      "postInstallNotes": "安装后需要确认启用插件；如果是从源码构建，需注意 @deepseek-ai/dsh-tools 符号链接是否有效；可选配置 Zotero 数据目录、Unpaywall 邮箱等环境变量。",
+      "notes": "这是 external plugin，README 给的安装命令是 dshx install 而非 dsh plugin add；项目 stars 较少，依赖的 zotero-wave-rag 需另行安装才能联动；Google Scholar 源需要代理和住宅 IP。"
+    },
+    "summaryZh": "一个把文献检索、下载、入库到本地 Zotero 并联动 RAG 搜索的 DSH 外部插件。",
+    "usage": {
+      "prompt_tokens": 3003,
+      "completion_tokens": 2014,
+      "total_tokens": 5017,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1556
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2363
+    }
+  }
+}

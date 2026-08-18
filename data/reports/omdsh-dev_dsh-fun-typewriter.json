@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-fun-typewriter",
+  "analyzedAt": "2026-08-17T13:11:28.860Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@deepseek-ai/dsh-fun-typewriter@0.0.1-rc.3",
+      "evidence": "dsh plugin --profile web add @deepseek-ai/dsh-fun-typewriter@0.0.1-rc.3"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页端加上打字机/机械键盘的声音：助手逐字回复时有敲击声，发送消息有回弹声，完成、出错也有对应提示音，还能在会话窗口顶部一键静音，并提供一个完整的设置页调节音量、音色和开关。所有声音都是用浏览器自带的 WebAudio 实时合成的，不下载音频文件，也不连接任何外部服务。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在浏览器里合成声音，设置存到插件自己的本地接口（仅本机回环可访问），不碰用户文件，也不发外部请求。",
+      "postInstallNotes": "无",
+      "notes": "该包为受限发布（publishConfig.access: restricted），需要已登录私有 npm registry 才能安装。另外安装后不要手工修改 profile manifest 或重复插入 loader row，以免报错。"
+    },
+    "summaryZh": "为 DSH 网页端添加打字机/机械键盘氛围音效的插件，声音由 WebAudio 实时合成，零音频资源、零外部请求。",
+    "usage": {
+      "prompt_tokens": 2452,
+      "completion_tokens": 1982,
+      "total_tokens": 4434,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1584
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1812
+    }
+  }
+}

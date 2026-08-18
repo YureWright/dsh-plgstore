@@ -1,0 +1,37 @@
+{
+  "id": "deepseek-herness-kanban",
+  "analyzedAt": "2026-08-18T14:56:49.933Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle、dsh.client、dsh.skill，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-herness-kanban",
+      "evidence": "dsh plugin --profile web add deepseek-herness-kanban"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的看板插件，把人工智能的工作流程变成四列看板：待办→进行中→审查→完成。每个任务都在独立的 Git 工作树里跑，人工智能写的代码必须经过人工审查才能合并到主分支。它还能把一段聊天内容自动拆成多个带依赖关系的任务卡片，支持最多5个任务并行执行，并且每张卡片会保存完整的对话上下文和操作记录。",
+      "level": "ok",
+      "risks": "它会在你的电脑上操作 Git 仓库，比如创建独立的工作树和分支、修改本地文件，但不会直接改你的主分支。代码审查前不会自动合并，需要人工确认。另外它需要较高的 Node.js 版本和 Git 环境，用之前最好确认一下。",
+      "postInstallNotes": "安装后打开 DSH Web 界面，点击侧边栏的「看板」标签页；首次使用需要导入一个现有 Git 仓库或让它自动执行 git init。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 打造的看板插件：用 Git worktree 隔离任务、强制人工代码审查，并能把聊天转成任务卡片。",
+    "usage": {
+      "prompt_tokens": 3308,
+      "completion_tokens": 710,
+      "total_tokens": 4018,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 298
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2668
+    }
+  }
+}

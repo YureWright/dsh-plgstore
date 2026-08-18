@@ -1,0 +1,37 @@
+{
+  "id": "william-jin-cmu/dsh-stickers",
+  "analyzedAt": "2026-08-17T11:20:15.437Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin 安装命令，是纯 DSH 外部插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/william-jin-cmu/dsh-stickers.git",
+      "evidence": "README 仅给出本地安装命令：`dsh plugin --profile web add /absolute/path/to/dsh-stickers`，未说明远程安装方式，但可从 GitHub 仓库安装。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH（DeepSeek Harness）用的表情包插件。装好后，在网页版聊天的输入框旁边会多一个🐋图标，点开可以选蓝鲸娘或黑鲸娘的表情发给 AI；AI 在聊天过程中也会根据情况主动发表情。一共 24 张，其中 14 张用户和 AI 都能发，10 张是给 AI 的彩蛋，只能 AI 发。表情消息会正常出现在聊天记录里，让对话更有趣、更有人情味。",
+      "level": "ok",
+      "risks": "插件会在 DSH 网页界面里加入表情选择器、图片和命令，表情会存进聊天历史。除此之外没发现它碰你的私人文件或偷偷连接外部服务器。",
+      "postInstallNotes": "需要 Node 22 和可运行的 DSH 环境；安装后以 web profile 启动 DSH（如 `dsh web`），并确保 DSH_HOME 环境变量已设置。若从源码安装，需先执行 pnpm install 和 pnpm build。",
+      "notes": "该插件的 package.json 标记为 private，未发布到 npm，无法直接用 `dsh plugin add @dsh-external/dsh-stickers` 安装，需通过 Git 仓库安装。注意 devDependencies 使用了本地 link 路径（.dsh/source/current），直接 git 安装时可能因缺少 DSH 源码而构建失败，建议按 README 在 DSH checkout 中安装。"
+    },
+    "summaryZh": "为 DSH WebUI 添加可爱的蓝鲸娘/黑鲸娘表情包，用户和 AI 都能在聊天中发表情。",
+    "usage": {
+      "prompt_tokens": 4031,
+      "completion_tokens": 4129,
+      "total_tokens": 8160,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3586
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3391
+    }
+  }
+}

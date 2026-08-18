@@ -1,0 +1,37 @@
+{
+  "id": "rongzi5/dsh-whale-pet",
+  "analyzedAt": "2026-08-17T11:47:47.623Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client.inject 并依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 明确描述为 DeepSeek Harness 的浏览器插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/rongzi5/dsh-whale-pet.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件在 DeepSeek Harness 界面里养了一只 3D 鲸鱼宠物。它会趴在屏幕边缘，鼠标经过会看向你、点击会有反应；右键可以跟它聊天、让它记住你说的事、问它当前任务进度，甚至它能帮你执行一些小任务（比如跑命令、写代码）。它还支持快捷隐藏、吸附角落。聊天时 API 密钥由服务端保管，安全省心。",
+      "level": "ok",
+      "risks": "它会把鲸鱼的名字、位置、隐藏状态、记忆和聊天偏好存在浏览器的 localStorage 里，只有你自己能看到。聊天时数据发往你自己的 Harness 后端，不直接连外部 AI；如果后端未配置凭据，也会尝试读取 DSH_WHALE_API_KEY 或 DEEPSEEK_API_KEY 环境变量。整体上不碰系统文件，没有明显风险。",
+      "postInstallNotes": "无，安装后即可在界面看到鲸鱼；若启用 LLM 聊天时后端未配置凭据，可设置 DSH_WHALE_API_KEY（或 DEEPSEEK_API_KEY）环境变量。",
+      "notes": "README 未给出安装命令；package.json 中的包名是 @deepseek-ai/dsh-client-ui-whale-pet，与仓库名 dsh-whale-pet 不一致，建议从 git 安装以确保是此仓库代码。依赖较多 @deepseek-ai/dsh-* 核心包，需与宿主 DSH 版本（^0.1.0-rc.6）匹配。"
+    },
+    "summaryZh": "在 DeepSeek Harness 界面养一只 3D 鲸鱼宠物，可聊天、记记忆、查看任务进度，还能派发子代理干活。",
+    "usage": {
+      "prompt_tokens": 4074,
+      "completion_tokens": 3666,
+      "total_tokens": 7740,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3149
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3434
+    }
+  }
+}

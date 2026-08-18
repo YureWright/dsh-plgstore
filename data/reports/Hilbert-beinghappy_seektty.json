@@ -1,0 +1,37 @@
+{
+  "id": "Hilbert-beinghappy/seektty",
+  "analyzedAt": "2026-08-17T11:25:12.986Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明 dsh.bundle 并依赖大量 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，确为 DSH 插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Hilbert-beinghappy/seektty#v1.0.0",
+      "evidence": "dsh plugin --profile tui add github:Hilbert-beinghappy/seektty#v1.0.0"
+    },
+    "evaluationReport": {
+      "intro": "SeekTTY 是一个把 DeepSeek Harness 搬进终端（命令行）的插件。安装后，你可以在项目文件夹里直接敲 `deepseek` 命令，就能在漂亮的终端界面里跟 DeepSeek 对话、让它读写代码、调用工具、管理会话，还能切换模型、调整权限、装其他插件、看运行状态。界面是 DeepSeek 风格，支持亮色/暗色，代码块有语法高亮，还能导入 VS Code 主题。",
+      "level": "ok",
+      "risks": "它会读取你当前目录下的项目文件，并可能按 AI 的请求修改文件或执行命令（这是 DSH 的常规能力）。需要在本机保存 API key。除此之外，没发现它额外连接外部服务器或偷传隐私数据。至于通过它安装的第三方插件，风险取决于那些插件。",
+      "postInstallNotes": "首次运行时，如果还没配置过 Provider，需要设置 DeepSeek API key；你也可以用 dsh plugin 命令管理 Profile 和插件。",
+      "notes": "无"
+    },
+    "summaryZh": "把 DeepSeek Harness 变成命令行下的终端界面，纯键盘就能完成 AI 对话、改代码、管会话、调模型和装插件。",
+    "usage": {
+      "prompt_tokens": 4158,
+      "completion_tokens": 3134,
+      "total_tokens": 7292,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2708
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3518
+    }
+  }
+}

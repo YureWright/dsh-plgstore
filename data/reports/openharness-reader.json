@@ -1,0 +1,37 @@
+{
+  "id": "openharness-reader",
+  "analyzedAt": "2026-08-18T14:51:52.449Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "openharness-reader",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add openharness-reader"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DeepSeek Harness Web 界面右侧加一个文件浏览/编辑面板。你可以用它查看和编辑当前工作区里的文件，支持代码高亮、Markdown 预览，还带文件标签页、搜索、折叠等功能。保存文件时如果发现磁盘上的文件被外部改动，会提示你重新加载还是覆盖保存，避免不小心覆盖别人的修改。",
+      "level": "ok",
+      "risks": "它能读取和修改当前工作区里的文件（比如你的代码和文档），也就是说如果你给了它权限，它可以看和改这些文件。它还依赖一些浏览器端编辑器组件，但没发现偷偷上传数据或连外部服务器的行为。默认会隐藏 .git 等文件，取消勾选就能看到这些隐藏文件。",
+      "postInstallNotes": "安装后需要重启 DSH 才能生效：在运行 DSH Web 的终端按 Ctrl+C 停止，然后重新运行 npx @deepseek-ai/dsh web，最后刷新浏览器页面。",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DeepSeek Harness Web 提供工作区文件浏览/编辑和 Markdown 预览的侧边栏插件。",
+    "usage": {
+      "prompt_tokens": 5670,
+      "completion_tokens": 889,
+      "total_tokens": 6559,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 492
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5030
+    }
+  }
+}

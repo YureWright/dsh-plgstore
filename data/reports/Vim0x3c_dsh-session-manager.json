@@ -1,0 +1,37 @@
+{
+  "id": "Vim0x3c/dsh-session-manager",
+  "analyzedAt": "2026-08-17T11:52:53.189Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 明确声明了 dsh.client 与 dsh.bundle 配置，并注入多个 @deepseek-ai/dsh-* 客户端包。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": null,
+      "evidence": "用 tarball 安装到 profile(用 1 产出的实际文件名替换 <file>.tgz)"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 dsh 网页版加了一个“会话管理”设置面板，能让你看到电脑上跑过的所有对话（包括正在运行的、空闲的、已经归档的），你可以从列表里一键接着聊、查看对话的统计概览，或者彻底删掉某个对话。特别是已归档的对话，别的地方看不到，只能在这里删。",
+      "level": "ok",
+      "risks": "它会读取本机 dsh 的会话列表、历史和工作目录信息，显示在浏览器里。删除操作会永久删除对应会话的数据，不可恢复。但它只在本地回环（loopback）环境下能执行删除，且不会向外部发送数据。另外，安装时需要构建并打包，属于本地操作。",
+      "postInstallNotes": "需要先 `pnpm install && pnpm pack` 生成 tarball，再用 `dsh plugin --profile web add -w ./<file>.tgz` 安装，然后重启 `dsh web`。另外，宿主必须提供 `session.delete` 能力，否则删除按钮被隐藏；如果当前 dsh 已内置官方会话管理面板，本插件会出现冗余。",
+      "notes": "该插件没有发布到 npm，也没有预构建 tarball 随仓库提供，必须现场 `pnpm pack` 生成。其 peer 依赖 `@deepseek-ai/dsh-*` 未发布到 npm，所以不能从 git 直接安装。README 也提示它是兼容/扩展面板，在已内置会话管理行的部署上会冗余。"
+    },
+    "summaryZh": "为 dsh 网页版增加会话管理设置面板，可继续、预览大纲并永久删除本机所有会话（含已归档）。",
+    "usage": {
+      "prompt_tokens": 2870,
+      "completion_tokens": 2193,
+      "total_tokens": 5063,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1697
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2230
+    }
+  }
+}

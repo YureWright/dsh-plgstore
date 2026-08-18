@@ -1,0 +1,37 @@
+{
+  "id": "HuanLinOTO/dsh-plugin-interpreters",
+  "analyzedAt": "2026-08-17T11:42:37.506Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖多个 @deepseek-ai/dsh-* 核心包，README 提供 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-interpreters",
+      "evidence": "dsh plugin --profile web add @huanlin/dsh-plugin-interpreters"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加了两个新工具：run_python 和 run_node。模型可以用它们直接运行 Python 或 Node.js 代码，代码通过标准输入传给解释器，执行完返回输出和退出码。你可以在设置页里指定 Python 和 Node.js 解释器的位置。",
+      "level": "caution",
+      "risks": "它会用你配置的 Python/Node 环境执行模型发来的代码，这些代码能读写你电脑上的文件、访问网络，相当于把电脑的部分控制权交给了模型。请确保你只对可信的模型开放这个功能，并且留意解释器的执行权限。",
+      "postInstallNotes": "装完后需要确认系统里已安装 Python 和 Node.js，并在 DSH 设置页的「插件配置」分区里设置解释器路径（默认是 python 和 node），也可以调整超时时间。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件：让模型能通过 run_python 和 run_node 工具实际执行代码，并在设置页里配置解释器路径。",
+    "usage": {
+      "prompt_tokens": 3315,
+      "completion_tokens": 954,
+      "total_tokens": 4269,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 580
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2675
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-recall",
+  "analyzedAt": "2026-08-16T13:46:05.962Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 字段并依赖 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-recall@0.2.2",
+      "evidence": "dsh plugin --profile web add dsh-recall@0.2.2"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）用的“记忆”插件。它会把你和 AI 的对话历史都记下来（建立索引），之后 AI 想不起之前聊过什么时，可以按字面、模糊或语义三种方式搜回原始对话内容。所有操作都在本地完成，不联网，即使历史记录被压缩了也能找回原文。适合长时间、多轮对话的用户。",
+      "level": "ok",
+      "risks": "这个插件会读取你所有的聊天记录，并在本地 SQLite 数据库里建立一份可搜索的索引（包括已经被压缩的旧记录）。这些数据存在你的 DSH 数据目录（默认 ~/.dsh）下，不会上传到网络。但如果你把整个数据目录备份或分享给别人，聊天原文可能被看到。另有一个可选的语义模型（约 24MB），会占用一些磁盘空间。除此之外没有发现其他明显风险。",
+      "postInstallNotes": "安装后重启 dsh web 即可，无需额外配置；如果想关闭语义搜索，可在插件配置中设置 semantic: false（只保留字面和模糊搜索）。",
+      "notes": "可选依赖 dsh-recall-models 如果安装时无法从 npm 获取，会自动改用仓库自带模型，不影响功能。当前版本 0.2.2 仍属早期版本，建议关注后续更新。"
+    },
+    "summaryZh": "dsh-recall 是一个本地离线的对话历史回忆插件，让 DeepSeek Harness 能通过字面/模糊/语义搜索找回所有历史会话原文，即使历史已被压缩也永不忘记。",
+    "usage": {
+      "prompt_tokens": 3397,
+      "completion_tokens": 2517,
+      "total_tokens": 5914,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2042
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2757
+    }
+  }
+}

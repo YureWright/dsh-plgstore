@@ -1,0 +1,37 @@
+{
+  "id": "sundusk/dsh-waterball-pet",
+  "analyzedAt": "2026-08-17T12:11:59.684Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle / dsh.client，peerDependencies 包含 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，证据充分。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:sundusk/dsh-waterball-pet",
+      "evidence": "dsh plugin --profile web add github:sundusk/dsh-waterball-pet"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面增加的小装饰：一只漂浮的水球宠物。它会根据 AI 助手的状态变化颜色和动作——思考时变绿、调工具时变紫、完成时变青、出错时变红，点一下还会挥手。你可以在设置里打开/关闭它、调整大小、拖动位置，还能换眼睛颜色或让眼睛消失。总之就是让界面更可爱的小挂件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是一个在网页上运行的装饰插件，只读取当前会话状态用于改变水球表情，不会读取你的个人文件，也不会把数据发到外部服务器。",
+      "postInstallNotes": "安装后重启 dsh web，然后在 Web UI 的设置→插件中找到并启用「水球宠物」。如果设置卡片显示不可用或只读，说明宿主版本不在白名单内，请先升级 DeepSeek Harness。",
+      "notes": "属于第三方个人插件，stars 较少；依赖多个 @deepseek-ai/dsh-* 的 rc 版本，建议确认与当前 Harness 版本兼容。另注意包名（@linxin666/dsh-waterball）与仓库名不一致，安装请以 README 命令为准。"
+    },
+    "summaryZh": "一个让 DeepSeek Harness Web 界面多一只漂浮水球宠物的插件，水球会随 AI 状态变色并做出俏皮动作，还能在设置里开关和调整外观。",
+    "usage": {
+      "prompt_tokens": 4943,
+      "completion_tokens": 5315,
+      "total_tokens": 10258,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4848
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4303
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@dsh-bio/dsh-bio-genie",
+  "analyzedAt": "2026-08-16T13:37:45.478Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并 peer 依赖 @deepseek-ai/dsh-tools 等核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-bio/dsh-bio-genie",
+      "evidence": "dsh plugin --profile web add @dsh-bio/dsh-bio-genie"
+    },
+    "evaluationReport": {
+      "intro": "这是一个生物信息学分析插件。你不需要懂编程，用大白话告诉它你想做什么，比如“帮我算一下这条序列的GC含量”或“找找有没有 EcoRI 酶切位点”，它就会自动调用专业的生物学工具（Biopython）来分析。它会自己准备一套独立的运行环境，不用你安装 Python 或 Biopython。",
+      "level": "ok",
+      "risks": "安装后，它会在你的用户目录（~/.dsh/）下创建一个私有文件夹，用来存放它下载的 Python 环境和工具，需要联网下载一些开源软件。它可能会读取你指定的序列文件（比如 FASTA 文件）进行分析。由于它可以执行任意 Biopython 代码，如果 DSH 被恶意利用，可能运行危险命令，但插件本身没有恶意行为。",
+      "postInstallNotes": "安装后重启 dsh web 服务；首次使用时插件会自动下载 Python 环境，如果下载缓慢，可设置 DSH_BIO_UV_BASE 环境变量指向镜像源。",
+      "notes": "注意：插件要求 Node.js ^22.19 或 >=24，并且依赖 RC 版本的 dsh 核心包，如果宿主 dsh 不是最新版，可能出现兼容性问题。"
+    },
+    "summaryZh": "生物信息学许愿式分析插件：用自然语言描述需求，自动调用 Biopython 完成序列分析，无需手动安装 Python 环境。",
+    "usage": {
+      "prompt_tokens": 4611,
+      "completion_tokens": 3278,
+      "total_tokens": 7889,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2833
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3971
+    }
+  }
+}

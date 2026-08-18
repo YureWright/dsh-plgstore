@@ -1,0 +1,37 @@
+{
+  "id": "ccch1mneyyy/dsh-TUI",
+  "analyzedAt": "2026-08-16T11:38:25.471Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 bin 入口和 @deepseek-ai/cordis peerDependency，并依赖大量 @deepseek-ai/dsh-* 核心包；README 提供了 dsh plugin add 安装命令，确属可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@deepseek-harness-tui/dsh-tui",
+      "evidence": "或：dsh plugin --profile dsh-tui add @deepseek-harness-tui/dsh-tui"
+    },
+    "evaluationReport": {
+      "intro": "这插件是给 DeepSeek Harness 用的终端聊天界面。装完之后，你可以用 dsh-tui 命令在命令行里打开一个类似 Claude Code 的交互界面，里面有漂亮的顶部鲸鱼图案、实时状态栏、AI 思考过程显示、消息历史搜索，还能用快捷键或鼠标操作会话。你可以把它理解成给命令行 AI 助手换一个更现代、更好用的皮肤和操作方式。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下创建 ~/.dsh-tui/ 文件夹来存配置（比如模型偏好、主题）；粘贴图片时它会读系统剪贴板（Windows 用 PowerShell、macOS 用 osascript、Linux 用 wl-paste/xclip 等）；启动后会访问网络检查 npm 有没有新版本（只是提醒更新）。这些数据都留在本机，没发现会上传隐私或偷偷执行恶意操作。",
+      "postInstallNotes": "提前装好官方 dsh CLI（npm install -g @deepseek-ai/dsh）、pnpm 10+，并设置 DEEPSEEK_API_KEY 环境变量；首次运行 dsh-tui 会自动初始化 profile。",
+      "notes": "依赖的 @deepseek-ai/dsh-* 系列包多为 rc 预发布版本，属官方生态，建议保持更新。"
+    },
+    "summaryZh": "一个 Claude Code 风格的终端 TUI 插件，为 DeepSeek Harness 提供流式聊天界面、实时状态、会话管理和丰富快捷键操作。",
+    "usage": {
+      "prompt_tokens": 6001,
+      "completion_tokens": 1450,
+      "total_tokens": 7451,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 955
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5361
+    }
+  }
+}

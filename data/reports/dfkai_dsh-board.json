@@ -1,0 +1,37 @@
+{
+  "id": "dfkai/dsh-board",
+  "analyzedAt": "2026-08-17T13:13:51.026Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 配置，README 给出了 dsh plugin add 安装命令，并调用 DSH 客户端插槽接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-board@0.2.0",
+      "evidence": "dsh plugin --profile <profile> add dsh-board@0.2.0"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 装的一个小面板，在网页界面的左下角显示你的用量和花费：总共用了多少 token、花了多少钱、每个模型分别多少、还有连续打卡和段位小成就。点一下就能看到图表和热力图。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取本机 DSH 的数据，不会联网外发，最多在浏览器里存一下面板是展开还是收起。",
+      "postInstallNotes": "装完重启对应 profile（或新开 dsh --profile <profile>），左下角就会出现徽章。",
+      "notes": "非官方插件。README 提到需要较新的 harness 版本（token-meter 修复），否则累计 token 和成本会少算推理部分；另外安装示例写的是 0.2.0，而当前 npm 包是 0.2.4，安装时可用最新版。"
+    },
+    "summaryZh": "dsh-board 是 DeepSeek Harness 的侧栏用量与成本仪表盘，展示 token 统计、分模型费用估算和成就段位。",
+    "usage": {
+      "prompt_tokens": 3188,
+      "completion_tokens": 1775,
+      "total_tokens": 4963,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1392
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2548
+    }
+  }
+}

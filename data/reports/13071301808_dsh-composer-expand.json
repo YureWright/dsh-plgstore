@@ -1,0 +1,37 @@
+{
+  "id": "13071301808/dsh-composer-expand",
+  "analyzedAt": "2026-08-17T11:56:37.262Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，依赖 @deepseek-ai/cordis，且 README 给出了 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-composer-expand",
+      "evidence": "dsh plugin --profile web add dsh-composer-expand"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的输入框（composer）加一个展开/收起按钮。平时输入框高度有上限，草稿长了只能在里面滚动；点一下按钮就能把输入框变成很大（70% 屏幕高度），写长内容更方便，再点一下恢复原来的样子。展开状态会记住，刷新页面也不丢。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在前端运行，会往浏览器 localStorage 写一个开关状态，不碰其他文件，也不连任何外部服务器。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 的 composer 增加一键展开/收起按钮，长草稿也有宽敞的书写空间。",
+    "usage": {
+      "prompt_tokens": 2344,
+      "completion_tokens": 776,
+      "total_tokens": 3120,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 466
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1704
+    }
+  }
+}

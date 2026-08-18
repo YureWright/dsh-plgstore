@@ -1,0 +1,37 @@
+{
+  "id": "@wsz987/channel-control",
+  "analyzedAt": "2026-08-17T11:11:57.267Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 依赖 @deepseek-ai/cordis 并导出 plugin 入口，README 说明以 Cordis 插件方式挂载服务，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wsz987/channel-control",
+      "evidence": "README 中安装命令为 pnpm add @wsz987/channel-control"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 通道管理的控制面板，负责管理各个聊天通道的配置、登录凭证、认证会话和运行状态。它让不同通道的适配器能通过统一接口工作，自动启动和停止通道实例，并且单个通道配置错误不会影响整个系统。",
+      "level": "ok",
+      "risks": "它会接触并存储通道的配置和登录凭证，但代码承诺不返回秘密值；会启停通道适配器实例。除此之外未发现明显风险。",
+      "postInstallNotes": "安装后需在 DSH 配置中声明该插件，并注入 channels 和 credentials 服务（参见 README 中的 YAML 示例）。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 通道通用控制面板，统一管理通道配置、凭证、认证会话与运行时生命周期。",
+    "usage": {
+      "prompt_tokens": 1631,
+      "completion_tokens": 2069,
+      "total_tokens": 3700,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1748
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 991
+    }
+  }
+}

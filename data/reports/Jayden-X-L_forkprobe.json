@@ -1,0 +1,37 @@
+{
+  "id": "Jayden-X-L/forkprobe",
+  "analyzedAt": "2026-08-16T12:01:56.694Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置，依赖 @deepseek-ai/cordis 和 dsh-* 核心包，README 明确提供 DSH 原生插件安装说明（直接安装 forkprobe-dsh）。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "forkprobe-dsh",
+      "evidence": "DSH 用户可以直接安装 `forkprobe-dsh`"
+    },
+    "evaluationReport": {
+      "intro": "这个工具叫 ForkProbe，作用是把同一个任务交给 AI 的默认能力和多个不同的“技能包”分别试做一遍，然后生成本地网页报告，让你直观对比结果，自己选中最好的一个，之后 AI 就用你选中的技能继续完成正式任务。它支持文本、PPT、科研绘图、网页、视频等多种产出，适合用来决定某个任务到底该用哪个技能。",
+      "level": "caution",
+      "risks": "它会在你电脑上运行多个 AI 技能——这些技能可能来自网上的公开仓库，运行时代码有可能读写你电脑上的文件或发起网络请求。它还会扫描你本机已经安装的 AI 技能。如果你同意匿名分享，它会把你“选择了哪个技能”的结果发送给开发者，用于优化推荐，但这是可选项，可以关闭。报告是保存在本地的，不会公开。它不会复制你的 DSH 登录凭据。",
+      "postInstallNotes": "无",
+      "notes": "依赖的 dsh-tools 和 peer 依赖处于 rc 预发布版本，安装后如遇问题建议检查与 DSH 核心的版本兼容性；另外它可能运行第三方技能，使用前最好了解对方技能的 license 和代码来源。"
+    },
+    "summaryZh": "ForkProbe 是一个 AI 技能对比选型工具，可并行试跑多个技能并生成本地报告，让你挑选最佳技能继续任务。",
+    "usage": {
+      "prompt_tokens": 4571,
+      "completion_tokens": 4192,
+      "total_tokens": 8763,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3745
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3931
+    }
+  }
+}

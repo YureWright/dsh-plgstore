@@ -1,0 +1,37 @@
+{
+  "id": "yanglongyun/dsh-ramify",
+  "analyzedAt": "2026-08-17T11:28:50.166Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-client 核心包，README 给出了 dsh plugin add 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@ramify/dsh-ramify",
+      "evidence": "npm 包发布后 `dsh plugin --profile web add @ramify/dsh-ramify`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个让 DeepSeek Harness 长出‘创意树’的画布插件。你告诉它一个需求，它会让人工智能同时生成好几个不同方向的方案，像树一样展开在图里。你可以点开任意节点，直接预览它生成的网页、图片、视频或音频，还能在某个方案上继续发散，让 AI 按你的修改意见再生成一个分支。整个过程不用复制地址、不用再配置模型或 API 密钥，直接在 DSH 界面里完成。",
+      "level": "caution",
+      "risks": "它会在你电脑上启动一个本地服务，默认监听 0.0.0.0:9519，也就是说同一 WiFi 下的其他设备可能也能访问到你生成的创意内容和画布数据，甚至可能操纵它（没有密码保护）。另外，AI 生成的作品在详情页里是以‘无沙箱’方式打开的，可以运行 JavaScript、联网、提交表单，如果模型生成了恶意代码，它可能读取或修改这个插件在本地保存的信息。插件默认把数据存放在你的用户目录（比如 macOS 的 ~/Library/Application Support/Ramify/、Windows 的 %APPDATA%/Ramify/），卸载时可能不会自动删除，而且如果你之前启动过独立的 Ramify 应用，插件会复用那个实例，卸载插件也不会把它关掉。",
+      "postInstallNotes": "无，安装后启动 DSH，点击左侧栏的 Ramify 即可开始使用。",
+      "notes": "经评估是真正的 DSH 插件，但 README 提示当前推荐从源码安装，npm 包可能尚未正式发布；若 npm 安装失败，可改用 git 地址 git+https://github.com/yanglongyun/dsh-ramify.git 或本地路径安装。需要 Node.js ≥ 22.19，且 DSH 版本需 0.1.0-rc.6 或兼容。"
+    },
+    "summaryZh": "Ramify 是一个让 AI 以创意树形式生成多个方案并支持直接在画布上分支、预览的 DeepSeek Harness 原生插件。",
+    "usage": {
+      "prompt_tokens": 3806,
+      "completion_tokens": 3315,
+      "total_tokens": 7121,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2716
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3166
+    }
+  }
+}

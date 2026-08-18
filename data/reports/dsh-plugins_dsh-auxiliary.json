@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugins/dsh-auxiliary",
+  "analyzedAt": "2026-08-17T13:09:37.567Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis 等核心包，README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-plugin/dsh-auxiliary",
+      "evidence": "Add the plugin dependency: `dsh plugin --profile <PROFILE> add @dsh-plugin/dsh-auxiliary`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness（DSH）增加了一组“辅助模型”功能，让图片分析、对话压缩、子代理、标题生成和图像生成这些任务使用你自己指定的其他 AI 模型，而不是占用主对话模型。你可以在设置里为不同任务分别选模型，保存后立即生效，不用重启。",
+      "level": "ok",
+      "risks": "插件会读取你指定的本地图片文件（比如用 inspect_image 分析截图），并把图片内容、对话摘要等发送给你配置的第三方 AI 模型服务；你需要配置 API 密钥，密钥保存在本地配置文件中。除此之外没发现明显风险。",
+      "postInstallNotes": "装完后需要打开网页设置里的“Settings → Auxiliary Models”（辅助模型）为各个功能选择提供方和模型，并在“Settings → Models”里标记你要使用的模型；如果用到图像分析/生成，还要在模型设置里勾选“Allow image input / Allow image generation”。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加独立的辅助模型路由，支持图像识别、上下文压缩、审批、子代理、标题生成和图像生成，不干扰主对话模型。",
+    "usage": {
+      "prompt_tokens": 3871,
+      "completion_tokens": 1890,
+      "total_tokens": 5761,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1489
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3231
+    }
+  }
+}

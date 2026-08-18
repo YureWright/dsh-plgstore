@@ -1,0 +1,37 @@
+{
+  "id": "Zachary7456/dsh-voice-mic",
+  "analyzedAt": "2026-08-17T12:11:57.611Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 和 dsh.bundle，依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Zachary7456/dsh-voice-mic",
+      "evidence": "dsh plugin --profile web add github:Zachary7456/dsh-voice-mic"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面加一个“语音输入”功能。装了它，聊天输入框旁边会出现一个麦克风按钮，按一下开始说话，松开（或再按一下）就把语音自动转成文字填进输入框，不会自动发送。说话时可以实时看到识别出的文字。它支持三种识别方式：用浏览器自带的识别（最简单，零配置）、用电脑本地跑一个离线的语音识别模型（需要 Python，会下载模型，但音频不出本机）、或者连接你在设置里填的云端 API（例如 OpenAI 兼容服务）。",
+      "level": "ok",
+      "risks": "它会用你的麦克风录音，录音内容会被送到你选择的识别服务。如果选本地模式，音频只留在本机，但会在 ~/.dsh/voice 目录下载模型（约 158-223MB），并且可能会安装 Python 依赖。如果选云端模式，你的语音会被发送到设置里填写的服务器地址，而且 API 密钥会存在浏览器本地存储里，别人用同一浏览器时可能看到。",
+      "postInstallNotes": "安装后重启 dsh web。默认用浏览器识别，开箱即用；如果想用本地离线模型或云端 API，到设置页里配置和部署。",
+      "notes": "当前 npm 包尚未发布，README 给的安装命令用的是 GitHub 仓库地址（github:Zachary7456/dsh-voice-mic）。另外，本地模型体积较大，注意磁盘空间。"
+    },
+    "summaryZh": "DSH 语音输入插件：在网页输入框加麦克风按钮，录音后实时转写为文本，支持浏览器、本地 FunASR 与云端 API 三种识别引擎。",
+    "usage": {
+      "prompt_tokens": 2957,
+      "completion_tokens": 2400,
+      "total_tokens": 5357,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1882
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2317
+    }
+  }
+}

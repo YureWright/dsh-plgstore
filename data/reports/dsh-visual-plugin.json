@@ -1,0 +1,37 @@
+{
+  "id": "dsh-visual-plugin",
+  "analyzedAt": "2026-08-16T14:54:00.839Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 peerDependencies 依赖 @deepseek-ai/cordis 等核心包，描述明确为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-visual-plugin",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的。当主模型不支持看图片时，它会把用户发的图片转给一个你配置好的 OpenAI 兼容视觉模型来处理，然后在网页界面的右侧面板显示结果。相当于给 DeepSeek 加了个“眼睛”，让它能看懂图片。",
+      "level": "ok",
+      "risks": "会把你发的图片转发到你配置的视觉模型服务商那里；需要自己配置 API 地址和密钥，请注意 API 密钥安全。没发现明显风险。",
+      "postInstallNotes": "安装后需要在插件设置里配置 OpenAI 兼容视觉模型的 API 地址、模型名称和 API 密钥，否则无法使用。",
+      "notes": "README 缺失，具体配置步骤请参考插件仓库或包内文档。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供视觉能力的桥接插件，把图片转发给 OpenAI 兼容视觉模型并在 Web 界面显示结果。",
+    "usage": {
+      "prompt_tokens": 2160,
+      "completion_tokens": 1012,
+      "total_tokens": 3172,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 683
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1520
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "gxpppp/dsh-search-mcp",
+  "analyzedAt": "2026-08-17T11:28:42.777Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖多个 @deepseek-ai/* 核心包，README 描述了作为 DSH 插件的安装与配置方式。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-search-mcp",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能替换 dsh 自带的网络搜索功能，改用你配置的第三方搜索服务（比如 Tavily、Brave、Exa、Perplexity 或 DuckDuckGo）来搜索。你可以在网页设置里添加、修改、切换这些搜索服务器，不用改代码，保存后马上生效。启用后 dsh 自带的 DeepSeek 搜索会被禁用，卸载插件就恢复原样。",
+      "level": "ok",
+      "risks": "它会修改 dsh 的搜索设置并禁用内置搜索；你填写的搜索 API key 会保存在本机配置文件里；启用后搜索请求会发送到你配置的第三方搜索服务，因此搜索内容和结果会经过这些服务。没有发现访问隐私文件或执行额外脚本的行为。",
+      "postInstallNotes": "装完后需要按 README 操作：先进入插件目录运行 npm install；然后用 dsh plugin --profile web add link:<本仓库路径> 安装；如果之前配过直连 Tavily MCP，要编辑 cordis.patch.yml 删掉旧行；再到设置页或 .credentials.yaml 里填搜索服务的 API key；最后重启 dsh web 进程。",
+      "notes": "README 给出的安装命令是 link: 本地路径，并非直接的 npm 包名，市场收录时可能需要改用 git 或 npm 方式安装。另外最近推送时间显示为 2026 年，可能只是仓库时间戳异常。"
+    },
+    "summaryZh": "用 Tavily/Brave/Exa 等 MCP 搜索服务器替换 dsh 内置搜索的插件，可在设置页图形化配置，卸载即还原。",
+    "usage": {
+      "prompt_tokens": 3584,
+      "completion_tokens": 2873,
+      "total_tokens": 6457,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2397
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2944
+    }
+  }
+}

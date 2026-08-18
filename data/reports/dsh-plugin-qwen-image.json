@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-qwen-image",
+  "analyzedAt": "2026-08-16T13:41:48.835Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis 与 dsh-* 核心包，README 给出 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-qwen-image",
+      "evidence": "dsh plugin --profile web add -w dsh-plugin-qwen-image"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给只能处理文字的 AI 模型（比如 DeepSeek）加上'眼睛'。它把图片交给另一个叫 Qwen-VL 的视觉 AI 去'看'，然后只把文字描述带回来给 DeepSeek，这样 DeepSeek 就算本身不认图，也能通过插件知道图片里有什么。支持上传 PNG / JPEG / WebP / GIF 图片，还可以针对图片提问。",
+      "level": "ok",
+      "risks": "你的图片会被发送到阿里云的 DashScope 服务（Qwen-VL 的接口），所以涉及图片内容的第三方处理；图片的读取路径在工作区范围内，但相对路径可能读取当前会话工作区的任意文件。API 密钥存放在本地配置文件中，插件不会把它写进环境变量。总体来说风险有限，属于正常的云端 AI 调用。",
+      "postInstallNotes": "需要先在 `$DSH_HOME/settings.yaml`（或 Settings → Models 界面）里添加一个 `dashscope` 提供方，把模型的 `input` 声明为 `[text, image]`；然后在 `$DSH_HOME/.credentials.yaml` 里设置 `DASHSCOPE_API_KEY`（例如 `sk-...`）。如有需要，可在 profile 的 `cordis.patch.yml` 中按 id 覆盖默认配置（如 provider、model、systemPrompt 等）。",
+      "notes": "无"
+    },
+    "summaryZh": "给纯文本大模型（如 DeepSeek）配‘眼睛’的 DSH 插件：图片转发给 Qwen-VL（DashScope）识别后用文字返回，让模型能看懂图片内容。",
+    "usage": {
+      "prompt_tokens": 3229,
+      "completion_tokens": 2816,
+      "total_tokens": 6045,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2316
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2589
+    }
+  }
+}

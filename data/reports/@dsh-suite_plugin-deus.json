@@ -1,0 +1,37 @@
+{
+  "id": "@dsh-suite/plugin-deus",
+  "analyzedAt": "2026-08-16T13:28:00.076Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 同时声明了 dsh.bundle 与 dsh.client，且 README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-suite/plugin-deus",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add @dsh-suite/plugin-deus"
+    },
+    "evaluationReport": {
+      "intro": "这是一个把“神模”触发词实验变成可重复 A/B 测试的插件：内置多套极简提示词预设，一键注入对话框，自动识别 AI 回复的开头句式并统计各模式触发率（附置信区间）。它还把“锚定维持”做成引导，帮助保持触发状态。简而言之，它是给好奇用户做提示词实验用的小工具，不承诺任何隐藏能力。",
+      "level": "ok",
+      "risks": "会在本地电脑的 ~/.dsh 目录下写入日志（含对话开头原文）和配置文件；日志不上传，但任何能访问你电脑的人可能看到这些记录。",
+      "postInstallNotes": "安装后打开 Web UI 的 Settings → 神模扳机进行配置；对话页输入框上方会出现芯片行。日志默认写入 ~/.dsh/deus-mode/log.jsonl（受 $DSH_HOME 影响）。",
+      "notes": "注意：所谓“神模模式”来自社区观察、未经官方证实，统计结果可能只是噪音；插件要求 Node.js 22.19 以上。"
+    },
+    "summaryZh": "神模扳机插件：把极简提示词触发实验变成可重复的 A/B 测试，内置预设库、一键注入、起手识别和本地统计。",
+    "usage": {
+      "prompt_tokens": 2932,
+      "completion_tokens": 3069,
+      "total_tokens": 6001,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2659
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2292
+    }
+  }
+}

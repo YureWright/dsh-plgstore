@@ -1,0 +1,37 @@
+{
+  "id": "lehhair/dsh-diff-viewer",
+  "analyzedAt": "2026-08-17T11:22:02.020Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/client 配置，peerDependencies 依赖 @deepseek-ai/dsh-client-ui-* 和 cordis，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/lehhair/dsh-diff-viewer/releases/latest/download/dsh-external-dsh-diff-viewer.tgz",
+      "evidence": "dsh plugin --profile web add \"https://github.com/lehhair/dsh-diff-viewer/releases/latest/download/dsh-external-dsh-diff-viewer.tgz\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 网页版界面用的，专门美化“AI 修改文件后的差异对比”显示。原本 DSH 会用一个朴素的差异块展示修改内容，这个插件把它升级成更清晰、更专业的对比视图，支持左右分栏、行号、变更条、词级高亮、折叠长段，还能高效处理特别大的文件差异。安装后重启 DSH 就生效，不喜欢可以直接卸载恢复原样。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只接管界面渲染层，不改动核心文件，卸载即恢复官方默认显示。",
+      "postInstallNotes": "安装后需重启 dsh web 生效（运行 dsh web）。升级时注意 pnpm 缓存：如果通过 latest 链接装到旧版，先卸载插件并清理 pnpm store 再重装。",
+      "notes": "经评估确实是 DSH 插件，且推荐通过 Release tarball 安装；不要用 dsh plugin add github:... 装源码，因为源码仓库不含构建产物 lib/，会启动失败。"
+    },
+    "summaryZh": "为 DSH Web 界面提供 PiUI 风格的高性能 diff 查看器，替换默认的文件修改对比显示。",
+    "usage": {
+      "prompt_tokens": 2971,
+      "completion_tokens": 1341,
+      "total_tokens": 4312,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 872
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2331
+    }
+  }
+}

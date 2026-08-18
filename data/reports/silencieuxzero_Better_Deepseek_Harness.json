@@ -1,0 +1,37 @@
+{
+  "id": "silencieuxzero/Better_Deepseek_Harness",
+  "analyzedAt": "2026-08-17T12:08:00.849Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-home-paths、@deepseek-ai/dsh-tools 等核心包，README 描述的是 DSH Web UI 插件功能，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "better-deepseek-harness",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness Web UI 的一个增强包。它让你不用改文件，直接在网页设置里安装/卸载技能和插件，还能管理设置项。额外带来很多方便的小工具：左侧文件树、Git 面板、多开终端、Windows 通知、把图片自动转成文字描述（方便不支持图片的模型）、Tavily 联网搜索、GitHub 仓库读取等。如果插件装坏了，它还有‘急救模式’自动修复。",
+      "level": "caution",
+      "risks": "它会读写你本机的配置文件（settings.yaml、cordis.patch.yml），安装/卸载插件时会执行 npm 命令和构建脚本；你通过它打开的终端、文件编辑、Git 操作都可以访问工作区文件。它也会把你填的 Tavily / GitHub / 自定义视觉模型的 API Key 保存在配置里（README 没提到加密）。默认只允许本机访问它的管理接口，建议别开启局域网访问。使用它安装第三方插件前要确认来源可信。",
+      "postInstallNotes": "装完后打开 Web UI 的‘设置 → 更好的 DeepSeek Harness’，按需配置技能目录、API Key 等；如果界面没出现，刷新页面或重启宿主。",
+      "notes": "功能强大，适合需要图形化管理 DSH 的用户；项目星标不多、较新。若不需要终端/Git/图片转述等功能，可考虑更轻量的插件。"
+    },
+    "summaryZh": "为 DeepSeek Harness Web UI 提供插件/技能管理、Git 面板、多终端、文件树、Tavily 搜索、GitHub 访问、图片转述、Windows 通知等增强功能的插件。",
+    "usage": {
+      "prompt_tokens": 5598,
+      "completion_tokens": 6007,
+      "total_tokens": 11605,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5496
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4958
+    }
+  }
+}

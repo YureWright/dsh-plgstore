@@ -1,0 +1,37 @@
+{
+  "id": "STARDUSTLC666/dsh-slack",
+  "analyzedAt": "2026-08-17T11:55:59.827Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并提供 cordis.patch.yml，README 给出 dsh plugin add 安装命令，且 peer 依赖 @deepseek-ai/cordis 和 dsh-tools，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-slack",
+      "evidence": "README 安装章节：dsh plugin --profile web add dsh-slack"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你的 AI 助手能连上 Slack：它能在指定频道发消息、查看机器人可见的频道列表、接收 Slack 里发给机器人的消息（需要开启 Socket Mode），还能在线程里回复。相当于给 AI 开通了一个 Slack 账号，让它能和你在 Slack 里聊天。",
+      "level": "ok",
+      "risks": "它会使用你提供的 Slack 令牌连接 Slack 服务器，在有 Socket Mode 时读取机器人可见的公开频道和私信消息，并按你的指示发送消息。令牌和消息内容都在 Slack 的服务器上，需要注意别把令牌泄露给别人。它不会访问你电脑上的其他文件或系统设置。",
+      "postInstallNotes": "安装后需要创建 Slack App 并获取机器人令牌（xoxb-）和 App-Level 令牌（xapp-，用于接收消息），然后通过环境变量 DSH_SLACK_TOKEN / DSH_SLACK_APP_TOKEN 或 profile 的 cordis.patch.yml 配置，并重启 dsh Web 服务。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 社区插件：让 agent 接入 Slack，支持发消息、列频道、收消息和线程回复的双向通信。",
+    "usage": {
+      "prompt_tokens": 4177,
+      "completion_tokens": 1592,
+      "total_tokens": 5769,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1183
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3537
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "yuqingsh/dsh-image-subagent",
+  "analyzedAt": "2026-08-17T11:53:42.484Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，且 peerDependencies 依赖 @deepseek-ai/dsh，README 给出 dsh plugin 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/yuqingsh/dsh-image-subagent.git",
+      "evidence": "dsh plugin --profile web add github:yuqingsh/dsh-image-subagent#v0.1.1"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让只能处理文字的 DeepSeek 模型（比如 deepseek-v4-pro）也能看懂图片。当你把图片发给 DSH 时，它先把图片替换成一段带编号的占位文字，然后让主模型调用一个已经配置好的视觉子代理（比如 observer），这个子代理会用 read_attachment/read_image 工具去读取图片内容，再把描述返回给主模型，最后主模型就能根据图片内容回答你的问题。简单说，相当于给纯文字模型配了一个解说员。",
+      "level": "ok",
+      "risks": "它会在 DSH 运行时处理你会话里的图片附件，并把图片内容发送给你配置的视觉模型服务商（如 MiniMax）去识别，也就是说这些第三方服务可能看到图片内容；图片信息可能按会话日志授权被记录。插件在本地开了一个状态查询接口（127.0.0.1:3080），仅监听本机。安装时需运行 pnpm 下载依赖（来自个人 GitHub 仓库，未经广泛审计）。",
+      "postInstallNotes": "需要先配置好一个视觉子代理（如 observer）：其模型声明支持 image 输入，工具集包含 read_attachment/read_image，且必须在会话内派生；然后重启 dsh web 并刷新页面，可用 curl 请求 http://127.0.0.1:3080/image-subagent/status 验证。",
+      "notes": "该插件尚未发布到 npm，目前只能用 GitHub 方式安装；依赖 @deepseek-ai/dsh 的预发布版本（>=0.1.0-rc.6）。代码量不大，安装前建议查看 index.js 和 cordis.patch.yml。"
+    },
+    "summaryZh": "为纯文本 DeepSeek 模型增加图片理解能力的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 1605,
+      "completion_tokens": 3912,
+      "total_tokens": 5517,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3371
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 965
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "Meredith2328/dsh-sticky-note",
+  "analyzedAt": "2026-08-17T11:29:57.807Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，并依赖 @deepseek-ai/cordis 与多个 @deepseek-ai/dsh-client-* 包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-sticky-note",
+      "evidence": "dsh plugin --profile web add dsh-sticky-note"
+    },
+    "evaluationReport": {
+      "intro": "这是一个装在 DSH 左下角的便签小工具。你可以随手记点子、感想或待办事项，它会自动保存到电脑上的一个文件夹里。还能把便签一键发给当前对话，或者查看历史便签、归档、恢复，支持 Markdown 编辑和深色模式。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会把便签内容保存到本地文件夹（默认在 ~/.dsh/sticky-notes），这些内容只有你自己能看到。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "左下角便签插件，支持随手记、自动保存、分类、发送到对话、历史归档与 Markdown 编辑。",
+    "usage": {
+      "prompt_tokens": 1861,
+      "completion_tokens": 387,
+      "total_tokens": 2248,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 85
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1221
+    }
+  }
+}

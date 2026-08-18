@@ -1,0 +1,37 @@
+{
+  "id": "@yfzhou/dsh-session-cost-statusline",
+  "analyzedAt": "2026-08-16T14:49:15.605Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@yfzhou/dsh-session-cost-statusline",
+      "evidence": "README 原文：dsh plugin --profile web add @yfzhou/dsh-session-cost-statusline"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 的状态栏里显示当前会话的预估花费（人民币）。它根据每个请求使用的模型、token 用量和高峰/非高峰时段来估算价格，对于不认识的模型会跳过不计，所以显示的是一个保守的估计值，不是官方账单。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取本地会话数据来计算费用，不会上传数据或改动隐私文件。",
+      "postInstallNotes": "无需额外配置。插件会自动注册所需服务，但请确保 DSH 版本不低于 0.1.0-rc.6。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 状态栏上显示当前会话的预估费用（人民币），按模型、token 用量和高峰/非高峰时段计算。",
+    "usage": {
+      "prompt_tokens": 2086,
+      "completion_tokens": 1450,
+      "total_tokens": 3536,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1131
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1446
+    }
+  }
+}

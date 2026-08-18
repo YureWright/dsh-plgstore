@@ -1,0 +1,37 @@
+{
+  "id": "starslittle/dsh-queue-plus",
+  "analyzedAt": "2026-08-17T11:24:59.098Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 中明确声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等多个核心包，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/starslittle/dsh-queue-plus/releases/download/v0.3.0/dsh-queue-plus-0.3.0.tgz",
+      "evidence": "推荐安装 Release 中的预构建包，无需授权安装脚本："
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的排队消息面板增强插件。你可以在发消息时把消息排进队列，这个插件让你能直接编辑、删除、插话、拖动排序，还能一键批量删除排队消息。它用官方提供的接口接管了原有的队列面板，卸载后会自动恢复原样。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只操作 DeepSeek Harness 的排队消息面板，不会访问个人文件或连接外部服务器；停用或卸载后官方队列自动恢复。",
+      "postInstallNotes": "装完后重启 `dsh web`，然后连续发送至少两条“排队”消息，看到队列标题旁出现“排序”即生效。",
+      "notes": "依赖 @deepseek-ai/* 0.1.0-rc.6，DSH 仍是 RC，升级 DSH 时注意插件兼容性；源码安装会运行构建脚本，建议优先使用 README 推荐的预构建包。"
+    },
+    "summaryZh": "一个更好用的 DSH 排队消息面板：支持编辑、删除、插话、排序和批量删除。",
+    "usage": {
+      "prompt_tokens": 2671,
+      "completion_tokens": 2303,
+      "total_tokens": 4974,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1896
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2031
+    }
+  }
+}

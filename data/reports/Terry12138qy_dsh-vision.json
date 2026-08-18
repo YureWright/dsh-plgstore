@@ -1,0 +1,37 @@
+{
+  "id": "Terry12138qy/dsh-vision",
+  "analyzedAt": "2026-08-17T12:12:31.700Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle（cordis.patch.yml），README 提供了 dsh plugin 安装命令，并说明注册为 DSH 的 vision 工具。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Terry12138qy/dsh-vision.git",
+      "evidence": "dsh plugin --profile web add github:Terry12138qy/dsh-vision"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的模型能“看图”。你给它一张图片（本地路径或网址），它会调用阿里云或智谱的多模态 AI 模型，给你返回图片内容的中文描述。如果主模型调用失败，会自动切换到备用模型重试。适合想让模型识别图片、做 OCR 或理解图像内容的场景。",
+      "level": "caution",
+      "risks": "你需要把图片内容发送给阿里云/智谱的服务器，这意味着相关图片（含其中可能有的隐私信息）会被第三方公司看到；另外，你要配置 API 密钥（以环境变量形式），如果密钥泄露，别人可以用你的额度。",
+      "postInstallNotes": "需要设置环境变量（如 DASHSCOPE_API_KEY、DASHSCOPE_BASE_URL、VISION_MODEL 等）或编辑 cordis.patch.yml 的 config，然后重启 dsh web。",
+      "notes": "该插件移植自 claude-vision-skill，使用时请保留原始项目署名；依赖外部 API 服务，需要联网。"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加图片识别能力，通过调用阿里云/智谱多模态模型返回图片的中文描述。",
+    "usage": {
+      "prompt_tokens": 2015,
+      "completion_tokens": 3144,
+      "total_tokens": 5159,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2731
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1375
+    }
+  }
+}

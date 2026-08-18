@@ -1,0 +1,37 @@
+{
+  "id": "@omdp/dsh-gitbash-win",
+  "analyzedAt": "2026-08-16T13:39:47.964Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 给出了明确的安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@omdp/dsh-gitbash-win",
+      "evidence": "```bash\ndsh plugin --profile web add @omdp/dsh-gitbash-win\n```"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 在 Windows 上也能使用 Git Bash 命令。它注册一个叫 gitbash 的工具，模型可以直接调用它来运行各种 shell 命令，就像在 Linux 终端里一样。它不需要安装 WSL 或 node-pty，比较轻量。还支持后台任务、超时控制、输出截断和沙箱权限提示。",
+      "level": "ok",
+      "risks": "它会在你的 Windows 电脑上通过 Git Bash 执行命令。模型或调用者可以用它读写文件、运行程序，相当于是个命令行入口。默认有沙箱限制，但如果你给了完全权限，它能访问你电脑上的几乎一切。另外，它需要你提前装好 Git for Windows，否则找不到 bash.exe。",
+      "postInstallNotes": "安装前需要确保电脑上已安装 Git for Windows（提供 bash.exe），确认 `C:\\Program Files\\Git\\bin\\bash.exe` 或 `C:\\Program Files\\Git\\usr\\bin\\bash.exe` 存在；可选设置 GIT_BASH 环境变量指定自定义 bash.exe；安装后重启 `dsh web` 生效。",
+      "notes": "无"
+    },
+    "summaryZh": "Windows 下的 Git Bash 工具插件，让 DeepSeek Harness 在 Windows 上也能使用完整的 POSIX shell 命令。",
+    "usage": {
+      "prompt_tokens": 2413,
+      "completion_tokens": 1519,
+      "total_tokens": 3932,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1091
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1773
+    }
+  }
+}

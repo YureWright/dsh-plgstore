@@ -1,0 +1,37 @@
+{
+  "id": "@orbisapp/remote-dsh",
+  "analyzedAt": "2026-08-18T14:58:35.148Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，README 明确给出 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@orbisapp/remote-dsh",
+      "evidence": "README 原文：`dsh plugin --profile web add link:$PWD/packages/orbis-remote-dsh`（本地开发命令），且包已发布到 npm registry，可安装为 `@orbisapp/remote-dsh`。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你能用手机（Orbis App）通过局域网或 Tailscale 远程连接和控制你的 DeepSeek Harness（DSH）。它会在 DSH Web 的设置里增加一个 Orbis 面板，配对后可以远程查看会话、发消息、管理任务，数据走加密通道。",
+      "level": "ok",
+      "risks": "它会在电脑上开启一个网络监听端口（默认 47000），允许局域网或 Tailscale 内的设备连接；配对后，手机可以访问你的 DSH 会话和操作。配置信息（含配对公钥）会存放在 ~/.dsh/orbis/ 下，仅当前用户可读。未发现恶意行为，但使用远程访问功能时需注意网络环境安全。",
+      "postInstallNotes": "安装后需在 DSH Web 的 Settings → Plugins → Orbis 中开启远程访问，保存主机名和端口（默认 47000），创建配对码，再用手机 Orbis App 扫描配对。首次使用需允许防火墙通过 TCP 47000 端口（局域网直连时）。",
+      "notes": "无"
+    },
+    "summaryZh": "通过局域网或 Tailscale 用手机远程连接 DeepSeek Harness 的官方插件。",
+    "usage": {
+      "prompt_tokens": 4408,
+      "completion_tokens": 1302,
+      "total_tokens": 5710,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 847
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3768
+    }
+  }
+}

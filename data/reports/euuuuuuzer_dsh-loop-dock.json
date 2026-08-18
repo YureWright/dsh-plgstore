@@ -1,0 +1,37 @@
+{
+  "id": "euuuuuuzer/dsh-loop-dock",
+  "analyzedAt": "2026-08-17T13:16:58.306Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/euuuuuuzer/dsh-loop-dock/releases/latest/download/dsh-loop-dock-0.1.0.tgz",
+      "evidence": "Download `dsh-loop-dock-0.1.0.tgz` from the latest GitHub Release."
+    },
+    "evaluationReport": {
+      "intro": "dsh-loop-dock 是一个给 DeepSeek Harness (DSH) 用的插件，相当于一个“循环码头”。DSH 本身默认一个智能体只能配一种执行循环，这个插件让你在一个 DSH 里同时挂多种不同的 agent 循环（比如编码循环、研究循环、规划循环），每个智能体可以各选各的。它自己不发明新循环，只是提供注册、选择和绑定功能，让社区开发的循环都能插进来。插件还内置一个 fake-driver，不需要 API key、不连网就能先跑通，方便验证路由。",
+      "level": "ok",
+      "risks": "这个插件要装进 DSH 运行，会读写 DSH 的配置和会话数据。它本身不主动外联，但如果你配置了真实的大模型驱动，你的对话和上下文会发到对应的 LLM 服务商。默认的 fake-driver 完全本地，不发任何数据。另外它还是 pre-alpha，可能有 bug，建议先在测试环境试。",
+      "postInstallNotes": "需要先安装 DeepSeek Harness 0.1.0-rc.6；安装后用 dsh web 启动，在设置里把 Default driver 选成 fake-driver（或你想要的 driver/loop），再新建会话发消息验证。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-loop-dock 是一个 DSH 插件，让单个 DeepSeek Harness 同时支持多种 agent 循环，每个智能体可选用不同的循环驱动，并内置免密钥的 fake-driver 便于本地测试。",
+    "usage": {
+      "prompt_tokens": 3579,
+      "completion_tokens": 3103,
+      "total_tokens": 6682,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2591
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2939
+    }
+  }
+}

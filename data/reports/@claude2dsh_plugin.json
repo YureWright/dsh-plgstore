@@ -1,0 +1,37 @@
+{
+  "id": "@claude2dsh/plugin",
+  "analyzedAt": "2026-08-16T13:40:14.073Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，并依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，符合真正的 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@claude2dsh/plugin",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的。它能把你用 Claude Code 留下的聊天记录和技能导入到 DSH 里，也能把 DSH 的会话导出成 Claude Code 能读的格式，相当于在两个 AI 编程工具之间互相搬移数据。它还支持自动同步，让两边的会话保持最新。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 ~/.claude 文件夹里的聊天记录和配置，这些内容可能包含代码片段或隐私对话。默认只是只读，写入只发生在 DSH 自己的目录 $DSH_HOME 下；如果你主动开启“允许写原 Claude 目录”的选项，才会写回 ~/.claude。另外它能复制 Claude Code 插件的技能文件，但不会执行那些插件的代码。整体风险不大。",
+      "postInstallNotes": "无强制的后续配置。如果你想用自动同步功能，需要在 DSH 插件配置里把 autoSync.enabled 设为 true；想用 Claude hook 桥接，则需要设置 CLAUDE2DSH_HOOKS_CONFIG 环境变量。",
+      "notes": "无"
+    },
+    "summaryZh": "在 Claude Code 与 DeepSeek Harness 之间双向导入/导出会话和技能，并可自动同步。",
+    "usage": {
+      "prompt_tokens": 2607,
+      "completion_tokens": 1473,
+      "total_tokens": 4080,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1059
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1967
+    }
+  }
+}

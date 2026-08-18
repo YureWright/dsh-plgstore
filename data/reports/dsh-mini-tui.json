@@ -1,0 +1,37 @@
+{
+  "id": "dsh-mini-tui",
+  "analyzedAt": "2026-08-16T13:28:55.509Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/dsh-* 核心包，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mini-tui@latest",
+      "evidence": "dsh plugin --profile tui add dsh-mini-tui@latest"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的极简终端界面插件。装上它之后，你在终端里和 DeepSeek 对话的界面会更干净：工具在后台干活，默认不刷屏，你主要看到自己的输入和模型回答；想看过程细节可以用 /verbose 或 /tool 命令。它还带一个好看的启动画面、路径高亮和安全的思考状态提示。另外在 Windows 上，它还能给你加一个右键菜单，在文件夹里直接右键打开 DSH 终端。",
+      "level": "ok",
+      "risks": "它会读取当前工作目录和显示模型回答，这些信息会出现在终端里；依赖 DSH 保存的模型凭据。可选的 Windows 右键菜单安装会修改当前用户的注册表（HKEY_CURRENT_USER），但只影响本用户且需要你手动运行，不需要管理员权限。除此之外没发现明显风险。",
+      "postInstallNotes": "装好后直接 dsh --profile tui 启动。需要确保已安装 DeepSeek Harness 0.1.0-rc.6，并在 DSH 中配置好模型凭据。想用 Windows 右键菜单的话，再运行一次 scripts 里的安装命令。",
+      "notes": "注意：npm 上另一个包 deepseek-harness-tui 与本项目无关，正确包名是 dsh-mini-tui。"
+    },
+    "summaryZh": "DSH Mini TUI 是 DeepSeek Harness 的极简终端界面插件，让终端只关注输入和回答，减少过程噪音。",
+    "usage": {
+      "prompt_tokens": 3858,
+      "completion_tokens": 2710,
+      "total_tokens": 6568,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2238
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3218
+    }
+  }
+}

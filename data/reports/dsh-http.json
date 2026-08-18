@@ -1,0 +1,37 @@
+{
+  "id": "dsh-http",
+  "analyzedAt": "2026-08-16T13:29:16.786Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-http",
+      "evidence": "dsh plugin --profile <name> add dsh-http"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek 模型直接发起 HTTP 请求，比如访问网页、调用 API 接口，并把返回的内容整理成容易读的结构化数据。它支持 GET、POST 等各种请求方式，还能自动处理 JSON、添加认证信息等。",
+      "level": "ok",
+      "risks": "插件可以访问你电脑能连到的任何网址，包括内网地址（如 localhost、192.168.x.x）和云服务元数据地址。如果模型被恶意提示诱导，可能会扫描内网或访问本机服务。但插件不会主动连外部服务器，只是响应模型发出的请求。",
+      "postInstallNotes": "无",
+      "notes": "README 明确警告不内置 SSRF 拦截，使用时注意模型可能被诱导访问内网；建议在不可信环境中叠加安全策略。"
+    },
+    "summaryZh": "让 DeepSeek 模型通过结构化工具直接调用 HTTP API 的零依赖插件。",
+    "usage": {
+      "prompt_tokens": 2446,
+      "completion_tokens": 925,
+      "total_tokens": 3371,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 588
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1806
+    }
+  }
+}

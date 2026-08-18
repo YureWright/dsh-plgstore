@@ -1,0 +1,37 @@
+{
+  "id": "mexiaosqwq/dsh-web-mobile",
+  "analyzedAt": "2026-08-17T11:19:43.760Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client,并依赖 @deepseek-ai/cordis 等 DSH 核心包,README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:mexiaosqwq/dsh-web-mobile",
+      "evidence": "dsh plugin --profile web add github:mexiaosqwq/dsh-web-mobile"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 用的移动端界面优化。装上以后,在手机或窄屏上打开 DSH 网页版,侧边栏会变成抽屉(点按钮滑出来),会话区能占满整个屏幕;状态栏不会挡内容,表格、按钮、弹窗都会按小屏重新排版,用起来更像手机 App。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只改 DSH 网页界面的显示样式和交互,不碰隐私文件,也不连接外部服务器。",
+      "postInstallNotes": "装完需要重启 dsh web(或对应的服务命令)才会生效。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DSH 网页版更好用的小屏/移动端适配插件,自动把侧栏变抽屉并优化布局。",
+    "usage": {
+      "prompt_tokens": 3547,
+      "completion_tokens": 4707,
+      "total_tokens": 8254,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4376
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2907
+    }
+  }
+}

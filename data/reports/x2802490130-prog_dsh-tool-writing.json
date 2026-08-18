@@ -1,0 +1,37 @@
+{
+  "id": "x2802490130-prog/dsh-tool-writing",
+  "analyzedAt": "2026-08-17T11:44:32.004Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tool-writing",
+      "evidence": "也可以直接从 npm 安装：`dsh plugin --profile web add dsh-tool-writing`。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的“写文引擎”，专门帮助写长篇网络小说。它能自动生成大纲、批量起草多章草稿、管理人物和世界观设定、从正文抽取设定、追踪伏笔、多线叙事规划、风格模仿、语义检索参考资料、机械校对错别字，还能统计 API 用量和制定连载计划。它用一把独立的 DeepSeek key 来承担并发生成和检索的重活，主模型负责总调度和创意决策。另外还可以导入其他小说作为书库，建立全文和语义索引，方便考据和借鉴。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的小说项目文件（如 novel.json、chapters/ 等），还会在 $DSH_HOME 下读写用量记录和书库文件。写作内容和书库资料会被发送到 DeepSeek 的 API（以及可选的阿里云百炼 embedding API）进行处理。它使用独立的 API key，不会硬编码密钥，整体风险属于正常功能范围，没发现明显可疑行为。",
+      "postInstallNotes": "需要设置独立的 DeepSeek key（默认环境变量 DSH_WRITING_API_KEY）；若要用语义向量检索，还需配置 DASHSCOPE_API_KEY（可选）。然后在写作预设的 agent.cordis.yml 中挂载该插件，并按需调整 model、maxConcurrency 等参数。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供长篇网络小说创作引擎，支持批量草稿、设定管理、语义检索、校对与连载规划等能力。",
+    "usage": {
+      "prompt_tokens": 4059,
+      "completion_tokens": 1584,
+      "total_tokens": 5643,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1087
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3419
+    }
+  }
+}

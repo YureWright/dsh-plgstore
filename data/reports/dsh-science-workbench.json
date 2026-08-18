@@ -1,0 +1,37 @@
+{
+  "id": "dsh-science-workbench",
+  "analyzedAt": "2026-08-16T13:30:40.608Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-science-workbench",
+      "evidence": "dsh plugin --profile web add dsh-science-workbench"
+    },
+    "evaluationReport": {
+      "intro": "这是一个让 DeepSeek Harness 变成“可复现科学工作台”的插件。它把 Jupyter 式的代码单元格、AI 代理执行、以及完整的来源追踪（哪个代码、哪个输入、哪个环境、哪个参数/随机种子）结合起来。装上之后，你可以让 AI 代理运行代码单元格，直接看到图表，还能对图表提意见让 AI 重新画，所有步骤都会自动记录在项目里并自动用 git 做版本管理，方便你随时回溯和重跑。",
+      "level": "ok",
+      "risks": "它会在你的电脑上创建项目文件夹（默认在某个工作区下的 bio-projects 目录），运行你或 AI 写的 Python/bash 代码，并且自动执行 git init 和本地提交（不会推送到远程）。如果你给 AI 的指令不恰当，它可能运行有风险的代码，但这是这类工具的正常行为，插件本身没有额外的可疑动作。",
+      "postInstallNotes": "安装后需要重启 dsh web。首次使用时可以用 bio_set_projects_dir 工具设置项目根目录，否则会使用默认位置。",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 打造的可复现科学工作台插件，支持 AI 驱动单元格、内联图表反馈重画、来源追踪和环境快照。",
+    "usage": {
+      "prompt_tokens": 3386,
+      "completion_tokens": 659,
+      "total_tokens": 4045,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 234
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2746
+    }
+  }
+}

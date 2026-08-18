@@ -1,0 +1,37 @@
+{
+  "id": "Xenia0922/dsh-opencode-go-usage",
+  "analyzedAt": "2026-08-17T11:29:18.480Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Xenia0922/dsh-opencode-go-usage.git",
+      "evidence": "README 中写到：`git clone https://github.com/Xenia0922/dsh-opencode-go-usage.git`"
+    },
+    "evaluationReport": {
+      "intro": "这插件是给 DeepSeek Harness 用的一个悬浮仪表盘，显示在桌面右下角，可以实时查看 OpenCode Go 的用量和花费。它能看账户级配额、每个请求花了多少钱、按模型和日期的统计、趋势图，还能导出 CSV。数据都在你本机处理，网络只连 opencode.ai 官方接口和 GitHub 检查更新。",
+      "level": "ok",
+      "risks": "它会读取你本机的 OpenCode Go 凭据（比如 .credentials.yaml 里的 key 和浏览器里的 auth Cookie），并保存到 ~/.config 下的配置文件。为了自动登录，会启动一个调试浏览器，调试端口开放期间本机其他程序理论上可能访问到。除此之外没发现把数据发给第三方的风险。",
+      "postInstallNotes": "需要先完成登录：点击面板里的“启动调试浏览器并登录”，在打开的 Chromium 系浏览器里登录 opencode.ai，然后关闭窗口并点“重试提取”；如果自动方式不行，也可以手动填写 authCookie 和 workspaceId。另外需要系统装有 Python 3（官方抓取用）和 Chromium 系浏览器。",
+      "notes": "无"
+    },
+    "summaryZh": "OpenCode Go 用量与花费悬浮仪表盘，实时展示配额、逐请求费用和趋势分析。",
+    "usage": {
+      "prompt_tokens": 3680,
+      "completion_tokens": 2281,
+      "total_tokens": 5961,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1839
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3040
+    }
+  }
+}

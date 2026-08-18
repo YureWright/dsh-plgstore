@@ -1,0 +1,37 @@
+{
+  "id": "Chinesezjc/dsh-interconnect",
+  "analyzedAt": "2026-08-17T11:15:34.026Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，peerDependencies 依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-interconnect",
+      "evidence": "dsh plugin --profile <name> add dsh-interconnect"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让多个 DeepSeek Harness（DSH）实例之间互相发消息、探测对方是否在线，还能实时推送事件。它包含两个小插件：一个负责通信服务（支持 HTTP 和 WebSocket），另一个给 AI 模型提供两个工具（发消息、检测活性）。需要两端设置相同的密钥才能使用。",
+      "level": "ok",
+      "risks": "它会开启 HTTP/WebSocket 端口，让其他机器能连接；如果共享密钥泄露，外部可能向你的实例发消息或接收事件。它会读取环境变量 DSH_INTERCONNECT_TOKEN。除此之外没发现明显风险。",
+      "postInstallNotes": "需要在两端实例的 .credentials.yaml（或等价凭据源）设置相同的 DSH_INTERCONNECT_TOKEN 作为共享密钥，然后重启 web 服务。",
+      "notes": "无"
+    },
+    "summaryZh": "让多个 DSH 实例跨机器互相发消息、探测活性和实时推送事件的双插件包。",
+    "usage": {
+      "prompt_tokens": 2706,
+      "completion_tokens": 862,
+      "total_tokens": 3568,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 511
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2066
+    }
+  }
+}

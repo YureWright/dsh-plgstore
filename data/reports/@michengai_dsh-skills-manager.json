@@ -1,0 +1,37 @@
+{
+  "id": "@michengai/dsh-skills-manager",
+  "analyzedAt": "2026-08-16T13:23:09.588Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@michengai/dsh-skills-manager",
+      "evidence": "dsh plugin --profile web add @michengai/dsh-skills-manager"
+    },
+    "evaluationReport": {
+      "intro": "这是一款 DSH Web 插件，能在设置页里查看和管理本地的技能（skills），也可以查看其他人共享的 Agent 技能。你可以启用、禁用、上传、替换或删除本地技能，共享技能只能看不能改。",
+      "level": "ok",
+      "risks": "它会读写你电脑上 DSH 配置中的技能目录（$DSH_HOME\\skills），可以上传、替换或删除技能文件；共享技能目录只读。作者声称写操作有安全限制（需要 JSON 和 DSH 客户端标记），未发现明显风险。",
+      "postInstallNotes": "安装后需要重启 DSH Web 或重新加载当前 Web profile。",
+      "notes": "社区维护插件，非 DeepSeek 官方产品。"
+    },
+    "summaryZh": "DSH Skills Manager 是一个 DSH Web 插件，用于在设置页中安全地管理本地技能并查看共享 Agent 技能。",
+    "usage": {
+      "prompt_tokens": 3663,
+      "completion_tokens": 1504,
+      "total_tokens": 5167,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1164
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3023
+    }
+  }
+}

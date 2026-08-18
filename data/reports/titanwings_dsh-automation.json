@@ -1,0 +1,37 @@
+{
+  "id": "titanwings/dsh-automation",
+  "analyzedAt": "2026-08-17T11:14:27.233Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，依赖并注入 @deepseek-ai/dsh-client-* 包，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/titanwings/dsh-automation.git",
+      "evidence": "dsh plugin --profile web add github:titanwings/dsh-automation#v0.1.6"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你能在 DeepSeek Harness 里定时运行编码任务。比如设置每周一到周五 09:30 自动跑一个只读的代码检查任务，它会开启全新会话、按照你设定的权限执行，并把运行结果都记录下来。你可以通过 DSH 网页界面里的 Automations 标签，或者直接让 AI 助手用自然语言帮你创建和管理这些定时任务，不需要额外单独运行一个后台程序。",
+      "level": "ok",
+      "risks": "它会在你设定的时间自动启动新的 Agent 会话并执行任务，任务可能会读写你工作区里的文件（具体范围由你给每条自动化设置的权限决定）。所有运行记录（包括任务内容、执行时间、结果）都会保存在 DSH 中，能访问该工作区的人可能会看到这些记录。没发现它会偷偷连接外部服务器或收集隐私数据。",
+      "postInstallNotes": "安装后需要重启 dsh web（从源码运行则用 pnpm dsh）。然后进入任意会话的 Automations 标签创建你的第一个定时任务，或让 Agent 通过自然语言创建。建议先用 'Run now' 手动试跑一次，确认任务边界符合预期。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 中定时运行自动化编码任务的插件，支持从网页或对话管理调度、查看运行历史。",
+    "usage": {
+      "prompt_tokens": 3547,
+      "completion_tokens": 2458,
+      "total_tokens": 6005,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2002
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2907
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-expression",
+  "analyzedAt": "2026-08-16T13:31:53.727Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/dsh-* 核心包，且 README 给出 dsh plugin add 安装命令，符合 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-expression",
+      "evidence": "dsh plugin --profile web add dsh-expression"
+    },
+    "evaluationReport": {
+      "intro": "这是一个表情包插件，装在 DeepSeek Harness 里用。它能读懂你现有的表情包库（默认自带 92 张图），你或 AI 说一句话，它就按意思帮你搜出最贴的表情包并直接发出去。支持在聊天输入框旁边点笑脸按钮自己选图，也可以在设置页管理表情包。",
+      "level": "ok",
+      "risks": "它会读取你指定目录下的表情包文件（默认是插件自带的图库）和一个 SQLite 索引文件；如果配置了 memeRoot，会读那个目录。发图走 QQ 通道，所以会把选中的图片发送到 QQ 聊天中。没有发现访问隐私文件或连外部服务器的行为。",
+      "postInstallNotes": "无",
+      "notes": "内置图库来自上游 astrbot-meme-pack-official-01，但上游未提供 LICENSE，作者已说明只适合个人使用，如需公开分发需保留来源标注。"
+    },
+    "summaryZh": "DSH 表情包插件：语义搜图、一键发图，内置 92 张默认图库，可直接接入 QQ 通道。",
+    "usage": {
+      "prompt_tokens": 3648,
+      "completion_tokens": 571,
+      "total_tokens": 4219,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 193
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3008
+    }
+  }
+}

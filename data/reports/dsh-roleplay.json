@@ -1,0 +1,37 @@
+{
+  "id": "dsh-roleplay",
+  "analyzedAt": "2026-08-16T14:49:17.759Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-roleplay",
+      "evidence": "README 安装说明：dsh plugin --profile web add -w dsh-roleplay"
+    },
+    "evaluationReport": {
+      "intro": "这是个给 DeepSeek Harness 用的角色扮演插件。你可以用它在 DSH 里玩角色扮演，支持创建/导入角色卡（描述角色性格、对话风格的卡片），还能生成图片，对接 NAI、ai.erp.sex 或本地 Stable Diffusion 等接口。",
+      "level": "ok",
+      "risks": "它会读写 DSH 数据目录下的角色卡和图片缓存（$DSH_HOME/roleplay/），这些是插件自己的数据。如果使用了第三方图片生成接口，角色卡内容和生成请求会发到对应服务器，属于正常功能。没发现明显恶意行为。",
+      "postInstallNotes": "安装后需要重启 dsh（或 dsh web）才能生效；如需图片生成，需要配置对应的接口参数。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 的角色扮演插件，支持角色卡生成/导入和多种图片生成接口。",
+    "usage": {
+      "prompt_tokens": 2893,
+      "completion_tokens": 1658,
+      "total_tokens": 4551,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1314
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2253
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "seamas0825-lab/dsh-youmind-plugin",
+  "analyzedAt": "2026-08-17T11:56:57.292Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/seamas0825-lab/dsh-youmind-plugin.git",
+      "evidence": "dsh plugin --profile web add github:seamas0825-lab/dsh-youmind-plugin#main"
+    },
+    "evaluationReport": {
+      "intro": "这个插件帮 DeepSeek Harness 接入 YouMind 服务。装上之后，你可以让智能体搜索你的个人 YouMind 知识库、查找 API、调用 API，或者通过 YouMind 搜索互联网。它注册了一个 youmind 技能和五个工具，用自然语言就能指挥它干活。",
+      "level": "ok",
+      "risks": "需要把 YouMind API Key 存到 ~/.dsh/.credentials.yaml 文件里；用的时候会连接 YouMind 服务器，把搜索请求发过去。另外，它的 youmind_call_api 工具理论上能执行发布、删除这类操作，所以最好只在信得过的环境里用。",
+      "postInstallNotes": "先到 https://youmind.com/settings/api-keys 创建 API Key，然后把它写进 ~/.dsh/.credentials.yaml（格式：YOUMIND_API_KEY: sk-ym-...），并执行 chmod 600 确保只有你能读。需要连自建端点的话，再设 YOUMIND_ENDPOINT 环境变量。",
+      "notes": "社区适配插件，不是 YouMind 官方发布；youmind_call_api 可能执行敏感操作，建议在受信任环境启用。"
+    },
+    "summaryZh": "为 DeepSeek Harness 接入 YouMind 搜索与 API 调用能力的插件。",
+    "usage": {
+      "prompt_tokens": 1774,
+      "completion_tokens": 2180,
+      "total_tokens": 3954,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1754
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1134
+    }
+  }
+}

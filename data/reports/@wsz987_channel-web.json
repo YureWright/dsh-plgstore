@@ -1,0 +1,37 @@
+{
+  "id": "@wsz987/channel-web",
+  "analyzedAt": "2026-08-17T11:11:57.514Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.client 字段，依赖 @deepseek-ai/cordis 核心包，README 中提供 dsh plugin add 安装命令（针对整个 bundle），符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wsz987/channel-web",
+      "evidence": "To install it standalone: pnpm add @wsz987/channel-web"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加一个网页版的「渠道」管理面板，在设置里能看到/配置渠道，支持二维码登录和状态显示。",
+      "level": "ok",
+      "risks": "它会在本地启动一个 HTTP 接口（仅回环地址可访问），并把渠道凭据写进 Harness 的凭据存储里，不会把秘密回显到前端。没发现明显风险。",
+      "postInstallNotes": "装好后需要从 Harness 的「设置 → 渠道」进入面板并配置渠道信息。",
+      "notes": "该插件是 @wsz987/dsh-channels 集合的一部分，建议通过 `npx @deepseek-ai/dsh plugin --profile web add -w @wsz987/dsh-channels@beta` 安装整个集合，单独安装时可能缺少渠道控制等配套依赖。"
+    },
+    "summaryZh": "DSH 的 Web 端渠道管理插件，在设置里提供二维码登录和渠道配置面板。",
+    "usage": {
+      "prompt_tokens": 1852,
+      "completion_tokens": 1965,
+      "total_tokens": 3817,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1606
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1212
+    }
+  }
+}

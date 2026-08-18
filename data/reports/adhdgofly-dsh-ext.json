@@ -1,0 +1,37 @@
+{
+  "id": "adhdgofly-dsh-ext",
+  "analyzedAt": "2026-08-16T13:41:55.583Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-client-runtime，README 给出了 dsh plugin add 安装命令和 DSH 接口调用说明。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "adhdgofly-dsh-ext",
+      "evidence": "dsh plugin --profile web add adhdgofly-dsh-ext"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）的网页版界面加“词性高亮”的：它会把对话消息、交付内容等 Markdown 区域里的英文和中文词汇按词性染色——名词绿色、动词红色、形容词/副词紫色、其他灰色，帮助阅读时快速抓重点。它还在设置页里提供了开关、颜色风格、词性筛选等选项，也支持流式输出和代码块豁免，纯在浏览器里运行，不改 DSH 源码。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只操作 DSH 网页上的文字显示，用到的分词词典打包在插件里，不联网，设置存在浏览器本地（localStorage），不会上传任何数据。",
+      "postInstallNotes": "安装后需要重启 DSH 进程（Ctrl+C 后重新运行 npx @deepseek-ai/dsh web），然后刷新浏览器页面才能生效。",
+      "notes": "设置只保存在浏览器 localStorage，跨浏览器/设备不会同步，这是作者提到的已知限制。"
+    },
+    "summaryZh": "为 DSH Web 界面提供英文和中文词性高亮（名词绿、动词红、形副紫、其他灰）的纯客户端插件，支持筛选、主题适配和流式兼容。",
+    "usage": {
+      "prompt_tokens": 5196,
+      "completion_tokens": 711,
+      "total_tokens": 5907,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 281
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4556
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "xiaoxianyu-office/dsh-skills-manager",
+  "analyzedAt": "2026-08-17T13:10:57.526Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并注入 @deepseek-ai/dsh-client-runtime 等 DSH 核心运行时；README 也给出了 dsh plugin add 安装命令，确实是 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:xiaoxianyu-office/dsh-skills-manager#v0.1.2",
+      "evidence": "dsh plugin --profile web add github:xiaoxianyu-office/dsh-skills-manager#v0.1.2"
+    },
+    "evaluationReport": {
+      "intro": "这个插件在 DSH 的设置页里加了一个「Skills 管理器」入口，能分类查看系统自带和用户自己的技能。系统技能只能看，用户技能可以开关、编辑、新建和删除，改完重启也不失效，方便你管理自己给 DSH 配的能力。",
+      "level": "ok",
+      "risks": "它会读取并修改你电脑上 ~/.dsh/skills 目录里的技能文件，比如删掉或改掉你自己写的技能。另外它开了一个本地接口 /skmg，虽然作者说只允许本机访问，但如果你把端口暴露到局域网或公网，别人可能能操作你的技能文件。",
+      "postInstallNotes": "安装后需要重启 DSH 才会生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 设置页的 Skills 管理器，让你可视化地开关、编辑、新建和删除用户技能。",
+    "usage": {
+      "prompt_tokens": 1552,
+      "completion_tokens": 980,
+      "total_tokens": 2532,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 608
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 912
+    }
+  }
+}

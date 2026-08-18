@@ -1,0 +1,37 @@
+{
+  "id": "LingLambda/dsh-undo",
+  "analyzedAt": "2026-08-17T12:06:03.048Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，且 README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-undo",
+      "evidence": "dsh plugin --profile demo add dsh-undo"
+    },
+    "evaluationReport": {
+      "intro": "这插件给 DeepSeek Harness 增加“撤销/重做”功能，可以回滚对话上下文和工具改过的文件。比如你让 AI 改了几个文件，觉得不对，可以用 /undo 撤销，/redo 恢复，网页界面上也会有撤销按钮。不过要特别注意，这是个预览版，作者明确说现在还不能用，得等配套的 Harness 版本出来。",
+      "level": "warning",
+      "risks": "它会在你的用户主目录下（~/.dsh/dsh-undo/snapshots/）建一个隐藏的 Git 目录，用来存工作区文件的快照，也就是说你项目里的文件内容可能被复制到那个地方。它不会改动仓库本身的 Git 记录，也不会连外部服务器。",
+      "postInstallNotes": "需要等待匹配的 DeepSeek Harness 版本发布（支持 durable surface/rewind 和 surface/restore 事件以及 conversation.chat.user-actions 插槽）；在满足之前，/undo 命令会提示升级。从 git 安装时，还要先在 profile 的 pnpm-workspace.yaml 里授权安装时的构建脚本。",
+      "notes": "当前版本 0.3.0-preview.1 明确是面向未来的预览版，和任何已发布的 Harness 版本都不兼容，装上也可能用不了。请关注 https://github.com/deepseek-ai/deepseek-harness/discussions/467/"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供持久化多级撤销/重做的插件（预览版，需等待匹配的 Harness 版本才能使用）",
+    "usage": {
+      "prompt_tokens": 3020,
+      "completion_tokens": 1595,
+      "total_tokens": 4615,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1117
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2380
+    }
+  }
+}

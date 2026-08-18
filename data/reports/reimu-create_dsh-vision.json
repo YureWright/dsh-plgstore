@@ -1,0 +1,29 @@
+{
+  "id": "reimu-create/dsh-vision",
+  "analyzedAt": "2026-08-17T12:12:02.251Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/dsh-llm 等核心包，README 给出 dsh plugin 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/reimu-create/dsh-vision.git",
+      "evidence": "dsh plugin --profile web add link:D:/dsh-plugins/dsh-vision"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让纯文本模型（比如 DeepSeek-V4）也能看懂图片：用户发图片时，它会自动调用另一个视觉模型把图片变成文字描述，再喂给主模型，相当于给主模型配上眼睛。原图会保留在聊天记录里，模型看到的只是描述。另外还提供了一个 see_image 工具，可以手动追问图片细节。",
+      "level": "ok",
+      "risks": "使用时会把你发的图片发送给配置的第三方视觉模型服务（如 minimax-m3），图片内容会被该服务处理，所以要注意选择可信的模型提供商；图片描述会写进会话日志，不过只对模型可见，是人类转录之外的附加信息。",
+      "postInstallNotes": "需要在 settings.yaml 或通过 uiopt 界面配置视觉模型路由（provider/model），并确保 profile 里已经配置好 llm-pi-ai 的 key；没有 uiopt 的话只能手动改文件配置。",
+      "notes": "依赖 dsh 预览版 API（rc 版本），后续升级可能需要同步更新；建议搭配 uiopt 项目使用以获得图形化配置界面。"
+    },
+    "summaryZh": "为纯文本模型自动配眼睛：图片消息通过视觉模型转为文字描述后再交给主模型，附带 see_image 追问工具，原图保留在人类转录中。",
+    "usage": {
+      "prompt_tokens": 4595,
+      "completion_tokens": 2728,
+      "total_tokens": 7323
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-routing-suite",
+  "analyzedAt": "2026-08-16T13:38:46.438Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle、dsh.client 等字段，且 README 给出了 dsh plugin 安装命令，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-routing-suite",
+      "evidence": "README 中给出的安装命令为 `dsh plugin --profile web add dsh-routing-suite`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加了一个“智能路由模式”。安装后，你可以在模式菜单里选它，插件会根据你提出的第一个任务自动判断接下来更该先检查（比如修复、诊断、审查）还是直接动手做（比如创建、实现），也有手动指定“检查优先”或“直接执行”的选项。插件不额外请求大模型、不读写文件、不执行命令、不联网，只是调整系统提示词来影响 AI 的工作风格。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件声明不读写文件、不执行命令、不管理包、不联网；安装时会在 DSH 的用户预设目录里创建预设文件（桌面安装自动完成），并提供一个只读设置页面，属于正常插件行为。",
+      "postInstallNotes": "安装后重启 Harness，然后在模式菜单中选择“智能路由模式”。如果用的是命令行（CLI）安装，还需要手动把包内的 preset/routing-suite 目录复制到 ${DSH_HOME:-$HOME/.dsh}/.agent-presets/routing-suite，然后重启。",
+      "notes": "社区项目，非 DeepSeek 官方出品；要求 Node.js >= 22.19.0。"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加一个轻量智能路由模式，根据首个任务自动选择检查优先或直接执行策略，不额外调用模型、不碰文件系统。",
+    "usage": {
+      "prompt_tokens": 2544,
+      "completion_tokens": 2112,
+      "total_tokens": 4656,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1663
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1904
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "V1ki/dsh-plugin-subscriptions",
+  "analyzedAt": "2026-08-17T13:12:05.317Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis 与多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-subscriptions",
+      "evidence": "dsh plugin --profile web add dsh-plugin-subscriptions"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你在 DeepSeek Harness 里直接使用自己已有的 ChatGPT（Codex）、Claude 或 Grok（X Premium）付费订阅账号来当 AI 模型用，不需要另外申请 API 密钥。只要在网页设置里点一下登录授权，插件就会帮你管理登录状态和令牌。登录后，这些订阅的模型就会出现在会话的模型选择器里；它还会自动同步模型列表和使用量，并提供一些额外小工具，比如用 ChatGPT 生成图片、用 Grok 搜索 X 上的内容。",
+      "level": "ok",
+      "risks": "它需要你授权登录 ChatGPT、Claude 或 Grok 账号（本质上是把你的订阅账号使用权交给它），然后会把登录凭证保存在你电脑的 ~/.dsh/plugins/subscriptions/auth.json（权限 0600，只有你能读）。插件会连接这些服务的官方接口来获取模型列表和使用量，也会调用模型。如果插件被篡改，你的订阅账号凭证有泄露风险；另外用 ChatGPT 生成的图片会保存到 ~/.dsh/plugins/subscriptions/images/。建议只在可信设备上使用，并定期关注插件更新。",
+      "postInstallNotes": "安装后启动 `dsh web`，在设置页的 Subscriptions 部分为需要的服务（ChatGPT/Claude/Grok）完成 OAuth 登录。可按需在插件配置中修改 providers 列表或模型覆盖。",
+      "notes": "建议优先使用 npm 安装；从 GitHub 源码安装时，devDependencies 中有指向开发者本地的路径，可能需要手动调整后才能构建。此外，这是第三方个人维护的插件，非 DeepSeek 官方出品。"
+    },
+    "summaryZh": "将 ChatGPT、Claude 和 Grok 订阅账号接入 DeepSeek Harness 作为模型来源，无需 API 密钥，通过网页 OAuth 登录。",
+    "usage": {
+      "prompt_tokens": 3652,
+      "completion_tokens": 5277,
+      "total_tokens": 8929,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4742
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3012
+    }
+  }
+}

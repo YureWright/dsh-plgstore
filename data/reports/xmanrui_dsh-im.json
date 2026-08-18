@@ -1,0 +1,37 @@
+{
+  "id": "xmanrui/dsh-im",
+  "analyzedAt": "2026-08-17T11:21:28.231Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 且 client.inject 引用 @deepseek-ai/dsh-client-*，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@xmanrui/dsh-im",
+      "evidence": "dsh plugin --profile web add @xmanrui/dsh-im"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你把飞书、微信、钉钉、企业微信、QQ、Telegram、Discord 和 WhatsApp 的机器人账号接入 DeepSeek Harness。装好后，你可以通过聊天软件给机器人发消息，它会调用 Harness 的能力回复你。支持扫码或手动填凭据来绑定账号，所有渠道在一个设置页面里统一管理。",
+      "level": "ok",
+      "risks": "它会把各个聊天机器人的密钥或 Token 保存在你电脑上（比如 WhatsApp 状态存在 ~/.dsh/integrations/dsh-whatsapp/auth），并通过这些凭据连接对应 IM 服务。默认只有本机能操作，但如果你把 Harness 的 Web 服务开放到局域网，别人也可能看到和操作这些机器人。没发现其他明显风险。",
+      "postInstallNotes": "重启 dsh web，然后在“设置 → 插件 → IM机器人”里按渠道扫码或填写凭据来接入机器人。",
+      "notes": "无"
+    },
+    "summaryZh": "一个把飞书、微信、钉钉、企业微信、QQ、Telegram、Discord、WhatsApp 等 IM 机器人接入 DeepSeek Harness 的插件，支持扫码或凭据接入，统一管理。",
+    "usage": {
+      "prompt_tokens": 4124,
+      "completion_tokens": 2392,
+      "total_tokens": 6516,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1988
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3484
+    }
+  }
+}

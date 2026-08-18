@@ -1,0 +1,37 @@
+{
+  "id": "zuorn/Tydora",
+  "analyzedAt": "2026-08-17T11:16:01.603Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.8,
+      "reason": "虽有 dsh.bundle 配置，但该仓库实际是一个基于 Tauri 的独立 Markdown 桌面应用，README 未提供 DSH 插件的安装方式，也未依赖 DSH 核心包"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "Download and install Tydora from the Release page."
+    },
+    "evaluationReport": {
+      "intro": "Tydora 是一个 Markdown 写作和知识管理桌面软件，类似 Typora 和 Obsidian 的结合体。它让你直接所见即所得地写 Markdown，还能在笔记之间画出关系图、一键把文档变成思维导图，并把整个知识库发布成静态网站。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的 Markdown 文件，使用剪贴板功能，并可能通过自动更新连接 GitHub 检查新版本。没发现会上传隐私数据的行为。",
+      "postInstallNotes": "无",
+      "notes": "经评估可能并非 DSH 插件：它是一款独立桌面应用（Tauri + React），不是可通过 dsh plugin add 安装的插件。package.json 虽带有 dsh.bundle 配置，但未依赖 DSH 核心包，README 也未提供 DSH 安装方式。"
+    },
+    "summaryZh": "Tydora 是一个结合 Typora 和 Obsidian 体验的桌面 Markdown 编辑器，支持关系图、思维导图和发布静态网站。",
+    "usage": {
+      "prompt_tokens": 3545,
+      "completion_tokens": 2897,
+      "total_tokens": 6442,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2541
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2905
+    }
+  }
+}

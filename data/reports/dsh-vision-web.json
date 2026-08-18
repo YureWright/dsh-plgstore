@@ -1,0 +1,37 @@
+{
+  "id": "dsh-vision-web",
+  "analyzedAt": "2026-08-16T13:33:36.568Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出了 dsh plugin add 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vision-web",
+      "evidence": "dsh plugin --profile web add dsh-vision-web"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek 能“看见”图片。你用文字问它，它也回答不了图片，但装了这个之后，你可以直接粘贴图片，它会用豆包网页版（默认，免费，不用 API key）或其他服务（如 Gemini、Antigravity）识别图片内容，再把结果给 DeepSeek，让它基于图片信息回答你。支持 OCR 文字识别、区域识别、对比图片、自动缓存等。",
+      "level": "caution",
+      "risks": "它会在你电脑上启动一个后台桥接服务（监听本地 9340 端口），并通过 Chrome 远程调试接口驱动你的浏览器，自动操作豆包网页。这意味着你的浏览器登录状态、豆包对话内容可能被它读取/操作；图片会发送到豆包或你选的第三方识别服务（如 Gemini、Antigravity），这些服务可能保存图片。如果你配置了 API key（如 Gemini key），它会存在本地配置里。",
+      "postInstallNotes": "装完后还要：1）在 Windows 上运行 node bridge.mjs 启动桥接；2）用带远程调试的 Chrome 登录 doubao.com；3）重启 dsh web；如果不用豆包，需要配置 Antigravity 或 Gemini 的相应参数（workspace、API key 等）。",
+      "notes": "README 强调默认零成本，但需要手动运行桥接脚本，且依赖第三方网页自动化，可能受页面变动影响。"
+    },
+    "summaryZh": "给 DeepSeek 装上“眼睛”：粘贴图片后自动调用豆包/Gemini 等识图服务，让纯文本模型能看懂图片并回答问题。",
+    "usage": {
+      "prompt_tokens": 3872,
+      "completion_tokens": 2245,
+      "total_tokens": 6117,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1767
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3232
+    }
+  }
+}

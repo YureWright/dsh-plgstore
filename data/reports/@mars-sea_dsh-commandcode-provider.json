@@ -1,0 +1,37 @@
+{
+  "id": "@mars-sea/dsh-commandcode-provider",
+  "analyzedAt": "2026-08-16T13:44:01.663Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@mars-sea/dsh-commandcode-provider",
+      "evidence": "The plugin is published to the npm registry as **`@mars-sea/dsh-commandcode-provider`**"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能用上 Command Code 的模型。装好后，你在设置里会多一个'Command Code'页面，填上自己的 API key，就能在模型选择器里看到 Command Code 提供的各种模型（比如 Claude、GPT 等）。它还会在模型列表里标出每个模型需要的套餐等级、有没有折扣、支不支持图片输入等信息，方便你选择。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 Command Code 的登录信息（~/.commandcode/auth.json，如果你之前用官方 CLI 登过的话），还会把模型列表缓存到 ~/.commandcode/models-cache.json。你填的 API key 会通过 DSH 的凭据服务保存。这些都是它正常工作需要的，没发现其他明显的隐私或安全风险。",
+      "postInstallNotes": "装完后，你需要有自己的 Command Code 账号和 API key。可以装官方 CLI 并执行 cmd login（登录后插件自动读取），或者去 Command Code 官网创建 API key，然后在 DSH 的'设置 → Command Code'页面里填进去；也可以设置环境变量 COMMANDCODE_API_KEY。",
+      "notes": "这是一个社区非官方插件，需要遵守 Command Code 的服务条款。"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加 Command Code 模型供应商的社区插件，支持在设置页配置 API key 并在模型选择器中使用 Command Code 的模型。",
+    "usage": {
+      "prompt_tokens": 4496,
+      "completion_tokens": 1950,
+      "total_tokens": 6446,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1490
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3856
+    }
+  }
+}

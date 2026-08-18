@@ -1,0 +1,37 @@
+{
+  "id": "@opendsh/dsh-plugin-setting-mcp",
+  "analyzedAt": "2026-08-17T11:07:38.367Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@opendsh/dsh-plugin-setting-mcp",
+      "evidence": "dsh plugin --profile web add @opendsh/dsh-plugin-setting-mcp"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加一个设置面板，你可以在里面直观地管理 MCP 服务器：查看所有已配置的服务器及其连接状态，添加新的、编辑现有的、删除或启用/禁用，改完点保存就立即生效，不用重启 DSH。相当于把原本要手改配置文件的操作放到了图形界面里。",
+      "level": "ok",
+      "risks": "它会读写 DSH 的配置文件 cordis.patch.yml，建议你提前确认配置文件里的内容（比如环境变量 token）不会被别人看到。除此之外，它只是本地管理 MCP 服务器，没有发现上传数据或连接外部服务器的行为。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 设置面板插件，让你优雅地管理 MCP 服务器（查看/添加/编辑/删除/启停），保存即热重载。",
+    "usage": {
+      "prompt_tokens": 3067,
+      "completion_tokens": 1707,
+      "total_tokens": 4774,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1374
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2427
+    }
+  }
+}

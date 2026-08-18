@@ -1,0 +1,37 @@
+{
+  "id": "CocoSgt/dsh-skills",
+  "analyzedAt": "2026-08-17T11:37:32.743Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，依赖 @deepseek-ai/cordis，且 README 给出了 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-skills",
+      "evidence": "Install from npm:"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫 dsh-skills，它能把分散在你电脑各处的 AI 技能（比如 Claude Code 的技能、项目目录里的技能等）汇总到一个全局技能库里，统一放在 ~/.dsh/skills 文件夹下。装好后，在 DeepSeek Harness 的输入框里按斜杠 / 就能看到这些技能，还能在设置里多出一个“Skills”页面，方便你查看、编辑和导入技能。简单说，就是帮你把各种技能集中收纳、统一管理。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的 ~/.dsh/skills 文件夹，创建符号链接或复制文件到那里，并保存一个状态记录文件。所有操作都在本地，不会把数据发给外部服务器。要注意的是：如果以“链接”方式导入技能，那么编辑技能会直接改动原始文件——这属于它的设计功能，但用的时候心里有数就好。没发现明显风险。",
+      "postInstallNotes": "装完后需要重启 dsh web 才能生效。如果你是自建 profile，要确保它的 package.json 里在 dsh.profile.bundles 中包含了 @deepseek-ai/dsh-base 和 @deepseek-ai/dsh-web-app，否则启动可能卡住。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-skills 是一个把 Claude Code、项目目录等散落的技能统一收进 ~/.dsh/skills 全局技能库的 DSH 插件，支持链接/复制导入和斜杠菜单调用。",
+    "usage": {
+      "prompt_tokens": 3415,
+      "completion_tokens": 1584,
+      "total_tokens": 4999,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1121
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2775
+    }
+  }
+}

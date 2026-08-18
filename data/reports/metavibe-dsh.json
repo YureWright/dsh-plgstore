@@ -1,0 +1,37 @@
+{
+  "id": "metavibe-dsh",
+  "analyzedAt": "2026-08-16T13:43:43.793Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle，并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools 核心包，README 给出了 dsh plugin add 安装方式，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "metavibe-dsh",
+      "evidence": "npm publish → `dsh plugin add metavibe-dsh` → mount"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的插件，它像一个‘架构顾问’，内置了黄金架构地图和最佳实践目录。你问它‘该用什么架构’或‘CQRS 怎么组织’，它会给出建议和蓝图，但不会改动你的项目文件，只读、安全。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读，不扫描工作区，不写文件，不执行代码生成。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "Metavibe 作为 DeepSeek Harness 原生插件，提供只读的架构建议和最佳实践目录。",
+    "usage": {
+      "prompt_tokens": 3672,
+      "completion_tokens": 650,
+      "total_tokens": 4322,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 345
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3032
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-task-board",
+  "analyzedAt": "2026-08-16T14:51:15.092Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 描述通过 DSH 会话真实执行任务，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-task-board",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页界面加了一个“任务看板”。装好后，左侧边栏会多一个“任务看板”的入口，点进去中间区域会变成一块多列看板（比如待规划、待办、进行中、已完成、已失败）。你可以创建任务、给任务安排执行时间（支持 cron 定时）、选择在哪个工作空间用哪种权限去执行。插件会通过 DSH 自己的会话机制真的去运行这些任务（调用 agent），并把运行状态实时写回到卡片上。任务数据保存在浏览器本地，刷新页面也不丢。",
+      "level": "ok",
+      "risks": "它会改动 DSH 网页界面（侧边栏和中间区域），并在浏览器 localStorage 里保存你的任务数据（只存在本机）。任务执行时会真实调用 DSH 的 agent，也就是说你创建的任务会被实际运行，可能会消耗计算资源或访问文件、网络，具体取决于你给任务选的工作空间和权限。没有发现它会偷偷把数据传到外部服务器。",
+      "postInstallNotes": "按 README 说明挂载：需要在 ~/.dsh/cordis.patch.yml 里添加插件配置，并将插件安装到 profile 的 node_modules 下；安装后可能需要重启 DSH 让系统提示注入生效；可用内置脚本 dsh-task-board.js 进行挂载/卸载/状态查看。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页界面添加一个可热插拔的任务看板，支持真实执行、定时任务和状态回写。",
+    "usage": {
+      "prompt_tokens": 3658,
+      "completion_tokens": 2606,
+      "total_tokens": 6264,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2130
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3018
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "acefun29/dsh-file-mount",
+  "analyzedAt": "2026-08-17T12:12:54.815Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:acefun29/dsh-file-mount",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add github:acefun29/dsh-file-mount"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，它帮你管理 AI 读取文件的方式。以前每次让 AI 读文件，它都要看整个文件，很费 token。这个插件会记录 AI 已经读过哪些部分，下次只把新增或改动的部分发给它，节省大量 token 和费用。它还有一个可视化的仪表盘，显示每个文件的'新鲜度'和节省了多少 token。简单说，就是让 AI 读文件更省、更快。",
+      "level": "ok",
+      "risks": "插件会读取和缓存文件内容（行级指纹），记录每个文件哪些行已经发给 AI；这些信息保存在本地。如果配置了 statsFile，会把跨会话的统计写到你指定的 JSON 文件。它不会把数据传输到外部。风险较低，但请注意不要让 statsFile 指向敏感位置，避免其他本地程序读到统计信息。",
+      "postInstallNotes": "无需额外配置，默认即启用。想让插件少管某些文件，可以在 DSH 配置里添加 file-mount 段并设置 excludeGlobs 或 maxManagedBytes。如果通过 GitHub 安装，记得在 profile 的 pnpm-workspace.yaml 里授权该包的 prepare 构建（README 安装说明中有提到）。",
+      "notes": "依赖 DSH 0.1.0-rc.5 及以上版本；升级 DSH 后建议重新运行插件测试以确保兼容性。另外项目只有 3 stars，属于个人/小项目，功能较复杂，建议先在小范围试用。"
+    },
+    "summaryZh": "DeepSeek Harness 文件增量挂载与去重插件：避免重复读取文件内容，按行级差异只补新改动，并提供可视化的挂载文件仪表盘。",
+    "usage": {
+      "prompt_tokens": 4388,
+      "completion_tokens": 3632,
+      "total_tokens": 8020,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3106
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3748
+    }
+  }
+}

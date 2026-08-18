@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-skin-trading",
+  "analyzedAt": "2026-08-17T11:08:49.352Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-client-connection，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-skin-trading",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-skin-trading"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页界面用的炒股皮肤，让界面看起来像专业的交易终端。它会显示实时滚动行情（A股、港股、美股、加密货币、外汇）、市场开闭市状态栏、K线图标，并自动切换亮/暗色主题。行情数据来自腾讯、币安、欧洲央行等公开接口；如果额外安装了自选股或券商插件，还能读取你自己的自选列表和券商快照，纯展示，不发送模型请求，不写设置，只读数据。",
+      "level": "ok",
+      "risks": "主要风险是它会在你的浏览器里直接访问腾讯、币安等外部公开行情接口，这些网站可能会记录你的 IP 和所查询的股票代码，但不会读取你的交易账号或文件。另外它读取工作区数量（只读计数），不会修改你的数据。",
+      "postInstallNotes": "安装后需要执行 `dsh-skin use trading` 来激活皮肤；如果使用 git 方式安装，可能需要在 pnpm 配置中允许构建脚本；另外要能访问腾讯/币安等公开接口才能显示实时行情，否则会显示 `--`。",
+      "notes": "README 提到更推荐安装全家桶包 `@linxin666/dsh-skins`；该皮肤不会生成模型请求，仅作界面展示。"
+    },
+    "summaryZh": "一个 DSH 网页界面的实时行情炒股皮肤：带滚动报价、市场状态栏、K线图标，数据源可降级，纯前端只读展示。",
+    "usage": {
+      "prompt_tokens": 2526,
+      "completion_tokens": 1479,
+      "total_tokens": 4005,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 998
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1886
+    }
+  }
+}

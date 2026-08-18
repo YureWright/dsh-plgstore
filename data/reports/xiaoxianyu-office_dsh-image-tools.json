@@ -1,0 +1,37 @@
+{
+  "id": "xiaoxianyu-office/dsh-image-tools",
+  "analyzedAt": "2026-08-17T13:08:40.929Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 依赖 @deepseek-ai/cordis / @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/xiaoxianyu-office/dsh-image-tools.git",
+      "evidence": "安装（**始终使用最新发布 tag**，见仓库 Releases；示例为当前最新 v0.3.7）：\n\n```bash\ndsh plugin --profile web add -w github:xiaoxianyu-office/dsh-image-tools#v0.3.7\n```"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给只有文字能力的 AI 模型（比如 deepseek-v4）补上“看图片”的本事。装上之后，你在聊天里发图片，它会先把图片存到电脑的文件夹里，然后自动切换成使用另一个专门的识图模型来帮你分析图片内容，你也可以直接让它描述图片或者回答关于图片的问题。它还自带一个首次安装向导和故障自检面板，帮你检查配置、测试识图是否正常。",
+      "level": "ok",
+      "risks": "它会读取你的 DSH 配置文件（~/.dsh/settings.yaml、~/.dsh/.credentials.yaml）来检查路由和 API Key，会创建状态文件 ~/.dsh/image-tools-state.json，并把聊天中上传的图片保存到工作区的 uploads/ 目录。当你使用识图功能时，图片会通过网络发送到你配置的第三方视觉模型服务（比如 MiMo 模型），所以该服务商可能会看到图片内容。除此之外没有发现其他明显风险。",
+      "postInstallNotes": "装完后还需要：1) 在 ~/.dsh/settings.yaml 里配置模型路由和 image 声明（按 README 前置条件操作）；2) 在 ~/.dsh/.credentials.yaml 里设置 XIAOMI_API_KEY；3) 重启 dsh web 服务；4) 升级时务必切换最新的发布 tag，不要用 update。",
+      "notes": "无"
+    },
+    "summaryZh": "让纯文本模型拥有识图能力的 DSH 插件：自动落盘图片、动态禁用 read_image、提供对话式 image_recognize 工具，并带安装向导和故障自检。",
+    "usage": {
+      "prompt_tokens": 2776,
+      "completion_tokens": 2319,
+      "total_tokens": 5095,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1756
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2136
+    }
+  }
+}

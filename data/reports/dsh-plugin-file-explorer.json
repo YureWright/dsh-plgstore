@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-file-explorer",
+  "analyzedAt": "2026-08-16T13:45:31.826Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client.inject 和 @deepseek-ai/dsh-client-* 依赖，README 提供了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-file-explorer",
+      "evidence": "dsh plugin --profile web add dsh-plugin-file-explorer"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的文件浏览器插件，长得像 VS Code 的资源管理器。你可以在网页里浏览工作区文件，打开多个标签页编辑，支持 Markdown 阅读/编辑/分屏、文件拖动移动、快速搜索（Ctrl+P）、新建/重命名/删除文件等。它让你的 DSH 网页变成一个轻量的代码编辑器。",
+      "level": "ok",
+      "risks": "这个插件会读取和修改你电脑上 DSH 工作区里的文件（比如新建、重命名、删除、移动文件）。它运行在你本地的 DSH 服务里，操作范围通常限于你配置的工作区目录，但如果你在公共电脑上使用，别人可能通过网页界面看到或修改你的文件。",
+      "postInstallNotes": "装完还需要在配置文件 $DSH_HOME/profiles/web/cordis.patch.yml 里注册插件（按 README 添加 - id: file-explorer，name: 'dsh-plugin-file-explorer'），然后完全重启 dsh web 进程，并硬刷新浏览器页面（Ctrl+Shift+R）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页端提供 VS Code 风格的文件树、可编辑标签页、Markdown 阅读和快速搜索插件。",
+    "usage": {
+      "prompt_tokens": 3133,
+      "completion_tokens": 718,
+      "total_tokens": 3851,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 300
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2493
+    }
+  }
+}

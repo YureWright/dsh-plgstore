@@ -1,0 +1,37 @@
+{
+  "id": "HuanLinOTO/dsh-plugin-auto-blame",
+  "analyzedAt": "2026-08-17T11:41:16.018Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-auto-blame",
+      "evidence": "dsh plugin --profile web add @huanlin/dsh-plugin-auto-blame"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 AI 回复完一轮对话后，把最近几条消息发给另一个大模型，让它生成三条“毒舌”风格的跟进建议，显示在输入框上方，你点一下就能直接发送。适合喜欢幽默、犀利吐槽的用户，让对话更有趣。",
+      "level": "ok",
+      "risks": "它会将最近的几条对话内容发送给大模型服务商用于生成建议，这部分消息会经过第三方服务器；除此之外没发现明显隐私或安全风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 并硬刷新浏览器（Ctrl+Shift+R）；同时确保 DSH 已配置可用的 LLM 服务。",
+      "notes": "无"
+    },
+    "summaryZh": "自动在每轮对话后生成三条毒舌跟进建议，点击即可发送的小插件。",
+    "usage": {
+      "prompt_tokens": 3172,
+      "completion_tokens": 1817,
+      "total_tokens": 4989,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1482
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2532
+    }
+  }
+}

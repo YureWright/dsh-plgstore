@@ -1,0 +1,37 @@
+{
+  "id": "@liustack/pptfast",
+  "analyzedAt": "2026-08-16T13:21:59.355Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 包含 dsh.bundle 字段且 main 指向 ./dsh/index.js，README 明确说明它是 DSH 原生插件并给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@liustack/pptfast@0.19.2",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add @liustack/pptfast@0.19.2"
+    },
+    "evaluationReport": {
+      "intro": "pptfats 是一个给 AI 用的造 PPT 工具。你只要告诉 AI 要讲哪些内容，它就会自动排版、配色、生成一个能直接用 PowerPoint 打开和编辑的 .pptx 文件。它完全在本地运行，不需要联网、不需要注册账号，也不需要 API key。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在本地读写文件，不会主动联网，也不会碰隐私文件。",
+      "postInstallNotes": "需要 Node.js 22.19+ 或 Bun 环境。装完后无需额外配置，直接用就行。",
+      "notes": "无"
+    },
+    "summaryZh": "pptfast 是一个本地运行的 AI 幻灯片生成插件，能把你的内容变成可编辑的 PPTX 文件。",
+    "usage": {
+      "prompt_tokens": 3719,
+      "completion_tokens": 721,
+      "total_tokens": 4440,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 399
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3079
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "zerob13/dsh-better-markdown",
+  "analyzedAt": "2026-08-17T11:54:49.615Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，且 README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-better-markdown",
+      "evidence": "dsh plugin --profile web add dsh-better-markdown"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是用来美化 DeepSeek Harness 聊天界面里 AI 回答的显示效果的。它把默认的 Markdown 渲染换成了一种更流畅、支持流式输出的方案，让 AI 在打字过程中就能实时显示格式（比如粗体、代码块、表格、数学公式和图表），并且不会在消息完成后突然切换样式。它还支持 Mermaid 图表和 KaTeX 数学公式。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会把 HTML 转义，不直接注入网页；链接和图片也遵循 Harness 的安全策略。唯一值得注意的是它会打包较大的 Mermaid 和代码高亮库，可能会占用一点内存和网络资源，但这属于正常性能取舍。",
+      "postInstallNotes": "无。安装后按 README 说明，可能需要运行 `dsh --profile web --dump-config` 确认配置，然后启动 Web 即可生效。如果从 Git 安装，需要允许构建脚本。",
+      "notes": "无"
+    },
+    "summaryZh": "一个让 DeepSeek Harness 聊天界面显示更流畅、支持丰富 Markdown（含 Mermaid 图表和数学公式）的插件。",
+    "usage": {
+      "prompt_tokens": 4323,
+      "completion_tokens": 544,
+      "total_tokens": 4867,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 149
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3683
+    }
+  }
+}

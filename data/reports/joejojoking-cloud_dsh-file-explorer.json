@@ -1,0 +1,37 @@
+{
+  "id": "joejojoking-cloud/dsh-file-explorer",
+  "analyzedAt": "2026-08-17T11:21:46.091Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，确为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-file-explorer",
+      "evidence": "Install: `dsh plugin --profile web add dsh-file-explorer`."
+    },
+    "evaluationReport": {
+      "intro": "这是一个文件管理器插件，装在 DeepSeek Harness 对话界面里，会在右侧打开一个可拖宽的文件树面板。你可以浏览整个工作区的文件，点击查看内容，支持 Markdown 渲染和多种代码的语法高亮；也可以直接在面板里编辑文件并保存，还能一键在 VS Code 中打开。",
+      "level": "ok",
+      "risks": "它需要访问你的工作区文件才能展示和编辑，所以会读取文件内容；如果你使用编辑保存，会修改磁盘上的文件。它还会在本地启动一个仅本机访问的小服务来处理文件操作。目前没发现它会向外部发送你的数据。",
+      "postInstallNotes": "安装后需重启 Harness 生效；如要用「在 VS Code 中打开」功能，需本机安装 VS Code。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加右侧可调宽度的文件树面板，支持预览、编辑和 VS Code 打开。",
+    "usage": {
+      "prompt_tokens": 1839,
+      "completion_tokens": 2018,
+      "total_tokens": 3857,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1666
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1199
+    }
+  }
+}

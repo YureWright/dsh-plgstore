@@ -1,0 +1,37 @@
+{
+  "id": "design-playbook",
+  "analyzedAt": "2026-08-16T13:22:49.436Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle，且包含 dsh-plugin 关键词，是符合 DSH 插件结构的包。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "design-playbook",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 AI 编程助手（比如 Claude Code、Codex）用的设计工具包。它定义了一套流程，让 AI 能根据你的需求生成产品界面（UI），还能检查生成结果是否符合规范。它把设计拆成声明（规格、组件、模板等）和契约（技能、评估器），方便控制生成质量和验收。",
+      "level": "ok",
+      "risks": "它会在你的项目目录里创建 .scratch 文件夹存放运行记录；可能会运行附带的 Python 脚本来检查环境；如果要启用预览/截图功能，需要额外安装 Playwright 和 Chromium（会下载浏览器）。它不会主动上传你的数据到外部服务器，但本地 MCP 服务会监听端口。",
+      "postInstallNotes": "安装后可能需要配置 MCP 服务器（用于预览和证据采集），并设置环境变量 DESIGN_PLAYBOOK_RUN_ROOT 指向运行目录；若启用证据采集，还需安装 Playwright 和 Chromium。",
+      "notes": "该插件同时支持 Claude Code/Codex/pi，DSH 支持通过 dsh.bundle 声明，但 README 未提供 DSH 安装命令，建议安装后查看包内文档。"
+    },
+    "summaryZh": "为 AI 编程助手提供产品 UI 设计输入输出流程的插件，通过声明和契约生成并评估界面。",
+    "usage": {
+      "prompt_tokens": 3676,
+      "completion_tokens": 2149,
+      "total_tokens": 5825,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1750
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3036
+    }
+  }
+}

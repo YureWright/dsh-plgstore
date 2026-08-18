@@ -1,0 +1,37 @@
+{
+  "id": "odai-dsh-plugin",
+  "analyzedAt": "2026-08-18T14:57:40.671Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/dsh 核心包，README 给出 dsh plugin add 安装命令，明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "odai-dsh-plugin",
+      "evidence": "dsh plugin --profile web add odai-dsh-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）助手用的“管家”插件。装上它之后，你同一个 DSH 配置文件里的所有助手都会统一按一套规则工作：它会自动判断任务该由哪个模型/助手处理、记住你明确说过的长期偏好、防止子任务乱改文件、在你表现出持续疲劳或情绪低落时主动问一句是否需要帮助，还能把一些重要决定和安全提醒单独存档。它自带一个本地长期记忆库，只记你明确要求记的东西，不会偷窥你的聊天内容。",
+      "level": "ok",
+      "risks": "它会在你电脑的 DSH 数据目录（$DSH_HOME）下新建 odai 文件夹，存放会话证据、长期记忆和安全连续性记录；这些文件都是本地的。它的记忆功能会读取你当前对话中的直接消息，自动识别你明确表达的偏好/决定并存入本地；虽然它声称会过滤敏感个人信息，但它自己提醒：不要指望靠它来给聊天记录脱敏，底层会话日志仍会保留你发过的内容。另外，如果你在聊天中流露自伤或危险信号，它可能触发一个安全提问，并在你明确授权下记录你提供的安全相关信息。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 DSH 进程（README 要求 Start a new DSH process after installation）。默认无需额外配置；如需调整长期记忆模式或安全连续性设置，可依照 README 在部署配置中修改。注意：DSH 插件管理器安装时需要系统 PATH 中有 pnpm。",
+      "notes": "该插件声明依赖 @deepseek-ai/dsh 0.1.0-rc.6 或 0.1.0-rc.7，请确认你的 DSH 版本匹配，否则可能无法加载。另外，README 提到旧版本升级时需要先停止 DSH 进程并运行 `npx odai-dsh-plugin repair-sessions --yes` 做兼容性修复；新安装用户不需要。若你不是 Plugin 用户而是 Agent 用户，应安装 odai-dsh-agent 而不是这个包。"
+    },
+    "summaryZh": "odai-dsh-plugin 是 DSH 的治理与路由插件，为整个 profile 统一提供任务路由、长期记忆、安全守护和数据保护规则。",
+    "usage": {
+      "prompt_tokens": 3422,
+      "completion_tokens": 3667,
+      "total_tokens": 7089,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3042
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2782
+    }
+  }
+}

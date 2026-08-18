@@ -1,0 +1,37 @@
+{
+  "id": "dsh-deepseek-vision",
+  "analyzedAt": "2026-08-18T14:54:48.424Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 包含 @deepseek-ai/cordis 等官方核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件的判定证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-deepseek-vision",
+      "evidence": "dsh plugin --profile web add dsh-deepseek-vision"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 增加视觉能力的。DeepSeek 的编程模型本来只能读文字，这个插件在中间加了一个“翻译官”：你在聊天窗口粘贴或拖入图片后，它会先用一个可配置的视觉语言模型（默认是阿里的 qwen3-vl-flash）把图片内容详细描述成文字，再把这段文字交给 DeepSeek 继续处理。这样 DeepSeek 就能“看懂”图片里的代码、报错、日志或截图了。它不修改 DeepSeek 官方代码，走官方插件机制安装，图片数据只会发到你自己的视觉模型端点（你自己的密钥），不会经过第三方中转。装完后可以在设置里换不同的视觉模型、填密钥、调描述提示词。",
+      "level": "ok",
+      "risks": "它要把粘贴的图片发送到你配置的视觉模型服务（默认是阿里云 DashScope，需要你自己的密钥），所以图片内容会离开电脑、发给那个服务。另外安装时会在本机用 pnpm 重建一次以适配你的 DSH 版本，属于正常安装流程。除此之外没发现明显风险。",
+      "postInstallNotes": "装完后重启一次 dsh web，在 Models 页选择“DeepSeek + Vision”作为 provider。然后到 设置 → 插件 → 插件配置 里填入 VL 模型的 API 密钥（默认读环境变量 QWEN_VL_API_KEY，也可以直接填在设置卡片里）；DeepSeek 的密钥沿用现有的 DEEPSEEK_API_KEY 或凭据。不填 VL 密钥的话图片描述功能会用不了。",
+      "notes": "无"
+    },
+    "summaryZh": "一个给 DeepSeek Harness 增加视觉能力的插件：粘贴图片时先用可配置的视觉语言模型（默认 Qwen-VL）把图片描述成文字，再让 DeepSeek 继续处理，相当于给纯文本模型装了一双眼睛。",
+    "usage": {
+      "prompt_tokens": 5702,
+      "completion_tokens": 2485,
+      "total_tokens": 8187,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1924
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5062
+    }
+  }
+}

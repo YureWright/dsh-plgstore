@@ -1,0 +1,37 @@
+{
+  "id": "dsh-persist",
+  "analyzedAt": "2026-08-16T13:44:56.307Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并 optional peer 依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-persist",
+      "evidence": "dsh plugin --profile web add dsh-persist   # 1. 安装"
+    },
+    "evaluationReport": {
+      "intro": "这是给 DeepSeek Harness（DSH）的 AI 助手用的“长期记忆”插件。默认情况下 DSH 的 AI 助手换一个对话就忘了之前聊过什么，这个插件把记忆存成电脑上的纯文本文件（放在 ~/.dsh-memory/ 文件夹里），每个对话有独立的笔记，你可以手动勾选要让 AI 记住哪些内容。它还支持项目记忆（同一工作目录的对话共享经验）、全局记忆，以及可选的“语义搜索”——配一个免费的 key 后，AI 可以按意思而不是关键词找记忆。装好之后，你直接跟 AI 说“记住这个”，它就会写下来。",
+      "level": "ok",
+      "risks": "它会在你电脑的用户目录下创建 ~/.dsh-memory/ 文件夹来存放记忆内容，这些文件人类可读，请留意里面会包含你让 AI 记住的隐私信息。默认情况下记忆管理页面只允许本机访问；如果你设置 DSH_MEMORY_ALLOW_REMOTE=1，同一网络里的其他人就可能看到这些记忆。另外，如果你配置了 SILICONFLOW_API_KEY 开启语义搜索，每条消息和记忆内容都会发给硅基流动（SiliconFlow）做向量化；如果使用 LLM 判断模式，消息也会发给模型提供商。介意的话可以不配置这些 key，功能会降级为关键词搜索。",
+      "postInstallNotes": "重启 DSH（dsh --profile web），然后打开对话，在顶部找到「记忆」tab，勾选要注入的记忆块即可使用。想用语义搜索的话，需要自己申请硅基流动的 key 并设置环境变量 SILICONFLOW_API_KEY（不设置也能用关键词搜索）。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 的 agent 装上持久化记忆：对话记忆、项目记忆、全局记忆和可选的语义检索，让 AI 换对话也不失忆。",
+    "usage": {
+      "prompt_tokens": 6011,
+      "completion_tokens": 2143,
+      "total_tokens": 8154,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1579
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5371
+    }
+  }
+}

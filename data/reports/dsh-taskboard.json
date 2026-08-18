@@ -1,0 +1,37 @@
+{
+  "id": "dsh-taskboard",
+  "analyzedAt": "2026-08-18T14:50:47.881Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle/client 配置、依赖 @deepseek-ai/cordis 与 dsh-* 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-taskboard",
+      "evidence": "dsh plugin --profile <name> add dsh-taskboard          # npm（推荐，预构建免授权）"
+    },
+    "evaluationReport": {
+      "intro": "在 DeepSeek Harness 里加一个可视化任务看板：你可以建任务卡、让 AI agent 认领执行、再验收。支持把任务挂到项目上、指定模型、手动或定时跑，还有验收清单、执行报告、git 隔离开发等功能，适合需要人和 AI 协作完成任务的场景。",
+      "level": "ok",
+      "risks": "它会在你的项目下创建/删除 git worktree 和分支，并执行 git 命令（用于隔离执行和合并）；任务数据和模板会保存在 DSH 主目录下；agent 执行任务时会按指示修改项目文件（这是你布置任务的目的，但请确保你了解给 agent 的权限）。未发现连接外部服务器或窃取隐私的迹象。",
+      "postInstallNotes": "无",
+      "notes": "依赖多个 @deepseek-ai/dsh-* 预发布（rc）包，可能随 DSH 核心更新而调整；git 隔离功能需要环境里有 git。"
+    },
+    "summaryZh": "在 DeepSeek Harness 中加入可视化任务看板，支持人与 AI 协作、定时执行、Git 隔离等。",
+    "usage": {
+      "prompt_tokens": 6051,
+      "completion_tokens": 2943,
+      "total_tokens": 8994,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2548
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5411
+    }
+  }
+}

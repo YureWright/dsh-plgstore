@@ -1,0 +1,37 @@
+{
+  "id": "BiBoyang/dsh-im-bridge",
+  "analyzedAt": "2026-08-17T13:20:52.065Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 与多个 dsh-* 核心包，README 给出了 dsh plugin 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/BiBoyang/dsh-im-bridge.git",
+      "evidence": "dsh plugin --profile web add <本仓库目录>"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在微信上指挥电脑上跑的 AI（DSH）。当 AI 有任务完成、出错或需要批准时，它会推送到你微信；你也可以在微信里给它发消息、批准或拒绝操作，相当于给 AI 加了个遥控器。目前支持微信，以后还可能支持钉钉、飞书等。",
+      "level": "caution",
+      "risks": "它会让你用微信扫码登录，登录信息会交给一个叫 iLink 的第三方服务，你的聊天内容和 AI 的回复也会经过这个服务转发。插件会在电脑上保存一些状态数据（比如消息去重表、缓冲），用来重启后恢复。如果白名单没配好，任何能给你发微信的人（比如第一个扫码的人）都可能控制你的 AI，所以要小心保管手机。",
+      "postInstallNotes": "启动 DSH 后，在日志里找到微信扫码链接，用手机扫码登录；默认第一个扫码的人自动成为白名单用户。如果你只想让特定的人控制，在配置里设置 allowedUserId。",
+      "notes": "依赖的 @deepseek-ai/dsh-* 包还是 rc 版本，插件本身也是 0.1.0，可能不稳定；消息通过第三方 iLink 通道传输，敏感任务请评估风险。"
+    },
+    "summaryZh": "DSH 的微信桥插件，让你离开电脑后也能用微信远程监控、批准和指挥 AI 任务。",
+    "usage": {
+      "prompt_tokens": 2346,
+      "completion_tokens": 5184,
+      "total_tokens": 7530,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4730
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1706
+    }
+  }
+}

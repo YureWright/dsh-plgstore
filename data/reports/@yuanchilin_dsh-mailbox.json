@@ -1,0 +1,37 @@
+{
+  "id": "@yuanchilin/dsh-mailbox",
+  "analyzedAt": "2026-08-16T13:46:42.567Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@yuanchilin/dsh-mailbox",
+      "evidence": "dsh plugin --profile web add @yuanchilin/dsh-mailbox"
+    },
+    "evaluationReport": {
+      "intro": "这是一个跨会话文件信箱插件，让多个 DSH 会话或 agent 通过共享文件系统互相发消息和收消息，发完对方离线也不丢，收消息还会自动唤醒对方。它提供一系列工具（发送、接收、查看状态、清信箱等）和一个 /mailbox 命令，还附带命令行工具和 PowerShell 脚本。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下创建信箱文件（默认 ~/.dsh/mailbox），消息会以 JSON 文件存在那里。如果你把信箱目录设成共享文件夹，其他能访问该目录的人可能看到消息内容。它会注册一个后台 watcher 用于自动唤醒会话。除此之外没发现明显风险。",
+      "postInstallNotes": "装完需要重启 dsh web 生效。可选：在 profile 的 cordis.patch.yml 里配置信箱根目录和身份（默认用 ~/.dsh/mailbox 和自动派生身份）。如果想用 skill，需要手动把 skill/SKILL.md 复制到 ~/.dsh/skills/mailbox/。",
+      "notes": "无"
+    },
+    "summaryZh": "跨会话文件信箱插件，让多个 DSH 会话通过共享文件系统异步收发消息。",
+    "usage": {
+      "prompt_tokens": 2780,
+      "completion_tokens": 1240,
+      "total_tokens": 4020,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 843
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2140
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "PicGo/dsh-plugin",
+  "analyzedAt": "2026-08-17T13:14:02.377Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@picgo/dsh-plugin",
+      "evidence": "dsh plugin --profile web add @picgo/dsh-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能把你电脑里的图片或文件上传到你已经在 PicGo 里配置好的图床（如 GitHub、S3、腾讯云等），然后返回一个可访问的链接。这样，AI 在生成文档或截图后，可以直接把图片变成链接，不会因为文件在本地而失效。它还自带一个 `/picgo` 命令和一个技能，可以手动或自动上传。",
+      "level": "ok",
+      "risks": "它会读取你的 PicGo 配置文件（默认在 `~/.picgo/config.json`），其中可能包含图床的上传凭证（如 GitHub Token、S3 密钥等）。插件使用这些凭证上传文件，上传后的链接是公开的，知道链接的人都能访问。它也会在登录/登出时向配置文件写入 token。如果你上传了敏感文件（如合同、内部资料），等于公开了这些文件。另外，剪贴板上传需要桌面环境。",
+      "postInstallNotes": "如果之前没用过 PicGo，需在 DSH 里运行 `/picgo login` 完成 PicGo Cloud 登录；如果已经配置过 PicGo 图床，无需额外操作。",
+      "notes": "上传后的链接是公开的；Harness 是开发者预览版，API 变动可能影响插件兼容性。"
+    },
+    "summaryZh": "让 DeepSeek Harness 将本地图片/文件上传到 PicGo 配置的图床并返回链接的插件。",
+    "usage": {
+      "prompt_tokens": 3385,
+      "completion_tokens": 1768,
+      "total_tokens": 5153,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1328
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2745
+    }
+  }
+}

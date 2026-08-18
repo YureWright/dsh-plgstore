@@ -1,0 +1,37 @@
+{
+  "id": "csyangwen/dsh-memory-evolve",
+  "analyzedAt": "2026-08-16T11:53:54.207Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 中声明了 dsh.client 并注入 @deepseek-ai/dsh-client-runtime，明确属于 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/csyangwen/dsh-memory-evolve.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你的 DSH 里的 AI 拥有长期记忆——它能记住你是谁、项目约定、每天干了啥，换会话也不丢。它还能帮你管待办、管理技能、找本地文件，甚至可以创建多个 AI 子会话组成团队、调度外部的 AI 代理（如 Kimi、Codex、Grok）一起干活。另外还有书签、分支、手机访问、IM 通知、会话评审、画板等增强功能，适合深度使用 AI 的开发者。",
+      "level": "caution",
+      "risks": "它能搜索和读取你电脑上的本地文件（按文件名或内容），你对话的 AI 可能看到这些文件内容。它会把你的对话记忆、项目日志、待办等同步到 git 仓库（如 GitHub），如果仓库是公开的，别人可能看到这些信息。此外，它可以把任务内容发送给外部 AI 代理或 IM 渠道（飞书/QQ/微信），这些数据会离开你的电脑。",
+      "postInstallNotes": "装完后很多功能默认关闭，需要到「Memory Evolve 设置」里按需开启；如果需要跨设备同步记忆，要配置共享记忆仓库或开启同步功能；使用外部 AI 调度前，需先安装并配置对应的 CLI 工具（如 kimi、codex、grok）。",
+      "notes": "package.json 标记为 private，可能未发布到 npm，建议用 git 地址安装；部分高级功能（如会话评审、记忆同步）需仔细阅读文档，避免意外暴露隐私。"
+    },
+    "summaryZh": "让 DSH 里的 AI 拥有跨会话长期记忆、待办与技能管理，还能组队内部 AI 会话并调度外部 AI 代理协同干活，配 WebUI 管理界面。",
+    "usage": {
+      "prompt_tokens": 5810,
+      "completion_tokens": 2590,
+      "total_tokens": 8400,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2087
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5170
+    }
+  }
+}

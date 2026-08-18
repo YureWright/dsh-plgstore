@@ -1,0 +1,37 @@
+{
+  "id": "Ayase34/gal-view",
+  "analyzedAt": "2026-08-17T11:12:48.233Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，README 给出了 dsh plugin 安装命令，且代码结构符合 DSH bundle 插件格式。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Ayase34/gal-view#main",
+      "evidence": "dsh plugin --profile web add github:Ayase34/gal-view#main"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的 Web 聊天界面加一个“GAL视窗”标签。打开它，聊天画面会变成 16:9 的 Galgame 舞台：有角色立绘、大对话框、打字机逐字显示台词，你可以在底部输入；还带一个编辑模式，能像搭场景一样拖拽图片、调整属性、换图层，改完立刻同步回演出效果。适合想和 AI 聊出视觉小说感觉的人。",
+      "level": "ok",
+      "risks": "没发现明显风险。场景图片、字体和阅读进度都存在浏览器本地（localStorage/IndexedDB），清除浏览器数据会重置这些内容，卸载插件不会丢失。",
+      "postInstallNotes": "安装后重启 web 服务；重启后打开 Web GUI 的会话页，在标签栏点“GAL视窗”即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH Web 会话页增加 Galgame 风格对话视图和可视化场景编辑器。",
+    "usage": {
+      "prompt_tokens": 1905,
+      "completion_tokens": 2944,
+      "total_tokens": 4849,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2583
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1265
+    }
+  }
+}

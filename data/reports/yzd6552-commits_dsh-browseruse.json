@@ -1,0 +1,29 @@
+{
+  "id": "yzd6552-commits/dsh-browseruse",
+  "analyzedAt": "2026-08-17T12:14:06.510Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 字段并依赖 playwright-core，README 给出了 dsh plugin add 安装命令，且插件明确消费 DSH 宿主服务。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-browseruse",
+      "evidence": "或从 npm 安装 `dsh plugin --profile web add dsh-browseruse`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DSH 的 AI 助手可以像真人一样操作一个独立的 Chrome 浏览器：自动打开网页、看页面内容、点击、输入文字、填表、滚动、下载文件，甚至能一次性完成“搜索某某并总结结果”这种复杂任务。它还能定时执行任务，遇到付款、删除等敏感操作会先问你是否同意，遇到验证码会暂停让你自己处理。它使用独立于你日常 Chrome 之外的专用浏览器配置，登录状态和 cookie 会保存在本机，方便长期使用。",
+      "level": "ok",
+      "risks": "它会在你电脑上启动一个独立的 Chrome 窗口，用独立资料目录存放登录态和 cookie（默认在 ~/.dsh/.browseruse/chrome-profile），下载文件保存到 ~/Downloads。它可能代表你在网页上执行操作（比如下单、填表），但敏感操作会先征求你的同意；遇到验证码会暂停让你自己处理。Cookie 和浏览数据留在本机，不会自动上传到外部服务器。需要你本机已安装 Google Chrome。",
+      "postInstallNotes": "需要本机装有 Google Chrome；安装后重启 dsh web 生效。若通过 agent 预设方式安装，还需在 agent.cordis.yml 中追加插件条目。",
+      "notes": "注意 README 中 GitHub 安装串写的是 github:yzd6552/dsh-browseruse，但实际仓库为 yzd6552-commits/dsh-browseruse，安装时请以 npm 包名或正确仓库地址为准。"
+    },
+    "summaryZh": "为 DSH 提供 browser-use 风格的浏览器自动化能力，能驱动专用 Chrome 完成自主浏览、填表、截图、定时任务等操作。",
+    "usage": {
+      "prompt_tokens": 5345,
+      "completion_tokens": 2469,
+      "total_tokens": 7814
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-boot-guard",
+  "analyzedAt": "2026-08-16T13:36:04.988Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis，且 README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-boot-guard",
+      "evidence": "如果这个包已经发布到 npm，可以直接用："
+    },
+    "evaluationReport": {
+      "intro": "如果你的一个插件把 DeepSeek Harness 的网页管理界面弄崩了，正常页面起不来，这个插件会在错误页面上蹦出来，让你勾选哪些插件可能是问题所在、临时把它们关掉，然后刷新页面就能恢复。它还提供一个只读预览页检查状态，不会误删东西。",
+      "level": "ok",
+      "risks": "它会修改一个叫 cordis.patch.yml 的本地配置文件，用来临时禁用出问题的插件；有保护机制，不会乱删。默认只允许本机访问，不上传数据。",
+      "postInstallNotes": "装完重启 dsh web 即可；默认无需改配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的启动保险：插件搞崩 Web UI 时，在错误页里帮你临时跳过坏插件，恢复界面。",
+    "usage": {
+      "prompt_tokens": 2975,
+      "completion_tokens": 4278,
+      "total_tokens": 7253,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3969
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2335
+    }
+  }
+}

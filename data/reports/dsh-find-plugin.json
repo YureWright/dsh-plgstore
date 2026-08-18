@@ -1,0 +1,37 @@
+{
+  "id": "dsh-find-plugin",
+  "analyzedAt": "2026-08-16T13:22:20.336Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-find-plugin",
+      "evidence": "dsh plugin --profile web add dsh-find-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这是一个帮你找插件的插件。你只需要告诉 DSH 你想要什么功能，它就会去 GitHub 上按官方 dsh-plugin 主题搜索相关的插件，按星标排序返回结果，每个结果都带简介、仓库链接和现成的安装命令。你可以让代理直接帮你安装选中的插件。",
+      "level": "ok",
+      "risks": "它会联网调用 GitHub 的搜索 API（匿名请求，有缓存），可能会根据你的指令触发安装第三方插件的命令。安装第三方插件前请留意其来源和代码。没有发现其他明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 服务才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 中直接搜索并按星标发现可安装的插件，每个结果附带简介和安装命令。",
+    "usage": {
+      "prompt_tokens": 2166,
+      "completion_tokens": 2154,
+      "total_tokens": 4320,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1852
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1526
+    }
+  }
+}

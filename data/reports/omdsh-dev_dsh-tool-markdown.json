@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-tool-markdown",
+  "analyzedAt": "2026-08-17T13:17:33.931Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 字段，peer 依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:omdsh-dev/dsh-tool-markdown",
+      "evidence": "dsh plugin --profile web add github:omdsh-dev/dsh-tool-markdown"
+    },
+    "evaluationReport": {
+      "intro": "这是给 DSH 助手用的 Markdown 工具箱。它能帮模型把网页 HTML 转成干净的 Markdown、把 Markdown 转成安全的 HTML、把乱表格整理成整齐的 Markdown 表格、还能自动生成目录。它自己写了轻量解析器，不依赖那些笨重又可能有漏洞的第三方库，还会主动把网页里的脚本、样式这些噪音剥掉，防止模型被误导或注入什么奇怪内容。",
+      "level": "ok",
+      "risks": "它主要处理你对话中贴出来的 HTML/Markdown，这些内容会记录在 DSH 的会话日志里，所以按作者提醒，不要把密钥、会话数据这类敏感内容塞进 HTML 传给工具。它不会读取你电脑上的其他文件，也不会连接外部服务器。",
+      "postInstallNotes": "装完要记得 web 和 headless 是两个不同的 profile，需要分别安装；可以用 `dsh --profile web --dump-config | grep tool-markdown` 确认装好了。另外需要 DSH 0.1.0-rc.6 或兼容版本。",
+      "notes": "package.json 标了 private: true，所以不能直接从 npm 拉取，只能按 README 用 GitHub 或本地 tarball 方式装。"
+    },
+    "summaryZh": "DSH 的 Markdown 工具插件，负责 HTML↔Markdown 转换、表格规范化和目录生成，主打零依赖和安全。",
+    "usage": {
+      "prompt_tokens": 3404,
+      "completion_tokens": 2315,
+      "total_tokens": 5719,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1850
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2764
+    }
+  }
+}

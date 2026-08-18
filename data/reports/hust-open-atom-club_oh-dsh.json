@@ -1,0 +1,37 @@
+{
+  "id": "hust-open-atom-club/oh-dsh",
+  "analyzedAt": "2026-08-16T11:47:29.688Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.85,
+      "reason": "package.json 中声明了 dsh.bundle 与 dsh.client，并引用了 @deepseek-ai/dsh-client-runtime 等核心包，符合 DSH 插件结构。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/hust-open-atom-club/oh-dsh.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（AI 工作台）提供多种操作界面的工具。装上它，你可以通过桌面软件、网页或终端窗口来使用 AI 助手，同时还能在界面里管理文件、打开终端、查看 Git 代码改动、安装其他插件等。它把 AI 能力、本地工具和插件放到一个统一的图形界面里，适合不想只在命令行里操作的人。",
+      "level": "caution",
+      "risks": "它会在你的电脑上创建一个 ~/.ohdsh 目录，用来存放聊天记录、登录凭据和插件状态；内置的文件浏览器和终端可以访问你本地的文件；它支持安装第三方插件，这些插件可能会碰到你的数据；桌面版还会自动联网检查更新。",
+      "postInstallNotes": "如果作为独立应用下载，无需额外配置；想改数据保存位置可以设置 OH_DSH_HOME 环境变量。若想把它作为 DSH 插件用，需要按 README 从源码构建。",
+      "notes": "这个仓库本身是一个完整的应用（Desktop/Web/TUI），不像普通插件那样一条 dsh plugin add 就能装好；README 没有提供插件安装命令，建议按官方 Release 方式使用，或参考源码。另：它是 MIT 协议。"
+    },
+    "summaryZh": "给 DeepSeek Harness 提供桌面、Web 和终端三种图形界面，内置文件/终端/Git 审查和插件市场。",
+    "usage": {
+      "prompt_tokens": 4425,
+      "completion_tokens": 4252,
+      "total_tokens": 8677,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3805
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3785
+    }
+  }
+}

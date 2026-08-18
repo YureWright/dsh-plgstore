@@ -1,0 +1,37 @@
+{
+  "id": "bowenliang123/dsh-context",
+  "analyzedAt": "2026-08-17T11:12:31.955Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 提供安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-context",
+      "evidence": "One command, from any DeepSeek Harness installation: dsh plugin --profile web add dsh-context"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给你的 DeepSeek Harness 加一个“上下文”面板和一个 /context 命令。打开任意会话后，你能看到 AI 的“记忆窗口”里装了什么、用了多少空间，还能查看每次请求的历史、哪些时候被压缩（compaction）、哪些内容被注入，以及模型切换等事件，帮你搞清楚 AI 为什么记得或忘记某些事。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取和展示 DSH 会话上下文数据，不会碰你电脑上的其他文件，也没有外连服务器或上传隐私的迹象。",
+      "postInstallNotes": "无。安装后按 README 启动 `dsh web` 即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 上下文透视插件，提供 Context 标签页和 /context 命令，可视化查看模型上下文窗口的构成、历史变化和压缩事件。",
+    "usage": {
+      "prompt_tokens": 2541,
+      "completion_tokens": 850,
+      "total_tokens": 3391,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 500
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1901
+    }
+  }
+}

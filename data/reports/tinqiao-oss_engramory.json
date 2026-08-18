@@ -1,0 +1,37 @@
+{
+  "id": "tinqiao-oss/engramory",
+  "analyzedAt": "2026-08-16T11:50:00.278Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 并指向 adapters/dsh/plugin/cordis.patch.yml，且描述明确为 DeepSeek Harness 的可安装插件，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-engramory",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 AI 智能体（如 DeepSeek Harness、Claude Code 等）用的长期记忆插件。它把记忆保存成普通的 Markdown 文件，不需要数据库或服务器，全靠一套整理规矩和一个小工具来维护。装好后 AI 每次对话都会带上一个索引文件，按需打开细节文件，记忆内容你自己也能直接打开编辑。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读写本地 Markdown 文件，不连外部服务器，也不碰敏感系统区域。",
+      "postInstallNotes": "装完后需要在你的 AI 宿主中加载规则文件（如 AGENTS.md 或对应设置），并按 README 配置可选的 PreToolUse 钩子（用于限制索引大小），具体步骤见 README 的安装部分。",
+      "notes": "注意：根目录 package.json 只是发现清单（private），实际可安装的 npm 包从 adapters/dsh/plugin/ 子目录发布，两者包名相同但版本需同步；该插件同时面向多种 AI 宿主，DSH 适配器在 adapters/dsh 下，安装时请确认版本。"
+    },
+    "summaryZh": "基于 Markdown 文件的本地长期记忆协议/插件，给 AI 智能体提供有纪律、零基础设施的记忆管理。",
+    "usage": {
+      "prompt_tokens": 3270,
+      "completion_tokens": 1255,
+      "total_tokens": 4525,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 842
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2630
+    }
+  }
+}

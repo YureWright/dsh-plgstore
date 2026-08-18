@@ -1,0 +1,37 @@
+{
+  "id": "zhaiyateng/dsh-design-skills",
+  "analyzedAt": "2026-08-17T11:27:44.682Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle（patch 指向 cordis.patch.yml），README 给出了 dsh plugin 安装命令，且描述为 DSH 设计技能包"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-design-skills",
+      "evidence": "README 安装命令：dsh plugin --profile web add dsh-design-skills"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的设计风格技能包。它内置了 10 种网页设计风格，比如深色 SaaS、苹果极简风、毛玻璃、赛博朋克等，每个风格都有详细的规范和示例页面。当你让 AI 写网页时，只要告诉它想要哪种风格，它就会按该风格的规范来设计，避免做出千篇一律的“AI 味”网站。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是包含一些设计规范文件和示例页面，不会读取或修改个人文件，也没有连接外部服务器。",
+      "postInstallNotes": "安装后在会话中直接描述想要的风格（例如“用深色 SaaS 风做一个 AI 产品落地页”）即可自动匹配对应技能。",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 提供 10 种网页设计风格技能包的插件，让 AI 生成的网站摆脱千篇一律的 AI 味。",
+    "usage": {
+      "prompt_tokens": 3347,
+      "completion_tokens": 2290,
+      "total_tokens": 5637,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1935
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2707
+    }
+  }
+}

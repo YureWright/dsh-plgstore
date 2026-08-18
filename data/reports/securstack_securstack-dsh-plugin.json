@@ -1,0 +1,37 @@
+{
+  "id": "securstack/securstack-dsh-plugin",
+  "analyzedAt": "2026-08-17T13:13:28.268Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@securstack/dsh-plugin",
+      "evidence": "dsh plugin --profile securstack add @securstack/dsh-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 可以直接让 SecurStack 帮你检查代码仓库：它能跑安全扫描（比如找漏洞、暴露的密钥、配置问题），检查代码是否符合你定的安全策略，还能诊断环境设置哪里不对。它自己不干活，实际都是调用装在电脑上的 securstack 命令行工具，只是把结果整理给 AI 看。",
+      "level": "ok",
+      "risks": "它会运行 securstack 命令来扫描你的代码，这些命令会读取仓库文件并可能把结果发给 SecurStack 的云端服务（这得看你配置的 API 地址，通常是官方服务）。它也会读取本地的 SecurStack 登录凭证。除此之外，没发现它动系统其他地方的迹象。",
+      "postInstallNotes": "装完还要确保 securstack CLI 已安装，并配置好认证：运行 `securstack login --api-key <你的key>`，或设置环境变量 `SECURSTACK_API_KEY`（可选 `SECURSTACK_API_URL`）。",
+      "notes": "这是 0.1.0 早期版本，依赖的 @deepseek-ai/dsh-tools 还是预发布（rc）版，API 可能变动。另外它只是个适配器，真正干活的是 @securstack/cli，如果那个没装好，插件会报错。"
+    },
+    "summaryZh": "让 DeepSeek Harness 通过命令行工具 SecurStack 执行代码安全扫描、策略检查和环境诊断的插件。",
+    "usage": {
+      "prompt_tokens": 2301,
+      "completion_tokens": 2920,
+      "total_tokens": 5221,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2469
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1661
+    }
+  }
+}

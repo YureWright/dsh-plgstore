@@ -1,0 +1,37 @@
+{
+  "id": "w2112515/dsh-plugin-marketplace",
+  "analyzedAt": "2026-08-17T11:48:52.953Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，且 README 给出 dsh plugin add 安装命令，确为可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@w2112515/dsh-plugin-marketplace",
+      "evidence": "dsh plugin --profile web add @w2112515/dsh-plugin-marketplace"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）用的插件市场。装好之后，你可以直接在 DSH 的设置界面里浏览、搜索和安装其他插件，不用自己跑到 GitHub 上去找。它会每天自动扫描 GitHub 上所有带 dsh-plugin 标签的仓库，目前能搜到 2200 多个插件。每个插件会显示能不能一键安装、是否需要人工审核脚本、社区评分等信息。它还提供精选的“解决方案包”，可以一次性装一组相关的插件。整个市场是静态数据，没有服务器，也不会偷偷上传你的使用数据。",
+      "level": "ok",
+      "risks": "它会读取和修改 DSH 的配置文件和插件清单，用于安装/卸载插件；需要联网从 GitHub Pages 拉取插件目录和仓库信息。在安装其他插件时，会自动下载代码并可能执行需要你明确同意的构建脚本，但所有安装动作都会先征求你的确认。它声明不收集任何遥测数据。",
+      "postInstallNotes": "安装后需要重启 `dsh web`（或 DSH 服务）才能生效，然后到设置界面的 Settings → Plugins → Marketplace 中查看和使用。",
+      "notes": "这是一个第三方插件市场，并非 DeepSeek 官方出品；它对 Node.js 版本有要求（^22.19.0 或 >=24.0.0），请确保你的环境满足条件。除此之外未发现明显风险。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供内置插件市场：浏览、搜索、安全安装 2200+ DSH 插件，支持精选解决方案包和社区评分。",
+    "usage": {
+      "prompt_tokens": 4080,
+      "completion_tokens": 1494,
+      "total_tokens": 5574,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 997
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3440
+    }
+  }
+}

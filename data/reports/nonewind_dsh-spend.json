@@ -1,0 +1,37 @@
+{
+  "id": "nonewind/dsh-spend",
+  "analyzedAt": "2026-08-17T11:48:39.193Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-spend",
+      "evidence": "dsh plugin --profile web add dsh-spend"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness（dsh）网页版的一个小挂件。它会在网页右下角显示一个悬浮窗，实时告诉你用了多少 token、花了多少钱，还能按模型、供应商、时间段等维度查看统计，并自动识别你用的是包月套餐还是按量付费，估算本月费用。它直接读取 dsh 自己保存的会话记录来算账，不需要额外配置。",
+      "level": "ok",
+      "risks": "它会读取本机 dsh 保存的会话日志（包含每次 AI 调用的 token 和费用估算），并把统计结果显示在网页右下角。从描述看，这些数据不会上传到外部服务器，但如果你在公共场合截图或共享屏幕，别人可能看到你的用量和费用。另外，插件内置的价格表由作者维护，可能和实际账单有出入。",
+      "postInstallNotes": "安装后需要重启 dsh web（运行 `dsh web`）使插件生效；默认无需额外配置，如需自定义价格或预算，可在 `~/.dsh/profiles/web/cordis.patch.yml` 中修改 `usage-stats` 行。",
+      "notes": "非 DeepSeek 官方插件，社区作者维护，star 较少，建议先浏览源码再安装；价格数据有明确抓取日期，后续可能需关注更新。"
+    },
+    "summaryZh": "dsh-spend 是一个 dsh Web 界面的悬浮用量与计费仪表盘，展示 token 调用量、多维统计、预计费用，并自动识别 Code/Token 计费计划。",
+    "usage": {
+      "prompt_tokens": 5183,
+      "completion_tokens": 2307,
+      "total_tokens": 7490,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1840
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4543
+    }
+  }
+}

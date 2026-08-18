@@ -1,0 +1,37 @@
+{
+  "id": "bobcat848/dsh-calculator",
+  "analyzedAt": "2026-08-17T13:17:58.150Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/dsh-client-runtime 等官方核心包，README 也说明了安装到 DSH 的步骤。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/bobcat848/dsh-calculator.git",
+      "evidence": "git clone https://github.com/bobcat848/dsh-calculator.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DSH 网页右上角显示一个浮动卡片，展示当前会话用了多少钱、当天所有会话累计花了多少钱，以及你的 DeepSeek 账户余额。它会按模型分别统计，只对 DeepSeek 官方模型计费，第三方模型标记为不计费。另外还支持高峰/低谷时段计价，界面会跟随浏览器语言切换中文或英文。",
+      "level": "ok",
+      "risks": "它会读取你的 DeepSeek API 密钥（存放在 ~/.dsh/.credentials.yaml 里）来查询余额，并向 DeepSeek 官方接口发送请求；费用数据会显示在 DSH 网页界面上。安装时 README 推荐通过 curl 管道执行远程脚本，这要求你信任仓库维护者。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后重启 DSH web（或等待 HMR 热更新），确保已在 DSH 中配置好 DeepSeek API 密钥，然后刷新浏览器页面即可看到右上角卡片。",
+      "notes": "经评估确认是真正的 DSH 插件。README 提供的在线安装方式是 curl | bash，安装前建议先审阅脚本内容。"
+    },
+    "summaryZh": "在 DSH 网页右上角显示 DeepSeek API 花费和账户余额的浮层卡片插件。",
+    "usage": {
+      "prompt_tokens": 2501,
+      "completion_tokens": 2474,
+      "total_tokens": 4975,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2042
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1861
+    }
+  }
+}

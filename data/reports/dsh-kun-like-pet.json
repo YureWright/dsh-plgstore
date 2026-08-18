@@ -1,0 +1,37 @@
+{
+  "id": "dsh-kun-like-pet",
+  "analyzedAt": "2026-08-18T14:54:12.687Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin add 安装命令，且代码结构符合 DSH 插件规范。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-kun-like-pet",
+      "evidence": "dsh plugin --profile web add dsh-kun-like-pet"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的桌面宠物插件，会在 Web 界面右下角显示一只小鸡。小鸡会根据 Agent 的工作状态（空闲、思考、干活、出错、完成等）切换不同的动画，任务完成时会播放「你干嘛~哎哟」的语音，还可以拖拽移动、点击互动。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会在 Windows 上通过 PowerShell 播放声音，但只使用本地安装目录里的音频文件，不会上传数据或连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 DSH，并确保系统是 Windows（声音功能依赖 PowerShell 和 WPF 运行时）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 桌面宠物插件：Web 右下角显示一只小鸡，随 Agent 状态切换动画并播放语音。",
+    "usage": {
+      "prompt_tokens": 4550,
+      "completion_tokens": 476,
+      "total_tokens": 5026,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 159
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3910
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-better-edit",
+  "analyzedAt": "2026-08-16T13:21:50.284Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，且 README 提供了 dsh plugin add 安装命令，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-better-edit",
+      "evidence": "dsh plugin --profile <name> add dsh-better-edit   # from npm"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness (dsh) 提供了更聪明的文件编辑工具。普通编辑工具让 AI 模型把要改的旧代码一字不差地再抄一遍才能改，既费钱又容易出错。这个插件给文件的每一行都生成一个独一无二的 3 字符哈希地址，编辑的时候直接指定地址就行，不用重复旧代码，能省约 31% 的 token，还能确保改动一定落在正确的行上，改错会立刻报错而不是悄悄改错。它还支持批量编辑和撤销，撤销在重启后依然有效。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件通过 dsh 的接口读写文件，属于正常功能；写操作走 dsh 的文件系统层，没有额外权限。代码开源，依赖也都是 dsh 官方包。",
+      "postInstallNotes": "需要先有一个 dsh profile，然后运行 `dsh plugin --profile <name> add dsh-better-edit`，之后新会话会生效。也可以用本地路径安装。要求 Node 版本 ^22.19.0 或 >=24.0.0。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供基于哈希锚点的读/编辑/批量编辑/撤销工具，省 token 且杜绝错位编辑。",
+    "usage": {
+      "prompt_tokens": 4211,
+      "completion_tokens": 983,
+      "total_tokens": 5194,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 540
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3571
+    }
+  }
+}

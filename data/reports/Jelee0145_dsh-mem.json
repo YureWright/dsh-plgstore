@@ -1,0 +1,37 @@
+{
+  "id": "Jelee0145/dsh-mem",
+  "analyzedAt": "2026-08-17T13:09:09.619Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mem",
+      "evidence": "Install from the **npm registry** (published as `dsh-mem`): `dsh plugin --profile <name> add dsh-mem`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness（dsh）加了一个跨会话的长期记忆功能。它能帮你记下重要的事实、偏好和决定，存在本地的 JSON 文件里（默认在 ~/.dsh/memory/ 下面）。装好之后，AI 就能用 memory_save、memory_recall、memory_forget、memory_list 这几个工具来保存和回忆信息，这样即使开新会话，之前说过的内容也能想起来。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下创建 ~/.dsh/memory/ 文件夹，里面存一个 memory.json 文件，记录你让 AI 记住的内容。文件权限设为 0o600（只有你能读写），没有发现其他风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-mem 是一个为 DeepSeek Harness 提供跨会话长期记忆的插件，通过 JSON 文件持久化，让 AI 能在不同会话间记住事实和偏好。",
+    "usage": {
+      "prompt_tokens": 3408,
+      "completion_tokens": 699,
+      "total_tokens": 4107,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 312
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2768
+    }
+  }
+}

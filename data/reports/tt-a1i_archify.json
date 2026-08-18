@@ -1,0 +1,37 @@
+{
+  "id": "tt-a1i/archify",
+  "analyzedAt": "2026-08-16T05:45:24.883Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.9,
+      "reason": "该仓库是通用 agent skill，并非 DSH 插件；DSH 支持通过单独的包 @tt-a1i/archify-dsh 提供，且仓库无 package.json。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@tt-a1i/archify-dsh@0.1.0",
+      "evidence": "[DSH community opt-in](integrations/deepseek-harness/README.md): `dsh plugin --profile web add @tt-a1i/archify-dsh@0.1.0`"
+    },
+    "evaluationReport": {
+      "intro": "Archify 是一个给 AI 编程助手用的“技能包”，你只要给它一句系统描述或一个代码仓库地址，它就能生成一张交互式系统架构图，直接在聊天窗口里查看、演示和分享。支持画五种技术图、四种视觉风格，还能对比架构改版前后的差异。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取本地代码库文件来分析架构，但不会上传到外部服务器；安装时通过 npx 下载，需信任来源。",
+      "postInstallNotes": "安装后需确认 DSH 使用的 profile 为 web，并按 integrations/deepseek-harness/README.md 完成集成配置。",
+      "notes": "该仓库本身并非 DSH 插件，而是通用的 agent skill；DSH 支持是通过单独的包 @tt-a1i/archify-dsh 提供的，需确认该包已发布。"
+    },
+    "summaryZh": "Archify 是一款能把代码库或系统描述变成可交互架构图的 AI 技能，支持多种编程助手，并提供了 DSH 社区集成。",
+    "usage": {
+      "prompt_tokens": 3020,
+      "completion_tokens": 3020,
+      "total_tokens": 6040,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2615
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2380
+    }
+  }
+}

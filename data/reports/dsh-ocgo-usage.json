@@ -1,0 +1,37 @@
+{
+  "id": "dsh-ocgo-usage",
+  "analyzedAt": "2026-08-16T13:46:55.208Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也提供 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ocgo-usage",
+      "evidence": "README 原文：“dsh plugin --profile web add dsh-ocgo-usage”（从 npm 安装（发布后）小节）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面用的。它会在聊天输入框上方显示你 OpenCode Go 订阅套餐的用量：有 5 小时滚动、每周和每月三个窗口，显示用了百分之多少、还有多久重置。用量超过 80% 会变黄色，超过 90% 变红色，提醒你快要超限了。点一下还能看到详情，并且可以在界面上直接填写你的账户凭证。",
+      "level": "ok",
+      "risks": "它需要你提供 OpenCode Go 的登录 cookie（相当于你 OpenCode 账户的钥匙）。这个 cookie 会被保存在你电脑的 ~/.dsh/ocgo-usage.json 文件里，插件用它去 opencode.ai 查询用量。如果电脑被人动过，这个文件可能被看到，从而泄露你的账户。另外插件会定期向 opencode.ai 发送请求，但频率不高（有 10 秒轮询和 5 分钟缓存）。除此之外没发现明显风险。",
+      "postInstallNotes": "装完需要配置：可以点击界面上的 chip 然后选择 Set，输入你的 workspace id 和 cookie；或者设置环境变量 OPENCODE_GO_COOKIE 和 OPENCODE_GO_WORKSPACE_ID；或者编辑 ~/.dsh/ocgo-usage.json（建议设成 600 权限）。完成后需要重启 dsh web 并刷新页面。",
+      "notes": "注意 cookie 是完整会话凭证，请妥善保管。另外这个包的 npm 名是 dsh-ocgo-usage，而 GitHub 仓库名是 dsh-opencode-go-usage，是因为 npm 上同名被抢注。插件要求 DeepSeek Harness 0.1.0-rc.6 或更新版本。"
+    },
+    "summaryZh": "在 DeepSeek Harness 网页界面显示 OpenCode Go 订阅用量的小插件，带 5小时/周/月三个窗口、重置倒计时和颜色预警。",
+    "usage": {
+      "prompt_tokens": 4126,
+      "completion_tokens": 2460,
+      "total_tokens": 6586,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1878
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3486
+    }
+  }
+}

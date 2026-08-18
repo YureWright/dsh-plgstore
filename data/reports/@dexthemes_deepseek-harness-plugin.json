@@ -1,0 +1,37 @@
+{
+  "id": "@dexthemes/deepseek-harness-plugin",
+  "analyzedAt": "2026-08-18T14:55:02.976Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 README 给出了 pnpm dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dexthemes/deepseek-harness-plugin@0.6.4",
+      "evidence": "pnpm dsh plugin --profile web add @dexthemes/deepseek-harness-plugin@0.6.4"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 换主题的插件。装好之后，你可以在设置里找到 DexThemes 标签页，浏览、预览、应用各种配色主题，也能一键恢复成 Harness 默认主题。它还支持连接 GitHub 账号来解锁一些奖励主题和成就，并且能用自然语言让聊天助手帮你找主题、预览主题、甚至直接应用主题。",
+      "level": "caution",
+      "risks": "插件会修改 Harness 界面的外观设置，并且会把“你选了哪个主题”这类信息保存到 Harness 的本地存储里。它还会连接几个外部服务：DexThemes 自己的网站、GitHub 登录授权、Convex 后端、Statsig 统计服务，以及一个 MCP 接口。如果你不连接 GitHub 账号，浏览和切换主题本身不需要联网提交隐私信息；但如果连接了 GitHub，会走 GitHub 官方的设备码流程授权，DexThemes 的服务器会验证你的 GitHub 公开信息，并可能记录你在插件里的活动次数。另外，它还会往外部发送一些匿名统计数据（Statsig），用于作者统计使用情况。整体上它不碰你的聊天记录、工作区数据或密码，但毕竟会跟不少外部服务器打交道，建议安装前简单看一眼它的隐私说明。",
+      "postInstallNotes": "装完后运行 pnpm dsh web 并刷新一次浏览器标签页，然后到 设置 → 插件 → DexThemes 里使用。如果只想本地换主题，不需要额外配置；想解锁账号奖励，需要按界面提示连接 GitHub。",
+      "notes": "README 明确提示安装前要核对 npm 上的版本和完整性，且每个版本发布后建议锁版本安装。另外，它依赖 @statsig/js-client 并连接外部 MCP/Convex 服务，介意的话可以留意一下。"
+    },
+    "summaryZh": "DexThemes 是一个 DeepSeek Harness 主题管理插件，支持浏览、预览、应用和恢复配色，可选 GitHub 账号解锁额外主题。",
+    "usage": {
+      "prompt_tokens": 3519,
+      "completion_tokens": 1031,
+      "total_tokens": 4550,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 439
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2879
+    }
+  }
+}

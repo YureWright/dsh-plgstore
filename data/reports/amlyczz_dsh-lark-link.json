@@ -1,0 +1,37 @@
+{
+  "id": "amlyczz/dsh-lark-link",
+  "analyzedAt": "2026-08-17T11:23:16.212Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，且 README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-lark-link",
+      "evidence": "dsh plugin --profile web add dsh-lark-link@latest --ignore-scripts"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness 的 AI 智能体搬进飞书（Lark），让你在手机或电脑的飞书里直接和 AI 聊天、给它派任务、看结果。它支持扫码快速登录（30 秒搞定）、图片和文件收发、用卡片按钮切换模式/权限/模型，还能保证消息不丢失——就算程序中途崩溃，重启后也能补回对话。",
+      "level": "ok",
+      "risks": "它会读取并发送你的飞书消息，需要你把飞书应用凭据存到 DSH 的凭据服务里；它默认允许 AI 使用所有工具，所以理论上可以读写你电脑上 DSH 工作区的文件、甚至执行命令。如果飞书群里没设白名单，别人也可能用你的机器人。不过这些都是正常功能，没有发现偷偷上传数据等可疑行为。",
+      "postInstallNotes": "装完后需要先启动 DSH，然后在对话框执行 /lark setup 扫码创建飞书应用，再执行 /lark start 启动桥接。如果不想扫码，也可以手动设置 DSH_LARK_APP_ID 和 DSH_LARK_SECRET 环境变量。建议按需配置 allowlist 白名单。",
+      "notes": "该插件目前是 beta 版本；默认权限为 Full access，可根据实际需求通过 /permission 调整。安装时建议按 README 加上 --ignore-scripts 参数，避免依赖安装脚本报错。"
+    },
+    "summaryZh": "把 DeepSeek Harness 接入飞书/Lark 的双向桥接插件，扫码即用、支持卡片命令和零丢失消息，让你在飞书里直接使用 DSH 的完整工具能力。",
+    "usage": {
+      "prompt_tokens": 5497,
+      "completion_tokens": 4164,
+      "total_tokens": 9661,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3658
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4857
+    }
+  }
+}

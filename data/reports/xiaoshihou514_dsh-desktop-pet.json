@@ -1,0 +1,37 @@
+{
+  "id": "xiaoshihou514/dsh-desktop-pet",
+  "analyzedAt": "2026-08-17T11:30:56.851Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle.patch 并提供 dsh-plugin 入口，符合 DSH 插件结构，而非纯脚本。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/xiaoshihou514/dsh-desktop-pet.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个叫“大肥鱼”的桌面宠物插件，专为 DeepSeek Harness 设计，可以在 Windows 或 Linux 桌面上显示一条可爱的鱼陪伴你。它通过 DSH 插件机制集成，同时还需要下载对应的桌面客户端程序才能看到效果。",
+      "level": "ok",
+      "risks": "没发现明显风险。它作为一个 Electron 桌宠会运行在你电脑上，可能需要读取鼠标键盘以便互动，但不会主动收集隐私。代码由 AI 生成，建议留意一下行为。",
+      "postInstallNotes": "安装插件后，还需到 GitHub Releases 页面下载并安装对应的 AppImage、RPM 或 Windows 安装包，否则桌宠不会显示。",
+      "notes": "README 中的安装命令写的是另一个仓库（vlln/whale-girl），与本仓库不一致，实际安装请以本仓库发布页为准。package.json 标记为 private，无法从 npm 安装，只能通过 git 方式添加。"
+    },
+    "summaryZh": "给 DSH 用的桌面宠物“大肥鱼”，在 Linux/Windows 桌面陪你玩耍。",
+    "usage": {
+      "prompt_tokens": 1785,
+      "completion_tokens": 4027,
+      "total_tokens": 5812,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3661
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1145
+    }
+  }
+}

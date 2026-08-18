@@ -1,0 +1,37 @@
+{
+  "id": "sliverp/DeepSeek-harness-wecom",
+  "analyzedAt": "2026-08-17T11:46:59.974Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:sliverp/DeepSeek-harness-wecom",
+      "evidence": "pnpm dsh plugin --profile web add github:sliverp/DeepSeek-harness-wecom"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 加一个企业微信（WeCom）入口。装上之后，你可以在企业微信里跟 DeepSeek 智能体聊天，发文字、图片、文件都能处理，而且每个对话都有独立记忆，还支持 /new、/compact 等斜杠命令。",
+      "level": "ok",
+      "risks": "需要配置企业微信机器人的 Bot ID 和 Secret，这些属于敏感凭据，别泄露。收到的文件会解密后保存到本机临时目录（可配置），并可能被智能体读取。消息内容会经由企业微信服务器传输。除此之外没发现明显风险。",
+      "postInstallNotes": "设置环境变量 WECOM_BOT_ID 和 WECOM_BOT_SECRET（后者推荐用 DSH 凭据服务），重启 DSH 后生效；可选地在 ~/.dsh/profiles/web/cordis.patch.yml 中调整访问策略和文件目录等。",
+      "notes": "无"
+    },
+    "summaryZh": "将 DeepSeek Harness 智能体接入企业微信的通道插件，支持文本、图片、文件收发与持久化多轮对话。",
+    "usage": {
+      "prompt_tokens": 3779,
+      "completion_tokens": 4101,
+      "total_tokens": 7880,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3690
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3139
+    }
+  }
+}

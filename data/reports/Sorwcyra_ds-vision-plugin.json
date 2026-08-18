@@ -1,0 +1,37 @@
+{
+  "id": "Sorwcyra/ds-vision-plugin",
+  "analyzedAt": "2026-08-17T11:58:04.700Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-* 核心包，README 给出 dsh plugin add 安装命令，确系 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Sorwcyra/ds-vision-plugin.git",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add \"github:Sorwcyra/ds-vision-plugin\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 直接“看懂”图片。你把图片粘贴或拖进网页对话框，它会同时让四个视觉模型（Agnes、GLM 等）识别图片，谁先出结果就用谁，把图片变成文字再交给 DeepSeek 继续处理。还支持百度 OCR、本地 Tesseract 以及自定义模型，适合想给纯文本 DeepSeek 加图片输入能力的用户。",
+      "level": "caution",
+      "risks": "你粘贴的图片会被发送到配置的第三方视觉模型服务（Agnes、GLM、百度 OCR 等），这些服务会看到图片内容；插件也会读写 DSH 的配置文件（如 .dsh/profiles/web 下的配置），CLI 引导时可能把 API key 存进配置（也支持用环境变量）。没有发现恶意行为。",
+      "postInstallNotes": "装完后需要配置用到的视觉模型 API key（比如 Agnes、GLM、百度 OCR 的 key）；运行 npx -y github:Sorwcyra/ds-vision-plugin 或插件自带 CLI 可以引导设置。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 添加图片理解能力，粘贴图片后由多个视觉模型竞速识别并转为文字，支持 OCR 和自定义模型。",
+    "usage": {
+      "prompt_tokens": 3868,
+      "completion_tokens": 1920,
+      "total_tokens": 5788,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1460
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3228
+    }
+  }
+}

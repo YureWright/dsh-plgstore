@@ -1,0 +1,37 @@
+{
+  "id": "dsh-eval",
+  "analyzedAt": "2026-08-16T13:40:39.034Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle、依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供了 dsh plugin 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-eval",
+      "evidence": "dsh plugin --profile eval add dsh-eval"
+    },
+    "evaluationReport": {
+      "intro": "dsh-eval 是一个给 DSH 智能体做自动化评测的工具。你只需写一份 YAML 格式的测试计划（包含任务、工作目录、评判标准等），它会按计划启动多个 dsh 实例去执行任务，记录每一步操作和日志，然后自动算出各种指标（如调用工具次数、耗时、花费、成功率等），并生成 JSON 或 Markdown 报告。它还支持对比两次运行结果，以及导入 Codex/Claude Code 的日志进行分析。",
+      "level": "ok",
+      "risks": "运行时会读取你指定的工作目录（workspace）并复制到临时目录，在临时目录中启动 dsh 子进程。如果配置了 judge，会调用 LLM API（需要 API 密钥）。生成的临时文件和会话日志保留在 tempRoot 下，可能包含任务相关数据，请及时清理。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后，需要有一个名为 eval 的 profile（README 说明它由 dsh-base 加上本插件组成）。如果需要使用 judge 或真实模型运行，要配置相应的 LLM API 密钥。replay 功能需要源码模式的 DSH 环境。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-eval 是一个 DSH 插件，用于通过 YAML 基准任务批量运行 headless dsh 实例，自动收集指标并生成评测报告。",
+    "usage": {
+      "prompt_tokens": 3865,
+      "completion_tokens": 2196,
+      "total_tokens": 6061,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1756
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3225
+    }
+  }
+}

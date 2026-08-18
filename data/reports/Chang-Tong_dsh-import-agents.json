@@ -1,0 +1,37 @@
+{
+  "id": "Chang-Tong/dsh-import-agents",
+  "analyzedAt": "2026-08-17T11:41:58.646Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client 配置并依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-import-agents",
+      "evidence": "The plugin is published on **npm** as `dsh-import-agents` and declares a `dsh.bundle`, so the official one-command installer activates it automatically."
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 pi、opencode、codex 和 claude-code 这几个 AI 编程工具里保存的会话记录、聊天历史和自定义 agent 配置，导入到 DeepSeek Harness（dsh）里。导入后你能在 dsh 里继续之前的对话，历史消息和工具调用都会保留，agent 会变成 dsh 的技能，还带一个一键同步按钮，不用敲命令。",
+      "level": "ok",
+      "risks": "它会读取本机 pi、opencode、codex、claude-code 等工具的会话文件（JSONL 或 SQLite），并把这些数据写入 dsh 的存储目录和技能目录。这些文件可能包含你的历史提问、代码片段等敏感内容，但整个过程只在本地进行，不会上传到外部服务器。",
+      "postInstallNotes": "重启 `dsh web` 并刷新页面，让插件生效；如需调整源路径或禁用启动迁移提示，可在配置里设置 `offerOnStart: false` 等项。",
+      "notes": "无"
+    },
+    "summaryZh": "将 pi、opencode、codex 和 claude-code 的会话、聊天历史与智能体一键导入 DeepSeek Harness（dsh）的插件。",
+    "usage": {
+      "prompt_tokens": 3492,
+      "completion_tokens": 2096,
+      "total_tokens": 5588,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1664
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2852
+    }
+  }
+}

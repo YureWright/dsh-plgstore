@@ -1,0 +1,37 @@
+{
+  "id": "visionpower",
+  "analyzedAt": "2026-08-16T13:43:00.667Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.75,
+      "reason": "package.json 中声明了 @deepseek-ai/cordis 可选依赖并提供 ./dsh 导出，表明其包含 DSH 插件适配层。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "visionpower",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件相当于给 AI 助手装上“眼睛”，可以让 AI 查看并理解图片，比如读取截图里的文字（OCR）、分析图表、报错截图诊断、按顺序看多张图片等。它不绑定具体模型，默认用阿里云的 Qwen-VL，也可以通过配置换成智谱、OpenAI 等其他兼容服务。安装后可以通过命令行或一个自带的网页控制台来设置 API Key 和模型，并支持 MCP 和 Skill 两种方式接入不同的 AI 客户端。",
+      "level": "ok",
+      "risks": "它会把你要分析的图片发送到你配置的第三方视觉模型服务（如阿里云、OpenAI 等），图片内容会被这些服务看到；它会在你的用户目录下创建 ~/.visionpower 文件夹，用来保存配置（包括 API Key）和图片缓存，API Key 是明文存放的，建议注意本机文件权限；如果你启动了 WebUI 控制台，它会监听本机 127.0.0.1:17900 端口，正常情况下只有本机能访问，但其他本机进程也可能读取到。",
+      "postInstallNotes": "装完后需要配置视觉模型的 API Key（比如阿里云百炼 Key）并选择你想用的模型；可以用 `npx -y --package visionpower@latest visionpower --webui` 打开可视化控制台来设置，也可以直接在 `~/.visionpower/config.json` 里写配置；如果走 MCP 方式，还需要在对应 AI 客户端（如 Claude Desktop、Cursor）里注册这个服务。",
+      "notes": "这个包同时是 MCP server 和 DSH 插件，DSH 集成依赖可选的 @deepseek-ai/cordis 等 peer 依赖，如果作为 DSH 插件安装，请确保运行环境满足 Node.js >=20.19.0 且安装好相应 peer 依赖。"
+    },
+    "summaryZh": "VisionPower 是一个让 AI 助手理解图片的插件，支持 OCR、图表解读、多图分析，可同时通过 MCP 和 Skill 形态接入不同客户端。",
+    "usage": {
+      "prompt_tokens": 5275,
+      "completion_tokens": 4807,
+      "total_tokens": 10082,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4250
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4635
+    }
+  }
+}

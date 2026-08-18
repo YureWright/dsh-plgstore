@@ -1,0 +1,37 @@
+{
+  "id": "@jiesou/dsh-commandcode-go-provider",
+  "analyzedAt": "2026-08-18T14:52:06.662Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin add 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@jiesou/dsh-commandcode-go-provider",
+      "evidence": "dsh plugin --profile web add @jiesou/dsh-commandcode-go-provider"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 用的插件，让拥有 Command Code Go/GOAT/Pro 订阅的用户在 DSH 里直接用上那些模型。它会自动从 Command Code 的服务器拉取可用的模型列表，并且通过私有接口来转发对话请求，不用手动配置一大串东西。",
+      "level": "ok",
+      "risks": "需要把你的 Command Code API Key 写到本机 ~/.dsh/.credentials.yaml 文件里，使用时会和 Command Code 的服务器通信（发送对话内容和拉取模型列表），其他没发现明显风险。",
+      "postInstallNotes": "装完后需要把 COMMANDCODE_API_KEY 写入 ~/.dsh/.credentials.yaml，例如：echo 'COMMANDCODE_API_KEY: [你的key]' >> ~/.dsh/.credentials.yaml",
+      "notes": "无"
+    },
+    "summaryZh": "让 DSH 接入 Command Code Go/GOAT/Pro 订阅模型的 provider 插件，自动同步模型列表并支持流式对话。",
+    "usage": {
+      "prompt_tokens": 2593,
+      "completion_tokens": 628,
+      "total_tokens": 3221,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 261
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1953
+    }
+  }
+}

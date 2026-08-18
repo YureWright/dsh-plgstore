@@ -1,0 +1,37 @@
+{
+  "id": "wx-yss/dsh-message-rail",
+  "analyzedAt": "2026-08-17T11:39:13.538Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.client 和 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和多个 dsh 客户端包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-message-rail",
+      "evidence": "dsh plugin --profile web add dsh-message-rail"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面添加了一条左侧消息导航轨道。在很长的对话里，左侧会出现一系列小刻度，每个刻度对应你问过的一条问题；鼠标悬停能预览消息内容，点击就能跳转到那一条。它还会自动把整个会话历史加载完，即使会话很长也很流畅。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在 DeepSeek Harness 的网页界面里增加 UI，通过 DSH 本身的接口读取当前会话数据，不会碰你电脑上的其他文件，也不会把数据发给外部服务器。",
+      "postInstallNotes": "安装后需要完整重启 dsh web 进程（例如运行 npx @deepseek-ai/dsh web）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web UI 添加 Codex 风格左侧消息导航轨道，快速定位和跳转长会话中的历史提问。",
+    "usage": {
+      "prompt_tokens": 2883,
+      "completion_tokens": 1971,
+      "total_tokens": 4854,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1625
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2243
+    }
+  }
+}

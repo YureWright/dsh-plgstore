@@ -1,0 +1,37 @@
+{
+  "id": "liliuCourier/dsh-chat-outline",
+  "analyzedAt": "2026-08-17T13:19:38.156Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis，且 README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-chat-outline",
+      "evidence": "dsh plugin --profile web add dsh-chat-outline"
+    },
+    "evaluationReport": {
+      "intro": "这个插件在对话栏左侧加一个常驻的侧边栏大纲，按轮次列出每次提问和该轮最后一条回复，点击任意一条就能跳回对话里对应的位置；按住 Ctrl/Shift 点击还能直接切到轨迹视图的同一点。面板可以收起，顶部的输入框支持按关键词过滤，还跟随 DSH 的明暗主题。默认的轻便模式只显示官方已加载的内容，零额外开销；全面模式会主动加载全部历史，适合想看到完整大纲的场景，但长会话会变慢。",
+      "level": "ok",
+      "risks": "没发现明显风险。",
+      "postInstallNotes": "刷新浏览器页面（必要时重启 dsh web）",
+      "notes": "全面模式会主动加载整个会话历史，长会话下有明显性能开销；适配 DSH 0.1.0-rc.6。"
+    },
+    "summaryZh": "对话栏左侧的常驻大纲插件，按轮次列出提问与回复并支持一键跳转。",
+    "usage": {
+      "prompt_tokens": 3876,
+      "completion_tokens": 2010,
+      "total_tokens": 5886,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1662
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3236
+    }
+  }
+}

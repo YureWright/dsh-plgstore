@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-skin-miku",
+  "analyzedAt": "2026-08-17T11:10:13.301Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供 dsh plugin add 安装说明，明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-skin-miku",
+      "evidence": "README 未说明 npm 安装方式，但包已发布为 npm 包；README 中的安装命令为 \"dsh plugin --profile web add \\\"link:<absolute path to this repo>\\\"\"。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页界面换初音未来主题的皮肤插件，装上后界面会变成蓝紫粉渐变、毛玻璃效果，还能换背景图、支持亮色和暗色主题。它只改界面外观，不碰你的数据或模型请求。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只改网页外观，不会上传或读取个人文件，也不连外部服务器。",
+      "postInstallNotes": "安装后重启 dsh web，并在浏览器里硬刷新（Ctrl+Shift+R）才能看到效果。如果要切换皮肤，需要在命令行用 dsh-skin 命令管理。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页界面提供初音未来主题皮肤，包含渐变配色、毛玻璃效果和自定义背景，纯展示层不触碰数据。",
+    "usage": {
+      "prompt_tokens": 2226,
+      "completion_tokens": 2083,
+      "total_tokens": 4309,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1725
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1586
+    }
+  }
+}

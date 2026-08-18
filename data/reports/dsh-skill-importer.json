@@ -1,0 +1,37 @@
+{
+  "id": "dsh-skill-importer",
+  "analyzedAt": "2026-08-18T14:53:22.101Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 提供 dsh plugin 安装命令，代码通过 ctx.webServer.register 接入 DSH，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-skill-importer@latest",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-skill-importer@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的网页界面可以直接管理技能（skills）。你可以从本地 Markdown 文件或网址导入技能，查看所有已安装的技能，并在聊天输入框里快速插入技能。它还支持从 Claude Code、Codex 等工具批量迁移整个技能目录，整个过程不需要模型参与，也不消耗 token。",
+      "level": "ok",
+      "risks": "它会在你电脑上写入技能文件：项目里的 .agents/skills 目录和用户目录下的 ~/.dsh/skills。如果你用网址导入，它会抓取网页内容存成技能。批量导入时会读取其他 AI 工具的技能目录。所有请求只接受本机（localhost）来源，没有发现上传到外部服务器或执行额外安装脚本的行为。",
+      "postInstallNotes": "安装后需要重启 dsh Web（运行 npx @deepseek-ai/dsh web）才能生效；之后打开网页里的 Settings → Skills 即可使用。如果升级后出现重复插件报错，按 README 手动删除 $DSH_HOME/profiles/web/cordis.patch.yml 中的旧 skill-importer 条目。",
+      "notes": "要求 DeepSeek Harness >= 0.1.0-rc.6；新版本发布后有 pnpm minimumReleaseAge 供应链等待期，属正常现象。"
+    },
+    "summaryZh": "在 DeepSeek Harness 网页界面中导入、组织并调用技能（skill）的插件，支持文件/URL 导入与批量迁移。",
+    "usage": {
+      "prompt_tokens": 4356,
+      "completion_tokens": 2870,
+      "total_tokens": 7226,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2386
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3716
+    }
+  }
+}

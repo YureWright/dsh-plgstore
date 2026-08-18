@@ -1,0 +1,37 @@
+{
+  "id": "jLeon-account/dsh-client-usage",
+  "analyzedAt": "2026-08-17T11:57:36.398Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 字段并依赖 @deepseek-ai/dsh-settings 等核心包，README 描述了在 DSH web 客户端中显示 API 用量的功能，属于 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/jLeon-account/dsh-client-usage.git",
+      "evidence": "git clone https://github.com/jLeon-account/dsh-client-usage.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DSH 网页聊天界面下方显示 API 用量，包括输入/输出 token 数、缓存命中率、上下文占用，以及按 DeepSeek 官方价格估算的花费。它会自动区分高峰和空闲时段计价，你也可以自己改价格。",
+      "level": "ok",
+      "risks": "它只读取会话的用量数据并显示，不碰你的私人文件，也不会往外部发送数据。唯一会动的是 DSH 的配置文件（~/.dsh/settings.yaml），用来覆盖价格设置，风险很小。",
+      "postInstallNotes": "安装后需要手动在 %USERPROFILE%\\.dsh\\profiles\\web\\cordis.patch.yml 中添加启用配置（见 README），然后重启 dsh web 才能生效。",
+      "notes": "该插件基于 dsh 0.1.0-rc.6 开发，版本不同可能有兼容问题；价格档位切换以 2026-08-17 为界，过期后需自行调整。"
+    },
+    "summaryZh": "在 DSH 网页客户端显示 API 用量与费用估算的小插件，支持峰谷计价和自定义价格。",
+    "usage": {
+      "prompt_tokens": 2497,
+      "completion_tokens": 841,
+      "total_tokens": 3338,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 435
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1857
+    }
+  }
+}

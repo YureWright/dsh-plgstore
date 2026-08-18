@@ -15,7 +15,7 @@ import { categorize } from "./lib/categories.mjs";
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const DATA = join(ROOT, "data");
-const CACHE = join(DATA, "cache", "llm");
+const CACHE = join(DATA, "reports");
 const DB = join(DATA, "market.db");
 
 const menu = JSON.parse(await readFile(join(DATA, "plugins.json"), "utf8"));

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-hooks",
+  "analyzedAt": "2026-08-18T14:51:07.475Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 中声明了 dsh.bundle / dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-hooks",
+      "evidence": "dsh plugin --profile web add dsh-hooks           # from npm"
+    },
+    "evaluationReport": {
+      "intro": "这插件让你不用写代码，只用改个配置文件（cordis.patch.yml），就能在 DeepSeek Harness 的某个事件发生时（比如一轮对话结束、需要审批、调用工具等）自动执行一条命令，比如发个飞书/微信通知、写个日志。它还会在 Web 设置界面里加一个 Hooks 面板，能看到触发的历史记录，还能手动测试一下。",
+      "level": "ok",
+      "risks": "它会在你配置的事件发生时执行你指定的命令，所以你要对自己写的命令负责。另外，它会读取会话信息（如会话ID、内容、token用量等），通过环境变量传给这些命令；如果配置了webhook通知，还会把这些信息以JSON形式发到你填的网址。这些数据都可能被该网址的服务器看到。",
+      "postInstallNotes": "装完后需要在你使用的 profile（如 web）的 cordis.patch.yml 中添加 hooks 配置块，然后重启 dsh web。如果要用 webhook 通知，还可以设置环境变量 DSH_HOOKS_WEBHOOK_URL。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-hooks 是一个配置驱动的生命周期钩子插件，通过 YAML 配置为 DeepSeek Harness 定义事件触发命令，支持 webhook 和桌面通知。",
+    "usage": {
+      "prompt_tokens": 4310,
+      "completion_tokens": 1911,
+      "total_tokens": 6221,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1493
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3670
+    }
+  }
+}

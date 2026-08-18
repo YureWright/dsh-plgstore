@@ -1,0 +1,37 @@
+{
+  "id": "lucky8197/dsh-devquest",
+  "analyzedAt": "2026-08-17T12:10:01.459Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，peerDependencies 包含 @deepseek-ai/cordis，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件的明确证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-devquest",
+      "evidence": "dsh plugin --profile web add \"dsh-devquest\""
+    },
+    "evaluationReport": {
+      "intro": "DevQuest 是个游戏插件，装上后你在 DSH agent 里正常干活（比如完成对话回合、调用工具、清空待办、生成文字）就会自动获得经验值（XP），升级后解锁称号和成就，还有每日任务、每周挑战、BOSS、赛季商店、抽奖等玩法，让开发过程像打 RPG 一样有反馈。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你在 agent 里的活动数据（回合数、工具调用、待办、tokens 等）用于计分，并可能在本机保存游戏进度；所有功能都在本地，不会连接外部服务器。",
+      "postInstallNotes": "重启 dsh web，侧边栏底部会出现 ⚔️ 图标，点击即可开始使用；无需额外配置或环境变量。",
+      "notes": "无"
+    },
+    "summaryZh": "把开发变成 RPG 的 DSH 插件：用 XP、等级、成就、每日任务和赛季商店让你干活更有动力。",
+    "usage": {
+      "prompt_tokens": 3017,
+      "completion_tokens": 781,
+      "total_tokens": 3798,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 416
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2377
+    }
+  }
+}

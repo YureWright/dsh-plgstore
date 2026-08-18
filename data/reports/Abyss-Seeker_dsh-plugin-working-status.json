@@ -1,0 +1,37 @@
+{
+  "id": "Abyss-Seeker/dsh-plugin-working-status",
+  "analyzedAt": "2026-08-17T11:37:59.022Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 配置并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Abyss-Seeker/dsh-plugin-working-status.git",
+      "evidence": "dsh plugin --profile web add github:Abyss-Seeker/dsh-plugin-working-status"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你在 DeepSeek Harness 网页界面里，直接点击那段“Deep diving...”的思考状态文字，把它改成任何你想说的话。改一次，所有会话、所有轮次都会生效，刷新页面甚至重启应用都不丢。它还提供了一个配置卡片，可以在设置里修改、撤销或恢复默认。它只改文字内容，不影响样式和动画。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只把自定义文字存在浏览器的 localStorage 里（同源页面可读），不碰系统文件、不连接外部服务器。",
+      "postInstallNotes": "需要手动在 $DSH_HOME/profiles/web/cordis.patch.yml 中启用插件（添加 `- id: working-status-editor` / `name: dsh-plugin-working-status`），然后刷新 GUI 页面。",
+      "notes": "注意当前版本的 Host 设置因 DSH API 网关命名空间白名单限制，无法同步到后端，只能先存在浏览器 localStorage；另外依赖里 @deepseek-ai/dsh-settings 为 rc 预发布版，升级 DSH 时留意兼容性。"
+    },
+    "summaryZh": "点击即可修改 DeepSeek Harness 思考状态文字（如“Deep diving...”），支持配置卡片管理与 localStorage 持久化的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 2071,
+      "completion_tokens": 2608,
+      "total_tokens": 4679,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2178
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1431
+    }
+  }
+}

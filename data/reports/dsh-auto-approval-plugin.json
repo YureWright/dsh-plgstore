@@ -1,0 +1,37 @@
+{
+  "id": "dsh-auto-approval-plugin",
+  "analyzedAt": "2026-08-16T13:41:37.344Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 字段，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件标准。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-auto-approval-plugin",
+      "evidence": "dsh plugin --profile <profile> add dsh-auto-approval-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 加一个中间权限级别，介于“工作区写入”和“完全访问”之间。它可以自动批准那些无害的命令和操作（比如查看文件列表、读 git 状态），前提是它们发生在你预先设置好的“受信任区域”里（比如某个文件夹），这样就不用每次都弹窗问你；其他操作还是照常问你是否允许。",
+      "level": "ok",
+      "risks": "它会检查你运行的命令内容（用来判断是否安全），并在你配置的受信任文件夹里自动放行一些操作。所有操作都会记在会话日志里。它的配置接口默认只允许本机访问，除非你自己改成允许其他主机。没发现明显风险。",
+      "postInstallNotes": "需要先在插件设置页或 cordis.patch.yml 里配置 trustedAreas（受信任区域），否则插件不会自动批准任何操作；另外 DSH 升级时要注意同步 patch 里的权限表。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加一个“自动批准”权限层，自动放行对受信任区域内无害命令和文件操作的请求，其余仍由人工审批。",
+    "usage": {
+      "prompt_tokens": 3701,
+      "completion_tokens": 1323,
+      "total_tokens": 5024,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 923
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3061
+    }
+  }
+}

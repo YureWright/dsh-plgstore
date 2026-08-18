@@ -1,0 +1,37 @@
+{
+  "id": "dsh-ssh-ops",
+  "analyzedAt": "2026-08-16T13:45:45.950Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并有 @deepseek-ai/cordis 等 peerDependencies，README 给了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:caoyiwei850/dsh-ssh-ops#v0.1.1",
+      "evidence": "dsh plugin --profile web add github:caoyiwei850/dsh-ssh-ops#v0.1.1"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能直接管理远程服务器。它会在聊天窗口右边打开一个真正的终端，你既可以自己敲命令，也可以让 AI 帮你执行（比如查内存、配 SSL）。还带文件管理（上传下载文件）和端口转发功能。你的服务器连接信息会保存在本地，密码和私钥存在系统凭据文件里，AI 看不到。",
+      "level": "ok",
+      "risks": "它会读取和保存你填写的服务器密码、私钥，存在本机 ~/.dsh/.credentials.yaml 文件里（仅你能读）。它能连接远程服务器并执行命令，AI 可以帮你操作，但如果指令不当可能影响服务器。它会在浏览器里显示终端内容，旁边的人可能看到。端口转发功能可能把你的电脑端口暴露出去。如果电脑被入侵，这些凭据可能被窃取。",
+      "postInstallNotes": "重启 DSH Web 后，在“设置 → 插件 → SSH 资源”中添加服务器分组和连接，然后打开会话点击顶部 SSH 标签即可连接。",
+      "notes": "README 安装示例中的版本是 v0.1.1，但 npm registry 上已有 0.2.1，建议用最新版。github: 语法可能随 dsh 版本变化，若不可用可改走 tarball 安装。插件依赖 DSH 核心包，请确保 DSH 版本满足 peerDependencies。"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加 SSH 运维能力：主对话直接指挥远程服务器，并配交互式终端、文件管理（SFTP）和端口转发。",
+    "usage": {
+      "prompt_tokens": 3195,
+      "completion_tokens": 4318,
+      "total_tokens": 7513,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3806
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2555
+    }
+  }
+}

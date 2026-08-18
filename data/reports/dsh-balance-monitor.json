@@ -1,0 +1,37 @@
+{
+  "id": "dsh-balance-monitor",
+  "analyzedAt": "2026-08-16T13:44:48.022Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明 dsh.bundle/dsh.client，peerDependencies 含 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-balance-monitor",
+      "evidence": "dsh plugin --profile web add dsh-balance-monitor"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 用，帮你实时盯住 DeepSeek API 余额。余额低于你设的阈值（默认 10 元）时，它会暂停当前任务并弹窗问你：继续任务还是去充值。聊天界面还有一个可拖动的余额卡片，点充值按钮可以直达充值页面。",
+      "level": "ok",
+      "risks": "会把配置和余额历史记录保存到电脑上的宿主设置目录（例如 ~/.dsh/dsh-balance-config.json）；会用你配置的 DeepSeek API Key 经本机网络去查余额，密钥不会上传给第三方；可能请求浏览器通知权限，用于余额不足提醒。没发现恶意或越权行为。",
+      "postInstallNotes": "装完后重启 dsh web，在设置 → 插件 → 余额监控中设置余额阈值，并确保已在设置 → Models 配置 DeepSeek API Key。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek API 余额监控 DSH 插件：实时监测余额，低于阈值自动暂停任务并引导充值。",
+    "usage": {
+      "prompt_tokens": 4821,
+      "completion_tokens": 1280,
+      "total_tokens": 6101,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 909
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4181
+    }
+  }
+}

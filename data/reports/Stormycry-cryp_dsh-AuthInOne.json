@@ -1,0 +1,37 @@
+{
+  "id": "Stormycry-cryp/dsh-AuthInOne",
+  "analyzedAt": "2026-08-17T11:25:11.864Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 提供安装命令且代码调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Stormycry-cryp/dsh-AuthInOne.git",
+      "evidence": "pnpm dlx github:Stormycry-cryp/dsh-AuthInOne#v0.2.0-alpha.4 install --profile web"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你的 DeepSeek Harness 能登录 OpenAI Codex、Kimi Code 等账号，管理 API key 和自定义 OpenAI 兼容服务，切换模型，自动给纯文字模型配一个图像理解模型来识别图片，还能统计 token 用量和估算花费。",
+      "level": "ok",
+      "risks": "它会在你电脑上执行安装脚本，通过官方 DSH 插件 CLI 修改 DSH 配置；OAuth 登录时会在浏览器跳转到对应服务商（如 OpenAI、Kimi）的授权页，由服务商处理账号密码；插件声称密钥和 token 只保存在本机，不读取其他产品的凭证。整体风险可控，但因为是 alpha 版本，可能有小毛病。",
+      "postInstallNotes": "装完后打开 DSH 的 Settings → Models 或 Settings → Usage，按界面提示进行 Provider 登录、模型切换或用量查看。",
+      "notes": "当前是 v0.2.0-alpha.4 预发布版本，且部分账号流（如 xAI、Anthropic、GitHub Copilot）标记为‘实验性兼容’，稳定版用户建议观望。"
+    },
+    "summaryZh": "一个集 Provider 登录、模型切换、图片理解回退、用量统计与成本追踪于一体的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 4062,
+      "completion_tokens": 1292,
+      "total_tokens": 5354,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 843
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3422
+    }
+  }
+}

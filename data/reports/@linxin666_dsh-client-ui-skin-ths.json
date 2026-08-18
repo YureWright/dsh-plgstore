@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-skin-ths",
+  "analyzedAt": "2026-08-17T11:08:10.570Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，代码明显是 DSH 客户端插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-skin-ths",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-skin-ths"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页界面换皮肤的主题插件，模仿炒股软件“同花顺”的风格，带红色标题栏、股票指数条、自选股侧边栏等。它只改界面外观，不碰数据，不发送请求。",
+      "level": "ok",
+      "risks": "只修改浏览器里的界面（标题、图标、样式），不读取本地文件，不连接外部服务器。唯一要注意的是如果同时激活多个皮肤，页面外观可能错乱。",
+      "postInstallNotes": "安装后需运行 `dsh-skin use ths` 激活皮肤（同一时间只能激活一个皮肤）。",
+      "notes": "无"
+    },
+    "summaryZh": "同花顺风格的 DSH 网页界面皮肤，红色主题加股票报价条，纯前端美化。",
+    "usage": {
+      "prompt_tokens": 2058,
+      "completion_tokens": 993,
+      "total_tokens": 3051,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 673
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1418
+    }
+  }
+}

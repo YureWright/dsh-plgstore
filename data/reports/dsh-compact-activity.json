@@ -1,0 +1,37 @@
+{
+  "id": "dsh-compact-activity",
+  "analyzedAt": "2026-08-18T14:58:20.976Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 扩展点，并依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-compact-activity@latest",
+      "evidence": "dsh plugin add dsh-compact-activity@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 DeepSeek Harness 对话里连续的思考过程和工具调用合并成一个可折叠的单行条目，默认收起来，想看细节再展开；还会显示进行中/完成/错误的状态和计数，减少滚动，让对话更清爽。它只改界面显示，不碰模型数据。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只调整 Web 界面的显示方式，不修改模型上下文、会话日志或工具执行。",
+      "postInstallNotes": "安装后重启 DSH Desktop 或 Web 使插件生效；可运行 dsh --dump-config 验证配置包含 id: ui-compact-activity。",
+      "notes": "注意：DSH Desktop 对刚发布的 npm 包有 24 小时最短发布时间策略，安装时若实际版本不是最新，需按 README 用查询到的显式版本再执行一次 dsh plugin add。"
+    },
+    "summaryZh": "把 DeepSeek Harness 的思考与工具调用折叠成单行，界面更紧凑状态更清晰。",
+    "usage": {
+      "prompt_tokens": 5525,
+      "completion_tokens": 2128,
+      "total_tokens": 7653,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1753
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4885
+    }
+  }
+}

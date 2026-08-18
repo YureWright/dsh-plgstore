@@ -1,0 +1,37 @@
+{
+  "id": "@rongyi7/dsh-stats",
+  "analyzedAt": "2026-08-16T14:48:29.145Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 与多个 dsh-* 客户端包；README 提供了 `dsh plugin --profile web add @rongyi7/dsh-stats` 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@rongyi7/dsh-stats",
+      "evidence": "dsh plugin --profile web add @rongyi7/dsh-stats"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DSH 里每个项目用了多少 Token、对应花了多少钱、以及每天什么时间在开发，都统计出来，显示在 DSH 网页版侧边栏。它能按项目列表看汇总，也能看 30 分钟为一段的开发时间线，还能按最近 7/30/90 天过滤，支持导出 CSV 或 JSON。",
+      "level": "ok",
+      "risks": "它会读取本机 DSH 的会话日志和项目缓存（workspace.json、session_projcache.json、session.jsonl.zstd）来计算用量和费用，并在浏览器侧边栏里展示；统计选项会存在浏览器 localStorage。这些操作都在本地进行，没发现会把数据发给第三方。",
+      "postInstallNotes": "安装后重启 `dsh web` 让插件生效；可用 `dsh --profile web --dump-config` 确认 bundle 列表里出现 `@rongyi7/dsh-stats`。",
+      "notes": "请用 `dsh plugin` 命令安装，不要用 `npm install --prefix ~/.dsh/profiles/web ...`，否则会破坏 profile 的 pnpm 结构；插件要求 Node.js >=22。"
+    },
+    "summaryZh": "DSH 侧边栏项目统计插件：按项目展示 Token 消耗、开发时间线和消费金额，支持日期筛选与 CSV/JSON 导出。",
+    "usage": {
+      "prompt_tokens": 3663,
+      "completion_tokens": 2781,
+      "total_tokens": 6444,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2328
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3023
+    }
+  }
+}

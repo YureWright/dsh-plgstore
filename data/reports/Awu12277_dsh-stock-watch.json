@@ -1,0 +1,37 @@
+{
+  "id": "Awu12277/dsh-stock-watch",
+  "analyzedAt": "2026-08-17T11:15:36.763Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-stock-watch",
+      "evidence": "已发布到 npm，一条命令安装到你的 web profile：dsh plugin --profile web add dsh-stock-watch"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页版用的盯盘插件，会在浏览器右上角显示一个可以折叠的小窗口，实时看 A 股自选股行情。你可以添加股票、分组管理、查看分时图和 K 线、设置买卖目标价，还能一键生成投资研究报告。",
+      "level": "ok",
+      "risks": "它会在浏览器里保存你的自选股和设置（localStorage）；首次使用时可能会读取你电脑上 ~/.stocking/settings.json（如果你用过 stocking 项目的话），并向 ~/.agents/skills/ 目录复制两个技能文件；行情数据来自腾讯财经接口，你的 IP 会对腾讯可见。这些行为在 README 里有说明，风险不大。",
+      "postInstallNotes": "重启 dsh web 生效；如不想自动注入技能，可设置环境变量 DSH_STOCK_WATCH_NO_SKILLS=1。",
+      "notes": "无"
+    },
+    "summaryZh": "A股自选股实时行情盯盘插件，在 DeepSeek Harness Web 右上角显示可折叠弹窗，支持分时/K线、目标价提醒、分组管理和一键投资报告。",
+    "usage": {
+      "prompt_tokens": 3407,
+      "completion_tokens": 1184,
+      "total_tokens": 4591,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 801
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2767
+    }
+  }
+}

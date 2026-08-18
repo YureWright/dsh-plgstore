@@ -1,0 +1,37 @@
+{
+  "id": "nanshan1995/DSH-Plugin-Market",
+  "analyzedAt": "2026-08-17T12:07:44.131Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/nanshan1995/DSH-Plugin-Market.git",
+      "evidence": "dsh plugin --profile web add github:nanshan1995/DSH-Plugin-Market"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个“应用商店”面板。你可以在里面逛 GitHub 上所有 dsh 插件、按中英文搜索、收藏喜欢的，点一下就能安装；每次装之前它都会先自动做一遍安全体检，有危险的会拦住你，让你决定装不装。它还能管理你已经装的插件：开关、更新、卸载、看说明文档都很方便。",
+      "level": "ok",
+      "risks": "它会访问 GitHub 服务器获取插件列表和下载插件包；会读取你环境变量里的 GITHUB_TOKEN（如果有）并发送给 api.github.com 用于提高查询限额；安装其他插件时允许强制安装，等于可能执行第三方代码（虽然有检查但用户可选择绕过）；会修改 DSH 的配置文件（cordis.patch.yml），但这是管理插件的正常功能。",
+      "postInstallNotes": "重启 DeepSeek Harness，然后打开 设置 → Plugin Market。如需更高 GitHub 搜索配额，设置 DSHMARKET_GITHUB_TOKEN 环境变量。",
+      "notes": "README 中 npm 安装方式标注为“once published”，暗示 npm 包可能尚未发布，建议优先用 git 方式安装（如 github:nanshan1995/DSH-Plugin-Market）。另外，内置安全审计不能保证 100% 安全，且“Install anyway”可绕过审计，安装第三方插件时仍需自行注意。"
+    },
+    "summaryZh": "给 DSH 用的可视化插件市场，支持浏览、搜索、安全审计后一键安装，以及管理已装插件。",
+    "usage": {
+      "prompt_tokens": 3288,
+      "completion_tokens": 3475,
+      "total_tokens": 6763,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2978
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2648
+    }
+  }
+}

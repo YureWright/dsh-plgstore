@@ -1,0 +1,37 @@
+{
+  "id": "imetn/dsh-lark-bridge",
+  "analyzedAt": "2026-08-17T11:35:18.951Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 字段并依赖 @deepseek-ai/cordis 等多个 dsh 核心包，且 README 围绕 DSH 扩展功能，符合真正的 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/imetn/dsh-lark-bridge.git",
+      "evidence": "README 原文：\"pnpm dlx github:imetn/dsh-lark-bridge setup --project \\\"$PWD\\\"\" 表明通过该 GitHub 仓库直接安装运行。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你能直接用飞书（Lark）给 DeepSeek Harness 发消息来远程干活。比如在飞书群里说句话、发个文件，它就能调用你电脑上的 DeepSeek Harness 开始处理任务，并把进度、结果、需要你批准的操作通过卡片回给你。它还支持把不同飞书群映射到不同项目、把话题当成独立会话、在卡片上点按钮批准工具调用、查看状态、停止任务等。总之，就是把你和 DeepSeek Harness 之间的交互搬到飞书里。",
+      "level": "ok",
+      "risks": "它需要连接飞书服务器接收消息，所以会和你指定的飞书应用交换数据；安装时会把飞书应用密钥存在本机 Harness 的私有凭据文件里（只有你有权限读）；它还能读写你配置的项目目录里的文件，但会限制只能访问指定工作区内的文件，并防止符号链接逃逸；飞书卡片上不会显示隐藏推理，但会展示工具摘要，注意别在卡片里发敏感信息。",
+      "postInstallNotes": "需要提前准备好飞书开放平台的应用（App ID 和 App Secret），或用它自带的一键授权流程创建新应用；如果使用已有应用，可能还要按 README 手动配置权限和事件订阅；环境变量 DSH_LARK_APP_SECRET 需要设置，或在配置文件中指定凭据引用。",
+      "notes": "无"
+    },
+    "summaryZh": "一个通过飞书/龙套远程连接和控制 DeepSeek Harness 的双向桥接插件，支持消息任务、文件收发、审批卡片和会话管理。",
+    "usage": {
+      "prompt_tokens": 4169,
+      "completion_tokens": 1737,
+      "total_tokens": 5906,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1206
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3529
+    }
+  }
+}

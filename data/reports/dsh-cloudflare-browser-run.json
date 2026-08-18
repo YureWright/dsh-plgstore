@@ -1,0 +1,37 @@
+{
+  "id": "dsh-cloudflare-browser-run",
+  "analyzedAt": "2026-08-16T13:32:23.142Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 配置，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-cloudflare-browser-run",
+      "evidence": "dsh plugin --profile web add dsh-cloudflare-browser-run"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能真正打开浏览器访问网页，不是简单的抓取源代码。它用 Cloudflare 的浏览器服务来渲染 JavaScript 动态页面，然后把网页转成干净的 Markdown 文本，或者保存成截图和 PDF。需要你有 Cloudflare 的 API 令牌，适合需要看动态网页内容、或者要网页截图/PDF 的场景。",
+      "level": "ok",
+      "risks": "需要配置 Cloudflare API 密钥（存在配置文件里，不会被插件记录或上传）。插件会访问你指定的公开网页，并把内容交给模型处理。截图和 PDF 会保存在本地临时目录。除此之外没发现明显风险。",
+      "postInstallNotes": "需要设置 Cloudflare API 令牌（cf_api_token）和账户 ID（cf_account_id），令牌需要 Browser Rendering: Edit 权限。也可用可选配置 cf_api_base 和 output_dir 调整 API 地址和输出目录。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供基于 Cloudflare Browser Run 的真实浏览器能力，可将网页抓取为 Markdown、截图或 PDF。",
+    "usage": {
+      "prompt_tokens": 2354,
+      "completion_tokens": 737,
+      "total_tokens": 3091,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 347
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1714
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-eli-mode",
+  "analyzedAt": "2026-08-18T14:54:06.288Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-settings，README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-eli-mode@latest",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add dsh-eli-mode@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness（DSH）的一个 Agent 预设，核心是给 AI 配一个 wiki 知识库，让它能跨会话记住信息。它用 wiki 代替了传统的记忆和技能模块，AI 可以通过搜索、读取、写入的方式使用知识库。它还提供了管理页面，你可以在这里编辑 AI 的性格提示词和知识库注入的提示词；另外还有一个可选的界面美化功能，能加上知识库标签页、token 统计、工具调用折叠和角色立绘。安装后，在新建会话时选择 Eli Mode 预设就能用了。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下创建 ~/.dsh/eli-knowledge/ 和 ~/.dsh/.agent-presets/ 文件夹，存放知识库内容和预设文件，这些文件是明文保存的，里面可能有你让 AI 记住的敏感信息。如果 dsh 的网页服务被局域网内其他人访问，他们可能看到知识库内容（取决于访问控制）。另外，开启界面润色后，如果配置了 DEEPSEEK_API_KEY，会向 DeepSeek 服务器查询账户余额。没有发现向其他外部服务器发送数据的行为。",
+      "postInstallNotes": "重启 dsh web 后，新建会话时选择 Eli Mode 预设；首次运行会自动在 ~/.dsh/eli-knowledge/ 创建默认知识库。可在 设置 → 插件-插件配置 → Eli Mode 中编辑人格 prompt、知识库注入 prompt，或勾选界面润色。",
+      "notes": "需要 DSH 0.1.0-rc.6 或更新版本，Node.js >= 22，并安装 pnpm（dsh plugin 命令依赖它）。内置立绘素材采用 CC BY-NC-SA 4.0 非商用许可，重新分发时需注意署名和非商用条款。"
+    },
+    "summaryZh": "Eli Mode 是一个以 wiki 知识库驱动长期记忆的 DSH Agent 预设，用 wiki 替代 memory/skill，并提供管理页和可选界面润色。",
+    "usage": {
+      "prompt_tokens": 3294,
+      "completion_tokens": 4634,
+      "total_tokens": 7928,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4033
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2654
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "JoukoPuro/dsh-prompt-polish",
+  "analyzedAt": "2026-08-17T12:09:13.989Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 包含 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "dsh plugin --profile web add ./dsh-prompt-polish"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页聊天输入框增加了一个魔法棒按钮。你写完一段提示词后，点一下按钮选择风格（简洁、详细、代码等），已经连接好的 AI 模型就会帮你把这段话改得更专业、更容易被 AI 理解，然后你可以检查后再发送。支持多种语言的界面。",
+      "level": "ok",
+      "risks": "这个插件会把你的草稿文本发送给你配置的 LLM 服务（例如 DeepSeek）进行重写，这和你正常发送消息给 AI 一样，所以内容可能会被模型服务商看到。除此之外，没有发现它会读取其他文件或连接额外服务器的行为。",
+      "postInstallNotes": "安装后需要重启 `dsh web` 让插件生效。另外要确保已经在 DSH 设置中配置好模型适配器（如 DeepSeek 的 API key）。可选地，你可以在 `cordis.patch.yml` 中设置默认的 provider/model 和风格等参数。",
+      "notes": "这是一个较新的社区插件（stars 较少），建议先试用。当前只支持通过本地路径安装，如果后续作者发布 npm 包或 git 安装方式会更好。"
+    },
+    "summaryZh": "一个 DSH 插件，在网页对话输入框添加魔法棒按钮，用已连接的 LLM 将草稿重写为更专业的风格，支持多种语言界面。",
+    "usage": {
+      "prompt_tokens": 2082,
+      "completion_tokens": 4756,
+      "total_tokens": 6838,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4320
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1442
+    }
+  }
+}

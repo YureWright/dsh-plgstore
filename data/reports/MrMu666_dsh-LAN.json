@@ -1,0 +1,37 @@
+{
+  "id": "MrMu666/dsh-LAN",
+  "analyzedAt": "2026-08-17T13:15:45.807Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 并依赖 @deepseek-ai/cordis，README 也提供了 dsh plugin 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "dsh plugin --profile web add link:<本目录绝对路径>"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的局域网访问插件。装好之后，你的电脑上跑的 DSH 网页界面就可以被同一个 WiFi 或局域网里的手机、平板、别的电脑打开，而且打开时要输密码。它会自动把 DSH 服务从'只能本机访问'改成'所有网卡都能访问'，还会帮你把电脑防火墙的端口放行。手机上打开时，它会把界面调成适合竖着拿的样式，按钮也变大，方便手指点。它还做了一个带密码的'代理通道'，让局域网设备也能操作原本只有本机能干的设置、凭据等敏感功能。",
+      "level": "caution",
+      "risks": "它会改动你 DSH 的配置文件，让网页版不再只在本机可见，而是局域网里任何设备都能试着访问（访问时要密码）。它还会在你的电脑防火墙里开一个口子（自动添加放行规则），如果防火墙设置得不对，可能有安全风险。另外，它会在浏览器里保存你输过的密码（如果你勾了'记住口令'），所以别人用你电脑时可能看到。它还有个 /lanapi 通道，让局域网设备能操作设置、凭据这类敏感东西，虽然要密码，但密码要是太弱就可能被别人登进来。总之，建议只在自家网络用，别在公共 WiFi 开。",
+      "postInstallNotes": "安装后需要：到 DSH 设置页的 General → 「局域网访问」里，打开开关，设置一个至少 4 位的口令；确认防火墙状态显示为已放行；然后就可以用其他设备访问 http://你的电脑IP:3080 了。",
+      "notes": "提醒：这个插件不是通过 `dsh plugin add <包名>` 直接安装的，而是用仓库里的 install 脚本，需要管理员权限；它会把 DSH 服务暴露到局域网，请务必设强密码，并在不使用时关闭开关；升级插件代码后需要重启 `dsh web`。"
+    },
+    "summaryZh": "DSH 局域网访问/移动端适配插件：让手机平板通过密码访问网页界面，自动处理防火墙。",
+    "usage": {
+      "prompt_tokens": 2954,
+      "completion_tokens": 3972,
+      "total_tokens": 6926,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3391
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2314
+    }
+  }
+}

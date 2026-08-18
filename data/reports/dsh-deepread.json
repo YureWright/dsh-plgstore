@@ -1,0 +1,37 @@
+{
+  "id": "dsh-deepread",
+  "analyzedAt": "2026-08-16T13:22:56.737Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-deepread",
+      "evidence": "README 安装部分：`dsh plugin --profile web add dsh-deepread`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 AI 深度阅读助手插件。你可以把一篇公众号文章链接、一个本地文件（PDF/Word/Markdown/HTML）或者一段粘贴的文字交给它，它会帮你提炼核心观点、论证结构、关键证据，生成带出处和置信度的报告。它有五种模式：快速摘要、深度精读、知识图谱（生成思维导图）、费曼学习法（帮助记忆）和整本书阅读。结果可以直接在对话里展示，也可以导出成 Markdown、XMind 或 HTML 报告。",
+      "level": "ok",
+      "risks": "插件会读取你主动提供的文件和网页链接内容，这些内容会发送给配置的大模型服务进行处理；会话历史中的最近阅读记录保存在浏览器本地存储（localStorage），不会上传到服务器。没有发现其他明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能看到效果。如果要读取微信公众号文章，还需要在配置里挂载 HTTP 抓取组件并提供浏览器 User-Agent，否则可能遇到反爬验证页。",
+      "notes": "无"
+    },
+    "summaryZh": "深度阅读助手：将书籍/文章/PDF 提炼为结构化报告，支持快速、精读、知识图谱、费曼学习、整本书五种模式。",
+    "usage": {
+      "prompt_tokens": 3783,
+      "completion_tokens": 1494,
+      "total_tokens": 5277,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1083
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3143
+    }
+  }
+}

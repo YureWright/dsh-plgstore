@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-fun-ticker",
+  "analyzedAt": "2026-08-17T11:56:18.517Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 字段并依赖 @deepseek-ai/cordis 等核心包，README 描述了完整的 DSH 插件实现，符合真正的 DSH 插件特征。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "本仓库为 DSH monorepo 中 packages/fun/ticker 的单包快照。源码与该目录内容一致，可直接放回 monorepo 的 packages/fun/ticker/ 目录构建。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 行情跑马灯插件：在聊天输入框上方显示一行滚动的行情条，你可以自己添加加密货币、汇率、A股、港美股等代码，点击某个条目还能看到详细行情和迷你走势图。所有数据都免费、不需要申请 API key，由插件服务器端代为请求并缓存。",
+      "level": "ok",
+      "risks": "插件会向外部行情网站（Binance、CoinGecko、Frankfurter、东方财富、新浪）请求你关注的证券代码，因此你的浏览记录可能对这些服务可见；另外它会读写本地设置（比如你添加的股票列表）来保存配置。除此之外没发现明显风险。",
+      "postInstallNotes": "该插件没有发布为可直接安装的 npm 包，需要按照 README 的步骤放入 DSH monorepo 中构建，并修改 tsconfig.client.json、api-proxy.ts 等配置文件，最后在 cordis.patch.yml 中挂载。",
+      "notes": "该包 publishConfig.access 为 restricted，且 package.json 中的仓库地址指向 deepseek-ai/deepseek-harness，但实际 GitHub 仓库是 omdsh-dev/dsh-fun-ticker，来源需要自行确认；另外它需要自行构建，不是开箱即用。"
+    },
+    "summaryZh": "在 DeepSeek Harness 输入框上方显示自定义加密货币/汇率/A股/港美股行情的跑马灯插件，数据免费且由服务端代理缓存。",
+    "usage": {
+      "prompt_tokens": 2919,
+      "completion_tokens": 1685,
+      "total_tokens": 4604,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1205
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2279
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-github-skills",
+  "analyzedAt": "2026-08-18T14:50:11.119Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 提供了 dsh plugin add 安装命令，明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-github-skills",
+      "evidence": "dsh plugin --profile web add dsh-github-skills"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的，相当于给 AI 助手装了一套 GitHub 工作流技能。它本身不直接连 GitHub，而是负责组织其他 GitHub 插件的能力，像个项目经理：比如你说“处理一下这个 PR 的评论”，它会知道该调用哪个工具、按什么顺序做，还会注意安全，不会乱改代码或乱发评论。它一共提供了四个技能：查看 PR/Issue 状态、处理 PR 评论、修复 GitHub Actions 的 CI 问题、安全提交代码并开 PR。",
+      "level": "ok",
+      "risks": "插件会在本地运行 git 和 gh 命令来查看或修改你的代码仓库，可能读取仓库里的文件信息。它不会主动上传你的代码，但可能会通过你配置的 GitHub 插件或 gh CLI 获取 PR、CI 日志等内容，这些信息可能会被 AI 模型看到。插件本身不存密码或令牌，也不主动执行远程操作（如 push、评论）——这些需要明确指示或经过宿主批准。",
+      "postInstallNotes": "建议确保本机已安装 gh 命令行工具并登录 GitHub 账号（这样当缺少高级 GitHub 插件时能回退使用）。另外，最好安装一个 GitHub provider 插件（如 dsh-github-connector），否则部分功能只能依赖 gh CLI。",
+      "notes": "这是非官方社区项目，注意它通过修改 DSH 的 cordis 配置来工作，可能对 DSH 版本有要求（README 提到测试基线是 0.1.0-rc.6）。它本身不提供 GitHub API 能力，需要搭配其他插件才能完整工作。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 GitHub 工作流技能（PR 处理、CI 修复、安全发布），让 AI 更规范地组织 GitHub 操作。",
+    "usage": {
+      "prompt_tokens": 4516,
+      "completion_tokens": 1914,
+      "total_tokens": 6430,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1392
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3876
+    }
+  }
+}

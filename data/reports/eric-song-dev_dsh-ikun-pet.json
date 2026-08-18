@@ -1,0 +1,37 @@
+{
+  "id": "eric-song-dev/dsh-ikun-pet",
+  "analyzedAt": "2026-08-17T12:06:34.213Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并使用 @deepseek-ai/dsh-client-ui-conversation 作为 peerDependencies，README 也提供了 dsh plugin add 安装命令，符合 DSH 插件的证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ikun-pet",
+      "evidence": "dsh plugin add dsh-ikun-pet --profile web"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件。当 DeepSeek Harness 进行‘深潜’（Deep dive）回答时，它会在界面下方显示一只坤坤桌宠，并带有一个 0% 到 100% 的进度条；每 20% 会切换不同的动画和文字。回答完成时，它会播放‘你干嘛~哎哟’的语音提示，让等待过程更有趣。",
+      "level": "ok",
+      "risks": "该插件会修改 DSH 的配置文件（cordis.patch.yml）以便每次启动自动加载；它会在任务完成时通过系统命令播放声音（macOS 默认用 afplay）。它不会连接外部服务器，也不会读取私人文件。唯一的打扰可能是完成任务时突然发出声音，不过可以在配置里关掉。",
+      "postInstallNotes": "装完后需要重启 dsh web，并刷新浏览器。如果不需要声音或想在 Windows/Linux 上播放声音，可调整 config.playVoiceAtDone 或 playCommand 配置。",
+      "notes": "该插件会以永久插件形式写入 DSH 配置，卸载时用 dsh plugin remove dsh-ikun-pet 即可；不要与动态插件版本同时启用，否则精灵图路由可能冲突。"
+    },
+    "summaryZh": "DSH 桌宠插件：在深潜回答时显示坤宠进度条（0%→100%），每 20% 切换动作和文案，完成后播放语音提示。",
+    "usage": {
+      "prompt_tokens": 3066,
+      "completion_tokens": 2089,
+      "total_tokens": 5155,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1627
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2426
+    }
+  }
+}

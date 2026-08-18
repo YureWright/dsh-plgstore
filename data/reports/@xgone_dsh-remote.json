@@ -1,0 +1,37 @@
+{
+  "id": "@xgone/dsh-remote",
+  "analyzedAt": "2026-08-16T14:47:39.489Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 明确声明了 dsh.bundle.patch 与 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 也提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@xgone/dsh-remote",
+      "evidence": "dsh plugin --profile web add @xgone/dsh-remote"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加了一道登录认证：以前只能本机访问，装了它之后，你可以在外网或局域网通过浏览器登录使用，但必须先输入账号密码，还支持两步验证（MFA，就是谷歌验证器那种动态码）。登录后和本机使用几乎一样，连选择工作目录也会变成在网页上操作，不会在服务器上弹窗。",
+      "level": "ok",
+      "risks": "它会把账号数据（包括密码哈希、签名密钥等）存到电脑上的配置文件里（通常在 ~/.dsh 下）。如果暴露到公网，别人可能会尝试暴力破解登录，但插件自带限速和 MFA，风险不大。另外，它会让远程浏览器看到宿主机上的一些文件路径（在你授权的工作区内），相当于把服务器文件系统的一部分展示给登录用户。除此之外，没看到它偷偷连接外部服务器或做奇怪的事情。",
+      "postInstallNotes": "装完需要重启 dsh web 进程；然后打开 http://127.0.0.1:3080 创建第一个管理员账号（只能在本机操作）；建议立刻去设置里开启 MFA 双重验证；如果放在公网，记得把配置里的 session.secure 改成 true（HTTPS 时）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面增加账号密码登录、MFA 双重验证和远程访问控制，让你可以安全地在外网用浏览器使用它。",
+    "usage": {
+      "prompt_tokens": 5380,
+      "completion_tokens": 2145,
+      "total_tokens": 7525,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1676
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4740
+    }
+  }
+}

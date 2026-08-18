@@ -1,0 +1,37 @@
+{
+  "id": "Asaiuta/dsh-session-hub",
+  "analyzedAt": "2026-08-17T13:15:22.693Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出明确的 dsh plugin 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-session-hub@alpha",
+      "evidence": "dsh plugin --profile web add dsh-session-hub@alpha"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫“会话枢纽”，它能把你多台远程服务器上正在跑的 DSH 会话，以及你本机其他 AI 工具（比如 Codex CLI、Claude Code、opencode）的历史聊天记录，都汇总到 DSH 自带的界面里，统一查看和管理。它不替换官方界面，只是在后台帮你把数据搬过来。",
+      "level": "caution",
+      "risks": "它会读取你本机其他 AI 工具的聊天记录（需要你手动点“导入”才会读），还会根据你填写的 SSH 信息连接远程服务器（用你提供的私钥建立隧道）。这些数据都存在 DSH 的插件目录下。请确保你信任所填的服务器，并且只在需要时开启导入功能。",
+      "postInstallNotes": "装完后需要重启 dsh web（用 kill -TERM 等待退出，不要 kill -9），然后刷新浏览器页面，在“设置 → 插件 → 会话枢纽”里配置服务器或导入外部会话。",
+      "notes": "当前为 alpha 版本，配置格式和安全边界在 1.0 前可能变化，但核心流程已实测通过。"
+    },
+    "summaryZh": "把远程服务器和本机其他 AI 工具的历史会话统一收进 DSH 官方界面，一个面板管理所有对话。",
+    "usage": {
+      "prompt_tokens": 5908,
+      "completion_tokens": 1064,
+      "total_tokens": 6972,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 639
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5268
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-inspiration-deck-workshop",
+  "analyzedAt": "2026-08-16T13:32:49.333Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle（cordis.patch.yml），README 提供了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-inspiration-deck-workshop",
+      "evidence": "dsh plugin --profile web add dsh-inspiration-deck-workshop"
+    },
+    "evaluationReport": {
+      "intro": "这个插件装上后，能让 DSH 的 AI 助手直接生成好看的 HTML 演示文稿（类似 PPT）。内置 6 套模板、25 种以上的布局，还能对文稿做校验，并导出成 PNG 或 PDF 图片。不需要安装额外的 npm 包，但导出 PDF 时需要本机有 Chrome 浏览器。",
+      "level": "ok",
+      "risks": "没发现明显风险。生成的演示文稿默认会存放在技能目录里，导出 PDF/PNG 时需要在电脑上装有 Chrome/Chromium 浏览器。",
+      "postInstallNotes": "无需额外配置；若要使用 PNG/PDF 导出功能，需确保本机有 Chrome/Chromium（DSH 的 Playwright 缓存即可）。",
+      "notes": "无"
+    },
+    "summaryZh": "注册“灵感演示工坊”技能，让 DSH 助手能生成带模板和布局的 HTML 演示文稿，支持校验与导出。",
+    "usage": {
+      "prompt_tokens": 2040,
+      "completion_tokens": 1059,
+      "total_tokens": 3099,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 719
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1400
+    }
+  }
+}

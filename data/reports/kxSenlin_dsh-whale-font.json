@@ -1,0 +1,37 @@
+{
+  "id": "kxSenlin/dsh-whale-font",
+  "analyzedAt": "2026-08-17T13:10:07.820Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并导出 client 与 cordis.patch.yml，README 给出 dsh plugin add 安装命令，代码是标准的 DSH 插件结构。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/kxSenlin/dsh-whale-font.git",
+      "evidence": "dsh plugin --profile web add github:kxSenlin/dsh-whale-font"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness 聊天界面里表示说话人的“我/你/I/me”这些字，显示成一只 DeepSeek 的蓝色小鲸鱼图标。它只是换了个显示效果，不会改动聊天记录本身，复制的时候还是原来的文字。浅色深色模式都适配，英文单词只替换独立的 I/me，不误伤 It、Idea 这些词。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在浏览器里修改聊天页面的显示，但只作用于 DeepSeek Harness 自己的界面；不会上传你的聊天内容，也不读取本地文件。唯一要注意的是它依赖界面里的 CSS 类名，DSH 升级后可能失效，需要更新插件。",
+      "postInstallNotes": "安装后需要重启 DSH 服务，并在浏览器中强制刷新（Ctrl+Shift+R）才能看到效果；若想调整鲸鱼大小位置，可参考 README 里的可选调参步骤（需要 Python 和 fonttools）。",
+      "notes": "无"
+    },
+    "summaryZh": "一个把 DSH 对话中的人称代词渲染成 DeepSeek 蓝鲸图标的显示增强插件。",
+    "usage": {
+      "prompt_tokens": 2802,
+      "completion_tokens": 1944,
+      "total_tokens": 4746,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1530
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2162
+    }
+  }
+}

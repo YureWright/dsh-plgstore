@@ -1,0 +1,37 @@
+{
+  "id": "3274375092/dsh-voice",
+  "analyzedAt": "2026-08-17T12:03:18.087Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 字段并依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，确为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@nn12138/dsh-voice",
+      "evidence": "dsh plugin --profile web add @nn12138/dsh-voice"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的语音输入插件。装好后，网页界面上会出现一个麦克风按钮（或按快捷键 Ctrl+Space），你对着麦克风说话，它把语音转成文字，然后像正常打字一样把文字发到聊天框里。它只负责输入，不会改动 AI 的人设或预设。支持两种识别方式：本地离线识别（把语音留在自己电脑上，需要额外下载模型）和浏览器自带识别（语音会发给浏览器厂商的服务）。默认零配置，装上就能用。",
+      "level": "ok",
+      "risks": "它需要使用你的麦克风录音。如果开启本地离线识别，录音只在你电脑上处理，不会上传；如果没开离线模式，浏览器自带识别会把你的语音发送到浏览器厂商（如 Google、微软）的服务器。另外有个命令会下载约 100MB 的模型到本地。没发现其他明显风险。",
+      "postInstallNotes": "装完即可直接使用（零配置）。若想用本地离线识别，需额外执行：dsh plugin add sherpa-onnx-node 然后运行 dsh-voice-models 下载模型。可选地编辑 ~/.dsh/profiles/web/cordis.patch.yml 调整热键等配置，改完重启 dsh web。",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 设计的语音输入插件，把麦克风语音转成文字作为聊天消息发送，支持本地离线识别和浏览器识别两种模式，零配置即可使用。",
+    "usage": {
+      "prompt_tokens": 2512,
+      "completion_tokens": 1156,
+      "total_tokens": 3668,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 688
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1872
+    }
+  }
+}

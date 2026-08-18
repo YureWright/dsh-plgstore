@@ -1,0 +1,29 @@
+{
+  "id": "knqiufan/powercontext-dsh",
+  "analyzedAt": "2026-08-17T11:26:33.011Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也给出了 dsh plugin add 安装方式，是货真价实的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/knqiufan/powercontext-dsh.git",
+      "evidence": "dsh plugin --profile web add <path-or-tarball>"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 连接一个叫 PowerContext 的独立服务器，相当于给 AI 装上了外挂记忆和经验库。它能自动记住你之前聊过的内容、在任务之间交接、积累技能，还能在 AI 需要时把这些信息塞进对话上下文里。你不需要自己管理存储，它只是通过 HTTP 跟那个服务器沟通。",
+      "level": "ok",
+      "risks": "它会把你和 AI 的聊天内容（尤其是你输入的话）发送到 PowerContext 服务器（默认只监听本机 127.0.0.1）。如果你把服务器配到远程，这些对话就会经过网络传输，服务器管理员理论上能看到。另外它会读写你电脑上的 DSH 配置文件（比如 ~/.dsh/profiles/web/cordis.patch.yml）。除此之外没有发现更严重的风险。",
+      "postInstallNotes": "装完还得先启动 PowerContext 服务器（例如运行 powercontext server run），并让 dsh web 跑起来。如果要连远程服务器或改地址，需要设置对应环境变量（如 POWERCONTEXT_DSH_BASE_URL、POWERCONTEXT_DSH_AUTHORIZATION）。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 连接 PowerContext 记忆服务器的插件，让 AI 拥有跨会话记忆、任务交接、经验和技能能力。",
+    "usage": {
+      "prompt_tokens": 7549,
+      "completion_tokens": 2342,
+      "total_tokens": 9891
+    }
+  }
+}

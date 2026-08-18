@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-deep-research",
+  "analyzedAt": "2026-08-17T11:23:41.099Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 包含 @deepseek-ai/dsh-workflow 和 cordis，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/dsh-external/dsh-deep-research.git",
+      "evidence": "dsh plugin --profile <profile> add git+https://github.com/dsh-external/dsh-deep-research.git"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的深度研究插件：你给一个研究主题（比如“调研一下 MCP 生态”），它会自动把问题拆成多个子问题，多路并行上网搜索、抓取网页，然后综合各方信息，生成一份带引用和置信度标注的报告。它不只是跑一遍固定流程：会根据已经查到的东西自动判断还有哪些盲区，再补充研究，直到新增信息越来越少才停手。整个过程可以控制并发、深度，也能选择是否做对抗性审查（就是再让一个子代理挑毛病，防止报告太自信或引用出错）。",
+      "level": "ok",
+      "risks": "插件会安装到你的 DSH profile 目录下并修改该 profile 的依赖配置；它本身不发起网络请求，而是调用 DSH 自带的搜索/抓取工具，所以会通过官方渠道访问互联网（这是深度研究的核心功能）。未发现访问个人文件、上传隐私或执行未知安装脚本的行为。",
+      "postInstallNotes": "安装后需重启 DSH 或对应 profile 才能生效；如果安装时提示需要 allowBuilds，按提示在 $DSH_HOME/profiles/<profile>/pnpm-workspace.yaml 加一行；可选地，可配置 plannerModel/researcherModel 等模型分层以控制成本。",
+      "notes": "README 中给出的仓库地址（github.com/dsh-external/dsh-deep-research）与资料顶部的 GitHub 链接（github.com/omdsh-dev/dsh-deep-research）不一致，安装前建议确认实际仓库；peer 依赖的 @deepseek-ai/* 可能不是公开 npm 包，正常情况下由 DSH 官方组合提供。"
+    },
+    "summaryZh": "将深度研究变成自适应闭环的 DSH 插件：自动拆解问题、并行搜索验证、按信息增益动态补研并输出带置信度的报告。",
+    "usage": {
+      "prompt_tokens": 3315,
+      "completion_tokens": 2607,
+      "total_tokens": 5922,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2044
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2675
+    }
+  }
+}

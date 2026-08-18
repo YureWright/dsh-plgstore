@@ -1,0 +1,37 @@
+{
+  "id": "correctover",
+  "analyzedAt": "2026-08-18T14:49:58.929Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 且提供了 dsh 入口，README 明确说明是 DSH 运行时安全插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "correctover",
+      "evidence": "npm install correctover"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 AI Agent（比如用 DeepSeek Harness 搭的智能体）加一道安全锁的。它能检查 AI 的输出格式和内容、拦截可疑的工具调用，防止 AI 被诱导去做坏事（比如访问内网、执行危险命令、偷看隐私文件）。它还提供了一套 CCS 验证标准，可以理解成给 AI 的行为打分验收。",
+      "level": "caution",
+      "risks": "它作为安全插件会介入 AI 的每一次工具调用，可能会误伤正常操作；另外它的许可证是专有商业许可（不是开源），代码虽然能看但使用上可能有附加限制。",
+      "postInstallNotes": "无",
+      "notes": "该插件许可证为专有商业许可（SEE LICENSE IN LICENSE），并非开源。"
+    },
+    "summaryZh": "Correctover 是一个 AI Agent 运行时安全插件，提供 CCS 验证、护栏和 DeepSeek Harness 安全钩子。",
+    "usage": {
+      "prompt_tokens": 1904,
+      "completion_tokens": 645,
+      "total_tokens": 2549,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 330
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1264
+    }
+  }
+}

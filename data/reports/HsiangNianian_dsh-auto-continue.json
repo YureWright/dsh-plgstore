@@ -1,0 +1,37 @@
+{
+  "id": "HsiangNianian/dsh-auto-continue",
+  "analyzedAt": "2026-08-17T11:20:03.207Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-client-auto-continue",
+      "evidence": "dsh plugin --profile web add dsh-client-auto-continue"
+    },
+    "evaluationReport": {
+      "intro": "这是 DeepSeek Harness 网页界面的一个插件：当 AI 对话因为网络波动、超时等非人为故障中断时，它会自动帮你补发一句“继续”，让任务接着跑下去，省得你一直盯着手动点。它还内置了智能判断（比如鉴权失败就跳过不重试）、逐渐加长的重试间隔、可自定义的继续话术，以及统计面板和通知功能。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在浏览器里连接你本地的 DSH 服务，读取会话事件并自动发送消息，不会把数据传给第三方；它会请求浏览器通知权限，也会在 localStorage 存一点状态，这些都属于正常操作。自动重试可能多消耗一些 token，但这本来就是你安装它的目的。",
+      "postInstallNotes": "无（安装后重启 dsh web 即可生效，默认配置可直接使用，想细化行为可在设置卡里调整）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页插件：网络中断等非人为错误导致对话停止时，自动发送“继续”让 AI 接着干活。",
+    "usage": {
+      "prompt_tokens": 3834,
+      "completion_tokens": 3428,
+      "total_tokens": 7262,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3039
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3194
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "lhh010/dsh-ui-progress",
+  "analyzedAt": "2026-08-17T11:33:44.437Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 字段、依赖 @deepseek-ai/cordis，README 详述 DSH 客户端插件加载机制与槽位兼容，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/lhh010/dsh-ui-progress.git#v0.9.1",
+      "evidence": "git 依赖方式固定 tag：`pnpm add '@dsh-external/dsh-ui-progress@github:lhh010/dsh-ui-progress#v0.9.1'`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面加进度条的插件。它会在聊天输入框旁边常驻显示当前会话的进度：任务是否在跑、跑到哪一步、工具调用情况、已用时间、预计剩余时间、实时生成速度，以及有没有需要你审批或选择的待办。它不修改核心，只是在前端界面读状态并展示。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取当前会话在网页端的状态（比如是否运行中、工具名、待办、token 估算），不做网络请求，也不读写本地文件。",
+      "postInstallNotes": "注意按你的 DSH 快照版本选择对应插件 tag（v0.9.1 适配 snapshot0810~0812 / npm rc.5）；如果从源码方式安装（pnpm add link:），需要先执行 pnpm run build 再启动。",
+      "notes": "该插件未发布到 npm（package.json private: true），只能通过 git 安装，务必固定 tag；README 强调版本与 DSH 快照强相关，装错版本可能导致插件不生效或启动报错。"
+    },
+    "summaryZh": "DSH 网页界面会话进度条插件：在输入框旁显示真实进度、耗时、ETA、实时 token 速率和等待审批提醒，纯前端实现零核心改动。",
+    "usage": {
+      "prompt_tokens": 5511,
+      "completion_tokens": 2012,
+      "total_tokens": 7523,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1536
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4871
+    }
+  }
+}

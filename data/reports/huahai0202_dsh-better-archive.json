@@ -1,0 +1,37 @@
+{
+  "id": "huahai0202/dsh-better-archive",
+  "analyzedAt": "2026-08-17T11:51:04.064Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime 等核心包，README 给出了 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/huahai0202/dsh-better-archive.git",
+      "evidence": "dsh plugin --profile web add github:huahai0202/dsh-better-archive"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 网页版增加一个“已归档”页面，在侧边栏就能进入。你可以查看所有归档的会话，按项目筛选、搜关键词、排序，也可以一键恢复（取消归档）或永久删除。删除前会确认，附件文件不会被动。",
+      "level": "ok",
+      "risks": "它只会操作 DSH 的归档会话数据（比如取消归档或删除会话记录）。删除前需要确认，而且它不碰 DSH 管理的附件文件。没发现明显风险。",
+      "postInstallNotes": "安装后重启 dsh web；如果“已归档”入口没出现，需在 dsh.profile.bundles 数组中手动添加 \"dsh-better-archive\"，再重启。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH Web 侧边栏新增“已归档”页面，支持搜索、恢复和永久删除归档会话。",
+    "usage": {
+      "prompt_tokens": 2001,
+      "completion_tokens": 1088,
+      "total_tokens": 3089,
+      "prompt_tokens_details": {
+        "cached_tokens": 1920
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 732
+      },
+      "prompt_cache_hit_tokens": 1920,
+      "prompt_cache_miss_tokens": 81
+    }
+  }
+}

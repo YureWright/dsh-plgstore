@@ -1,0 +1,37 @@
+{
+  "id": "LoserFox/telegram",
+  "analyzedAt": "2026-08-17T11:40:37.093Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/dsh-agent 等核心包，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/LoserFox/telegram.git",
+      "evidence": "dsh plugin --profile web add <dir|git-url>"
+    },
+    "evaluationReport": {
+      "intro": "这个插件用来把 Telegram 聊天接到 DSH 的 AI 助手会话里。你在 Telegram 上和 bot 说话，它会转发给 AI 助手（比如 DeepSeek），然后把 AI 的回复发回 Telegram。每个聊天单独一个会话，支持用户白名单、HTML 格式化、长消息分片等功能。",
+      "level": "ok",
+      "risks": "它会连接 Telegram 服务器并调用配置的 LLM（大模型）服务，因此聊天内容会发送给第三方（DeepSeek 等）。如果你的 bot token 泄露，别人可能控制你的 bot；如果配置了允许所有用户，陌生人可能消耗你的 API 额度。默认白名单为空会拒绝所有人，风险较低。",
+      "postInstallNotes": "需要在配置里设置 bot token（config 的 token 或环境变量 DSH_TELEGRAM_TOKEN），并设置 allowedUserIds 允许哪些 Telegram 用户使用。还要确保 DSH profile 挂载了 agents 服务（@deepseek-ai/dsh-agent），装完重启目标 profile 的 DSH 进程。",
+      "notes": "无"
+    },
+    "summaryZh": "把 Telegram 聊天接入 DSH AI 助手的桥接插件：你在 Telegram 里和机器人对话，它会转给 AI 并把回复发回来。",
+    "usage": {
+      "prompt_tokens": 2337,
+      "completion_tokens": 2612,
+      "total_tokens": 4949,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2200
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1697
+    }
+  }
+}

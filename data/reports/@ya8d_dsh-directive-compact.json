@@ -1,0 +1,37 @@
+{
+  "id": "@ya8d/dsh-directive-compact",
+  "analyzedAt": "2026-08-16T13:30:09.306Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，依赖并 peer 依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供 dsh plugin add 安装命令且明确是 DeepSeek Harness 的压缩插件，符合真插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@ya8d/dsh-directive-compact",
+      "evidence": "dsh plugin --profile <name> add @ya8d/dsh-directive-compact        # npm registry (latest)"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加了两个用大白话指挥 AI 的斜杠命令：/compact-directive 可以把对话中间一大段按你的要求压缩，保留开头和最近几轮；/trim-directive 可以按你的要求删掉整个对话里的任何内容，连系统注入的骨架也能删。适合上下文很长的模型，用来省 token。",
+      "level": "ok",
+      "risks": "它会直接改动 AI 看到的对话历史，删掉的内容没有撤销功能，万一删错就找不回来了（虽然日志有记录，但恢复麻烦）。操作前最好先复制一份会话（fork）。它不碰你电脑上的文件，也不连接外部服务器。",
+      "postInstallNotes": "无（所有配置项都有默认值，可直接用；如需调整可在 cordis.yml 中设置 keepHeadUsers、keepTailUsers 等字段）。",
+      "notes": "当前版本是 0.1.0-rc.1 预发布版；/trim-directive 是破坏性命令，用之前务必先 fork 会话。"
+    },
+    "summaryZh": "给 DeepSeek Harness 用的自然语言对话压缩插件，通过 /compact-directive 和 /trim-directive 命令按你的要求智能压缩或裁剪对话历史。",
+    "usage": {
+      "prompt_tokens": 4083,
+      "completion_tokens": 1079,
+      "total_tokens": 5162,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 634
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3443
+    }
+  }
+}

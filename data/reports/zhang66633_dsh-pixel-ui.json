@@ -1,0 +1,37 @@
+{
+  "id": "zhang66633/dsh-pixel-ui",
+  "analyzedAt": "2026-08-17T12:10:18.852Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 peerDependencies 包含 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-pixel-ui",
+      "evidence": "dsh plugin --profile web add dsh-pixel-ui"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面换像素复古皮肤的插件。它提供了四套主题（木屋、羊皮纸、暖阳、终端绿），自带像素字体和 CRT 扫描线效果，安装后可以在设置里一键切换，也能随时切回默认界面。适合喜欢像素风或星露谷风格的用户。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取自身包内字体文件，在浏览器里存一个主题选择到 localStorage，不发网络请求、不读凭据。",
+      "postInstallNotes": "安装后需要重启 dsh web；首次加载会自动激活默认主题，之后可在设置 → 通用 → 像素主题里切换。无需额外配置。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-pixel-ui 是一款为 DSH Web 界面提供像素复古风格四主题的皮肤插件，支持一键切换回现代默认 UI。",
+    "usage": {
+      "prompt_tokens": 3017,
+      "completion_tokens": 500,
+      "total_tokens": 3517,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 158
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2377
+    }
+  }
+}

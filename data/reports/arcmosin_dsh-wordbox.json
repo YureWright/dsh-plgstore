@@ -1,0 +1,37 @@
+{
+  "id": "arcmosin/dsh-wordbox",
+  "analyzedAt": "2026-08-17T13:16:05.454Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-wordbox",
+      "evidence": "方式一：从 npm 安装（推荐，已发布到 npm） `dsh plugin --profile web add dsh-wordbox`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DeepSeek Harness 网页版的聊天输入框旁边加一个‘词’按钮。点开就是一个上拉面板，你可以把常用的词、句存进去，分成‘全局’和‘当前项目’两类，点击一下就能把内容填进输入框，不用重复打字。所有词条都保存在浏览器本地，不会上传服务器。",
+      "level": "ok",
+      "risks": "它会改动浏览器里的 localStorage 数据（词条内容），并读写对话输入框的草稿内容。这些数据只存在你的本地浏览器里，不会上传；但如果别人使用同一浏览器或电脑，可能会看到你保存的常用词句。没有发现它会读取系统文件或连接外部服务器。",
+      "postInstallNotes": "装完重启 `dsh web`，按钮就会出现，无需其他配置。",
+      "notes": "依赖宿主提供 @deepseek-ai/dsh-client-locale 和 @deepseek-ai/dsh-client-runtime 运行时。"
+    },
+    "summaryZh": "dsh-wordbox 为 DeepSeek Harness 网页端增加常用词/句面板，支持全局与项目分组、一键插入输入框。",
+    "usage": {
+      "prompt_tokens": 2589,
+      "completion_tokens": 3625,
+      "total_tokens": 6214,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3235
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1949
+    }
+  }
+}

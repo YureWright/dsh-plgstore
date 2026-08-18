@@ -1,0 +1,29 @@
+{
+  "id": "nevertoday/dsh-theme-plugin",
+  "analyzedAt": "2026-08-17T11:19:34.875Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle / dsh.client 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-theme-plugin@latest",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add dsh-theme-plugin@latest"
+    },
+    "evaluationReport": {
+      "intro": "这是一款给 DeepSeek Harness 换主题的插件，把界面配色改成中国传统色风格。内置 49 种传统颜色，每种都有浅色和深色两套，一共 98 套主题；每套主题连代码高亮、按钮、对话框颜色都一起调好，且保证文字对比度达到无障碍标准。装好后在“设置 → Traditional Colors”里选主题即可，也能用网址链接直接切换。适合喜欢国风配色、想要界面好看又清晰的用户。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要是修改界面颜色和代码高亮样式，主题选择记录存在浏览器本地存储（localStorage）中，不会读取聊天内容或向外部上传数据。",
+      "postInstallNotes": "装完启动 dsh（例如 npx -y @deepseek-ai/dsh --profile web），打开 http://127.0.0.1:3080/ ，进入“设置 → Traditional Colors”挑选主题；也可以直接访问带 #theme= 的链接（如 http://127.0.0.1:3080/#theme=zhuqing-light）即时切换。无需额外配置。",
+      "notes": "无"
+    },
+    "summaryZh": "为中国传统色爱好者打造的 DSH 主题包，提供 49 种传统色 × 明/暗共 98 套高对比度界面主题。",
+    "usage": {
+      "prompt_tokens": 7511,
+      "completion_tokens": 1729,
+      "total_tokens": 9240
+    }
+  }
+}

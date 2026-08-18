@@ -1,0 +1,37 @@
+{
+  "id": "openma-ai/deepseek-harness-acp",
+  "analyzedAt": "2026-08-17T11:32:37.450Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "README 提供了 `dsh plugin add` 安装命令并说明注册 dsh.bundle patch，且包含 cordis.patch.yml，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@openma/deepseek-harness-acp",
+      "evidence": "dsh plugin --profile acp add -w @openma/deepseek-harness-acp"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是个“桥梁”，让 DeepSeek Harness 能被 Zed 这类支持 Agent Client Protocol（ACP）的 AI 编辑器直接调用。装上之后，你可以在编辑器里直接和 DeepSeek Harness 对话、让它调用工具、管理任务计划，不用在网页和编辑器之间来回切。它有两种用法：一种是单独跑一个服务，另一种是作为 DSH 的一个配置插件装进你的 dsh 环境。",
+      "level": "ok",
+      "risks": "它会读取和保存你的 DeepSeek API 密钥（存在 $DSH_HOME/.credentials.yaml），并会在本地起一个服务供编辑器连接。如果你授予了相应权限，AI 可能能读写你工作区里的文件、执行命令。它本身不会把数据发给第三方，但如果你自己配置了外部 MCP 服务器或自定义网关，那些数据会发到对应地址。",
+      "postInstallNotes": "装完后需要先登录或保存 API 密钥（运行 dsh-acp login，或在 dsh Web UI 里保存），然后在 Zed 等客户端的设置里把 agent server 指向 dsh-acp（独立模式）或 dsh --profile acp（插件模式）。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 支持 Agent Client Protocol（ACP）的适配器，可在 Zed 等 ACP 客户端中直接使用",
+    "usage": {
+      "prompt_tokens": 4739,
+      "completion_tokens": 2901,
+      "total_tokens": 7640,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2463
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4099
+    }
+  }
+}

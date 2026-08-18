@@ -1,0 +1,37 @@
+{
+  "id": "@ai4paper/apaper-plugin",
+  "analyzedAt": "2026-08-18T14:56:08.969Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 依赖 @deepseek-ai/dsh-mcp-client 并导出 /dsh 入口，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@ai4paper/apaper-plugin",
+      "evidence": "dsh plugin --profile web add @ai4paper/apaper-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 AI 编程助手（比如 DeepSeek Harness）用的学术论文写作工具包。它自带两个技能：一个是帮你按 IEEE 期刊规则修改和润色学术文章，另一个是生成出版级质量的科学图表（用 TikZ/CeTZ）。它还内置了一个文献检索 MCP 服务器，能搜索 IACR、DBLP、Google Scholar、arXiv 上的论文，帮你收集 BibTeX 引用并下载论文。安装后，AI 助手就能边查文献边帮你写论文、画图。",
+      "level": "ok",
+      "risks": "插件会通过 npx/uvx 临时下载并运行 @ai4paper/apaper-mcp 这个第三方代码，这个代码会联网搜索学术文献，并可能读写你项目目录里的文件（比如论文草稿、图片）。另外，它会向 AI 助手注入写作和画图技能，这些技能可能会读取或修改你当前工作目录中的文件。整体来看属于正常功能，但如果你不信任这个插件，建议先了解它的行为。",
+      "postInstallNotes": "安装后还需要在 Harness GUI 里手动创建 agent preset：复制 Standard 预设，然后打开复制出来的 agent.cordis.yml，添加一行插件配置（- id: apaper-plugin, name: '@ai4paper/apaper-plugin/dsh'）。否则插件不会自动生效。",
+      "notes": "无"
+    },
+    "summaryZh": "面向 AI 编程助手的学术论文写作插件，集成写作与图表生成技能及文献检索 MCP 服务器。",
+    "usage": {
+      "prompt_tokens": 3596,
+      "completion_tokens": 1790,
+      "total_tokens": 5386,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1333
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2956
+    }
+  }
+}

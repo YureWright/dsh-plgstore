@@ -1,0 +1,37 @@
+{
+  "id": "@marecgents/dsh-hub",
+  "analyzedAt": "2026-08-16T14:54:56.043Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis 等核心包，符合 DSH 插件特征"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@marecgents/dsh-hub",
+      "evidence": "README 中安装命令：npm i -g @marecgents/dsh-hub"
+    },
+    "evaluationReport": {
+      "intro": "dsh-hub 是把 DeepSeek Harness（dsh）变成桌面应用的工具。它用 Windows 自带的 WebView2 窗口来显示 dsh 的网页界面，不用开浏览器，还加了系统托盘、主题同步、窗口大小记忆、右侧栏（显示 Token 统计、文件树、Git 变更）以及任务完成通知等功能。安装后你可以通过桌面快捷方式或 dsh-hub 命令启动，它会自动拉起 dsh 的 Web 服务并打开一个原生窗口。",
+      "level": "caution",
+      "risks": "安装时会自动运行脚本，可能会检测/安装 dsh 和 pnpm，并在 Windows 上创建桌面快捷方式。运行时会读写你电脑上 $DSH_HOME 下的配置文件（比如窗口状态、置顶会话），并查看工作区文件、Git 变更、会话内容等显示在界面里。它还用 koffi 直接调用 Windows API 来改标题栏颜色。目前是第三方开发的预览版，这些行为都来自它的源码，不是官方出品。",
+      "postInstallNotes": "无（安装后直接运行 dsh-hub 命令或双击桌面快捷方式即可；首次启动会自动检测 dsh 环境）",
+      "notes": "该插件带 postinstall 脚本，会修改系统（创建快捷方式、可能安装依赖），介意的话可先审查源码。当前为 rc 版，WebView2 壳已冻结，后续将迁移到 Tauri 2.x。注意它推荐用 npm 全局安装，而不是通过 dsh plugin add 安装。"
+    },
+    "summaryZh": "dsh-hub 把 DeepSeek Harness 变成桌面应用，用 WebView2 窗口展示界面，并加上托盘、通知、窗口记忆等本地功能。",
+    "usage": {
+      "prompt_tokens": 5784,
+      "completion_tokens": 3052,
+      "total_tokens": 8836,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2536
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5144
+    }
+  }
+}

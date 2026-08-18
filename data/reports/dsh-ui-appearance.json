@@ -1,0 +1,37 @@
+{
+  "id": "dsh-ui-appearance",
+  "analyzedAt": "2026-08-16T14:54:24.217Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 且 peer 依赖 @deepseek-ai/cordis 与多个 dsh-client-* 包，README 也给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ui-appearance",
+      "evidence": "dsh plugin --profile <name> add dsh-ui-appearance"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面换外观的：你可以自己调主题色（主色、背景、面板、输入框、文字、边框），还能上传图片或视频当壁纸，加上毛玻璃、半透明和背景氛围效果，让界面更好看。所有调整都是实时预览，调完自动保存，不用手动点保存。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只使用你主动选择的本地图片/视频当壁纸，并把设置和壁纸数据存到浏览器的 localStorage/IndexedDB 里，这些数据只存在于你自己的浏览器，不会上传到服务器，卸载后界面会恢复默认。",
+      "postInstallNotes": "无。装完后打开 WebUI，进入“设置 → 通用”，在“外观”下找到“个性化外观”即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "一个可以自由换主题色、壁纸、毛玻璃和背景氛围，实时预览并自动保存的 DeepSeek Harness 外观美化插件。",
+    "usage": {
+      "prompt_tokens": 4212,
+      "completion_tokens": 2117,
+      "total_tokens": 6329,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1748
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3572
+    }
+  }
+}

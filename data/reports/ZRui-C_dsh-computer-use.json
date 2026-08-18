@@ -1,0 +1,37 @@
+{
+  "id": "ZRui-C/dsh-computer-use",
+  "analyzedAt": "2026-08-17T11:22:08.193Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，且依赖 @deepseek-ai/cordis、@deepseek-ai/dsh-agent 等 DSH 核心包，README 也提供了 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "The setup center runs the official equivalent of: `dsh plugin --profile web add --save-exact file:/path/to/DSH\\ Computer\\ Use.app/Contents/Resources/Plugin`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DSH 直接「看」和「操作」你的 Mac 屏幕和 Chrome 浏览器，比如自动点击、输入文字、滚动页面、上传文件等，而且尽量不占用你的鼠标指针。它主要面向 macOS 14 以上系统，需要先装好 DSH 和 Chrome。",
+      "level": "caution",
+      "risks": "它会读取你的屏幕内容（需要屏幕录制权限），可能看到屏幕上显示的一切信息；也能模拟鼠标键盘操作，相当于把电脑控制权交给 AI。安装后需要手动在系统设置里开启辅助功能和屏幕录制权限。另外它用了一个苹果私有 API（SkyLight），系统更新后可能失效或行为异常。",
+      "postInstallNotes": "安装后需要在系统设置里授权「辅助功能」和「屏幕录制」，然后在 DSH Computer Use 的设置中心点击 Install 安装插件，最后重启正在运行的 DSH Host。",
+      "notes": "这是一个独立个人项目，非 DeepSeek 官方出品，但代码开源、有安全说明和签名公证。"
+    },
+    "summaryZh": "为 DSH 提供 macOS 和浏览器自动化能力的插件，让 AI 能模拟操作屏幕和 Chrome。",
+    "usage": {
+      "prompt_tokens": 3399,
+      "completion_tokens": 1562,
+      "total_tokens": 4961,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1147
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2759
+    }
+  }
+}

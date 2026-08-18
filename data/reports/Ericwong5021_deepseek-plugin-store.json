@@ -1,0 +1,37 @@
+{
+  "id": "Ericwong5021/deepseek-plugin-store",
+  "analyzedAt": "2026-08-17T11:21:25.596Z",
+  "result": {
+    "classification": {
+      "type": "list",
+      "confidence": 0.92,
+      "reason": "README 主体是插件目录与分类列表，package.json 虽有 dsh.bundle 声明但更像是数据源/目录项目，而非功能型 DSH 插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DeepSeek Harness 插件商店的目录/合集，收集了上千个社区插件，按分类和热度整理，方便你浏览和发现好用的插件。它本身不是一个功能插件，而是一个“插件列表”或数据源。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是一个目录和数据源，不涉及执行代码或访问隐私文件。",
+      "postInstallNotes": "无",
+      "notes": "经评估可能并非 DSH 插件，而是一个插件清单/合集；虽然 package.json 声明了 dsh.bundle，但 README 的主要用途是列出其他插件，建议当作参考目录而非直接安装的插件。"
+    },
+    "summaryZh": "DeepSeek Harness 插件商店的开源目录，收录上千个社区插件，支持分类浏览与搜索。",
+    "usage": {
+      "prompt_tokens": 4591,
+      "completion_tokens": 685,
+      "total_tokens": 5276,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 391
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3951
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "hellosz/dsh-pets",
+  "analyzedAt": "2026-08-17T13:12:18.292Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@hellosz/dsh-pets",
+      "evidence": "dsh plugin --profile web add @hellosz/dsh-pets"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加了一只可爱的浮动小宠物（比如皮卡丘），它会根据 AI 助手干活的状态做出不同动作：思考时跑来跑去，需要你确认时盯着你看，出错时垂头丧气。这样你就不用死盯着进度条，瞄一眼宠物就知道现在该干嘛了。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取 DSH 的任务状态来切换宠物动画，不会碰你的个人文件，素材也打包在插件内，不会主动联网。",
+      "postInstallNotes": "安装后运行 `dsh web` 启动界面，宠物会出现在右下角；如需修改宠物形象或大小，可到设置页的“宠物伙伴”里调整。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 网页界面中添加一只随任务状态变化的宠物伙伴，让等待过程更直观有趣。",
+    "usage": {
+      "prompt_tokens": 2882,
+      "completion_tokens": 2470,
+      "total_tokens": 5352,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2117
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2242
+    }
+  }
+}

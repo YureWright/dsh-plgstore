@@ -1,0 +1,37 @@
+{
+  "id": "dsh-chat-window-fold",
+  "analyzedAt": "2026-08-16T13:43:36.916Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 'dsh plugin --profile web add dsh-chat-window-fold' 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-chat-window-fold",
+      "evidence": "dsh plugin --profile web add dsh-chat-window-fold"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 的网页聊天窗口用的。它能自动把聊天记录里很早的消息折叠起来，让窗口只保留最近几十条，滚动到最底部时自动触发折叠，滚动到顶部时又会分批把更早的消息加载回来。这样聊天界面不会越滚越长，对性能比较弱的电脑也更友好。它只是改变显示方式，不会改动你的聊天数据。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只作用于浏览器里的聊天窗口显示，不修改数据，也不连接外部服务器。",
+      "postInstallNotes": "安装后重启 dsh web 即生效。如果要调整折叠保留的行数或判定周期，可以在配置里设置 foldThreshold 和 foldCheckEvery。",
+      "notes": "依赖 DSH 0.1.0-rc.* 系列版本，升级 DSH 前建议确认兼容性。"
+    },
+    "summaryZh": "DSH 聊天窗口自动折叠/展开插件：滚动到底部折叠早期消息，贴顶逐批追回，保持窗口精简。",
+    "usage": {
+      "prompt_tokens": 2721,
+      "completion_tokens": 1162,
+      "total_tokens": 3883,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 793
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2081
+    }
+  }
+}

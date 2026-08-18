@@ -1,0 +1,37 @@
+{
+  "id": "dsh-console",
+  "analyzedAt": "2026-08-16T14:47:11.270Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin add 安装命令，且功能围绕 DeepSeek Harness 的 slash 命令扩展。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-console",
+      "evidence": "dsh plugin --profile web add dsh-console"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的控制台插件，让你在聊天命令里直接管理 Web 服务、SSH 隧道、快速提问，还能启动一个终端界面。比如输入 /web status 查看网页服务是否在运行，/tunnel start 建立 SSH 隧道，/ask 直接问问题，/console 打开一个文本界面。",
+      "level": "ok",
+      "risks": "它会启动/停止 Node 进程（比如 /web start/stop），会运行 ssh 命令建立隧道（需要你配置 SSH 密钥），还会执行你配置的 consoleCommand 命令。这些操作都只在你明确配置后发生，不会偷偷连外部服务器。",
+      "postInstallNotes": "安装后零配置即可用 /web status 和 /tunnel status；如果要使用 /tunnel start 和 /console，需要在 cordis.patch.yml 里配置 tunnelHost、tunnelKey、consoleCommand 等。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 增加 Web 服务管理、SSH 隧道、快捷提问和 TUI 启动的斜杠命令插件。",
+    "usage": {
+      "prompt_tokens": 2656,
+      "completion_tokens": 776,
+      "total_tokens": 3432,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 404
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2016
+    }
+  }
+}

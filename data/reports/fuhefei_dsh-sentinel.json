@@ -1,0 +1,37 @@
+{
+  "id": "fuhefei/dsh-sentinel",
+  "analyzedAt": "2026-08-17T11:28:30.045Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并注入了 @deepseek-ai/dsh-client-runtime 等 DSH 核心包，README 给出 dsh plugin --profile web add 安装命令，可确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:fuhefei/dsh-sentinel#v0.10.0",
+      "evidence": "One line through the official bundle channel (build artifacts are committed, so the git-source install runs no build): `dsh plugin --profile web add \"github:fuhefei/dsh-sentinel#v0.10.0\"`"
+    },
+    "evaluationReport": {
+      "intro": "dsh-sentinel 像个‘闹钟哨兵’。你可以告诉它‘当某个文件变了、某个端口连不上了、某个网页内容变了，或收到一条 webhook 通知时，把 agent 叫起来干活’。即使 agent 正在睡觉、甚至会话已经关闭，条件满足时它也会自动唤醒 agent 继续处理。它还提供仪表盘，让你清楚看到有哪些哨兵在值班、最后一次探测结果和触发记录。",
+      "level": "ok",
+      "risks": "它会读写 DSH 的数据目录（$DSH_HOME），在里面写日志和租约文件；按你设置的监控项，它可能在服务器上执行只读命令、尝试连接端口、访问网页；它会在本机开放一个 webhook 接收端口，机器上其他程序或恶意网页可能向它发请求（已有跨站防护）；如果你配置了 notifyWebhookUrl，每次触发都会把事件内容 POST 到那个外部地址。这些都是插件明说会做的功能，整体风险可控。",
+      "postInstallNotes": "默认设置即可用。想调整探测心跳、间隔、并发数等参数，可在 profile 的 cordis.patch.yml 里覆盖配置；想要侧边栏分支视图，还需要给 DSH 源码打补丁并重建，普通用户可不开启。",
+      "notes": "该项目 stars 仅 10，属于较新的社区插件，但证据齐全、走官方 bundle 通道。注意：侧边栏补丁与另一插件 dsh-subagent-tree 的补丁语义冲突，只能二选一。"
+    },
+    "summaryZh": "DSH 哨兵插件：让 agent 在文件、命令、端口、HTTP 或 webhook 等条件满足时自动被唤醒，每个订阅和触发都清晰可见。",
+    "usage": {
+      "prompt_tokens": 3337,
+      "completion_tokens": 3904,
+      "total_tokens": 7241,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3324
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2697
+    }
+  }
+}

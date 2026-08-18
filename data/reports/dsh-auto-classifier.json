@@ -1,0 +1,37 @@
+{
+  "id": "dsh-auto-classifier",
+  "analyzedAt": "2026-08-16T13:24:03.588Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并导出 client 入口，描述明确为 DeepSeek Harness 的权限分类插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-auto-classifier",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个新的权限档‘auto（自动）’。开启后，它会在 AI 干活之前自动检查每一把‘工具’（比如执行命令、改文件），危险的直接拦下，安全的放行；需要更高权限时也不用你盯着弹窗，它自己判断。它还带一个网页控制面板，可以调规则、开 LLM 法官来兜底判断，也会在被放行的高风险操作前自动给工作区做个 git 快照，方便反悔。",
+      "level": "caution",
+      "risks": "它会读取你的会话和工具调用信息，可能包括工作区里的命令和文件路径；你在这插件的网页设置里填的模型 API key 会被保存到本地配置里；开启 LLM 法官后，部分工具调用内容会发给你在设置里指定的外部 AI 服务；它会在工作区自动执行 git add 和 git commit；拦截记录会写到你家目录下的 ~/.dsh/auto-classifier/denials.jsonl。",
+      "postInstallNotes": "装完后需要：1) 在 DSH 设置里把会话的权限预设切换成 auto；2) 若要使用 LLM 法官，到插件设置页填写 judge 模型的 provider、base URL、API key 和模型名；3) 按需调整自动放行/拦截的开关。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加‘auto’自动权限模式：根据规则和可选的 LLM 判断，自动放行或拦截 AI 的工具调用，并支持网页配置与 git 快照。",
+    "usage": {
+      "prompt_tokens": 3423,
+      "completion_tokens": 1562,
+      "total_tokens": 4985,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1090
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2783
+    }
+  }
+}

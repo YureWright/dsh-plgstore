@@ -1,0 +1,37 @@
+{
+  "id": "Dpf555/dsh-workbench",
+  "analyzedAt": "2026-08-17T11:44:28.407Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 字段，README 显示其通过 Cordis 插件和客户端 bundle 扩展 DSH Web GUI，并调用 ctx.fs 接口。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DSH 的网页聊天界面变得像 VS Code 一样：右侧多了一个文件树，点开文件会在中间打开一个代码编辑器（用 VS Code 同款的 Monaco 编辑器），还能直接预览 Markdown 文件。它不改变聊天功能，只是增加了一个编辑文件的工作区。",
+      "level": "caution",
+      "risks": "它会往你电脑上下载约 13MB 的编辑器资源，并会修改 DSH 的安装文件（打补丁）。这些操作如果出错可能导致 DSH 无法正常打开。它会读取和写入你打开的工作区里的文件，但都限制在 DSH 的沙箱内，不会越界。另外，它需要你在命令行里运行几个脚本，请确认你信任这个来源。",
+      "postInstallNotes": "安装完成后，需要重启 `dsh web` 并强制刷新浏览器（Ctrl+F5）。如果以后 DSH 升级，可能需要重新生成补丁，否则插件可能失效。",
+      "notes": "该插件不是通过 `dsh plugin add` 安装的，而是需要手动 `git clone` 并运行多个脚本；它还会给 DSH 客户端打补丁，不适用于所有版本。包名带 @dsh-local 作用域，可能未发布到公共 npm。建议先备份 DSH 配置。"
+    },
+    "summaryZh": "为 DSH 网页界面增加 VS Code 风格三栏布局：右侧文件树、中间 Monaco 编辑器以及 Markdown 预览，安装过程需要手动打补丁。",
+    "usage": {
+      "prompt_tokens": 3089,
+      "completion_tokens": 6038,
+      "total_tokens": 9127,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5591
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2449
+    }
+  }
+}

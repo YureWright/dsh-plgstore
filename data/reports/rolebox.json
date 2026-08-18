@@ -1,0 +1,37 @@
+{
+  "id": "rolebox",
+  "analyzedAt": "2026-08-18T14:57:28.640Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "rolebox",
+      "evidence": "dsh plugin --profile <name> add rolebox"
+    },
+    "evaluationReport": {
+      "intro": "rolebox 是一个给 AI 编程助手（如 DeepSeek Harness、opencode、pi）用的插件，让你可以用简单的 YAML 文件定义不同的 AI 角色（比如‘主架构师’、‘测试员’），每个角色可以有不同的提示词、模型、技能和权限。它还带持久记忆、多角色协作调度、代码导航（LSP）等功能，适合团队按工程流程组织多个 AI 助手一起干活。",
+      "level": "ok",
+      "risks": "它会在你的用户主目录下创建/修改配置文件（例如 ~/.dsh、~/.config/opencode、~/.pi/agent），并在项目目录里生成 .rolebox 文件夹存放记忆和运行状态；安装时可能运行 postinstall 脚本（已用 try/catch 保护）。除此之外没发现明显风险。",
+      "postInstallNotes": "重启 dsh 后生效；如需自定义角色，运行 `rolebox init my-agent -y` 创建角色，或用 `rolebox install <name>` 从注册表安装预置角色；可通过 DSH_HOME 环境变量更改配置目录。",
+      "notes": "该包同时支持 opencode/pi/dsh，作为 dsh 插件安装时需保证 dsh 运行时满足其对 @deepseek-ai/cordis 4.0.1 的 peer 依赖。"
+    },
+    "summaryZh": "rolebox 是一个在 DeepSeek Harness、opencode 和 pi 上运行的 AI 角色管理插件，用 YAML 定义带记忆、技能和权限的多角色协作工作流。",
+    "usage": {
+      "prompt_tokens": 4583,
+      "completion_tokens": 2397,
+      "total_tokens": 6980,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1931
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3943
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "gezi-wen/sage-mem",
+  "analyzedAt": "2026-08-17T13:13:47.170Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/gezi-wen/sage-mem.git",
+      "evidence": "在你的 DSH profile 的 `package.json` 里加：`\"sage-mem\": \"github:gezi-wen/sage-mem\"`"
+    },
+    "evaluationReport": {
+      "intro": "sage-mem 是给 DeepSeek Harness (DSH) 用的记忆插件，让 AI 能跨会话记住事情。它把记忆存在本地的 markdown 文件里（不是数据库），透明、容易检查和修改。你可以把 Claude Code 里积累的记忆和人格直接搬过来，不用数据库或额外服务。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的 markdown 文件（默认在 ~/.sage-mem/memory 目录），这些文件存着对话记忆，内容可能包含个人信息。任何能访问你电脑的人都能看到这些文件。除此之外没发现其他明显风险。",
+      "postInstallNotes": "可选：用环境变量 SAGE_MEM_DIR 指定记忆目录，默认 ~/.sage-mem/memory，不设置也能用。",
+      "notes": "无"
+    },
+    "summaryZh": "sage-mem 是 DSH 的文件式跨会话记忆插件，用 markdown 文件透明保存记忆，支持从 Claude Code 无损迁移。",
+    "usage": {
+      "prompt_tokens": 2354,
+      "completion_tokens": 1147,
+      "total_tokens": 3501,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 762
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1714
+    }
+  }
+}

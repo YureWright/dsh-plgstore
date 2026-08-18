@@ -1,0 +1,37 @@
+{
+  "id": "dsh-client-ui-pet",
+  "analyzedAt": "2026-08-17T11:10:37.789Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle / dsh.client，并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-client-runtime，README 也给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-client-ui-pet",
+      "evidence": "从 npm 安装\ndsh plugin --profile web add dsh-client-ui-pet"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的桌宠插件，会在网页右下角显示一个 Q 版小宠物。它会根据当前会话的状态（比如思考、阅读、编辑、工作、回复、完成、出错）自动切换不同的表情和动作，还会轮播对应的对话气泡。所有图片和动画都打包在插件里，不需要额外加载文件。",
+      "level": "ok",
+      "risks": "只在浏览器本地保存你的显示偏好（比如显示/隐藏桌宠）到 localStorage，不发送到服务器。没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 DSH（或等待组合热加载），然后刷新 Web 页面，桌宠就会出现。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页界面的 Q 桌宠插件，能根据会话状态自动变化表情和动作。",
+    "usage": {
+      "prompt_tokens": 1642,
+      "completion_tokens": 585,
+      "total_tokens": 2227,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 245
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1002
+    }
+  }
+}

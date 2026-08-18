@@ -1,0 +1,37 @@
+{
+  "id": "dsh-memory-gate",
+  "analyzedAt": "2026-08-18T14:54:22.516Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-memory-gate",
+      "evidence": "dsh plugin --profile web add dsh-memory-gate"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的长期记忆插件。它会把对话中值得记住的信息存到本地 SQLite 数据库，在每次模型调用前先判断哪些记忆值得放进去，避免无关信息占用上下文。还支持用 /memory 命令查看、搜索、反馈记忆，让记忆越用越准。所有数据都保存在本地，不会上传到外部服务。",
+      "level": "ok",
+      "risks": "没发现明显风险。数据保存在本地 SQLite 文件，不连接外部服务；但记忆内容会持久化在磁盘上，注意保护数据文件。",
+      "postInstallNotes": "重启 dsh web 生效；如需调整记忆注入模式，可编辑 $DSH_HOME/profiles/web/cordis.patch.yml 中的配置。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供本地长期记忆的插件，通过 CBDC 门控决定哪些记忆注入上下文，支持反馈学习和审计。",
+    "usage": {
+      "prompt_tokens": 4345,
+      "completion_tokens": 1217,
+      "total_tokens": 5562,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 887
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3705
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "loadingvx/deepseek-harness-workbench-plugin",
+  "analyzedAt": "2026-08-17T11:29:27.935Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，确属 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-workbench-plugin@0.1.14",
+      "evidence": "dsh plugin --profile web add dsh-workbench-plugin@0.1.14"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 网页界面加了一个“工作台”：聊天窗口留在左边，右边新增编辑器和终端（中间）以及文件与 Git 面板（最右）。你可以直接在网页里写代码、开终端执行命令、浏览/编辑工作区文件、看 Git 状态/提交代码，还能让 AI 帮你把自然语言变成 shell 命令并写进当前终端。",
+      "level": "ok",
+      "risks": "插件会在网页里打开一个本地终端（PTY），能读写你工作区里的文件、执行 shell 命令和 Git 操作；AI 辅助会把自然语言指令转成命令输入到当前终端，虽然带危险命令黑名单，但使用时应留意命令内容。另外内置的升级检查会访问 npm registry 查询最新版本。",
+      "postInstallNotes": "装完后需要重启 dsh web，进入 Conversation 新建会话，工作台会出现在右侧；如果 pnpm 因 24 小时发布时间限制拒绝安装，按 README 在 ~/.dsh/profiles/web/pnpm-workspace.yaml 添加 minimumReleaseAgeExclude 后重试。",
+      "notes": "README 标记版本 0.1.14，但仓库 package.json 写的是 0.1.10，请以 npm 实际发布版本为准；需要 Node.js ^22.19.0 或 >=24.0.0。"
+    },
+    "summaryZh": "DSH 网页版工作台插件，为对话界面增加带智能终端的编辑器、文件树与 Git 面板，支持 AI 命令辅助和 Markdown/Mermaid 预览。",
+    "usage": {
+      "prompt_tokens": 3609,
+      "completion_tokens": 1748,
+      "total_tokens": 5357,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1246
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2969
+    }
+  }
+}

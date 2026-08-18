@@ -1,0 +1,37 @@
+{
+  "id": "Luke-Yong/dsh-plugin-knowledge-graph",
+  "analyzedAt": "2026-08-17T12:10:40.677Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Luke-Yong/dsh-plugin-knowledge-graph.git",
+      "evidence": "dsh plugin --profile web add github:Luke-Yong/dsh-plugin-knowledge-graph"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会为你的代码库建一张“知识图谱”，记录文件、目录、导出的符号以及彼此之间的关系。装上它之后，AI 助手就能快速回答像“哪个文件导出了这个函数”“这个文件依赖了哪些文件”之类的问题，不用再一行行翻代码。它支持 TypeScript/JavaScript 和 Python 项目，可以查询目录结构、查找未使用的导入等。",
+      "level": "ok",
+      "risks": "它会扫描并读取你指定目录下的源代码文件（默认是当前工作目录），所以注意别在包含敏感代码的目录里运行；除了读取代码文件外，没发现其他明显风险。",
+      "postInstallNotes": "无",
+      "notes": "项目自称处于早期阶段（infancy），查询接口和行为可能变化，使用时可留意更新。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供代码库知识图谱读取工具（read_graph），可查询项目结构、导出/导入符号及依赖关系。",
+    "usage": {
+      "prompt_tokens": 1963,
+      "completion_tokens": 2480,
+      "total_tokens": 4443,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2112
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1323
+    }
+  }
+}

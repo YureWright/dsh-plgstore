@@ -1,0 +1,37 @@
+{
+  "id": "tencent-connect/dsh-qqbot",
+  "analyzedAt": "2026-08-17T11:13:35.088Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis、@deepseek-ai/dsh-agent 等核心包，README 给出 dsh plugin 安装命令，确为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@tencent-connect/dsh-qqbot",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile qqbot add @tencent-connect/dsh-qqbot"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是腾讯官方出的，能让你的QQ机器人跟DeepSeek Harness（dsh）连起来。别人在QQ上私聊你的机器人，或者在群里@它，它就会自动把消息转给DeepSeek的大模型来处理，再把AI的回复发回QQ。支持多会话隔离、内置/compact、/model之类的命令，还可以扫码快速登录，不用手动配密钥。",
+      "level": "ok",
+      "risks": "需要提供QQ应用的AppID和AppSecret（或扫码绑定），这些凭据会保存在本地配置里。聊天消息会经过腾讯QQ和DeepSeek服务，相关方理论上能看到内容。除此之外没发现明显风险。",
+      "postInstallNotes": "启动时按提示扫码绑定QQ，或提前设置QQBOT_APPID和QQBOT_SECRET环境变量。可以在配置里指定LLM提供商和模型（默认deepseek-chat），如果有需要可配preset。",
+      "notes": "无"
+    },
+    "summaryZh": "将QQ消息平台接入DeepSeek Harness的官方IM插件，支持私聊/群聊、扫码登录和多种便捷命令。",
+    "usage": {
+      "prompt_tokens": 3026,
+      "completion_tokens": 1585,
+      "total_tokens": 4611,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1181
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2386
+    }
+  }
+}

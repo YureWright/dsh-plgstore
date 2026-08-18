@@ -1,0 +1,37 @@
+{
+  "id": "havingautism/dsh-notebooks",
+  "analyzedAt": "2026-08-17T12:00:45.795Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:havingautism/dsh-notebooks",
+      "evidence": "dsh plugin --profile web add github:havingautism/dsh-notebooks"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加了一个“随手记”功能，你可以创建笔记、存网页引用、把模型生成的总结和图表保存下来，还能在网页界面里浏览、搜索、整理这些笔记。简单说，就是给 DSH 配一个跨会话的记事本。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "安装后运行 dsh web 打开界面，在“随手记”标签页使用；如需调整笔记数量等上限，可通过 profile 或 home patch 覆盖 notebooks 配置。",
+      "notes": "仓库为个人维护，package.json 标记为 private，未发布到 npm，请通过 GitHub 安装。"
+    },
+    "summaryZh": "为 DSH 提供跨会话持久笔记、模型工具和 Web 工作区的插件。",
+    "usage": {
+      "prompt_tokens": 2173,
+      "completion_tokens": 2777,
+      "total_tokens": 4950,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2468
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1533
+    }
+  }
+}

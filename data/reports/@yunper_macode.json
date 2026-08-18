@@ -1,0 +1,37 @@
+{
+  "id": "@yunper/macode",
+  "analyzedAt": "2026-08-16T14:55:29.249Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.7,
+      "reason": "package.json 有 bin 入口且描述为独立 coding agent，未声明 dsh.bundle/client，README 与包名不匹配，更像独立工具而非 DSH 插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "macode 是一个基于 DSH 的多智能体编程助手，提供终端对话界面，并支持一组智能体（crew）按流水线协作完成编程任务。它本身是一个独立的命令行程序，需要通过 npm 安装并运行。",
+      "level": "caution",
+      "risks": "它会读取你当前目录下的项目文件、可能执行 shell 命令、访问剪贴板，并且需要网络连接 DSH 服务。另外，这个包来自个人 npm 账号（@yunper），其描述指向的仓库和实际 README 不一致，安装前建议先确认来源。",
+      "postInstallNotes": "无",
+      "notes": "经评估可能并非 DSH 插件（缺少 dsh.bundle/client 字段，README 也不是该包的说明）。如需作为插件使用，可能无法被 dsh 加载。"
+    },
+    "summaryZh": "macode：基于 DSH 的多智能体 coding agent，提供 TUI 对话与 crew 流水线。",
+    "usage": {
+      "prompt_tokens": 3144,
+      "completion_tokens": 3595,
+      "total_tokens": 6739,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3268
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2504
+    }
+  }
+}

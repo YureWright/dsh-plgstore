@@ -1,0 +1,37 @@
+{
+  "id": "dsh-paperlab",
+  "analyzedAt": "2026-08-16T13:37:10.504Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码是 DSH 插件 bundle。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-paperlab",
+      "evidence": "dsh plugin --profile paperlab add dsh-paperlab"
+    },
+    "evaluationReport": {
+      "intro": "这是一个帮你改论文的 AI 工作台插件。它像 Overleaf 一样，可以在浏览器里编辑 LaTeX、查看 PDF，还能在 PDF 上选中文字写批注。写完后，DeepSeek Harness 的 AI 会按批注自动改写论文、编译检查、提交 git，所有修改都有记录，可以回滚。",
+      "level": "ok",
+      "risks": "它会在你电脑上读写 LaTeX 项目文件和 git 仓库，并启动本地服务（工作台和 dsh）。它会通过 dsh 调用 AI 模型，可能消耗 API 额度。作为第三方插件，理论上有访问你文件的可能，所以作者也提醒安装前先看源码。",
+      "postInstallNotes": "需要按 README 运行 start.sh 启动完整工作台，并在 dsh Web UI（http://127.0.0.1:3080）配置模型凭据。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 Overleaf 式论文修改工作台，让 DeepSeek Harness 的 AI 根据批注自动改论文、编译并管理 git 版本。",
+    "usage": {
+      "prompt_tokens": 3040,
+      "completion_tokens": 1286,
+      "total_tokens": 4326,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 905
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2400
+    }
+  }
+}

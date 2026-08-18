@@ -1,0 +1,37 @@
+{
+  "id": "cocofhu/anime-find",
+  "analyzedAt": "2026-08-17T11:54:24.486Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis，README 也提供了 dsh plugin 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/cocofhu/anime-find.git",
+      "evidence": "README 安装说明：dsh plugin --profile web add github:cocofhu/anime-find"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的搜番插件。你可以在对话里直接让它搜动漫（番剧），它会从蜜柑、AniBT、AnimeGarden 等多个资源站找资源，把封面、标题、评分、格式等信息做成卡片展示；点开卡片还能看字幕组、磁力链接、种子文件，甚至还支持在线播放。相当于给聊天助手装了一个‘搜番小能手’。",
+      "level": "ok",
+      "risks": "插件会把你的搜索关键词发送给它配置的资源站（蜜柑、AniBT、AnimeGarden 等），也会请求 Bangumi 获取介绍和评分。开启流媒体播放后，它会把播放请求代理到相应媒体服务器，但只会访问你配置或内置规则里声明的域名，并拒绝私网/回环地址。配置保存在 Harness 用户目录下的 anime-find.json，不会上传。安装时会先跑 npm run build 编译 TypeScript，这是正常构建步骤。整体没发现恶意行为。",
+      "postInstallNotes": "装完需要重启 dsh web，并在浏览器强制刷新页面。默认只启用蜜柑一个源，如需更多源，去 设置 → 插件 → 插件配置 → 搜番 里打开 AniBT 或 AnimeGarden，也可调整结果数量和站点地址。要用流媒体播放的话，按 README 添加或修改规则即可。",
+      "notes": "该插件确实是 DSH 插件（package.json 含 dsh.bundle/client 且依赖 @deepseek-ai/cordis）。目前 GitHub stars 较少、版本 0.1.3，属于早期项目；请遵守所访问资源站的使用条款。"
+    },
+    "summaryZh": "对话内多源搜番并展示卡片详情、磁力/种子与在线播放的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 3590,
+      "completion_tokens": 5480,
+      "total_tokens": 9070,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4942
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2950
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-genui",
+  "analyzedAt": "2026-08-16T11:50:44.547Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/dsh-genui.git",
+      "evidence": "dsh plugin --profile web add git+https://github.com/omdsh-dev/dsh-genui.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 AI 的回答不再只是干巴巴的文字，它能在回答里直接生成可交互的界面，比如数据面板、图表、表单、测验题、3D 场景等。你可以在回答里直接点按钮、拖滑块，AI 会根据你的操作实时更新内容，就像用一个小应用一样。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要在会话页面内渲染界面，不读取个人文件，也不会把数据发给第三方服务器。",
+      "postInstallNotes": "安装后重启 dsh web 并硬刷新，然后在新的会话里说“use dsh-ui to draw a stats dashboard”验证是否生效。另外确保 pnpm 已安装（缺失时先运行 corepack enable）。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-genui 让 DeepSeek Harness 的回答呈现可交互 UI 组件，支持面板、图表、表单、测验等，并提供流式渲染与本地状态持久化。",
+    "usage": {
+      "prompt_tokens": 3829,
+      "completion_tokens": 2239,
+      "total_tokens": 6068,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1873
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3189
+    }
+  }
+}

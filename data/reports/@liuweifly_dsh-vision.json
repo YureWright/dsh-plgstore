@@ -1,0 +1,37 @@
+{
+  "id": "@liuweifly/dsh-vision",
+  "analyzedAt": "2026-08-16T14:48:56.136Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了对 @deepseek-ai/cordis、@deepseek-ai/dsh-settings、@deepseek-ai/dsh-credentials 等 DSH 核心包的 peerDependencies，README 提供了 dsh plugin add 安装命令，可判定为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@liuweifly/dsh-vision",
+      "evidence": "dsh plugin --profile web add @liuweifly/dsh-vision"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上“眼睛”：以前只支持文字的模型，现在聊天里发图片也能用了。它的做法是在本地起一个小代理，把图片先发给一个视觉模型（比如 qwen3-vl-flash）生成一段文字描述，然后拿这段描述代替图片去问 DeepSeek。也就是说 DeepSeek 永远只收到文字，图片只有视觉模型能看到。默认用的视觉服务是阿里云国际版，也可以改成本地模型（MLX/Ollama）。",
+      "level": "ok",
+      "risks": "插件会在本机 127.0.0.1 起一个临时代理，并读取 DSH 的配置和凭证（比如 ~/.dsh 下的 YAML），以获取 DeepSeek 和视觉模型的 API key；你贴的图片会被发送到你配置的视觉模型服务（默认是阿里云 DashScope 国际版），所以图片内容会被该服务看到；除此之外没有发现会上传其他文件或执行额外安装脚本的行为。",
+      "postInstallNotes": "装完后需要在 ~/.dsh/profiles/web/cordis.patch.yml 里把插件加入启用列表（按 README 的 - insert 配置），同时配置视觉模型的 API key——可以通过 DSH Web UI 设置，或在 ~/.dsh/.credentials.yaml 里写入 ALI_API_KEY_INTL，也可以在插件配置里用 visionKeyFile 指向一个 .env 文件；最后重启 DSH 生效。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 加图片理解能力：聊天贴图先由视觉模型转成文字描述，再交给 DeepSeek 处理，支持云端或本地视觉后端。",
+    "usage": {
+      "prompt_tokens": 2423,
+      "completion_tokens": 2276,
+      "total_tokens": 4699,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1747
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1783
+    }
+  }
+}

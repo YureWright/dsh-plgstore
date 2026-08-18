@@ -1,0 +1,37 @@
+{
+  "id": "Clizo1209/dsh-playwright-browser",
+  "analyzedAt": "2026-08-17T11:30:19.526Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-playwright-browser",
+      "evidence": "dsh plugin --profile web add dsh-playwright-browser"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness（DSH）的 AI 助手能控制你的浏览器。它可以帮 AI 打开网页、点击按钮、填写表单、截图、切换标签页等，就像有个虚拟员工在帮你操作浏览器。它基于 Playwright，支持 Chrome、Edge 等浏览器。",
+      "level": "ok",
+      "risks": "插件会启动和控制浏览器，AI 可能会访问网页并进行操作（如点击、填表），需要你在会话中适当授权。截图和日志会保存在项目目录下的 .dsh-browser 文件夹里。不建议把个人常用浏览器配置（userDataDir）指向这个插件。",
+      "postInstallNotes": "需要在使用前配置好 DSH profile 并安装浏览器（如 npx playwright install chromium，或使用已安装的 Chrome/Edge），并可在 cordis.patch.yml 中调整插件配置（如浏览器类型、headless 模式等）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供基于 Playwright 的语义化多标签浏览器自动化能力的插件。",
+    "usage": {
+      "prompt_tokens": 3277,
+      "completion_tokens": 627,
+      "total_tokens": 3904,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 263
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2637
+    }
+  }
+}

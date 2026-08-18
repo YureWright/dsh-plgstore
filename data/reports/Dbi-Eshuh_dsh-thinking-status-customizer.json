@@ -1,0 +1,37 @@
+{
+  "id": "Dbi-Eshuh/dsh-thinking-status-customizer",
+  "analyzedAt": "2026-08-17T12:01:20.231Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Dbi-Eshuh/dsh-thinking-status-customizer.git",
+      "evidence": "dsh plugin --profile web add github:Dbi-Eshuh/dsh-thinking-status-customizer#v0.2.2"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DSH Web 里原来单调的'思考中'状态变得好玩：可以显示一行流动的文字（默认是'正在吃饭中...'）、一张动图（GIF/APNG/WebP），或者左边图右边文字。你还能调文字颜色、流动方向、动画效果等。所有设置都存在你自己的浏览器里，不会上传到任何地方。",
+      "level": "ok",
+      "risks": "它会在浏览器 localStorage 里保存你的设置（包括你选择的图片数据，如果图片小于约 3MB）；如果你填了一个 HTTPS 图片链接，浏览器会直接去请求那个链接。它只改页面显示样式，不会碰你的聊天记录或模型数据。",
+      "postInstallNotes": "安装后需要重启 DSH Web，然后点击悬浮的'Thinking status'（思考状态）按钮打开设置面板，选择你想要的显示模式。",
+      "notes": "无"
+    },
+    "summaryZh": "自定义 DSH Web 思考状态显示的插件，支持流动文字、动图或图文组合，设置仅保存在本地浏览器。",
+    "usage": {
+      "prompt_tokens": 2403,
+      "completion_tokens": 1995,
+      "total_tokens": 4398,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1612
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1763
+    }
+  }
+}

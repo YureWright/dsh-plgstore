@@ -1,0 +1,37 @@
+{
+  "id": "YLifeOnlyOnce/dsh-smarthome",
+  "analyzedAt": "2026-08-17T13:12:20.800Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，peerDependencies 包含 @deepseek-ai/cordis，且 README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-smarthome",
+      "evidence": "dsh plugin --profile web add dsh-smarthome"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的 AI 助手能控制你的智能家居（Home Assistant）。你可以用自然语言让它查看家里哪些设备开着、查询历史记录、开关灯、调亮度、启动场景等。所有会改变状态的操（比如开灯、关灯）都会先弹出一个确认框，你批准后才会执行，防止 AI 乱动你的家。它还支持在对话里直接显示一个家庭仪表盘卡片，实时看到家里设备的状态。",
+      "level": "ok",
+      "risks": "需要配置 Home Assistant 的地址和访问令牌（token），插件会通过 REST API 和 WebSocket 读取状态、调用服务。如果 token 泄露，别人可能控制你的家居设备；另外，它运行时会在本地连接你的 Home Assistant，但所有危险操作都有审批确认，风险较低。",
+      "postInstallNotes": "安装后需要配置 Home Assistant 的 baseUrl 和 token，通常通过环境变量 HOME_ASSISTANT_TOKEN 或配置文件设置，然后重启 dsh 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "一个让 DeepSeek Harness 助手通过自然语言控制 Home Assistant 智能家居的插件，带审批确认和实时仪表盘。",
+    "usage": {
+      "prompt_tokens": 3952,
+      "completion_tokens": 589,
+      "total_tokens": 4541,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 183
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3312
+    }
+  }
+}

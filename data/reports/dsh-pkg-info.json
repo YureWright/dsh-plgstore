@@ -1,0 +1,37 @@
+{
+  "id": "dsh-pkg-info",
+  "analyzedAt": "2026-08-16T13:29:24.600Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 包含 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-pkg-info",
+      "evidence": "dsh plugin --profile <name> add dsh-pkg-info"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 助手增加了一个叫 pkg_info 的工具，可以查询 npm 和 PyPI 两个软件仓库的包信息，比如版本号、描述、许可证、作者、主页、依赖等，返回给模型使用。就算查不到或网络出错，它也不会报错，而是返回一个「没查到」的结果，方便程序处理。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在被调用时会向 npm 和 PyPI 的官方服务器发送查询请求，不会读取本地文件或做别的事。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-pkg-info 是一个 DSH 插件，提供 pkg_info 工具，用于查询 npm 和 PyPI 软件包的元数据。",
+    "usage": {
+      "prompt_tokens": 2419,
+      "completion_tokens": 2207,
+      "total_tokens": 4626,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1901
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1779
+    }
+  }
+}

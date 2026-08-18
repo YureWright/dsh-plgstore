@@ -1,0 +1,37 @@
+{
+  "id": "Moeblack/deepseek-manners",
+  "analyzedAt": "2026-08-17T11:24:52.574Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis，且 README 给出了 dsh plugin add 安装命令，符合真实 DSH 插件的证据"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:moeblack/deepseek-manners",
+      "evidence": "dsh plugin --profile web add github:moeblack/deepseek-manners"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在你每次给 DeepSeek 发消息后，自动在消息里附上一句“谢谢你，鲸鱼大人”（可以自己改成别的话）。网页界面上会出现一个心形开关，随时可以开或关。它还能用来在每次请求时加上一段自定义指令，比如让模型用某种语气回复或调整思考方式。",
+      "level": "ok",
+      "risks": "它会在每次发给 DeepSeek 的请求内容中附加一段文字，所以这段文字会被发送到 DeepSeek 的服务器；除此之外不会读取你的个人文件或连接额外外部服务器。",
+      "postInstallNotes": "如果想自定义感谢语或注入内容，需要在 DSH_HOME/settings.yaml 中添加 deepseek-manners 配置；不配置则用默认值。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，在每次发消息后自动向鲸鱼娘道谢，支持自定义注入文本和开关。",
+    "usage": {
+      "prompt_tokens": 1951,
+      "completion_tokens": 3559,
+      "total_tokens": 5510,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3206
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1311
+    }
+  }
+}

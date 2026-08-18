@@ -1,0 +1,37 @@
+{
+  "id": "buhuikongpan/dsh-pluginmanager",
+  "analyzedAt": "2026-08-17T11:39:54.500Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并在 client.inject 中依赖了 @deepseek-ai/dsh-client-runtime 等核心包，README 也给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:buhuikongpan/dsh-pluginmanager",
+      "evidence": "dsh plugin add github:buhuikongpan/dsh-pluginmanager"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 的一个插件管理器，把 DSH 装的一堆插件按原生系统/WebUI/工具、用户扩展、临时运行三层分类展示，支持编辑描述、停用/启用、卸载、补登记等操作，让插件管理更清晰。",
+      "level": "ok",
+      "risks": "它会在你电脑上修改 DSH 的配置文件（cordis.patch.yml 和 package.json），但每次写入前会自动备份；停用/卸载插件时可能让正在运行的会话（如终端）断开。这些操作都在本地，不会上传数据。",
+      "postInstallNotes": "重启 dsh web 服务，然后在设置 → 插件 → 插件管理里使用。安装时请选一种方式（bundle 或手工 patch），不要混用，否则会启动报错。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件管理器，把插件按三层架构整理得明明白白，支持描述、启停、卸载和补登记。",
+    "usage": {
+      "prompt_tokens": 3203,
+      "completion_tokens": 661,
+      "total_tokens": 3864,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 283
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2563
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-notify-sounds",
+  "analyzedAt": "2026-08-18T14:57:08.209Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 配置，依赖 @deepseek-ai/dsh-settings，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-notify-sounds",
+      "evidence": "dsh plugin --profile web add dsh-notify-sounds"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加上提示音和桌面通知。当智能体需要你回答问题、审批权限，或者任务完成时，它会播放短声音，并在屏幕右下角弹出通知，这样你切换去别的页面也不会错过。",
+      "level": "ok",
+      "risks": "它会读取 DSH 的会话状态（比如任务是否在等你、是否完成）来触发声音和通知，这些状态只在你的电脑上处理，不会上传。设置保存在浏览器本地。Windows 下会临时调用 PowerShell 在屏幕角落弹窗，旁边的人可能看到通知内容；首次运行可能触发安全软件对 PowerShell 的提示。",
+      "postInstallNotes": "安装后需要重启 dsh web，并确认 cordis.patch.yml 里已经写入插件行；首次使用前在浏览器页面上点击或按键一下，解锁声音自动播放。",
+      "notes": "注意：即使通过 dsh plugin add 安装，README 仍提示需要在 cordis.patch.yml 中手动添加 insert 行并重启；原生桌面弹窗仅支持 Windows。"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面增加提示音和桌面通知，在智能体提问、审批或任务完成时提醒你。",
+    "usage": {
+      "prompt_tokens": 4751,
+      "completion_tokens": 2902,
+      "total_tokens": 7653,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2506
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4111
+    }
+  }
+}

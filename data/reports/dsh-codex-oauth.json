@@ -1,0 +1,37 @@
+{
+  "id": "dsh-codex-oauth",
+  "analyzedAt": "2026-08-16T13:23:33.421Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，peerDependencies 依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-llm-pi-ai，README 提供 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-codex-oauth",
+      "evidence": "README 原文：`dsh plugin --profile web add dsh-codex-oauth`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 可以直接用你的 ChatGPT Plus/Pro 订阅（Codex 模型）来当聊天后端。它通过 OpenAI 官方的 Codex OAuth 登录方式授权，支持流式回复、工具调用、看图片、对话重放、自动刷新登录态等。你不需要再单独装 Pi 或复制 API Key，只要在 DSH 里登录一次 ChatGPT 就行。注意：它只能用于 ChatGPT 订阅，不能用普通的 OpenAI API Key。",
+      "level": "ok",
+      "risks": "插件会在你的电脑上保存一个登录凭据文件（默认位置是 ~/.dsh/.openai-codex-auth.json），里面存放着用于访问 ChatGPT Codex 的令牌。文件权限设置为仅当前用户可读，并且使用原子写入，但依然有被恶意软件读取的风险。登录的时候会打开浏览器跳转到 OpenAI 的官方授权页面，之后通过本地回调完成。除 OpenAI 外，插件不会主动连接其他服务器。它不会读取或修改其他工具的凭据文件（如 ~/.pi 或 ~/.codex）。",
+      "postInstallNotes": "安装后需要运行 `dsh web` 启动 Web 界面，进入设置 → OpenAI Codex，点击『Sign in with ChatGPT』完成登录；或者用命令行执行 `dsh plugin --profile web exec dsh-openai-codex login`（无浏览器时加 `--device-code`）。登录后，在模型选择器里选择 `openai-codex` 即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "用 ChatGPT Plus/Pro 订阅通过 Codex OAuth 在 DeepSeek Harness 中启用 OpenAI Codex 模型的插件。",
+    "usage": {
+      "prompt_tokens": 2273,
+      "completion_tokens": 4927,
+      "total_tokens": 7200,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4400
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1633
+    }
+  }
+}

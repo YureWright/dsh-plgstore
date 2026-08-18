@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-pet",
+  "analyzedAt": "2026-08-17T11:06:45.385Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且开发依赖包含 @deepseek-ai/cordis，符合 DSH 插件标准。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-pet",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给你的 DSH 网页界面加了一只飘来飘去的‘桌面宠物’（默认是一只鲸鱼娘）。当你让 AI 干活时，它会根据 AI 的状态切换动作：思考时转圈、等待时漂浮、完成时跳一下、失败时垂头丧气。你可以点它的头增加亲密度，喂它小鱼干，还能给它起名字、拖拽移动。它支持多只宠物，每只宠物有自己的图片和性格台词，你还可以自己添加宠物。",
+      "level": "ok",
+      "risks": "它会在你电脑的用户目录下保存一个小文件（比如记录你选哪只宠物、宠物的名字和亲密度），也会读取 ~/.codex/pets 文件夹下的宠物素材。这些数据都是本地的，不会上传到网络。除此之外没有发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 网页界面里养一只会配合 AI 工作状态做动作的桌面宠物，支持喂食、摸头、多宠物切换。",
+    "usage": {
+      "prompt_tokens": 3754,
+      "completion_tokens": 2647,
+      "total_tokens": 6401,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2297
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3114
+    }
+  }
+}

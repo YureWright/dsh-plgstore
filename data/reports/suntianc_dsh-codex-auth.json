@@ -1,0 +1,37 @@
+{
+  "id": "suntianc/dsh-codex-auth",
+  "analyzedAt": "2026-08-17T11:34:48.182Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 字段并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 也提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-codex-auth",
+      "evidence": "dsh plugin --profile web add dsh-codex-auth"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 复用你电脑上 Codex CLI 已登录的 ChatGPT 账号，提供三件事：1) 把 ChatGPT/Codex 当作大模型对话后端；2) 在 DeepSeek 的联网搜索工具里增加一个 Codex 搜索源；3) 提供生成、编辑图片的能力。它还在设置里加了一个 GPT Auth 面板，方便查看登录状态和用量。",
+      "level": "caution",
+      "risks": "它会读取你本机 Codex CLI 的登录凭证（通常存在 ~/.codex/auth.json），并把你的对话、搜索词和图片请求发送到 OpenAI/ChatGPT 的服务器。插件使用非官方接口，存在被限流或失效的可能；且这些请求会被 OpenAI 处理，敏感信息请自行斟酌。",
+      "postInstallNotes": "先运行 `codex login` 完成 Codex CLI 登录（或在插件的 GPT Auth 卡片里登录）；重启 dsh web，在设置里找到并选择 GPT Auth。如果是从 GitHub 源码安装，还需按提示在 ~/.dsh/profiles/web/pnpm-workspace.yaml 里允许构建脚本。",
+      "notes": "注意：这是非官方渠道，基于 ChatGPT 的私有后端接口，仅建议个人开发使用，可能随时失效或限流。要求 DeepSeek Harness 0.1.0-rc.6 或兼容版本。"
+    },
+    "summaryZh": "让 DeepSeek Harness 复用 Codex CLI 的 ChatGPT 登录，提供 ChatGPT 对话、联网搜索和图像生成能力的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 4293,
+      "completion_tokens": 2394,
+      "total_tokens": 6687,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1908
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3653
+    }
+  }
+}

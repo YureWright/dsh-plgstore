@@ -1,0 +1,37 @@
+{
+  "id": "YYTbit/dsh-plugin-opencode-bridge",
+  "analyzedAt": "2026-08-17T12:08:08.071Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段（patch: ./cordis.patch.yml），且 README 给出了 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-opencode-bridge",
+      "evidence": "dsh plugin --profile your-profile add dsh-plugin-opencode-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 OpenCode 里的技能（skills）和配置文件（opencode.jsonc）接进 DeepSeek Harness，不用手动迁移。它会自动读取你电脑上 OpenCode 的配置文件夹，把里面的技能和配置内容变成 DSH 可用的技能和上下文。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 OpenCode 的配置目录（~/.config/opencode/）下的技能文件和 opencode.jsonc 配置，这些内容会作为技能和上下文传给 DeepSeek Harness。如果你在 opencode.jsonc 里存了密钥或敏感信息，这些信息会被 DSH 看到。它不会修改或上传这些文件。",
+      "postInstallNotes": "在 DSH 配置文件中添加插件配置（参考 README 的 Configuration 部分），按需设置 enableSkills、maxSkills、enableConfig。",
+      "notes": "无"
+    },
+    "summaryZh": "把 OpenCode 的技能和配置零迁移地桥接进 DeepSeek Harness。",
+    "usage": {
+      "prompt_tokens": 1239,
+      "completion_tokens": 1999,
+      "total_tokens": 3238,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1649
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 599
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "a903067276-rgb/dsh-hud",
+  "analyzedAt": "2026-08-17T11:41:59.117Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:a903067276-rgb/dsh-hud#main",
+      "evidence": "dsh plugin --profile web add \"github:a903067276-rgb/dsh-hud#main\""
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页版用的状态面板插件。在输入工具栏加一个按钮，点击后右侧弹出悬浮面板，显示当前项目的 Git 状态（分支、待提交文件、最近提交等）、已连接的 MCP 服务器、当前可用的技能、当前模型和 token 用量、官方账户余额等信息。按钮上还会显示未提交文件数量的角标。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取 Git 状态和 MCP/技能列表，不执行写入操作；获取余额时使用本地环境变量 DEEPSEEK_API_KEY，密钥不会发送到其他服务器。",
+      "postInstallNotes": "安装后需重启 dsh web（bundle 层在启动时组合）；确保 pnpm 在 PATH 上。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH web 提供悬浮状态面板的插件，展示 Git 状态、MCP 服务器、技能、模型/token 用量等。",
+    "usage": {
+      "prompt_tokens": 2606,
+      "completion_tokens": 2177,
+      "total_tokens": 4783,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1816
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1966
+    }
+  }
+}

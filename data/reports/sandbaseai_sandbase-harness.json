@@ -1,0 +1,37 @@
+{
+  "id": "sandbaseai/sandbase-harness",
+  "analyzedAt": "2026-08-16T11:40:16.702Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.92,
+      "reason": "package.json 声明了 dsh.bundle（指向 examples/deepseek-harness/cordis.yml），README 给出了 `dsh plugin add managed-agents` 安装命令，并提供了 DSH MCP 桥接，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "managed-agents",
+      "evidence": "dsh plugin --profile web add managed-agents"
+    },
+    "evaluationReport": {
+      "intro": "这是一个“AI 智能体管家”，可以安装在你自己电脑或服务器上。它让 AI 智能体拥有长期记忆、安全地执行代码、管理 API 密钥和密码，还记录所有操作过程，并提供一个网页控制台让你随时查看 AI 在干什么。它也能作为 DeepSeek Harness（DSH）的插件，通过标准 MCP 接口让 DSH 调用它的会话、工具和沙箱能力。",
+      "level": "caution",
+      "risks": "它会在工作区创建 .managed-agents 文件夹，存放 SQLite 数据库、上传的文件和会话快照；默认会在本机 3000 端口启动一个网页服务（只监听 127.0.0.1，但若修改配置可能暴露到网络）。如果你配置了 Docker 或 Kubernetes 沙箱，它就能在容器里运行代码；同时它会把你的 API 密钥和提问内容发送给所选的模型服务商（如 OpenAI、Anthropic、DeepSeek），这些数据会经过外部服务器。另外 README 警告 npm 上的 managed-agents 不是本项目，安装时存在装错包的风险。",
+      "postInstallNotes": "装完后打开控制台（默认 http://127.0.0.1:3000/dashboard），在“设置 > Models”里填入模型服务商的 API Key；如果通过 DSH 使用，还需设置 MANAGED_AGENTS_URL 环境变量；若从 GitHub 源码构建，需先执行 npm ci 和 npm run build。",
+      "notes": "README 中警告 “The unscoped managed-agents name on npm is not this project”，npm 上疑似存在同名无关包，而 dsh plugin add managed-agents 默认会从 npm 安装，因此安装前务必确认包来源；项目本身推荐从 GitHub 标签版（v0.3.2）源码构建，npm 包可能尚未发布或已被占用。"
+    },
+    "summaryZh": "本地优先、自托管的 AI 智能体运行时，带沙箱、记忆、凭据管理和审计控制台，可作为 DSH 插件经 MCP 桥接使用。",
+    "usage": {
+      "prompt_tokens": 4218,
+      "completion_tokens": 5218,
+      "total_tokens": 9436,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4618
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3578
+    }
+  }
+}

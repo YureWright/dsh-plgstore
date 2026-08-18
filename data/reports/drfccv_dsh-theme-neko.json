@@ -1,0 +1,37 @@
+{
+  "id": "drfccv/dsh-theme-neko",
+  "analyzedAt": "2026-08-17T13:14:58.685Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-theme-neko",
+      "evidence": "dsh plugin --profile web add dsh-theme-neko"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面换上一套甘城猫猫主题皮肤，把画师甘城なつき的插画设为壁纸，界面配色也改成蓝白风格。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只改动网页界面外观，不读取个人文件或连接外部服务器。壁纸图片版权归原作者，但插件本身是 MIT 许可。",
+      "postInstallNotes": "装完后用 `dsh web` 重启 Web GUI，主题会自动应用。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 网页界面换上甘城猫猫主题皮肤，自带插画壁纸和蓝白配色。",
+    "usage": {
+      "prompt_tokens": 1653,
+      "completion_tokens": 1099,
+      "total_tokens": 2752,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 818
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1013
+    }
+  }
+}

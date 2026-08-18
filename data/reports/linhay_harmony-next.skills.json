@@ -1,0 +1,37 @@
+{
+  "id": "linhay/harmony-next.skills",
+  "analyzedAt": "2026-08-16T11:45:44.398Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/linhay/harmony-next.skills.git",
+      "evidence": "dsh plugin --profile demo add github:linhay/harmony-next.skills"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一份给 AI 编程助手用的 HarmonyOS NEXT 开发技能包。它把官方 API 文档、组件和工具链说明整理成几千个离线 Markdown 文件，并配好索引和查找规则，让 AI 先查本地资料再回答，避免瞎编 API。里面还带了一些 Python 自动化脚本，可以用来操作 DevEco 模拟器、真机调试、截图抓包、性能分析等。装上之后，DeepSeek Harness 等 AI 工具就能直接调用这份 HarmonyOS 知识库。",
+      "level": "ok",
+      "risks": "部分自动化脚本会联网下载 Command Line Tools，可能安装开发工具或改动环境；模拟器和设备操作脚本可能会创建/删除模拟器、读取设备日志、截图或抓包，这些都在本地进行。没有发现恶意行为，但使用前最好看一下对应的私有接口文档。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 AI 编程助手提供 HarmonyOS NEXT 离线技能包，涵盖 ArkTS/ArkUI/NDK 文档、索引与自动化调试脚本，可作为 DSH 插件安装。",
+    "usage": {
+      "prompt_tokens": 4292,
+      "completion_tokens": 3783,
+      "total_tokens": 8075,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3394
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3652
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-markdown-preview",
+  "analyzedAt": "2026-08-16T13:26:18.159Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-client-* 核心包，README 提供 dsh plugin 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-markdown-preview",
+      "evidence": "```sh\ndsh plugin --profile web add dsh-markdown-preview\n```"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的网页聊天界面里直接预览生成的文件。以前点一下生成的文件会用系统默认程序打开，装上它之后，点一下文件就在聊天窗口里显示内容：Markdown 会排版好（表格、代码高亮都有），图片直接显示，其他文本文件也按纯文本展示。同时仍然保留“用系统程序打开”和“在文件夹中显示”的功能。",
+      "level": "ok",
+      "risks": "插件会读取聊天中生成的文件内容并在界面中显示，但只读，不会修改文件，也不会上传到外部服务器。它只在本机回环地址上运行，并限制了文件大小和类型，防止加载超大或二进制文件。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 网页聊天中直接预览生成的 Markdown、图片和文本文件，无需打开系统应用。",
+    "usage": {
+      "prompt_tokens": 2860,
+      "completion_tokens": 542,
+      "total_tokens": 3402,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 195
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2220
+    }
+  }
+}

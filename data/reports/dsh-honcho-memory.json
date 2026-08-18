@@ -1,0 +1,37 @@
+{
+  "id": "dsh-honcho-memory",
+  "analyzedAt": "2026-08-18T14:51:53.369Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置，README 给出了 dsh plugin 安装命令，代码结构符合 DSH 插件规范。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-honcho-memory",
+      "evidence": "dsh plugin --profile web add dsh-honcho-memory"
+    },
+    "evaluationReport": {
+      "intro": "这是一个让 DeepSeek Harness 拥有长期记忆的插件。它会把对话记录自动保存到一个叫 Honcho 的记忆服务里，并在每次提问前自动翻出相关的历史信息，让 AI 记住你是谁、之前聊过什么，回答更连贯。还提供搜索、总结、推理等工具。",
+      "level": "caution",
+      "risks": "插件会通过网络连接 Honcho 后端（默认是本机 127.0.0.1:8001）发送对话内容。如果配置了 Honcho Cloud 或远程服务，你的聊天记录可能会被传送到第三方服务器。另外，插件会在本地保存记忆数据，如果你使用共享的工作区，其他使用同工作区的人可能看到相关记忆。",
+      "postInstallNotes": "需要在 DSH 配置文件里启用该插件，并确认 Honcho 服务已运行（默认本机 8001 端口）。如果使用 Honcho Cloud，需要填写 apiKey。安装后重启 DSH 服务。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 Honcho v3 长期记忆插件，自动保存对话并检索相关记忆，让 AI 更懂你。",
+    "usage": {
+      "prompt_tokens": 2803,
+      "completion_tokens": 694,
+      "total_tokens": 3497,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 316
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2163
+    }
+  }
+}

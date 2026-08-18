@@ -1,0 +1,37 @@
+{
+  "id": "tianyhjg-lab/dsh-font",
+  "analyzedAt": "2026-08-17T11:37:03.974Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且依赖 @deepseek-ai/cordis 及 dsh-client 核心包，代码通过 dsh 注入浏览器端 CSS 变量实现换字体。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/tianyhjg-lab/dsh-font.git",
+      "evidence": "在 web profile 的 package.json 中注册（dependencies + dsh.profile.bundles）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 网页版换字体的，自带 99 种界面字体和 31 种代码字体，中文英文都有很多选择，选中后立即生效，刷新也不丢。它只是改网页的字体设置，不打包字体文件，也不联网。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在浏览器里改两个字体变量，并把你的选择存在本地（localStorage），不会上传任何数据，也不碰系统文件。",
+      "postInstallNotes": "装完后需要重启 dsh web，然后打开「设置 → 常规 → 字体」选择你喜欢的字体。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH Web GUI 提供 99 款界面字体 + 31 款代码字体的一键切换插件，即选即用、本地保存。",
+    "usage": {
+      "prompt_tokens": 2786,
+      "completion_tokens": 979,
+      "total_tokens": 3765,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 630
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2146
+    }
+  }
+}

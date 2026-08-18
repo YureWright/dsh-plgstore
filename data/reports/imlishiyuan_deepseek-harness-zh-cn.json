@@ -1,0 +1,37 @@
+{
+  "id": "imlishiyuan/deepseek-harness-zh-cn",
+  "analyzedAt": "2026-08-17T11:37:56.265Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "依赖 @deepseek-ai/dsh-llm 等核心包，README 提供 dsh plugin add 安装命令并描述挂载到 cordis.patch.yml，确为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-harness-zh-cn",
+      "evidence": "dsh plugin --profile web add deepseek-harness-zh-cn"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的思考和回答默认使用简体中文。装好后，AI 在推理和回答时会更倾向于用中文，方便中文用户直接阅读。它本质上是在每轮对话开始前给 AI 加一条'请用简体中文'的提醒，不改变模型本身。",
+      "level": "ok",
+      "risks": "它会安装到 DSH 的配置目录（~/.dsh/profiles/web），在每次对话时给模型追加一条中文指令；不会上传对话内容，也不会读取个人文件。",
+      "postInstallNotes": "安装后需在 ~/.dsh/profiles/<name>/cordis.patch.yml 中手动挂载插件（添加 id: dsh-zh 的条目），然后重启 dsh web 并开始新会话。",
+      "notes": "插件通过注入 system-reminder 提示模型用简体中文，但无法强制模型行为；在技术任务下，模型的推理内容仍可能是英文。"
+    },
+    "summaryZh": "让 DeepSeek Harness 默认用简体中文思考和回答的中文优先插件。",
+    "usage": {
+      "prompt_tokens": 2188,
+      "completion_tokens": 2798,
+      "total_tokens": 4986,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2420
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1548
+    }
+  }
+}

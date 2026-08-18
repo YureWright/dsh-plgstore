@@ -1,0 +1,37 @@
+{
+  "id": "dsh-auto-review",
+  "analyzedAt": "2026-08-16T13:28:18.130Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖多个 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-auto-review",
+      "evidence": "dsh plugin --profile web add dsh-auto-review"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个“第二模型自动审批”功能。当 AI 助手想做一些跨过安全边界的操作（比如改文件、跑命令）时，不再需要人类手动点同意，而是让另一个只读的 AI 审查员来判断该不该放行，并给出理由。所有审查决定都会记进会话日志，能防止 AI 反复尝试被拒绝的操作，也支持人工介入。",
+      "level": "ok",
+      "risks": "它会在本地额外调用一个 AI 模型来做审查，所以会消耗 API 额度；审查时它需要读取工作区里的文件内容（但这些内容是只读的），并且会在会话日志中记录审查决定和理由。默认情况下审查失败会直接拒绝，不会擅自放行。没发现明显风险。",
+      "postInstallNotes": "装完后需要重启 profile（例如执行 dsh --profile web 重启），并可用 dsh --profile web --dump-config | grep -A4 'id: auto-review' 确认安装生效。默认只对 bash 和 write 工具启用 AI 审查，其他工具仍走人工流程；如果你希望 edit 这类原地修改也走 AI 审查，需要额外配置 edit: ai。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供第二模型自动审批的插件，让只读 AI 审查员代替人类决定是否允许越界操作，并记录完整审计日志。",
+    "usage": {
+      "prompt_tokens": 4257,
+      "completion_tokens": 859,
+      "total_tokens": 5116,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 409
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3617
+    }
+  }
+}

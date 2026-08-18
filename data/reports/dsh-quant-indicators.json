@@ -1,0 +1,37 @@
+{
+  "id": "dsh-quant-indicators",
+  "analyzedAt": "2026-08-16T13:34:24.364Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle、peerDependencies 依赖 @deepseek-ai/cordis 等核心包，且 README 描述了在 DSH 中通过 cordis.yml 使用，是真正的插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-quant-indicators",
+      "evidence": "在 dsh 中使用：cordis.yml 里加一行 - name: 'dsh-quant-indicators'"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 模型（AI 助手）加了一组量化分析工具：能去 Binance 等交易所拉取加密货币行情，计算均线、RSI、MACD 等技术指标，还能跑双均线、布林带、RSI 等策略的回测，并给出收益、回撤等结果。模型可以直接在对话里完成从取数据到回测的完整分析。",
+      "level": "ok",
+      "risks": "需要联网从 Binance/OKX/Bybit 等公共 API 获取行情，会把你要查询的币种和数量发给这些交易所；除此之外不读写本地文件，不需要任何 API 密钥。",
+      "postInstallNotes": "需要在 DSH 配置文件（如 cordis.yml）中增加一行 - name: 'dsh-quant-indicators' 来启用；并确保运行环境可以访问外网（行情功能需要，指标/回测可离线）。",
+      "notes": "README 中“未发布”的说明与实际 npm 状态不符，疑为文档过时；依赖的 @deepseek-ai/dsh-tools 等为 rc 预发布版，核心接口可能调整。"
+    },
+    "summaryZh": "为 DSH 模型提供行情获取、技术指标计算与策略回测的量化工具包。",
+    "usage": {
+      "prompt_tokens": 4509,
+      "completion_tokens": 2999,
+      "total_tokens": 7508,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2562
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3869
+    }
+  }
+}

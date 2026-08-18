@@ -1,0 +1,37 @@
+{
+  "id": "ZASENJC/dsh-plugins-store",
+  "analyzedAt": "2026-08-17T11:13:42.223Z",
+  "result": {
+    "classification": {
+      "type": "list",
+      "confidence": 0.9,
+      "reason": "仓库是插件市场目录，附带一个 DSH Web 插件，README 给出安装命令但根项目本身是 Astro 网站"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "npm:dsh-plugins-store",
+      "evidence": "dsh plugin --profile web add npm:dsh-plugins-store"
+    },
+    "evaluationReport": {
+      "intro": "这个项目是一个 DSH 插件市场网站，自动收集所有带 dsh-plugin 和 deepseek-harness 标签的公开项目，提供搜索、排行榜和公开 API。它同时附带一个 DSH Web 插件，装好后可以在 DSH Web 界面里直接浏览这个市场，不用打开网页。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是读取公开的插件目录，不会碰你电脑上的隐私文件；如果你安装它的 Web 插件，它会在你明确同意后帮你安装、更新或移除其他插件。",
+      "postInstallNotes": "安装后需要重启 DSH Web 并刷新浏览器。",
+      "notes": "这个仓库本身是一个插件市场/目录项目，不是传统意义上的单一功能插件；它提供的 DSH Web 插件是其中的一个子包。"
+    },
+    "summaryZh": "DSH 插件市场：自动收录 dsh-plugin 与 deepseek-harness 标签的插件，提供目录检索、排行榜和 API，并附赠一个可安装的 DSH Web 浏览插件。",
+    "usage": {
+      "prompt_tokens": 5178,
+      "completion_tokens": 2171,
+      "total_tokens": 7349,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1817
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4538
+    }
+  }
+}

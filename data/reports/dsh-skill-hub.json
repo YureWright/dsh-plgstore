@@ -1,0 +1,37 @@
+{
+  "id": "dsh-skill-hub",
+  "analyzedAt": "2026-08-18T14:53:46.576Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供了 dsh plugin 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-skill-hub",
+      "evidence": "dsh plugin --profile web add dsh-skill-hub"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness (dsh) 用的图形界面插件，让你在 dsh 的网页界面里管理技能库。可以浏览本地全部技能、搜索和分组、启用/禁用技能、查看技能内容、诊断技能为什么没被识别、从内置市场安装新技能、创建新技能，还能看每个技能被调用了多少次。它也支持跟踪技能来源仓库的更新，一键同步。",
+      "level": "ok",
+      "risks": "它会读取和修改你本地的技能文件（如 ~/.dsh/skills、~/.agents/skills），通过重命名 SKILL.md 来启用或禁用技能；也会读取会话日志来统计调用次数。检查更新时会向 GitHub 发起少量网络请求。这些数据都只在你自己的电脑上处理，不会上传。",
+      "postInstallNotes": "重启 dsh web，然后在 设置 → 技能 里找到 Skill Hub 启用并配置。",
+      "notes": "README 声明图片来源跟踪、市场同步和可恢复回收站功能由本插件自行实现，并非 dsh 运行时原生保证。安装命令带 --profile web，注意你的 dsh 环境是否匹配。"
+    },
+    "summaryZh": "在 dsh 网页界面里一站式管理技能：浏览、启用/禁用、诊断、创建、从市场导入并跟踪更新。",
+    "usage": {
+      "prompt_tokens": 4500,
+      "completion_tokens": 2197,
+      "total_tokens": 6697,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1775
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3860
+    }
+  }
+}

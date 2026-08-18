@@ -1,0 +1,37 @@
+{
+  "id": "auto-compact",
+  "analyzedAt": "2026-08-16T13:32:48.794Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖多个 @deepseek-ai/dsh-* 核心包，README 描述了 DSH 环境下的自动压缩功能，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "auto-compact",
+      "evidence": "npx -y --package @deepseek-ai/dsh dsh plugin --profile web add auto-compact"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你在 DeepSeek Harness（DSH）里自动管理对话长度。它会在输入框旁边显示一个圆环，实时显示当前会话已用掉的上下文比例。你可以拖动滑杆设置一个阈值，比如 50%。当对话进行中，只要上下文用量超过这个阈值，插件就会自动触发一次“压缩”，把之前的对话浓缩成摘要，然后让对话继续，不需要你手动操作。每个会话可以单独设置阈值，互不影响。",
+      "level": "caution",
+      "risks": "插件会在本地读取和修改 DSH 的配置文件（settings.yaml），并且会读取当前会话的上下文内容来生成压缩摘要。这些操作都在本地完成，不会主动把内容上传到外部服务器。但要注意：README 推荐的一键安装方式是通过 curl | bash 从网络下载并执行脚本，这有一定风险，相当于把电脑的某个操作权交给远程脚本；如果你不放心，建议用标准的 dsh plugin add 命令安装。",
+      "postInstallNotes": "装完后需要重启 DSH，并强制刷新浏览器（macOS 用 Cmd+Shift+R，Windows/Linux 用 Ctrl+Shift+R）。另外要确保 DSH 自带的 compaction-basic 功能处于启用状态（标准/code/cordis 预设已默认内置，minimal 预设不支持）。",
+      "notes": "该插件在实现中绕过了 DSH 的 api.settings 官方命名空间白名单，直接读写配置，未来 DSH 版本升级后可能存在兼容性问题。此外，README 提供的一键安装脚本（curl | bash）有执行远程代码的风险，建议优先使用 npx dsh plugin add auto-compact 的标准方式。"
+    },
+    "summaryZh": "自动上下文压缩插件：在输入区显示实时上下文用量圆环，超过阈值自动执行压缩并继续对话，支持会话级独立阈值设置。",
+    "usage": {
+      "prompt_tokens": 2950,
+      "completion_tokens": 3494,
+      "total_tokens": 6444,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2948
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2310
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@eddyskywalker/dsh-chatgpt-subscription",
+  "analyzedAt": "2026-08-18T14:49:45.725Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明 dsh.bundle/client 并依赖 @deepseek-ai/cordis 与 dsh-* 核心包，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@eddyskywalker/dsh-chatgpt-subscription",
+      "evidence": "dsh plugin --profile web add @eddyskywalker/dsh-chatgpt-subscription"
+    },
+    "evaluationReport": {
+      "intro": "这是个让 DSH 能通过你已有的 ChatGPT 订阅来使用 GPT/Codex 系列模型的插件。装上后，它会在 DSH 里多出一个叫“Codex（ChatGPT 订阅）”的模型来源，你登录自己的 ChatGPT 账号就能用这些模型，还能在设置页看到账号信息和剩余额度。",
+      "level": "ok",
+      "risks": "它会把你 ChatGPT 的登录凭据保存在本地电脑上（Windows 上用系统加密，Linux 上是一个只有你能读的文件），并会向 ChatGPT/OpenAI 的服务器发送请求来使用模型和查询额度。这些属于正常功能，但如果电脑被他人控制或文件泄露，你的 ChatGPT 账号可能被冒用。",
+      "postInstallNotes": "重启 dsh web，然后打开“设置 → Codex 订阅”，完成 ChatGPT 登录并点击“测试连接”。",
+      "notes": "第三方插件，非 DeepSeek 官方出品；会存储 OAuth 凭据并连接外部服务，使用时留意账号安全。"
+    },
+    "summaryZh": "让 DSH 通过 ChatGPT 订阅使用 GPT/Codex 模型的第三方 Provider 插件，支持登录、额度展示和工具调用。",
+    "usage": {
+      "prompt_tokens": 5030,
+      "completion_tokens": 1230,
+      "total_tokens": 6260,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 827
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4390
+    }
+  }
+}

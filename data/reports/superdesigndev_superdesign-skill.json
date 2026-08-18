@@ -1,0 +1,37 @@
+{
+  "id": "superdesigndev/superdesign-skill",
+  "analyzedAt": "2026-08-16T11:44:25.484Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并包含 dsh/ 目录结构，是明确的 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "superdesign-dsh",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 AI 编程助手（比如 Claude Code、Cursor 等）装上设计能力。它能读懂你项目里的代码，找出你的设计风格，然后在一个叫 Superdesign 的在线画布上帮你生成和修改 UI 设计稿，让你的界面看起来更精致，而不是千篇一律的 AI 样板。",
+      "level": "caution",
+      "risks": "它会读取你项目里的代码和文件内容，用来了解你的界面现状，这些信息可能会被发送到 Superdesign 的服务器（需要你注册登录）。它会在你的项目文件夹里创建 .superdesign 目录来保存设计系统、页面还原模板等文件。你的设计草稿和还原的 HTML 也可能上传到它的网站。另外，它需要安装一个全局命令行工具并登录账号。",
+      "postInstallNotes": "安装后，需要全局安装 @superdesign/cli 并运行 superdesign login 登录账号。另外，由于这是 DSH 插件，还需要有 DSH 运行环境。使用前建议先初始化 .superdesign/design-system.md。",
+      "notes": "README 主推 Claude Code / Cursor 等 agent 的 skill 安装方式，DSH 封装主要体现在 package.json 的 dsh.bundle 字段，安装命令文档未明确。依赖外部在线服务，使用时需联网和账号。版本 0.4.3，较新。"
+    },
+    "summaryZh": "一个给编程助手用的设计技能包，能分析你的代码并生成/迭代 UI 设计稿，让你的前端界面不再像 AI 生成的样板。",
+    "usage": {
+      "prompt_tokens": 2941,
+      "completion_tokens": 4621,
+      "total_tokens": 7562,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4179
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2301
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-whale-bg",
+  "analyzedAt": "2026-08-16T13:36:09.498Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 清单，README 提供了 dsh plugin add 安装步骤（本地安装），且实现调用了 DSH 的接口（主题 API、DSH handoff）。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/gooosie/dsh-whale-bg.git",
+      "evidence": "git clone https://github.com/gooosie/dsh-whale-bg.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面加一个背景用的。它会用很多小粒子拼成一只鲸鱼，平时会在背景里慢慢游动；鼠标靠近时，鲸鱼周围会亮起来并产生波纹，还带一点光照效果。它支持浅色和深色两种主题，并且为了不占性能，固定 30 帧渲染。简单说，就是一个能让你的 DSH 网页看起来更炫酷的鲸鱼粒子背景。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在 DeepSeek Harness 的 Web 界面里增加一个 Canvas 背景组件，不会读取你的文件或隐私信息。安装时会通过补丁修改 DSH 的 web 配置来挂载这个背景，如果你用的是本地克隆目录，注意不要把目录删掉或挪走，否则插件会失效。",
+      "postInstallNotes": "需要把插件安装到名为 web 的 profile：在克隆目录里执行 `dsh plugin --profile web add .`，然后用 `dsh web` 启动。可以用 `dsh web --dump-config` 检查配置是否生效。因为是从本地目录安装的，移动或删除该目录会导致插件无法加载。",
+      "notes": "这是非官方社区项目，与 DeepSeek 官方无关；当前针对 `@deepseek-ai/dsh@0.1.0-rc.6` 开发，DSH 仍在预览阶段，升级后可能需要调整。"
+    },
+    "summaryZh": "为 DeepSeek Harness Web UI 添加粒子鲸鱼背景的装饰插件，支持鼠标光照、游动动画和明暗主题。",
+    "usage": {
+      "prompt_tokens": 2571,
+      "completion_tokens": 4609,
+      "total_tokens": 7180,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4096
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1931
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@nyantused/folio-dsh-tools",
+  "analyzedAt": "2026-08-16T13:33:08.348Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置并依赖 @deepseek-ai/cordis 等核心包，README 描述了作为 DSH 插件通过 spawn 注册工具。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@nyantused/folio-dsh-tools",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把一套叫“兰亭”的命令行工具变成 DSH 能直接调用的 15 个小工具，比如查客户状态、回忆会话、查文档、生成报告等，同时还加了一层保护，防止 AI 在项目目录里乱改重要文件（比如 output 和 refs 下的文件）。它通过运行预先装好的 Python 脚本来工作。",
+      "level": "ok",
+      "risks": "它会在你电脑上运行预先装好的 Python 命令行工具；守约会拦截对项目内 output/ 和 refs/ 目录下文件的写入。只在售前项目目录生效，其他目录不受影响。没发现连外部服务器或偷看隐私的行为。",
+      "postInstallNotes": "需要重启 DSH web 才能生效；云端审查类工具可能需要额外配置能力槽 key 或 DSH 子代理。",
+      "notes": "注意：版本验证信息里的测试日期是 2026-08-16（未来日期），请确认来源可靠性。"
+    },
+    "summaryZh": "兰亭 CLI 命令工具化 + L0 守卫插件，提供 15 个 DSH 工具并保护项目内关键文件。",
+    "usage": {
+      "prompt_tokens": 2705,
+      "completion_tokens": 3424,
+      "total_tokens": 6129,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3044
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2065
+    }
+  }
+}

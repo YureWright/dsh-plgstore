@@ -1,0 +1,37 @@
+{
+  "id": "@asahimoon/dsh-desktop-pet",
+  "analyzedAt": "2026-08-16T14:48:04.233Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 给出了 dsh plugin --profile web add @asahimoon/dsh-desktop-pet 安装命令，符合 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@asahimoon/dsh-desktop-pet",
+      "evidence": "dsh plugin --profile web add @asahimoon/dsh-desktop-pet"
+    },
+    "evaluationReport": {
+      "intro": "这是一个住在你桌面上的鲸鱼娘宠物。它是个透明置顶的小窗口，能根据 DeepSeek Harness（DSH）里 Agent 的实时状态做出反应：任务完成时会欢呼然后打盹、新任务来了会醒来工作、思考时飘着、出错时吓一跳等。你可以拖动它、右键喂食玩耍、设置大小透明度、让它在桌面上游走，还能通过投喂和陪伴让它升级。除了作为 DSH 插件联动，它也可以单独打包成 exe 当一个普通桌宠用，支持多角色（比如 Codex、petdex 生态的角色），改配置即时生效。",
+      "level": "ok",
+      "risks": "它会在你的电脑上启动一个透明置顶的小窗口，并读写用户目录下的配置和角色文件（%APPDATA%/dsh-desktop-pet）。插件会在本机 127.0.0.1 的 43991 端口监听来自 DSH 的信号，只允许本机连接，不会暴露到外网。任务进度黑框可能显示 Agent 正在读写的文件路径或命令，如果你在分享屏幕，别人可能会看到这些信息。未发现明显的隐私窃取或恶意行为。",
+      "postInstallNotes": "安装后需要重启 dsh web，插件才会随 profile 加载并启动宠物窗口。如果本机没有可用的 electron，也没有安装独立版 exe，宠物窗口不会自动出现，需要先按 README 里的「形态二」安装独立版 exe，Agent 联动才能正常工作。",
+      "notes": "无"
+    },
+    "summaryZh": "一个住在桌面上、能根据 DSH Agent 实时状态做出反应的鲸鱼娘宠物插件，支持多角色和热配置，也可打包成独立 exe 运行。",
+    "usage": {
+      "prompt_tokens": 5330,
+      "completion_tokens": 1618,
+      "total_tokens": 6948,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1090
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4690
+    }
+  }
+}

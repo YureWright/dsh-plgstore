@@ -1,0 +1,37 @@
+{
+  "id": "YYTbit/dsh-plugin-claude-bridge",
+  "analyzedAt": "2026-08-17T11:40:42.342Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，代码实现为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-claude-bridge",
+      "evidence": "dsh plugin --profile your-profile add dsh-plugin-claude-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 Claude Code 里存下的记忆、技能和全局配置直接“借”给 DeepSeek Harness 用，不用把文件搬来搬去，也不改原来的文件。它会在每次请求时自动读 ~/.claude 下的回忆记录、技能说明和 CLAUDE.md，把它们变成系统提示的一部分，让 DSH 也能用上你之前在 Claude 里积累的东西。也支持额外指定技能目录，比如 ~/.agents/skills。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 ~/.claude 目录里的记忆、技能和配置文件，并把内容塞进发给 DeepSeek Harness 的系统提示里。也就是说，这些本地内容可能随对话请求被发到远端服务，如果里面有隐私信息请自行斟酌。插件本身不会修改、删除或复制你的文件，也没有额外的网络连接。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "把 Claude Code 的记忆、技能和全局配置桥接进 DeepSeek Harness，无需迁移，开箱即用。",
+    "usage": {
+      "prompt_tokens": 1724,
+      "completion_tokens": 3235,
+      "total_tokens": 4959,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2863
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1084
+    }
+  }
+}

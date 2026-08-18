@@ -1,0 +1,37 @@
+{
+  "id": "LeslieWylie/dsh-task-relay",
+  "analyzedAt": "2026-08-17T13:10:52.936Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle、依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，README 给出了 dsh plugin 安装命令，且代码为 DSH 工具注册与持久化实现。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:LeslieWylie/dsh-task-relay",
+      "evidence": "dsh plugin --profile web add github:LeslieWylie/dsh-task-relay"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件，相当于给不同会话/子 agent 之间搭了一块“共享任务白板”。你可以把任务写上去，其他会话或子 agent 能查看、认领、完成；还能写交接摘要，让下个会话接手时知道干到哪了。所有任务和摘要都存在你电脑上的一个文件里。",
+      "level": "ok",
+      "risks": "数据存在你电脑的 ~/.dsh/task-relay/ 目录下（默认权限 700），里面可能有你和 AI 聊的干活内容、待办事项，如果这台机器是公用的、或备份同步了该目录，别人可能看到。插件本身不联网，也不乱执行命令。",
+      "postInstallNotes": "无（默认即可；想改数据存放目录才需要在 cordis.yml 里加 config.root）。",
+      "notes": "README 提到 peer 依赖版本范围有讲究，如果装不上报 ERESOLVE，需要检查 @deepseek-ai/dsh-tools 的版本是否在要求范围内。"
+    },
+    "summaryZh": "dsh-task-relay 是一个跨会话/子 agent 的任务队列与交接摘要插件，让不同会话之间能接力干活。",
+    "usage": {
+      "prompt_tokens": 3196,
+      "completion_tokens": 1366,
+      "total_tokens": 4562,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 949
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2556
+    }
+  }
+}

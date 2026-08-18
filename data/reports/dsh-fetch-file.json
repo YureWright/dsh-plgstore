@@ -1,0 +1,37 @@
+{
+  "id": "dsh-fetch-file",
+  "analyzedAt": "2026-08-16T13:27:13.698Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件的真正证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-fetch-file",
+      "evidence": "dsh plugin --profile <你的 profile> add dsh-fetch-file"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 AI 能把网上的文件（比如图片、PDF、安装包）直接下载到你电脑当前的工作文件夹里，存成真实文件，而不是只读内容。适合需要把二进制文件保存下来的场景。",
+      "level": "ok",
+      "risks": "它会往工作区目录写入文件，可能会占用磁盘空间；下载的内容来自外部 URL，可能有风险文件，但插件本身不执行文件内容。它限制了目标路径必须在工作区内，越界会被拒绝。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，让模型从任意 URL 下载文件到工作区，支持二进制、流式写入、路径安全保护。",
+    "usage": {
+      "prompt_tokens": 2158,
+      "completion_tokens": 622,
+      "total_tokens": 2780,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 329
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1518
+    }
+  }
+}

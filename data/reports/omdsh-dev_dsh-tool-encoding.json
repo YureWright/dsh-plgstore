@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-tool-encoding",
+  "analyzedAt": "2026-08-17T13:09:15.204Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin add 安装命令，代码调用 ctx.tools.register 等 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/dsh-tool-encoding.git",
+      "evidence": "dsh plugin --profile web add github:omdsh-dev/dsh-tool-encoding"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 智能体用的编码/哈希工具箱。它能做 base64、base64url、URL、十六进制的编码和解码，还能计算 MD5/SHA 哈希、生成 UUID v4。比如你想让智能体把一句话转成 base64，或者解码一个 JWT 里的内容，它不用去敲命令行，直接调用这个工具就能得到结果。",
+      "level": "ok",
+      "risks": "它本身不访问你电脑上的文件，也不联网。作为 DSH 工具，你传给它的数据（比如要编码的文本）会记录在 DSH 的会话日志中。因此不要把密码、API 密钥等机密字符串交给它——README 里也明确说了这一点。",
+      "postInstallNotes": "无",
+      "notes": "适配 DSH 0.1.0-rc.6，安装时注意 web 和 headless 是不同 profile，需要分别安装。"
+    },
+    "summaryZh": "DSH 编码/哈希工具插件，支持 base64、base64url、URL、hex 编解码、哈希和 UUID，纯函数实现，安全严格。",
+    "usage": {
+      "prompt_tokens": 3793,
+      "completion_tokens": 2652,
+      "total_tokens": 6445,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2246
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3153
+    }
+  }
+}

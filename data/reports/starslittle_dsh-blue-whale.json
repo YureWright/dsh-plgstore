@@ -1,0 +1,37 @@
+{
+  "id": "starslittle/dsh-blue-whale",
+  "analyzedAt": "2026-08-17T11:42:10.548Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/dsh-client-runtime 等核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/starslittle/dsh-blue-whale.git",
+      "evidence": "dsh plugin --profile web add github:starslittle/dsh-blue-whale"
+    },
+    "evaluationReport": {
+      "intro": "这是一个让 DSH 界面变成蓝鲸配色的主题皮肤。它会把侧边栏的鲸鱼图标、品牌文字、浏览器标签页图标以及主要按钮的颜色从默认的黑色改成 DeepSeek Chat 的蓝色（#4D6BFE），同时保留系统自带的浅色/深色模式跟随功能。安装后默认开启，也可以随时在设置里关掉或卸载恢复原样。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改界面的颜色样式，不读取你的个人文件，也不会向外部发送数据。",
+      "postInstallNotes": "安装后需要重启 dsh web，并在浏览器中强制刷新（Ctrl+Shift+R）才能生效。皮肤默认开启，可在设置 → 常规 → Blue Whale 里关闭。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DSH 界面变成 DeepSeek Chat 风格蓝鲸配色的主题皮肤，跟随系统深浅色。",
+    "usage": {
+      "prompt_tokens": 1786,
+      "completion_tokens": 1340,
+      "total_tokens": 3126,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 984
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1146
+    }
+  }
+}

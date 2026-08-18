@@ -1,0 +1,37 @@
+{
+  "id": "iamzcr/dsh-obsidian-assistant",
+  "analyzedAt": "2026-08-17T11:55:20.273Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等 DSH 核心包，且 README 描述了 Cordis toolset 插件结构，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/iamzcr/dsh-obsidian-assistant.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个帮你管理本地 Obsidian 笔记库的 DSH 插件。它可以直接读写你的笔记文件，提供搜索、新建、编辑、批量移动/重命名、查看双向链接等功能；如果你在 Obsidian 里装了 Local REST API 插件，它还能调用 Obsidian 的搜索和命令，实现更高效的全文检索和自动操作。另外它有个特别功能：把按章节命名的小说笔记整理成适合发布到网文平台的 TXT 或 Markdown 文稿。",
+      "level": "ok",
+      "risks": "它会读写你指定的本地 Obsidian 笔记文件夹（vault），包括移动、重命名、改写文件内容。如果启用 REST 通道，会请求本机 Obsidian 的 Local REST API（默认 127.0.0.1:27124），需要你提供 API Key，通信仅发生在本地。默认排除 .obsidian 和 .trash 目录，也有路径逃逸防护。没发现上传数据到外部服务器的行为。",
+      "postInstallNotes": "需要在 profile 的 cordis.patch.yml 中为该插件指定 vaultPath（必填，vault 根目录绝对路径）；若使用 REST 通道，还需安装 Obsidian 的 Local REST API 插件并配置 apiToken（可选）。",
+      "notes": "README 未提供 `dsh plugin add` 安装命令，安装方式是手动编辑 profile 的 bundles 列表；该插件声明 inject: [\"tools\", \"fs\"]，需确保 base bundle 在其之前加载。"
+    },
+    "summaryZh": "一个操作本地 Obsidian 知识库的 DSH 插件，支持搜索、读写、批量整理、双向链接，并通过 Local REST API 增强，还能导出小说章节成发布文稿。",
+    "usage": {
+      "prompt_tokens": 3890,
+      "completion_tokens": 1178,
+      "total_tokens": 5068,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 663
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3250
+    }
+  }
+}

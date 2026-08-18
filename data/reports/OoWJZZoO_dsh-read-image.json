@@ -1,0 +1,37 @@
+{
+  "id": "OoWJZZoO/dsh-read-image",
+  "analyzedAt": "2026-08-17T13:09:36.807Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，peerDependencies 包含 @deepseek-ai/cordis 和 dsh-* 核心包，README 提供 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:OoWJZZoO/dsh-read-image",
+      "evidence": "dsh plugin --profile web add github:OoWJZZoO/dsh-read-image"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 里的纯文本 AI 模型看懂图片。以前粘贴图片会被拒绝，装上它之后，图片会先变成一个 [Image #N] 的文本标记，然后插件会调用你配置的另一个视觉模型来读取图片内容，再把描述交给原来的文本模型。它还提供了一个设置页面，方便你挑选视觉模型和调整参数。",
+      "level": "ok",
+      "risks": "它会把图片发送到你配置的视觉模型服务（可能是云端 API），所以图片内容会离开你的电脑，注意别贴敏感图片；它会在 ~/.dsh 下写日志；另外它会修改一些内部接口，如果 DeepSeek Harness 升级，可能要等插件更新。",
+      "postInstallNotes": "装完后需要配置视觉模型：在 settings.yaml 里设置 dsh-read-image.visionProvider 和 visionModel，并在相应 provider 的模型声明中加入 input: [text, image]，然后重启 dsh web；也可以在设置界面的“读图”页里改。",
+      "notes": "插件目前是 v0.1.0 早期版本，依赖 dsh 0.1.0-rc.6 预览版，后续升级可能需要兼容；安装来源是 GitHub，未发布到 npm registry。"
+    },
+    "summaryZh": "为 DeepSeek Harness 纯文本模型添加图像读取能力：粘贴图片转为 [Image #N] 占位符，并用可配置的视觉模型读取图片内容。",
+    "usage": {
+      "prompt_tokens": 3283,
+      "completion_tokens": 3682,
+      "total_tokens": 6965,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3205
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2643
+    }
+  }
+}

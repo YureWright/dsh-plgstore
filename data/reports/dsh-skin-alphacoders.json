@@ -1,0 +1,37 @@
+{
+  "id": "dsh-skin-alphacoders",
+  "analyzedAt": "2026-08-16T13:34:58.069Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.client 配置、依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令且代码调用 DSH 的接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-skin-alphacoders",
+      "evidence": "dsh plugin --profile web add dsh-skin-alphacoders"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 皮肤插件，能把 Alphacoders 网站上的热门壁纸变成 DeepSeek Harness 网页版的背景。装好后，你可以在设置里找到一个“Wallpaper”（壁纸）区域，浏览热门壁纸、按关键词搜索、上传自己的本地图片、给喜欢的壁纸加星标收藏，还可以设置定时自动换壁纸，或在历史记录里一键换回之前用过的背景。它也支持浅色/深色主题各自保留不同壁纸，并有多种填充方式和遮罩强度来保证文字清晰。",
+      "level": "ok",
+      "risks": "它会联网访问 alphacoders.com 及其图片 CDN 来获取壁纸列表和图片，因此你的网络请求会发往这些外部站点；同时它会在你的 DSH 数据目录下创建 skin-alphacoders 文件夹，用来存放你上传的本地图片、收藏和换壁纸历史。除这些正常功能外，没发现明显风险。",
+      "postInstallNotes": "安装后需要手动在 $DSH_HOME/profiles/web/cordis.patch.yml 中注册插件行（id: skin-alphacoders），然后重启 dsh web。可选配置 cacheTtlMs（缓存毫秒数，默认3600000）和 requestTimeoutMs（请求超时毫秒数，默认20000）。",
+      "notes": "无"
+    },
+    "summaryZh": "把 Alphacoders 热门壁纸变成 DSH 网页版背景的皮肤插件，支持浏览、搜索、本地上传、收藏、自动换壁纸和历史回看。",
+    "usage": {
+      "prompt_tokens": 3889,
+      "completion_tokens": 2489,
+      "total_tokens": 6378,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2017
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3249
+    }
+  }
+}

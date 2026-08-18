@@ -1,0 +1,37 @@
+{
+  "id": "WSL043/dsh-codex-subscription",
+  "analyzedAt": "2026-08-17T13:10:49.832Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-codex-subscription",
+      "evidence": "dsh plugin --profile web add dsh-codex-subscription"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness（DSH）里直接登录 ChatGPT 账号，使用 Codex 订阅功能，不需要 OpenAI API Key 或单独安装 Codex CLI。它可以生成图片、切换联网搜索来源、查看剩余额度，还能在输入框旁边显示当前模型还剩多少额度。登录信息保存在你自己电脑上，官方接口不可用时会有明确报错。",
+      "level": "ok",
+      "risks": "需要把 ChatGPT 登录凭据保存在本机，可能会有网络请求发送到 OpenAI 服务器。插件会读取和显示你的订阅额度信息。安装脚本会添加一个 dsh-codex 命令到当前用户环境，但不会修改系统级设置。",
+      "postInstallNotes": "安装后需要手动重启 DSH，然后在 设置 -> Codex 订阅 中登录 ChatGPT 账户。如果要使用联网搜索，还需要在设置里选择搜索来源。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 中直接登录 ChatGPT 并使用 Codex 订阅，无需 OpenAI API Key，支持图片生成、额度显示和搜索切换。",
+    "usage": {
+      "prompt_tokens": 4158,
+      "completion_tokens": 860,
+      "total_tokens": 5018,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 484
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3518
+    }
+  }
+}

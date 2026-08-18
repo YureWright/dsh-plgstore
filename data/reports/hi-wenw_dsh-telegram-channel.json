@@ -1,0 +1,37 @@
+{
+  "id": "hi-wenw/dsh-telegram-channel",
+  "analyzedAt": "2026-08-17T11:39:11.496Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis 等核心包，README 也给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/hi-wenw/dsh-telegram-channel.git",
+      "evidence": "dsh plugin --profile web add github:hi-wenw/dsh-telegram-channel"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的 Telegram 手机遥控插件。装上之后，你可以用手机上的 Telegram 机器人查看电脑上正在运行的 AI 会话，还能继续对话、切换模型。手机和电脑看到的是同一条对话轨迹，就像拿着手机遥控电脑上的 AI。",
+      "level": "caution",
+      "risks": "安装脚本（尤其是 Windows 的 PowerShell 脚本）会从网上下载并执行，可能修改你的环境变量（比如写入 Telegram Token）和 DSH 配置文件（如 pnpm-workspace.yaml）。插件需要连接 Telegram 服务器，并且会把你的 AI 会话暴露给绑定好的 Telegram 用户；如果 Token 或白名单泄露，别人可能看到或操控你的会话。",
+      "postInstallNotes": "需要设置环境变量 DSH_TELEGRAM_TOKEN 和 DSH_TELEGRAM_ALLOWED_USER_IDS（或用一键脚本自动配置），然后启动 dsh web。如果使用 pnpm 11，还需要在 pnpm-workspace.yaml 中允许该插件的构建脚本，否则可能安装失败。",
+      "notes": "一键安装脚本来自远程 URL，执行前最好先大致浏览脚本内容；该插件是社区插件，并非 DeepSeek Harness 官方内置。"
+    },
+    "summaryZh": "用 Telegram 远程遥控 DeepSeek Harness 的手机插件，手机和电脑同步同一个 AI 会话。",
+    "usage": {
+      "prompt_tokens": 4379,
+      "completion_tokens": 2909,
+      "total_tokens": 7288,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2454
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3739
+    }
+  }
+}

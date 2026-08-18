@@ -1,0 +1,37 @@
+{
+  "id": "dsh-license-guard",
+  "analyzedAt": "2026-08-16T13:34:02.330Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 也提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-license-guard",
+      "evidence": "dsh plugin add dsh-license-guard"
+    },
+    "evaluationReport": {
+      "intro": "这是一个检查项目依赖许可证的插件。它会扫描你项目里安装的所有 npm 包（node_modules 文件夹），把每个包的许可证类型识别出来，并分成宽松、弱传染、强传染等几类。你还可以设置允许或禁止的许可证列表，在发布前做一次自动检查，看看有没有不合规的依赖。整个过程在本地运行，不会把数据传到网上。",
+      "level": "ok",
+      "risks": "它会读取项目的 node_modules 目录下的 package.json 文件来获取许可证信息，属于正常功能所需；不会上传数据。如果项目较大，扫描可能耗时，但风险不大。",
+      "postInstallNotes": "安装后，需要在 profile 的 package.json 的 dsh.profile.bundles 中加入 \"dsh-license-guard\"。另外可根据需要调整允许/禁止的许可证策略，默认已有一套宽松规则。",
+      "notes": "无"
+    },
+    "summaryZh": "依赖许可证合规插件：扫描 node_modules 许可证、按宽松/弱传染/强传染分类，并支持发布前合规校验。",
+    "usage": {
+      "prompt_tokens": 1802,
+      "completion_tokens": 1331,
+      "total_tokens": 3133,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 968
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1162
+    }
+  }
+}

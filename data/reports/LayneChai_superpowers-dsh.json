@@ -1,0 +1,37 @@
+{
+  "id": "LayneChai/superpowers-dsh",
+  "analyzedAt": "2026-08-17T11:14:46.707Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，且 README 提供了 dsh plugin add 安装命令，代码调用 ctx.skills 接口，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "superpowers-dsh",
+      "evidence": "dsh plugin --profile web add superpowers-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把热门 Claude Code 技能库 superpowers（包括 TDD、调试、规划、协作等 14 个技能）移植到 DeepSeek Harness（DSH）里。安装后，你的 DSH agent 就能在技能目录里看到并使用这些技能，相当于给 DSH 加了一套工程实践方法论。",
+      "level": "ok",
+      "risks": "没发现明显风险。",
+      "postInstallNotes": "装完后需要重启 DSH 的 web profile（重新运行 dsh web / npx @deepseek-ai/dsh web），并刷新浏览器；可用 dsh --profile web --dump-config 确认出现 superpowers-dsh 行。",
+      "notes": "安装前请确保系统已安装 pnpm，因为 dsh plugin 命令内部依赖 pnpm。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Superpowers 技能包（TDD、调试、规划、协作等 14 个技能）的插件。",
+    "usage": {
+      "prompt_tokens": 3045,
+      "completion_tokens": 2313,
+      "total_tokens": 5358,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1972
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2405
+    }
+  }
+}

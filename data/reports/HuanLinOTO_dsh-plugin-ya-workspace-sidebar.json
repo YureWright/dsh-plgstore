@@ -1,0 +1,37 @@
+{
+  "id": "HuanLinOTO/dsh-plugin-ya-workspace-sidebar",
+  "analyzedAt": "2026-08-17T11:30:51.634Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/dsh-* 核心包，README 也给出了 dsh plugin add 命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-ya-workspace-sidebar",
+      "evidence": "# 从 npm 安装（推荐）：dsh plugin --profile web add @huanlin/dsh-plugin-ya-workspace-sidebar"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH Web 工作区换一个更好用的侧边栏。它会在顶部固定显示最近 5 条全局会话，下方用两级菜单（工作区→会话）和面包屑导航，把每个工作区里的会话按今天、昨天、更早分组。你还可以搜索、添加、重命名、删除、Fork 和归档工作区，这些操作都复用 DSH 自带的能力。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只改界面（会替换官方侧边栏），不会碰你的聊天数据或文件。",
+      "postInstallNotes": "安装后重启 dsh web 并硬刷新浏览器；如果是从源码构建的，需要先运行 pnpm run build。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH Web 工作区提供带全局最近会话和面包屑导航的二级侧边栏界面插件。",
+    "usage": {
+      "prompt_tokens": 2436,
+      "completion_tokens": 1998,
+      "total_tokens": 4434,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1642
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1796
+    }
+  }
+}

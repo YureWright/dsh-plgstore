@@ -1,0 +1,37 @@
+{
+  "id": "Blaczz/dsh-achievements",
+  "analyzedAt": "2026-08-17T12:14:26.733Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Blaczz/dsh-achievements.git",
+      "evidence": "dsh plugin --profile web add \"github:luomud/dsh-achievements#main\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness（DSH）加了一层游戏化成就系统：你正常和 AI 对话、让它调用工具、开新会话、每天活跃等，达到一定次数就会解锁各种徽章，还能攒经验升级、看个人资料卡和分享卡片。所有数据都保存在你自己的电脑上，不需要额外服务器，也不改动 DSH 核心。",
+      "level": "ok",
+      "risks": "它会读取 DSH 的会话事件（比如聊了几轮、调了几次工具、读写了哪些文件等），并把统计结果存到 DSH 数据目录下的一个 JSON 文件里。它不会上传数据，也不会读取文件内容；但如果你用分享功能，生成的卡片会包含你的使用统计（不含具体路径和命令）。另外，README 里的安装地址似乎写错了，可能装错来源，建议核对。",
+      "postInstallNotes": "安装后重启 `dsh web`，然后正常对话即可，第一轮对话结束后会自动解锁第一个成就。",
+      "notes": "README 中的安装地址是 `github:luomud/dsh-achievements#main`，但实际 GitHub 仓库是 `Blaczz/dsh-achievements`，可能是笔误，建议按实际仓库地址安装。依赖较多 `@deepseek-ai/*` 预发布版本，需要 Node ≥ 22.19。"
+    },
+    "summaryZh": "给 DSH 加成就系统的娱乐插件：对话、调工具、活跃天数等行为达标自动解锁徽章和等级，纯本地运行，不改核心。",
+    "usage": {
+      "prompt_tokens": 4114,
+      "completion_tokens": 3029,
+      "total_tokens": 7143,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2536
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3474
+    }
+  }
+}

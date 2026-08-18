@@ -1,0 +1,37 @@
+{
+  "id": "anan-thermal-monitor",
+  "analyzedAt": "2026-08-16T13:27:54.192Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 且 README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "anan-thermal-monitor",
+      "evidence": "dsh plugin --profile web add anan-thermal-monitor"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 Windows 桌面上的萌宠温度监控插件。它会在桌面显示一个紫白小宠物卡片，实时显示 CPU、内存、显卡和固态硬盘的温度，还能看到笔记本型号、硬件配置和电池状态。卡片平时贴边半藏，鼠标靠近就滑出来，可以拖动和吸附。安装到 DSH 后可以随 DSH 启动自动运行，也可以单独运行。",
+      "level": "ok",
+      "risks": "它会读取电脑的硬件信息（CPU、显卡、硬盘等）和温度，需要管理员权限，启动时会弹 UAC 授权框；会在系统的临时文件夹里写几个状态和日志文件。没发现它会联网上传数据或偷偷动个人文件的行为。",
+      "postInstallNotes": "安装后重启 dsh（web profile）即可；首次运行会弹出 UAC 提权确认，点“是”才能读取 CPU/内存温度。",
+      "notes": "无"
+    },
+    "summaryZh": "一个在 Windows 桌面上显示的萌宠温度监控插件，实时显示 CPU/内存/GPU/NVMe 温度和硬件信息，支持 DSH 插件方式安装。",
+    "usage": {
+      "prompt_tokens": 3386,
+      "completion_tokens": 3025,
+      "total_tokens": 6411,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2659
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2746
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@billqiu1126/dsh-workspace-hierarchy",
+  "analyzedAt": "2026-08-16T13:44:21.216Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，符合真实 DSH 插件特征"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@billqiu1126/dsh-workspace-hierarchy",
+      "evidence": "dsh plugin --profile web add @billqiu1126/dsh-workspace-hierarchy"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 DSH 的左侧工作区列表变成按文件夹层级展开的树，主工作区下面可以挂子工作区；每个工作区的 + 号变成菜单，除了新建会话还能添加子工作区；每个会话的 ⋯ 菜单多了删除会话、移动会话；每个工作区的 ⋯ 菜单多了删除/重命名（会真的动磁盘上的文件夹）。适合想按目录结构管理多个工作区、并希望批量整理会话的人。",
+      "level": "caution",
+      "risks": "它会直接操作你磁盘上的文件：删除工作区时会把整个文件夹删掉（不可恢复），重命名时也会改文件夹名；删除会话时是直接删日志文件，如果那个会话还在运行可能会重新生成。安装脚本会改动 DSH 的配置文件，需要看清楚了再跑。基本不会把数据传到外部，但误操作有丢文件风险。",
+      "postInstallNotes": "安装后需要手动编辑 ~/.dsh/profiles/web/cordis.patch.yml（Windows 下路径类似），禁用内置 ui-workspace 并挂载 ui-workspace-hierarchy，然后重启 dsh web；README 提供的一键安装脚本会自动完成这些配置。使用重命名/移动功能后建议重启 dsh web 让会话数据同步。",
+      "notes": "该插件由个人账号发布，非 DSH 官方出品，但源码开源、npm 包可审计；含 install.ps1 / install.sh 脚本，执行前建议先看一眼内容；依赖 @deepseek-ai/dsh 的预发布版本（0.1.0-rc.x），升级 DSH 后可能出现兼容问题。"
+    },
+    "summaryZh": "一个将 DSH 工作区按目录层级组织成树、并支持删除/移动会话及删除/重命名工作区文件夹的网页插件。",
+    "usage": {
+      "prompt_tokens": 3739,
+      "completion_tokens": 2124,
+      "total_tokens": 5863,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1580
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3099
+    }
+  }
+}

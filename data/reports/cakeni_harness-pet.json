@@ -1,0 +1,37 @@
+{
+  "id": "cakeni/harness-pet",
+  "analyzedAt": "2026-08-17T11:49:17.566Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，peerDependencies 依赖 @deepseek-ai/dsh-client-connection 和 @deepseek-ai/dsh-client-runtime，README 提供 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/cakeni/harness-pet.git",
+      "evidence": "dsh plugin --profile web add github:cakeni/harness-pet"
+    },
+    "evaluationReport": {
+      "intro": "这是一个在 DeepSeek Harness 网页界面里养一只像素小鲸鱼的小插件。它会根据你和大模型的交互状态（比如思考、执行命令、搜索、出错等）切换 9 种动画。你可以拖动它、点击它，它还会显示最近的对话内容卡片。支持多语言、桌面画中画窗口等，纯本地运行，不联网。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在 Harness 页面内运行，不向任何第三方发送数据。设置保存在浏览器 localStorage，对话内容不持久化。只有你主动通过输入框提交时，才会将文本通过 Harness 官方通道发送给当前会话。",
+      "postInstallNotes": "需要 Harness 0.1.0-rc.6 和 pnpm 在 PATH 上。安装或移除插件后需重启 dsh web 进程。若使用 Git 方式安装，pnpm 可能阻止构建，需要在 profile 的 pnpm-workspace.yaml 中添加 allowBuilds: harness-pet: true，然后重新安装。",
+      "notes": "这是非官方社区项目；依赖 Harness 预发布客户端 API（0.1.0-rc.6），后续版本可能不兼容；npm 包尚未发布，需通过 Git 安装。"
+    },
+    "summaryZh": "在 DeepSeek Harness 中养一只像素小鲸鱼，根据交互状态显示动画并支持拖动、对话卡片和桌面画中画模式。",
+    "usage": {
+      "prompt_tokens": 3119,
+      "completion_tokens": 4933,
+      "total_tokens": 8052,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4447
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2479
+    }
+  }
+}

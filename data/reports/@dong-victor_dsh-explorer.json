@@ -1,0 +1,37 @@
+{
+  "id": "@dong-victor/dsh-explorer",
+  "analyzedAt": "2026-08-16T14:47:44.853Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给了 dsh plugin add 安装命令，确实是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dong-victor/dsh-explorer",
+      "evidence": "dsh plugin --profile web add @dong-victor/dsh-explorer"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页界面加上文件浏览器侧边栏的插件。它能显示项目文件树，点开文件可以预览、编辑并保存，支持很多编程语言的语法高亮；还能直接打开 .ipynb 笔记本文件，在界面里运行代码；选中代码后可以右键发送到聊天对话框。",
+      "level": "ok",
+      "risks": "它需要读取你工作区的文件，可以编辑和删除文件（批量删除有确认，且拒绝删除工作区根目录）；运行 Jupyter 笔记本时会执行 Python 代码，代码行为由你控制。这些操作都限定在会话指定的工作区内，没发现明显风险。",
+      "postInstallNotes": "如果需要使用 Jupyter 笔记本功能，得在电脑上安装 Python 以及 jupyter_client 和 ipykernel；可以通过设置环境变量 DSH_JUPYTER_PYTHON 来指定 Python 解释器。装好后要重启 DSH 图形界面才会生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页界面的右侧项目文件浏览器插件，支持文件树、代码预览编辑、Jupyter 笔记本运行和发送选中内容到聊天。",
+    "usage": {
+      "prompt_tokens": 2883,
+      "completion_tokens": 905,
+      "total_tokens": 3788,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 502
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2243
+    }
+  }
+}

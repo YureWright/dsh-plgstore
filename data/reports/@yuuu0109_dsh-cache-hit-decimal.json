@@ -1,0 +1,37 @@
+{
+  "id": "@yuuu0109/dsh-cache-hit-decimal",
+  "analyzedAt": "2026-08-16T13:36:25.989Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 字段，依赖 @deepseek-ai/dsh-client-runtime 等核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@yuuu0109/dsh-cache-hit-decimal",
+      "evidence": "dsh plugin --profile web add @yuuu0109/dsh-cache-hit-decimal"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的网页界面里显示的缓存命中率从整数变成带两位小数，比如 42% 变成 42.86%。它通过替换官方聊天界面里的 stats 显示组件来实现，不影响其他功能，卸载后恢复原样。",
+      "level": "ok",
+      "risks": "没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 进程，并刷新浏览器页面才能生效。",
+      "notes": "插件兼容性绑定 DeepSeek Harness 0.1.0-rc.6 和 React 18，使用其他版本时可能需要注意。"
+    },
+    "summaryZh": "把 DeepSeek Harness 网页版缓存命中率显示成两位小数的轻量插件。",
+    "usage": {
+      "prompt_tokens": 2323,
+      "completion_tokens": 1621,
+      "total_tokens": 3944,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1305
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1683
+    }
+  }
+}

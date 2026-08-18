@@ -1,0 +1,37 @@
+{
+  "id": "kairoz9/dsh-mcp-admin",
+  "analyzedAt": "2026-08-17T13:14:12.951Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且客户端注入依赖了 @deepseek-ai/dsh-client-runtime 等 DSH 核心包，README 也给出了 dsh plugin 安装命令，符合真插件证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/kairoz9/dsh-mcp-admin.git",
+      "evidence": "dsh plugin --profile web add github:kairoz9/dsh-mcp-admin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness (dsh) 用的，主要做两件事：一是在聊天里输入 /mcp 命令，查看所有配置里的 MCP 服务器列表和实时工具数量；二是在设置页面里直接添加、编辑、启用或删除 MCP 服务器，改完会自动写回配置文件并热重载，不用手动改配置。简单说就是帮你更方便地管理 dsh 的 MCP 服务器连接。",
+      "level": "ok",
+      "risks": "它会修改 dsh 的配置文件 cordis.patch.yml（保存 MCP 服务器设置），并且 MCP 服务器本身可能连接外部服务，但这属于正常功能使用。没发现额外偷偷碰你电脑上其他文件或上传隐私的行为。",
+      "postInstallNotes": "如果通过 Git 方式安装，pnpm 可能默认禁止运行 prepare 构建脚本，需要按安装失败时提示在对应 profile 的 pnpm-workspace.yaml 中添加 allowBuilds 配置后再重试。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 dsh 插件，用 /mcp 命令或设置面板来查看和管理各类 MCP 服务器，自动写回配置并热重载。",
+    "usage": {
+      "prompt_tokens": 2025,
+      "completion_tokens": 905,
+      "total_tokens": 2930,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 479
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1385
+    }
+  }
+}

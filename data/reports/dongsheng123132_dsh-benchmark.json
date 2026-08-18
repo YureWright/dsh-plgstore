@@ -1,0 +1,37 @@
+{
+  "id": "dongsheng123132/dsh-benchmark",
+  "analyzedAt": "2026-08-17T13:12:56.642Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段并依赖 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，且代码涉及 DSH 工具接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/dongsheng123132/dsh-benchmark.git",
+      "evidence": "dsh plugin --profile benchmark add github:dongsheng123132/dsh-benchmark"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 工具和插件做“体检”的：它能按固定规则反复运行你指定的命令，记录运行时间、退出码、输出哈希等数据，并生成一份可对比的基准报告，用来检查性能是否倒退、结果是否可复现。适合开发者测试自己的 DSH 插件或脚本。",
+      "level": "ok",
+      "risks": "它会运行你指定的可执行文件做测试，但设计上限制了工作目录和环境变量，不会碰工作区以外的文件，报告里只有哈希和测量数据，不包含命令输入或输出内容。不过它要求你只运行可信的基准程序，否则恶意程序仍可能造成危害。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 工具和插件提供可复现、确定性基准测试证据的插件。",
+    "usage": {
+      "prompt_tokens": 2608,
+      "completion_tokens": 1273,
+      "total_tokens": 3881,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 934
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1968
+    }
+  }
+}

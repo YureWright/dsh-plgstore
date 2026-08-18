@@ -1,0 +1,37 @@
+{
+  "id": "xingyingyuzhui/dsh-updater-ui",
+  "analyzedAt": "2026-08-17T11:41:00.092Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并导出 host.js/client.js，符合 DSH 插件结构。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:xingyingyuzhui/dsh-updater-ui",
+      "evidence": "dsh plugin --profile web add github:xingyingyuzhui/dsh-updater-ui"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的更新检查器插件。装好后，在 DSH 的设置页面会多出一个“DSH 更新”入口，可以一键检查官方仓库有没有新版本、对比版本号、查看更新说明，并直接拉取更新（只允许快进，不会覆盖你本地的额外修改）。它还会每 30 分钟自动后台检查，有更新时在导航栏显示红点提醒。",
+      "level": "ok",
+      "risks": "它会读取并修改你本机 DSH 官方仓库（默认 ~/deepseek-harness）的 git 状态，执行 git fetch 和 git pull --ff-only。它不会上传你的数据或连接外部服务器，但拉取更新时需要联网访问官方 git 仓库。如果设置不当，理论上可能对错误的目录执行 git 操作，但插件有安全校验（要求 origin 必须是官方仓库）。",
+      "postInstallNotes": "装完需要重启 DSH，然后打开“设置 → DSH 更新”使用。如果你的官方仓库不在 ~/deepseek-harness，需要设置环境变量 DSH_REPO 指向正确路径。",
+      "notes": "该插件并非 DeepSeek 官方发布，只是社区开发者写的（README 自称“官方”容易误导）。安装方式用的是 github: 简写，需要 DSH 支持该格式。"
+    },
+    "summaryZh": "DSH 官方仓库更新检查器：设置页一键检查/拉取更新，自动后台检查并红点提醒。",
+    "usage": {
+      "prompt_tokens": 1826,
+      "completion_tokens": 2430,
+      "total_tokens": 4256,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1975
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1186
+    }
+  }
+}

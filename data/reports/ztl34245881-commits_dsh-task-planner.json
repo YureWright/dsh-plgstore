@@ -1,0 +1,37 @@
+{
+  "id": "ztl34245881-commits/dsh-task-planner",
+  "analyzedAt": "2026-08-17T12:01:00.833Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 配置，README 给出了 dsh plugin 安装命令，符合真正 DSH 插件的证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/ztl34245881-commits/dsh-task-planner.git",
+      "evidence": "dsh plugin --profile web add github:<your-user>/dsh-task-planner"
+    },
+    "evaluationReport": {
+      "intro": "这个插件相当于给 DSH 装了一个记忆超强的任务规划员。你告诉它要做什么，它会先翻一翻以前做过的类似任务（存在本地的小本本里），然后根据你现在会用的插件和技能，生成一份分步骤的计划，还会指出可能的风险。每次做完任务，它会自动把经验记下来，下次越用越聪明。全程不需要你提供任何密钥或写死路径，默认经验存在你用户目录下的 .dsh/planner-lessons 文件夹里。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的一个经验文件夹（默认在用户目录下的 .dsh/planner-lessons），里面存的任务计划和总结是纯文本 Markdown，可能包含你任务中的敏感信息，如果分享出去别人能看到。另外它依赖 DSH 的 shell 服务，后续执行计划时可能会运行 shell 命令，但这些命令是 DSH 控制的。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 加任务规划记忆：自动回想旧经验、匹配能力生成步骤计划，并把教训存成本地 Markdown。",
+    "usage": {
+      "prompt_tokens": 1748,
+      "completion_tokens": 1503,
+      "total_tokens": 3251,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1108
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1108
+    }
+  }
+}

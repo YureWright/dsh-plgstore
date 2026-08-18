@@ -1,0 +1,37 @@
+{
+  "id": "609476965/dsh-LorebookMD",
+  "analyzedAt": "2026-08-17T11:30:40.549Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client 和 dsh.bundle 字段，且 README 明确给出 dsh plugin add 安装命令，符合真正的 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-lorebookmd",
+      "evidence": "dsh plugin --profile web add dsh-lorebookmd"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的，可以导入 SillyTavern/酒馆的角色卡和世界书，把它们变成你电脑上的本地 Markdown 文档。之后你能让 AI 根据这些设定来写小说或进行角色扮演。插件有两种模式：一种是“创作模式”，你给个场景或情节，AI 直接写出小说正文；另一种是“世界书模式”，AI 会以角色身份和你对话互动，并且根据你提到的关键词自动注入对应的设定内容。所有数据都保存在本地，你可以手动编辑那些 Markdown 文档。",
+      "level": "ok",
+      "risks": "插件会读写你电脑上 `~/.dsh/dsh-LorebookMD/` 文件夹里的内容（预设、世界书、Markdown 文档），并且可能用系统默认程序打开本地的 .md 文件。它只处理你自己提供的设定文本，不会额外上传数据到外部服务器。注意导入的角色卡和世界书内容是你自己选的，AI 生成的结果可能不完全符合预期。",
+      "postInstallNotes": "安装后需要打开 DSH 设置页，找到“世界书创作”进行导入和配置，也可以直接用对话工具导入角色卡或世界书。如果想修改设定文档，可以在设置页里点击“编辑文档”用系统默认程序打开 Markdown 文件进行编辑。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 世界书驱动的小说创作插件，支持导入酒馆角色卡与世界书，落地为本地 Markdown 设定文档，并用于小说创作或角色扮演。",
+    "usage": {
+      "prompt_tokens": 2469,
+      "completion_tokens": 938,
+      "total_tokens": 3407,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 468
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1829
+    }
+  }
+}

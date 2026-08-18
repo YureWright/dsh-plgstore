@@ -1,0 +1,29 @@
+{
+  "id": "dsh-period-report",
+  "analyzedAt": "2026-08-16T13:33:28.014Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 peerDependencies 包含 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/zhengjy01/dsh-period-report.git",
+      "evidence": "README: dsh plugin --profile web add github:zhengjy01/dsh-period-report"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你自动生成工作汇报。你选一个时间范围（比如昨天、本周、或者任意几天），它会把你在 DeepSeek Harness 里的会话整理成一份报告，还能让 AI 用大白话写总结，比如“今日概览”“亮点”“回顾”这些。它也能定时提醒你，比如每两天早上 9 点生成一次报告，并用系统通知弹出来。报告会保存到你的用户目录下，还有网页界面可以设置。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你的用户目录下创建配置文件（~/.dsh/dsh-period-report.json，权限 0600）和报告文件夹（~/.dsh/dsh-period-report/reports/），并且会调用系统通知（macOS 或 Linux）。这些操作都是自己电脑本地的，不会上传数据。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 生成 AI 叙述的周期性工作报告（每日/每周/自定义日期范围），并支持定时提醒和系统通知。",
+    "usage": {
+      "prompt_tokens": 5293,
+      "completion_tokens": 1445,
+      "total_tokens": 6738
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "121103qwq/dsh-vision-sidecar",
+  "analyzedAt": "2026-08-17T11:53:37.415Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:121103qwq/dsh-vision-sidecar#v0.1.4",
+      "evidence": "dsh plugin --profile web add github:121103qwq/dsh-vision-sidecar#v0.1.4"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的纯文本模型也能“看懂”图片——它会自动把图片发给一个支持视觉的第三方 API（默认是免费的 LLM7.io），拿到文字描述后，再把描述作为普通文本交给原来的推理模型，这样不用换模型、不用本地显卡，也不用申请视觉 API 密钥。你也可以自己配置 OpenAI 兼容的视觉服务。",
+      "level": "caution",
+      "risks": "图片会原样发送到外部服务器（默认是 LLM7.io），所以图片内容可能被第三方看到；如果你发的是截图、照片等敏感内容，存在隐私泄露风险。另外，生成的图片描述会写进 DSH 的会话记录，看到会话的人也能看到这些描述。它不会保存你的 API 密钥，但使用自定义服务时密钥会以环境变量形式存在本地。",
+      "postInstallNotes": "安装后启动 DSH Web 配置，在模型选择器里选“DeepSeek + Hosted Vision”即可。默认免费端点无需任何配置；若要自定义视觉服务，需在配置文件中设置 visionBaseURL、visionModel 和 visionApiKeyEnv（见 README）。",
+      "notes": "默认使用第三方免费视觉服务，其可用性和限额可能变化，使用前建议查看服务条款；该插件需要 DSH 0.1.0-rc.6+ 和 Node.js 22.19+；作者为个人开发者，建议自行快速浏览源码确认行为。"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加视觉能力的插件：把图片发给免费或自定义的 OpenAI 兼容视觉 API，生成描述后再交给原文本模型，无需更换模型或申请密钥。",
+    "usage": {
+      "prompt_tokens": 3416,
+      "completion_tokens": 2774,
+      "total_tokens": 6190,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2252
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2776
+    }
+  }
+}

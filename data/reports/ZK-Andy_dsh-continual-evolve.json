@@ -1,0 +1,37 @@
+{
+  "id": "ZK-Andy/dsh-continual-evolve",
+  "analyzedAt": "2026-08-17T11:29:52.853Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-continual-evolve",
+      "evidence": "dsh plugin --profile web add dsh-continual-evolve"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能不断自我改进。它会记下对话中的经验教训、常用技能和提示笔记，并把它们整理成有版本、可回滚的持久状态。它还提供 /evolve 命令、自动审查和人工批准机制，确保修改安全。简单说，就是让 AI 越用越聪明，而且每次改动都有记录，出问题能退回。",
+      "level": "ok",
+      "risks": "它会在你的用户主目录（$DSH_HOME）下写文件，包括状态、技能和日志；可能会自动调整提示词或技能，但修改全局内容前会先征求你的同意。它还使用加密密钥保护评分规则，但这些都在本地，不会主动上传到外部。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 持续自我进化的插件，通过版本化管理提示、记忆和技能，实现可回滚的智能升级。",
+    "usage": {
+      "prompt_tokens": 3679,
+      "completion_tokens": 2574,
+      "total_tokens": 6253,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2222
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3039
+    }
+  }
+}

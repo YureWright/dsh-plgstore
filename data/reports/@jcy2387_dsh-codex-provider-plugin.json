@@ -1,0 +1,37 @@
+{
+  "id": "@jcy2387/dsh-codex-provider-plugin",
+  "analyzedAt": "2026-08-18T14:50:42.862Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 也提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@jcy2387/dsh-codex-provider-plugin",
+      "evidence": "An independently published OpenAI Codex provider for DeepSeek Harness, installable with `dsh plugin add`."
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 可以使用 OpenAI 的 Codex 模型。它不是用 API key，而是让你用 ChatGPT 账号登录（OAuth），登录后就可以在模型列表里选用 Codex 模型。插件会在软件里加一个设置页面，方便你连接账号、查看用量、调整网络代理等。安装后需要登录 ChatGPT 账号才能用。",
+      "level": "ok",
+      "risks": "插件会在本地保存你的 ChatGPT 登录凭据（OAuth token），这些信息通过软件的凭据管理器存储；浏览器界面只会看到脱敏后的快照。登录时会在本机短暂开一个回调端口。它还会读取系统/环境代理设置，但代理信息不会传到浏览器。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后先启动 web 界面（dsh web），然后到设置里的 OpenAI Codex 页面点击连接，选择浏览器登录或设备码登录，完成 ChatGPT 授权。之后在模型选择器里选择 openai-codex 下的模型即可。",
+      "notes": "该插件使用 ChatGPT OAuth 而非 OpenAI API key，模型可用性、配额和行为由 OpenAI 控制，可能发生变化。"
+    },
+    "summaryZh": "让 DeepSeek Harness 通过 ChatGPT 账号登录接入 OpenAI Codex 模型的插件，带原生设置界面。",
+    "usage": {
+      "prompt_tokens": 4363,
+      "completion_tokens": 2264,
+      "total_tokens": 6627,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1823
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3723
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-vault",
+  "analyzedAt": "2026-08-17T11:07:07.593Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vault",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个加密的密码保险库插件，专门为 DeepSeek Harness（DSH）设计。它可以把你的各种敏感信息——比如网站账号密码、邮箱、手机号、SSH 密钥、API 密钥、OAuth 令牌、两步验证（TOTP）密钥等——加密保存在本地一个保险库文件里。模型可以通过工具来添加、查询、修改、删除这些凭据，还能生成强密码、做泄露检查、导入导出备份等。所有数据在磁盘上都是加密的，解锁时需要输入主密码。",
+      "level": "ok",
+      "risks": "它会在你的电脑上创建一个加密的保险库文件，里面存着所有密码和密钥。如果主密码被猜中或电脑中了恶意软件，这些敏感信息可能被偷走。解锁后密钥会暂时留在内存里，所以公共电脑上要格外小心。它提供的“泄露检查”功能会把密码哈希的前缀发给 Have I Been Pwned 网站（虽然设计上不发送完整密码，但会暴露一部分信息）。另外，如果你用导入导出功能，备份文件要自己保管好，丢了或被人拿到解不开也会出问题。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-vault 是一个为 DeepSeek Harness 设计的加密凭据保险库插件，可安全存储密码、SSH 密钥、API 密钥等敏感信息，并提供搜索、TOTP、备份、导入导出等功能。",
+    "usage": {
+      "prompt_tokens": 3995,
+      "completion_tokens": 4805,
+      "total_tokens": 8800,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4362
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3355
+    }
+  }
+}

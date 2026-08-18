@@ -1,0 +1,37 @@
+{
+  "id": "dsh-1024store",
+  "analyzedAt": "2026-08-17T11:06:54.555Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis，符合 DSH 插件核心特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-1024store",
+      "evidence": "dsh plugin --profile web add dsh-1024store"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个内置的“1024 Store”商店。你能在设置里找到它，它可以从一个在线的 1024 目录里浏览、搜索、筛选插件，直接安装或卸载，还会显示已装状态和进度。装完之后重启 Harness 才会生效。",
+      "level": "ok",
+      "risks": "插件在每次安装或卸载后，会向 DeepSeek 的公共接口发送一条匿名的统计信息（不包含个人身份），并在本地保存一个匿名身份文件。如果你不想上报，可以设置环境变量 DO_NOT_TRACK=1 或 DSH_1024STORE_TELEMETRY=0 关掉。除此之外没发现明显风险。",
+      "postInstallNotes": "重启 DeepSeek Harness 让插件生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 集成 1024 插件商店，提供浏览、搜索、安装和卸载插件的能力。",
+    "usage": {
+      "prompt_tokens": 1832,
+      "completion_tokens": 1757,
+      "total_tokens": 3589,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1413
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1192
+    }
+  }
+}

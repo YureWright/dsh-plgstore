@@ -1,0 +1,37 @@
+{
+  "id": "dsh-usage-dashboard-plus",
+  "analyzedAt": "2026-08-18T14:53:06.638Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等多个 DSH 核心包，README 也提供了 dsh plugin 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-usage-dashboard-plus",
+      "evidence": "dsh plugin --profile web add dsh-usage-dashboard-plus"
+    },
+    "evaluationReport": {
+      "intro": "这是一个专门给 DeepSeek Harness（dsh）用的网页插件，能帮你实时查看 DeepSeek API 的余额和今天花了多少钱。它会在网页侧边栏底部显示一个小部件，点击还能看到详细的用量统计，比如每次对话的调用记录、各个模型的花费、缓存命中率等，还支持导出 CSV。另外它还能额外统计一些外部视觉模型的调用费用，让你对总花费心里有数。",
+      "level": "ok",
+      "risks": "它会读取你本地的 DeepSeek 配置和会话日志，用来计算花费和余额。这些数据只在你自己的电脑上处理，不会上传到外部服务器。不过它需要访问你的 API 密钥（通过 dsh 的凭据服务），虽然只是查询余额，但你要确保本地环境安全。",
+      "postInstallNotes": "安装后需要重启 `dsh web`，然后在浏览器里硬刷新（Cmd+Shift+R）才能看到侧边栏组件。如果是从旧版统计插件迁移，要先移除旧的 dsh-stats-dashboard 插件，避免冲突。",
+      "notes": "这是一个 fork 版本，README 提示不要和旧的 dsh-stats-dashboard 同时启用；另外它的价格表默认包含 mimo-v2.5，但也可以自己调整。"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 提供 API 余额、今日花费、完整用量仪表盘和 CSV 导出的网页插件，还额外支持统计外部视觉模型调用。",
+    "usage": {
+      "prompt_tokens": 2962,
+      "completion_tokens": 733,
+      "total_tokens": 3695,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 270
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2322
+    }
+  }
+}

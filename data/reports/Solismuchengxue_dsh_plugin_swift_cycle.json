@@ -1,0 +1,37 @@
+{
+  "id": "Solismuchengxue/dsh_plugin_swift_cycle",
+  "analyzedAt": "2026-08-17T11:36:05.645Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-swift-cycle",
+      "evidence": "dsh plugin --profile web add dsh-plugin-swift-cycle"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 Swift Cycle 项目治理技能装进 DeepSeek Harness，变成只能由你主动用 /swift-cycle 调用的技能。它提供知识晋升、状态分离、治理基线、提交边界规划、源码/运行边界划分等能力，适合想规范 Git 项目治理流程的人。",
+      "level": "ok",
+      "risks": "没发现明显风险。README 声明它运行时不联网、不读凭据、不修改用户级 Skill 目录。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "Swift Cycle 项目治理技能的 DeepSeek Harness 适配器，通过 /swift-cycle 显式调用。",
+    "usage": {
+      "prompt_tokens": 2522,
+      "completion_tokens": 1969,
+      "total_tokens": 4491,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1701
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1882
+    }
+  }
+}

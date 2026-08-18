@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-ssh",
+  "analyzedAt": "2026-08-16T14:51:05.598Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并注入 @deepseek-ai/dsh-client-* 官方包，且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-ssh",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-ssh"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页版用的 SSH 远程操作插件。它让你能在浏览器里管理多台 SSH 服务器：添加/编辑/测试主机连接，导入已有的 ~/.ssh/config 配置；还带一个网页终端、文件上传下载、本地端口转发（方便访问远程数据库等内网服务），以及同时给多台机器批量执行命令的功能。操作界面和 AI 助手共用同一套主机配置，AI 也能调用这些 SSH 工具。",
+      "level": "ok",
+      "risks": "它会把主机密码和密钥口令以明文形式保存在 ~/.dsh/dsh-ssh.json（文件权限设为 0600），能读你电脑的人可能看到这些密码。导入时会读取 ~/.ssh/config。执行命令时，远程服务器的输出会直接返回，如果远程环境有敏感信息（如 env 命令显示的密钥），可能被写进对话记录。另外，AI 的文件上传/下载工具可以直接读写你电脑上的任意路径（绕过了沙箱），使用时要注意别让 AI 乱动文件。",
+      "postInstallNotes": "装完后需要重启 dsh web，侧边栏才会出现 SSH 入口；然后在插件设置里可以开关是否把插件能力开放给 AI 助手（announceToAgent）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页版提供 SSH 远程主机管理、网页终端、文件传输、端口转发与集群批量执行命令的插件。",
+    "usage": {
+      "prompt_tokens": 3133,
+      "completion_tokens": 1835,
+      "total_tokens": 4968,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1387
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2493
+    }
+  }
+}

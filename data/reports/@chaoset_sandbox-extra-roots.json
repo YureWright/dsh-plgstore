@@ -1,0 +1,37 @@
+{
+  "id": "@chaoset/sandbox-extra-roots",
+  "analyzedAt": "2026-08-17T11:09:50.229Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-sandbox，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@chaoset/sandbox-extra-roots",
+      "evidence": "dsh plugin --profile web add @chaoset/sandbox-extra-roots"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 的沙盒加个“白名单”，让你能额外指定几个文件夹允许沙盒里的程序写入（比如工具缓存）。原来沙盒只允许操作 workspace 根目录和临时目录，这个插件可以再加一些路径，而且不会删除原来的安全规则。它针对不同系统（Mac、Linux 等）的沙盒机制做了适配。",
+      "level": "ok",
+      "risks": "它会让沙盒放行更多目录的写入权限。如果你把存有密码、密钥的文件夹（比如 ~/.docker、~/.gradle）加进去，沙盒里的程序就可能读到这些敏感信息并可能外泄。本身不会主动碰你的文件，风险取决于你配置了哪些目录。",
+      "postInstallNotes": "安装后重启 DSH 生效；然后在设置页→插件配置→“沙盒额外允许目录”里添加绝对路径，或编辑 $DSH_HOME/plugins/sandbox-extra-roots/config.json。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 沙盒的“工作区可写”模式增加额外的可写目录白名单，方便工具缓存等场景。",
+    "usage": {
+      "prompt_tokens": 1911,
+      "completion_tokens": 2243,
+      "total_tokens": 4154,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1853
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1271
+    }
+  }
+}

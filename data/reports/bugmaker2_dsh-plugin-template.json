@@ -1,0 +1,37 @@
+{
+  "id": "bugmaker2/dsh-plugin-template",
+  "analyzedAt": "2026-08-17T11:16:33.239Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 明确说明这是一个 DSH 插件模板，属于可安装的插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/bugmaker2/dsh-plugin-template.git",
+      "evidence": "The generated lib/ directory is included in the package so direct Git installs can load the built JavaScript entry."
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件模板，是一个最小化的“Hello World”示例。装进 DeepSeek Harness 后，它会在加载时打印一行“hello world”，用来帮你学习如何用 TypeScript 开发 DSH 插件。它本身没有实际功能，只是给插件开发做起步参考。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会打印一行文字，不碰你的文件、也不连外部服务器。",
+      "postInstallNotes": "无。但如果你把它当作模板来开发新插件，需要修改源码并重新构建。",
+      "notes": "注意这只是一个模板，不是功能插件；直接安装只会得到 hello world 效果。"
+    },
+    "summaryZh": "一个打印 hello world 的最小 DSH 插件模板，适合用来学习开发 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 1741,
+      "completion_tokens": 956,
+      "total_tokens": 2697,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 637
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1101
+    }
+  }
+}

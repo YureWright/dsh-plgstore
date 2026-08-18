@@ -1,0 +1,37 @@
+{
+  "id": "Tyan66666/billion-context-dsh",
+  "analyzedAt": "2026-08-17T11:20:25.560Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin 安装命令，证据充分。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "billion-context-dsh",
+      "evidence": "dsh plugin --profile web add billion-context-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，主要解决对话太长时模型记不住早期内容的问题。它会让模型自己决定什么时候该压缩、压缩哪些内容，把旧消息写成摘要，既节省上下文空间，又保留关键信息。需要的时候还能把压缩的内容恢复出来，或者按关键词搜索。",
+      "level": "ok",
+      "risks": "插件会修改 DSH 的配置文件（比如 ~/.dsh 下的 profile 补丁），并读取会话日志来生成摘要。正常情况下不会把数据发给第三方（除了 DeepSeek 自身的 API 调用）。没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh，并确认配置中已禁用默认的 compaction-basic（避免多个上下文管理器冲突）。若使用 dsh plugin 命令安装，补丁会自动应用，但可能仍需手动调整配置。",
+      "notes": "项目目前是测试版（v0.2.1），README 明确警告不要用于生产环境；依赖的 DSH 也处于公开测试版。另外，这是从 billion-context-pi 移植的项目，核心压缩逻辑来自 acp-kernel。"
+    },
+    "summaryZh": "为 DeepSeek Harness 设计的模型驱动上下文压缩插件，让 LLM 自主决定压缩时机与内容，支持摘要、解压和上下文搜索。",
+    "usage": {
+      "prompt_tokens": 4977,
+      "completion_tokens": 2458,
+      "total_tokens": 7435,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2040
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4337
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-ergonomics",
+  "analyzedAt": "2026-08-16T13:44:39.761Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-client-runtime，README 给出了 dsh plugin 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ergonomics",
+      "evidence": "README 安装命令：`dsh plugin --profile web add dsh-ergonomics`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）聊天界面加一些顺手的小功能：输入 /new 就能一键开新会话，不用鼠标点；按 ↑/↓ 可以翻看这个会话之前输入过的内容；按 Esc 能立刻停止正在生成回复；按 Ctrl+U 可以一键清空光标前的内容，方便重新写 prompt。主要就是让日常对话操作更省事。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在本地记录每个会话的输入历史（最多 50 条），这些数据只存在你自己电脑上；不会主动上传。",
+      "postInstallNotes": "装完还需要手动编辑 `~/.dsh/profiles/web/cordis.patch.yml`，加入插件注册片段（README 里有示例），然后重启 `dsh web` 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 会话人体工学插件：提供 /new 新会话、↑↓ 输入历史、Esc 中断生成、Ctrl+U 清空输入等便捷操作。",
+    "usage": {
+      "prompt_tokens": 2761,
+      "completion_tokens": 624,
+      "total_tokens": 3385,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 241
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2121
+    }
+  }
+}

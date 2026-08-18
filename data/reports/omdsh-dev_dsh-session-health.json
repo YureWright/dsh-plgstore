@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-session-health",
+  "analyzedAt": "2026-08-17T11:31:58.227Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 给出 dsh plugin add 安装命令并描述了工具注册。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/dsh-session-health.git",
+      "evidence": "dsh plugin --profile web add github:omdsh-dev/dsh-session-health"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH（DeepSeek Harness）用的健康检查工具。它会扫描你电脑上 DSH 的会话文件夹（$DSH_HOME/sessions）里的日志文件，看看哪些文件损坏了、写了一半、或者格式不对，然后给你一份报告，告诉你哪些文件有问题、可能是什么原因、以及建议怎么处理。它只读取文件，不会修改或删除任何东西，所以用起来很安全。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取 DSH 会话目录下的文件，不联网、不执行外部代码、不修改数据，只是分析文件内容。",
+      "postInstallNotes": "无。安装后插件会自动注册 session_health 工具，可通过 dsh run 直接调用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 会话健康检查插件，只读扫描多帧 zstd 会话日志，检测损坏/中断/异常并给出报告。",
+    "usage": {
+      "prompt_tokens": 3365,
+      "completion_tokens": 1050,
+      "total_tokens": 4415,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 682
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2725
+    }
+  }
+}

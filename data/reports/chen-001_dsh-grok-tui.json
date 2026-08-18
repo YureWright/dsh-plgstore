@@ -1,0 +1,37 @@
+{
+  "id": "chen-001/dsh-grok-tui",
+  "analyzedAt": "2026-08-17T11:28:08.693Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了多个 @deepseek-ai/dsh-* 与 @deepseek-ai/cordis 核心包作为 peerDependencies，README 明确它作为前端接入 dsh web。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-grok-tui",
+      "evidence": "npm install -g dsh-grok-tui"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 grok 的命令行界面（TUI）变成 DeepSeek Harness 的一个前端：外表是 grok 的风格，内部的提示词、工具、模型路由和会话存储都由 dsh 提供。装好后你可以在终端里用这个界面和 dsh 对话，还能看到缓存命中率、TTFT、TPS、token 用量等实时指标。",
+      "level": "caution",
+      "risks": "它会读取和修改你 home 目录下的 dsh 配置（比如 ~/.dsh/profiles/web/cordis.patch.yml），并在安装时执行 postinstall 脚本（scripts/postinstall.sh 的内容没有公开，建议先检查）。同时 README 要求你提前从 x.ai 安装 grok 的二进制，因此涉及外部下载。如果你用远程模型 API，对话内容会发送给对应的模型服务商。仓库来自个人开发者（chen-001），stars 较少，使用时请自行判断。",
+      "postInstallNotes": "需要先装好 dsh 和 grok TUI 二进制（`curl -fsSL https://x.ai/cli/install.sh | bash`），然后执行 `grok-dsh setup` 把 bridge 接入 dsh web profile（幂等，可重复跑）；再启动 host（`dsh web` 或 `npx @deepseek-ai/dsh web`），最后运行 `grok-dsh` 打开 TUI。若在 herdr 中使用，需要重载 herdr 配置或重启；另外不要同时运行独立后端与 dsh web，两者会写同一会话存储。",
+      "notes": "README 没有直接给出 `dsh plugin add` 命令，安装方式是 npm 全局安装 + 显式 setup。peerDependencies 里多个 @deepseek-ai/dsh-* 还是 rc 版本，装之前确认环境版本兼容。"
+    },
+    "summaryZh": "把 grok 的终端界面接到 DeepSeek Harness 上的插件，用 dsh 引擎驱动 grok 的 UI，并附带 token 用量面板。",
+    "usage": {
+      "prompt_tokens": 2855,
+      "completion_tokens": 5183,
+      "total_tokens": 8038,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4604
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2215
+    }
+  }
+}

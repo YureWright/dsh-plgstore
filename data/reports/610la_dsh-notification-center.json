@@ -1,0 +1,37 @@
+{
+  "id": "610la/dsh-notification-center",
+  "analyzedAt": "2026-08-17T11:35:28.045Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 字段并依赖 @deepseek-ai/cordis 等核心包，README 也给出了 dsh plugin add 安装命令，是规范的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@lyhalal/dsh-notification-center",
+      "evidence": "dsh plugin --profile web add @lyhalal/dsh-notification-center"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 装一个通知中心：当对话完成、任务出错、或者需要你批准的时候，浏览器会弹系统通知并播放提示音，这样就算你切到别的窗口也不会错过。它内置了 21 种音效，而且每类事件都能单独设置开关、音效、音量和通知方式。如果你把 DSH 打包成桌面应用，它还会自动改用 Windows/macOS/Linux 的原生系统通知，不依赖浏览器权限。",
+      "level": "ok",
+      "risks": "它会请求浏览器的通知权限；如果设置了自定义音效 URL，可能会加载那个外部网址；打包成桌面应用时会调用系统通知接口。除此之外没发现明显的隐私或安全风险。",
+      "postInstallNotes": "装完需要重启 DSH 才能生效；第一次用的时候需要在浏览器里点「授权」或「测试」允许通知权限；音效要等页面有任意一次点击后才会响（浏览器自动播放策略）。",
+      "notes": "第三方社区插件，README 已声明非官方出品，但未发现其他异常。"
+    },
+    "summaryZh": "给 DSH 增加浏览器/系统通知和自定义提示音的通知中心插件，每类事件独立配置，切走也不错过。",
+    "usage": {
+      "prompt_tokens": 2009,
+      "completion_tokens": 866,
+      "total_tokens": 2875,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 448
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1369
+    }
+  }
+}

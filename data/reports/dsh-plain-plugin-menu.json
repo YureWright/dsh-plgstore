@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plain-plugin-menu",
+  "analyzedAt": "2026-08-16T13:33:55.005Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plain-plugin-menu",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add dsh-plain-plugin-menu"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加一个“插件菜单”，把各种社区插件按“皮肤和界面”、“查资料”、“写代码”等通俗易懂的分类整理好，方便你搜索、筛选、排序、安装和卸载插件，也能看到当前已经装了什么。",
+      "level": "ok",
+      "risks": "它会读取 GitHub 上的公开插件信息（如 Star、更新时间），并调用 DSH 命令来安装/卸载插件，因此会修改 DSH 的配置文件。被安装的第三方插件可能不在沙箱内运行，但插件本身已做了一些限制。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 DSH 网页界面才能让菜单生效；如果想提高 GitHub API 的额度，可以设置环境变量 GITHUB_TOKEN。",
+      "notes": "官方 DSH 仍处于 developer preview 阶段，升级 DSH 后可能需要重新测试本插件。"
+    },
+    "summaryZh": "一个把 DeepSeek Harness 社区插件按大白话分类、放到侧边栏的插件菜单，支持搜索、筛选、安装和卸载。",
+    "usage": {
+      "prompt_tokens": 3818,
+      "completion_tokens": 2151,
+      "total_tokens": 5969,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1773
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3178
+    }
+  }
+}

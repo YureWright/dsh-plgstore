@@ -1,0 +1,37 @@
+{
+  "id": "Mr-remon219/dsh-search-boost",
+  "analyzedAt": "2026-08-17T11:32:51.256Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 提供了 dsh plugin add 安装命令，符合真插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-search-boost",
+      "evidence": "dsh plugin --profile web add dsh-search-boost          # latest"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness (DSH) 用的搜索增强插件。它把 DSH 自带的网页搜索和网页抓取升级成多引擎并行搜索（默认免费引擎：Antigravity CLI、Bing、DuckDuckGo 等），还新增了 X（推特）搜索、深度研究、并行多智能体研究、抓取网页等功能。你可以用 /web_change 切换免费/付费引擎层，用 /x-login 导入 X 搜索凭据。装上它，DSH 的搜索能力会强很多，而且免费引擎不需要密钥。",
+      "level": "ok",
+      "risks": "它会在用户主目录写入两个配置文件（~/.dsh-search-boost-layer.json 和 ~/.dsh-search-boost-xauth.json）；如果使用 /x-login 导入凭据，会读取 ~/.grok/auth.json 里的登录信息，并可能把 OIDC token 同步回该文件。此外它会调用外部搜索引擎和 X 的接口，搜索请求会发送到第三方服务。这些都属于正常功能范围，没有发现恶意行为。",
+      "postInstallNotes": "安装后重启 DSH（dsh --profile web）。可选：参考 search-boost-keys.example.json 配置 Tavily/Brave/Exa 密钥以获得更多引擎；用 /x-login 配置 X 搜索官方通道。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 多引擎融合搜索增强插件：并行调用免费/付费搜索、抓取网页、X 搜索与深度研究，一键提升内置 web_search。",
+    "usage": {
+      "prompt_tokens": 3226,
+      "completion_tokens": 1377,
+      "total_tokens": 4603,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 911
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2586
+    }
+  }
+}

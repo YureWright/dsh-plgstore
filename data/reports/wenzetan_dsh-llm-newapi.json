@@ -1,0 +1,37 @@
+{
+  "id": "wenzetan/dsh-llm-newapi",
+  "analyzedAt": "2026-08-17T11:45:33.451Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 等多个 dsh 核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-llm-newapi",
+      "evidence": "dsh plugin --profile web add dsh-llm-newapi"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DeepSeek Harness（dsh）的插件，让你能通过 NewAPI（一个兼容 OpenAI 接口的网关）接入各种大模型。装好之后，你在 dsh 的网页设置里填上网关地址和 API 密钥，它就能自动获取模型列表，并把可用的聊天模型加到 dsh 的模型选择器里。密钥只存在 dsh 的凭据库里，不会从环境变量读取。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在你配置的网关地址上请求模型列表和发起对话，API 密钥保存在 dsh 本地。需要手动修改 profile 配置文件，但这是 dsh 插件常规操作。",
+      "postInstallNotes": "装完后需要编辑 ~/.dsh/profiles/web/package.json，把 'dsh-llm-newapi' 加进 dsh.profile.bundles 数组并重启 dsh web；然后在设置页的“NewAPI”中填入 API 密钥和网关地址（含 /v1），点击“Fetch model info”拉取模型并保存。",
+      "notes": "安装时若出现 peer 依赖缺失警告属正常现象，请勿手动安装或开启 autoInstallPeers，否则可能导致插件异常。"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加 NewAPI（OpenAI 兼容网关）模型提供商，支持在网页设置中配置密钥与自动发现模型。",
+    "usage": {
+      "prompt_tokens": 3982,
+      "completion_tokens": 3384,
+      "total_tokens": 7366,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2935
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3342
+    }
+  }
+}

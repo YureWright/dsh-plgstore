@@ -1,0 +1,37 @@
+{
+  "id": "dsh-output-styles",
+  "analyzedAt": "2026-08-18T14:50:35.337Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-* 核心包，且 README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-output-styles",
+      "evidence": "README 原文：`dsh plugin --profile <name> add dsh-output-styles`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 像 Claude Code 一样随时切换输出风格。比如你输入 /style concise，之后模型的回答就会变得简短；/style step-by-step 会一步步详细解释。每个会话可以单独设置，重启后依然保留。它自带几套风格，也支持你放自己的 Markdown 风格文件，还带一个网页端选择器。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取和监听你配置的样式目录（默认用自带的），并读写 DSH 的存储和设置（比如记住每个会话选的风格），但不会上传数据到外部服务器，也不碰无关的私人文件。",
+      "postInstallNotes": "无（开箱即用；如需网页端样式选择器，按 README 在 profile 中手动添加 client 行，非必需）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，让模型在会话中随时切换输出风格（简洁/详细/正式等），类似 Claude Code 的 outputStyles，并支持自定义风格文件和网页选择器。",
+    "usage": {
+      "prompt_tokens": 4302,
+      "completion_tokens": 1460,
+      "total_tokens": 5762,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1076
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3662
+    }
+  }
+}

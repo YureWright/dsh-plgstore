@@ -1,0 +1,37 @@
+{
+  "id": "SherUnlocked-4869/dsh-plugin-msg-nav",
+  "analyzedAt": "2026-08-17T11:52:50.701Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 同时声明 dsh.bundle 与 dsh.client，README 给出 dsh plugin add 安装命令并说明基于 DSH 会话投影接口，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:SherUnlocked-4869/dsh-plugin-msg-nav",
+      "evidence": "dsh plugin --profile web add github:SherUnlocked-4869/dsh-plugin-msg-nav"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的对话页面加一条右侧导航条：你每发一条真实消息，右侧就多一根小短横线。鼠标挪过去，短横线会变成一行行消息预览；想回看哪条，点一下就能跳过去并高亮。它能把整段历史消息一次性拉过来显示，不用一页页翻，也不会有初始卡顿。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在 DSH 的对话界面里工作，不读写聊天记录以外的文件，也不连接第三方服务器。",
+      "postInstallNotes": "装完需要重启 DSH 服务（dsh web）并刷新页面，之后无需改动配置文件。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 对话右侧导航条：每条用户消息对应一个小横线，悬停预览、点击跳转，全量历史即时加载不卡顿。",
+    "usage": {
+      "prompt_tokens": 3214,
+      "completion_tokens": 2089,
+      "total_tokens": 5303,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1733
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2574
+    }
+  }
+}

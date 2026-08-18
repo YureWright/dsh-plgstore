@@ -1,0 +1,37 @@
+{
+  "id": "cindyguyuehu123/dsh-mobile",
+  "analyzedAt": "2026-08-17T12:14:17.300Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，README 给出 dsh plugin 安装命令并说明通过 DSH 扩展点工作，证据充分。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/cindyguyuehu123/dsh-mobile.git",
+      "evidence": "dsh plugin --profile web add https://github.com/cindyguyuehu123/dsh-mobile.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你的 iPhone 或 iPad 也能用 DeepSeek Harness 的网页界面。它会在你电脑上开一个局域网代理，手机连同一个 Wi-Fi 就能访问；还提供了苹果手机‘添加到主屏幕’的优化，让网页像 App 一样全屏打开；另外针对触屏做了界面调整，按钮更大、输入框不自动缩放，还附带一个扫码页面方便手机快速打开。",
+      "level": "caution",
+      "risks": "它会在你电脑上监听局域网端口（默认 3090），同一 Wi-Fi 下的其他设备都能访问你的 DeepSeek Harness——包括执行代码的工具。如果连了公共/陌生 Wi-Fi，别人可能看到你的对话记录甚至操作你的电脑。所以只建议在可信网络使用，最好配合 allow 配置限制为指定手机 IP。",
+      "postInstallNotes": "装完后必须手动给 DeepSeek Harness 源码打一个补丁（安全上下文 UUID），否则手机端无法连接；然后在 cordis.patch.yml 里注册插件并重启 dsh web。可选：设置 allow 只放行某些 IP。",
+      "notes": "该插件符合 DSH 插件定义，但自带明确的安全警告，需谨慎使用。另外补丁需要手动应用，升级 harness 后要重新打。"
+    },
+    "summaryZh": "让 DeepSeek Harness 通过局域网在 iPhone/iPad 上可用，提供反向代理、iOS PWA 触屏优化和扫码入口。",
+    "usage": {
+      "prompt_tokens": 3313,
+      "completion_tokens": 1128,
+      "total_tokens": 4441,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 658
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2673
+    }
+  }
+}

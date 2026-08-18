@@ -1,0 +1,37 @@
+{
+  "id": "Qinling-Melon-Farmers/dsh-memoir",
+  "analyzedAt": "2026-08-17T11:32:13.965Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/dsh-llm、@deepseek-ai/dsh-tools 等核心包，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Qinling-Melon-Farmers/dsh-memoir.git",
+      "evidence": "README 提供了安装命令：`dsh plugin --profile web add github:Qinling-Melon-Farmers/dsh-memoir`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的 AI 助手加了‘长期记忆’。以前每次新开一个会话，助手都不记得之前做过什么、踩过什么坑；装了它之后，每次会话干完活，插件会自动把‘做了啥、学到啥、下一步咋办’记到项目里的 PROJECT_MEMORY.md 和一个全局索引文件里，下次再开这个项目的会话，这些记忆会自动塞进助手的提示词，让它直接沿用经验，不用重复踩坑。另外还有一个网页版记忆面板，可以手动查看、搜索、添加或删除记忆。",
+      "level": "ok",
+      "risks": "它会在你项目目录里创建/更新 PROJECT_MEMORY.md，并在你的用户主目录下创建 ~/.dsh/dsh-memoir.json，里面存的是会话的工作总结和教训。如果你的项目是公开仓库，记得别把 PROJECT_MEMORY.md 一起提交，否则这些记忆就公开了。另外，这些记忆会注入给这个项目未来的所有助手会话，相当于把项目历史告诉每个新会话。没有发现联网上传等行为，纯本地运行。",
+      "postInstallNotes": "安装后重启 DSH（运行 dsh web）生效；默认配置即可用，如需调整自动蒸馏开关、注入记忆量等，可在 cordis.patch.yml 的 config 里改。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH agent 的持久记忆插件：自动沉淀会话经验教训，跨会话继承，附可视化记忆管理面板。",
+    "usage": {
+      "prompt_tokens": 5467,
+      "completion_tokens": 2620,
+      "total_tokens": 8087,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2115
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4827
+    }
+  }
+}

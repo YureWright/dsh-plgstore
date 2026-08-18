@@ -1,0 +1,37 @@
+{
+  "id": "SpookySandwich/dsh-smooth-stream",
+  "analyzedAt": "2026-08-17T11:33:46.984Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并导出 cordis.patch.yml，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-smooth-stream",
+      "evidence": "dsh plugin --profile web add dsh-plugin-smooth-stream"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加更流畅的流式文字动画效果，让 AI 回复的文字显示更平滑。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供更流畅的流式文字动画效果。",
+    "usage": {
+      "prompt_tokens": 1139,
+      "completion_tokens": 489,
+      "total_tokens": 1628,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 280
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 499
+    }
+  }
+}

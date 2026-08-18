@@ -1,0 +1,37 @@
+{
+  "id": "Owen718/snapgrep",
+  "analyzedAt": "2026-08-17T11:34:16.939Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并导出 ./dsh 入口，依赖 @deepseek-ai/cordis 与 dsh-tools，README 给出了 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "snapgrep",
+      "evidence": "Verify with `dsh --profile headless --dump-config | grep snapgrep`."
+    },
+    "evaluationReport": {
+      "intro": "snapgrep 是一个给编码代理（比如 DeepSeek Harness、Pi）用的搜索加速插件。它在你的电脑上建一个代码索引，让搜索代码的速度比普通的 ripgrep 快几十倍，而且搜索结果和 ripgrep 完全一致。它不需要额外启动后台进程，直接嵌在代理程序里，对普通用户来说就是装完之后搜索变快很多。",
+      "level": "ok",
+      "risks": "它会在代理进程里加载一个原生模块，并可能在你电脑的用户目录（如 ~/.pi/agent/extensions）安装文件；如果通过 README 里给的 curl 管道脚本安装，会下载并执行脚本，需要信任来源（建议用 npm 或 dsh 官方命令安装）。它会把你搜索的代码内容做成索引存在本地，但不会上传到外部服务器。",
+      "postInstallNotes": "安装后运行 `dsh --profile headless --dump-config | grep snapgrep` 验证是否生效；确认后重启 dsh 会话即可。如果是在 Pi 或 oh-my-pi 里用，直接 npm install -g 并重启即可。",
+      "notes": "无"
+    },
+    "summaryZh": "snapgrep 是一个进程内的三元索引代码搜索插件，让 DeepSeek Harness 等编码代理的搜索速度比 ripgrep 快几十倍，且无需额外进程。",
+    "usage": {
+      "prompt_tokens": 4065,
+      "completion_tokens": 1871,
+      "total_tokens": 5936,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1433
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3425
+    }
+  }
+}

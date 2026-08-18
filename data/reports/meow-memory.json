@@ -1,0 +1,37 @@
+{
+  "id": "meow-memory",
+  "analyzedAt": "2026-08-18T14:52:16.151Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 明确声明了 dsh.bundle 与 dsh.client，且 README 说明了如何作为 DSH 插件集成到 profile bundles。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "meow-memory",
+      "evidence": "npm install meow-memory"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的记忆增强工具。它会帮 AI 记住跨会话的项目信息，像个长期记事本：自动把对话里值得记的东西（关于用户的偏好、项目决定、经验教训等）分类存进一个本地数据库，并在之后的对话中把相关记忆自动翻出来给 AI 看，还能在夜间空闲时自动整理归档（插件里叫“做梦”）。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在你的工作区里创建 .dsh-meow 文件夹，存放记忆数据库和会话记录，不联网、不碰系统文件。",
+      "postInstallNotes": "装完后需要把 meow-memory 加进 profile 的 package.json 里的 dsh.profile.bundles 数组（例如 \"meow-memory\"），然后重启 dsh web；新会话会自动加载。其他配置（如时区、记忆目录）可选，详见 README。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 打造的跨会话记忆插件，用本地 SQLite 存储七层记忆并在对话中自动注入、检索和夜间整理。",
+    "usage": {
+      "prompt_tokens": 4384,
+      "completion_tokens": 2402,
+      "total_tokens": 6786,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2028
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3744
+    }
+  }
+}

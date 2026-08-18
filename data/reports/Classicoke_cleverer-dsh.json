@@ -1,0 +1,37 @@
+{
+  "id": "Classicoke/cleverer-dsh",
+  "analyzedAt": "2026-08-17T13:10:14.793Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Classicoke/cleverer-dsh",
+      "evidence": "dsh plugin --profile web add github:Classicoke/cleverer-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的'外挂'，让 AI 干活更有章法：遇到问题不会傻傻重试同一个错误，会自动换思路；做多步任务时会提醒先做计划；还能把失败教训总结成技能，下次直接用。它还自带几个实用工具（比如快速找文件、检查环境），装一个就能用上。官方称实测能提速 49%、省 44% 的 token，适合觉得 DSH 太笨、老卡壳的人。",
+      "level": "ok",
+      "risks": "它会修改 DSH 的配置文件（cordis.patch.yml），并在你的用户目录 .dsh 下安装十几个插件文件；如果选用'脚本安装'，还会从 GitHub 下载并运行一个 PowerShell 安装脚本（脚本来源是官方仓库，但运行前最好瞄一眼）。除此之外没发现明显隐私风险。",
+      "postInstallNotes": "无",
+      "notes": "注意：①有两种安装方式（插件管理器和脚本），别同时用，否则插件会重复生效；②README 里的性能提升数据基于很小的样本（n=1），仅供参考；③虽然它自称'从不碰 DSH 源码'，但会改配置文件，装之前若不放心可以先备份。"
+    },
+    "summaryZh": "让 DeepSeek Harness 更聪明、更高效的插件套件：防卡死、强制反思、任务规划、记忆去重、经验沉淀成本地技能，并内置文件查找和环境检查工具，一条命令装完。",
+    "usage": {
+      "prompt_tokens": 3046,
+      "completion_tokens": 3598,
+      "total_tokens": 6644,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3140
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2406
+    }
+  }
+}

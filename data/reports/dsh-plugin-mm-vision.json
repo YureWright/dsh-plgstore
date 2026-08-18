@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-mm-vision",
+  "analyzedAt": "2026-08-16T13:42:16.964Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 配置，且 README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-mm-vision",
+      "evidence": "README 推荐：dsh plugin --profile web add dsh-plugin-mm-vision"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让纯文本的大语言模型（比如 DeepSeek）学会“看图”。它先把图片交给一个视觉模型（如 qwen-vl-max）识别，然后把图片内容转成带坐标和元素的文字描述（比如按钮在哪个位置、K线图的转折点数值），模型就可以根据这些文字理解图片。适合用来分析 K 线图、截图、报告图表、UI 截图等。",
+      "level": "ok",
+      "risks": "插件会把你要分析的图片发送到你自己配置的视觉模型 API（如 qwen-vl-max），所以图片内容会离开你的电脑、交给对应服务商。除此之外没发现明显风险。",
+      "postInstallNotes": "需要配置视觉模型的 API Key（如 MM_VISION_API_KEY），可选设置模型和 Base URL，也可以写 ~/.config/mm-vision/config.json 或项目根 vision-config.json。详见 README 的配置节。",
+      "notes": "无"
+    },
+    "summaryZh": "给纯文本 LLM 增加看图能力的 DSH 插件，通过视觉模型将图片编码为带坐标的结构化文字描述。",
+    "usage": {
+      "prompt_tokens": 2506,
+      "completion_tokens": 1432,
+      "total_tokens": 3938,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1066
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1866
+    }
+  }
+}

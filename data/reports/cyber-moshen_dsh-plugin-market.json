@@ -1,0 +1,37 @@
+{
+  "id": "cyber-moshen/dsh-plugin-market",
+  "analyzedAt": "2026-08-17T13:08:41.879Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，且 README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@cyber-moshen/dsh-plugin-market",
+      "evidence": "One command from anywhere (once published to npm): `dsh plugin --profile web add @cyber-moshen/dsh-plugin-market`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页界面（Web GUI）用的插件市场。装上后，你会在设置里看到一个“插件工坊”页面：它用卡片列表展示社区里的各种 DSH 插件，每张卡片会显示这个插件的 GitHub 星标、最近提交时间、维护状态、有没有装过、有没有新版本。你可以按名字/作者/标签搜索，也能按星标或更新时间排序，点一下按钮就能安装、更新或卸载插件。这个市场的目录就是这个仓库自己的一个 JSON 文件，谁都可以通过提交 PR 把自己写的插件放进去。它还有一套“安全网”：安装前会检查依赖、装完会自动测试能不能正常启动，万一装坏了会自动回滚，不会让你的 DSH 变砖。它也从 GitHub 拉取实时数据，所以填一个 GitHub Token 可以提升请求限额，还支持开机自动更新纯 JS 插件（不需要重启）。",
+      "level": "ok",
+      "risks": "它会在后台调用 dsh plugin 命令，安装/更新/卸载别的插件，所以如果市场里的某个插件有问题，可能会影响你的 dsh 配置；不过它自带回滚保护，出问题会恢复。它还允许你填一个 GitHub Token（可选），存在本地配置里，能访问你的仓库信息，千万别泄露。另外它运行时需要联网访问 GitHub API 获取插件列表和星标数据（公开数据）。没发现明显恶意行为，整体风险较低。",
+      "postInstallNotes": "装完后重启 Web 服务器，然后打开“设置 → 插件工坊”。如需提升 GitHub API 限流，可在设置里粘贴自己的 GitHub Token；需要开机自动更新的话，打开对应开关。",
+      "notes": "无"
+    },
+    "summaryZh": "开源的 DSH 网页版插件市场：卡片式浏览社区插件、实时星标和提交新鲜度，支持搜索筛选、一键安装/更新/卸载，并带防坏回滚安全网。",
+    "usage": {
+      "prompt_tokens": 3020,
+      "completion_tokens": 2523,
+      "total_tokens": 5543,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1948
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2380
+    }
+  }
+}

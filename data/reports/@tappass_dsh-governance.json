@@ -1,0 +1,37 @@
+{
+  "id": "@tappass/dsh-governance",
+  "analyzedAt": "2026-08-18T14:54:26.016Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@tappass/dsh-governance",
+      "evidence": "dsh plugin --profile default add @tappass/dsh-governance"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 AI 助手装一个“行为守门员”。AI 每次调用工具（比如读文件、发邮件、访问数据库）之前，它都会去问一下 TapPass 服务：“这个操作按我们公司的规矩允许吗？”允许就放行，不允许就拦下，需要人批准的就转给人工。默认是“观察模式”，只记录不拦截，相当于先让 AI 试跑，你看清楚它都干了啥，再决定要不要真的管起来。",
+      "level": "ok",
+      "risks": "它会把每次工具调用的记录（包括工具参数，可能含敏感信息）发送到 TapPass 的服务器（默认 https://app.tappass.ai）。你需要保管好 TAPPASS_API_KEY，泄露的话别人可能冒充你的 agent。默认观察模式下记录会留在 TapPass 那边；若配置为 enforce 且 TapPass 不可用时，默认 fail closed 会阻止操作，但如果你改成 fail open 则可能放行本该拦截的操作。",
+      "postInstallNotes": "需要设置环境变量 TAPPASS_API_KEY（在 TapPass 后台申请开发者密钥）。默认是 observe 模式，只记录不拦截；如需真正强制执行，要修改配置把 mode 改为 enforce。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 的 AI 智能体装上“业务规则守门员”，每次调用工具前按 TapPass 策略决定允许、拒绝或要人批准。",
+    "usage": {
+      "prompt_tokens": 3460,
+      "completion_tokens": 1119,
+      "total_tokens": 4579,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 659
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2820
+    }
+  }
+}

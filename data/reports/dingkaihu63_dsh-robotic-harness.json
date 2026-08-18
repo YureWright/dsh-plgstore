@@ -1,0 +1,37 @@
+{
+  "id": "dingkaihu63/dsh-robotic-harness",
+  "analyzedAt": "2026-08-17T11:25:46.867Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 依赖了 @deepseek-ai/cordis 等 DSH 核心包，且 README 提供了安装为 DSH 插件的命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/dingkaihu63/dsh-robotic-harness.git",
+      "evidence": "dsh plugin --profile rh-dem"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的机器人研究插件套件。它把机器人相关的资产检查、仿真（MuJoCo）、控制、视觉、数据管理、实验跑批、报告生成等能力整合在一起，一共提供约 100 个工具和 25 个技能。你可以让 AI 助手通过它来读取机器人模型文件、运行仿真、做故障注入、分析数据并生成实验报告，甚至对接真实的机器人（目前很多还是演示）。",
+      "level": "ok",
+      "risks": "它会读取你工作区里的文件，运行本地 Python 代码，并在工作区中创建 .rh 目录保存运行记录；按你的指令可能会访问外部 API（如 arXiv、Semantic Scholar）或远程训练端点。这些都是它宣传的功能，没有发现偷偷上传数据或碰隐私文件的行为。",
+      "postInstallNotes": "需要准备 Python 3.10 环境并安装 mujoco、numpy 等依赖，同时设置 DSH_HOME 和 PATH 环境变量；若要用到 ROS 2、真机、模型端点等功能，还需要额外配置。",
+      "notes": "项目处于 Demo 阶段，只在 Windows + Anaconda Python 3.10 + DSH 0.1.0-rc.6 上验证过，其他系统/ROS 2/真机未完全测试。仓库 package.json 标记为 private，未发布到 npm，安装需走 git 方式。"
+    },
+    "summaryZh": "为 DeepSeek Harness 设计的机器人具身智能研究插件套件，提供仿真、控制、视觉、数据管道与实验等约 100 个工具和 25 个技能。",
+    "usage": {
+      "prompt_tokens": 3338,
+      "completion_tokens": 3576,
+      "total_tokens": 6914,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3083
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2698
+    }
+  }
+}

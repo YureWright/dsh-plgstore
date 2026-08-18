@@ -1,0 +1,37 @@
+{
+  "id": "w2112515/dsh-plugin-development",
+  "analyzedAt": "2026-08-17T11:30:09.544Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置，README 给出了 dsh plugin add 安装命令，且核心代码是 DSH 的 bundle 适配器。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/w2112515/dsh-plugin-development/releases/download/v0.2.0-beta.1/dsh-plugin-development-0.2.0-beta.1.tgz",
+      "evidence": "dsh plugin --profile web add https://github.com/w2112515/dsh-plugin-development/releases/download/v0.2.0-beta.1/dsh-plugin-development-0.2.0-beta.1.tgz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件其实是一套给 AI 编程助手（比如 Codex、Claude Code 和 DSH）用的“技能包”，专门用来帮你开发、审查、打包和排查 DeepSeek Harness 插件。它本身不是直接干活的工具，而是教 AI 助手按照规范来操作，比如怎么写插件、怎么打包、怎么检查配置。它还给 DSH 提供了一个可选的安装适配器，装好后就能用 dsh plugin 命令来管理它。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是提供开发指引和打包检查脚本，不会连接外部服务器，也不碰隐私文件。安装后它会向 DSH 注册一个技能层，但移除时也会清理干净，不影响你已有的项目文件。",
+      "postInstallNotes": "无。安装后可用 `dsh --profile <你的profile> --dump-config` 验证配置里出现了 dsh-plugin-development 层，但这只是可选操作。",
+      "notes": "这是 Beta 非官方项目，README 也声明了与 DeepSeek 官方无关。它本质是 Agent Skill，DSH 插件只是它的可选安装形式。"
+    },
+    "summaryZh": "一个用于开发、审查和打包 DeepSeek Harness 插件的便携式智能体技能（含可选的 DSH 安装适配器）。",
+    "usage": {
+      "prompt_tokens": 2952,
+      "completion_tokens": 1141,
+      "total_tokens": 4093,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 657
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2312
+    }
+  }
+}

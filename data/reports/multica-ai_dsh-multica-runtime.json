@@ -1,0 +1,37 @@
+{
+  "id": "multica-ai/dsh-multica-runtime",
+  "analyzedAt": "2026-08-17T11:14:47.341Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/multica-ai/dsh-multica-runtime.git",
+      "evidence": "README 原文：Install the local bundle into a DSH profile after building it（需先克隆构建，未提供 npm 包名）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 Multica 和 DeepSeek Harness 之间的桥接层，让 Multica 客户端能安全地调用 DSH 的模型能力。它通过标准输入输出通信，支持模型发现、流式输出、取消、会话恢复等功能，并且会处理 MCP 配置和任务令牌，方便 Multica 用户在聊天中直接使用 DSH。",
+      "level": "caution",
+      "risks": "它会在你的电脑上创建 DSH 配置目录，并读取 DEEPSEEK_API_KEY 环境变量（用于调用模型）。它还会把 Multica 服务器发来的任务令牌传给 DSH 的 shell，用于标识任务，但不直接暴露你的模型 API 密钥。另外，它会通过 cordis.patch.yml 修改 DSH 的配置（打补丁）。因为是私有未发布包，需要你自己从 GitHub 克隆并构建，来源不是官方市场，有潜在风险。",
+      "postInstallNotes": "需要先构建（pnpm build），然后设置 DEEPSEEK_API_KEY 环境变量，并运行 dsh --profile multica --probe 让 Multica 发现。如果 DSH 安装路径非标准，还需要设置 MULTICA_DSH_PATH 环境变量指向 dsh 可执行文件。",
+      "notes": "该包标记为 private 且未发布到 npm，只能从 GitHub 获取源码自行构建。注意 package.json 中的 repository 地址与 GitHub 主页不一致，可能是笔误。另外它面向 Multica 用户，普通 DSH 用户可能用不上。"
+    },
+    "summaryZh": "Multica 与 DeepSeek Harness 的私有桥接插件，让 Multica 客户端通过 stdio 协议使用 DSH 的模型能力。",
+    "usage": {
+      "prompt_tokens": 2393,
+      "completion_tokens": 3210,
+      "total_tokens": 5603,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2672
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1753
+    }
+  }
+}

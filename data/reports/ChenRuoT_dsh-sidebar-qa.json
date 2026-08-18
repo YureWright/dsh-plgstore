@@ -1,0 +1,37 @@
+{
+  "id": "ChenRuoT/dsh-sidebar-qa",
+  "analyzedAt": "2026-08-17T11:26:48.523Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 字段并依赖 dsh-better-sidebar 与 cordis，README 给出了 dsh plugin add 安装命令，确认为标准 DSH Web 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-sidebar-qa",
+      "evidence": "通过 npm（推荐）dsh plugin --profile web add dsh-sidebar-qa"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页版用的问答增强插件。在对话里用鼠标划选任意一段文字，会弹出『提问』按钮，点击后右侧面板会基于划选的内容和当前对话上下文进行问答，全程不离开当前页面、不打断主对话。它还会自动把较早的对话压缩成小摘要，给追问起标题，并把所有追问按主对话分组成一棵树，方便之后查找和继续。",
+      "level": "ok",
+      "risks": "它会读取你当前对话中划选的文本以及最近若干条消息，发送给 DSH 配置的模型用于摘要和回答；追问的父子关系等记录会保存在浏览器的 localStorage 中。这些都在你本地 DSH 环境内完成，未发现有向第三方服务器上传数据的迹象。",
+      "postInstallNotes": "需要先安装前置依赖 dsh-better-sidebar（否则插件不激活）：dsh plugin --profile web add dsh-better-sidebar；安装后重启 dsh web（客户端改动可只刷新浏览器）；建议在设置页检查摘要/回答模型（默认 deepseek-v4-flash）和渠道是否可用。",
+      "notes": "依赖 dsh-better-sidebar，未安装时插件完全静默；配置项较多但都有默认值，一般无需改动即可用。"
+    },
+    "summaryZh": "划选即问：在 DSH 网页对话中划选任意文本，右侧面板即可进行不打断主对话的问答与嵌套追问。",
+    "usage": {
+      "prompt_tokens": 4119,
+      "completion_tokens": 2336,
+      "total_tokens": 6455,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1873
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3479
+    }
+  }
+}

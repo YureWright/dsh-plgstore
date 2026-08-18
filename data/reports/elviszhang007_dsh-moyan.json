@@ -1,0 +1,37 @@
+{
+  "id": "elviszhang007/dsh-moyan",
+  "analyzedAt": "2026-08-17T13:20:05.525Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，README 给出 dsh plugin add 安装命令，代码调用 DSH 客户端契约"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-moyan",
+      "evidence": "dsh plugin --profile web add dsh-moyan"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 的网页界面左侧边栏底部、设置按钮上方显示一句名言、古诗词或游戏台词。你可以设置每次打开页面刷新或每天刷新，也可以手动换一句，还能回退到之前看过的句子。语料文件可以直接编辑，不需要懂代码。整体风格和界面原本的风格一致，不抢眼。",
+      "level": "ok",
+      "risks": "它会在你的 DSH 配置目录（如 .dsh/profiles/node_modules/dsh-moyan）下安装自己的文件，并在浏览器 localStorage 里保存一点设置（如刷新频率），这些数据都在本地，不会上传。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 web profile（运行 dsh web），然后刷新浏览器页面。如果需要编辑语料，可以到安装目录下修改 corpus.txt 文件。",
+      "notes": "无"
+    },
+    "summaryZh": "在 WebUI 侧边栏「设置」上方完整显示一句名言、诗词或游戏台词，语料可用 txt 直接编辑",
+    "usage": {
+      "prompt_tokens": 2780,
+      "completion_tokens": 2507,
+      "total_tokens": 5287,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2155
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2140
+    }
+  }
+}

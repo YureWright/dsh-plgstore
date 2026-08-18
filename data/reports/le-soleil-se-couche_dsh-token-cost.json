@@ -1,0 +1,37 @@
+{
+  "id": "le-soleil-se-couche/dsh-token-cost",
+  "analyzedAt": "2026-08-17T11:52:02.516Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，peerDependencies 全是 @deepseek-ai/dsh-* 系列，且 README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:le-soleil-se-couche/dsh-token-cost",
+      "evidence": "dsh plugin --profile web add github:le-soleil-se-couche/dsh-token-cost"
+    },
+    "evaluationReport": {
+      "intro": "这是 DeepSeek Harness 网页版的一个小插件，专门帮你统计聊天的 token 花了多少、缓存命中多少、费用多少钱。它能显示每条对话底部的实时费用，也能在设置里看整体汇总，还可以给非 DeepSeek 的模型自己填单价。数据都来自你本地的会话日志，不会上传到任何地方。",
+      "level": "ok",
+      "risks": "这个插件会读取你电脑上 DSH 的会话日志（存在 $DSH_HOME 下），并把统计结果和自定义价格写进本地文件。所有操作都在本地，没有发现上传或联网泄露的风险。",
+      "postInstallNotes": "装完后需要重启 `dsh web`，然后在设置页的「Web UI 插件」里找到「Token 费用统计」进行配置。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 网页版的 token 用量、缓存命中与费用统计插件，支持单对话明细和整体汇总，还能自定义模型单价。",
+    "usage": {
+      "prompt_tokens": 2830,
+      "completion_tokens": 1631,
+      "total_tokens": 4461,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1253
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2190
+    }
+  }
+}

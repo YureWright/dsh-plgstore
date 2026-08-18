@@ -1,0 +1,37 @@
+{
+  "id": "dsh-wechat-mp",
+  "analyzedAt": "2026-08-16T13:26:17.688Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 字段、peerDependencies 包含 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin 安装命令，明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-wechat-mp",
+      "evidence": "dsh plugin --profile web add dsh-wechat-mp"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 Markdown 文章自动排版成微信公众号草稿：它会把 CSS 样式内联到每个元素上，把本地图片上传到微信服务器，然后创建公众号草稿。它不会直接发布，发布还是要人工在公众号后台点发送。另外它还提供一个“发公众号”按钮，可以把助手回复一键排成草稿。",
+      "level": "ok",
+      "risks": "需要提供公众号的 AppID 和 AppSecret（敏感凭证），插件会调用微信官方接口（api.weixin.qq.com）上传图片和创建草稿；它会在本地磁盘缓存 access_token。如果你设置了封面图路径，它会读取该本地文件。除此之外没有发现明显风险。",
+      "postInstallNotes": "需要配置公众号 AppID 和 AppSecret（通过环境变量、.env 或凭证文件）；如果使用一键发布按钮，还需要设置 defaultCover 封面图路径；并确保你的服务器 IP 在公众号后台的白名单里。",
+      "notes": "无"
+    },
+    "summaryZh": "把 Markdown 排版成微信公众号草稿的 DSH 插件，支持自动内联样式、上传图片和创建草稿，不会直接发布。",
+    "usage": {
+      "prompt_tokens": 3854,
+      "completion_tokens": 915,
+      "total_tokens": 4769,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 523
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3214
+    }
+  }
+}

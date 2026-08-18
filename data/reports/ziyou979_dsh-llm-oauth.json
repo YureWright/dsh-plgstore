@@ -1,0 +1,37 @@
+{
+  "id": "ziyou979/dsh-llm-oauth",
+  "analyzedAt": "2026-08-17T13:16:57.431Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 包含 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，且代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/ziyou979/dsh-llm-oauth.git",
+      "evidence": "dsh plugin --profile web add github:ziyou979/dsh-llm-oauth"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 支持用 OAuth 或订阅账号登录各种大模型服务，比如 Grok、GitHub Copilot、ChatGPT/Codex、Anthropic、OpenRouter 等。装好后在设置里可以看到一个“OAuth / 订阅”页面，点几下就能登录你的订阅账号，然后这些模型就会出现在模型列表里。它不用 API key，适合已经有订阅但不想另外付费的用户。",
+      "level": "ok",
+      "risks": "它会把你的 OAuth 登录令牌保存在电脑上的 ~/.dsh/pi-ai-oauth.json 文件里，任何能访问你电脑的人可能看到这些令牌，所以要保护好你的账号。另外，用非官方方式登录 ChatGPT/Codex 有封号风险，插件作者也提醒了，建议用小号试。",
+      "postInstallNotes": "装完后需要在设置里启用想用的 provider（比如 /oauth enable xai），然后登录（/oauth login xai）；如果是 git 安装，可能需要在 pnpm-workspace.yaml 里允许该插件的 prepare 脚本。",
+      "notes": "README 特别警告：openai-codex 的 OAuth 登录可能违反 OpenAI 使用条款，有账号被封的风险，建议不要用主号。"
+    },
+    "summaryZh": "一个 DSH 插件，让你能用 Grok、GitHub Copilot、ChatGPT/Codex 等订阅账号通过 OAuth 方式接入 DeepSeek Harness，省去 API key 的费用。",
+    "usage": {
+      "prompt_tokens": 3750,
+      "completion_tokens": 796,
+      "total_tokens": 4546,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 311
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3110
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "william-jin-cmu/dsh-vision",
+  "analyzedAt": "2026-08-17T11:16:13.010Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dshx.contributes 并依赖 @deepseek-ai/cordis 等核心包，README 提供了插件安装与配置方式，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/william-jin-cmu/dsh-vision.git",
+      "evidence": "dshx install dsh-vision https://github.com/dsh-external/dsh-vision && dshx verify dsh-vision"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让只能处理文字的 DeepSeek 模型也能“看”图片。它注册了一个 view_image 工具：当模型遇到图片相关问题时，插件会把图片和问题发送给你配置的视觉 AI 服务（默认是智谱的免费模型），然后把 AI 看到的答案返回给模型。装上之后，DSH 的网页、终端、远程通道都可以让模型看图。",
+      "level": "caution",
+      "risks": "它会读取你电脑上指定的图片文件（比如 ~/Desktop/error.png），并把图片内容和你的问题发送到配置的视觉模型服务（默认是智谱 AI 的服务器），也就是说图片内容可能会被这个第三方服务看到。另外，它会读取环境变量里的 API key（如 VISION_API_KEY），并修改 ~/.dsh/config.yaml 配置文件。安装时还需要运行链接命令，可能会改动 node_modules 下的链接结构。",
+      "postInstallNotes": "需要配置 API key：推荐设置环境变量 VISION_API_KEY，或在 ~/.dsh/config.yaml 的 dsh-vision.apiKey 中填写。默认使用智谱免费模型，需要去智谱开放平台注册获取 key。另外，按照 README 可能需要手动链接宿主依赖（pnpm 布局下），并重启 dsh 生效。",
+      "notes": "注意 package.json 标记 private: true，可能未发布到 npm；README 中的仓库地址为 dsh-external/dsh-vision，而本资料仓库为 william-jin-cmu/dsh-vision，请确认来源。插件会将图片发送到第三方视觉模型服务，如对隐私敏感请自行评估。"
+    },
+    "summaryZh": "给纯文本 DeepSeek 增加视觉能力的 DSH 插件，通过调用任意 OpenAI 兼容视觉模型（默认智谱免费）来识别图片。",
+    "usage": {
+      "prompt_tokens": 3334,
+      "completion_tokens": 5869,
+      "total_tokens": 9203,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5321
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2694
+    }
+  }
+}

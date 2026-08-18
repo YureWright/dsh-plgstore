@@ -1,0 +1,37 @@
+{
+  "id": "a179-sanae/dsh-auto-collapse",
+  "analyzedAt": "2026-08-17T11:27:25.744Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并导出 ./client，README 也给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:a179-sanae/dsh-auto-collapse#main",
+      "evidence": "dsh plugin --profile web add \"github:a179-sanae/dsh-auto-collapse#main\""
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH Web 聊天页面用的前端小插件：它会把每一次对话中的工具调用卡片和思考推理块自动折叠成一行摘要，只在需要时点击展开。这样聊天界面就只剩下模型说的话，工具过程不占地方，看起来更清爽。装完后不用配置。",
+      "level": "ok",
+      "risks": "没有发现明显风险。它只在前端 DOM 上做折叠/展开，不读取本地文件、不连外部服务器，也不会上传聊天内容。",
+      "postInstallNotes": "安装后重启 DSH Web 服务（或触发插件 HMR），然后在页面按 Ctrl+Shift+R 硬刷新；无需任何配置。",
+      "notes": "README 提到它会把界面上的 “Deep diving” 文案改成 “Deep sleeping”，属于 UI 显示上的小改动。另外这是一个客户端（web）插件，只影响界面显示。"
+    },
+    "summaryZh": "把 DSH Web 聊天里的工具卡片和思考块自动折叠成一行，界面回归简洁。",
+    "usage": {
+      "prompt_tokens": 2333,
+      "completion_tokens": 1940,
+      "total_tokens": 4273,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1582
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1693
+    }
+  }
+}

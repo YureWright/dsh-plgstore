@@ -1,0 +1,37 @@
+{
+  "id": "dream12347/dsh-delete-session",
+  "analyzedAt": "2026-08-17T11:43:50.390Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-* 核心包，README 也给出了 dsh plugin 安装命令，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/dream12347/dsh-delete-session.git",
+      "evidence": "dsh plugin --profile web add 'github:dream12347/dsh-session-manager#v0.1.6'"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你在 DeepSeek Harness 的网页界面上更方便地管理聊天会话。你可以删除不需要的对话（误删了还能在回收站里恢复，也可以彻底清除），恢复之前归档的会话，查看每个会话最近的活动统计，暂停正在运行的会话，打开会话日志文件夹，标记未读/已读，还可以把某个会话复制到一个新聊天里继续，以及给会话按工作区分组、排序、重命名、删除。另外，它还能让你设置一个“上下文压缩阈值”，控制对话内容用到多大比例时自动压缩，避免超出模型限制。它不会改动 DSH 的核心代码。",
+      "level": "ok",
+      "risks": "它会读取和移动你电脑上的 DSH 会话文件（一般在 ~/.dsh 目录下），删除的会话会先放进回收站文件夹，如果你选择彻底删除，文件会被清除。它也会修改 DSH 的配置文件（比如 agent 预设的 cordis.yml）来保存压缩阈值，可能会影响所有会话的压缩行为。未读标记等数据存在浏览器的本地存储中，不会上传到网上。最大的风险是：如果不小心操作，可能会误删重要的对话记录，不过它有回收站可以恢复一部分。这个插件不会主动连接外部服务器，也没有可疑的安装后脚本。",
+      "postInstallNotes": "安装后需要重启 DSH 的 Web 服务（运行 `dsh web`）才能生效。",
+      "notes": "注意：README 中给出的 GitHub 安装命令写的是 `dsh-session-manager`，但实际仓库名是 `dsh-delete-session`，请使用正确的仓库地址安装（例如 `git+https://github.com/dream12347/dsh-delete-session.git`）。另外，当前版本适配 DSH `0.1.0-rc.6`，若 DSH 升级后可能需要等待插件更新。README 提到该项目由 AI 辅助完成，但代码看起来正常。"
+    },
+    "summaryZh": "一款功能全面的 DSH 会话管理插件，提供删除（带回收站）、恢复归档、活动统计、暂停/继续、未读标记、工作区管理和上下文压缩阈值设置等功能。",
+    "usage": {
+      "prompt_tokens": 4723,
+      "completion_tokens": 6147,
+      "total_tokens": 10870,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5516
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4083
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@lk251066/dsh-tui",
+  "analyzedAt": "2026-08-16T13:30:39.469Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，且依赖多个 @deepseek-ai/dsh-* 核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@lk251066/dsh-tui",
+      "evidence": "Install it with: ```bash dsh plugin --profile tui add @lk251066/dsh-tui```"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的终端界面插件。装上之后，你在终端里启动 dsh 会多出一个侧边栏，左边能看到当前工作目录和 git 分支、正在运行的会话列表，以及当前 agent、模型、token 用量、权限等状态。你可以用方向键在侧边栏和聊天框之间切换，方便在不离开终端的情况下管理多个会话。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在终端里显示你的工作目录、git 分支和会话状态，如果你在共享屏幕或录屏，别人可能会看到这些信息。插件读取的是当前项目目录和 DSH 自身的数据，不额外碰隐私文件。",
+      "postInstallNotes": "安装时建议用 README 里的命令：dsh plugin --profile tui add @lk251066/dsh-tui；装完后用 dsh --profile tui 启动。需要 Node.js 版本 ^22.19.0 或 >=24.0.0，并且 DeepSeek Harness 版本为 0.1.0-rc.6。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供终端交互界面（TUI），带侧边栏展示工作区、会话列表和运行状态。",
+    "usage": {
+      "prompt_tokens": 3364,
+      "completion_tokens": 1104,
+      "total_tokens": 4468,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 680
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2724
+    }
+  }
+}

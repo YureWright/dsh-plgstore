@@ -1,0 +1,37 @@
+{
+  "id": "LvienOeria/dsh-launcher",
+  "analyzedAt": "2026-08-17T12:11:12.549Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-launcher",
+      "evidence": "dsh plugin --profile web add dsh-launcher"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你在终端里输入一个命令 dsh-go 就启动 DeepSeek Harness，并自动打开浏览器。它非常轻量，不装桌面图标，只生成一个启动脚本和一个终端命令。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下创建 ~/.dsh-launcher 文件夹，并在 ~/.local/bin 里放一个 dsh-go 命令。如果你已经有同名的文件，它会先备份再替换。除此之外没有发现其他明显风险。",
+      "postInstallNotes": "安装后需要先运行一次 dsh（例如 dsh --profile web），插件会自动生成启动器。另外需要确保 pnpm ≥ 9（如果版本旧，先执行 corepack enable）。",
+      "notes": "无"
+    },
+    "summaryZh": "一个轻量的 DeepSeek Harness 启动器插件，终端输入 dsh-go 即可一键启动并自动打开浏览器。",
+    "usage": {
+      "prompt_tokens": 2147,
+      "completion_tokens": 524,
+      "total_tokens": 2671,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 205
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1507
+    }
+  }
+}

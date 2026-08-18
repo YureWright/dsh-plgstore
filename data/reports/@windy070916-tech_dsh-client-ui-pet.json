@@ -1,0 +1,37 @@
+{
+  "id": "@windy070916-tech/dsh-client-ui-pet",
+  "analyzedAt": "2026-08-16T13:34:46.206Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，依赖 @deepseek-ai/cordis 和多个 dsh 核心包，README 给出了 dsh plugin 安装命令，符合 DSH 客户端插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@windy070916-tech/dsh-client-ui-pet",
+      "evidence": "Add the plugin to your Web profile: `dsh plugin --profile web add @windy070916-tech/dsh-client-ui-pet`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面增加桌面宠物的插件。装好后，网页右下角会出现一只 Sumikko Gurashi 的蜗牛（叫“蜗蜗”），它会用八方向动画在页面里爬来爬去，身后拖着淡化的黏液痕迹。你可以把图片文件拖到它身上，图片会直接放进当前对话的输入框；它闲置时会睡觉，对话有动静时还会做出反应。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在你打开 DSH Web 界面时运行，不碰其他电脑文件。唯一要注意的是：你拖给它“吃”的图片会出现在对话输入框里，需要你自己确认后才会发送出去。",
+      "postInstallNotes": "安装后需要重启 dsh web 服务，宠物才会出现在界面上。如果你对版本稳定性有要求，建议固定 dsh 版本。",
+      "notes": "该插件来自个人账号仓库，依赖 DeepSeek Harness 预览版可能变化的客户端 API；若 dsh 升级后插件失效，可回退 dsh 版本。"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面添加一只会爬行、拖图喂食、睡觉并对话反应的 Sumikko Gurashi 蜗牛桌面宠物。",
+    "usage": {
+      "prompt_tokens": 2120,
+      "completion_tokens": 1216,
+      "total_tokens": 3336,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 771
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1480
+    }
+  }
+}

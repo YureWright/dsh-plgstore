@@ -1,0 +1,37 @@
+{
+  "id": "lx-music-for-dsh",
+  "analyzedAt": "2026-08-16T13:47:03.356Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 配置并注入 @deepseek-ai/dsh-client-* 核心模块，README 明确为 deepseek_harness 开发的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "lx-music-for-dsh",
+      "evidence": "安装到 DSH：见 docs/development.md（§6）。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让网页版 DSH 控制 LX Music 播放器。你会在 DSH 界面侧边栏看到一个迷你播放卡片，可以搜索歌曲、播放、切歌、调整播放模式，还能管理播放列表。它也给了 AI 一组工具，让大模型帮你搜歌、点歌、控制播放。不需要额外开音乐服务，它自己内置了多个音乐平台的搜索和直链解析。",
+      "level": "ok",
+      "risks": "它会向酷我、酷狗、QQ音乐、网易云、咪咕等平台发送搜索请求来获取音乐信息；如果你导入第三方音源脚本，这些脚本会在你的电脑上以沙箱方式运行，可能发出网络请求。它会把播放设置和播放列表保存在本地。没有发现直接碰隐私文件的行为。",
+      "postInstallNotes": "安装后建议先阅读 docs/development.md 完成 DSH 安装配置；可在设置窗口中导入音源脚本、调整音质策略。默认配置下不设置环境变量也可使用。",
+      "notes": "经评估确认为 DSH 插件。注意：导入第三方音源脚本时请确认来源可信，因为音源脚本会在沙箱中执行并访问网络；node:vm 沙箱并非完全隔离，建议不要导入不信任的脚本。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 LX Music 播放控制界面与 LLM 点歌能力的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 3206,
+      "completion_tokens": 2286,
+      "total_tokens": 5492,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1842
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2566
+    }
+  }
+}

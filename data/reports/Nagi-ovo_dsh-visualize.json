@@ -1,0 +1,37 @@
+{
+  "id": "Nagi-ovo/dsh-visualize",
+  "analyzedAt": "2026-08-16T11:50:16.629Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，是明确的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Nagi-ovo/dsh-visualize",
+      "evidence": "推荐直接从 GitHub 安装到 DSH 的 `web` profile：`dsh plugin --profile web add github:Nagi-ovo/dsh-visualize`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DSH 模型在聊天窗口里直接生成并显示可交互的卡片，比如图表、模拟器、对比面板或界面草图。你只要告诉模型你想要什么，它会写一段 HTML 片段并渲染成卡片，还可以并排比较不同效果。",
+      "level": "ok",
+      "risks": "卡片运行在隔离的沙箱 iframe 中，不能接触宿主页面，且有 CSP 限制阻止网络请求、嵌套页面和表单提交。未发现明显风险。",
+      "postInstallNotes": "如果 dsh web 正在运行，安装后需要重启并刷新页面才能看到效果。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DSH 模型在对话中渲染可交互的 HTML 可视化卡片（图表、模拟器等）。",
+    "usage": {
+      "prompt_tokens": 2341,
+      "completion_tokens": 1472,
+      "total_tokens": 3813,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1136
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1701
+    }
+  }
+}

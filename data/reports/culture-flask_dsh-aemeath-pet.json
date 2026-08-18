@@ -1,0 +1,37 @@
+{
+  "id": "culture-flask/dsh-aemeath-pet",
+  "analyzedAt": "2026-08-17T12:02:32.421Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/culture-flask/dsh-aemeath-pet/archive/refs/tags/v0.1.0.tar.gz",
+      "evidence": "dsh plugin --profile web add https://github.com/<你的用户名>/dsh-aemeath-pet/archive/refs/tags/v0.1.0.tar.gz"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的像素风桌宠插件。装好后，页面角落会出现一个叫爱弥斯的小宠物，它会根据 agent 的状态做出反应：空闲时跑来跑去、工作时思考、出错时沮丧，还能点击互动、拖动位置、右键调整大小。所有效果都在浏览器里实现，不需要额外安装其他东西。",
+      "level": "ok",
+      "risks": "它会在浏览器中读取 agent 的运行状态并播放动画，你的偏好设置（如位置、大小）会存到浏览器的 localStorage 里。精灵图素材来自第三方同人作品，仅供个人使用，请勿商用。除此之外，没发现明显风险。",
+      "postInstallNotes": "安装后重启 `dsh web`，并在浏览器里硬刷新（Cmd/Ctrl+Shift+R）才能看到宠物。",
+      "notes": "README 安装命令里的 `<你的用户名>` 是占位符，实际请用 `culture-flask`；该插件依赖的 DSH 核心包仅在开发时需要，用户安装 tarball 无需构建，直接使用仓库里已提交的 `lib/` 产物。"
+    },
+    "summaryZh": "爱弥斯 · DeepSeek Harness 桌宠 — DeepSeek Harness Web GUI 的像素风宠物插件。",
+    "usage": {
+      "prompt_tokens": 2732,
+      "completion_tokens": 2800,
+      "total_tokens": 5532,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2336
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2092
+    }
+  }
+}

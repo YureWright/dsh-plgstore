@@ -1,0 +1,37 @@
+{
+  "id": "LQ-1123/paste-to-workspace",
+  "analyzedAt": "2026-08-17T12:12:56.194Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin add 安装命令，且功能明显依赖 DSH 的接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:LQ-1123/paste-to-workspace",
+      "evidence": "dsh plugin --profile web add \"github:LQ-1123/paste-to-workspace\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DSH 聊天框里直接粘贴图片或拖入任意文件，它们会被自动保存到当前会话的工作区文件夹（.dsh-paste），并以文本标记路径的方式让模型读取——图片由视觉模型读图，其他文件按路径读取内容。输入框保持干净，发送时图片/文件显示为缩略图或文件卡片，点击卡片可以直接下载。",
+      "level": "ok",
+      "risks": "它会把你主动粘贴或拖入的文件保存到电脑上的工作区目录（.dsh-paste），保存 30 天后自动清理。这些文件会以路径形式发送给 AI 模型（即可能上传到模型服务商），所以不要把不想外传的敏感文件拖进去。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "把图片和任意文件拖进 DSH 聊天框，自动存为会话工作区文件并让模型直接读取。",
+    "usage": {
+      "prompt_tokens": 3020,
+      "completion_tokens": 2640,
+      "total_tokens": 5660,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2274
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2380
+    }
+  }
+}

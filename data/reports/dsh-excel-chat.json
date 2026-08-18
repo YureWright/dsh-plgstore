@@ -1,0 +1,37 @@
+{
+  "id": "dsh-excel-chat",
+  "analyzedAt": "2026-08-16T13:24:17.124Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，peerDependencies 依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-excel-chat",
+      "evidence": "dsh plugin --profile demo add dsh-excel-chat"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里像聊天一样操作 Excel：能新建和修改表格、写公式、改样式、加筛选、做汇总，还能自动检查公式错误并修复，甚至可以在 Windows 上生成图表和透视表。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的 Excel 文件（比如 .xlsx），并在 Windows 上可能调用本机 Excel 来生成图表。这些操作都来自你的明确指令，没有发现偷偷上传或访问无关文件的行为。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 里通过对话操作 Excel，支持公式校验/修复、样式、筛选、图表和透视表等办公功能。",
+    "usage": {
+      "prompt_tokens": 2507,
+      "completion_tokens": 1352,
+      "total_tokens": 3859,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1047
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1867
+    }
+  }
+}

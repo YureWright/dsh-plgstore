@@ -1,0 +1,37 @@
+{
+  "id": "dsh-failure-capsule",
+  "analyzedAt": "2026-08-16T13:34:50.382Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 含 dsh.bundle.patch 声明，并依赖 @deepseek-ai/cordis 等核心包，README 提供 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-failure-capsule",
+      "evidence": "dsh plugin --profile web add dsh-failure-capsule"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 的工具或 Agent 报错时，自动把出错前后的现场信息（比如事件时间线、项目 Git 状态、插件列表、报错栈等）收集起来，打包成一个经过脱敏的 ZIP 文件，放在项目里，方便开发者离线排查问题。它不会上传数据，也不调用模型诊断。",
+      "level": "ok",
+      "risks": "它会在你当前项目里生成 .dsh/failure-capsules 文件夹，里面包含项目 Git 状态、工作区改动、环境变量和部分源码上下文等，虽然有自动脱敏，但 ZIP 分享出去前最好人工检查一遍，避免泄露密钥或源码。插件本身不联网、不上传数据。",
+      "postInstallNotes": "需要分别给 web 和 headless 两个 profile 安装（见 README 快速开始），默认配置即可用，也可在 cordis.patch.yml 里调整采集范围。",
+      "notes": "无"
+    },
+    "summaryZh": "本地优先的失败证据包插件：DSH 出现故障时自动把现场信息收集成脱敏 ZIP，方便离线排查。",
+    "usage": {
+      "prompt_tokens": 3885,
+      "completion_tokens": 1837,
+      "total_tokens": 5722,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1457
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3245
+    }
+  }
+}

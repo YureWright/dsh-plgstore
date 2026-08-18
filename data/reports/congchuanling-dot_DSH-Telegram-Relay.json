@@ -1,0 +1,37 @@
+{
+  "id": "congchuanling-dot/DSH-Telegram-Relay",
+  "analyzedAt": "2026-08-17T11:44:50.359Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且 peer 依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出 dsh plugin add 安装命令，代码显然与 DSH 深度集成。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/congchuanling-dot/DSH-Telegram-Relay.git",
+      "evidence": "将插件加入 web profile：pnpm --dir ../deepseek-harness dsh plugin --profile web add \"$(pwd)\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 Telegram 机器人成为 DeepSeek Harness 的移动端对话入口。你在 Telegram 里私聊机器人，它会把消息交给 DSH Agent 处理，再把结果回复给你。每个聊天 ID 对应一个持久的会话，所以能记住上下文，重启后也能继续聊。",
+      "level": "ok",
+      "risks": "它要在你本机运行，通过 Telegram Bot API 长轮询收发消息。需要你设置环境变量（Bot Token 和允许的 chat_id），这些信息存在你电脑上，注意别泄露给他人。它会在你的 DSH 数据目录里保存一个状态文件（telegram-relay/state.json），只存 Telegram offset，不保存聊天内容。它允许的私聊用户才能使用，未授权用户不会触发模型。由于插件会调用 DSH Agent，所以它能做你配置给 DSH 的事（比如文件操作、执行命令等），但这是 DSH 本身的权限，不是额外风险。",
+      "postInstallNotes": "需要先创建 Telegram Bot（通过 @BotFather 获取 Token），设置环境变量 TELEGRAM_BOT_TOKEN 和 TELEGRAM_ALLOWED_CHAT_IDS（多个用逗号分隔），然后才能在启动 DSH 的同一个终端里运行。如果想长期使用，可写入 DSH 根目录的 .env 文件。",
+      "notes": "README 建议本地构建并与 deepseek-harness 目录链接 peer 依赖，可能尚未发布到 npm；本仓库的 git 方式可安装，但需要自行构建。另外，依赖了多个 @deepseek-ai/dsh-* 的 rc 版本，若核心包更新可能会有兼容性变化。"
+    },
+    "summaryZh": "一个把 Telegram 变成 DeepSeek Harness 移动端对话入口的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 3814,
+      "completion_tokens": 3233,
+      "total_tokens": 7047,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2668
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3174
+    }
+  }
+}

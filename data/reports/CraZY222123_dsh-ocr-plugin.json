@@ -1,0 +1,37 @@
+{
+  "id": "CraZY222123/dsh-ocr-plugin",
+  "analyzedAt": "2026-08-17T11:24:32.216Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 依赖 @deepseek-ai/cordis 核心包，README 描述为 Cordis 插件并提供 DSH 安装脚本，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/CraZY222123/dsh-ocr-plugin.git",
+      "evidence": "git clone https://github.com/CraZY222123/dsh-ocr-plugin.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了“眼睛”，能在本地把图片里的文字识别成文本，这样只支持文字输入的模型也能看懂图片内容。支持快速识别（RapidOCR）和深度识别（DeepSeek-OCR-2，更准但慢），还能还原表格和阅读顺序。图片只在本机处理，不会上传到云端，隐私有保障。",
+      "level": "ok",
+      "risks": "它会在本地运行 Python 脚本和可选的外部程序（llama.cpp），可能消耗一些 CPU/内存；会在你的 DSH 配置目录（如 ~/.dsh）下创建缓存文件；安装时可能需要从网上下载 Python 包和模型文件（深度识别可选）。你的图片不会发到第三方服务，只有识别出的文字会发给模型。",
+      "postInstallNotes": "安装后需要重启 DSH。如果要用深度识别，还需要下载模型并确保 llama-mtmd-cli 可用。首次使用前可能需要根据你的环境设置 DSH_OCR_PYTHON 等环境变量，默认配置即可工作。",
+      "notes": "这是社区非官方插件，安装前需要按照 docs/adapter-seam.md 手动修改适配器以启用 OCR 缝，否则可能不生效。"
+    },
+    "summaryZh": "本地 OCR 插件，让 DeepSeek Harness 能识别图片中的文字并转给模型理解，支持快速与深度双通道。",
+    "usage": {
+      "prompt_tokens": 4019,
+      "completion_tokens": 3366,
+      "total_tokens": 7385,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2914
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3379
+    }
+  }
+}

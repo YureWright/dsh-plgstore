@@ -1,0 +1,37 @@
+{
+  "id": "dsh-admin-gateway",
+  "analyzedAt": "2026-08-18T14:49:50.553Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin add 安装命令，且明确面向 DeepSeek Harness 插件场景。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-admin-gateway",
+      "evidence": "dsh plugin --profile web add dsh-admin-gateway"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加了一道‘门卫’：它自己开一个小型网页服务器，先让你输入管理员密码登录，登录成功后才把你的请求转发给真正的 DSH 网页和接口。这样一来，没有密码的人即使知道网址也进不去，还能防止暴力破解和恶意访问。它还支持把 DSH 安全地放到公网（比如用 Cloudflare 隧道），不用买服务器、不用开防火墙端口。",
+      "level": "ok",
+      "risks": "它会在电脑上多开一个端口（默认 3081）来提供登录界面和转发流量；需要设置管理员密码（存环境变量或配置文件里）；如果密码泄露，知道密码的人就能访问你的 DSH。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要设置管理员密码（推荐用环境变量 DSH_ADMIN_PASSWORD），并在 profile 或 cordis.patch.yml 里配置监听端口、上游 DSH 地址、允许的域名等，然后重启 dsh 服务。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 管理员验证网关插件：提供密码登录、反向代理和 WebSocket/SSE 透传，防止未授权访问 dsh web。",
+    "usage": {
+      "prompt_tokens": 4675,
+      "completion_tokens": 1469,
+      "total_tokens": 6144,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1080
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4035
+    }
+  }
+}

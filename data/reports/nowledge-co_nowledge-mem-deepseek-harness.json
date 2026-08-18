@@ -1,0 +1,37 @@
+{
+  "id": "nowledge-co/nowledge-mem-deepseek-harness",
+  "analyzedAt": "2026-08-17T11:52:22.045Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 字段并依赖 @deepseek-ai/cordis 与多个 dsh-* 核心包，README 也给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:nowledge-co/nowledge-mem-deepseek-harness",
+      "evidence": "dsh plugin --profile web add github:nowledge-co/nowledge-mem-deepseek-harness"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个“记忆层”。它会把你和 AI 的对话记录存到 Nowledge Mem 这个记忆系统里，下次你再问“我以前说过什么”时，它能自动翻出相关记忆；还通过 MCP 提供记忆工具，让 AI 在对话里主动存取信息。使用前需要先装一个叫 nmem 的命令行工具。",
+      "level": "caution",
+      "risks": "插件会把你的对话内容（包括提问和 AI 的回答）记录下来，存到 Nowledge Mem。默认连的是你本机的服务（http://127.0.0.1:14242），数据不出电脑；但如果你设置了远程服务的环境变量（如 NMEM_MCP_URL），这些对话内容就会发送到那个远程服务器，可能被服务方看到。另外它依赖外部工具 nmem，安装时注意来源。",
+      "postInstallNotes": "确保 nmem 命令在 PATH 中，运行 nmem status 验证；如果使用云端版，需设置 NMEM_MCP_URL 和 NMEM_API_KEY 环境变量；可按需配置 NMEM_SPACE 等参数。",
+      "notes": "DeepSeek Harness 仍处于开发者预览阶段，所依赖的公开 API 可能变化。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供持久记忆层的 DSH 插件，支持会话上下文注入、提示时回忆和 MCP 记忆工具。",
+    "usage": {
+      "prompt_tokens": 2472,
+      "completion_tokens": 2178,
+      "total_tokens": 4650,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1700
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1832
+    }
+  }
+}

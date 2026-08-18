@@ -1,0 +1,37 @@
+{
+  "id": "dsh-worktree",
+  "analyzedAt": "2026-08-16T13:46:51.441Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，且代码结构是 Cordis 插件（lib/index.js 为插件入口），明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/FlashingChen/dsh-worktree.git",
+      "evidence": "README 原文：'Not yet published to npm — install from this repository.'"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上了类似 Codex 的“永久 git 工作目录”功能。你可以让 AI 在一个独立的 git 分支目录里干活，这个目录会一直保留，下次还能接着用，不会弄乱你的主工作目录。它提供了一些工具和聊天命令，AI 自己也能创建、查看、删除这些工作目录。",
+      "level": "ok",
+      "risks": "它会在你的仓库里创建一个隐藏文件夹（默认 .dsh-worktrees）来存放工作目录，还会修改 git 的元数据（比如 git worktree 操作）。如果你主动要求强制删除，可能会丢掉未提交的改动，但这是你明确要求的。没发现连外部服务器或偷偷碰隐私文件的风险。",
+      "postInstallNotes": "装完后需要编辑 ~/.dsh/profiles/web/cordis.patch.yml，把插件加进去（类似 `- insert: - id: worktree - name: 'dsh-worktree'`），然后重启 DSH 进程。另外如果 DSH 版本和插件依赖的版本不一致，可能要在插件目录里手动调整依赖版本。",
+      "notes": "README 说还没发布到 npm，但 package.json 里其实已经有 npm 发布记录（0.1.0），README 可能过期了。另外依赖的是 rc 版本，将来可能有变化。"
+    },
+    "summaryZh": "一个让 DeepSeek Harness 拥有持久 git 工作目录的插件，支持 AI 工具和聊天命令，方便跨会话继续干活。",
+    "usage": {
+      "prompt_tokens": 3061,
+      "completion_tokens": 1734,
+      "total_tokens": 4795,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1253
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2421
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "1na-ko/dsh-hdc-bridge",
+  "analyzedAt": "2026-08-17T11:31:03.300Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 配置，且 README 给出 dsh plugin add 安装命令，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-hdc-bridge",
+      "evidence": "dsh plugin --profile <name> add dsh-hdc-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给鸿蒙（HarmonyOS/OpenHarmony）开发用的 DSH 助手插件。它能帮你连接手机或模拟器，截图看屏幕、操作界面、装应用、抓日志、查崩溃，还自带了官方文档知识库和构建签名功能，相当于把鸿蒙开发调试的常用操作都收进了一个面板。",
+      "level": "ok",
+      "risks": "会读取本机 DevEco Studio/SDK 的文件（比如 .d.ts 和工具链），会通过 hdc 命令操作你的开发设备（截图、安装、执行 shell 命令等），构建/签名时可能要求用浏览器登录 AGC 账号。截图会保存到工作区目录。没发现偷偷上传或恶意行为，但注意它操作的是开发设备，别在敏感环境乱试。",
+      "postInstallNotes": "建议把工作区下的 .dsh-hdc/screenshots/ 目录加入 .gitignore；使用构建/签名功能前需先运行一次 devecocli auth login；装完后建议用 dsh --dump-config 确认插件层已生效。",
+      "notes": "无"
+    },
+    "summaryZh": "鸿蒙开发调试助手：集成了 hdc 设备操作、官方知识检索、构建签名等能力，让 DSH 能直接帮忙搞定鸿蒙开发全流程。",
+    "usage": {
+      "prompt_tokens": 5070,
+      "completion_tokens": 1030,
+      "total_tokens": 6100,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 613
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4430
+    }
+  }
+}

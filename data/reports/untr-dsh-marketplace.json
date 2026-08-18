@@ -1,0 +1,37 @@
+{
+  "id": "untr-dsh-marketplace",
+  "analyzedAt": "2026-08-16T13:45:46.740Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle/client 配置并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "untr-dsh-marketplace",
+      "evidence": "npx -y --package @deepseek-ai/dsh dsh plugin --profile web add untr-dsh-marketplace@latest"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）用的「插件市场」增强包。装上之后，DSH 界面左下角会多一个「Marketplace」入口，你可以在这里浏览、搜索、安装其他 DSH 插件，同时也有一个「已安装」列表方便管理。它不改动 DSH 官方本体，只是额外加一层功能。",
+      "level": "ok",
+      "risks": "它会联网从公开的注册表（untr.github.io）拉取插件列表；当你点击安装某个插件时，它会调用 DSH 官方命令在电脑上执行安装。第三方插件本质上是可执行代码，安装后可能访问你的文件或系统，请只安装你信任的插件。",
+      "postInstallNotes": "装完后需要重启 DSH，然后在左下角侧边栏点击「Marketplace」即可使用；如需更换插件源，可先设置环境变量 DSH_MARKETPLACE_REGISTRY_URL。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件市场：在 DSH 内浏览和安装第三方插件的图形界面。",
+    "usage": {
+      "prompt_tokens": 2821,
+      "completion_tokens": 2934,
+      "total_tokens": 5755,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2554
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2181
+    }
+  }
+}

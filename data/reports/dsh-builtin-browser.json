@@ -1,0 +1,37 @@
+{
+  "id": "dsh-builtin-browser",
+  "analyzedAt": "2026-08-16T13:21:59.768Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle 并 peerDependencies 依赖 @deepseek-ai/cordis、dsh-llm、dsh-tools 等 DSH 核心包，README 也给出了 dsh plugin add 的安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-builtin-browser",
+      "evidence": "dsh plugin --profile web add dsh-builtin-browser"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的浏览器插件。装上之后，AI 助手就能打开一个真实可见的浏览器窗口，自己打开网页、填写表单、点击按钮、截图、下载文件；你和 AI 看到的是同一个页面，随时可以接手操作。它能记住登录状态（Cookie），下次继续用；每个任务有独立的浏览器会话，互不干扰；还能识别 Cloudflare、验证码等，提醒你来帮忙过验证。没有桌面外壳时它也会自己拉起一个 Electron 窗口，基本零配置。",
+      "level": "ok",
+      "risks": "它会启动一个 Electron 浏览器，AI 会在你的电脑上浏览网页、填表、点按钮、下载文件，并把 Cookie 存到本地以便保持登录。这意味着 AI 能看到和操作你在这些页面上能看到的任何内容（包括账户信息），请只在可信任务里使用。没有发现恶意行为或额外风险。",
+      "postInstallNotes": "无需额外配置；若纯 dsh web 环境找不到 Electron，需要安装 Electron 或设置 ELECTRON_PATH 指向可用的 Electron。",
+      "notes": "README 建议使用 Electron ≥ 40（提到 33.x 有合成器缺陷）。自托管模式会启动本机 Electron 子进程并通过本地 TCP JSON-RPC 通信。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供共享真实浏览器能力的 DSH 插件，让 agent 在可见、可人工接管的浏览器中执行网页操作。",
+    "usage": {
+      "prompt_tokens": 5300,
+      "completion_tokens": 1981,
+      "total_tokens": 7281,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1518
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4660
+    }
+  }
+}

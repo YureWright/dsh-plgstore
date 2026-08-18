@@ -1,0 +1,37 @@
+{
+  "id": "whitelonng/dshcode",
+  "analyzedAt": "2026-08-17T11:16:23.273Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.95,
+      "reason": "这是一个将 DeepSeek Harness 打包成 Electron 的桌面应用，本身不是 DSH 插件，也没有提供 dsh plugin add 安装方式。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "安装 DSHCode 安装包后，从 macOS“应用程序”文件夹或 Windows“开始”菜单打开 `DSHCode`。"
+    },
+    "evaluationReport": {
+      "intro": "DSHCode 是一个免费的桌面应用，把 DeepSeek 的 AI 助手框架打包成能直接安装的 Mac 和 Windows 软件。装好后不用学命令行，打开就有图形界面，可以跟 AI 对话、让它帮你查资料、写文档、操作文件等。它还支持装插件来扩展功能。",
+      "level": "caution",
+      "risks": "这个应用会读取和操作你电脑上的文件、运行命令，并且用你的 API Key 连接 DeepSeek 的服务器。它还是社区做的预览版，安装包没签名，第一次打开可能被系统拦截。",
+      "postInstallNotes": "需要在应用设置里配置 DeepSeek API Key。",
+      "notes": "经评估，这并非 DSH 插件，而是一个独立的桌面应用，不能通过 dsh plugin add 安装。另外它是社区项目，不是 DeepSeek 官方出品。"
+    },
+    "summaryZh": "DSHCode 是一个把 DeepSeek Harness 封装成桌面应用的社区项目，提供图形化界面，可安装插件，但并非 DSH 插件本身。",
+    "usage": {
+      "prompt_tokens": 4720,
+      "completion_tokens": 675,
+      "total_tokens": 5395,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 303
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4080
+    }
+  }
+}

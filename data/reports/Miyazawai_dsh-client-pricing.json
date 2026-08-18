@@ -1,0 +1,37 @@
+{
+  "id": "Miyazawai/dsh-client-pricing",
+  "analyzedAt": "2026-08-17T11:25:26.519Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 配置，且 README 给出了 dsh plugin add 安装命令，是标准的 DSH 客户端插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-client-pricing",
+      "evidence": "dsh plugin --profile web add dsh-client-pricing"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 的聊天界面顶栏显示当前 DeepSeek API 的价格，并自动根据你选的模型（flash 或 pro）以及高峰/空闲时段切换显示。鼠标悬停还能看到完整的价目表和规则说明，防止你在高峰期不小心花两倍的钱。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取当前模型信息并展示价格，不会触碰个人文件或连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web（停止当前进程再运行 dsh web，然后刷新 http://127.0.0.1:3080）。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 聊天顶栏显示 DeepSeek API 实时价格（峰谷自动切换）的客户端插件。",
+    "usage": {
+      "prompt_tokens": 3288,
+      "completion_tokens": 1105,
+      "total_tokens": 4393,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 801
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2648
+    }
+  }
+}

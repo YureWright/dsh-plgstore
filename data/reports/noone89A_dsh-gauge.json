@@ -1,0 +1,37 @@
+{
+  "id": "noone89A/dsh-gauge",
+  "analyzedAt": "2026-08-17T12:02:23.415Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及 dsh-client-* 核心包，README 给出了 dsh plugin add 安装命令，是真 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-gauge",
+      "evidence": "dsh plugin --profile web add dsh-gauge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 网页界面里的缓存命中率显示得更精确（比如 99.8% 不再被显示成 100%），同时补充了 token 用量分桶明细、会话费用估算，还能按高峰/闲时自动套用不同价格，并在会话页头增加一个用量详情面板。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你本地会话的 token 用量和模型信息来计算费用，数据只在你电脑上处理，不会上传到外部服务器。",
+      "postInstallNotes": "装完重启 `dsh web` 即可使用，无需配置。若想在设置页看到配置卡片，需手动把 `gauge` 加入 DSH 宿主安装的 `dsh-host-apiproxy` 白名单（见 README 故障排查），不加入不影响核心功能。",
+      "notes": "配置卡片默认不显示，需要手动加白名单（不影响核心功能）；内置价目表在源码 src/config.ts 中，官方调价后可能需要更新插件。"
+    },
+    "summaryZh": "为 DeepSeek Harness Web UI 提供精确缓存命中率、token 用量与费用估算。",
+    "usage": {
+      "prompt_tokens": 6763,
+      "completion_tokens": 1760,
+      "total_tokens": 8523,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1360
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 6123
+    }
+  }
+}

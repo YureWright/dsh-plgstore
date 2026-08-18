@@ -1,0 +1,37 @@
+{
+  "id": "iyllyt/dsh-btw",
+  "analyzedAt": "2026-08-17T11:42:54.257Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 包含 dsh.bundle 和 dsh.client 声明，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/iyllyt/dsh-btw.git",
+      "evidence": "dsh plugin --profile web add github:iyllyt/dsh-btw"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个 /btw 旁路提问功能。就像 Claude Code 里的 /btw，当你正在让主 Agent 干一个长任务时，想临时问个和当前上下文有关的小问题（比如“刚才提到的文件名是啥”），不用打断主任务，也不用新开一个会话。它会在后台用当前会话的上下文快速问一次模型，然后把回答显示在输入框上方的临时面板里，关闭后不会出现在正式对话历史里，也不影响主线任务。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下的 $DSH_HOME/btw-sidechains 里保存一些问答记录（默认保留 7 天，最多 500 条），如果你开着默认的 private-jsonl 模式，这些记录就以文件形式存在，权限是仅你自己可读写。如果你跟别人共用电脑，最好把存档模式改成 memory 或 none。另外每次 /btw 都会消耗一次模型请求，可能产生费用。除此之外没有发现明显风险。",
+      "postInstallNotes": "安装后确认 DSH 配置中出现了 dsh-btw 插件层即可使用；默认配置已开箱可用，如需自定义存档模式或超时，可在 cordis.patch.yml 里覆盖。",
+      "notes": "插件明确面向 DSH 0.1.0-rc.6，如果以后升级 DSH，可能需要等待插件更新兼容性。文档说是非官方社区插件，与 Anthropic / DeepSeek AI 官方无关。"
+    },
+    "summaryZh": "为 DeepSeek Harness 复刻 Claude Code /btw 的旁路提问插件，让你在主 Agent 忙碌时顺手问一句小问题，不打断主任务、不污染会话历史。",
+    "usage": {
+      "prompt_tokens": 4869,
+      "completion_tokens": 2327,
+      "total_tokens": 7196,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1795
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4229
+    }
+  }
+}

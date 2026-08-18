@@ -1,0 +1,37 @@
+{
+  "id": "Jesse-njx/dsh-chatnode-wechat",
+  "analyzedAt": "2026-08-17T11:45:20.106Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，并依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 也提供了 dsh plugin 安装说明。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Jesse-njx/dsh-chatnode-wechat.git",
+      "evidence": "git clone https://github.com/Jesse-njx/dsh-chatnode-wechat.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你的微信能当遥控器，随时跟 DSH 智能体聊天、看它干活、还能在微信里批准或拒绝它要执行的操作（比如运行命令）。它用的是非官方微信网关，所以需要一个专门的微信小号，并且要设置白名单，只有你允许的微信号才能指挥智能体。",
+      "level": "caution",
+      "risks": "它会连腾讯的微信服务器（通过非官方协议），可能被腾讯限制账号；会把微信登录凭证存在你电脑的 $DSH_HOME/.credentials.yaml 文件里；白名单外的微信消息会进入日志（但不会喂给模型）；如果同一个微信令牌被多个轮询程序使用，消息可能丢失。另外，白名单内的联系人可以给智能体发指令，智能体能做什么取决于它的权限（比如可能执行命令）。",
+      "postInstallNotes": "装完后要先用 pnpm login 扫码绑定微信（会生成二维码），然后在配置文件里设置 allowFrom 白名单（必填），并可按需调整 digestIntervalSec、approvalTimeoutSec 等参数；注意要用专用微信小号。",
+      "notes": "依赖 @deepseek-ai/* 0.1.0-rc.6 预发布版本，上游可能变化；iLink 协议是非官方的，作者声明不建议在常用微信号上使用。"
+    },
+    "summaryZh": "通过微信远程聊天、监控和审批 DSH 智能体，支持白名单、会话切换和命令控制，但依赖非官方微信网关且需要专用小号。",
+    "usage": {
+      "prompt_tokens": 3253,
+      "completion_tokens": 2747,
+      "total_tokens": 6000,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2263
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2613
+    }
+  }
+}

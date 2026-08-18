@@ -1,0 +1,37 @@
+{
+  "id": "SnowCrescenter-tech/dsh-milestone",
+  "analyzedAt": "2026-08-17T11:20:53.581Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-milestone",
+      "evidence": "dsh plugin --profile demo add dsh-milestone"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 界面加导航条的小工具。在很长的对话里，想找回很久之前的某条提问时，不用再一直往上翻，它会像地图一样在右边显示一排小圆点，每个圆点对应一次提问。鼠标放上去能预览内容，点一下就直接跳转到那条消息，还能搜索、收藏，非常方便。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取你当前会话里的消息数据，书签存在你浏览器的本地存储里，不会上传到任何服务器。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 的会话里程碑导航条：圆点时间线，点击跳转到任意一条提问。",
+    "usage": {
+      "prompt_tokens": 3517,
+      "completion_tokens": 1425,
+      "total_tokens": 4942,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1124
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2877
+    }
+  }
+}

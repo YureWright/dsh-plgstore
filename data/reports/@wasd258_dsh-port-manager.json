@@ -1,0 +1,37 @@
+{
+  "id": "@wasd258/dsh-port-manager",
+  "analyzedAt": "2026-08-16T13:35:22.843Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.client 并注入 @deepseek-ai/dsh-client-* 官方包，README 描述为 DSH 社区插件，但安装方式特殊。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wasd258/dsh-port-manager",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个「端口管理器」，装到 DSH 后，你可以在网页设置里看到电脑上所有正在使用的网络端口（比如哪些程序占用了哪些端口），还能让 DSH 的网页版换一个端口打开，不用重启程序，也不影响当前聊天记录。换端口后它还会记住你选的端口，下次启动继续用。",
+      "level": "ok",
+      "risks": "它会运行一些查看端口和进程的命令（比如 Windows 的 PowerShell 或 Linux 的 netstat），所以能看到你电脑上有哪些程序在监听端口以及进程 ID。这些信息只展示给你自己看，不会上传到任何地方。它还会保存一个配置文件（dsh-port-manager.json）来记住你选的端口。除此之外，没发现明显风险。",
+      "postInstallNotes": "安装不是一条命令搞定，需要按 README 手动操作：先 git clone，把文件复制到 DSH 配置目录，再往 cordis.patch.yml 里加两段配置，最后重启 DSH web 才能生效。如果之前改过 webserver 配置，需要手动合并端口表达式。",
+      "notes": "这个插件包已经在 npm 上发布（@wasd258/dsh-port-manager），但 README 没有提供 dsh plugin add 的安装方式，只给了手动复制的方法。另外它标注为社区插件，非官方，并且基于 DSH 0.1.0-rc.6 验证，如果后续 DSH 更新可能需调整配置。"
+    },
+    "summaryZh": "DSH 社区端口管理插件：在设置界面查看本机占用端口并热切换 DSH 网页端口，无需重启进程。",
+    "usage": {
+      "prompt_tokens": 3284,
+      "completion_tokens": 2562,
+      "total_tokens": 5846,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2078
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2644
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "Apageoflove/DSH-changeproof",
+  "analyzedAt": "2026-08-17T11:51:41.083Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 DSH 插件安装与使用说明，代码有 DSH 绑定层"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Apageoflove/DSH-changeproof.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件用来检查你改了代码后，测试有没有真的跑到你改的那几行。以前可能测试全绿但改动的代码根本没被测试覆盖，它会自动找出相关测试、一行行核对，没覆盖就不给通过；如果测试完代码又被改了，它也能发现结论过期。",
+      "level": "ok",
+      "risks": "它会按配置去运行项目里的测试命令，只作用于你指定的项目目录，不会读个人文件或上传数据；使用了受控的子进程执行，禁用了 shell 拼接。",
+      "postInstallNotes": "需要在被验证的项目根目录创建 .changeproof.yml 配置文件；如果用 DSH 命令行模式，还要设置 DEEPSEEK_API_KEY 环境变量。",
+      "notes": "当前未发布到 npm，需从 GitHub 获取后本地安装；README 提到 dsh.so 静态扫描有 Critical 告警，作者解释是子进程模块的正常用法。"
+    },
+    "summaryZh": "DSH 插件，验证代码改动是否真正被测试覆盖，防止“测试全绿但改动没被测到”的假绿问题。",
+    "usage": {
+      "prompt_tokens": 4022,
+      "completion_tokens": 4143,
+      "total_tokens": 8165,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3776
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3382
+    }
+  }
+}

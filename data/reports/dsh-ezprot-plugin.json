@@ -1,0 +1,37 @@
+{
+  "id": "dsh-ezprot-plugin",
+  "analyzedAt": "2026-08-16T14:54:00.905Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 中声明了 dsh.bundle，并依赖 @deepseek-ai/cordis 等 DSH 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ezprot-plugin",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一款给 DeepSeek Harness 用的蛋白质组学数据分析插件，能自动管理 R 4.4 运行环境，提供标准化、PCA、批次校正、差异表达、富集分析和 GSEA 等分析流程，还会缓存 GO/KEGG 注释数据。因为 README 缺失，以上是根据包描述概括的。",
+      "level": "caution",
+      "risks": "它可能会在电脑上自动下载并安装 R 4.4 运行时，占用磁盘空间；会缓存注释数据；由于没有 README，具体读写哪些文件、是否联网上传数据不明确。",
+      "postInstallNotes": "无（建议先查看源码或等待作者补充 README 后再使用）",
+      "notes": "README 缺失，无法确认具体行为；依赖 @deepseek-ai/dsh-* 预发布版本；安装前建议检查源码。"
+    },
+    "summaryZh": "DeepSeek Harness 的蛋白质组学一站式分析插件（自动管理 R 环境，支持差异表达、富集分析等）。",
+    "usage": {
+      "prompt_tokens": 1639,
+      "completion_tokens": 1015,
+      "total_tokens": 2654,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 668
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 999
+    }
+  }
+}

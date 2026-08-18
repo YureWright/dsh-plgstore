@@ -1,0 +1,37 @@
+{
+  "id": "AITabby/dockyard-dsh",
+  "analyzedAt": "2026-08-17T11:17:19.806Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/AITabby/dockyard-dsh.git",
+      "evidence": "dsh plugin --profile web add github:AITabby/dockyard-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness (DSH) 用的，可以让你在一个地方管理多个 AI 工具的账号，比如 Codex、Claude、Grok、Cursor 等。它会自动读取你电脑上已登录的这些工具，也支持通过官方网页重新登录，然后你就能在 DSH 里随意切换账号来使用，还能查看各账号的模型列表和剩余额度。目前只支持 Mac，而且还在开发预览阶段。",
+      "level": "ok",
+      "risks": "它会扫描你本机已有的 Codex、Claude 等官方客户端或命令行的登录会话（读取本地文件），并把 OAuth 登录凭证存到 macOS 钥匙串里。这意味着它会接触你这些工具的账号信息，但不会把原始 token 写入项目文件。另外，使用时需要打开浏览器跳转到官方授权页面。没发现恶意行为。",
+      "postInstallNotes": "装完后，如果要使用 Antigravity 的浏览器登录，需要先设置环境变量 DOCKYARD_ANTIGRAVITY_CLIENT_ID 和 DOCKYARD_ANTIGRAVITY_CLIENT_SECRET。另外请确认为 macOS 系统。",
+      "notes": "当前是 developer preview，仅支持 macOS（Windows 还在开发中）；上游 DSH 本身也可能有破坏性更新。安装建议直接用 README 中的命令，不要 pin 到旧 commit，以免需要额外配置。"
+    },
+    "summaryZh": "为 DeepSeek Harness 设计的 macOS 账号池插件，可统一管理 Codex、Antigravity、Grok、Claude、Cursor 的登录账号与调用。",
+    "usage": {
+      "prompt_tokens": 4453,
+      "completion_tokens": 3426,
+      "total_tokens": 7879,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2934
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3813
+    }
+  }
+}

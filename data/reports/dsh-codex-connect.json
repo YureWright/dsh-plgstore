@@ -1,0 +1,37 @@
+{
+  "id": "dsh-codex-connect",
+  "analyzedAt": "2026-08-16T13:28:29.873Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了多个 @deepseek-ai 核心包，且 README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-codex-connect@alpha",
+      "evidence": "dsh plugin --profile web add dsh-codex-connect@alpha"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 用户用 ChatGPT 的账号登录，从而在 Harness 里使用 OpenAI 的 Codex 模型。它通过 OAuth 授权连接，不会把订阅变成 API 密钥，所有模型调用还是走 Harness 自己的框架，所以流式输出、工具调用这些功能都正常。安装后需要先登录 ChatGPT 账号，然后在设置里选模型。它还额外提供可选的搜索和图片查看功能，但默认关闭，要自己打开。",
+      "level": "ok",
+      "risks": "它会把你的 ChatGPT 登录凭据（OAuth 令牌）保存在用户目录下的 $DSH_HOME/.openai-codex-auth.json 文件里，并用这个令牌向 OpenAI 的 Codex 服务发请求。它不会动你已有的 ~/.codex/auth.json 文件。如果你启用了图片查看工具，它会抓取你给的图片 URL，但只允许访问公网地址，防止访问内网。另外，它目前是 alpha 版本，可能存在未发现的 bug。",
+      "postInstallNotes": "安装后需要运行 `dsh plugin --profile web exec dsh-codex-connect login` 或通过设置界面登录 ChatGPT 账号。如果想让 Codex 成为默认模型，还需要在 Harness 配置里手动添加 `agent-default-model` 相关设置。",
+      "notes": "这是一个 alpha 版本，依赖的 Harness API 是 0.1.0-rc.5/rc.6，可能与未来稳定版不兼容。另外它开源于 dsh-codex，但代码有较大修改。经评估确认是真正的 DSH 插件。"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加 ChatGPT OAuth 登录和 OpenAI Codex 模型支持。",
+    "usage": {
+      "prompt_tokens": 4338,
+      "completion_tokens": 2094,
+      "total_tokens": 6432,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1576
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3698
+    }
+  }
+}

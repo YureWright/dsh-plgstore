@@ -1,0 +1,37 @@
+{
+  "id": "BiBoyang/dsh-eval-harness",
+  "analyzedAt": "2026-08-17T11:51:59.787Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/dsh-* 系列核心包，且 README 给出了 dsh plugin add 安装命令，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-eval-harness",
+      "evidence": "dsh plugin --profile headless add dsh-eval-harness"
+    },
+    "evaluationReport": {
+      "intro": "这是一个专门给 DSH 插件和技能作者用的回归测试工具。你可以把测试用例写成简单的 YAML 文件（比如让 agent 做什么、期望它调用哪些工具、输出里应该包含什么关键词），它会自动启动一个真实的 DSH 环境去跑这些用例，然后把运行结果和之前存好的基准进行比较，告诉你哪些功能退步了，还会生成报告，方便接到 CI 里自动拦截问题。",
+      "level": "ok",
+      "risks": "安装后，它会在你的电脑上以子进程方式运行 dsh 命令，执行评测用例时要消耗大模型的 API 额度；如果启用 LLM 语义评审（output_judge），它会读取环境变量里的 API Key，并把用例内容和模型回复发送到 DeepSeek（或你配置的 OpenAI 兼容接口）。这些都是工具本身的功能，没有发现额外风险。",
+      "postInstallNotes": "如果要用 LLM 语义评审（output_judge），需要设置环境变量 EVAL_JUDGE_API_KEY（或 DEEPSEEK_API_KEY），可选设置 EVAL_JUDGE_BASE_URL 和 EVAL_JUDGE_MODEL。运行 eval_run 时如本机没有全局 dsh，它会自动用 npx @deepseek-ai/dsh，也可以设置 DSH_BIN 指定。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件回归评测门禁：用 YAML 写用例，headless 跑真实 agent，比对 baseline 生成 PASS/WARN/FAIL 报告，可接入 CI。",
+    "usage": {
+      "prompt_tokens": 4844,
+      "completion_tokens": 1830,
+      "total_tokens": 6674,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1356
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4204
+    }
+  }
+}

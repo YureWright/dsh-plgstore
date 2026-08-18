@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-skin-xp",
+  "analyzedAt": "2026-08-17T11:08:09.133Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且 README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-skin-xp",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-skin-xp"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页界面换装的皮肤插件，把界面变成 Windows XP（Luna）风格的样子：蓝色渐变标题栏、绿色开始按钮、经典状态栏、Explorer 风格的文件列表等。它只改变外观，不影响聊天、模型调用等任何实际功能。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器里修改 DSH 页面的 DOM（比如加标题栏、改样式），不读写本地文件，也不联网发送数据。",
+      "postInstallNotes": "装完后需要运行 `dsh-skin use xp` 来激活这个皮肤（或确认它是当前启用的皮肤）。如果是通过本地 monorepo 链接安装的，需要先构建好 lib/ 目录。",
+      "notes": "部分界面效果依赖 AppFrame 的 data-pane 属性，缺少时皮肤仍可应用，但个别区域（如侧边栏、任务栏）不会生效。"
+    },
+    "summaryZh": "将 DSH 网页界面包装成 Windows XP 经典外观（Luna 蓝、开始按钮、任务栏风格）的皮肤插件，纯前端美化，不影响功能。",
+    "usage": {
+      "prompt_tokens": 2087,
+      "completion_tokens": 2365,
+      "total_tokens": 4452,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1982
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1447
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "pi2dsh",
+  "analyzedAt": "2026-08-16T13:22:46.038Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin add 安装命令，并依赖 @deepseek-ai/cordis 等 DSH 核心包。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "pi2dsh",
+      "evidence": "dsh plugin add pi2dsh          # once"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫 pi2dsh，是个“桥”。它的作用是让 Pi 这个平台上的各种插件（比如看图、记忆、子对话等）能直接在 DeepSeek Harness 上运行，不用改代码。你只需要先装上 pi2dsh 这个桥，然后就可以像装普通插件一样把 Pi 的插件装进来用，装完重启一下就能用了。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你的 DSH 配置目录下的 cordis.patch.yml 里加一段配置，并安装你指定的其他 Pi 插件，这些插件可能访问网络或文件，但都是你自己主动装的。",
+      "postInstallNotes": "装完后需要重启 dsh；建议使用 web 或 headless 作为 profile 名（别的名字可能没有界面导致启动后挂起）；如果安装时出现 ERR_PNPM_IGNORED_BUILDS，需要进 DSH_HOME/profiles/web 目录运行 pnpm approve-builds 并重新安装。",
+      "notes": "无"
+    },
+    "summaryZh": "让 Pi 生态的插件无需修改即可在 DeepSeek Harness 上运行的兼容桥接层。",
+    "usage": {
+      "prompt_tokens": 4505,
+      "completion_tokens": 1923,
+      "total_tokens": 6428,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1537
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3865
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "AngelosZou/dsh-multi-folder",
+  "analyzedAt": "2026-08-17T12:06:56.432Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，且代码明显调用了 DSH 的接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-multi-folder",
+      "evidence": "dsh plugin --profile web add dsh-multi-folder"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你的 DeepSeek Harness 项目能同时使用多个工作目录。比如你可以在一个会话里同时管理源码、测试和文档三个文件夹，AI 助手在获得你授权后，可以像在主工作区一样读写和执行命令，但权限模式保持不变（只读仍然禁止写，工作区写允许，完全访问允许）。你还可以在会话开始前就设置好这些额外文件夹，也能在会话中通过按钮或命令随时调整。插件不会新增工具，而是通过框架层面的拦截来工作。",
+      "level": "ok",
+      "risks": "这个插件会把你指定的额外文件夹交给 AI 助手读写和执行。如果你加入了敏感文件夹（如个人文档、密码文件等），AI 理论上能访问它们。配置文件保存在本机 DSH_HOME 下，不会上传到外部服务器。没有发现安装脚本或连接第三方服务器的行为。",
+      "postInstallNotes": "安装后需要重启 DSH 后端（因为主机组合在进程启动时加载），并刷新浏览器页面（客户端 bundle 以 no-cache 方式提供）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 项目添加多个工作目录，让 AI 助手在你指定的额外文件夹里读写和执行命令，同时保持原有权限控制。",
+    "usage": {
+      "prompt_tokens": 3255,
+      "completion_tokens": 1306,
+      "total_tokens": 4561,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 894
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2615
+    }
+  }
+}

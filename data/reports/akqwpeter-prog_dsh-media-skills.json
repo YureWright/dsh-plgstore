@@ -1,0 +1,37 @@
+{
+  "id": "akqwpeter-prog/dsh-media-skills",
+  "analyzedAt": "2026-08-17T11:46:12.861Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle（指向 cordis.patch.yml），README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:akqwpeter-prog/dsh-media-skills",
+      "evidence": "dsh plugin --profile <name> add github:akqwpeter-prog/dsh-media-skills"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 看懂图片和生成图片。你可以把图片拖进对话，它会用免费的智谱 GLM 模型描述图片内容；也能让它分析截图、找界面问题；还能用免费的硅基流动 Kolors 模型生成插图、头像、背景等。需要你自己去申请两个免费 API 密钥（智谱和硅基流动），密钥只存在你电脑上，图片会发给对应的服务商。安装后需要配置密钥并重启。",
+      "level": "ok",
+      "risks": "会读取你电脑上的密钥文件（如 ~/.dsh/secrets/media-tools.env）；使用功能时，图片会发送到你选择的第三方服务（智谱、硅基流动、谷歌等），这些服务可能看到图片内容；插件会修改 DeepSeek Harness 的配置（打补丁）。整体风险可控，密钥由你本人管理，图片只发给你信任的服务商。",
+      "postInstallNotes": "需要注册智谱和硅基流动账号并获取免费 API 密钥，在 DSH 的 Web 界面（设置→模型→API Key）或 credentials 文件中填写；如有 Gemini 密钥可可选加入；然后重启 dsh web 并硬刷新页面。若希望启用粘贴图片读取，可能需要应用核心补丁（cordis.patch.yml），详见文档。",
+      "notes": "该插件通过修改 DSH 核心配置（cordis.patch.yml）实现粘贴图片读取，安装前建议先备份配置；技能可能依赖 Python 3.9+ 环境，如运行报错请检查 Python；GitHub 仓库星数较少（5 stars），属于较新项目，建议先阅读官方文档再使用。"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加免费的看图（GLM-4V）和生成图片（Kolors）能力，需自备两个免费 API 密钥。",
+    "usage": {
+      "prompt_tokens": 3228,
+      "completion_tokens": 3784,
+      "total_tokens": 7012,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3235
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2588
+    }
+  }
+}

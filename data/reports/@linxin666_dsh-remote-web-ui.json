@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-remote-web-ui",
+  "analyzedAt": "2026-08-17T11:08:07.341Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 配置，依赖 @deepseek-ai/cordis 和多个 dsh-client-* 核心包，且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-remote-web-ui",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-remote-web-ui"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 网页版加一个'手机遥控器'：在电脑端侧边栏点手机图标生成二维码，手机扫码后就能在手机上远程查看和操作工作区（浏览会话、看消息、发消息等），还带一键更新插件全家桶的功能。",
+      "level": "caution",
+      "risks": "安装时会通过 cloudflared 依赖下载一个外部程序用于公网隧道；如果以 --host 0.0.0.0 启动或开启自动隧道，你的 DSH 界面会暴露到局域网/公网；一键更新会在电脑上执行 pnpm update 命令自动修改插件文件。",
+      "postInstallNotes": "重启 dsh web，然后用 dsh web --host 0.0.0.0 启动以便手机访问；如有公网需求可在面板开启自动隧道。",
+      "notes": "该插件为个人发布的第三方包，非官方包；安装时 cloudflared 有下载二进制的 postinstall 脚本；从 GitHub 安装需处理 pnpm allowBuilds 权限。"
+    },
+    "summaryZh": "DSH 网页版的手机远程控制插件：扫码配对后可在手机上操作工作区，并带一键更新功能。",
+    "usage": {
+      "prompt_tokens": 3882,
+      "completion_tokens": 3887,
+      "total_tokens": 7769,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3477
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3242
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "unitarylab/quantum-practices",
+  "analyzedAt": "2026-08-17T11:20:33.628Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:unitarylab/quantum-practices#main",
+      "evidence": "npx @deepseek-ai/dsh@0.1.0-rc.6 plugin --profile web add github:unitarylab/quantum-practices#main"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 装了一个「量子算法资料库」。装好以后，你问 AI 跟量子算法有关的问题（比如 HHL、Shor、VQE），它会先查这个资料库再回答，答案会更规范。插件本身只读资料，不会运行代码、不联网、不碰你的文件。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件声明只读，不访问网络、文件系统、子进程，也不碰凭证和本地代码。",
+      "postInstallNotes": "安装后重启 DeepSeek Harness（Web 或对应 profile），之后正常提问即可，AI 会在需要时自动调用 quantum_practices 工具。",
+      "notes": "该插件包标记为 private，未发布到 npm，需用 GitHub 路径安装；另外它依赖 @deepseek-ai/dsh-tools 的预发布版本（0.1.0-rc.6），正式使用前建议先小范围试用。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供量子算法最佳实践指南的只读工具包，涵盖 HHL、Shor、VQE 等 60 个技能。",
+    "usage": {
+      "prompt_tokens": 3641,
+      "completion_tokens": 3714,
+      "total_tokens": 7355,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3287
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3001
+    }
+  }
+}

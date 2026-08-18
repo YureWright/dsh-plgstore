@@ -1,0 +1,37 @@
+{
+  "id": "dsh-mcp-market",
+  "analyzedAt": "2026-08-16T13:41:46.927Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mcp-market",
+      "evidence": "dsh plugin --profile web add dsh-mcp-market        # from npm"
+    },
+    "evaluationReport": {
+      "intro": "这是一个装在 DeepSeek Harness 里的插件，相当于一个 MCP 服务器应用商店。装好后，你可以在设置里打开 MCP Market，浏览、搜索并一键安装各种 MCP 服务器（就是给 AI 增加新工具的东西），不需要重启 Harness，AI 马上就能用上新工具。它还内置了一些经过验证的服务器，也会检查 npm 上的包是否还在，防止装到失效的东西。",
+      "level": "ok",
+      "risks": "这个插件会修改 Harness 配置文件 cordis.patch.yml 中标记为它管理的那一小块内容（你原来的配置不会被改动）；安装 MCP 服务器时可能会在电脑上启动第三方程序，这些程序是别人写的，要确认来源是否可信；另外安装时填的环境变量等配置会明文保存在配置文件里，别放密码之类的敏感信息。",
+      "postInstallNotes": "装完后需要重启 dsh web，然后在设置里打开 MCP Market 使用。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 MCP 服务器市场，可在设置中一键浏览和安装 MCP 服务器，无需重启。",
+    "usage": {
+      "prompt_tokens": 2440,
+      "completion_tokens": 910,
+      "total_tokens": 3350,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 522
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1800
+    }
+  }
+}

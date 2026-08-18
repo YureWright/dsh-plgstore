@@ -1,0 +1,37 @@
+{
+  "id": "dsh-adb",
+  "analyzedAt": "2026-08-18T14:53:28.963Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，devDependencies 包含 @deepseek-ai/cordis 及 dsh-* 核心包，且 README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-adb",
+      "evidence": "dsh plugin --profile web add dsh-adb"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DSH 智能体直接控制安卓手机、平板或车载测试台：可以列出连接的设备、查看和过滤设备日志（logcat）、安装 APK 应用、在设备和电脑之间传文件、抓取内存/帧率/电量等性能快照，还能对比性能变化、生成崩溃报告。它自带一个网页设备面板，能在对话界面里看到设备状态和性能数据。",
+      "level": "ok",
+      "risks": "它会调用本机的 adb 工具，因此能读写所连接安卓设备上的文件、安装应用、读取系统日志和性能数据，这些都属于它宣称的功能；性能基线数据会保存在用户目录（~/.dsh/storages/dsh-adb）下。没发现额外越权或可疑行为。",
+      "postInstallNotes": "如果 adb 不在系统 PATH 中，需要在 cordis.patch.yml 里配置 adbPath 指向 adb 可执行文件；另外安装后需要重启 GUI 才能看到网页设备面板。",
+      "notes": "无"
+    },
+    "summaryZh": "通过 adb 让 DSH 智能体控制安卓设备和车载测试台，支持设备发现、日志、安装 APK、文件传输和性能分析。",
+    "usage": {
+      "prompt_tokens": 2908,
+      "completion_tokens": 3114,
+      "total_tokens": 6022,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2709
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2268
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/plugin-template",
+  "analyzedAt": "2026-08-17T11:33:40.408Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.85,
+      "reason": "仓库是 DSH 插件模板而非实际插件，虽声明了 dsh.bundle 但 private:true 且以模板为目的"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "A self-contained standalone repository template for an ESM Cordis plugin."
+    },
+    "evaluationReport": {
+      "intro": "这是一个给开发者用的 DSH 插件模板，不是能直接装来用的插件。它把创建插件所需的项目结构、编译配置、测试和打包工具都准备好，还带一整套开发流程说明。普通用户不需要它；想自己写 DSH 插件的人可以拿它当起点。",
+      "level": "ok",
+      "risks": "没发现明显风险。若开发者复制使用，构建脚本会在本地生成文件，但属正常开发行为。",
+      "postInstallNotes": "无（它本身不是一个可安装的插件）",
+      "notes": "经评估可能并非 DSH 插件（理由：这是一个模板仓库，不是实际功能插件）；其 package.json 中 private 为 true，未发布到 npm，不能用 dsh plugin add 安装。"
+    },
+    "summaryZh": "DSH 插件开发模板：为开发者提供创建 Cordis 插件所需的标准工程结构和开发技能。",
+    "usage": {
+      "prompt_tokens": 3144,
+      "completion_tokens": 1521,
+      "total_tokens": 4665,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1210
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2504
+    }
+  }
+}

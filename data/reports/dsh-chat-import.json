@@ -1,0 +1,37 @@
+{
+  "id": "dsh-chat-import",
+  "analyzedAt": "2026-08-16T13:23:42.438Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-chat-import",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把你在其他AI工具（比如Claude Code、Codex、ChatGPT、Cursor、Gemini等）里的聊天记录导入到 DeepSeek Harness 里，变成可以继续对话的会话；也能把 DeepSeek Harness 的会话导出回这些工具，或者打包备份。",
+      "level": "ok",
+      "risks": "它会读取你电脑上多个AI工具的聊天记录（一般存放在用户目录的隐藏文件夹里），这些记录可能包含你的对话、代码等敏感信息；插件声明是只读的，不会修改原文件。目前没发现联网上传或执行恶意脚本的迹象。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "将 14 种外部 AI 工具的聊天记录导入 DeepSeek Harness 并支持导出/同步，实现跨工具会话迁移。",
+    "usage": {
+      "prompt_tokens": 4112,
+      "completion_tokens": 2473,
+      "total_tokens": 6585,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2170
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3472
+    }
+  }
+}

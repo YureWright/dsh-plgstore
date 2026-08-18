@@ -1,0 +1,37 @@
+{
+  "id": "dsh-file-claim",
+  "analyzedAt": "2026-08-16T13:30:22.748Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch，且 README 明确给出 `dsh plugin add dsh-file-claim` 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-file-claim",
+      "evidence": "dsh plugin add dsh-file-claim"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是用来解决多个 AI 会话（DSH 会话）同时在一个项目文件夹里干活时，互相覆盖文件的问题。它让每个会话在编辑文件前先“认领”文件，这样别的会话就不会乱动这个文件；如果某个文件正被别人占用，你可以把修改先存到一个“待合并区”，等对方用完释放后，插件会自动用 Git 的三路合并把改动合进去。它还有心跳检测和崩溃恢复功能，某个会话挂了之后，它的认领会自动过期，其他会话可以接管。",
+      "level": "ok",
+      "risks": "它会在你的项目目录下保存认领记录和审计日志（包含会话 ID、文件路径、时间戳等信息），同一工作区的其他人可能看到这些记录；它需要用到 Git 的合并功能，合并时可能会在你的文件里留下冲突标记。没有发现它会偷偷上传数据或执行危险命令。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为并行运行的 DSH 会话提供文件认领/保护机制，防止文件互相覆盖，并支持待合并区与 Git 三路合并。",
+    "usage": {
+      "prompt_tokens": 3804,
+      "completion_tokens": 1086,
+      "total_tokens": 4890,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 712
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3164
+    }
+  }
+}

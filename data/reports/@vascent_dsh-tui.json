@@ -1,0 +1,37 @@
+{
+  "id": "@vascent/dsh-tui",
+  "analyzedAt": "2026-08-16T13:44:19.298Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh 等核心包，提供 cordis.patch.yml 与 TUI 启动器，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@vascent/dsh-tui",
+      "evidence": "npm install --global @vascent/dsh-tui"
+    },
+    "evaluationReport": {
+      "intro": "这是一个用于 DeepSeek Harness 的终端界面（TUI）启动器。装好后你在终端里运行 dsh-tui 就能启动一个图形化的聊天/编码界面，方便跟 DeepSeek 编程助手交互。它还自带记忆管理和图片理解等功能，可以记住项目状态、分析截图。首次运行会自动创建配置文件，之后就能直接用。",
+      "level": "ok",
+      "risks": "它会读取和修改当前项目目录下的文件（因为它是编码助手），并会把你提供的内容（代码/图片）通过 API 发送给 DeepSeek 或 DashScope 服务。需要你设置 API key。没发现明显风险。",
+      "postInstallNotes": "需要设置 DEEPSEEK_API_KEY 环境变量；如果要处理图片，还要设置 DASHSCOPE_API_KEY 并在 /config vision 里确认路由。首次运行会在 ~/.dsh 下创建 tui 配置文件。",
+      "notes": "需要 Node.js 版本 ^22.19.0 或 >=24.0.0。该包由社区维护，通过 GitHub Actions 发布，来源较可信。"
+    },
+    "summaryZh": "DeepSeek Harness 的终端界面启动器，让你在命令行里轻松使用 DeepSeek 编程助手，还附带了记忆和视觉等社区扩展功能。",
+    "usage": {
+      "prompt_tokens": 3314,
+      "completion_tokens": 2024,
+      "total_tokens": 5338,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1606
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2674
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "HuanLinOTO/dsh-plugin-spur",
+  "analyzedAt": "2026-08-17T13:11:30.572Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 包含 @deepseek-ai/cordis 及各 dsh-client 包，README 也给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-spur",
+      "evidence": "从 npm 安装（推荐）：dsh plugin --profile web add @huanlin/dsh-plugin-spur"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 聊天界面增加趣味的小插件：在屏幕右上角挂一条用物理引擎模拟的辫子（皮鞭），你可以用鼠标抓住辫梢甩动，甩得够快就会自动帮你向 AI 助手发送一条“go work!”的消息，催促它继续干活。它还会在发送前保存你正在输入的草稿，发送完再恢复，不打断你的思路。",
+      "level": "ok",
+      "risks": "它会在你的浏览器页面上叠加一个 SVG 图形，并监听鼠标的按下、移动和释放操作；它还会临时修改聊天输入框的内容（改成“go work!”并自动提交，之后恢复）。这些都是本地行为，不会把数据发送到外部服务器，也没有读写本地文件等敏感操作。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个在 DSH 聊天界面里甩辫子（皮鞭）催 AI 干活的有趣插件。",
+    "usage": {
+      "prompt_tokens": 2877,
+      "completion_tokens": 755,
+      "total_tokens": 3632,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 387
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2237
+    }
+  }
+}

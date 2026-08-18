@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-greet",
+  "analyzedAt": "2026-08-16T13:33:04.469Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖官方 @deepseek-ai/schemastery，README 给出 dsh plugin add 安装命令，明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-greet@0.2.0",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-plugin-greet@0.2.0"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的入门插件，装好之后会给 AI 模型提供一个叫 greet 的工具，能根据你提供的名字、语言（中文/英文）和语气（友好/正式）生成问候语，比如“Hello, Ada!”或“您好，小明。”它主要是给插件作者做教学示例，同时也真的能用。",
+      "level": "ok",
+      "risks": "没发现明显风险。README 声明插件没有网络、文件系统、shell 或凭证访问权限，只依赖官方配置校验包。",
+      "postInstallNotes": "装完后建议运行 `npx @deepseek-ai/dsh --profile web --dump-config` 确认 bundle 已加入配置，再启动 Web UI（`npx @deepseek-ai/dsh web`）。",
+      "notes": "无"
+    },
+    "summaryZh": "一个用于 DeepSeek Harness 的教学型示例插件，提供带参数校验和结构化输出的 greet 问候工具。",
+    "usage": {
+      "prompt_tokens": 3192,
+      "completion_tokens": 1317,
+      "total_tokens": 4509,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 956
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2552
+    }
+  }
+}

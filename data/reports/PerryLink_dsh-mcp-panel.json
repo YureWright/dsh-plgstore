@@ -1,0 +1,37 @@
+{
+  "id": "PerryLink/dsh-mcp-panel",
+  "analyzedAt": "2026-08-17T11:46:22.741Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mcp-panel",
+      "evidence": "dsh plugin --profile web add dsh-mcp-panel"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 的 MCP 管理面板。你可以通过 /mcp 命令或设置页面查看和管理 MCP 服务器：查看连接状态、工具数量、最近错误、重连次数，也能添加、编辑、禁用服务器，甚至试调用 MCP 工具。所有的修改操作都会先给你预览，需要你确认后才写入配置文件，并且会自动备份。",
+      "level": "ok",
+      "risks": "它会读写 DSH 的配置文件（cordis.patch.yml），并在你确认后写入修改（有自动备份）；还可能会对配置的 MCP 服务器发起网络探测请求。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后重启 DSH（或热重载）使插件生效，然后可在设置页的 MCP 标签或通过 /mcp 命令使用。",
+      "notes": "兼容 DeepSeek Harness 0.1.0-rc.5 ~ 0.1.0-rc.6，请确认 DSH 版本匹配。"
+    },
+    "summaryZh": "为 DeepSeek Harness 官方 MCP 客户端提供可视化管理面板，支持 /mcp 命令、服务器增删改、状态诊断与工具试用。",
+    "usage": {
+      "prompt_tokens": 4399,
+      "completion_tokens": 3177,
+      "total_tokens": 7576,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2778
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3759
+    }
+  }
+}

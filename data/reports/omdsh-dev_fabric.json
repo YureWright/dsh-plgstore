@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/fabric",
+  "analyzedAt": "2026-08-17T11:23:09.566Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.92,
+      "reason": "package.json 声明了 dsh.bundle，且 README 提供了 dsh plugin add 的 tarball 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/omdsh-dev/fabric/releases/latest/download/pkg.tgz",
+      "evidence": "The bundle installs through DSH's official bundle-plugin channel from the prebuilt release artifact:"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫 fabric，相当于给 DSH 加了一层“织布”增强层。它能让你在 DSH 加载程序时动态修改或转换代码，比如在模块加载时注入一些功能，还能在浏览器端做类似的转换。它拆成了几个小包，但作为一个整体插件安装，安装后需要手动开启相关功能。",
+      "level": "caution",
+      "risks": "安装时会运行一些构建脚本，并且需要允许所有构建脚本（dangerouslyAllowAllBuilds），这意味着安装的依赖包可能执行任意代码；它还会设置环境变量 $DSH_FABRIC_CONFIG，并通过 fabric-dsh 命令在启动时注入加载器钩子，影响模块加载。另外它的依赖是从 GitHub 直接拉的，不是 npm 官方发布，来源需要自己判断一下。",
+      "postInstallNotes": "装完后需要编辑 DSH 的 profile 配置，把默认禁用的 cordis-fabric 和 cordis-fabric-dsh 两个 profile 行启用（或使用 fabric-dsh 命令自动启用）。之后要用 fabric-dsh 命令启动 DSH，用普通的 dsh 启动不会加载 Fabric 层。",
+      "notes": "该插件依赖来自 GitHub 仓库 dsh-external/fabric，并通过 pnpm 的 git 引用安装，不是 npm 官方包；安装过程会执行 prepare 脚本构建 lib/。README 还提到目前需配合特定版本的 deepseek-harness checkout 使用，npm 安装的官方 dsh 可能要等上游合并才能跑起来。"
+    },
+    "summaryZh": "为 DSH 提供代码加载时转换和浏览器转换功能的 Fabric 扩展层，通过 bundle 方式安装，需另行启用 profile 行才生效。",
+    "usage": {
+      "prompt_tokens": 3137,
+      "completion_tokens": 2764,
+      "total_tokens": 5901,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2247
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2497
+    }
+  }
+}

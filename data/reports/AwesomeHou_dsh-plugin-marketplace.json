@@ -1,0 +1,37 @@
+{
+  "id": "AwesomeHou/dsh-plugin-marketplace",
+  "analyzedAt": "2026-08-17T11:17:17.103Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并包含 cordis.patch.yml，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/AwesomeHou/dsh-plugin-marketplace.git",
+      "evidence": "README 安装节：`dsh plugin --profile web add https://github.com/AwesomeHou/dsh-plugin-marketplace`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个“插件市场”插件，给 DSH 加了一个可视化的插件商店。它会把 GitHub 上所有标注为 dsh-plugin 的仓库同步成一个列表，你可以在设置里新增的“插件市场”和“已安装”标签页中搜索、浏览插件，一键安装、更新、停用或卸载插件，还能让 AI 助手直接帮你操作。它也带了一些给 AI 用的工具，比如让 AI 自己搜索和安装插件。",
+      "level": "ok",
+      "risks": "它会读写 DSH 的配置文件和 profile（比如修改 bundles 和 dependencies），会调用 dsh plugin 命令安装/卸载插件，也会向 GitHub、npm registry 发送网络请求。安装其他插件时，会下载并可能执行那些插件的安装脚本，所以装什么插件就带来什么风险（属于正常插件管理的供应链风险）。它从 GitHub 抓取公开数据，不会主动上传你的隐私，但检查更新时会暴露你的 IP 和已安装插件列表。",
+      "postInstallNotes": "安装后需重启 DSH harness 才能生效（README 明确说明）。无需额外配置。",
+      "notes": "无"
+    },
+    "summaryZh": "把 GitHub 上的 dsh-plugin 话题变成可视化插件市场，支持搜索、一键安装、更新、停用和卸载，还能让 AI 帮你装插件。",
+    "usage": {
+      "prompt_tokens": 3580,
+      "completion_tokens": 2808,
+      "total_tokens": 6388,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2360
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2940
+    }
+  }
+}

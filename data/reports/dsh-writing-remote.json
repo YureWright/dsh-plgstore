@@ -1,0 +1,37 @@
+{
+  "id": "dsh-writing-remote",
+  "analyzedAt": "2026-08-18T14:55:18.390Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis 与 dsh-typert-protocol，README 给出 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-writing-remote",
+      "evidence": "dsh plugin --profile web add dsh-writing-remote"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 写作工具的一部分，扮演‘数据通道’的角色。它让浏览器里的写作面板能读到主机上小说工程的信息（比如章节列表、正文、设定、检索结果等），但所有写操作仍然在主机端完成，不会把生成能力暴露给浏览器。简单说就是帮你在网页上安全地查看和触发写作引擎的数据。",
+      "level": "ok",
+      "risks": "它会读取你小说工程目录里的文件（包括 SQLite 数据库和设定文件），但这些只读操作只在你主动安装并使用它时发生。数据不会发送到外部服务器，因为远程协议是本地通信。没有发现明显风险。",
+      "postInstallNotes": "可能需要在环境或配置中设置 $DSH_HOME（默认书库根目录），以及确认已安装依赖 dsh-tool-writing 和 @deepseek-ai/dsh-typert-protocol（通常由插件管理器自动处理）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 写作三件套的 host 侧数据通道，把写作引擎的只读数据暴露给浏览器面板。",
+    "usage": {
+      "prompt_tokens": 2138,
+      "completion_tokens": 615,
+      "total_tokens": 2753,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 236
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1498
+    }
+  }
+}

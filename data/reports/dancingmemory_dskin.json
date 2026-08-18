@@ -1,0 +1,37 @@
+{
+  "id": "dancingmemory/dskin",
+  "analyzedAt": "2026-08-17T11:15:01.237Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，开发依赖 @deepseek-ai/cordis，README 提供了明确的 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/dancingmemory/dskin.git",
+      "evidence": "dsh plugin --profile web add github:dancingmemory/dskin"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）Web 界面用的皮肤插件，会在页面底部显示 1~4 只像素小猫。小猫会自己散步、玩耍、互动，你也可以抓住它们拖来拖去、点击、摸它们冒爱心，还能通过右下角的面板调整小猫数量和切换品种。它不改变 DSH 原有的界面布局，卸载后完全还原。",
+      "level": "ok",
+      "risks": "未发现明显风险。插件只运行在本地 DSH 页面内，会读写页面的 localStorage（保存猫咪设置），每 6 小时向 GitHub 发起一次只读版本检查；不修改浏览器设置、不注入外部脚本、不收集数据。",
+      "postInstallNotes": "安装后需重启 dsh web 服务使插件生效；若使用 pnpm≥10 且构建脚本被阻止，需在 ~/.dsh/profiles/web/pnpm-workspace.yaml 中添加 allowBuilds: dskin: true 后重装。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH Web 界面添加可爱像素小猫的皮肤插件，支持拖拽、摸猫、换装，纯前端零侵入。",
+    "usage": {
+      "prompt_tokens": 3533,
+      "completion_tokens": 1457,
+      "total_tokens": 4990,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1063
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2893
+    }
+  }
+}

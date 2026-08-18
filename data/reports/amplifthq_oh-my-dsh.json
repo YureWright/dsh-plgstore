@@ -1,0 +1,37 @@
+{
+  "id": "amplifthq/oh-my-dsh",
+  "analyzedAt": "2026-08-17T13:09:19.423Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 依赖大量 @deepseek-ai/dsh-* 核心包并声明 dsh.bundle，是 DSH 的 Cordis 插件发行版"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "oh-my-dsh",
+      "evidence": "npm install --global oh-my-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 DeepSeek Harness 变成一套开箱即用的编码环境，预置了常用配置、代码智能、MCP 控制、插件管理等功能，适合不想自己折腾配置的开发者。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下创建 ~/.dsh/profiles 等配置文件；会读取项目里的 AGENTS.md、CLAUDE.md、.cursorrules 等提示文件和 Claude/Cursor/Codex 的 MCP 配置，但只有你明确信任项目并批准后才会真正启用，不会偷偷连接外部。另外 web fetch 默认开启但有 SSRF 防护。",
+      "postInstallNotes": "安装后需要运行 omd setup 完成初始化，进入项目后如要使用项目级配置可运行 omd trust add .。",
+      "notes": "无"
+    },
+    "summaryZh": "一个让 DeepSeek Harness 开箱即用的插件集合，提供预置配置、代码智能、MCP 管理和插件锻造等功能。",
+    "usage": {
+      "prompt_tokens": 4233,
+      "completion_tokens": 1213,
+      "total_tokens": 5446,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 873
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3593
+    }
+  }
+}

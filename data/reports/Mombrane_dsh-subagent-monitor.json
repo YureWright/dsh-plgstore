@@ -1,0 +1,37 @@
+{
+  "id": "Mombrane/dsh-subagent-monitor",
+  "analyzedAt": "2026-08-17T11:30:20.701Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client 和 dsh.bundle 字段，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@leetoners/dsh-ui-subagent-monitor",
+      "evidence": "dsh plugin --profile <your-profile> add @leetoners/dsh-ui-subagent-monitor"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页界面加一个侧边栏入口和一个悬浮面板，能实时看到当前会话派生的所有子代理的运行状态，比如正在跑、成功、失败、被中断等，还能点开某个子代理的对话。相当于给 AI 干活的过程加了个监控小窗口。",
+      "level": "ok",
+      "risks": "它会在网页界面显示子代理的运行信息，这些信息通过本机回环地址的接口获取，没有鉴权，只建议在本地或内网使用。如果其他程序或同一网络的人能访问这个接口，可能会看到你子代理的名称、状态等。",
+      "postInstallNotes": "安装后重启 dsh web 即可生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页端子代理实时运行监控面板，侧栏入口 + 悬浮卡片展示每个子代理的状态和耗时。",
+    "usage": {
+      "prompt_tokens": 3042,
+      "completion_tokens": 750,
+      "total_tokens": 3792,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 398
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2402
+    }
+  }
+}

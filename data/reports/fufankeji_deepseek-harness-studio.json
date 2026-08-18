@@ -1,0 +1,37 @@
+{
+  "id": "fufankeji/deepseek-harness-studio",
+  "analyzedAt": "2026-08-16T11:52:29.207Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.95,
+      "reason": "这是一个基于 Electron 的桌面应用（DeepSeek Harness Studio），并非可安装的 DSH 插件，也没有提供 dsh plugin add 安装方式。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一款给 DeepSeek Harness 用的桌面小助手，不用敲命令行就能浏览、安装和管理各种 DSH 插件。它自带一个『插件商店』，能自动推荐热门插件，支持一键安装、启用、停用和卸载。另外还额外提供了视觉增强（让 DeepSeek 看懂图片）、换皮肤、中文权限控制等功能。",
+      "level": "ok",
+      "risks": "它会安装到你的电脑上，运行本地服务，并能读取你指定的工作区文件和图片（比如你主动让它看图）。它还会连接在线插件商店来获取插件列表。视觉增强的 API 密钥只保存在本机受保护文件里。没发现明显的恶意行为，属于正常桌面软件风险。",
+      "postInstallNotes": "如果你下载的是 macOS 预览版，首次打开前需要在终端执行 xattr -dr com.apple.quarantine 命令；Windows 版直接运行安装程序。使用视觉增强时需要配置百炼 API Key；模型和 API Key 在设置页里管理。",
+      "notes": "这个仓库是一个完整的桌面应用，不是可安装的 DSH 插件，所以不能通过 dsh plugin add 安装。目前是预览版（rc 阶段），建议等正式版或留意版本更新。"
+    },
+    "summaryZh": "DeepSeek Harness Studio 是一款桌面端增强工具，提供可视化插件商店、一键安装管理插件、视觉增强和换肤等功能，本身不是 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 5769,
+      "completion_tokens": 1117,
+      "total_tokens": 6886,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 692
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5129
+    }
+  }
+}

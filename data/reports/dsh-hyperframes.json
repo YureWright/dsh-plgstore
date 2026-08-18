@@ -1,0 +1,37 @@
+{
+  "id": "dsh-hyperframes",
+  "analyzedAt": "2026-08-16T13:31:45.857Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 给出 dsh plugin add 安装命令，且描述明确为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-hyperframes",
+      "evidence": "dsh plugin --profile web add dsh-hyperframes"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 用的视频创作工具包。装上之后，你可以在 DSH 里直接说一句话或给个网址，它就能帮你做出视频来。它自带五个技能：用 HTML 合成视频、命令行视频工具、组件注册、网址转视频、以及 GSAP 动画参考。比如你说“把这个网址做成视频”，它就会按步骤把网页抓下来、配上动画和配音，最后生成一个视频。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是在 DSH 里注册几个技能文件，不会动你的系统文件。不过要用命令行功能的话，需要本机装好 FFmpeg。",
+      "postInstallNotes": "重启 DSH 后即可使用。另外确保 Node.js ≥ 22 和 FFmpeg 已安装（npx hyperframes 需要）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 视频创作技能插件：一条命令注册 HyperFrames 五件套，用 HTML 或网址生成视频。",
+    "usage": {
+      "prompt_tokens": 2233,
+      "completion_tokens": 1515,
+      "total_tokens": 3748,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1169
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1593
+    }
+  }
+}

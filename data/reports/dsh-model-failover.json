@@ -1,0 +1,37 @@
+{
+  "id": "dsh-model-failover",
+  "analyzedAt": "2026-08-16T13:41:52.896Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和多个 @deepseek-ai/* 核心依赖，README 给出 dsh plugin 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-model-failover",
+      "evidence": "dsh plugin --profile web add dsh-model-failover"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的“保险丝”。如果某个模型或服务提供商连续出故障，它会自动把请求切换到备用模型，避免对话中断。它还会在冷却后用一次小测试来检查故障是否恢复，恢复了就自动切回来，此外还会在界面上提示你切换情况。",
+      "level": "ok",
+      "risks": "它会读取你的模型配置文件来了解当前模型配置，并可能修改请求路由；为了测试故障恢复，它会向模型发送很小的真实请求（探针），这会消耗极少量 token。它不碰聊天记录或隐私文件，状态保存在本地内存，插件重启后会重置。",
+      "postInstallNotes": "必须在配置里设置 fallbacks（备用模型列表），这是唯一必填项；其他阈值有默认值。安装后插件会自动附带一个配置技能，也可以手动复制到 ~/.dsh/skills/ 下。",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 设计的双层模型熔断与故障转移插件，模型或服务商连续失败时自动切换备用模型并支持恢复探测。",
+    "usage": {
+      "prompt_tokens": 2976,
+      "completion_tokens": 1311,
+      "total_tokens": 4287,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 937
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2336
+    }
+  }
+}

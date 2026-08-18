@@ -1,0 +1,37 @@
+{
+  "id": "DGPisces/dsh-openai-oauth",
+  "analyzedAt": "2026-08-17T11:46:48.290Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-openai-oauth",
+      "evidence": "Run one command: npx -y dsh-openai-oauth install"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你用自己的 ChatGPT 账号里的 GPT 模型作为 DeepSeek Harness 的主模型，不需要 OpenAI API key。它通过官方的本地 Codex 应用服务器处理登录、凭证存储和 token 刷新，安装后你在 Harness 设置里登录 ChatGPT 就能选模型了。",
+      "level": "ok",
+      "risks": "它会要求你授权登录 ChatGPT，并把登录凭证存储在本地 ~/.deepseek-harness/codex 目录里。在共享电脑上注意别人可能看到你的登录状态。它不会上传你的文件，但会连接 OpenAI 的 Codex 服务器获取模型列表。",
+      "postInstallNotes": "安装后启动 Harness web 界面，在设置中的 OpenAI OAuth 里选择 Sign in with ChatGPT 完成授权；如果使用 headless 模式，则运行 npx @deepseek-ai/dsh plugin --profile headless exec dsh-codex-login 登录。",
+      "notes": "无"
+    },
+    "summaryZh": "用 ChatGPT 账号的 GPT 模型作为 DeepSeek Harness 的默认模型，无需 OpenAI API key。",
+    "usage": {
+      "prompt_tokens": 2341,
+      "completion_tokens": 1988,
+      "total_tokens": 4329,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1622
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1701
+    }
+  }
+}

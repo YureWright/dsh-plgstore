@@ -1,0 +1,37 @@
+{
+  "id": "huguangyu666/dsh-plugin-notify",
+  "analyzedAt": "2026-08-17T12:07:58.831Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 依赖 @deepseek-ai/dsh，且 README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-notify",
+      "evidence": "dsh plugin --profile web add dsh-plugin-notify"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件，让 AI 助手能主动通过桌面通知、中文语音播报和提示音来联系你，比如长任务完成、出错或需要你回来时。支持用命令 /notify 手动发通知，也可以在设置页调整通知方式。适用于 Windows 电脑，不需要额外安装依赖。",
+      "level": "ok",
+      "risks": "它会在本地运行 PowerShell 和 Python 脚本来发送通知、播放音效，并可能临时调整系统音量（如果开启音量增强）。通知内容会显示在桌面上，周围人可能看到。配置文件保存在 ~/.dsh/notify/ 下，不涉及上传数据到外部服务器。",
+      "postInstallNotes": "需重启 dsh 生效（运行 dsh web）；可在浏览器 /notify 页面或 ~/.dsh/notify/config.json 调整通知偏好；确认系统是 Windows 且带 PowerShell 5.1+。",
+      "notes": "README 中关于“音量增强”默认开启/关闭的描述前后不一致；该插件已确认为真正的 DSH 插件，无其他特殊提醒。"
+    },
+    "summaryZh": "让 AI 助手通过桌面通知、中文语音和提示音主动联系你的 Windows 本地通知插件。",
+    "usage": {
+      "prompt_tokens": 3224,
+      "completion_tokens": 3196,
+      "total_tokens": 6420,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2797
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2584
+    }
+  }
+}

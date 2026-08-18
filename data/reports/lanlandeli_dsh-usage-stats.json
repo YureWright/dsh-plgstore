@@ -1,0 +1,37 @@
+{
+  "id": "lanlandeli/dsh-usage-stats",
+  "analyzedAt": "2026-08-17T11:44:36.541Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-usage-stats",
+      "evidence": "dsh plugin --profile web add dsh-usage-stats"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是用来统计 DeepSeek Harness 使用情况的，比如 token 用了多少、每天的使用趋势、活跃日期、用了哪些模型等，还能按工作区/任务筛选和导出 CSV/JSON 数据。它会装到 Harness 网页版的侧边栏里，加一个“使用统计”的入口。",
+      "level": "ok",
+      "risks": "它会读取本机 Harness 的历史会话数据（会话标识、时间、工作目录、模型名和 token 数量），在本地生成统计缓存。插件明确说不保存提示词正文、回复正文、工具参数和 API 密钥，数据也不会上传到外部服务器。但如果别人能访问你的电脑或 Harness 界面，可能会看到这些用量统计。",
+      "postInstallNotes": "安装后需要重启 Web Profile 才会在侧边栏出现“使用统计”入口。可选配置：可以在 config 中调整 indexConcurrency、cacheWriteDelayMs、cachePath 和 apiPath，默认即可用。注意目前仅在 Harness 0.1.0-rc.6 和 Node 22.19+/24+ 上测试过，其他版本可能不兼容。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 的使用统计插件，展示 Token 用量、每日趋势、活跃热力图和模型分布，支持按范围筛选和数据导出。",
+    "usage": {
+      "prompt_tokens": 3460,
+      "completion_tokens": 2146,
+      "total_tokens": 5606,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1714
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2820
+    }
+  }
+}

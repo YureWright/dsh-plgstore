@@ -1,0 +1,37 @@
+{
+  "id": "Axiaohungry/dsh-llm-codebuddy",
+  "analyzedAt": "2026-08-17T11:33:22.812Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明 dsh.bundle 并依赖 @deepseek-ai/dsh-* 核心包，且 README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-llm-codebuddy@latest",
+      "evidence": "dsh plugin --profile web add dsh-llm-codebuddy@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness（DSH）加了一个“CodeBuddy 中国区”的模型提供商。装好以后，你可以在 DSH 的网页界面设置里直接填上从 WorkBuddy 拿到的 API Key，插件会自动获取 CodeBuddy 当前可用的模型，你就能用 CodeBuddy 的大模型来对话、写代码，还能自己调整模型参数、添加/删除模型。卸载时它会备份 DSH 设置，而且保留 API Key 凭据，方便以后重装。",
+      "level": "ok",
+      "risks": "它会修改 DSH 的配置文件（~/.dsh/settings.yaml）来保存 CodeBuddy 的 Provider 设置，卸载时会做备份；它会把你的 API Key 和对话请求发送到 CodeBuddy/WorkBuddy 的云端服务器，因为这是使用它的必要条件。除此之外没发现明显风险。",
+      "postInstallNotes": "重启 DSH；然后在“设置 → 模型”里添加 CodeBuddy 中国区，填入从 WorkBuddy 获取的 API Key，再点击“获取可用模型”，按需调整模型参数后保存。",
+      "notes": "本项目是第三方适配器，并非 WorkBuddy、CodeBuddy 或 DSH 官方插件；DSH 仍处于预发布阶段，未来接口变化可能需要插件同步升级。"
+    },
+    "summaryZh": "为 DSH 接入 CodeBuddy 中国区模型，可在 WebUI 直接使用 WorkBuddy API Key 并管理模型。",
+    "usage": {
+      "prompt_tokens": 2945,
+      "completion_tokens": 3650,
+      "total_tokens": 6595,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3184
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2305
+    }
+  }
+}

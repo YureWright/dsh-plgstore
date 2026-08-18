@@ -1,0 +1,37 @@
+{
+  "id": "xmanrui/dsh-feishu",
+  "analyzedAt": "2026-08-17T11:48:14.888Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，且 README 描述其作为 Harness 插件运行在 dsh web Host 进程内"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/xmanrui/dsh-feishu.git",
+      "evidence": "从 GitHub 一条命令安装：`npx -y github:xmanrui/dsh-feishu install`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把一个或多个飞书机器人接到 DeepSeek Harness 上。装好后你在 Harness 设置页面用飞书扫码，就能创建机器人，之后就能在飞书里跟你的智能助手聊天了。它支持多个机器人同时在线、互不影响，消息回复用飞书卡片流式呈现，体验比较顺手。密钥只存在服务端，不会进浏览器。",
+      "level": "caution",
+      "risks": "它会连接飞书（外部服务器），需要你用飞书扫码授权，相当于让插件创建并控制一个飞书机器人；你发给机器人的消息会经过 DeepSeek Harness 处理，因此这些内容会被智能体看到。配置和会话数据会存在你电脑的 $DSH_HOME 目录下。由于项目已声明不再维护，可能存在未修补的安全问题，需要留个心眼。",
+      "postInstallNotes": "安装后重启 `dsh web`，打开「设置 → 插件 → 飞书」，点击「添加机器人」并用飞书扫码。无需手动配置环境变量。",
+      "notes": "项目已在 README 开头声明『本项目不维护了』，作者推荐使用 dsh-im 作为替代；安装命令是自定义 npx 脚本，不是标准的 dsh plugin add 命令。"
+    },
+    "summaryZh": "把飞书机器人接入 DeepSeek Harness 的插件，支持扫码添加多机器人和流式聊天，但项目已停止维护，作者推荐改用 dsh-im。",
+    "usage": {
+      "prompt_tokens": 3048,
+      "completion_tokens": 4432,
+      "total_tokens": 7480,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3964
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2408
+    }
+  }
+}

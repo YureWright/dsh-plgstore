@@ -1,0 +1,29 @@
+{
+  "id": "juhe291/dsh-token-panel",
+  "analyzedAt": "2026-08-17T11:38:06.177Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 配置，peerDependencies 依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 也给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-token-panel@0.4.7",
+      "evidence": "dsh plugin --profile web add dsh-token-panel@0.4.7"
+    },
+    "evaluationReport": {
+      "intro": "这是一个装在 DeepSeek Harness 里的仪表盘插件。它会在浏览器界面右下角显示一个半透明的胶囊按钮，点击后展开成实时和统计两个视图：实时视图能看到当前对话的 token 用量、消耗速度、预估花费和实时曲线；统计视图能查看按天/按月的历史用量、设置月度预算和余额，还能拖拽面板到任意位置。所有历史数据都保存在你本地电脑上，重启不丢。",
+      "level": "ok",
+      "risks": "它会在你电脑上的 ~/.dsh/cache/dsh-token-panel/ 目录里写一些日志文件（记录每次的 token 增量）和状态文件，这些数据不会上传到外部网络。它还会读取你 DSH 会话的标题和 token 用量来显示在面板上，属于正常功能。没发现它碰隐私文件或连外部服务器。",
+      "postInstallNotes": "安装后需要重启 profile 并刷新浏览器，右下角就会出现胶囊。如果你是从 GitHub 或本地源码安装，需要 Node.js ≥ 22.5，并且可能需要允许执行构建脚本；从 npm 安装则无需额外操作。可选地，你可以编辑 profile 的 cordis.patch.yml 来自定义价格表、月度预算等。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供右下角常驻的 Token 消耗 HUD，实时显示上下文压力、估算费用、历史统计与预算管理。",
+    "usage": {
+      "prompt_tokens": 12069,
+      "completion_tokens": 2644,
+      "total_tokens": 14713
+    }
+  }
+}

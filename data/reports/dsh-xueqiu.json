@@ -1,0 +1,37 @@
+{
+  "id": "dsh-xueqiu",
+  "analyzedAt": "2026-08-18T14:54:36.650Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-client-connection，README 给出 dsh plugin 安装命令，代码显然调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-xueqiu",
+      "evidence": "dsh plugin --profile web add dsh-xueqiu"
+    },
+    "evaluationReport": {
+      "intro": "这是一个雪球行情面板插件。装到 DeepSeek Harness 后，会在对话输入框上方显示一个行情面板，不用登录雪球就能看 A股、港股、美股的实时价格、K线图、分时图、热榜、快讯等。右下角还有一个可以拖动的迷你徽章，常驻显示大盘指数涨跌，点击可以展开或收起面板。",
+      "level": "ok",
+      "risks": "插件会向雪球网站发送网络请求，获取行情数据时可能带上你的 IP 和浏览器标识；自选股列表会保存在本地浏览器里。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后重启一次 dsh web，然后刷新页面即可看到面板。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 雪球行情面板：免登录查看A股/港股/美股实时行情、K线、分时、热榜与快讯。",
+    "usage": {
+      "prompt_tokens": 2919,
+      "completion_tokens": 1560,
+      "total_tokens": 4479,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1208
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2279
+    }
+  }
+}

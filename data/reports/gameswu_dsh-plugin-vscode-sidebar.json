@@ -1,0 +1,37 @@
+{
+  "id": "gameswu/dsh-plugin-vscode-sidebar",
+  "analyzedAt": "2026-08-17T11:48:15.438Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/gameswu/dsh-plugin-vscode-sidebar.git",
+      "evidence": "dsh plugin --profile web add github:gameswu/dsh-plugin-vscode-sidebar#<sha>"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH（DeepSeek Harness）的网页界面增加一个 VSCode 风格的右侧栏和底部面板，里面有文件浏览器（新建/重命名/删除文件）、代码编辑器（支持各种语言高亮）、Markdown 预览、Git 管理（查看改动、提交、切换分支、历史轨迹）、真实终端、内嵌浏览器和任务管理。所有设置接入 DSH 配置页，修改后即时生效。",
+      "level": "caution",
+      "risks": "安装时会在你的电脑上运行构建脚本（prepare），从 GitHub 安装时 pnpm 会执行；终端功能通过 node-pty 启动真实 shell，可以在你电脑上执行命令；Git 功能会读取本地仓库状态。这些都需要你授权，请确认来源可信。",
+      "postInstallNotes": "安装后需在 profile 的 pnpm-workspace.yaml 中把 dsh-plugin-vscode-sidebar、node-pty、protobufjs 加入 allowBuilds 以允许构建脚本执行，然后重启 dsh web 界面。建议安装时锁定 commit。",
+      "notes": "依赖的 @deepseek-ai 核心包多为 -rc 预览版，可能尚未正式发布；安装时需执行构建脚本，请确保来源可信。"
+    },
+    "summaryZh": "为 DSH Web 界面提供 VSCode 风格的侧边栏（文件浏览器、编辑器、Git、终端等）的插件。",
+    "usage": {
+      "prompt_tokens": 3523,
+      "completion_tokens": 3462,
+      "total_tokens": 6985,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2989
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2883
+    }
+  }
+}

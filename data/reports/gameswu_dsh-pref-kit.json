@@ -1,0 +1,37 @@
+{
+  "id": "gameswu/dsh-pref-kit",
+  "analyzedAt": "2026-08-17T11:56:49.241Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，并依赖 @deepseek-ai/cordis 等核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "dsh plugin --profile web add \"file:$(pwd)\""
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 性能优化插件，能把模型输出过程中产生的零碎文字片段先攒一攒再一次性写入日志，减少界面卡顿，还能在设置里关掉一些用不到的功能，让聊天界面更流畅。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是优化数据流和界面渲染，不会碰你的私人文件或上传数据。",
+      "postInstallNotes": "需要先自己构建：cd dsh-pref-kit && npm run build，然后运行 dsh plugin --profile web add \"file:$(pwd)\"，最后重启 DSH。",
+      "notes": "无"
+    },
+    "summaryZh": "一个通过合并流式输出、降低事件量来提升 DSH 性能的插件，带设置卡片和一些实验性界面优化。",
+    "usage": {
+      "prompt_tokens": 2326,
+      "completion_tokens": 1225,
+      "total_tokens": 3551,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 923
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1686
+    }
+  }
+}

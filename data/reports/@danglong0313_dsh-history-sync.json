@@ -1,0 +1,37 @@
+{
+  "id": "@danglong0313/dsh-history-sync",
+  "analyzedAt": "2026-08-16T13:46:44.286Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle/client 且依赖 @deepseek-ai/cordis 等核心包，README 也给出 dsh plugin 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@danglong0313/dsh-history-sync",
+      "evidence": "dsh plugin --profile web add @danglong0313/dsh-history-sync"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把你电脑上用 Codex 和 Claude Code 写过的聊天/任务历史，以只读的方式导入到 DeepSeek Harness（DSH）里，方便你集中查看和管理。默认只是预览，不会自动同步，只扫描最近30天的内容。你可以在 DSH 的设置里配置同步哪些来源、多久同步一次等。",
+      "level": "ok",
+      "risks": "它会读取你本机 Codex 和 Claude Code 的历史记录，并把副本存到 DSH 的数据目录里，等于你的历史多了一份拷贝。如果这些历史里含有源码、密钥、命令输出等敏感信息，需要对 DSH 的存储做好保护。它不会修改或写回原始历史。",
+      "postInstallNotes": "安装后先重启 DSH，然后在 设置→插件→History Sync 里配置来源和同步方式；建议先执行 /history-sync preview 预览，再开启“允许实际导入”和“自动同步”。",
+      "notes": "DSH 仍处于预发布阶段（0.1.0-rc.6），升级 DSH 后建议先在隔离 profile 中重新验证。"
+    },
+    "summaryZh": "把本机 Codex 与 Claude Code 的历史任务以只读、单向镜像的方式导入 DeepSeek Harness，便于统一查看与管理。",
+    "usage": {
+      "prompt_tokens": 4956,
+      "completion_tokens": 1631,
+      "total_tokens": 6587,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1207
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4316
+    }
+  }
+}

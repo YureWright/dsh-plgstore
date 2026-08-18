@@ -1,0 +1,37 @@
+{
+  "id": "titanwings/dsh-plannotator",
+  "analyzedAt": "2026-08-17T11:44:56.343Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/dsh-client-*，README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:titanwings/dsh-plannotator#v0.1.3",
+      "evidence": "dsh plugin --profile web add github:titanwings/dsh-plannotator#v0.1.3"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让您在 DeepSeek Harness 的计划审查环节，不只是点“批准”或“拒绝”，而是可以直接选中计划里的具体文字，加一条条批注，最后一起发给编码智能体，让它按意见修改。审查面板会出现在聊天旁边，不挡对话，还能折叠起来；未发送的批注会保存在浏览器本地，不怕丢。",
+      "level": "ok",
+      "risks": "它只在前端浏览器里运行，会使用浏览器本地存储（localStorage）保存未发送的批注草稿；如果是公共电脑，同浏览器的其他人可能看到草稿内容。没发现它碰文件系统、连外网或执行安装脚本等风险。",
+      "postInstallNotes": "装完后需要重启 dsh web（README 明确要求）。",
+      "notes": "这是非官方的 Plannotator 集成（README 写明 'unofficial integration'），但代码结构和依赖表明它是正规的 DSH 插件。"
+    },
+    "summaryZh": "把计划审查从简单的批准/拒绝变成“选中文字→写批注→统一反馈”的 DSH 插件，让编码代理拿到精确修改意见。",
+    "usage": {
+      "prompt_tokens": 3505,
+      "completion_tokens": 3031,
+      "total_tokens": 6536,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2632
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2865
+    }
+  }
+}

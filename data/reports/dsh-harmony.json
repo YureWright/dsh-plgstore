@@ -1,0 +1,37 @@
+{
+  "id": "dsh-harmony",
+  "analyzedAt": "2026-08-16T13:28:18.588Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并以 @deepseek-ai/dsh 为 peer 依赖，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-harmony",
+      "evidence": "dsh plugin --profile web add dsh-harmony"
+    },
+    "evaluationReport": {
+      "intro": "dsh-harmony 是一个为 DeepSeek Harness 设计的运行时补丁工具。你可以把它想象成一个'插件修改器'：它允许你在不修改原始插件文件的情况下，在插件运行时改变其行为，比如替换某个函数、在函数执行前后插入额外逻辑，或者调整界面显示内容。它主要用于开发者或高级用户去定制现有的 DSH 插件。",
+      "level": "caution",
+      "risks": "安装时会执行 postinstall 脚本，并替换全局的 dsh 命令入口（安装一个小型 shim），这可能会影响你系统中其他 dsh 相关命令的行为。另外，它会在运行时对目标插件进行补丁，如果补丁写得不好，可能导致目标插件运行异常或崩溃。它不会永久修改磁盘上的插件文件，卸载后应该能恢复。",
+      "postInstallNotes": "安装后重启 dsh web（或按提示选择'安装并重启'）即可生效。如果 Harmony 与内置 DSH 不在同一 Node 依赖树，需要设置环境变量 DSH_HARMONY_DSH_ENTRY 指向内置 dsh 的 lib/bin.js。",
+      "notes": "注意：该插件有 postinstall 脚本会修改全局 dsh 命令，如果你不希望系统被改动，请谨慎安装。另外，它要求 Node.js 版本为 ^22.22.3 或 >=24.11.1，请确认你的环境满足要求。"
+    },
+    "summaryZh": "一个在运行时修补、替换和装饰 DeepSeek Harness 插件的库，让你无需修改源文件即可改变插件行为。",
+    "usage": {
+      "prompt_tokens": 5325,
+      "completion_tokens": 4054,
+      "total_tokens": 9379,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3585
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4685
+    }
+  }
+}

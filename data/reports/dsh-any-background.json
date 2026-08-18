@@ -1,0 +1,37 @@
+{
+  "id": "dsh-any-background",
+  "analyzedAt": "2026-08-16T13:23:57.541Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和多个 @deepseek-ai/dsh-* 核心包，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-any-background",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你自己打扮 DeepSeek Harness 的网页界面：用色轮选一个主题色，换一张背景壁纸，还能分别调整壁纸、主界面和设置面板的透明度，以及给壁纸加模糊效果。所有设置都会存到电脑上的 ~/.dsh/.dsh-any-background-data/ 文件夹里，下次打开还在。",
+      "level": "ok",
+      "risks": "它会在你电脑的 ~/.dsh/ 下创建一个文件夹，把主题配置和你选的壁纸图片存在里面，只有你自己能看到。除此之外没有发现碰其他文件或联网的行为。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个给 DeepSeek Harness Web UI 换肤和换壁纸的外观插件，支持自定义主题色、背景壁纸、透明度与模糊调节。",
+    "usage": {
+      "prompt_tokens": 4093,
+      "completion_tokens": 1188,
+      "total_tokens": 5281,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 867
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3453
+    }
+  }
+}

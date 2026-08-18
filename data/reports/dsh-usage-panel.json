@@ -1,0 +1,37 @@
+{
+  "id": "dsh-usage-panel",
+  "analyzedAt": "2026-08-16T13:37:04.961Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-usage-panel",
+      "evidence": "dsh plugin --profile web add dsh-usage-panel"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页设置里加了一个“消耗统计”页面，能看总共用了多少输入/输出 token、会话数、最常用的模型，还有最近半年的活跃热力图、按日的模型用量柱状图和模型占比环形图。它只读取已有的会话日志来计算，不会修改或写回任何数据。",
+      "level": "ok",
+      "risks": "会读取 DeepSeek Harness 保存的会话日志文件（本地数据），用来做统计。所有计算都在你自己的电脑上完成，不会上传到任何外部服务器。没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh --profile web，然后打开设置页的“消耗统计”页面即可看到数据。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Token 用量统计面板，在设置页展示 KPI、活跃热力图和模型分布图表。",
+    "usage": {
+      "prompt_tokens": 2548,
+      "completion_tokens": 1051,
+      "total_tokens": 3599,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 719
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1908
+    }
+  }
+}

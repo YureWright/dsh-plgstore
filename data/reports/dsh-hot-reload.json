@@ -1,0 +1,37 @@
+{
+  "id": "dsh-hot-reload",
+  "analyzedAt": "2026-08-16T13:33:54.889Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出 dsh plugin add 安装命令，且代码明显调用了 DSH 内部接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-hot-reload",
+      "evidence": "dsh plugin --profile web add dsh-hot-reload"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 dsh 插件升级后不用重启 dsh 就立即生效。它会盯着 dsh 的依赖锁文件，发现某个插件版本变了，就自动把正在运行的旧插件换成新的；如果新插件加载失败，它会恢复旧插件，保证系统不挂。",
+      "level": "ok",
+      "risks": "没有发现明显风险。它只读取和修改 dsh 自己管理的配置与插件，不碰个人文件，也不上传数据。唯一需要留意的是，热重载对某些用了特殊资源的插件（比如自己开的定时器或网络服务）可能留点小尾巴，但插件本身不会乱动你的电脑。",
+      "postInstallNotes": "装完后需要重启一次 dsh 才能生效；之后就可以用 dsh plugin add 升级插件并自动热重载。可选配置 debounce 和 profileDir。",
+      "notes": "依赖 dsh 内部 API，未来 dsh 更新可能要求插件同步更新。"
+    },
+    "summaryZh": "让 dsh 插件升级后无需重启即可热加载，失败自动回滚的插件。",
+    "usage": {
+      "prompt_tokens": 3651,
+      "completion_tokens": 2128,
+      "total_tokens": 5779,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1764
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3011
+    }
+  }
+}

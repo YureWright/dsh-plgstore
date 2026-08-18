@@ -1,0 +1,37 @@
+{
+  "id": "dsh-lsp-actions",
+  "analyzedAt": "2026-08-16T13:27:55.730Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，且 README 给出 dsh plugin add 安装命令，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-lsp-actions",
+      "evidence": "dsh plugin --profile <name> add dsh-lsp-actions"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 装上了“代码智能”的翅膀。它通过语言服务器（就是 IDE 底下用的那套分析工具）给你的 AI 助手提供诊断报错、自动格式化、代码补全、快速修复、找符号、看函数签名、显示类型提示、重命名变量等功能。简单说，让 AI 在写代码时能像用 IDE 一样，看得懂代码、改得对代码，效果和你自己在 VS Code 里写代码差不多。它还自带一个 IDE 集成后端，能用 JSON-RPC 协议让编辑器（目前有 VS Code 示例）直接调用这些能力。",
+      "level": "ok",
+      "risks": "它会在本机启动你配置的语言服务器（比如 typescript-language-server），这些进程会读取你项目里的源代码文件来提供分析。格式化或重命名时，它会修改你的文件——不过这些修改会走 DSH 的权限审批流程，不是偷偷改的。它声明不会联网（network:none），所以你的代码不会发到外部。风险主要来自你配置的语言服务器本身，如果你选择了不可信的服务器，可能读取文件内容，但这是所有 LSP 工具的通病，不是这个插件独有的问题。",
+      "postInstallNotes": "装完需要在你的 profile 的 cordis.patch.yml 里配置 servers，给每种语言指定命令和参数，比如 TypeScript 可以写 command: typescript-language-server, args: [--stdio]。不配置的话，相关工具会报错 LSP_ACTION_UNAVAILABLE。另外，IDE 集成后端默认是关的，如果要用，需要把 editor.enabled 设为 true，并在专门的后端组合里跑。",
+      "notes": "该插件要求 Node.js ≥22.19 或 ≥24，并依赖 DSH 0.1.0-rc.6 系列的核心包（见 peerDependencies），安装时请确保你的 DSH 版本兼容。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供语言服务器全套操作（诊断、格式化、补全、重命名等），并可作为 IDE 集成后端。",
+    "usage": {
+      "prompt_tokens": 4387,
+      "completion_tokens": 2032,
+      "total_tokens": 6419,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1433
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3747
+    }
+  }
+}

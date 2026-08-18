@@ -1,0 +1,37 @@
+{
+  "id": "Zzzzkd/dsh-prompt-rail",
+  "analyzedAt": "2026-08-17T13:20:26.258Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis、@deepseek-ai/dsh-client-runtime 等 DSH 核心包，README 给出了安装指引，属于合法的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Zzzzkd/dsh-prompt-rail.git",
+      "evidence": "Clone or copy this repository into the Harness root `plugins` directory"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页聊天界面加了一条竖着的“提示跳转条”。你发过的每条消息会变成一个小的刻度标记，鼠标滑过去能看到那一条的预览，点一下就能直接跳回那句话。在有超长对话时找自己之前说过的内容会方便很多。",
+      "level": "ok",
+      "risks": "它会在你的 DeepSeek Harness 安装目录里写入插件文件，安装脚本可能改动网页对话界面相关的配置；代码公开在 GitHub，目前没发现偷偷上传数据或碰隐私文件的行为。",
+      "postInstallNotes": "装完后要保留 plugins/dsh-prompt-rail 目录，并重新启动 DSH 的 web 服务（比如运行 pnpm dsh web）才能看到效果；Windows 下也可运行 install-and-restart.bat。首次安装会应用一个针对特定 Harness 版本的补丁，请确认你的 Harness 版本与之兼容。",
+      "notes": "安装方式比较特殊，不是标准的 dsh plugin add，而是手动克隆到 plugins 目录后运行脚本。另外，项目 0.1.0 版本比较早期，建议盯一下后续更新；lib/ 目录是预构建产物，源码改动后需要自己构建。"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页对话视图增加一条垂直提示快速跳转栏，悬停、点击即可在长对话中定位自己发过的提示。",
+    "usage": {
+      "prompt_tokens": 2288,
+      "completion_tokens": 3409,
+      "total_tokens": 5697,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2937
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1648
+    }
+  }
+}

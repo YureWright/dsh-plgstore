@@ -1,0 +1,37 @@
+{
+  "id": "dsh-doublecheck",
+  "analyzedAt": "2026-08-16T13:27:36.824Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle（cordis.patch.yml），依赖 @deepseek-ai/cordis 与多个 @deepseek-ai/dsh-* 核心包，且 README 展示了对 DSH 扩展点的原生实现"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-doublecheck",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是给 DeepSeek Harness（DSH）用的“交付质量门”插件。它给 AI 开发流程加了一道纪律关卡：写代码之前先“拷问”需求（确认目标、范围、验收标准、失败场景等六个维度），坚持达成一致才动手；然后要求先写一个失败的测试证明缺口，再实现到测试通过；最后检查改动是否都对应需求、审查交付，并生成一份“可以交付 / 需要返工”的报告，可直接贴到 PR 描述里。",
+      "level": "ok",
+      "risks": "它会读写当前工作目录里的文件（比如生成 gate-report.md、需求规格等），也会在会话里运行测试命令（可能执行 shell）。报告内容会写入工作区，如果推到公开仓库可能被看到。它声明会过滤模型输出中的敏感信息（密钥、token、私钥等），但过滤是否完备值得留意。",
+      "postInstallNotes": "装完后在 DSH 中启用该插件；可按需调整覆盖率阈值、审查引擎（auto/local）、关键问题清单等配置，详见 README。",
+      "notes": "第三方个人开发者发布，非 DeepSeek 官方；依赖 DSH 0.1.0-rc.6 版本的核心包，请确认与你使用的 DSH 版本兼容。"
+    },
+    "summaryZh": "给 DeepSeek Harness 的交付质量门插件：强制 AI 先拷问需求、用测试证明实现，最后给出“可交付/需返工”的结论报告。",
+    "usage": {
+      "prompt_tokens": 4265,
+      "completion_tokens": 2683,
+      "total_tokens": 6948,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2219
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3625
+    }
+  }
+}

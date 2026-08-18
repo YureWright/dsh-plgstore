@@ -1,0 +1,37 @@
+{
+  "id": "f0909172434/dsh-deepseek-girl-pet",
+  "analyzedAt": "2026-08-17T12:02:38.507Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，README 给出了 dsh plugin add 安装命令，符合 DSH 插件的关键证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:f0909172434/dsh-deepseek-girl-pet",
+      "evidence": "dsh plugin --profile web add github:f0909172434/dsh-deepseek-girl-pet"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的桌宠插件。安装后，网页右下角会出现一个卡通女孩，她会根据任务状态切换待机、工作等动画，还会用 16 个方向追着鼠标看。她不会修改你的对话记录或核心文件，只是一个可爱的装饰小工具。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只提供静态图片和前端动画，不连外部服务器，也不读写对话内容。",
+      "postInstallNotes": "安装后需要重启 Harness 服务（先 Ctrl+C 停止再重新运行 dsh web），并在浏览器按 Ctrl+F5 强制刷新。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 界面添加一个会追着鼠标看的卡通女孩桌宠，随任务状态切换动画，不碰对话数据。",
+    "usage": {
+      "prompt_tokens": 2067,
+      "completion_tokens": 894,
+      "total_tokens": 2961,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 560
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1427
+    }
+  }
+}

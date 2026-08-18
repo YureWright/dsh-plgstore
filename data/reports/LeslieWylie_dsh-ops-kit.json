@@ -1,0 +1,37 @@
+{
+  "id": "LeslieWylie/dsh-ops-kit",
+  "analyzedAt": "2026-08-17T12:10:07.229Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json声明了dsh.bundle并依赖@deepseek-ai/cordis核心包，README提供了dsh plugin add安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ops-kit",
+      "evidence": "dsh plugin --profile <profile> add dsh-ops-kit"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给DeepSeek Harness用的工具包，里面有好几个“只读”技能，让AI助手在说自己“记住了”“计划好了”“测试通过了”之前，先拿出能证明的证据。它还能检查仓库状态、生成发布清单、检查终端提示符是否匹配，并带一个可逆的小修复工具。",
+      "level": "ok",
+      "risks": "它会读取你配置的本地文件夹（默认是DSH的工作目录）来搜索记忆或审计仓库，但会自动跳过像密码目录、密钥文件这类敏感路径；它自带一个手动运行的修复命令，可能在确认后修改DSH的某个安装文件（会先做备份）。它不会偷偷连网、改文件或读你的密钥。没发现明显风险，但如果你跑那个修复命令，最好看一下它干了啥。",
+      "postInstallNotes": "装完后建议重启DSH；如果要用“记忆搜索”和“仓库审计”，需要按README配置允许读取的目录；可以运行dsh_ops_runtime_doctor检查环境是否健康。",
+      "notes": "注意package.json里的包名是@dsh-community/dsh-ops-kit，但README给的安装命令是dsh-ops-kit，实际安装时以README为准，如果安装失败可尝试带scope的包名。另外它依赖一些rc版核心包，可能随上游更新而变化；要求Node >=22.19.0，较新。"
+    },
+    "summaryZh": "一个让DSH智能体用证据说话的只读技能包，包含记忆搜索、仓库审计、发布检查和运行时诊断。",
+    "usage": {
+      "prompt_tokens": 2906,
+      "completion_tokens": 2552,
+      "total_tokens": 5458,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2088
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2266
+    }
+  }
+}

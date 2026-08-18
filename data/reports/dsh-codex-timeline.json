@@ -1,0 +1,37 @@
+{
+  "id": "dsh-codex-timeline",
+  "analyzedAt": "2026-08-16T13:24:06.425Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-codex-timeline",
+      "evidence": "dsh plugin --profile web add dsh-codex-timeline"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页聊天界面加了一条左侧时间线。它只在你说话的位置做小标记，滚动时能看出当前看到哪，鼠标悬停还能预览当时的提问和回答，也能搜索聊过的内容，自动加载更早的历史记录。适合聊天很长时快速回看。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在 DSH 的设置文件（settings.yaml）里保存你的偏好设置；搜索和预览都在浏览器本地完成，README 说不联网、不增加模型上下文。唯一需要注意的是它锁定了 DSH 0.1.0-rc.6 这个特定版本，之后升级 DSH 前要先卸载。",
+      "postInstallNotes": "安装后重启 DSH Web 进程并刷新页面；然后可以用 dsh --profile web --dump-config 检查是否生效。",
+      "notes": "该插件只支持 DSH 0.1.0-rc.6，升级前务必先卸载；它通过补丁方式替换了内置对话界面组件。"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 添加侧边时间线导航与本地对话搜索的插件。",
+    "usage": {
+      "prompt_tokens": 4469,
+      "completion_tokens": 1310,
+      "total_tokens": 5779,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 934
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3829
+    }
+  }
+}

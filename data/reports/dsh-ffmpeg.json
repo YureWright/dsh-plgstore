@@ -1,0 +1,37 @@
+{
+  "id": "dsh-ffmpeg",
+  "analyzedAt": "2026-08-16T13:30:59.678Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch 且 README 给出 dsh plugin 安装命令，确为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ffmpeg",
+      "evidence": "dsh plugin --profile web add dsh-ffmpeg"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 AI 助手直接处理视频：探测视频信息、剪辑、拼接、转码、烧字幕、抽帧、生成 GIF，共七个功能，底层靠本机安装的 ffmpeg 完成。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会调用你电脑上的 ffmpeg 处理你指定的视频文件，可能占用一定 CPU 和内存，但不会覆盖同名文件，也不会乱动其他东西。",
+      "postInstallNotes": "需要先在电脑上安装 ffmpeg 并确保能在命令行运行（ffmpeg -version），如果不在 PATH 里，可以设置环境变量 DSH_FFMPEG_PATH 和 DSH_FFPROBE_PATH，或在配置里指定路径。",
+      "notes": "无"
+    },
+    "summaryZh": "一个让 AI 学会剪视频的 DSH 插件，提供探测、剪辑、拼接、转码、字幕、抽帧和 GIF 制作七个工具，安全设计周到。",
+    "usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 673,
+      "total_tokens": 3479,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 336
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2166
+    }
+  }
+}

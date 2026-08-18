@@ -1,0 +1,37 @@
+{
+  "id": "dsh-gen3d",
+  "analyzedAt": "2026-08-16T13:33:02.584Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明 dsh.bundle 并依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-gen3d",
+      "evidence": "dsh plugin --profile web add dsh-gen3d"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的 3D 角色生成插件。你输入一句描述或给一张参考图，它就能生成一个贴好纹理、能在游戏里用的 3D 角色模型。插件直连四家 3D 生成服务（Meshy、腾讯混元 3D、Tripo3D、Rodin）的官方接口，但需要你自己去这些平台申请并配置 API 密钥才能生成真实模型；不配置密钥时会使用模拟数据，让你完整走一遍流程，但不产生真实模型、不消耗配额。另外它还支持模型绑骨、动作套用、低模重拓扑等功能，可以导出成可直接使用的可玩角色。",
+      "level": "ok",
+      "risks": "会读取你电脑上存放的 API 密钥（默认在 ~/.dsh/.credentials.yaml 或环境变量里），这些密钥只用于调用对应的 3D 服务。当你使用真实生成时，你输入的文字或图片会发送给对应的第三方服务商。生成的模型文件会保存在你的工作目录。如果不配置密钥，它不会连接任何外部服务。没有发现恶意或额外风险。",
+      "postInstallNotes": "需要使用真实生成功能的话，至少配置一个服务的 API 密钥：在 $DSH_HOME/.credentials.yaml 里填写对应变量名（如 MESHY_API_KEY），或通过环境变量设置。不配置也能体验完整流程，但产物是模拟的。配置后可通过 gen3d:provider-status 工具验证。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 3D 角色生成插件，直连四家官方 API 生成带贴图模型，支持绑骨、动作和导出可玩角色，未配密钥时自动回退模拟模式。",
+    "usage": {
+      "prompt_tokens": 5071,
+      "completion_tokens": 1604,
+      "total_tokens": 6675,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1086
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4431
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "chaojixinren/dsh-reviewer-bot",
+  "analyzedAt": "2026-08-17T11:31:53.577Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "README 明确给出 dsh plugin --profile web add @dshrb/bundle 安装命令，依赖 @deepseek-ai/cordis，且描述为原生 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dshrb/bundle",
+      "evidence": "dsh plugin --profile web add @dshrb/bundle"
+    },
+    "evaluationReport": {
+      "intro": "这是一个代码评审机器人插件，装进 DeepSeek Harness 后可以自动帮你审查代码。它在 GitHub、GitLab、Gitea 或本地仓库上工作，你只要在 PR 评论里发命令（比如 @dsr review 就能重新评审），它就能读代码、解释改动、诊断 CI 失败，甚至在你授权下直接修改代码。评审规则做成可插拔的包，还能在本地重放历史记录。",
+      "level": "ok",
+      "risks": "它会读取你仓库里的代码、评论和 CI 日志，并把相关内容发送给 DeepSeek 的 AI 服务进行评审；如果仓库里有敏感信息，这些内容可能被 AI 处理。若使用 @dsr fix 功能，它还可能在授权下修改代码。插件自身声明不会把 token 和密钥放进工作区，算是正常功能所需的风险。",
+      "postInstallNotes": "需要配置代码平台（GitHub/GitLab/Gitea）的 token 和 DeepSeek API Key，并在 dsh 中指定好 profile（如 --profile web）。",
+      "notes": "项目较新（stars 仅 8），安装时请确认 @dshrb/bundle 包已发布且版本可用。"
+    },
+    "summaryZh": "一个基于 DeepSeek Harness 的跨平台代码评审机器人，支持 PR 评论指令、规则可插拔、本地重放。",
+    "usage": {
+      "prompt_tokens": 3520,
+      "completion_tokens": 2402,
+      "total_tokens": 5922,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1968
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2880
+    }
+  }
+}

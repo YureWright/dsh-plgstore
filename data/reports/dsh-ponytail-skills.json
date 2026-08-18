@@ -1,0 +1,37 @@
+{
+  "id": "dsh-ponytail-skills",
+  "analyzedAt": "2026-08-16T13:34:00.472Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，符合 DSH 插件定义；README 也明确说明是 DeepSeek Harness 的 Cordis 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ponytail-skills",
+      "evidence": "dsh plugin --profile web add dsh-ponytail-skills"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的技能包，把“最懒资深工程师”的编码风格（ponytail）移植进来。装好后你可以让 AI 用“懒但能用”的方式写代码：优先用最简单的方法、复用现成代码、优先标准库，尽量减少代码量。还附带代码评审、全仓库过度工程审计、记录技术债务、展示收益等 6 个技能。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是注册技能并提供 Markdown 技能文件给 AI 使用，没有额外的安装脚本或外部连接。",
+      "postInstallNotes": "装完后需要重启对应 profile（例如运行 dsh web），技能才能被加载。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 ponytail 风格技能包，包含 6 个技能，让 AI 用最懒但可用的方式编码。",
+    "usage": {
+      "prompt_tokens": 2538,
+      "completion_tokens": 476,
+      "total_tokens": 3014,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 137
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1898
+    }
+  }
+}

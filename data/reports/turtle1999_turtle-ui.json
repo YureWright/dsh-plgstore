@@ -1,0 +1,37 @@
+{
+  "id": "turtle1999/turtle-ui",
+  "analyzedAt": "2026-08-17T11:39:44.235Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 且 peerDependencies 依赖 @deepseek-ai/cordis 和大量 dsh-* 核心包，README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/turtle1999/turtle-ui.git",
+      "evidence": "dsh plugin --profile tui add github:deepseek-harness/turtle-ui"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个好用的终端界面（TUI），让你在命令行里直接看到 agent 的会话、输入和输出，不用切到网页。它能帮你管理多个会话，比如继续之前的对话（--resume）或指定一个新会话（--session）。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会操作你的终端和本地会话文件，不会偷偷上传数据。",
+      "postInstallNotes": "用 git 方式安装时，由于 pnpm 默认禁止构建脚本，第一次 add 可能会失败，需要把 pnpm 提示的 allowBuilds 密钥加到对应 profile 的 pnpm-workspace.yaml 里，再重新 add。安装后通过 `dsh --profile 你的profile名` 启动。",
+      "notes": "注意：README 中给出的 git 安装地址是 `github:deepseek-harness/turtle-ui`，但本仓库实际地址是 `turtle1999/turtle-ui`，安装时请用正确的地址。另外它依赖的多个 @deepseek-ai/dsh-* 包都还是 0.0.x 预发布版本，可能与当前 Harness 版本不完全兼容。"
+    },
+    "summaryZh": "turtle-ui 是 DeepSeek Harness 的终端交互界面插件，让你在命令行里直接操作 agent 和管理会话。",
+    "usage": {
+      "prompt_tokens": 2734,
+      "completion_tokens": 5031,
+      "total_tokens": 7765,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4585
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2094
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-compressor",
+  "analyzedAt": "2026-08-16T13:37:55.723Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-compressor",
+      "evidence": "Then users install with `dsh plugin --profile web add dsh-compressor`."
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DeepSeek Harness 里自动把工具返回的超长内容压缩成更小的形式，并保存原始内容，之后需要时可以用 compressor_retrieve 把它找回来。用来减少上下文占用，又不丢信息。它只处理适合压缩的工具结果，官方本来就保留的预览等不动。自带了针对 Mac（ARM）和 Linux（x64）的预编译原生模块，装完就能用。",
+      "level": "ok",
+      "risks": "它会把压缩前的原始工具结果保存到电脑上的 $DSH_HOME/dsh-compressor/ 目录里，相当于在你本地留了一份明文副本。如果工具返回过敏感信息（比如密钥、个人资料），这些内容会存到硬盘上。另外，它加载的原生模块来自个人发布的 npm 包，虽然包有签名，但不是官方团队维护。目前没发现它会上传数据到外部。",
+      "postInstallNotes": "无",
+      "notes": "README 提到“npm 包名目前空闲”，但 package.json 显示该包已经发布，文档可能没及时更新；预编译原生模块仅支持 darwin-arm64 和 linux-x64-gnu，其他平台需要自行编译，可能无法直接使用；依赖 @deepseek-ai/dsh-tools 的 rc 版本，属于预发布版本。"
+    },
+    "summaryZh": "在 DeepSeek Harness 中自动压缩长工具结果、并支持按需还原的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 2308,
+      "completion_tokens": 4616,
+      "total_tokens": 6924,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4163
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1668
+    }
+  }
+}

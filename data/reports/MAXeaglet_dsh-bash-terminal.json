@@ -1,0 +1,37 @@
+{
+  "id": "MAXeaglet/dsh-bash-terminal",
+  "analyzedAt": "2026-08-17T11:27:58.360Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 也给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-bash-terminal",
+      "evidence": "dsh plugin --profile web add dsh-bash-terminal"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加了一个统一的 shell 工具，让 AI 在 Windows 上能用你选的 PowerShell、Git Bash 或 WSL 来跑命令。你在网页设置里选定默认终端后，AI 调用命令时就按这个终端执行，它改不了你的选择。它还能开交互式终端，像 REPL、ssh 那种，可以保持会话状态。另外它和 DSH 的沙箱机制是接上的，受限模式下会套沙箱，完全信任模式下就和 DSH 进程同权限。",
+      "level": "caution",
+      "risks": "它会往你的 DSH 配置里写东西，安装时还要改 DSH 的一个白名单（原文件会备份），这样插件设置界面才有效。它本质上给了 AI 调用你电脑终端的入口，能跑 PowerShell/Git Bash/WSL 命令，所以可能在电脑上执行命令、读写文件。在完全信任模式下，权限和 DSH 进程一样大，建议只在你自己信任的会话里用。",
+      "postInstallNotes": "装完后还要运行 powershell -ExecutionPolicy Bypass -File install.ps1 install 来 patch DSH 的设置白名单，然后重启 dsh web。以后升级 DSH 的话，需要再跑一次这个脚本。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，让 AI 在 Windows 上通过你选的 PowerShell、Git Bash 或 WSL 执行命令，还支持交互式终端会话。",
+    "usage": {
+      "prompt_tokens": 4766,
+      "completion_tokens": 3856,
+      "total_tokens": 8622,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3399
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4126
+    }
+  }
+}

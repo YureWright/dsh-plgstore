@@ -1,0 +1,37 @@
+{
+  "id": "dsh-skill-fuzzy",
+  "analyzedAt": "2026-08-16T14:47:29.277Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai 核心包，且 README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-skill-fuzzy",
+      "evidence": "dsh plugin --profile web add dsh-skill-fuzzy"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面用的，它把输入斜杠（/）弹出的技能菜单从只能前缀匹配改成模糊搜索，还能在右侧预览技能的完整描述，让你更容易找到和识别要用的技能。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只改动网页界面的菜单显示，不碰文件，也不连外部服务器。",
+      "postInstallNotes": "装完后需要重启 dsh（dsh --profile web 或对应 profile），并刷新浏览器页面才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 dsh Web UI 的 '/' 菜单提供模糊搜索和描述预览功能的插件。",
+    "usage": {
+      "prompt_tokens": 2888,
+      "completion_tokens": 996,
+      "total_tokens": 3884,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 715
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2248
+    }
+  }
+}

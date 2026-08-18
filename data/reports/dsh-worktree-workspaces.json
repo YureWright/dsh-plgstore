@@ -1,0 +1,37 @@
+{
+  "id": "dsh-worktree-workspaces",
+  "analyzedAt": "2026-08-16T13:37:24.791Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 peerDependencies 包含 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-worktree-workspaces@0.1.0",
+      "evidence": "dsh plugin --profile web add dsh-worktree-workspaces@0.1.0"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你在 DeepSeek Harness 里管理 Git 的多个工作副本（worktree）。你可以用 /worktree 命令新建、查看工作树，也能让 AI 模型调用工具来创建新分支的工作树，还带一个网页端的切换器，方便在不同工作区之间跳转。它还能把超过 7 天没动过的工作树归档，给磁盘腾地方。",
+      "level": "ok",
+      "risks": "它会在你电脑的 ~/.dsh/worktrees 和 ~/.dsh/archived_worktrees 目录下创建文件和文件夹，并且执行 git worktree 相关的操作（比如创建、移动、归档）。这些操作都局限在 Git 仓库和 ~/.dsh 目录里，不会上传任何数据到外部服务器。另外如果有未提交的改动，它不会复制到新工作树，所以不会覆盖你的改动。",
+      "postInstallNotes": "需要确保系统已经安装了 Node.js 22 或更高版本，并且 pnpm 在 PATH 环境变量中。安装后在配置里按需设置 baseDir（默认是 ~/.dsh/worktrees）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Git worktree 创建、归档和 Web 端切换器的插件。",
+    "usage": {
+      "prompt_tokens": 3091,
+      "completion_tokens": 620,
+      "total_tokens": 3711,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 171
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2451
+    }
+  }
+}

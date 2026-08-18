@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-paddle-ocr",
+  "analyzedAt": "2026-08-17T13:11:23.867Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/dsh-* 系列核心包，README 也给出了 dsh plugin add 安装命令，符合 DSH 插件的结构特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-paddle-ocr",
+      "evidence": "dsh plugin --profile web add link:/path/to/dsh-paddle-ocr"
+    },
+    "evaluationReport": {
+      "intro": "这是一个让 DSH 智能体能调用百度 PaddleOCR-VL 的插件，可以把 PDF 或图片逐页解析成带图片的 Markdown 文档。它提供几个工具让智能体自动识别文档布局、测试连接、拆分大文件，同时在浏览器里增加了设置卡片和任务面板，你可以手动拖入文件、看进度、预览结果并保存到工作区。使用前需要从百度星河社区申请一个 API token。",
+      "level": "caution",
+      "risks": "使用时会把你处理的 PDF 或图片文件上传到百度提供的 OCR 云端服务器进行识别，所以涉及敏感内容的文件请谨慎上传。插件需要配置 API token，token 会保存在 DSH 的凭据保险箱里，不会明文写入代码或日志，相对安全。除此之外没有发现其他明显风险。",
+      "postInstallNotes": "需要到百度星河社区获取 API token，然后在 设置 → 插件 → PaddleOCR 卡片 中填入 token 并保存，也可以设置环境变量 PADDLE_OCR_TOKEN（环境变量优先）。建议配置后点击“测试连接”验证是否可用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 PaddleOCR 插件，让智能体把 PDF/图片解析成 Markdown，带浏览器配置卡和任务面板。",
+    "usage": {
+      "prompt_tokens": 3269,
+      "completion_tokens": 943,
+      "total_tokens": 4212,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2629
+    }
+  }
+}

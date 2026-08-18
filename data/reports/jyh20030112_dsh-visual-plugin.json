@@ -1,0 +1,37 @@
+{
+  "id": "jyh20030112/dsh-visual-plugin",
+  "analyzedAt": "2026-08-17T11:29:21.330Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了明确的 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-visual-plugin",
+      "evidence": "dsh plugin --profile web add dsh-visual-plugin   # or: github:jyh20030112/dsh-visual-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你的 DeepSeek Harness 能“看图”。如果你的主模型不支持图像输入，它会自动把你发的图片转发给你配置的任意 OpenAI 兼容视觉模型，生成文字描述，然后让主模型根据描述来回答问题。同时，网页界面右侧会有一个面板，显示图片的缩略图和描述，还能查看剩余余额。",
+      "level": "ok",
+      "risks": "它会把你上传的图片发送到你配置的第三方视觉服务（比如 OpenAI 兼容的 API），所以图片内容会离开你的电脑。API 密钥存在 harness 的凭据系统里，不会直接显示，但请确保你配置的服务是可信的。除此之外没发现明显风险。",
+      "postInstallNotes": "装完后需要重新启动 dsh web，然后在设置 → 插件配置里展开 Vision Bridge，填写 endpoint、模型名和 API key，保存后测试连接。之后在模型选择器里选择 DeepSeek (Vision) 提供商，发送图片即可。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加视觉能力，让纯文本模型通过调用任意 OpenAI 兼容视觉模型来“看懂”图片并在网页界面显示描述。",
+    "usage": {
+      "prompt_tokens": 3992,
+      "completion_tokens": 872,
+      "total_tokens": 4864,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 463
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3352
+    }
+  }
+}

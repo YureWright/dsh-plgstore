@@ -1,0 +1,37 @@
+{
+  "id": "dsh-video-creator",
+  "analyzedAt": "2026-08-16T13:39:52.563Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-video-creator",
+      "evidence": "dsh plugin add dsh-video-creator"
+    },
+    "evaluationReport": {
+      "intro": "这是一个短视频创作助手插件，内置口播、带货、教程等十种模板，调用国内大模型（如 DeepSeek、通义千问等）一键生成标题、脚本、文案、标签等完整内容包，还能按抖音、视频号、B站等平台规范生成发布文案和步骤，省去手工填写。",
+      "level": "ok",
+      "risks": "需要你把大模型的 API Key 填到本地配置里，配置会存在 ~/.dsh/storages/video-creator/config.json；使用时会调用对应大模型的 API，你的文案内容会发送到所选服务商。没有其他明显风险。",
+      "postInstallNotes": "安装后需在 profile 的 package.json 的 dsh.profile.bundles 中加入 \"dsh-video-creator\"，然后在对话里让 Agent 配置 textApiBase/textApiKey/textModel。",
+      "notes": "无"
+    },
+    "summaryZh": "视频号创作助手：内置模板调用国内大模型一键生成多平台短视频内容包与发布方案。",
+    "usage": {
+      "prompt_tokens": 2272,
+      "completion_tokens": 806,
+      "total_tokens": 3078,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 434
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1632
+    }
+  }
+}

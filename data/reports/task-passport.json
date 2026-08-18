@@ -1,0 +1,37 @@
+{
+  "id": "task-passport",
+  "analyzedAt": "2026-08-16T13:24:15.242Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "task-passport@0.3.0",
+      "evidence": "dsh plugin --profile web add task-passport@0.3.0"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫“任务护照”，专门帮你在不同的 AI 助手（比如 DeepSeek Harness、Claude Code、Codex）之间接力同一个任务时，不搬运聊天记录，只传递任务状态——包括目标、当前进度、已验证的事实和下一步要做什么。它能把任务打包成一个单个文件（TaskPack）发给同事或另一台电脑，对方接收后就能接着干。它还会给每个任务一个稳定的短号（如 TP-7K4M-9D2Q），支持版本检查和冲突检测，避免多人或多次会话覆盖彼此的工作。",
+      "level": "ok",
+      "risks": "它会读写你指定的 store 目录（比如 D:\\TaskPassports）里的任务状态文件；如果你配置了 U-King，它还会调用你电脑上的 U-King 程序（需要指定路径）。任务状态文件可能包含任务描述、目标和进度，如果你把 TaskPack 文件发给别人，对方能看到这些内容。它不会主动上传数据到外部服务器，除非你自己配置了远程 Provider。整体看没有发现明显恶意行为。",
+      "postInstallNotes": "安装后需要确保 Node.js 版本不低于 20；如果 U-King 不在 PATH 中，需要在对应 profile 的 cordis.patch.yml 里配置 ukingExecutable 或 storeDirectory，也可以设置环境变量 TASK_PASSPORT_UKING 或 TASK_PASSPORT_STORE。建议安装后先运行 `dsh --profile web --dump-config` 检查配置是否生效。",
+      "notes": "无"
+    },
+    "summaryZh": "任务护照（Task Passport）——让 AI 助手之间交接任务时只传递任务状态（目标、进度、已验证事实），不复制聊天记录，并支持打包成 TaskPack 文件跨机器跨人接力。",
+    "usage": {
+      "prompt_tokens": 4480,
+      "completion_tokens": 1884,
+      "total_tokens": 6364,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1352
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3840
+    }
+  }
+}

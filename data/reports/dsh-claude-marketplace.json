@@ -1,0 +1,37 @@
+{
+  "id": "dsh-claude-marketplace",
+  "analyzedAt": "2026-08-16T13:31:39.990Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-claude-marketplace",
+      "evidence": "dsh plugin --profile <name> add dsh-claude-marketplace"
+    },
+    "evaluationReport": {
+      "intro": "这个插件像一个“翻译桥”，让 DeepSeek Harness（DSH）能直接用上 Claude Code 生态里的技能、命令和智能体。它会把项目里 `.claude` 文件夹中的内容，或者从 Claude Code 市场安装的插件，变成 DSH 能调用的技能（名字带 `cc-` 前缀），这样你就能在 DSH 里复用海量的 Claude Code 插件了。",
+      "level": "ok",
+      "risks": "它会读取你项目里的 `.claude` 目录（技能/命令文件），并把从网上下载的插件复制到本地缓存目录 `~/.dsh/claude-plugins`。被导入的技能可能被模型调用，所以安装第三方插件前最好自己看一眼来源。它明确不执行 hooks，所以暂时没有任意代码执行的风险。",
+      "postInstallNotes": "安装后需要主动使用 `cc_scan`、`cc_marketplace_add`、`cc_plugin_install` 这些工具（或让模型调用）来扫描/导入技能，否则不会自动生效。",
+      "notes": "当前是 v0.1 版本，hooks 不会执行，MCP/LSP 服务器、主题等功能还不支持，功能比较基础。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Claude Code 兼容层，可加载 .claude 技能/命令/代理，并从 Claude Code 市场安装插件为 dsh 技能。",
+    "usage": {
+      "prompt_tokens": 2304,
+      "completion_tokens": 1460,
+      "total_tokens": 3764,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1013
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1664
+    }
+  }
+}

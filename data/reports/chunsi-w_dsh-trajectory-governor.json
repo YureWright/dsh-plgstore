@@ -1,0 +1,37 @@
+{
+  "id": "chunsi-w/dsh-trajectory-governor",
+  "analyzedAt": "2026-08-17T12:10:08.985Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 也给出了 dsh plugin add 安装命令，是明确的 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@chunsi-m/dsh-trajectory-governor",
+      "evidence": "dsh plugin --profile web add @chunsi-m/dsh-trajectory-governor"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 的一个“轨迹控制器”，相当于给 AI 助手装了一个项目管理员。它会自动判断用户消息是新任务还是接着干，跟踪任务进度，控制 AI 能不能用写文件工具，发现修改后自动验证是否改对了，还能避免 AI 反复做同样的事。整体让 AI 干活更有条理。",
+      "level": "ok",
+      "risks": "它会在你电脑上写一个本地账本文件（默认在 $DSH_HOME/trajectory-governor/decisions.jsonl），记录每次任务的一些决策信息（包含消息哈希、工具使用记录等，不保存原文）。active 模式下它会调整 AI 的请求、临时隐藏某些工具、自动追加验证步骤，可能改变 AI 的工作方式。这些数据只存在本地，没有发现连接外部服务器或收集隐私的迹象。账本不会自动清理，长期使用需要自己定期清理。",
+      "postInstallNotes": "使用 dsh plugin --profile web add @chunsi-m/dsh-trajectory-governor 安装，然后用 dsh --profile web --dump-config 确认已加入。建议先在配置中设置 mode: shadow 试运行，确认效果后再切到 active。如需修改账本路径或关闭账本，可编辑 cordis.patch.yml 中的 ledgerPath 和 ledger 字段。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供闭环 Agent 轨迹控制，自动管理任务阶段、验证债务并自适应限制工具能力。",
+    "usage": {
+      "prompt_tokens": 3728,
+      "completion_tokens": 1897,
+      "total_tokens": 5625,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1406
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3088
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "zdjmrq/dsh-user-plugins-manager",
+  "analyzedAt": "2026-08-17T11:58:51.636Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 明确声明了 dsh.bundle 和 dsh.client 字段，且 README 提供了可操作的安装方式，代码结构与 DSH 插件生态一致。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/zdjmrq/dsh-user-plugins-manager.git",
+      "evidence": "cd ~/.dsh/profiles/web && pnpm add \"git+https://github.com/zdjmrq/dsh-user-plugins-manager.git\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 的「插件管理器」，装好之后在设置页里会多一个插件管理入口，把乱七八糟的插件分成原生扩展、用户扩展、运行中三类显示，每个都能单独启用、停用、卸载，还能给插件写中文备注，方便你搞清楚每个插件是干嘛的。",
+      "level": "ok",
+      "risks": "它会读写你 DSH 配置文件（~/.dsh/profiles/web 下的 package.json 和 cordis.patch.yml），并可能修改其他插件的启用状态，操作前会自动备份，但如果你自己乱点，理论上可能把某个插件弄停或改坏配置。它也会在本地保存你写的插件描述，不会上传到外部服务器。",
+      "postInstallNotes": "安装后需要把包名 dsh-pluginmanager 手动追加到 ~/.dsh/profiles/web/package.json 的 dsh.profile.bundles 列表末尾，然后重启 dsh web 服务。注意不要同时用 patch 行方式安装，否则会报重复加载错误。",
+      "notes": "发布包名是 dsh-pluginmanager，但 GitHub 仓库名是 dsh-user-plugins-manager，安装和配置时请用前者。插件会修改系统配置文件，建议先备份或审阅源码后再使用。"
+    },
+    "summaryZh": "DSH 用户插件管理器：在设置页分门别类管理所有插件，支持启停、卸载、补登记依赖和自定义中文描述。",
+    "usage": {
+      "prompt_tokens": 3524,
+      "completion_tokens": 1898,
+      "total_tokens": 5422,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1414
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2884
+    }
+  }
+}

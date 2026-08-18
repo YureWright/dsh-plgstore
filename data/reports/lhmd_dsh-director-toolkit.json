@@ -1,0 +1,37 @@
+{
+  "id": "lhmd/dsh-director-toolkit",
+  "analyzedAt": "2026-08-17T11:36:48.019Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，peerDependencies 依赖 @deepseek-ai/dsh-skill 和 @deepseek-ai/dsh-tools，README 也给出了 DSH 插件安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/lhmd/dsh-director-toolkit.git",
+      "evidence": "dsh plugin --profile web add /absolute/path/to/dsh-director-toolkit"
+    },
+    "evaluationReport": {
+      "intro": "这款插件是给 3D 艺术家和设计师用的，它能把一个模糊的 3D 创意（比如“一个诡异的陶瓷雕像”）自动变成一份详细的“拍摄方案”，包括相机怎么摆、灯光怎么打、材质怎么做、物体怎么动、渲染参数怎么调，还附带几套制作步骤、负面提示词、标题、中英文宣传文案和话题标签。支持 Blender、Three.js、Houdini、C4D 等软件。它本身不直接建模，而是生成指导文档和脚本，帮你在这些软件里搭出场景。",
+      "level": "ok",
+      "risks": "没发现明显风险。但要注意：它自带的演示和生成功能可能会在本机运行 Blender/Python 脚本；可选功能（scene_director_v4）会调用 DeepSeek 在线接口，需要把场景描述发送到 DeepSeek 服务器，并读取环境变量 DEEPSEEK_API_KEY。这些都属于可预期行为。",
+      "postInstallNotes": "基本功能无需额外配置。如果要使用可选的 scene_director_v4（默认 deepseek-v4-pro），需要在运行 DSH 的服务端环境里设置 DEEPSEEK_API_KEY。另外，若想跑演示，可执行 npm run demo。",
+      "notes": "它确实是 DSH 插件（package.json 含 dsh.bundle 字段，peerDependencies 依赖 @deepseek-ai/dsh-skill 和 @deepseek-ai/dsh-tools）。安装命令在 README 中用的是本地绝对路径，未提供 npm 包名安装方式，可能是尚未发布到 npm；建议通过 git URL 安装。依赖的 @deepseek-ai/dsh-skill、@deepseek-ai/dsh-tools 版本为 ^0.0.1，可能还未正式发布，安装时需确认是否可用。"
+    },
+    "summaryZh": "把粗 3D 创意变成可执行的拍摄方案和发布文案的 DSH 插件，面向 3D 艺术家与设计师。",
+    "usage": {
+      "prompt_tokens": 2316,
+      "completion_tokens": 6402,
+      "total_tokens": 8718,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5808
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1676
+    }
+  }
+}

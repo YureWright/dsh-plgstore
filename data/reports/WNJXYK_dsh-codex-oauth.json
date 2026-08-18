@@ -1,0 +1,37 @@
+{
+  "id": "WNJXYK/dsh-codex-oauth",
+  "analyzedAt": "2026-08-17T11:31:19.052Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 中声明了 dsh.bundle / dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，且 README 给了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wnjxyk/dsh-codex-oauth@latest",
+      "evidence": "dsh plugin --profile web add -w @wnjxyk/dsh-codex-oauth@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以让你用 ChatGPT 或 Codex 的订阅账号登录 DeepSeek Harness，之后就能在 Harness 里直接使用 GPT 模型、生成图片和联网搜索，还能查看订阅额度和剩余量。相当于把 OpenAI 订阅能力接到 DSH 里。",
+      "level": "caution",
+      "risks": "它会在你电脑上保存 OpenAI 账号的登录凭证（通常在 dsh 家目录的 codex-oauth.json 文件里），并连接 OpenAI 认证及接口服务器，消耗你的订阅额度。登录时会在本地开两个端口（1455/1456）接收回调。由于依赖非公开的 ChatGPT Codex 后端接口，OpenAI 协议一变就可能临时失效，也有低概率因违反 OpenAI 服务条款导致账号受限；凭证文件若被他人拿到，可能冒用你的账号。",
+      "postInstallNotes": "无（默认无需配置；如需自定义凭证路径、端口等，可参考 README 中的配置项）。",
+      "notes": "作者声明依赖非公开的 ChatGPT Codex 后端端点，OpenAI 协议变化可能暂时影响功能，且存在低概率账号风险；兼容性已验证 DSH 0.1.0-rc.6。"
+    },
+    "summaryZh": "用 ChatGPT/Codex 订阅登录 DSH，解锁 GPT 模型、图片生成和联网搜索。",
+    "usage": {
+      "prompt_tokens": 2777,
+      "completion_tokens": 2305,
+      "total_tokens": 5082,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1855
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2137
+    }
+  }
+}

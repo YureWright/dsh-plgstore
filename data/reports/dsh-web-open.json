@@ -1,0 +1,37 @@
+{
+  "id": "dsh-web-open",
+  "analyzedAt": "2026-08-16T13:21:51.715Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 @deepseek-ai/cordis peer 依赖和 dsh-plugin 关键词，README 表明这是 DSH 插件，并提供 dsh plugin add 安装方式。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-web-open",
+      "evidence": "`dsh plugin add`（或 pnpm add）只安装依赖包，不会激活插件。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DeepSeek Harness 的辅助插件。装上之后，你运行 dsh web 启动服务时，它会自动帮你打开浏览器，不用再手动输入网址。在 Windows 上还额外提供系统托盘图标（方便右键菜单控制）、自动创建桌面快捷方式、隐藏控制台窗口等贴心功能，让你用起来更顺手。",
+      "level": "ok",
+      "risks": "没发现明显风险。它在 Windows 上会创建桌面快捷方式，并在你的用户目录下写入一些记录文件（比如最近打开的网址和日志），但这些都不涉及隐私。",
+      "postInstallNotes": "安装后需要确保插件已在 cordis.patch.yml 中注册（如果使用 npx 一键安装会自动注册）。可选设置环境变量如 DSH_WEB_OPEN=0 可关闭整个插件。",
+      "notes": "无"
+    },
+    "summaryZh": "自动打开浏览器、提供 Windows 托盘/桌面快捷方式/隐藏控制台的 DSH 插件，让 dsh web 用起来更省心。",
+    "usage": {
+      "prompt_tokens": 2918,
+      "completion_tokens": 1149,
+      "total_tokens": 4067,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 788
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2278
+    }
+  }
+}

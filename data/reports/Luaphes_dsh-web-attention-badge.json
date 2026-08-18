@@ -1,0 +1,37 @@
+{
+  "id": "Luaphes/dsh-web-attention-badge",
+  "analyzedAt": "2026-08-17T11:45:09.525Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并注入 @deepseek-ai/dsh-client-runtime，README 提供 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-web-attention-badge",
+      "evidence": "dsh plugin --profile web add dsh-web-attention-badge"
+    },
+    "evaluationReport": {
+      "intro": "这是给 DeepSeek Harness 网页界面用的提醒小插件。当某个会话正在等你输入（比如问你问题、要你审批）或者有会话已完成但你还没打开时，它会在页面左上角显示一个数字小徽章，同时浏览器标签页标题也会出现像 (1) 这样的数字，鲸鱼图标还会变色。琥珀色代表需要你处理，绿色代表已完成未读。这样你切到别的标签页也能一眼看到有没有事需要你。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取 DSH 内置的会话状态，在网页界面上显示提醒，不碰系统文件、不连外部服务器。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面添加会话提醒徽章和标签页计数，帮你随时知道哪些会话需要关注。",
+    "usage": {
+      "prompt_tokens": 1650,
+      "completion_tokens": 1242,
+      "total_tokens": 2892,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 906
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1010
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-frontend-tools-bridge",
+  "analyzedAt": "2026-08-16T13:29:44.641Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，并以 @deepseek-ai/cordis、@deepseek-ai/dsh-tools 作为 peer 依赖，是标准的 DSH 插件结构。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-frontend-tools-bridge",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 助手和你其他应用之间的“桥梁”。它在你电脑上启动一个只有本机能访问的通道，让任意多个应用（比如网页应用、桌面工具）可以把它们自己的功能“登记”到 DSH 助手的工具列表里。之后，AI 在对话中需要用到这些功能时，就会通过这座桥把请求转给对应的应用，再把结果拿回来。每个应用用自己的密钥和命名空间区分，互相看不到对方。涉及修改数据的操作，AI 会先弹出请求让你点“同意”才会执行。",
+      "level": "ok",
+      "risks": "它会在你的 DSH 数据目录（默认 ~/.dsh）里保存一个记录客户端密钥的文件（frontend-tools-clients.json，权限 600），并监听本机 31870 端口。任何能访问该端口的本机程序，若拿到你的密钥，就能冒充你的应用注册工具，从而让 AI 调用它。密钥只保存在本机，不会上传到外部服务器。",
+      "postInstallNotes": "需要先用应用端 SDK（dsh-frontend-tools-client）生成一个 DSH KEY，然后在对话里通过 frontend_tools_register_client 注册命名空间和密钥；也可以直接在配置里用 staticClients 指定。默认不需要改环境变量，如需改端口或状态目录，可在 cordis.yml 里配置 port、stateDir（或设置 DSH_HOME）。",
+      "notes": "依赖了多个 @deepseek-ai 核心包的 RC 版本，功能可能随上游变动；插件本身是“桥”的一半，需要配合应用端一起使用。README 未提供 dsh plugin add 安装示例，但包已发布在 npm。"
+    },
+    "summaryZh": "一个让多个前端应用把自身功能安全地桥接到 DSH 助手、并支持人工审批的本地 WebSocket 插件。",
+    "usage": {
+      "prompt_tokens": 3891,
+      "completion_tokens": 3266,
+      "total_tokens": 7157,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2735
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3251
+    }
+  }
+}

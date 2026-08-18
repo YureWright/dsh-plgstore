@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-manager",
+  "analyzedAt": "2026-08-16T14:46:39.511Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-manager",
+      "evidence": "dsh plugin --profile web add dsh-plugin-manager"
+    },
+    "evaluationReport": {
+      "intro": "这是一个基于网页的插件管理器，用于 DeepSeek Harness (DSH) 及其 Cordis 插件运行时。你可以在 Harness 的插件设置页面上查看、搜索、启用、禁用、分组和批量管理运行时插件，而不必手动编辑配置文件。",
+      "level": "ok",
+      "risks": "它会读写 DSH 的配置文件（cordis.patch.yml），并可能更改插件的启用/禁用状态。如果 Harness 的 Web 控制界面暴露在不受信任的网络，有权访问的人可能操作插件。除此之外，没发现明显风险。",
+      "postInstallNotes": "安装后打开 Harness 的 Settings -> Plugins -> Plugin list 页面即可使用；如有需要，可在 cordis.patch.yml 中为 dsh-plugin-manager 配置 protectedEntries 和 settleTimeoutMs。",
+      "notes": "社区项目，非官方 DeepSeek Harness 包；针对预发布 0.1.x API，升级前需注意兼容性。"
+    },
+    "summaryZh": "一个基于 Web 的 DSH 插件管理器，支持查看、启用/禁用、分组和批量管理运行时插件。",
+    "usage": {
+      "prompt_tokens": 3686,
+      "completion_tokens": 1216,
+      "total_tokens": 4902,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 852
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3046
+    }
+  }
+}

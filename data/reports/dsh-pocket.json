@@ -1,0 +1,37 @@
+{
+  "id": "dsh-pocket",
+  "analyzedAt": "2026-08-16T13:21:59.893Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis，README 给出了 dsh plugin 安装命令，符合 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-pocket",
+      "evidence": "dsh plugin --profile web add dsh-pocket -w"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你出门在外时，用手机扫码就能实时看到并操作电脑上的 DeepSeek Harness 界面，不用装远程桌面或 SSH。它会在电脑上开一个本地代理，同一个 WiFi 下扫码就能访问；也可以开启公网隧道，在 4G/任何网络下访问。",
+      "level": "ok",
+      "risks": "二维码或访问 URL 就等于你电脑 DSH 的钥匙，别人拿到就能看你或操作你的 agent（DSH 本身能执行代码）。公网模式通过 cloudflared 建立临时隧道，虽然每次重启会换新链接，但开启期间理论上外部网络可访问到你的 DSH。首次开启公网访问时会在本地下载 cloudflared 二进制文件。",
+      "postInstallNotes": "安装后需要重启 dsh web 才会生效；公网模式首次使用时会自动下载 cloudflared 并建立隧道，也可手动安装 cloudflared 到 PATH 供其调用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Pocket 是一个让手机扫码即可远程查看和操作电脑上 DeepSeek Harness 的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 4608,
+      "completion_tokens": 894,
+      "total_tokens": 5502,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 514
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3968
+    }
+  }
+}

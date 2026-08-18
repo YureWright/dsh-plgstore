@@ -1,0 +1,37 @@
+{
+  "id": "MorGogh/widget-dock",
+  "analyzedAt": "2026-08-17T11:58:24.874Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client（platform: web），README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 客户端接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "widget-dock",
+      "evidence": "README 安装命令原文：dsh plugin --profile web add widget-dock"
+    },
+    "evaluationReport": {
+      "intro": "这是一款给 DeepSeek Harness 网页版聊天界面加侧边栏小组件面板的插件。它能在对话旁边显示 27 种小卡片，比如 API 余额、Token 用量、成本估算、上下文压力、会话统计等，卡片可以自由拖动排列，每个对话会独立记住布局。还带一个图片转述功能，粘贴图片后能自动用本地或远程视觉模型生成文字描述，再配合 DeepSeek 回答。所有配置（包括 API Key）都保存在浏览器本地。",
+      "level": "ok",
+      "risks": "插件会把 DeepSeek API Key 存在浏览器 localStorage 里（仅本机浏览器可见，但若浏览器被入侵则可能泄露）；它会读取当前对话内容来计算 token 和成本；可选的图片转述功能会连接本地 LM Studio（默认 localhost:1234）或你配置的任意 OpenAI 兼容端点。除此之外没发现明显风险。",
+      "postInstallNotes": "安装并重启 dsh web 后，需要在余额卡片上点「KEY 编辑」填入 DeepSeek API Key 才能显示余额；如需图片转述功能，请确保本地已启动 LM Studio 或配置好其他视觉模型端点；成本估算默认使用官方价格，可按需在设置里调整。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 对话界面添加可拖拽小组件工作台的插件，提供余额、Token、成本等 27 种卡片及图片转述功能。",
+    "usage": {
+      "prompt_tokens": 2810,
+      "completion_tokens": 2482,
+      "total_tokens": 5292,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2026
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2170
+    }
+  }
+}

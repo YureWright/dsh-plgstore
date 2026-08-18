@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-tool-time",
+  "analyzedAt": "2026-08-17T11:57:00.907Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 依赖 @deepseek-ai/cordis 和 dsh-tools，README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:omdsh-dev/dsh-tool-time",
+      "evidence": "dsh plugin --profile web add github:omdsh-dev/dsh-tool-time"
+    },
+    "evaluationReport": {
+      "intro": "这是给小助手（DSH）用的时间工具插件。它能帮小助手处理时间问题：查当前时间、把时间从一个时区转成另一个时区、算几天后/几月前是几号、比较两个时间相差多久。它对输入要求很严格，乱七八糟的日期格式会直接拒绝，不容易算错。",
+      "level": "ok",
+      "risks": "它作为DSH插件会在你电脑上运行，需要读取系统时间和时区数据库（比如你电脑设置的时区），不会主动联网，也不会读取你的私人文件。",
+      "postInstallNotes": "安装后注意 web 和 headless 是不同 profile，如果都要用需要分别安装；可用 `dsh --profile web --dump-config | grep tool-time` 检查是否安装成功。",
+      "notes": "无"
+    },
+    "summaryZh": "一个给DSH用的时间工具插件，支持严格ISO解析、时区转换、日期加减和时差计算。",
+    "usage": {
+      "prompt_tokens": 4098,
+      "completion_tokens": 2327,
+      "total_tokens": 6425,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1976
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3458
+    }
+  }
+}

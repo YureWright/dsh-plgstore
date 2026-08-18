@@ -1,0 +1,37 @@
+{
+  "id": "@yinging/dsh-hme",
+  "analyzedAt": "2026-08-16T13:31:25.790Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 的 peerDependencies 包含 @deepseek-ai/cordis 和多个 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@yinging/dsh-hme",
+      "evidence": "Install from npm or Git into a profile, then reference it by package name: dsh plugin --profile web add @yinging/dsh-hme"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 装上了长期记忆。以前每次对话结束 AI 就忘光光，现在它能记住你是谁、你的偏好、每个项目的特点，还有你踩过的坑。它把记忆分成三层：一个全局的用户档案、一个跟项目走的项目档案，还有一个更大的档案库，按需查找。记忆是纯文本文件，你可以直接打开看和改。",
+      "level": "ok",
+      "risks": "会在你的用户目录（$DSH_HOME/hme/）和项目目录（.dsh/hme/）下创建纯文本记忆文件，内容包含你的偏好和项目信息。如果你开了云同步或者把项目分享给别人，这些文件可能被看到。另外，AI 在对话中可能会引用这些记忆内容。",
+      "postInstallNotes": "装完后需要手动编辑 profile 的 cordis.patch.yml，添加一行 host 配置（id: hme-plugin，name: '@yinging/dsh-hme'，可按需设置 memoryCharLimit 等），然后重启生效。",
+      "notes": "README 中 npm 包名前后不一致（@ymw/dsh-hme 与 @yinging/dsh-hme），实际以 package.json 为准使用 @yinging/dsh-hme。插件目前是开发者预览版，依赖的 @deepseek-ai/* API 还在变动，可能不够稳定。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供跨会话长期记忆的插件，用 USER/MEMORY 文件和 archive 分层记住用户偏好、项目经验与踩过的坑。",
+    "usage": {
+      "prompt_tokens": 4410,
+      "completion_tokens": 3098,
+      "total_tokens": 7508,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2598
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3770
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-dafeiyu",
+  "analyzedAt": "2026-08-16T13:29:06.225Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/ 相关包，且 README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-dafeiyu@alpha",
+      "evidence": "然后从 npm 安装当前 Alpha：pnpm exec dsh plugin --profile web add dsh-dafeiyu@alpha"
+    },
+    "evaluationReport": {
+      "intro": "这是一个住在 Windows 桌面上、由 DeepSeek Harness 真实工作状态驱动的桌宠伴侣插件。它会以透明无边框的小窗口显示在桌面最上层，让你不用切回 DSH 页面就能看到当前任务是思考中、工作中、等你确认还是完成了，也会显示项目名、阶段和真实进度。它不会读取屏幕、不会误判你在其他软件的操作，只跟随 DSH 的事件。",
+      "level": "ok",
+      "risks": "它会在你的 Windows 桌面上显示一个始终置顶的小窗口，旁边的人可能会看到你当前的项目名、阶段等任务信息。插件自带一个 Windows Helper 可执行程序，但它声明不截图、不读其他窗口、不监听键盘、不发送遥测，也没有额外开放网络端口。风险较低。",
+      "postInstallNotes": "安装前要完全退出 DSH Host（不只是关浏览器标签页）。装好后正常启动 DSH 即可，插件默认启用；如需调整大小、活跃程度等，可到 DSH 设置 → 插件 → 插件配置 → 大肥鱼桌面伴侣 里修改。",
+      "notes": "当前为 0.1.0-alpha.6 的 Windows MVP 版本，仅支持 Windows 10/11 x64，且内置文案为简体中文。"
+    },
+    "summaryZh": "一个由 DeepSeek Harness 真实工作状态驱动的 Windows 桌面伴侣鱼，让你不切回页面也能随时看到 DSH 正在做什么。",
+    "usage": {
+      "prompt_tokens": 4549,
+      "completion_tokens": 806,
+      "total_tokens": 5355,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 335
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3909
+    }
+  }
+}

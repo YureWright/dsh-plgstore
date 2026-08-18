@@ -1,0 +1,37 @@
+{
+  "id": "dsh-dingo",
+  "analyzedAt": "2026-08-16T13:39:08.433Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-dingo",
+      "evidence": "dsh plugin --profile web add dsh-dingo"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加声音提醒：同时开多个对话时，谁有回复就出声，并在右上角弹出小卡片，点一下卡片直接跳到那个对话；切到别的应用时还会发系统通知（macOS 通知中心 / Windows toast），点通知也能直达。当前对话回复用'当'的声音，其他对话用'叮'，还能区分是否需要你回答。",
+      "level": "ok",
+      "risks": "插件会调用 macOS 的 osascript 或 Windows 的 PowerShell 发送系统通知，这些脚本只负责弹通知；提醒内容（对话标题和状态）会显示在卡片和通知里，但只在你自己的电脑上出现，不会上传到第三方。没发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 声音提醒+对话直达插件：多对话并行时，有回复就出声提醒并显示卡片，点击直达对应对话，切到其他应用还有系统通知。",
+    "usage": {
+      "prompt_tokens": 4062,
+      "completion_tokens": 2327,
+      "total_tokens": 6389,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1981
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3422
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-long-term-memory",
+  "analyzedAt": "2026-08-18T14:54:19.098Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，README 也给出了 dsh plugin add 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-long-term-memory",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-plugin-long-term-memory@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加上了长期记忆：它会偷偷观察你平时怎么用工具、怎么和 AI 对话，从中总结出你的习惯和偏好，下次对话时自动把相关记忆‘想’起来，让 AI 更懂你。数据都保存在你自己电脑上，也可以选配 AI 服务来做更聪明的分析和记忆提炼。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下创建配置文件和数据文件夹（如 ~/.config/dsh/long-term-memory.jsonc 和 ~/.local/share/dsh/long-term-memory/），记录工具调用、对话内容等。如果你手动开启 AI 语义分析或记忆提炼，相关数据会被发送到你配置的第三方 AI 服务（如 OpenAI、智谱）——这是你主动设置的，默认不开启。",
+      "postInstallNotes": "装完即可用；可选地，如果想用 AI 语义分析/记忆提炼，需要配置 ~/.config/dsh/long-term-memory.jsonc 里的 ai 和 embedding 块，并设置对应的 API key 环境变量。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 长期记忆插件：让 AI 记住你的使用习惯和对话内容，跨会话提供个性化辅助。",
+    "usage": {
+      "prompt_tokens": 4926,
+      "completion_tokens": 987,
+      "total_tokens": 5913,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 561
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4286
+    }
+  }
+}

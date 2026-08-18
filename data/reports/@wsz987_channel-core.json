@@ -1,0 +1,37 @@
+{
+  "id": "@wsz987/channel-core",
+  "analyzedAt": "2026-08-17T11:10:43.381Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明依赖 @deepseek-ai/cordis 且导出 plugin 入口，README 说明可作 Cordis 插件加载，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wsz987/channel-core",
+      "evidence": "pnpm add @wsz987/channel-core"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 的一个基础组件，负责统一管理不同的聊天/消息渠道（比如微信、Telegram 等）。它定义了一套通用接口，让各种渠道的适配器都能按同一套标准工作，并提供注册、消息收发、数据存储等功能。普通用户一般不直接用到它，但安装其他渠道插件时会自动依赖它。",
+      "level": "ok",
+      "risks": "它会在电脑上创建一个数据目录，存放渠道相关的配置和缓存（默认在 ~/.dsh/dsh-channels，也可通过环境变量修改）。如果里面有敏感信息，只有本机用户能访问。没发现明显风险。",
+      "postInstallNotes": "作为基础插件，一般无需额外配置。若需自定义数据存放位置，可设置环境变量 DSH_CHANNELS_DATA_DIR。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供统一跨渠道消息服务的基础插件。",
+    "usage": {
+      "prompt_tokens": 1888,
+      "completion_tokens": 1056,
+      "total_tokens": 2944,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 723
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1248
+    }
+  }
+}

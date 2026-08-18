@@ -1,0 +1,37 @@
+{
+  "id": "@eqman00003/knowlp-rag",
+  "analyzedAt": "2026-08-16T14:54:04.194Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且描述中明确为 DeepSeek Harness (dsh) bundle，符合 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@eqman00003/knowlp-rag",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek 助手更好地理解和检索你的 Markdown 笔记，它会为笔记构建知识图谱，方便你快速找到相关内容和知识关联。同时它还附带了一个 MCP 服务器接口，方便接入其他工具。",
+      "level": "ok",
+      "risks": "它会读取你指定的 Markdown 笔记内容来建立知识图谱；除此之外，没有发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 Markdown 笔记提供双知识图谱检索的 DSH 插件（含 MCP 服务器）。",
+    "usage": {
+      "prompt_tokens": 1546,
+      "completion_tokens": 1497,
+      "total_tokens": 3043,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1247
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 906
+    }
+  }
+}

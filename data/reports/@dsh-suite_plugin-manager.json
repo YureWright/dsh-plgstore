@@ -1,0 +1,37 @@
+{
+  "id": "@dsh-suite/plugin-manager",
+  "analyzedAt": "2026-08-18T14:49:31.999Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 并依赖 @deepseek-ai/dsh-client-runtime，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-suite/plugin-manager",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add @dsh-suite/plugin-manager"
+    },
+    "evaluationReport": {
+      "intro": "这插件给 DSH 的网页界面加了一个应用商店。你可以在设置里浏览、搜索各种 DSH 插件，看到兼容性标识和已安装列表，还能点一下就自动安装，不用手动敲命令。",
+      "level": "ok",
+      "risks": "它会在你电脑上执行安装命令来装插件（这是它的本职工作）；会读取你已安装的插件列表显示在网页界面；还会从公开的 GitHub Pages 拉取插件目录。没有发现明显风险。",
+      "postInstallNotes": "装好后重启 DSH Web UI，进入 设置 → Plugins → Store 商店 标签页使用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Web UI 的插件商店：浏览、搜索、一键安装、兼容徽章和已装管理。",
+    "usage": {
+      "prompt_tokens": 4753,
+      "completion_tokens": 1742,
+      "total_tokens": 6495,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1421
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4113
+    }
+  }
+}

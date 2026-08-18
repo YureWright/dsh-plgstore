@@ -1,0 +1,37 @@
+{
+  "id": "boNeXY226/dsh-cost-chip",
+  "analyzedAt": "2026-08-17T11:55:18.781Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明 dsh.client 并依赖 @deepseek-ai/cordis，README 描述 DSH 插件安装与 /cost 命令，确为 DSH 插件"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "dsh plugin --profile web add \"file:/absolute/path/to/ds-plugins\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DSH 聊天界面里加一个 /cost 命令，告诉你当前会话用了多少 token、大概花了多少钱。它还会在网页左下角显示一个悬浮小胶囊，实时显示费用和当前时段（高峰/空闲），可以拖到其他地方。价格按北京时间分高峰和空闲两档，很贴心。",
+      "level": "ok",
+      "risks": "它会读取当前会话的 token 用量和费用数据。默认情况下，这些数据只在本机显示，不会上传到别处。但要注意：如果 DSH 的 web 服务被设置成对局域网或公网开放，别人可能通过一个地址读取到你的 token 和费用汇总。另外它会在浏览器里记住小胶囊的位置。",
+      "postInstallNotes": "安装后需要把这个插件添加到 profile 的 cordis.patch.yml 里（加一行 - id: command-cost 之类），然后重启 dsh web。如果想自定义价格表或时段，可以在配置里改。",
+      "notes": "该插件目前没有发布到 npm，README 给的安装命令是本地路径方式；如果要远程安装可以用 git，但官方文档没写。"
+    },
+    "summaryZh": "DSH 会话费用统计插件：/cost 命令显示 token 用量和估算费用，并提供可拖动的悬浮费用胶囊。",
+    "usage": {
+      "prompt_tokens": 3773,
+      "completion_tokens": 2976,
+      "total_tokens": 6749,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2564
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3133
+    }
+  }
+}

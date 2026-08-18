@@ -1,0 +1,37 @@
+{
+  "id": "@woyeshishen/dsh-vision-plugin",
+  "analyzedAt": "2026-08-16T14:48:14.130Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@woyeshishen/dsh-vision-plugin",
+      "evidence": "dsh plugin --profile web add @woyeshishen/dsh-vision-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的，让本来只能读文字的主模型也能“看图”。它会提供一个叫 describe_image 的工具，把图片发给一个额外的、支持图片理解的视觉模型（OpenAI 兼容接口），再把返回的文字描述交给主模型，这样主模型就能理解截图、照片、图表、OCR 等图像内容了。",
+      "level": "ok",
+      "risks": "插件会把你在对话中指定的图片文件发送到你配置的外部视觉模型服务（由你自己填写的 URL 决定），所以如果你把图片发给不信任的服务提供商，图片内容可能会被对方看到。API 密钥会存到 DSH 的凭据库中，不会直接显示。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要在 DSH 设置里的“Multimodal Vision”页面填写外部视觉模型的 Base URL、API key 和模型名称，保存后即可使用。",
+      "notes": "README 提供了一键远程脚本安装（PowerShell curl 管道等），建议优先使用 dsh plugin add 命令安装，避免执行不明来源的管道脚本。"
+    },
+    "summaryZh": "给 DeepSeek Harness 增加图像理解能力的插件，通过调用外部视觉模型把图片转为文字描述，让纯文本主模型也能“看图”。",
+    "usage": {
+      "prompt_tokens": 2949,
+      "completion_tokens": 1144,
+      "total_tokens": 4093,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 710
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2309
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "TtTRz/dsh-wecom",
+  "analyzedAt": "2026-08-17T13:11:57.174Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-wecom",
+      "evidence": "dsh plugin --profile web add dsh-wecom"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的企业微信（WeCom）账号变成一个 AI 机器人，接入 DeepSeek Harness 后，每个聊天（私聊或群聊）都会有独立的、记性好的 AI 代理。它支持流式回复、显示思考过程、还能调用工具（比如读写文件、跑命令），并带有一个实时状态面板。",
+      "level": "ok",
+      "risks": "它会在你电脑上创建 ~/.wecom-sessions 目录保存聊天记录和上传的图片/文件；需要配置企业微信机器人的 ID 和密钥（会存在环境变量或凭据文件里）；还会和企业微信服务器保持长连接。AI 默认带有 bash、读写文件等工具，可能在你电脑上执行命令（这是 DeepSeek Harness 的标准能力，安装前请确认你信任这个插件）。除此之外没有发现明显风险。",
+      "postInstallNotes": "安装后需要设置 WECOM_BOT_ID 和 WECOM_BOT_SECRET（或通过凭据服务），然后启动 dsh web。如果要限制群聊/私聊，可以编辑 ~/.dsh/profiles/web/cordis.patch.yml 里的 dmPolicy/groupPolicy 和允许列表。",
+      "notes": "依赖的 @deepseek-ai/dsh-* 核心包目前是 RC 版本，可能有不稳定变动；需要 Node.js >=22.19。"
+    },
+    "summaryZh": "将企业微信 AI 机器人接入 DeepSeek Harness 的插件：每个聊天会话对应一个持久、带工具的 AI 代理。",
+    "usage": {
+      "prompt_tokens": 4051,
+      "completion_tokens": 1954,
+      "total_tokens": 6005,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1487
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3411
+    }
+  }
+}

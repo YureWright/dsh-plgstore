@@ -1,0 +1,37 @@
+{
+  "id": "dsh-taskswarm",
+  "analyzedAt": "2026-08-16T13:43:14.874Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 字段，peerDependencies 包含 @deepseek-ai/cordis 等 DSH 核心包，README 明确给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-taskswarm",
+      "evidence": "dsh plugin --profile web add dsh-taskswarm"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness (DSH) 用的多智能体任务编排插件。它能把一大堆任务按依赖关系排成波浪（waves），然后用 git worktree 隔离出独立的工作区，让多个 AI 助手并行干活，干完还会自动互相审查、合并成果。你可以把它理解成一个工头：把活拆成小包、分给多个工人（AI agent）同时做，做完质检（reviewer）通过再合到一起。它还配了一个本地网页看板，能实时看进度；就算中途崩了，也能从存好的检查点恢复接着干。",
+      "level": "ok",
+      "risks": "它会在你的 git 仓库里创建和切换分支、建立 worktree，并在项目下生成 .taskswarm 文件夹存放运行状态（比如批处理进度、任务包等）。它还会在本地启动一个网页看板（自动分配端口，一般只在本机访问）。这些操作都是它干活的正常需要，但如果你对 git 操作不熟，可能会被分支/合并搞晕，建议先用测试仓库试试。",
+      "postInstallNotes": "重启 dsh web 使插件生效（README 明确要求：Restart dsh web after installing）。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-taskswarm（蜂群）是 DSH 的多智能体并行任务编排插件：把任务按依赖分成波次、用 git worktree 隔离并行跑、自动审查合并，还带实时看板。",
+    "usage": {
+      "prompt_tokens": 4037,
+      "completion_tokens": 1126,
+      "total_tokens": 5163,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 664
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3397
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ThreeBody6666/dsh-im-hub",
+  "analyzedAt": "2026-08-17T12:08:27.513Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/* 核心包，README 给出 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-im-hub",
+      "evidence": "From npm (recommended): dsh plugin --profile im add dsh-im-hub"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness (dsh) 用的聊天机器人网关插件，能把你的 dsh 智能体接到飞书、企业微信和 Telegram 上，让你在平时用的聊天软件里直接和它对话。它支持多轮对话、每个聊天独立上下文、白名单访问控制，飞书和 Telegram 不需要公网地址（用长连接/轮询），企业微信需要公网回调。还带一个网页设置面板，不用手改配置文件。",
+      "level": "ok",
+      "risks": "需要你提供聊天平台的机器人凭证（Token、App Secret 等），这些会存在本机配置里；默认白名单是空的，意味着任何人知道机器人地址都能对话，建议配置 allowedUserIds 限制；如果启用企业微信或飞书 webhook 模式，会开启本地 HTTP 服务并需要公网访问，注意别暴露敏感信息；插件会创建 agent 会话并消耗算力。",
+      "postInstallNotes": "装完后需要在配置里设置至少一个适配器的凭证（如 Telegram token、飞书 App ID/Secret、企业微信 corpId 等），并建议设置 allowedUserIds 白名单；如需 Web 设置界面，要在 dsh web 环境下运行。",
+      "notes": "无"
+    },
+    "summaryZh": "一个让 dsh 智能体接入飞书、企业微信和 Telegram 的多平台 IM 网关插件，带网页配置卡片。",
+    "usage": {
+      "prompt_tokens": 4032,
+      "completion_tokens": 666,
+      "total_tokens": 4698,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 224
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3392
+    }
+  }
+}

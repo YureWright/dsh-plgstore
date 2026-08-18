@@ -1,0 +1,37 @@
+{
+  "id": "godchen520/dsh-web-remote",
+  "analyzedAt": "2026-08-17T12:12:24.873Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置，README 明确说明是标准 DSH bundle 包并给出安装方式，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/godchen520/dsh-web-remote.git",
+      "evidence": "在 profile 目录（如 `$DSH_HOME/profiles/web`）执行：`pnpm add github:godchen520/dsh-web-remote --config.minimumReleaseAge=0`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加了一个『远程访问』功能。装上之后，你可以用手机或别的设备，通过浏览器访问电脑上的 DSH。它支持两种方式：一种是走 Cloudflare 的免费公网隧道（不需要公网 IP，也不需要注册），另一种是在同一个 Wi-Fi 下直接用局域网地址访问。为了安全，每次启动都会生成一个访问令牌，只有带着令牌的链接才能打开。另外，它还在 DSH 界面里加了一个手机图标，点开就能看到公网/局域网地址、一键复制链接、扫码访问、启动/停止等。",
+      "level": "caution",
+      "risks": "这个插件会把你的 DSH 服务通过公网暴露出去，生成的公网链接带有访问令牌，如果链接泄露，别人就可能看到你 DSH 里的数据。它会自动下载 cloudflared 程序并建立隧道，流量会经过 Cloudflare 的服务器。另外还会在本机开启额外的 HTTP/HTTPS 端口（局域网用），局域网模式默认免 token，同一网络的人可能直接访问。",
+      "postInstallNotes": "安装后需要把 'dsh-web-remote' 添加到 profile 的 package.json 里 dsh.profile.bundles 列表，然后重启 DSH。也可以在 cordis.patch.yml 中按需调整配置（如端口、是否自动启动、局域网是否免令牌等）。",
+      "notes": "公网链接含令牌，注意不要泄露给他人；隧道地址每次重启会变，以面板显示为准。README 中提到的 QQ 机器人功能仍在开发中。"
+    },
+    "summaryZh": "给 DSH 加一个手机/外网远程访问面板，通过 Cloudflare 隧道或局域网直连，让手机浏览器随时访问电脑上的 DSH。",
+    "usage": {
+      "prompt_tokens": 2229,
+      "completion_tokens": 2450,
+      "total_tokens": 4679,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1907
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1589
+    }
+  }
+}

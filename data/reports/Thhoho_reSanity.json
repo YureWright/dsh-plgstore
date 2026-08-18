@@ -1,0 +1,37 @@
+{
+  "id": "Thhoho/reSanity",
+  "analyzedAt": "2026-08-17T13:16:47.363Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，peerDependencies 包含 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "/absolute/path/resanity-0.2.1.tgz",
+      "evidence": "dsh plugin --profile headless add /absolute/path/resanity-0.2.1.tgz"
+    },
+    "evaluationReport": {
+      "intro": "这是一个帮助个人投资者做理性研究的工具，让你在听到一个投资消息时，能系统地查证据、找推理漏洞、记录判断和复盘，避免被情绪带偏。它不会推荐股票，也不会替你交易，只负责把研究过程管清楚。",
+      "level": "ok",
+      "risks": "它会在你的工作目录里创建认知锚和决策日志等明文文件，记录你的投资判断；如果你分享目录，别人可能看到你的研究思路。如果你配置了 Tushare token，它会用该 token 请求行情数据，但这是你主动设置的。没有发现其他明显风险。",
+      "postInstallNotes": "安装后建议运行 `python3 tools/skill_identity.py --host dsh --cwd \"$PWD\" --profile investing` 验证 Skill 加载正确；如需价格数据，需自行配置 Tushare token；可选地启用系统通知。",
+      "notes": "此插件同时是一个 Skill，DSH 插件只是可选外壳；安装方式为本地 tarball，可能需要自行打包。"
+    },
+    "summaryZh": "一个帮散户做投资研究、查证消息真伪、记录判断与复盘的认知管理工具（DSH 插件可选）。",
+    "usage": {
+      "prompt_tokens": 4018,
+      "completion_tokens": 4817,
+      "total_tokens": 8835,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4404
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3378
+    }
+  }
+}

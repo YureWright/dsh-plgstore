@@ -1,0 +1,37 @@
+{
+  "id": "dsh-all-warmup",
+  "analyzedAt": "2026-08-16T13:37:59.420Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-all-warmup",
+      "evidence": "dsh plugin --profile web add dsh-all-warmup"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在每次新开对话（包括子代理、长对话压缩后）时，先偷偷让 AI 做一个极简单的热身问答（比如问'你是谁'），同时暂时只开放运行命令和编辑文件两个基础工具；等热身完成，从第二轮对话起，AI 才会恢复完整能力和所有高级工具。目的是让 AI 在正式干活前先'热个身'，减少首轮表现不稳。",
+      "level": "ok",
+      "risks": "它会在每次会话开始时额外调用一次 AI 接口（可能产生费用），并在首轮临时限制可用工具；安装时会修改 DSH 的配置文件（cordis.patch.yml），建议提前备份配置文件。除此之外未发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "第三方个人维护，版本 0.1.0，非官方插件。"
+    },
+    "summaryZh": "DSH 全局热身层插件：每次会话/子代理/压缩后先自动执行一次极简热身调用，第二轮起恢复完整原模式。",
+    "usage": {
+      "prompt_tokens": 2523,
+      "completion_tokens": 3741,
+      "total_tokens": 6264,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3404
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1883
+    }
+  }
+}

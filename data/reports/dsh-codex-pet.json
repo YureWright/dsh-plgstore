@@ -1,0 +1,37 @@
+{
+  "id": "dsh-codex-pet",
+  "analyzedAt": "2026-08-16T13:32:27.994Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出 dsh plugin add 安装命令，是典型的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-codex-pet",
+      "evidence": "dsh plugin --profile web add dsh-codex-pet"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）用的桌面宠物插件。装上后，DSH 网页界面上会浮现一个可以拖来拖去的小宠物，你可以导入自己的精灵图（一套连续图片）做成宠物，它会在你干活时跑来跑去、等待时发呆、任务完成时开心，像个小搭档。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在 DSH 网页界面里增加一个浮动宠物层，需要时你可以上传宠物素材（zip），这些素材只保存在本地。",
+      "postInstallNotes": "装完后重启 DSH Web GUI，并刷新页面；然后在“设置 → 宠物库”里上传你自己的宠物 zip（可选）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 桌面宠物插件：在 DSH Web 界面添加可拖拽的浮动精灵宠物，支持导入精灵图、互动和 Agent 状态联动。",
+    "usage": {
+      "prompt_tokens": 1855,
+      "completion_tokens": 1202,
+      "total_tokens": 3057,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 871
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1215
+    }
+  }
+}

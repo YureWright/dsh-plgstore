@@ -1,0 +1,37 @@
+{
+  "id": "GooodWei/context-vista",
+  "analyzedAt": "2026-08-17T11:45:20.116Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:GooodWei/context-vista",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add github:GooodWei/context-vista"
+    },
+    "evaluationReport": {
+      "intro": "这是 DeepSeek Harness 的一个插件，装上后可以用 /context 命令查看一个环形图，直观展示当前对话的上下文窗口用了多少 token、压缩省了多少、估算花费多少钱。同时对话区右侧会常驻一个可拖动、可收起的小悬浮卡片，实时显示占用率和费用，卡片上还有一键压缩上下文的按钮。你也可以在 ~/.dsh/settings.yaml 里自定义不同 API 的定价。",
+      "level": "ok",
+      "risks": "它会读取 ~/.dsh/settings.yaml 配置文件和当前会话的上下文信息，但都只保存在本地，没发现向外部传输数据的行为。",
+      "postInstallNotes": "如需要自定义各 API 的计费价格，编辑 ~/.dsh/settings.yaml（热加载，无需重启）；此外需确保已安装 pnpm（安装插件时会用到）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加 /context 环形图，实时显示上下文 token 用量、压缩收益与费用估算。",
+    "usage": {
+      "prompt_tokens": 2565,
+      "completion_tokens": 1863,
+      "total_tokens": 4428,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1491
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1925
+    }
+  }
+}

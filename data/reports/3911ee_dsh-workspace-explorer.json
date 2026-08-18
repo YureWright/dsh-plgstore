@@ -1,0 +1,37 @@
+{
+  "id": "3911ee/dsh-workspace-explorer",
+  "analyzedAt": "2026-08-17T12:14:08.901Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client/dsh.bundle 并依赖 @deepseek-ai/cordis 等官方包，README 给出 dsh plugin add 安装命令，确属 DSH 插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:3911ee/dsh-workspace-explorer",
+      "evidence": "dsh plugin --profile web add github:3911ee/dsh-workspace-explorer"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加一个“工作区文件”面板，长得像 VS Code：左边是项目文件树，右边是编辑器。你可以直接在网页里浏览、打开、编辑和保存项目文件，也能新建/重命名文件；AI 助手也能看到项目结构并帮你改代码。",
+      "level": "ok",
+      "risks": "它会读写你 DSH 工作区目录下的文件（就是 DSH 能访问的项目文件）。插件完全在本地运行，不对外发数据；但如果你的 DSH 网页被绑定到非本机地址（比如 0.0.0.0 或公网），那么任何能访问这个网页的人都能浏览和修改你的项目文件——这是 DSH 本身的安全模型，使用时别把带这个插件的 DSH 直接暴露到公网。",
+      "postInstallNotes": "安装完成后需要重启 dsh web 服务并刷新浏览器；另外安装前要确保本机有 pnpm。",
+      "notes": "目前只能通过 GitHub 安装（npm 包尚未发布）；插件只支持带 Web 界面的 profile。"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面添加 VS Code 风格的工作区文件浏览器与编辑器，支持直接查看、编辑和保存项目文件。",
+    "usage": {
+      "prompt_tokens": 3724,
+      "completion_tokens": 2255,
+      "total_tokens": 5979,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1824
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3084
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "huashenglian/dsh-her-eyes",
+  "analyzedAt": "2026-08-17T11:57:28.042Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime，README 给出 dsh plugin add 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/huashenglian/dsh-her-eyes.git",
+      "evidence": "From GitHub: dsh plugin --profile web add github:huashenglian/dsh-her-eyes"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的 AI 能“看”图片。你可以给它配置两个视觉模型接口（一个主用、一个备用），主接口出问题时它会自动切换备用接口。它还自带一个设置页面，不用手动改文件，改完就自动保存。",
+      "level": "ok",
+      "risks": "它会读取和写入你电脑上的配置文件 ~/.dsh/vlm-vision.json，里面可能存放 API key 等敏感信息；另外它会在本地开启几个网页路由（/vlm/...），但这些只在本机访问，目前没发现明显风险。",
+      "postInstallNotes": "装完后需要在设置页（Settings → Vision Models）或直接编辑 ~/.dsh/vlm-vision.json 填入可用的 VLM 接口地址、API 密钥和模型名称，否则 analyze_image 工具无法正常工作。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供图片分析能力，支持主备视觉模型自动切换，并带一个自动保存的可视化配置页面。",
+    "usage": {
+      "prompt_tokens": 2518,
+      "completion_tokens": 1284,
+      "total_tokens": 3802,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 894
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1878
+    }
+  }
+}

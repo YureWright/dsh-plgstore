@@ -1,0 +1,37 @@
+{
+  "id": "1738348785/dsh-plugin-text-translation",
+  "analyzedAt": "2026-08-17T12:13:06.618Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch，peerDependencies 包含 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/1738348785/dsh-plugin-text-translation.git",
+      "evidence": "dsh plugin --profile demo add github:1738348785/dsh-plugin-text-translation"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness (DSH) 用的翻译工具。它能帮你从游戏脚本（比如 RPG Maker、Ren'Py、字幕文件）和长文档（PDF、Word、Markdown 等）里提取出要翻译的文字，翻译完再原样放回去，同时保住各种格式标签和变量符号不被破坏。你可以让 DSH 的智能体自动调度它，或者自己配合子代理做并行翻译。",
+      "level": "ok",
+      "risks": "插件会读写你指定的翻译文件（游戏脚本、文档等），并在本地运行 Python 引擎完成文本处理。需要安装 Python 依赖（typer、pydantic 等，部分格式需要额外安装 openpyxl、PyMuPDF 等）。未发现收集隐私或联网上传数据的行为。",
+      "postInstallNotes": "安装后按需：1) 新 profile 安装 @deepseek-ai/dsh-base 时需显式指定版本（如 @0.1.0-rc.6），否则可能因 latest 指错而失败；2) 如遇 pnpm 阻止依赖的 build scripts，需在 profile 的 pnpm-workspace.yaml 中把 allowBuilds 设为 true；3) 运行前需安装 Python 依赖：pip install -r python/requirements.txt（必需层），按需安装可选格式解析库；4) 可在 cordis.patch.yml 中调整 pythonPath、batchSize 等配置。",
+      "notes": "README 提示 pnpm 本地路径安装可能有符号链接问题，推荐用 GitHub 安装（github:1738348785/dsh-plugin-text-translation）或通过 dsh plugin add git+https...。另外依赖 @deepseek-ai/dsh-tools 等 rc 版本，请确认 DSH 版本兼容。"
+    },
+    "summaryZh": "为 DeepSeek Harness 打造的多格式文本/文档翻译插件，实现标签保护、智能提取与无损回填，适配游戏脚本与长文档。",
+    "usage": {
+      "prompt_tokens": 3564,
+      "completion_tokens": 2830,
+      "total_tokens": 6394,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2230
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2924
+    }
+  }
+}

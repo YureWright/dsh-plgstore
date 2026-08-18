@@ -1,0 +1,37 @@
+{
+  "id": "tzy168/dsh-web-theme-packs",
+  "analyzedAt": "2026-08-17T12:11:24.274Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 等多个 DSH 核心包，且 README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "`pnpm dsh plugin --profile web add ./dsh-web-theme-packs`（README 给出的安装方式，需先克隆仓库并本地构建，未提供远程安装 spec）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 网页版的一个“换肤”工具。你可以把做好的主题文件夹（里面放颜色、CSS、字体、图片）丢到电脑上的指定目录，插件就会自动扫描并在设置面板里让你切换主题。它只能换颜色和附加样式，不能改变窗口布局或图标。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 `$DSH_HOME/theme-packs` 目录（默认主题目录）以及插件自带的 `themes` 目录，把里面的 CSS 和资源文件加载到网页里。主题文件来自你自己放入的文件夹，如果你下载了不可信的主题，其中的 CSS 可能会被应用到界面（但不会执行 JavaScript）。除此之外没有发现明显风险。",
+      "postInstallNotes": "安装后，把主题文件夹放进 `$DSH_HOME/theme-packs`（或配置的扫描目录），然后在 DSH 设置 → 外观 → Theme packs 中选择即可。如果需要自定义扫描目录或路由前缀，可在配置文件中修改 `roots` 和 `routePrefix`。",
+      "notes": "该包在 package.json 中标记为 `private`，且依赖使用 `workspace:^`，未发布到 npm，需要从 GitHub 仓库克隆后自行构建再本地添加。"
+    },
+    "summaryZh": "DSH 网页客户端的外置主题包插件，可从文件夹加载颜色、CSS、字体和图片，并在设置中一键切换主题。",
+    "usage": {
+      "prompt_tokens": 3596,
+      "completion_tokens": 2992,
+      "total_tokens": 6588,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2520
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2956
+    }
+  }
+}

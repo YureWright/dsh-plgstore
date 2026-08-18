@@ -1,0 +1,37 @@
+{
+  "id": "huey1in/reef",
+  "analyzedAt": "2026-08-17T11:30:33.659Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle（cordis.patch.yml），且 README 给出了 dsh plugin add 安装命令，符合官方插件标准。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-reef",
+      "evidence": "dsh plugin --profile web add dsh-reef"
+    },
+    "evaluationReport": {
+      "intro": "dsh-reef 是一个 DSH 插件全家桶，一次安装提供五个模块：浏览器自动化（让 AI 控制一个共享浏览器，能多标签页、点击、输入、截图、下载等）、MCP Server（把 DSH 变成一台 MCP 服务器，其他 MCP 客户端可以连上来用它的会话和 agent）、GitHub/GitLab 集成（只读工具 + webhook 自动评审 PR/MR、自动修 issue 开 PR）、以及一个注入 DSH 界面的原生面板（显示状态、实时浏览器画面、GitHub 事件等）。它只依赖 playwright-core，复用系统已有的 Edge/Chrome，不需要额外下载 Chromium。",
+      "level": "ok",
+      "risks": "它会在本地启动一个 HTTP 服务（127.0.0.1:3080），用来提供 MCP 和接收 GitHub/GitLab 的 webhook；会保存你的 GitHub/GitLab/MCP 访问令牌到 DSH 凭据库或自己的文件里；如果开启浏览器模块，AI 代理可以浏览网页、下载/上传文件、读取和设置 Cookie；如果配置了自动修 issue，它会在你本地仓库自动建分支、改代码并推送。这些操作都发生在你自己的电脑上，令牌和浏览器行为对本地 DSH 用户是可见的。",
+      "postInstallNotes": "安装后重启 DeepSeek Harness 生效。按需在面板或 cordis.patch.yml 中配置：GitHub/GitLab 需要设置 token（环境变量或面板）；MCP 如需外部访问要设 token 或 OAuth；浏览器模块默认 headless 并自动探测 Edge/Chrome，无需下载 Chromium。如果不想启用某个模块，可以在 cordis.patch.yml 中删除对应行。",
+      "notes": "该插件通过 dsh.bundle 的 patch 机制修改 DSH 配置，安装前可先查看 cordis.patch.yml 内容。"
+    },
+    "summaryZh": "DSH 全家桶插件：浏览器自动化 + MCP Server + GitHub/GitLab 自动评审 + 原生面板，一次安装五个模块。",
+    "usage": {
+      "prompt_tokens": 4816,
+      "completion_tokens": 2561,
+      "total_tokens": 7377,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1977
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4176
+    }
+  }
+}

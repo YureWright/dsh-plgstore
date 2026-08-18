@@ -1,0 +1,37 @@
+{
+  "id": "@a9i5k4/dsh-auto-memory",
+  "analyzedAt": "2026-08-16T13:44:30.518Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了明确的 dsh 插件安装步骤，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@a9i5k4/dsh-auto-memory",
+      "evidence": "Run in the profile directory (`~/.dsh/profiles/web`): ```bash cd ~/.dsh/profiles/web pnpm add @a9i5k4/dsh-auto-memory ```"
+    },
+    "evaluationReport": {
+      "intro": "这是个给 DeepSeek Harness 网页版用的自动记忆插件。它会给你的 AI 加三层记忆：用户级规则、项目笔记、每日日志。每次对话结束后，它会自动把值得记的内容写进当天的日志里，还能把长期有用的内容提升为项目笔记或个人规则。它有个可视化面板，能查看记忆、搜索过去的记录、还有日历视图可以规划任务。每天还会自动生成一段 AI 写的问候语和当天总结。简单说，就是让 AI 记得住你说过的话和做过的事，并且不用你手动管。",
+      "level": "ok",
+      "risks": "它会读写你电脑上 ~/.dsh/memory/ 目录下的文件（用户记忆、项目笔记、每日日志、反思文件），还可能迁移旧版 .dsh-memory/ 文件夹（但不会删除原文件）。设置页里有“检查更新”按钮，会访问 npm registry 查询最新版本。AI 生成问候、总结、智能搜索时需要调用大模型 API，会消耗你的 API 额度。除此之外没发现明显风险。",
+      "postInstallNotes": "装完还需要手动编辑 profile 目录（~/.dsh/profiles/web）里的 package.json，把 \"@a9i5k4/dsh-auto-memory\" 加到 dsh.profile.bundles 数组里，然后重启 dsh web。如果当天刚发布的版本被 pnpm 拦截（发布不足 1 天），需要在 pnpm-workspace.yaml 里加 minimumReleaseAge: 0 或用显式版本号。可选：在 ~/.dsh/dsh-auto-memory.json 里配置 autoConsolidate 等选项。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 自动记忆插件，三层记忆自动沉淀与检索、每日反思、日历视图与设置页，让 AI 长期记住你的偏好和工作内容。",
+    "usage": {
+      "prompt_tokens": 3856,
+      "completion_tokens": 950,
+      "total_tokens": 4806,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 379
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3216
+    }
+  }
+}

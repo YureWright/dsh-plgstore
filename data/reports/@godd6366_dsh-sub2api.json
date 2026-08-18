@@ -1,0 +1,37 @@
+{
+  "id": "@godd6366/dsh-sub2api",
+  "analyzedAt": "2026-08-16T13:39:47.018Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@godd6366/dsh-sub2api",
+      "evidence": "dsh plugin --profile web add @godd6366/dsh-sub2api"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你把 sub2api（一个把各种订阅额度转成 OpenAI 兼容接口的网关）接到 DeepSeek Harness 上，这样就能在一个统一界面里同时使用 OpenAI、Claude、Grok、Gemini 等多种模型。它自动帮你配置路由、获取模型列表、查看用量，还支持图片识别和生成，甚至能让你在纯文本模型上自动调用视觉模型看图。",
+      "level": "caution",
+      "risks": "它会改动 DeepSeek Harness 安装目录里的一个文件（pi-ai 的 estimate.js），相当于自动打补丁；它也会通过凭证服务保存你填写的 API 密钥，能访问你电脑上 harness 配置的人可能看到这些密钥；另外，你的请求会发往你在设置里配置的 sub2api 网关地址。",
+      "postInstallNotes": "打开“设置 → Sub2API 模型”填写 sub2api 网关地址（baseURL），并通过凭证服务或环境变量（如 SUB2API_OPENAI_API_KEY）配置各平台 API 密钥；如果 dsh 安装目录是只读的，需要手动执行 node scripts/patch-pi-ai.mjs。",
+      "notes": "该插件会修改 dsh 安装内的 pi-ai 文件以修复上游 bug（幂等，dsh 升级后会自动重新应用）；它还会为外部模型自动创建带“-vision”后缀的双子模型，可能与其它插件产生命名冲突。"
+    },
+    "summaryZh": "连接 sub2api 网关到 DeepSeek Harness 的插件，统一使用 OpenAI/Claude/Grok/Gemini 模型，并支持自动模型发现、用量查询和图片功能。",
+    "usage": {
+      "prompt_tokens": 4245,
+      "completion_tokens": 2416,
+      "total_tokens": 6661,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1909
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3605
+    }
+  }
+}

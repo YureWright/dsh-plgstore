@@ -1,0 +1,37 @@
+{
+  "id": "dsh-desktop-plugin",
+  "analyzedAt": "2026-08-17T11:07:57.967Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-desktop-plugin",
+      "evidence": "dsh plugin --profile web add dsh-desktop-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你在 Windows 上安装并启动一个 DeepSeek Harness 的桌面托盘应用。它会在需要时自动从 GitHub 下载 exe 程序，创建桌面快捷方式（应用和网页两个），并且支持自动更新。你还可以在对话里说“打开桌面应用”，让智能体帮你安装并启动。",
+      "level": "caution",
+      "risks": "它会从 GitHub 下载并运行未签名的 Windows 程序，可能触发 SmartScreen 或杀毒软件报警；会在桌面创建快捷方式，并在本地目录写入和替换 exe 文件；自动更新机制意味着每次激活都可能下载新版本，需要信任该发布源。未发现收集个人隐私的行为。",
+      "postInstallNotes": "重启 DSH 后生效。首次运行 exe 时如果出现 SmartScreen 蓝色警告，需要点击“更多信息”->“仍要运行”。若 GitHub 下载慢，可在配置中设置 assetProxy 镜像。",
+      "notes": "插件会下载并自动更新来自个人仓库的未签名 exe，请确保您信任该发布者；建议留意 release 来源是否可靠。"
+    },
+    "summaryZh": "一个 DSH 插件，用于自动安装、更新和启动 DeepSeek Harness 的 Windows 桌面壳，并支持通过对话唤起。",
+    "usage": {
+      "prompt_tokens": 2583,
+      "completion_tokens": 914,
+      "total_tokens": 3497,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 501
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1943
+    }
+  }
+}

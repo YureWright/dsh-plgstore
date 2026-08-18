@@ -1,0 +1,37 @@
+{
+  "id": "forrestahha/dsh-voice-input",
+  "analyzedAt": "2026-08-17T13:11:57.144Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 也给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/forrestahha/dsh-voice-input.git",
+      "evidence": "Install directly from GitHub into the Web profile: dsh plugin --profile web add github:forrestahha/dsh-voice-input"
+    },
+    "evaluationReport": {
+      "intro": "这插件给 DSH 的网页聊天界面加一个麦克风小按钮，就在输入框旁边。你点一下，它就调用浏览器自带的语音识别功能，把你说的内容实时变成文字填进输入框里，不会自动帮你发送。你可以继续说、再点一次就停止。它不需要额外注册 API 或搭服务器，适合打字不方便时用。不过它依赖浏览器的语音识别能力，用 Chrome 系浏览器效果最好。",
+      "level": "ok",
+      "risks": "它只做语音转文字，不会动你的文件或系统设置。但首次点击麦克风时浏览器会弹窗请求麦克风权限；语音识别时，浏览器厂商（比如 Google）可能会收到你这段语音用来识别，所以别拿它录密码或敏感信息。其他没发现什么风险。",
+      "postInstallNotes": "装完后要重新启动 DSH Web 界面（`dsh web`），然后打开页面、选中一个工作区、点麦克风按钮并允许浏览器访问麦克风。如果 DSH 跑在别的机器上，请用 HTTPS 访问，否则浏览器可能不给麦克风权限。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页界面添加语音输入按钮，用浏览器自带语音识别把语音转成文字填入输入框，无需额外服务和 API。",
+    "usage": {
+      "prompt_tokens": 2331,
+      "completion_tokens": 2005,
+      "total_tokens": 4336,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1553
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1691
+    }
+  }
+}

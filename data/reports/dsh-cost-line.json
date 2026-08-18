@@ -1,0 +1,37 @@
+{
+  "id": "dsh-cost-line",
+  "analyzedAt": "2026-08-18T14:52:58.500Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，是标准 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-cost-line@latest",
+      "evidence": "dsh plugin --profile web add dsh-cost-line@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 网页版聊天界面的官方 Token 统计行下面，额外加一行费用统计，按模型分别显示你这次会话花了多少钱（比如 DeepSeek-V4-Flash ¥2.36）。它用内置的官方价格表计算，也支持你自己填价格、套餐和峰谷时段。",
+      "level": "ok",
+      "risks": "没发现明显风险；它只读取本地会话的 token 用量并展示费用，不联网、不碰隐私文件。",
+      "postInstallNotes": "安装后重启 dsh web 即可生效；如需自定义币种、套餐或价格，可在 cordis.patch.yml 的 config 中配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 费用统计行：在官方 Token 用量行下方按模型显示真实费用，价格核对自官方定价页，支持自定义价格与套餐。",
+    "usage": {
+      "prompt_tokens": 5826,
+      "completion_tokens": 1445,
+      "total_tokens": 7271,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1113
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5186
+    }
+  }
+}

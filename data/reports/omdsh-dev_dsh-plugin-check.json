@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-plugin-check",
+  "analyzedAt": "2026-08-17T11:17:41.305Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，依赖 @deepseek-ai/cordis 和 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，并注册了 plugin_check 工具。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:omdsh-dev/dsh-plugin-check",
+      "evidence": "README 安装命令：`dsh plugin --profile web add github:omdsh-dev/dsh-plugin-check`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件健康检查工具，用来扫描其他 DSH 插件仓库，检查它们的配置清单、补丁格式、构建方式以及是否被 hub 收录，然后生成一份合规报告，告诉你有哪里有问题、该怎么修。整个过程是只读的，不会改动或构建被检查的仓库，也不会运行被检查仓库里的代码。它本身也是一个 DSH 插件，安装后会注册一个叫 plugin_check 的工具，方便模型或 CI 调用。",
+      "level": "ok",
+      "risks": "它只读取你指定扫描的插件仓库目录（默认当前目录）里的文件，不修改、不联网、不执行任何代码。唯一要注意的是别拿它扫包含敏感文件的目录，因为生成的报告会列出文件结构和检查结果，如果通过 CI 或模型调用，报告会传给调用方。",
+      "postInstallNotes": "无强制配置。安装后可用 `dsh --profile web --dump-config | grep tool-plugin-check` 确认注册成功。若希望检查 hub 收录状态，可设置环境变量 DSH_HUB_SOURCE 指向本地 hub catalog，或把 hub 目录放在工作目录下；不设置也能用，hub 检查会显示 skipped。",
+      "notes": "该插件面向插件开发者/审核者，用于检查其他 DSH 插件仓库，不是普通用户功能。package.json 标记为 private，不能从 npm 直接安装，需通过 GitHub 引用或本地 tarball 安装。依赖了 @deepseek-ai/dsh 的 rc 版本，README 声称已验证兼容。"
+    },
+    "summaryZh": "DSH 插件健康检查工具：扫描插件仓库，诊断清单协议、补丁格式、构建陷阱和 hub 收录状态，输出合规报告与修复建议（只读）。",
+    "usage": {
+      "prompt_tokens": 3269,
+      "completion_tokens": 5939,
+      "total_tokens": 9208,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5401
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2629
+    }
+  }
+}

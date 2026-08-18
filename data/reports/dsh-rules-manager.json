@@ -1,0 +1,37 @@
+{
+  "id": "dsh-rules-manager",
+  "analyzedAt": "2026-08-18T14:49:40.405Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，peerDependencies 依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，是标准 DSH bundle 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-rules-manager",
+      "evidence": "dsh plugin --profile web add dsh-rules-manager"
+    },
+    "evaluationReport": {
+      "intro": "这是一个管理 DeepSeek Harness（DSH）的规则、命令和技能的插件。装上之后，你可以在聊天框用 /rules 命令查看、添加、修改、删除规则，也可以在设置页里看到一个「规则、命令与技能」面板，可视化地编辑规则、查看命令清单、自定义自己的斜杠命令（比如你设一个 /hello 让它输出固定内容），还能管理技能（禁用/启用/删除），并且每次改动都会自动备份，随时可以一键恢复。",
+      "level": "ok",
+      "risks": "它会读写你的 DSH 配置文件（主要是 $DSH_HOME/AGENTS.md 规则文件），每次修改前会自动备份到 $DSH_HOME/.backups 目录。自定义命令会把你预设的内容发给 AI。没发现它会上传数据到外部服务器或执行额外安装脚本。",
+      "postInstallNotes": "安装后需要重启 DSH（如果安装时指定了 profile，请确保命令里的 --profile 参数正确）。重启后设置页会出现「规则、命令与技能」，聊天框可用 /rules。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 规则、命令与技能管理插件，提供 /rules 命令和可视化设置面板，支持规则编辑、自定义斜杠命令、技能管理和自动备份恢复。",
+    "usage": {
+      "prompt_tokens": 4533,
+      "completion_tokens": 814,
+      "total_tokens": 5347,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 392
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3893
+    }
+  }
+}

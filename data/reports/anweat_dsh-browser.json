@@ -1,0 +1,37 @@
+{
+  "id": "anweat/dsh-browser",
+  "analyzedAt": "2026-08-17T12:13:44.845Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，代码通过 inject/ctx.provide 调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@anweat/dsh-browser",
+      "evidence": "dsh plugin --profile web add @anweat/dsh-browser"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的浏览器工具包。它自带一个浏览器内核（Chromium）和跟网页交互的各种能力，比如打开网页、点击按钮、输入文字、滚动、截图、读取页面内容。它还可以复用你已有的登录状态（通过 storageState 文件）去访问需要登录的网页，甚至支持一些社交平台的后台操作。它把一个叫 browser 的服务提供给其他 DSH 插件调用，让别的插件也能用浏览器干活。简单说，就是让 AI 助手能自己打开浏览器、看网页、点一点、截个图。",
+      "level": "ok",
+      "risks": "它会下载并运行 Chromium 浏览器（占用约 400MB 磁盘空间），可能访问或读取你指定网页的内容。如果你配置了 storageStatePath，会使用该登录态文件去访问网站，请确保这个文件来自可信来源并注意保管。除此之外，没发现其他明显风险。",
+      "postInstallNotes": "按需在配置中设置 browser 的 config（例如 channel/headless/opencliEnabled/storageStatePath 等）；若缺 Chromium 内核且 autoInstall 为 false，需手动执行 browser_install 工具；Node.js 版本需满足 ^22.19 或 >=24。",
+      "notes": "确认是真正的 DSH 插件。该插件依赖 @deepseek-ai/dsh-tools 的 RC 版本以及第三方包 @jackwener/opencli，安装时请注意版本兼容性；作者仓库 stars 较少，维护活跃度待观察。"
+    },
+    "summaryZh": "自带 Chromium 内核的 DSH 浏览器服务插件，提供 9 个浏览器工具，可供其他插件通过注入 browser 服务使用。",
+    "usage": {
+      "prompt_tokens": 2550,
+      "completion_tokens": 1360,
+      "total_tokens": 3910,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 837
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1910
+    }
+  }
+}

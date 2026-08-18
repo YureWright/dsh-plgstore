@@ -1,0 +1,37 @@
+{
+  "id": "linshule/dsh-balance",
+  "analyzedAt": "2026-08-17T11:58:03.911Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且 exports 包含 ./client，符合 DSH 插件结构"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/linshule/dsh-balance.git",
+      "evidence": "dsh plugin --profile web add github:linshule/dsh-balance"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（dsh）的网页界面用的。它会在屏幕左下角显示一个小徽章，同时显示你的 DeepSeek API 账户还剩多少钱，以及 OpenCodeGo 计划的用量（比如近几天用了多少百分比）。徽章可以拖动位置，点开能看到详细数字，还能直接在设置里保存 API 密钥、调整刷新间隔。它还会自动读取你已有的 DSH 凭据来获取 OpenCodeGo 的 Key，省得手动填。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 ~/.dsh/.credentials.yaml 里的 OpenCodeGo 密钥，并把 DeepSeek API Key 保存到 ~/.dsh/ds-balance.json（权限设成 0600，只有你自己能读）。这些 Key 只会发给对应的官方接口（api.deepseek.com 和 opencode.ai），不会发给第三方。插件自身的网页接口只允许本机回环地址访问，外部网络访问不了。另外它会在浏览器 localStorage 里记住徽章位置和刷新间隔，清缓存会丢。总体风险不大。",
+      "postInstallNotes": "装完后需要重启 dsh web 才生效。重启后打开左下角徽章或设置页，粘贴你的 DeepSeek API Key 保存；OpenCodeGo Key 一般不用填，会自动读取 DSH 凭据（如果读取不到，也可以在设置页手动填）。",
+      "notes": "注意 package.json 里的包名还是 @linxin666/dsh-balance，而 README 说 v0.3.0 已改为 @linshule/dsh-balance，可能包名存在未同步；npm 安装方式标注了“发布后可用”，所以目前建议优先用 GitHub 安装。"
+    },
+    "summaryZh": "dsh-balance 是一个在 DSH Web 界面左下角显示 DeepSeek 余额和 OpenCodeGo 余量的悬浮徽章插件，支持拖拽、详情查看和 Key 管理。",
+    "usage": {
+      "prompt_tokens": 3943,
+      "completion_tokens": 2220,
+      "total_tokens": 6163,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1658
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3303
+    }
+  }
+}

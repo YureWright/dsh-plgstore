@@ -1,0 +1,37 @@
+{
+  "id": "Gin-7/dsh-pet-remielle",
+  "analyzedAt": "2026-08-17T11:28:14.576Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis，README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Gin-7/dsh-pet-remielle.git",
+      "evidence": "dsh plugin --profile web add github:Gin-7/dsh-pet-remielle"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加一个《绝区零》角色蕾米埃尔的桌宠。它会在页面右下角显示一个透明的小人物，随着 DSH 的工作状态自动切换不同的表情包动图，比如正在回答、调用工具、空闲等。你可以拖动它，右键菜单可以调整大小、透明度、锁定位置、隐藏或唤醒、暂停动画，还可以打开设置面板。卸载后立即恢复原样。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只运行在 DSH 网页 GUI 中，不会访问本地文件或隐私数据。素材内嵌在插件包里，不会额外连接外部服务器。但请注意素材版权归米哈游，仅供个人学习娱乐，禁止商用。",
+      "postInstallNotes": "无",
+      "notes": "包未发布到 npm（private: true），只能通过 Git 安装；内含《绝区零》官方表情包素材，版权归米哈游/HoYoverse，禁止商业使用与再分发。"
+    },
+    "summaryZh": "DSH 网页界面的蕾米埃尔桌宠插件，能随工作状态自动切换表情包动图，透明悬浮、可拖动。",
+    "usage": {
+      "prompt_tokens": 1746,
+      "completion_tokens": 3368,
+      "total_tokens": 5114,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2960
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1106
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-grok2api-media-tool",
+  "analyzedAt": "2026-08-17T11:09:30.591Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-grok2api-media-tool",
+      "evidence": "dsh plugin --profile web add dsh-plugin-grok2api-media-tool              # 从 npm（推荐）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 里的 AI 能画图、做视频、认图。你直接说“画一张赛博朋克城市夜景图”或“分析这张图片”，它就会调用 grok2api 服务生成图片/视频，或者用 Grok 模型识别图片，结果直接显示在对话里。还支持聊天框旁边的上传图片按钮，方便把本地图片发给 AI 识别。",
+      "level": "caution",
+      "risks": "插件会把你的图片/视频请求发送到你配置的 grok2api 服务（可能是你自己搭的，也可能是第三方），识图时图片内容会发给 Grok 模型，注意别把敏感图传上去。生成的媒体文件会保存到会话工作区，配置文件 ~/.dsh/settings.yaml 里会有 API 地址和密钥。没有发现装后门、偷传隐私之类的恶意行为。",
+      "postInstallNotes": "安装后重启 `dsh web`。然后在 `~/.dsh/settings.yaml` 的 `grok2api-media-tool:` 节配置 grok2api 地址和密钥（也可以在对话里让模型帮你配置），否则默认连 127.0.0.1:8000 可能连不上。",
+      "notes": "需要有一个可用的 grok2api 服务（chenyme 或 aurora 版）才能正常使用；视频生成较慢，插件会等待完成。"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加基于 grok2api 的图片/视频生成与图片识别工具。",
+    "usage": {
+      "prompt_tokens": 3075,
+      "completion_tokens": 2231,
+      "total_tokens": 5306,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1739
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2435
+    }
+  }
+}

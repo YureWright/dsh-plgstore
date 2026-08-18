@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-vetting",
+  "analyzedAt": "2026-08-16T13:23:34.799Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle manifest，README 提供了 dsh plugin add 安装命令，且实现了 plugin_vet 工具与 /plugin-vet 命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-vetting",
+      "evidence": "dsh plugin --profile web add dsh-plugin-vetting"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 插件做‘体检’的安全小工具。在安装其他第三方插件之前，它会先扫描那些插件的源代码，帮你识别里面有没有危险动作，比如偷偷联网传数据、读取账户凭据、执行动态代码、留后门等。它不会运行插件本身，只是静态阅读代码，然后给出风险等级和建议。它还能检查官方包有没有被篡改（供应链投毒）、列出哪些依赖没检查过，甚至可以设置成‘未审查插件禁用’模式，拦下没经过扫描的插件工具。相当于给插件世界请了一位‘安检员’。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 DSH 插件目录里的所有第三方插件源码（用于扫描分析），并在 $DSH_HOME/.dsh-plugin-vetting/baseline.json 中记录官方包的内容哈希基线。若开启 monitor 选项，还会在日志里记录子进程命令。这些数据都只留在本地，不会上传。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "安装插件前的静态安全体检工具：扫描第三方 DSH 插件的恶意模式、越权路径和未检查依赖，并提供官方包哈希基线与可选工具门禁。",
+    "usage": {
+      "prompt_tokens": 3079,
+      "completion_tokens": 2574,
+      "total_tokens": 5653,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2171
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2439
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "hellosky983/dsh-qrcode",
+  "analyzedAt": "2026-08-17T13:09:03.463Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/hellosky983/dsh-qrcode.git",
+      "evidence": "Install (from GitHub): `dsh plugin add github:hellosky983/dsh-qrcode`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DeepSeek Harness 会话里生成二维码和条形码。比如把网址、WiFi 信息、名片内容变成二维码，或生成 Code128、EAN-13 条形码。它完全在本地计算，不需要联网，输出可以是 SVG 图片、PNG 或纯文本字符画，适合没有网络（沙盒）的环境。",
+      "level": "ok",
+      "risks": "没发现明显风险。它不读写本地文件，不联网，输入输出只存在于会话结果中。",
+      "postInstallNotes": "装完后建议重启 dsh 确保插件加载；若工具不可见，可从最新 commit 重装（该版本已声明 inject = ['tools']），并检查插件是否成功注入。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-qrcode 是一个纯本地、零依赖的 DSH 插件，可离线生成二维码和条形码（SVG/PNG/ASCII）。",
+    "usage": {
+      "prompt_tokens": 2171,
+      "completion_tokens": 2677,
+      "total_tokens": 4848,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2315
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1531
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@frost_with_snow/dsh-web-fetch",
+  "analyzedAt": "2026-08-16T13:39:44.243Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin add 安装命令，并涉及 cordis.patch.yml 配置，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@frost_with_snow/dsh-web-fetch",
+      "evidence": "npx dsh plugin --profile web add @frost_with_snow/dsh-web-fetch"
+    },
+    "evaluationReport": {
+      "intro": "这是一个为 DeepSeek Harness (dsh) 开发的插件，提供带 SSRF 防护的 HTTP(S) 抓取功能。它能安全地抓取网页内容，防止访问内网或敏感地址（如云元数据），并限制大小和超时。",
+      "level": "ok",
+      "risks": "插件会发起网络请求，但内置了防 SSRF 机制，避免访问内网和保留地址。需要用户手动配置启用，没有发现额外风险。",
+      "postInstallNotes": "安装后需要在 %DSH_HOME%/profiles/web/cordis.patch.yml 中添加插件配置（如 README 所示），然后重启 dsh 生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 dsh 提供安全的网页抓取功能，带 SSRF 防护和超时限制。",
+    "usage": {
+      "prompt_tokens": 1468,
+      "completion_tokens": 511,
+      "total_tokens": 1979,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 186
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 828
+    }
+  }
+}

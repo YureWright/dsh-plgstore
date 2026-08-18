@@ -1,0 +1,37 @@
+{
+  "id": "dsh-insights",
+  "analyzedAt": "2026-08-16T13:33:12.444Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，依赖 @deepseek-ai/dsh-llm 等 dsh-* 核心包，且 README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-insights",
+      "evidence": "dsh plugin --profile web add dsh-insights"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，模仿 Claude Code 的 /insights 命令。它能分析你在各个工作区的会话使用情况，比如 token 用了多少、改过哪些文件、有哪些习惯，最后生成一个可以点开看的交互式 HTML 报告。",
+      "level": "ok",
+      "risks": "它会读取你的会话记录（全局语料），并把部分片段发送给 LLM 服务提供商做分析；报告和相关缓存文件保存在本机（默认在 $DSH_HOME 或 ~/.dsh 下），不会自动上传。它还可能在分析完后尝试用浏览器打开报告。整体属于正常功能，无恶意行为。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-insights 为 DeepSeek Harness 提供跨工作区会话用量分析，并生成自包含的交互式 HTML 报告。",
+    "usage": {
+      "prompt_tokens": 2623,
+      "completion_tokens": 879,
+      "total_tokens": 3502,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 539
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1983
+    }
+  }
+}

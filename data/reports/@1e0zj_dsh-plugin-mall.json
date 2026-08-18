@@ -1,0 +1,37 @@
+{
+  "id": "@1e0zj/dsh-plugin-mall",
+  "analyzedAt": "2026-08-16T13:23:45.764Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且以 @deepseek-ai/cordis 等为 peerDependencies，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@1e0zj/dsh-plugin-mall",
+      "evidence": "dsh plugin --profile web add @1e0zj/dsh-plugin-mall"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的第三方插件市场。它让你在网页设置界面里的“插件市场”标签页中，搜索所有在 GitHub 上打了 dsh-plugin 话题的仓库，自动判断哪些是真正的 DSH 插件，然后一键安装或更新到你的 DSH 配置里。它还提供了几个聊天工具，让 AI 助手也能帮你搜索、安装、卸载插件。",
+      "level": "caution",
+      "risks": "它会连接 GitHub 和 jsDelivr/CDN 获取第三方插件信息，并可能在你电脑上执行你选择的插件的安装脚本（例如通过 pnpm 构建）。安装来源不明的插件可能会在你电脑上执行任意代码。另外，它提供“一键重启 DSH”的功能（只监听本机，可关闭），但若配置不当也可能被滥用。",
+      "postInstallNotes": "安装后需要重启 DSH（重启 dsh web 进程）才能生效。可在 cordis.patch.yml 中配置 defaultProfile、apiBase、perPageMax、allowRestart 等选项。",
+      "notes": "该插件本身代码未见恶意，但它是一个“插件市场”，会引导你安装其他第三方插件，安装前请自行确认插件安全性。"
+    },
+    "summaryZh": "一个开放的 DSH 插件市场：搜索并自动验证 GitHub 上所有 dsh-plugin 话题仓库，支持一键安装、更新与卸载。",
+    "usage": {
+      "prompt_tokens": 3571,
+      "completion_tokens": 917,
+      "total_tokens": 4488,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 470
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2931
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "HuanLinOTO/dsh-plugin-yet-another-subagent",
+  "analyzedAt": "2026-08-17T11:37:23.652Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/* 核心包，README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-yet-another-subagent",
+      "evidence": "dsh plugin --profile web add @huanlin/dsh-plugin-yet-another-subagent"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你能配置多个“子代理”模板（profile），并指定 AI 助手在需要时使用哪个模板派出子代理。它在网页界面里提供了设置页，可以方便地增删改这些模板，还能实时看到子代理的进展（比如调用了哪些工具、用了多少 token、当前活动），并有一个子代理树标签页，点击就能跳到对应的子会话。",
+      "level": "ok",
+      "risks": "它会把子代理配置保存到 DSH 的配置目录（$DSH_HOME/settings.yaml），并且会修改 cordis.yml 来禁用官方的 tool-subagent 工具。这些都属于 DSH 本机的正常配置改动，没发现连接外部服务器或触碰隐私文件的风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 进程，并在浏览器硬刷新（Ctrl+Shift+R）才能生效。",
+      "notes": "注意：本插件会禁用官方 tool-subagent（仅保留 tool-subagent-fork），且旧会话的子代理结果可能无法点击，只有新会话才正常。另外许可证为 AGPL-3.0。"
+    },
+    "summaryZh": "可配置子代理 profile 的 DSH 插件，提供 Web 设置界面、实时进度展示和子代理树导航。",
+    "usage": {
+      "prompt_tokens": 4067,
+      "completion_tokens": 1911,
+      "total_tokens": 5978,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1498
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3427
+    }
+  }
+}

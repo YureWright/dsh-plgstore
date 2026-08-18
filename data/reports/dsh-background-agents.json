@@ -1,0 +1,37 @@
+{
+  "id": "dsh-background-agents",
+  "analyzedAt": "2026-08-16T13:30:23.331Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，且调用了官方 subagent 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/PerryLink/dsh-background-agents.git",
+      "evidence": "dsh plugin --profile <name> add \"github:PerryLink/dsh-background-agents#v0.4.0\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里开一个『后台助手』：发起一个子代理在后台干活，你可以继续和主对话聊天，随时查看它干到哪了、给它发新指令、或者让它停下来。它还支持把闲置太久的助手自动归档、在网页界面上显示面板，方便你管理多个后台任务。",
+      "level": "ok",
+      "risks": "它会在你的对话里插入一些进度消息（你和模型都能看到），并会在本地创建/运行子代理会话，占用一些计算资源。所有活动会记录在会话日志中，可能被模型看到。未发现它访问隐私文件或连接外部服务器。",
+      "postInstallNotes": "安装后通常无需额外配置即可使用；如果你想调整行为（如自动报告、空闲超时等），可以在 cordis.yml 的 background-agents 配置里修改相应字段。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供可交互、可持久化的后台子代理，让你在聊天中随时指挥后台任务。",
+    "usage": {
+      "prompt_tokens": 4269,
+      "completion_tokens": 2891,
+      "total_tokens": 7160,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2495
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3629
+    }
+  }
+}

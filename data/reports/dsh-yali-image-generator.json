@@ -1,0 +1,37 @@
+{
+  "id": "dsh-yali-image-generator",
+  "analyzedAt": "2026-08-16T13:40:50.538Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明 dsh.bundle.patch 并依赖 @deepseek-ai/dsh-tools 与 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-yali-image-generator",
+      "evidence": "dsh plugin --profile web add dsh-yali-image-generator"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek-Harness 用的图像生成插件。装上之后，你可以让 AI 助手根据你的文字描述生成图片，比如“生成一张16:9、4K的电影感夜间图书馆”。它支持 Gemini、GPT、Grok 等多个 AI 图像模型，但都需要先到 Yali AI 申请 API Key 并设置好密钥。",
+      "level": "ok",
+      "risks": "使用过程中，你的文字描述和 API Key 会发送到 Yali AI 的服务器（默认 https://api.yaliai.com）。如果你提供本地图片作为参考图，插件会读取你指定的那些图片文件。API Key 请妥善保管，不要泄露给不信任的人。",
+      "postInstallNotes": "需要先到 https://api.yaliai.com/ 申请 API Key，并设置环境变量（如 YALI_GEMINI_API_KEY、YALI_GPT_API_KEY 等），或在 Harness 的凭据设置里保存。之后即可使用 generate_image 工具。",
+      "notes": "插件依赖的核心工具包为 rc 版本，作者称符合官方规范，建议关注更新。"
+    },
+    "summaryZh": "DSH 图像生成插件，通过 Yali AI 网关调用 Gemini、GPT、Grok 等模型，让 Agent 根据文字生成图片。",
+    "usage": {
+      "prompt_tokens": 2746,
+      "completion_tokens": 1508,
+      "total_tokens": 4254,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1080
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2106
+    }
+  }
+}

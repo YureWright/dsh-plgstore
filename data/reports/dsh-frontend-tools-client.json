@@ -1,0 +1,37 @@
+{
+  "id": "dsh-frontend-tools-client",
+  "analyzedAt": "2026-08-16T13:29:16.343Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.85,
+      "reason": "README 明确写着 'A plain module (no Cordis plugin)'，这是一个客户端 SDK，不是 DSH 插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "A plain module (no Cordis plugin): createFrontendToolsClient, generateClientKey, buildClientKeyClipboardText, BridgeConnection, ToolExecutor, FrontendToolsError"
+    },
+    "evaluationReport": {
+      "intro": "这个包不是 DSH 插件，而是一个给应用开发者用的工具包。它帮助你的网页应用、Electron/Tauri 桌面应用或 Node 程序，通过 WebSocket 连接 DeepSeek Harness 的前端工具桥（bridge），把应用自己写的“工具”注册给 AI 模型使用。模型调用这些工具时，请求会转发回你的应用执行；写操作默认会先经过人工批准，读操作（标记 readOnly）可以直接执行。",
+      "level": "caution",
+      "risks": "它本身不直接碰你电脑上的文件，但它是用来把应用里的工具开放给模型的，所以暴露哪些工具由你决定，写操作默认需要人工同意。使用时要生成并保存一个 DSH KEY（相当于身份凭证），如果这个 KEY 泄露，别人可能冒充你的应用注册工具。它默认连接本机 WebSocket 服务（ws://127.0.0.1:31870），不会连外部服务器。",
+      "postInstallNotes": "它不是 DSH 插件，无法通过 dsh plugin add 安装。若要在应用中使用，需要通过 npm 安装，并在代码里配置 bridge 的 url 和应用自己的 key，且本机要先运行 dsh-frontend-tools-bridge 服务。",
+      "notes": "经评估可能并非 DSH 插件：包名和关键词虽然带 dsh/dsh-plugin，但 README 明确说明它是普通模块（no Cordis plugin），所以不应作为 DSH 插件安装。"
+    },
+    "summaryZh": "前端工具桥接客户端 SDK，让浏览器、Electron、Tauri 或 Node 应用将自己的工具注册给 DeepSeek Harness，并通过 WebSocket 接受模型调用。",
+    "usage": {
+      "prompt_tokens": 6463,
+      "completion_tokens": 2850,
+      "total_tokens": 9313,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2350
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5823
+    }
+  }
+}

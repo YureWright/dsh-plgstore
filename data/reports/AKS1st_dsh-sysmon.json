@@ -1,0 +1,37 @@
+{
+  "id": "AKS1st/dsh-sysmon",
+  "analyzedAt": "2026-08-17T12:08:36.198Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，README 给出 dsh plugin add 安装命令，并调用 DSH 的 ctx 接口"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:AKS1st/dsh-sysmon",
+      "evidence": "从 GitHub 仓库安装：dsh plugin --profile web add github:AKS1st/dsh-sysmon"
+    },
+    "evaluationReport": {
+      "intro": "在 DSH 网页界面的右下角添加一个小悬浮窗，每秒自动刷新，显示电脑当前的 CPU 使用率、内存占用和磁盘占用情况，让你随时看到系统资源是否紧张。",
+      "level": "ok",
+      "risks": "它会在你的电脑上定期读取系统资源信息（通过 /proc 和 df 命令），并显示在 DSH 网页里；这些数据仅在本机展示，不会上传到外部。由于它需要读取系统状态，仅支持 Linux 系统。",
+      "postInstallNotes": "安装后运行 `dsh web` 启动即可；插件仅支持 Linux 系统。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Web 右下角系统状态悬浮窗：每秒刷新显示 CPU、内存和磁盘占用率。",
+    "usage": {
+      "prompt_tokens": 1959,
+      "completion_tokens": 3672,
+      "total_tokens": 5631,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3358
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1319
+    }
+  }
+}

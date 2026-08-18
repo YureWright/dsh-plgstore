@@ -1,0 +1,37 @@
+{
+  "id": "dclichang2022/dsh-green-meter",
+  "analyzedAt": "2026-08-17T11:30:30.895Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 提供了插件挂载配置，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-green-meter",
+      "evidence": "pnpm add dsh-green-meter dsh-client-ui-green-meter"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在你使用 DeepSeek Harness 和 AI 聊天时，实时估算每次对话消耗了多少电、产生了多少碳排放、花了多少钱，并在输入框下方显示出来。它不直接测量硬件，而是根据模型调用的 token 数量来估算，所以任何 API 都兼容。你还能查看详细的图表，给对话设置能耗预算，超过就自动拒绝，方便你控制 AI 的使用成本。",
+      "level": "ok",
+      "risks": "它会读取你的 DSH 配置和会话的 token 统计信息，并在你指定的目录（默认是 DSH 主目录下的 green-meter 文件夹）写入 JSONL 日志文件，记录每轮模型调用的时间、token、估算能耗等数据，但不会保存对话内容本身。插件不会主动连接外部服务器，也没有自动执行安装脚本。",
+      "postInstallNotes": "需要在你的 DSH profile 的 cordis.patch.yml 中手动挂载 green-meter 和 ui-green-meter 两个插件，然后重启 dsh web。也可以按需设置环境变量或配置文件调整能耗系数、电价和预算。",
+      "notes": "注意：README 中的可选 sidebar 功能需要修改 DeepSeek Harness 源码才能启用，建议只使用默认的 overlay 模式，不要轻易改源码。另外，插件里附带了一个 AI 平台的推广链接，与插件功能无关。"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加 AI 对话能耗、碳排和电费实时监测的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 2427,
+      "completion_tokens": 1888,
+      "total_tokens": 4315,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1433
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1787
+    }
+  }
+}

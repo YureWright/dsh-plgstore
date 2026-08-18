@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-inspect",
+  "analyzedAt": "2026-08-17T11:51:26.269Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明 dsh.bundle.patch 且依赖 @deepseek-ai/dsh-workflow 等核心包，README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/dsh-external/dsh-inspect.git",
+      "evidence": "dsh plugin --profile <profile> add git+https://github.com/dsh-external/dsh-inspect.git"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件，提供三个工具——checkup（找问题）、fix（修复）、review（复查）。通俗讲，它像一个代码体检医生：先帮你检查项目里有哪些问题（带证据和验证方式），然后根据问题清单去修复，最后再复查确认问题真的消失了。适合开发时做质量把关。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你主动调用时，通过 DSH 内置工具读取或修改你指定的目标路径（比如代码目录），并可能执行一些命令来验证问题。它不会自动连接外部服务器或碰无关文件。",
+      "postInstallNotes": "安装后需确保所用 DSH profile 包含官方 workflow 引擎（如 base 组合）；若缺失，工具调用时会报错。若安装过程中提示需要 allowBuilds，按提示在 profile 的 pnpm-workspace.yaml 中添加相应配置。",
+      "notes": "注意：README 中安装命令的仓库地址（github.com/dsh-external/dsh-inspect）与资料中的 GitHub 地址（omdsh-dev/dsh-inspect）不一致，安装前请确认正确地址。另，包声明为 private，不会发布到 npm，只能通过 git 安装。"
+    },
+    "summaryZh": "一款对代码项目进行“找问题 → 修复 → 复查”闭环质量管理的 DSH 插件，提供 checkup/fix/review 三个工具。",
+    "usage": {
+      "prompt_tokens": 3946,
+      "completion_tokens": 2619,
+      "total_tokens": 6565,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2161
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3306
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-pet",
+  "analyzedAt": "2026-08-18T14:49:26.935Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 且依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-pet",
+      "evidence": "dsh plugin --profile web add dsh-pet"
+    },
+    "evaluationReport": {
+      "intro": "这是一个住在 DeepSeek Harness 网页界面里的桌面宠物，自带 51 个透明动画，会呼吸、打瞌睡、随机做动作、左右转向、在屏幕上漫游，你还可以点击它、拖拽它，它会有各种可爱的回应。它纯粹是陪你玩的，不掺任何业务功能，运行时也不调用 AI 或联网。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在 DSH 网页界面里运行，动画资源较多，可能会占用一些内存，但不涉及隐私或系统文件。",
+      "postInstallNotes": "重启 dsh web 后宠物就会出现在界面右下角；无需额外配置。可选的 fullRoot 配置需要手动下载母版资源后才生效。",
+      "notes": "无"
+    },
+    "summaryZh": "住在 DeepSeek Harness 网页界面里的桌面宠物，51 个透明动画，会呼吸、打瞌睡、屏幕漫游，点击拖拽有互动。",
+    "usage": {
+      "prompt_tokens": 3939,
+      "completion_tokens": 1108,
+      "total_tokens": 5047,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 772
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3299
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@dhicoc/dsh-reverse-skill",
+  "analyzedAt": "2026-08-16T14:50:16.152Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-skill，README 提供 dsh plugin add 安装命令，代码调用 ctx.skills.registerProvider。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:dhicoc/dsh-reverse-skill",
+      "evidence": "README 原文：\"dsh plugin add github:dhicoc/dsh-reverse-skill\""
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（dsh）用的技能插件。它把上游一个很火的 reverse-skill 项目里的 85 个关于逆向工程、渗透测试和 CTF 的技能文档，原封不动地打包成一个 dsh 插件。装好之后，这些技能会自动进入 dsh 的技能库，AI 可以按需调用，你也可以手动调用某个技能来获取操作指南。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件本身只读取它自己包内的技能文件并注册到 dsh，不碰其他个人文件，也没有额外的安装脚本。不过这些技能内容涉及安全测试，请务必只用于你有授权的目标。",
+      "postInstallNotes": "无。按 README 推荐方式安装后会自动激活并注册技能。如需使用技能中提到的外部 MCP 工具（如 burp-mcp），需要另行配置。",
+      "notes": "注意：README 中写的包名 @reverse-skill/dsh-reverse-skill 与 package.json 实际发布的 @dhicoc/dsh-reverse-skill 不一致，安装时请以实际 npm 包名为准。"
+    },
+    "summaryZh": "把 85 个逆向/渗透/CTF 技能打包成 DeepSeek Harness 插件，安装后自动注入技能库。",
+    "usage": {
+      "prompt_tokens": 3664,
+      "completion_tokens": 4543,
+      "total_tokens": 8207,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4103
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3024
+    }
+  }
+}

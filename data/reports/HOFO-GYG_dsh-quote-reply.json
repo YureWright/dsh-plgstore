@@ -1,0 +1,37 @@
+{
+  "id": "HOFO-GYG/dsh-quote-reply",
+  "analyzedAt": "2026-08-17T12:14:30.885Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明 dsh.client 字段并注入 @deepseek-ai/dsh-* 核心包，README 描述为 dsh web 插件"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 原文：把本目录复制到 $DSH_HOME/profiles/web/node_modules/dsh-quote-reply"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 网页版里，可以选中对话中的任意一段文字，然后点击一个弹出的“引用”按钮，把它变成引用块放进输入框，方便你针对那段话来回复。它还支持把整条 AI 回复一键引用，按钮会自动避开其他弹出元素。",
+      "level": "ok",
+      "risks": "它会在你浏览 DeepSeek 聊天页面时读取你选中的文字，但只保存在你本地浏览器里，不会发送到任何外部服务器。需要手动修改配置文件来安装，注意别改错地方。",
+      "postInstallNotes": "需要手动复制插件目录到 node_modules，并在 cordis.patch.yml 中添加对应的配置条目，然后重启 dsh web。",
+      "notes": "无"
+    },
+    "summaryZh": "选中对话片段一键引用回复的 DSH 网页插件。",
+    "usage": {
+      "prompt_tokens": 1942,
+      "completion_tokens": 1449,
+      "total_tokens": 3391,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1132
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1302
+    }
+  }
+}

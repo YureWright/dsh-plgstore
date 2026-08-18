@@ -1,0 +1,37 @@
+{
+  "id": "dsh-pomodoro",
+  "analyzedAt": "2026-08-16T13:30:35.593Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合真正的 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-pomodoro",
+      "evidence": "dsh plugin --profile web add dsh-pomodoro"
+    },
+    "evaluationReport": {
+      "intro": "这是一个番茄钟插件，可以在 DeepSeek Harness 网页界面里添加专注/休息计时器。你可以设置专注和休息的时长，计时结束会有提醒，面板可以拖动、最小化，还支持跨页面恢复计时状态。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在前端界面运行，不会访问文件或发送数据到外部服务器。",
+      "postInstallNotes": "安装后启动 dsh web，点击侧边栏的 🍅 按钮打开面板；可在 DSH 设置中找到插件配置，按需调整时长和通知选项。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 界面添加番茄钟计时器，支持专注/休息时长自定义、自动切换、悬浮面板和提醒。",
+    "usage": {
+      "prompt_tokens": 3931,
+      "completion_tokens": 807,
+      "total_tokens": 4738,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 491
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3291
+    }
+  }
+}

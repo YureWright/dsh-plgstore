@@ -1,0 +1,37 @@
+{
+  "id": "dsh-vision-fallback",
+  "analyzedAt": "2026-08-18T14:51:29.103Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle / dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 也给出了 dsh plugin add 安装命令，符合真正 DSH 插件的证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vision-fallback",
+      "evidence": "dsh plugin --profile web add dsh-vision-fallback"
+    },
+    "evaluationReport": {
+      "intro": "这个插件解决了一个痛点：DeepSeek 的一些主力模型（比如 deepseek-v4-flash）不支持读图，你在聊天框里发图片会报错。装上它之后，你照常选你的文本主模型，发图也能正常用。图片会自动发送给一个固定的视觉模型，让那个模型把图片内容用文字描述出来，然后悄悄把这段文字作为隐藏上下文喂给主模型，界面上你发的原图还是会正常显示。整个过程不用切换模型、不用额外工具，主模型还是会按你选的来。",
+      "level": "ok",
+      "risks": "它会把图片和最近的一部分聊天内容发送到你配置的第三方视觉模型服务（默认是 opencode.ai），所以如果你发的图片或聊天内容很私密，要留意这个服务商能不能信任。另外它会在本地写入用量日志和观察缓存文件，里面可能包含图片文件名、大小、识别结果等信息。这些文件默认存在 dsh 主目录下的 vision-fallback 文件夹里。API 密钥是通过 dsh 凭据系统管理的，不会写进环境变量文件，这点相对安全。",
+      "postInstallNotes": "装完后需要到 DSH 的网页设置里（设置 → 视觉增强）或 settings.yaml 里确认/配置视觉模型、Base URL 和对应的 API Key（默认用 OPENCODE_GO_API_KEY 从凭据里取）。如果之前没配置过凭据，要先在 dsh 里设置好。配置完保存即可生效；另外因为这是 patch/bundle 插件，改插件本身之后需要重启 dsh web 才能加载。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 静默视觉增强：主模型照常选择，图片自动交给固定视觉模型后以隐藏上下文返回主模型。",
+    "usage": {
+      "prompt_tokens": 3575,
+      "completion_tokens": 869,
+      "total_tokens": 4444,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 344
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2935
+    }
+  }
+}

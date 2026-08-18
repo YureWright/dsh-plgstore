@@ -1,0 +1,37 @@
+{
+  "id": "deepseek-harness-wallet",
+  "analyzedAt": "2026-08-18T14:56:26.460Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 注入点，且 README 给出了 dsh plugin add 安装命令，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-harness-wallet",
+      "evidence": "dsh plugin --profile web add deepseek-harness-wallet"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 的“钱包和控制中心”，它会在对话界面旁边显示你的 DeepSeek 官方余额、当前会话的花费、第三方模型的 token 用量，还能设置低余额提醒、会话完成通知，点一下就能跳转官网充值，也支持把面板拖成小窗或小圆点。它只读取本地数据，不依赖外部服务器。",
+      "level": "ok",
+      "risks": "它会在你的浏览器里读取 DeepSeek Harness 的账户余额和会话用量数据，显示在界面上；你设置的阈值、布局等偏好会保存在浏览器本地。只有当你点击充值时才会打开 DeepSeek 官网。如果你手动开启“永久删除”功能，它可以删除当前会话，但该功能默认关闭。没发现把数据发给第三方的行为。",
+      "postInstallNotes": "重启 dsh web 并硬刷新页面；之后可在控制面板设置低余额阈值、提醒方式等选项。",
+      "notes": "该包在 0.1.1 之前名为 dsh-wallet，若曾安装旧版需先移除；另外永久删除功能需要宿主提供相应能力，单靠插件配置无法启用。"
+    },
+    "summaryZh": "DeepSeek Harness 本地优先的钱包与用量监控面板，实时显示余额和会话花费，支持充值跳转、低余额提醒、完成通知、悬浮窗和可选的会话永久删除。",
+    "usage": {
+      "prompt_tokens": 3490,
+      "completion_tokens": 1646,
+      "total_tokens": 5136,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1207
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2850
+    }
+  }
+}

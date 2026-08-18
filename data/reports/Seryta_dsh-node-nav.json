@@ -1,0 +1,37 @@
+{
+  "id": "Seryta/dsh-node-nav",
+  "analyzedAt": "2026-08-17T11:58:17.779Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出 dsh plugin add 安装命令，且功能是 DSH Web GUI 的客户端插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Seryta/dsh-node-nav.git",
+      "evidence": "dsh plugin --profile web add github:Seryta/dsh-node-nav"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页聊天界面加了一个右侧的导航条：每条你发的消息对应一个小圆点，鼠标悬停能预览消息内容，点击能快速跳转到那条消息，还会有一个小药丸跟着你滚动的位置移动，方便你快速浏览和定位很长的对话。另外还支持在输入框按 ↑ 键回填你之前输入过的内容，不用重新打字。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取你当前打开的会话消息并在浏览器里操作页面元素，不连接外部服务器，也不碰你的隐私文件。",
+      "postInstallNotes": "安装后需要重启 dsh web 服务，并刷新浏览器页面才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "对话节点导航插件：在 DSH 网页聊天右侧显示消息节点串，支持悬停预览、点击跳转、阅读位置跟随和输入历史回填。",
+    "usage": {
+      "prompt_tokens": 2415,
+      "completion_tokens": 994,
+      "total_tokens": 3409,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 649
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1775
+    }
+  }
+}

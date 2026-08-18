@@ -1,0 +1,37 @@
+{
+  "id": "dsh-verification-receipt",
+  "analyzedAt": "2026-08-16T13:32:04.964Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-session，且 README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-verification-receipt",
+      "evidence": "Add the published package to every profile that should emit receipts: dsh plugin --profile web add dsh-verification-receipt"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫“验证回执”，是个安静的记录员。每次 DSH（DeepSeek Harness）跑完一个回合，它就在你电脑本地的 JSONL 文件里记一笔摘要：这轮调用了几个工具、成功/失败多少、有没有看起来像“测试/验证/构建”的操作。它只记执行痕迹，不读对话内容、不存工具参数，也不评价结果对不对。想事后复盘运行过程、但不想被记录太多隐私的人可以装。",
+      "level": "ok",
+      "risks": "它会把每回合的工具调用次数、成败和启发式验证信号写到 $DSH_HOME/verification-receipts/v1/receipts.jsonl（未设置 DSH_HOME 时在 ~/.dsh 下）。文件中的 sessionIdHash 是确定性的，拿到文件的人可以把同一会话的多条记录关联起来，但看不到原始会话 ID 和内容。它会在内存里临时读取工具名、参数和结果状态来计算摘要，但不落盘；写入队列无界，磁盘卡住时内存可能升高；多个 DSH 进程写同一个文件时行顺序和完整性没有保证。",
+      "postInstallNotes": "默认装完即可用，回执写到 $DSH_HOME/verification-receipts/v1/receipts.jsonl；若想改路径，在对应 profile 的 cordis.patch.yml 里给 verification-receipt 配置 outputPath。另外，每个需要记录回执的 profile 都要分别执行一次安装命令。",
+      "notes": "回执只覆盖插件加载后发生的事件，加载前或进程崩溃时可能丢失回执；哈希不防篡改，回执只是执行痕迹，不是测试通过的证明。"
+    },
+    "summaryZh": "验证回执插件：每回合结束后把工具调用与验证信号的执行摘要（不含内容）写入本地 JSONL，方便轻量复盘。",
+    "usage": {
+      "prompt_tokens": 3836,
+      "completion_tokens": 2119,
+      "total_tokens": 5955,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1544
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3196
+    }
+  }
+}

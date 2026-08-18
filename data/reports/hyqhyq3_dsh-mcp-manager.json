@@ -1,0 +1,37 @@
+{
+  "id": "hyqhyq3/dsh-mcp-manager",
+  "analyzedAt": "2026-08-17T11:37:31.627Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 和 dsh.bundle，并依赖 @deepseek-ai/dsh-client-runtime 与 dsh-client-ui-settings，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:hyqhyq3/dsh-mcp-manager",
+      "evidence": "npx -p @deepseek-ai/dsh dsh plugin --profile web add github:hyqhyq3/dsh-mcp-manager"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness（DSH）的 MCP 服务器管理器。它给 DSH 的设置界面加了一个 MCP 管理页，让你不用手改配置文件就能添加和管理各种 MCP 服务器：支持通过浏览器 OAuth 登录的远程 HTTP 服务器、只要填一个令牌名（不存明文）的静态令牌服务器，还有直接在电脑上跑命令的本地 stdio 服务器。添加好后，这些服务器的工具会自动注册成 mcp__服务器名__工具名 的形式给 AI 用，还能按工作区隔离、按需加载，挺方便的。",
+      "level": "ok",
+      "risks": "它会把服务器配置和 OAuth 令牌等数据保存在你电脑的 ~/.dsh/mcp-manager.json 里（静态令牌只存环境变量名，不存令牌本身）。stdio 模式会在你电脑上启动额外的子进程。当你使用某个 MCP 服务器时，相关的对话内容会发送给那个服务器，请注意第三方服务的隐私政策。",
+      "postInstallNotes": "重启 dsh --profile web 并刷新页面，然后在 设置 → MCP 里添加你的服务器。",
+      "notes": "需要 Node.js ^22.19 或 >=24，并要求 pnpm 在 PATH 中；Windows 下 stdio 命令通过 cmd.exe 启动。"
+    },
+    "summaryZh": "DSH 的 MCP 服务器管理器，支持 OAuth 认证、本地 stdio 进程、工作区隔离与按需代理，在设置页即可管理所有 MCP 服务器。",
+    "usage": {
+      "prompt_tokens": 3213,
+      "completion_tokens": 2784,
+      "total_tokens": 5997,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2283
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2573
+    }
+  }
+}

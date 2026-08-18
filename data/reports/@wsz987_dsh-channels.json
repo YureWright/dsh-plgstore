@@ -1,0 +1,37 @@
+{
+  "id": "@wsz987/dsh-channels",
+  "analyzedAt": "2026-08-17T11:11:16.104Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，且 README 给出明确的 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wsz987/dsh-channels@beta",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add -w @wsz987/dsh-channels@beta"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上了各种聊天平台的接入能力，目前支持微信、QQ、钉钉和飞书。装上之后，你就能在这些聊天软件里跟你的 AI 助手对话，还能在网页后台管理配置、上传下载文件等。",
+      "level": "ok",
+      "risks": "它会连接微信、QQ、钉钉、飞书这些外部平台，需要你提供对应的机器人 token 或凭证，这些信息会存在本地配置里。另外它可能会接收来自这些平台的消息，相当于把 AI 助手暴露到了公网，需要你自己做好访问控制。",
+      "postInstallNotes": "装完后需要到对应的聊天平台创建机器人并获取凭证，然后在插件配置里填好；还可以通过网页后台（Settings > Channels）进行设置。不需要额外安装其他包。",
+      "notes": "无"
+    },
+    "summaryZh": "官方多渠道 DSH 插件，让 DeepSeek Harness 接入微信、QQ、钉钉、飞书，并附网页后台配置面板。",
+    "usage": {
+      "prompt_tokens": 2900,
+      "completion_tokens": 559,
+      "total_tokens": 3459,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 183
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2260
+    }
+  }
+}

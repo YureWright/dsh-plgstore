@@ -1,0 +1,37 @@
+{
+  "id": "chyra-moon/deepseek-harness-desktop",
+  "analyzedAt": "2026-08-17T11:26:16.682Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.95,
+      "reason": "这是一个 Electron 桌面应用（私有 package.json、main 为 src/main.js），不是可安装到 DSH 中的插件，尽管依赖了 @deepseek-ai 核心包。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 提供的是安装包下载和 `npm install && npm start` 的源码运行方式，没有给出 dsh plugin add 安装命令。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个把 DeepSeek Harness 官方网页版打包成 Windows 桌面应用的社区项目。装好以后双击就能打开和网页版一样的界面，不用自己装 Node.js 或敲命令；它自己会启动和管理 DSH 服务器，如果你已经开着网页版或命令行版，它会自动复用，数据互通。还带托盘图标、窗口记忆、崩溃自动重启这些桌面功能。",
+      "level": "ok",
+      "risks": "这是一个未签名的第三方桌面应用，某些杀毒软件可能会误报（README 已说明）；应用会读取和写入自己的数据目录（settings.json 等），但不会额外触碰隐私文件。",
+      "postInstallNotes": "无",
+      "notes": "经评估这并非 DSH 插件，而是一个独立的桌面应用，不适合（也不应该）通过 dsh plugin add 安装。如果你想在 DSH 里加功能，请寻找真正的插件。"
+    },
+    "summaryZh": "把 DeepSeek Harness 官方网页版包装成 Windows 桌面应用的社区项目，零配置双击即用。",
+    "usage": {
+      "prompt_tokens": 3422,
+      "completion_tokens": 524,
+      "total_tokens": 3946,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 152
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2782
+    }
+  }
+}

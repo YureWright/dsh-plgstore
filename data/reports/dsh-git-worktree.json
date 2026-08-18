@@ -1,0 +1,37 @@
+{
+  "id": "dsh-git-worktree",
+  "analyzedAt": "2026-08-18T14:55:05.938Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-git-worktree",
+      "evidence": "推荐直接安装 npm 包：dsh plugin --profile web add dsh-git-worktree"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 AI 写代码时在独立的 Git Worktree（相当于代码的副本）里干活，不会弄乱你正在用的代码。它创建隔离环境，AI 在里面修改、测试，完成后生成验收报告；你可以在本地预览改动，满意了才确认提交，不满意可以撤回，一切都在你掌控中。",
+      "level": "ok",
+      "risks": "它会读写你本地 Git 仓库里的文件，创建和删除 worktree，并可能在你确认后创建 commit。所有操作都在本地进行，不会主动上传数据。因为是实验性插件，设计上很保守，但还是建议在备份或可恢复的 Git 仓库中使用。",
+      "postInstallNotes": "需要 Node.js 20+ 和 DeepSeek Harness 0.1.0-rc.6 包线；当前 Workspace 必须是 Git 仓库；如果使用 pnpm 10 从 Git 源安装，需要在 profile 的 pnpm-workspace.yaml 中允许该包执行 prepare（allowBuilds）。",
+      "notes": "README 说明项目仍处于实验阶段，建议先在可恢复的 Git 仓库中使用。"
+    },
+    "summaryZh": "一个让 AI 在独立 Git Worktree 中执行任务、经你确认后才提交的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 5735,
+      "completion_tokens": 2881,
+      "total_tokens": 8616,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2461
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5095
+    }
+  }
+}

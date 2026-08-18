@@ -1,0 +1,37 @@
+{
+  "id": "simon300000/dsh-auto",
+  "analyzedAt": "2026-08-17T11:55:45.227Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle（cordis.patch.yml），且 README 给出了 dsh plugin add 安装命令，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:simon300000/dsh-auto",
+      "evidence": "dsh plugin --profile web add github:simon300000/dsh-auto"
+    },
+    "evaluationReport": {
+      "intro": "装了这个插件后，DeepSeek Harness 网页界面会多一个叫「自动批准」的权限选项。以前每个需要授权的操作（比如读文件、搜索）都得你自己点同意；选了这个选项后，插件会先派一个受限制的小助手（DSH 子代理）快速审查这个操作——它只能做只读检查，看风险高不高、你有没有授权——低风险且有授权就自动放行，高风险或没授权就拒绝。适合想少点几次确认的人，但等于把判断权交给模型。",
+      "level": "ok",
+      "risks": "审查时，插件会把待批准的操作内容、相关权限、最近的会话记录、系统指令等发送给配置的模型（默认是 deepseek-official 的模型），相当于这些信息会经过模型服务商；为了做判断，它还可能在你的工作区里做少量只读检查（比如读文件），所以部分文件内容也可能被模型的上下文看到。每次批准都会额外启动一个子代理，会消耗 API 额度。日志里会记录操作标识和审批结论，但不会记录完整提示词或文件内容。",
+      "postInstallNotes": "装完后重启 Web UI，在会话的权限选择器里选「Auto Approve」，或在 General Settings 里设为默认；如需修改审查模型、超时等，编辑对应配置（reviewerProvider 和 reviewerModel 要一起改），改完再重启 DSH。",
+      "notes": "README 明确给出了安装命令，且 package.json 声明了 dsh.bundle，确认是 DSH 插件；不过默认依赖线上模型审查，实际效果和安全性取决于模型判断，建议先在低风险场景试用。另外 stars 还不多，属于较新的项目。"
+    },
+    "summaryZh": "为 DeepSeek Harness Web UI 添加「自动批准」权限预设：每次批准操作前由受限的 DSH 子代理自动审查，风险低且有授权就放行。",
+    "usage": {
+      "prompt_tokens": 2120,
+      "completion_tokens": 3106,
+      "total_tokens": 5226,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2555
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1480
+    }
+  }
+}

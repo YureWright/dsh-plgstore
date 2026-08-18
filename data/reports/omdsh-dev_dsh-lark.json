@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-lark",
+  "analyzedAt": "2026-08-17T11:16:47.926Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-lark-channel@latest",
+      "evidence": "dsh plugin --profile web add dsh-lark-channel@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness（DSH）接到飞书/Lark 上。装上后，你可以在飞书聊天里直接给 AI 助手派任务、看执行过程、切换工作区和模型；遇到需要确认的问题、计划或工具调用，直接在聊天里点按钮或回复文字就行。它还能把多个 AI Agent 放进同一个群聊互相协作。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "需要先安装 DeepSeek Harness（npm i -g @deepseek-ai/dsh）；运行 dsh-lark-channel start 后用飞书扫码完成应用创建；作为 DSH 插件使用时执行 dsh plugin add dsh-lark-channel@latest（README 示例带 --profile web 参数）。修改配置后需重启服务生效。",
+      "notes": "无"
+    },
+    "summaryZh": "把 DeepSeek Harness 接入飞书/Lark 的插件，让你在聊天里就能派任务、审批和切换工作区，还支持多 Agent 协作。",
+    "usage": {
+      "prompt_tokens": 3337,
+      "completion_tokens": 1571,
+      "total_tokens": 4908,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1207
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2697
+    }
+  }
+}

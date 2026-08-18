@@ -1,0 +1,37 @@
+{
+  "id": "@open-agfs/dsh-agfs",
+  "analyzedAt": "2026-08-16T13:43:15.771Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch，peerDependencies 依赖 @deepseek-ai/cordis 和 dsh-* 核心包，README 给出 dsh plugin --profile web add 安装命令，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@open-agfs/dsh-agfs",
+      "evidence": "dsh plugin --profile web add @open-agfs/dsh-agfs"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加一个文件浏览器网页。装上之后，输入 /dsh-agfs 会在默认浏览器里打开一个文件管理界面，可以看文件列表、搜索、预览文本和图片、新建/重命名/复制/删除文件夹，还能一键让 AI 分析某个目录。另外它给了 AI 两个工具（browse_files 和 read_file），让 AI 能直接查看和读取文件。它不需要单独开端口，直接挂在 dsh web 服务上。",
+      "level": "ok",
+      "risks": "它会读取和浏览你指定目录下的文件（默认是 dsh 的工作目录），AI 可以通过工具查看文件内容；如果使用一键AI分析，目录内容会被发给 AI 处理。图标从 cdnjs 加载，会向该 CDN 发起请求。openOnCommand 会在运行 dsh 的电脑上打开浏览器。有 readOnly、strictRoot、remoteMode 等开关可以限制访问范围。",
+      "postInstallNotes": "装完后需要重启 dsh web，然后在对话框里运行 /dsh-agfs。如果想让 AI 分析功能正常工作，需要开启 shell 工具权限（web 配置里默认禁用）。可用 cordis.patch.yml 配置 fileRoot、readOnly、strictRoot 等选项限制文件访问范围。",
+      "notes": "依赖多个 @deepseek-ai/dsh-* 的 rc 预发布版本，且要求 Node.js ^22.19.0 或 >=24.0.0，使用前请确认环境满足。前端图标依赖 cdnjs，离线时无图标但功能可用。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供文件浏览器 Web 界面和 /dsh-agfs 命令，支持文件预览、搜索、管理，以及让 AI 直接浏览/读取文件的工具。",
+    "usage": {
+      "prompt_tokens": 4296,
+      "completion_tokens": 1310,
+      "total_tokens": 5606,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 762
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3656
+    }
+  }
+}

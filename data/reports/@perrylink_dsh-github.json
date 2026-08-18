@@ -1,0 +1,37 @@
+{
+  "id": "@perrylink/dsh-github",
+  "analyzedAt": "2026-08-16T13:31:04.934Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis、dsh-llm 等核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@perrylink/dsh-github",
+      "evidence": "dsh plugin --profile <name> add @perrylink/dsh-github"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能直接操作 GitHub：创建、审查、合并 Pull Request，管理 Issue，搜索仓库和代码，读取文件等。所有写操作都需要人工批准，GitHub 令牌不会出现在日志里。",
+      "level": "ok",
+      "risks": "需要提供 GitHub 个人访问令牌（放在凭据文件或环境变量里），插件会代表你在 GitHub 上执行操作（如发评论、开 PR、合并 PR）。但写操作每一步都要人工确认，令牌也只用于请求头，不会记录到日志。没发现明显风险。",
+      "postInstallNotes": "需要在 $DSH_HOME/.credentials.yaml 中配置 GITHUB_TOKEN，然后重启 dsh 并确认 dump-config 里没有 FAILED 行。",
+      "notes": "无"
+    },
+    "summaryZh": "把 GitHub 集成到 DeepSeek Harness 的插件：创建/审查/合并 PR、管理 Issue、搜索，写操作需人工批准，令牌安全。",
+    "usage": {
+      "prompt_tokens": 4091,
+      "completion_tokens": 1362,
+      "total_tokens": 5453,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1007
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3451
+    }
+  }
+}

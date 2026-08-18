@@ -1,0 +1,37 @@
+{
+  "id": "dsh-traffic-light",
+  "analyzedAt": "2026-08-16T13:23:45.065Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，peerDependencies 依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-traffic-light",
+      "evidence": "dsh plugin add dsh-traffic-light --allow-build=electron"
+    },
+    "evaluationReport": {
+      "intro": "给 DeepSeek Harness 的每个会话（Session）在桌面上添加一个悬浮的“红绿灯”小窗口，用来显示这个会话当前是空闲、运行中、需要关注、已完成还是失败，不用一直盯着 DSH 页面看。你可以为多个会话同时开启多个悬浮灯，每个灯独立显示，也能拖到屏幕任意位置。",
+      "level": "ok",
+      "risks": "安装时会下载 Electron 桌面运行组件（macOS 上约 300 MB），占用磁盘空间；悬浮窗只在本机显示状态，不会上传会话内容、提示词或工具结果。",
+      "postInstallNotes": "安装后需要完全重启 dsh web（不是只刷新浏览器），然后在 Session 的三点菜单中选择“开启红绿灯”。如果安装时没用 --allow-build=electron，首次启动后插件会后台准备运行组件，需等待片刻。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 的每个 Session 一个桌面悬浮红绿灯，状态变化一眼可见。",
+    "usage": {
+      "prompt_tokens": 3554,
+      "completion_tokens": 676,
+      "total_tokens": 4230,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 308
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2914
+    }
+  }
+}

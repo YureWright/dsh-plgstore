@@ -1,0 +1,37 @@
+{
+  "id": "@why913/dshx",
+  "analyzedAt": "2026-08-18T14:52:07.501Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，依赖 @deepseek-ai 核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@why913/dshx",
+      "evidence": "dsh plugin --profile web add @why913/dshx"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness (dsh) 用的命令行小工具，帮你管理 MCP 服务器、技能和记忆。你可以用一条命令添加或删除 MCP 服务器，它会在写入前先实际连接测试，连不上的就拒绝写入，避免配置错误。还能从 Claude Code 或 Codex 一键迁移 MCP、技能和全局记忆。在 dsh 的 Web 界面里，它还提供了 /mcp 命令和可点击的卡片，方便巡检和迁移。",
+      "level": "ok",
+      "risks": "会修改 ~/.dsh 下的配置文件（主要是 cordis.patch.yml），并可能读取 Claude Code / Codex 的配置来迁移。迁移时如果源配置里是明文密钥，搬迁后也会是明文（它建议用环境变量引用）。连接测试时会向配置的 MCP 服务器发起请求。除此之外没发现明显风险。",
+      "postInstallNotes": "装完后如果想要 dsh 里的 agent 也能直接调用，需要再运行 `dshx skill add ./skills/dshx` 安装自带 skill；修改配置后需重新加载 dsh 才会生效。",
+      "notes": "非官方社区项目，dsh 仍处于 developer preview，变动较快；需要 Node ≥22.19。"
+    },
+    "summaryZh": "dshx 是给 DeepSeek Harness 配置的 MCP / Skill / 记忆管理工具，先测后写、支持从 Claude Code / Codex 一键迁移，并在 Web 界面提供 /mcp 命令和卡片操作。",
+    "usage": {
+      "prompt_tokens": 4246,
+      "completion_tokens": 2049,
+      "total_tokens": 6295,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1583
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3606
+    }
+  }
+}

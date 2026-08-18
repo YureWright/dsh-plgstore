@@ -1,0 +1,37 @@
+{
+  "id": "KevinWen7415/dsh-virtual-workspace",
+  "analyzedAt": "2026-08-17T13:10:24.703Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client、依赖 @deepseek-ai/dsh-tools 和 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，确为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/KevinWen7415/dsh-virtual-workspace.git",
+      "evidence": "dsh plugin --profile <name> add github:KevinWen7415/dsh-virtual-workspace"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DSH 的 AI 助手同时读取、搜索和修改多个项目文件夹（虚拟工作区），并且提供侧边栏界面方便你添加和管理这些工作区。它遵守沙箱权限，AI 写入超出边界时会请你批准。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下创建一个 .vws-workspaces.json 配置文件来保存工作区设置；它允许 AI 访问你指定的项目目录，越界写入时会弹出授权请求。没发现其他明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供跨多个项目目录的虚拟工作区能力，支持 AI 代理跨目录读、搜、改，并带侧边栏管理界面。",
+    "usage": {
+      "prompt_tokens": 4445,
+      "completion_tokens": 4830,
+      "total_tokens": 9275,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4486
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3805
+    }
+  }
+}

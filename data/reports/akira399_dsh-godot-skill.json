@@ -1,0 +1,37 @@
+{
+  "id": "akira399/dsh-godot-skill",
+  "analyzedAt": "2026-08-17T11:35:38.931Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 给出官方 dsh plugin add 安装命令，且代码注册运行时技能，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/akira399/dsh-godot-skill.git",
+      "evidence": "npx -p @deepseek-ai/dsh dsh plugin --profile web add github:akira399/dsh-godot-skill"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）用的技能插件，安装后能让 AI 学会 Godot 4 游戏开发的全流程，包括场景搭建、GDScript/C# 编程、着色器、物理、动画、网络、导出等。你只要在 DSH 里说'用 godot-4-development 技能做个 2D 平台游戏'，AI 就会按技能里的步骤帮你写代码和做游戏。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在运行时读取自带的技能文档并注册给 AI 使用，不会额外碰你的文件或连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 DSH（重新运行 dsh web），才会在会话中出现 godot-4-development 技能。",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DSH 提供 Godot 4 全栈游戏开发技能的插件，装完即可让 AI 按技能流程协助制作游戏。",
+    "usage": {
+      "prompt_tokens": 1950,
+      "completion_tokens": 1077,
+      "total_tokens": 3027,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 705
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1310
+    }
+  }
+}

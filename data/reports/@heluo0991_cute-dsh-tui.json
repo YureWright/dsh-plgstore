@@ -1,0 +1,37 @@
+{
+  "id": "@heluo0991/cute-dsh-tui",
+  "analyzedAt": "2026-08-17T11:09:27.312Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.85,
+      "reason": "它不是通过 dsh plugin add 安装的 DSH 插件，而是依赖 DSH 核心包的独立全局 CLI 工具，安装方式为 npm install -g。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "npm install -g @heluo0991/cute-dsh-tui"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）用的终端聊天界面，让用户在命令行里跟 AI 助手交互，有像素角色和艺术字装饰，支持模型切换、会话恢复、压缩导出、插件管理等功能。安装后输入 cdsh 就能启动，适合喜欢在终端里工作的用户。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的 DSH 配置和会话文件，位置大概在 $DSH_HOME 和 ~/.cute-dsh-tui。它可能保存你的 API key 到用户环境变量（Windows）或 ~/.DSH_HOME/.credentials.yaml（macOS/Linux），这些文件默认只有你本人能读。没发现它偷偷连接外部服务器或碰隐私文件。",
+      "postInstallNotes": "安装后直接运行 cdsh，首次进入用 /login 粘贴你的 DeepSeek API key；或者提前设置环境变量 DEEPSEEK_API_KEY。",
+      "notes": "经评估它本质上是独立的 CLI 工具，不是通过 dsh plugin add 安装的 DSH 插件；它依赖多个 @deepseek-ai/dsh-* 包，属于第三方社区项目，与官方 DSH 生态兼容但独立维护。"
+    },
+    "summaryZh": "为 DeepSeek Harness 打造的终端原生交互界面，带像素角色和艺术字，支持模型切换、会话管理、插件管理，输入 cdsh 即可使用。",
+    "usage": {
+      "prompt_tokens": 4148,
+      "completion_tokens": 1582,
+      "total_tokens": 5730,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1150
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3508
+    }
+  }
+}

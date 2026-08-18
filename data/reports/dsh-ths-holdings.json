@@ -1,0 +1,37 @@
+{
+  "id": "dsh-ths-holdings",
+  "analyzedAt": "2026-08-16T13:41:21.586Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis、dsh-api-remotes 等核心包，README 提供了 dsh plugin 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ths-holdings",
+      "evidence": "README 安装命令：dsh plugin --profile web add dsh-ths-holdings"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DSH 网页界面上显示一张悬浮卡片，自动同步你在同花顺投资账本里的真实持仓，展示今天赚了/亏了多少钱（金额和百分比）、上证指数和当日走势图，每 20 秒更新一次，不用手动添加股票。",
+      "level": "caution",
+      "risks": "它需要你把同花顺投资账本的登录 Cookie 粘贴到插件设置里，这个 Cookie 会存在你电脑的 DSH 配置中，能访问你电脑的人可能看到并冒用你的同花顺账号。插件会直接连接同花顺的服务器读取你的真实持仓和盈亏数据，虽然 Cookie 不会发给插件作者，但本质上是把敏感账户凭据交给了一个第三方插件；同时它依赖同花顺未公开的接口，可能随时失效或返回异常。",
+      "postInstallNotes": "需要先在同花顺投资账本网页版登录，按 F12 在控制台执行 copy(document.cookie) 复制 Cookie，然后到 DSH 网页界面卡片上的 ⚙ 里粘贴保存，再从下拉框选择你的持仓账本；Cookie 过期后卡片会提示，按同样步骤更新即可。",
+      "notes": "该插件确为 DSH 插件，但属于需要提供第三方平台敏感凭据的类型，安装前请确认你信任该插件作者；其访问的同花顺接口为未公开接口，存在因官方调整而失效的可能。"
+    },
+    "summaryZh": "DSH 网页端悬浮持仓盈亏卡片，自动同步同花顺投资账本的真实持仓，显示今日盈亏、上证指数和分时走势。",
+    "usage": {
+      "prompt_tokens": 4143,
+      "completion_tokens": 2230,
+      "total_tokens": 6373,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1734
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3503
+    }
+  }
+}

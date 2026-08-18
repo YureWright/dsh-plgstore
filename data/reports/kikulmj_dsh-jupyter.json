@@ -1,0 +1,37 @@
+{
+  "id": "kikulmj/dsh-jupyter",
+  "analyzedAt": "2026-08-17T13:11:43.624Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh 核心包，README 也给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/kikulmj/dsh-jupyter.git",
+      "evidence": "dsh plugin --profile web add git+https://github.com/kikulmj/dsh-jupyter.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页界面加两个功能：一是打开 .ipynb 笔记本文件，可以在网页里编辑单元格（代码/文字/原始内容）并让电脑上的真实 Jupyter 内核执行，结果直接显示在页面上；二是左侧多一个“终端”入口，点开是一个真正的命令行终端（用 node-pty 实现），可以在当前项目目录里跑命令，就像在电脑终端里一样。安装后需要重启 DSH 服务。",
+      "level": "caution",
+      "risks": "安装时会编译一个原生模块（node-pty），需要你电脑上有编译工具链，并且安装过程中会修改 DSH 的配置文件（~/.dsh/profiles/web/pnpm-workspace.yaml）。装好后，终端功能给了网页一个真实的 shell，等同于你本地用户权限，能读写文件、运行程序；如果别人能打开你本机的 DSH 网页（比如你正在运行 DSH 时浏览器被注入脚本），就可能通过它操作你的电脑。不过插件本身声明所有端口只监听 127.0.0.1，并做了同源校验，没有发现连接外部服务器或偷偷上传数据的行为。",
+      "postInstallNotes": "首次安装后，需在 ~/.dsh/profiles/web/pnpm-workspace.yaml 中将 allowBuilds 里的 node-pty 改成 true，然后重跑安装命令；若要用 Notebook 功能，还需确保系统 Python 装有 jupyter_client 和 ipykernel；最后重启 dsh web。",
+      "notes": "依赖多个 @deepseek-ai/dsh-* 的 rc 版本（0.1.0-rc.6），可能存在版本兼容问题；node-pty 是原生模块，编译失败时可先确认编译器（gcc/make）是否可用。仓库 star 数很少但文档较完整。"
+    },
+    "summaryZh": "为 DSH 网页界面增加 Jupyter notebook 编辑/运行面板和真实 Web 终端的插件。",
+    "usage": {
+      "prompt_tokens": 3076,
+      "completion_tokens": 3239,
+      "total_tokens": 6315,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2658
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2436
+    }
+  }
+}

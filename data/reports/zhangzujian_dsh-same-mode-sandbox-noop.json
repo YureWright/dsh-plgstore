@@ -1,0 +1,37 @@
+{
+  "id": "zhangzujian/dsh-same-mode-sandbox-noop",
+  "analyzedAt": "2026-08-17T13:08:37.351Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 提供了 dsh plugin 安装命令，并说明作为 DSH 兼容插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/zhangzujian/dsh-same-mode-sandbox-noop.git",
+      "evidence": "Until this package is published to npm, clone it and add the local directory:"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness (DSH) 用的兼容补丁，解决 0.1.0-rc.6 版本的一个报错：当沙箱已经处于某个权限模式，又重复申请一个不高于当前权限的模式时，DSH 会拒绝执行。插件会在 DSH 处理前自动去掉这些多余的权限字段，让指令正常跑。它只处理确认为不升级权限的情况，真正要更高权限的请求不会动。装完重启 dsh web 即可。",
+      "level": "ok",
+      "risks": "它会改动 DSH 处理工具调用时的权限参数，但只移除冗余的、不升级的权限字段；真正需要更高权限的请求不受影响。没发现明显风险。",
+      "postInstallNotes": "安装后重启 dsh web。注意该插件只适用于 DSH 0.1.0-rc.6 版本。",
+      "notes": "经评估确认为 DSH 插件（package.json 声明了 dsh.bundle）。该插件是面向特定 rc.6 版本的兼容补丁，尚未发布到 npm，需通过 git 安装；随着 DSH 更新可能不再需要。"
+    },
+    "summaryZh": "为 DSH 0.1.0-rc.6 去除重复的非升级沙箱权限字段的兼容补丁插件。",
+    "usage": {
+      "prompt_tokens": 1864,
+      "completion_tokens": 1936,
+      "total_tokens": 3800,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1504
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1224
+    }
+  }
+}

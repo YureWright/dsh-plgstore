@@ -1,0 +1,37 @@
+{
+  "id": "ConsoleSun/Gemini-Eyes",
+  "analyzedAt": "2026-08-17T11:42:59.486Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin add 安装命令，属于可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/ConsoleSun/Gemini-Eyes.git",
+      "evidence": "dsh plugin --profile demo add github:ConsoleSun/Gemini-Eyes"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 获得 Gemini 网页版的能力，就像一个“眼睛和手”：你可以让助手和 Gemini 聊天、上传图片视频让它识别、生成图片和视频、管理 Gemini 的历史对话。它不需要 API Key，而是复用你浏览器里已登录的 Google 账号 Cookie，相当于自动替你在网页上操作 Gemini。",
+      "level": "caution",
+      "risks": "它会读取并解密你电脑浏览器里的 Google 登录 Cookie（类似账号钥匙），并可能把 Cookie 写回文件、每 25 分钟自动续期。这些 Cookie 等同账号凭证，一旦泄露可能被别人登录你的 Google 账号。插件会把本地文件上传到 Google 服务器，并在你的账号下执行对话、生成、删除等操作；而且这是对 Gemini 网页端非官方接口的逆向封装，有违反 Google 服务条款、账号被限制或封禁的风险。如果开启 HTTP 模式，还会在本机开放一个端口（默认有 Bearer token 鉴权），但需注意局域网暴露。",
+      "postInstallNotes": "装完后需要准备 Google 账号 Cookie：可以用程序自动从浏览器提取（需先关闭浏览器），或手动导出 cookies.json 放到 ~/.config/gemini-web-mcp/cookies.json，或设置 GEMINI_COOKIE_FILE 环境变量指向它。然后在 DSH 中新开会话，工具会以 mcp__gemini-web__* 出现。如需自定义，可设置 GEMINI_EYES_UV、GEMINI_EYES_DIR 环境变量。",
+      "notes": "本项目是 gemini-web-mcp 的 DSH bundle，属于非官方逆向封装，README 明确警告有真实封号风险，建议使用专用 Google 小号，不用于商业用途。运行时需 Python ≥ 3.10 和 uv，首次使用会自动安装依赖。"
+    },
+    "summaryZh": "一个把 Gemini 网页版能力桥接给 DeepSeek Harness 的插件，复用浏览器 Cookie，支持对话、识图、生图/生视频，无需 API Key。",
+    "usage": {
+      "prompt_tokens": 2606,
+      "completion_tokens": 4081,
+      "total_tokens": 6687,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3504
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1966
+    }
+  }
+}

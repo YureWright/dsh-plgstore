@@ -1,0 +1,37 @@
+{
+  "id": "dsh-webui-background",
+  "analyzedAt": "2026-08-16T14:46:58.081Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖并 peer 依赖 @deepseek-ai/cordis 及 dsh 客户端包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-webui-background@next",
+      "evidence": "dsh plugin --profile web add dsh-webui-background@next"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加一个可以自己设置的背景图。你可以在设置里上传、拖放、预览图片，还能分别调浅色和深色模式下的遮罩效果；图片和设置会按不同的 Harness profile 分开保存，互不影响。它也支持暂时关掉背景但保留图片，或者一键删除恢复默认。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在 Harness 的 profile 数据目录下创建一个 data/webui-background/ 文件夹来存图片和设置，不会乱碰其他文件，也不会上传到外部服务器。上传图片限制 20MiB，且不支持 SVG（因为 SVG 可能包含危险内容），还做了格式校验。",
+      "postInstallNotes": "安装后如果 Web UI 已经在运行，需要重启它；然后在“设置 → 插件 → Web UI 背景”里选择图片保存即可。",
+      "notes": "这是一个 rc 版本（0.1.0-rc.1），需要 DeepSeek Harness 0.1.0-rc.5 或更高版本，且发布 tag 为 next，安装时记得带 @next。"
+    },
+    "summaryZh": "为 DeepSeek Harness Web UI 提供可配置背景图的独立插件，支持上传、预览、遮罩调整和多 profile 隔离。",
+    "usage": {
+      "prompt_tokens": 3074,
+      "completion_tokens": 820,
+      "total_tokens": 3894,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 376
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2434
+    }
+  }
+}

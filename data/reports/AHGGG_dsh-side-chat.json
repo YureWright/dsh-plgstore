@@ -1,0 +1,37 @@
+{
+  "id": "AHGGG/dsh-side-chat",
+  "analyzedAt": "2026-08-17T11:25:14.051Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client，peerDependencies 依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@ahggg/dsh-side-chat",
+      "evidence": "dsh plugin --profile web add @ahggg/dsh-side-chat@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的聊天界面里，可以选中一段文字（比如代码或消息），然后不离开当前对话，在侧边栏里针对这段文字提问、加注释，或者把选中的内容带回主对话。适合需要边看代码边追问的场景。",
+      "level": "ok",
+      "risks": "它会在你当前的项目目录里像主对话一样真实地读写文件、执行命令，关闭侧边栏不会自动撤销这些改动；另外会创建子会话并保存在磁盘上，占用一些存储。没发现向第三方发送数据的迹象。",
+      "postInstallNotes": "需要确保 DSH 是 @deepseek-ai/dsh@0.1.0-rc.6 版本，然后用 `dsh plugin --profile web add @ahggg/dsh-side-chat@latest` 安装，再启动 `dsh web --port 3080`，打开打印出的 URL 后插件会自动加载。如果之前装过旧版，先执行 `pnpm cache delete \"@ahggg/dsh-side-chat\"`。",
+      "notes": "该插件精确针对 @deepseek-ai/dsh@0.1.0-rc.6，其他版本可能不兼容；安装命令需配合 --profile web 使用。README 的 References 中有几个外部论坛链接，但未说明用途，未发现实际风险。"
+    },
+    "summaryZh": "在 DeepSeek Harness 聊天中选中文本即可打开侧边栏进行追问、加注释并带回主对话的插件。",
+    "usage": {
+      "prompt_tokens": 3341,
+      "completion_tokens": 1830,
+      "total_tokens": 5171,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1337
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2701
+    }
+  }
+}

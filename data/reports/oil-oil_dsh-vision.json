@@ -1,0 +1,37 @@
+{
+  "id": "oil-oil/dsh-vision",
+  "analyzedAt": "2026-08-17T11:13:22.596Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 且依赖 @deepseek-ai/cordis 与多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/oil-oil/dsh-vision.git",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add github:oil-oil/dsh-vision"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 装上“眼睛”。你正常发图片，如果当前用的 DeepSeek 模型本身不能看图，它会把这图片交给另一个你选的视觉模型（或本地 OCR）先看一遍，再把描述喂给 DeepSeek，由 DeepSeek 给出最终回答。支持一次分析多张图，也能对比。不会替换你选的主模型。",
+      "level": "ok",
+      "risks": "它会把你的图片发送给你在设置里选择的第三方视觉服务（比如 ZenMux、阿里云、OpenRouter 等），这些服务的提供方可能会看到你的图片内容。如果你没有配置任何云服务，它只会在本机用 macOS 自带识别或 Tesseract 做 OCR，图片不会外传。另外，它可能会读取 ~/.config/see/config.env 里的密钥来连接服务；这些密钥仅用于调用你选的视觉服务，不会回传到页面或写入本插件仓库。",
+      "postInstallNotes": "装完后重启 Harness；到 设置 → 插件 → 插件配置 → Vision Recognition 里选择视觉服务商并填入 API key；可按需调整模型 ID、接口地址和图片数量上限。",
+      "notes": "当前版本面向 DeepSeek Harness 0.1.0-rc.6，安装前建议确认你的 Harness 版本匹配；非敏感配置也可写在 settings.yaml 的 llm-deepseek 段落，但 API key 不要写进该文件。"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加看图能力：主模型不支持图片时，自动调用你配置的视觉模型或本地 OCR 识别图片，让 DeepSeek 基于看到的内容作答。",
+    "usage": {
+      "prompt_tokens": 3504,
+      "completion_tokens": 2746,
+      "total_tokens": 6250,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2218
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2864
+    }
+  }
+}

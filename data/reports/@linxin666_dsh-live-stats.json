@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-live-stats",
+  "analyzedAt": "2026-08-17T11:07:30.271Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖了 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-live-stats",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-live-stats"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以在 DSH Web 界面的会话状态栏里实时显示输入和输出 token 的估算值，以及生成速度（TPS，比如每秒生成多少个 token）。它会在回复流式输出时更新数字，让用户直观看到对话大概消耗了多少 token、生成快不快。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取会话流数据并展示估算值，不碰用户隐私文件，也不连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 `dsh web` 才能生效；可选地可以在配置里调整 charsPerToken 等估算参数。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH Web 界面实时显示 token 消耗估算与生成速度的小插件。",
+    "usage": {
+      "prompt_tokens": 2760,
+      "completion_tokens": 745,
+      "total_tokens": 3505,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 425
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2120
+    }
+  }
+}

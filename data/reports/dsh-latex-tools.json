@@ -1,0 +1,37 @@
+{
+  "id": "dsh-latex-tools",
+  "analyzedAt": "2026-08-16T13:31:27.510Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 并依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-latex-tools",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-latex-tools"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的插件。你在看文档或对话时，如果看到数学公式（LaTeX），把鼠标悬停上去，它就会弹出一个工具条，你可以一键复制公式的 LaTeX 源码，或者把公式导出成 SVG 图片（矢量图），方便插入到论文、PPT 或网页里。整个过程完全离线，不依赖外部网络。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "装完重启 Web UI 即可，无需额外配置。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 网页中悬停 LaTeX 公式即可复制 TeX 源码或导出为独立 SVG 文件的插件。",
+    "usage": {
+      "prompt_tokens": 2641,
+      "completion_tokens": 2950,
+      "total_tokens": 5591,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2646
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2001
+    }
+  }
+}

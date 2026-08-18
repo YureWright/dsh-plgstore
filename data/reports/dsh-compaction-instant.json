@@ -1,0 +1,37 @@
+{
+  "id": "dsh-compaction-instant",
+  "analyzedAt": "2026-08-16T14:46:28.334Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且 peerDependencies 指向 @deepseek-ai/cordis 等 DSH 核心包，README 明确为 DeepSeek Harness 的插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-compaction-instant",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的“上下文压缩器”。聊天记录太长时，它会把旧内容快速压成一段紧凑的摘要，不用调用 AI 模型，所以几乎不花时间和钱；而且压缩不是乱删，原始内容都还在日志里，通过带序号的小标记就能找回，基本不丢信息。它还附带几个小工具，让人和模型都能按关键词搜索旧内容并恢复。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在本地做文本处理，不连外部服务器，也不碰隐私文件。",
+      "postInstallNotes": "安装后需在 DSH 配置中选用该插件作为 compaction 后端（替代默认的 compaction-basic），其余配置项均有默认值，可按需调整。",
+      "notes": "无"
+    },
+    "summaryZh": "基于 VCC 原理的 DSH 即时上下文压缩插件：不调用大模型、毫秒级完成近无损压缩，并附带回溯搜索与恢复工具。",
+    "usage": {
+      "prompt_tokens": 3978,
+      "completion_tokens": 2196,
+      "total_tokens": 6174,
+      "prompt_tokens_details": {
+        "cached_tokens": 3968
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1848
+      },
+      "prompt_cache_hit_tokens": 3968,
+      "prompt_cache_miss_tokens": 10
+    }
+  }
+}

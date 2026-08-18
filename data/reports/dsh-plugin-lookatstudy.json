@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-lookatstudy",
+  "analyzedAt": "2026-08-16T13:36:56.655Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-lookatstudy",
+      "evidence": "dsh plugin add dsh-plugin-lookatstudy        # from npm"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把你提供的 Markdown 文档、本地文件夹或 GitHub 学习仓库，变成 DeepSeek Harness 里一门带引导的 AI 课程。装上后，你的 dsh 助手会变成一位 AI 导师：它会拆出知识点、记录你每次答题的掌握情况、安排间隔重复复习、主动提议“提前毕业”并等你确认；同时在聊天外的「学习」标签页里提供三栏界面（课程、老师、黑板），方便你选课、查看进度、做康奈尔笔记。",
+      "level": "ok",
+      "risks": "它会把学习进度和状态存成本地文件（默认在 $DSH_HOME/lookatstudy-plugin/state.json）；导入 GitHub 仓库时经 jsDelivr CDN 下载内容，需要联网；如果你把某个 Markdown 或文件夹交给它，它会读取这些内容来生成课程。没发现会上传隐私数据或执行额外安装脚本。",
+      "postInstallNotes": "无需额外配置即可使用；可选在 cordis.yml 的 lookatstudy 节点设置 mode（direct/guide/practice）和 statePath，来调整默认教学模式和状态保存位置。",
+      "notes": "无"
+    },
+    "summaryZh": "把任意 Markdown、本地文件夹或 GitHub 学习仓库变成 DeepSeek Harness 里的引导式 AI 课程，支持知识点掌握度追踪、间隔重复和专属「学习」标签页。",
+    "usage": {
+      "prompt_tokens": 3340,
+      "completion_tokens": 2575,
+      "total_tokens": 5915,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2132
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2700
+    }
+  }
+}

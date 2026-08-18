@@ -1,0 +1,37 @@
+{
+  "id": "hellosky983/dsh-skillradar",
+  "analyzedAt": "2026-08-17T13:08:59.306Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/hellosky983/dsh-skillradar.git",
+      "evidence": "Install (from GitHub): `dsh plugin add github:hellosky983/dsh-skillradar`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会查看当前对话里所有可用的技能（工具），根据最近的聊天内容（中英文）给每个技能打分，然后告诉你现在最适合用哪个技能。比如你有 16 个技能，它会列出一个排序，显示每个技能的匹配度。",
+      "level": "ok",
+      "risks": "它会读取当前会话最近的聊天记录（最多 8000 个字符）和技能列表，但只在本地计算，不会联网或把数据发给别人。没发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "扫描当前会话可见的所有技能并根据最近对话打分，推荐下一个该加载的技能；纯本地、无网络请求。",
+    "usage": {
+      "prompt_tokens": 1846,
+      "completion_tokens": 2159,
+      "total_tokens": 4005,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1851
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1206
+    }
+  }
+}

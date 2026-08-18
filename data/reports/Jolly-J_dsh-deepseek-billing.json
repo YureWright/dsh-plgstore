@@ -1,0 +1,37 @@
+{
+  "id": "Jolly-J/dsh-deepseek-billing",
+  "analyzedAt": "2026-08-17T11:56:00.274Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 和 dsh.bundle，依赖 @deepseek-ai/* 核心包，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Jolly-J/dsh-deepseek-billing.git",
+      "evidence": "dsh plugin --profile web add https://github.com/Jolly-J/dsh-deepseek-billing.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 网页版左侧边栏加一个小卡片，实时显示你的 DeepSeek 账户余额，以及当前会话大概花了多少钱。卡片每 60 秒自动刷新，点一下能展开看充值/赠送余额、输入输出 token、缓存命中率等详情。费用是按官方价格估算的，不是账单。",
+      "level": "ok",
+      "risks": "它会用你当前正在用的 DeepSeek API Key 去调用官方余额接口。API Key 只在插件进程内存里短暂出现，不会写进磁盘或日志。另外，能访问你 DSH 网页端口的人（比如同一局域网）可能看到你的余额数字，但看不到密钥。",
+      "postInstallNotes": "装完重启 dsh web 即可；无需额外配置（自动使用模型当前的 API Key）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页版添加侧边栏余额显示与会话费用估算卡片。",
+    "usage": {
+      "prompt_tokens": 2617,
+      "completion_tokens": 1481,
+      "total_tokens": 4098,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1124
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1977
+    }
+  }
+}

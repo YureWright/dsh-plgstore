@@ -1,0 +1,37 @@
+{
+  "id": "dongsheng123132/dsh-cost",
+  "analyzedAt": "2026-08-17T13:11:10.018Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 补丁、依赖 @deepseek-ai/dsh-tools，且 README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/dongsheng123132/dsh-cost.git",
+      "evidence": "dsh plugin --profile <name> add github:dongsheng123132/dsh-cost"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的费用统计和预算检查插件。它会读取 DSH 的会话日志，把每次调用的 token 用量（输入、输出、缓存读写）按服务商和模型分类，再结合你自己填写的价格表算出花了多少钱，还能检查有没有超出预算、给出当前上下文压力快照。简单说就是帮你监控 AI 调用的花费、防止超支。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在本地读取 DSH 的日志文件来计算费用，不会上传数据；需要你在配置里指定一个本地价格表文件路径，除此之外没有其他敏感操作。",
+      "postInstallNotes": "需要复制 prices.example.json 为你的价格表并填上实际单价，然后在 DSH 配置里为插件设置 priceBookFile（必填）和 defaultBudget（可选）；否则所有调用都会显示为未计价。",
+      "notes": "无"
+    },
+    "summaryZh": "用于 DeepSeek Harness 的 token 费用记账与预算检查插件，基于实际用量记录和自定义价格表计算成本。",
+    "usage": {
+      "prompt_tokens": 2243,
+      "completion_tokens": 2752,
+      "total_tokens": 4995,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2364
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1603
+    }
+  }
+}

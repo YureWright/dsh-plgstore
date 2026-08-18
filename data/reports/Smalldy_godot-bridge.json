@@ -1,0 +1,37 @@
+{
+  "id": "Smalldy/godot-bridge",
+  "analyzedAt": "2026-08-17T11:39:22.815Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin add 安装命令，并说明使用 @deepseek-ai/dsh-tools 注册工具，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Smalldy/godot-bridge.git",
+      "evidence": "dsh plugin --profile web add github:Smalldy/godot-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 AI 助手（DeepSeek Harness）能直接启动和控制你的 Godot 4 游戏。你不用装额外的 Python 服务或编辑器插件，游戏里只要有个自带的 TCP 小服务，插件就能让它跑起来、读取场景、点击按钮、设置属性、截图、改项目配置等等，相当于替掉了原来的 godot-mcp 工具。",
+      "level": "ok",
+      "risks": "它会启动 Godot 进程并连接你电脑上 127.0.0.1:9090 的本地端口；可能需要修改游戏项目文件（比如 project.godot、添加 autoload）；还会在启动时悄悄访问 GitHub 检查更新（超时 5 秒，失败就静默）。除此之外没发现明显风险。",
+      "postInstallNotes": "如果你的系统 PATH 里没有 godot 命令，需要在 DSH 设置里配置 godotPath（Godot 可执行文件的完整路径）。其余一般无需额外操作。",
+      "notes": "无"
+    },
+    "summaryZh": "godot-bridge 是一个 DSH 原生插件，让 AI 能启动并操控运行中的 Godot 4 游戏，替代 godot-mcp 的 MCP 服务器。",
+    "usage": {
+      "prompt_tokens": 3274,
+      "completion_tokens": 929,
+      "total_tokens": 4203,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2634
+    }
+  }
+}

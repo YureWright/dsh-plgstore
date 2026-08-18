@@ -1,0 +1,37 @@
+{
+  "id": "dsh-kgraph-plugin",
+  "analyzedAt": "2026-08-16T14:47:38.670Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-tools，且 README 给出了 dsh plugin 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-kgraph-plugin@0.3.0",
+      "evidence": "推荐（显式版本号，避免 pnpm lockfile 缓存旧版本）：`dsh plugin --profile web add dsh-kgraph-plugin@0.3.0`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的图表插件，叫做“项目知识图谱”。它能只读扫描你指定的项目文件夹，自动把项目的模块结构、技术栈、文件之间的依赖关系整理成一张清晰的图，还能分层次（比如 controller、service、mapper）展示。你可以通过网页右下角的浮动面板输入路径来扫描，也可以让 Agent 通过 project_kgraph 工具读取完整图谱。装上之后，理解陌生项目会方便很多。",
+      "level": "ok",
+      "risks": "它会读取你指定的项目目录中的代码和配置文件（比如 pom.xml、package.json 等），用于生成图谱。但它声明只读，不会修改任何文件。扫描结果会显示在界面里，Agent 也能通过工具读取，所以如果项目里有敏感的代码或密钥，不要在公共环境下随意扫描展示。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个只读的项目知识图谱插件，自动扫描并可视化代码结构，方便快速理解项目架构。",
+    "usage": {
+      "prompt_tokens": 2165,
+      "completion_tokens": 815,
+      "total_tokens": 2980,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 435
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1525
+    }
+  }
+}

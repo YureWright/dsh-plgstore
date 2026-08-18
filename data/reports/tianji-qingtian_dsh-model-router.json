@@ -1,0 +1,37 @@
+{
+  "id": "tianji-qingtian/dsh-model-router",
+  "analyzedAt": "2026-08-17T11:16:38.110Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client 和 dsh.bundle，并依赖 @deepseek-ai/cordis 与多个 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:tianji-qingtian/dsh-model-router#v0.7.2",
+      "evidence": "dsh plugin --profile web add \"github:tianji-qingtian/dsh-model-router#v0.7.2\""
+    },
+    "evaluationReport": {
+      "intro": "这是给 DeepSeek Harness 用的一个模型路由插件。它会自动判断你的问题适不适合用便宜的快速模型直接回答：简单问题就交给快速模型，复杂问题才用主力模型，能省钱、减少等待。它也提供失败自动降级重试、会话内 token/缓存/费用统计，以及一个开关随时关掉快捷回答。",
+      "level": "ok",
+      "risks": "它会读写本机的 DSH 会话记录（比如在会话里插入快速回答的标记），并会像正常聊天一样调用 DeepSeek 模型接口来判定和生成回答，这些请求会发给 DeepSeek 服务。没有发现它会上传数据到其他服务器或访问无关隐私文件。",
+      "postInstallNotes": "装完后需要重启 DSH 才能生效（README：`dsh plugin add` 只改配置文件，运行中的实例不会热加载；可运行 `dsh --profile web` 重启）。建议在设置页确认插件已加载；如果账户实际价格与默认估价不同，可自行调整插件里的价格表。",
+      "notes": "README 提示 DeepSeek Harness 仍在开发者预览阶段，版本升级可能带来不兼容；README 推荐的安装 tag 是 v0.7.2，而包版本已是 0.8.1，安装时以实际 release tag 为准。"
+    },
+    "summaryZh": "DeepSeek Harness 的模型路由与省钱插件：自动用便宜模型快速回答简单问题、失败自动回退，并提供 token/缓存/费用统计面板。",
+    "usage": {
+      "prompt_tokens": 3925,
+      "completion_tokens": 3959,
+      "total_tokens": 7884,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3448
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3285
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-browser",
+  "analyzedAt": "2026-08-18T14:50:53.716Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 依赖 @deepseek-ai/cordis，README 给出 dsh plugin 安装命令且描述了 browser_* 工具，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-browser",
+      "evidence": "dsh plugin --profile <name> add dsh-browser"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的 AI 像真人一样操作浏览器：打开网页、点击按钮、输入文字、下拉选择、截图、执行 JavaScript、读取页面文字和 HTML 等。适合用来做自动填表、爬取动态网页内容，AI 还能看截图来理解页面。",
+      "level": "ok",
+      "risks": "会在你电脑上启动浏览器（默认优先用 Chromium，找不到就用 Chrome 或 Edge）来访问网页；截图会保存到工作区目录。它本身不连接额外服务器，但会访问你给它指定的网址，网页内容可能被 AI 读取处理。没发现其他明显风险。",
+      "postInstallNotes": "如果本机没有可用的 Chromium 浏览器，需要先运行 `npx playwright install chromium`，或通过插件配置指定浏览器路径（launch.executablePath）或通道（launch.channel）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供浏览器自动化工具（Playwright 驱动），让 AI 能打开网页、点击、输入、截图和执行 JS。",
+    "usage": {
+      "prompt_tokens": 2145,
+      "completion_tokens": 962,
+      "total_tokens": 3107,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 584
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1505
+    }
+  }
+}

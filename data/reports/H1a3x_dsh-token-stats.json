@@ -1,0 +1,37 @@
+{
+  "id": "H1a3x/dsh-token-stats",
+  "analyzedAt": "2026-08-17T11:48:41.595Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 并依赖 @deepseek-ai/cordis，README 描述了 DSH 插件安装方式和运行机制，确认为真插件"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "npx dsh-token-stats install"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的浮动小面板，安装后右下角会出现一个可拖动的窗口，实时显示你用了多少 Token：输入、输出、缓存命中率，还能按提供商和模型看明细，带当月每日热力图，以及每个会话的详细记录。面板每 10 秒自动刷新，颜色跟随 Harness 的明暗主题。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改 DeepSeek Harness 自己的配置目录（$DSH_HOME 下的 profile 和 node_modules），数据全部来自本机 Harness 的日志和统计，不会连接外部服务器，也不碰隐私文件。",
+      "postInstallNotes": "安装完成后需要手动重启 dsh 并刷新浏览器页面。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 界面提供可拖动的 Token 用量统计面板，含多维明细和热力图。",
+    "usage": {
+      "prompt_tokens": 2486,
+      "completion_tokens": 843,
+      "total_tokens": 3329,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 514
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1846
+    }
+  }
+}

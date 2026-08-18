@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-web-ui-settings",
+  "analyzedAt": "2026-08-17T11:06:16.942Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 含有 dsh.bundle 和 dsh.client 字段，依赖 @deepseek-ai/dsh-client-runtime 等核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-web-ui-settings",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-web-ui-settings"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的设置页面增加一个“Web UI”设置区块，用来统一开关和配置一系列 web 界面小插件（比如任务面板、实时统计等）。它本身不提供具体功能，只是作为一个管理入口，让这些插件在一个地方集中控制。",
+      "level": "ok",
+      "risks": "没发现明显风险。默认情况下远程访问是关闭的，只允许本机访问；如果配置了反向代理访问，会涉及一个共享 token 的环境变量，需要注意保护好这个 token 值，不要泄露。",
+      "postInstallNotes": "安装后需要重启 dsh web 命令，设置区块才会出现在设置页面。若需要反向代理访问，还需按说明在配置文件中设置 trustedProxyHosts 和 proxyTokenEnv。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 设置页面的 Web UI 插件组，为 dsh-web-ui 系列插件提供统一的开关和配置入口。",
+    "usage": {
+      "prompt_tokens": 2365,
+      "completion_tokens": 869,
+      "total_tokens": 3234,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 517
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1725
+    }
+  }
+}

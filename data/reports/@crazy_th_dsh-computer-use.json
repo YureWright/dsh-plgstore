@@ -1,0 +1,37 @@
+{
+  "id": "@crazy_th/dsh-computer-use",
+  "analyzedAt": "2026-08-16T13:22:56.688Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 含 dsh.bundle/client 声明、peerDependencies 依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@crazy_th/dsh-computer-use",
+      "evidence": "dsh plugin --profile web add @crazy_th/dsh-computer-use"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 在 Windows 电脑上直接“动手”：截屏看屏幕、移动鼠标点击、拖拽、滚动、输入文字、按键盘快捷键，还能调用一个视觉模型来“看懂”屏幕内容。相当于给 AI 装上了眼睛和手，但每次操作默认都需要你批准。",
+      "level": "ok",
+      "risks": "它会模拟你的鼠标键盘和截屏，所以 AI 能操作电脑并看到屏幕上的内容（比如你打开的网页、文档）。如果开启视觉模型，当前截图会发送到你配置的模型服务商（默认关闭）。每次操作前有批准环节，别盲目点确认。插件只使用 Windows 系统 API，不装后台服务或全局钩子。",
+      "postInstallNotes": "安装后重启 DSH；进入“设置 → 插件 → 插件配置”，展开 Computer Use Vision，按需填写 OpenAI 兼容接口的 Base URL、API Key、模型名和 Max Tokens，再启用；默认 cordis.patch.yml 已启用审批并限制截图最大 1600x1200，可按需覆盖。",
+      "notes": "插件仅支持 Windows；兼容目标为 DSH 0.1.0-rc.6，使用前请确认你的 DSH 版本。"
+    },
+    "summaryZh": "让 DeepSeek Harness 在 Windows 上直接看屏幕和操控电脑（截图、点击、拖拽、滚动、打字、快捷键），并可选用视觉模型理解屏幕内容。",
+    "usage": {
+      "prompt_tokens": 2692,
+      "completion_tokens": 2805,
+      "total_tokens": 5497,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2345
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2052
+    }
+  }
+}

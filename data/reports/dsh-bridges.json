@@ -1,0 +1,37 @@
+{
+  "id": "dsh-bridges",
+  "analyzedAt": "2026-08-16T13:45:17.198Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 与 dsh-* 核心包，README 给出 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-bridges",
+      "evidence": "dsh plugin --profile <name> add dsh-bridges"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把已经为 Claude Code、CodeBuddy Code、opencode、Codex 等 AI 编程工具配置好的项目，直接拿到 DeepSeek Harness 里用，不用重新配置。原来项目里的技能、命令、记忆文件、钩子（hooks）都能接着用，比如 .claude 里的 skills 会变成 DSH 的 /name 技能，CLAUDE.md 会自动注入作为记忆，settings.json 里的 hooks 也会跟着 DSH 的生命周期跑。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取项目里的 .claude、.codebuddy 等配置目录，也可能会读用户主目录下对应的全局配置（如 ~/.claude），以便把技能、记忆等带进 DSH。另外它会执行项目里配置的 hooks（钩子），这些 hooks 本身就有代码执行能力，但属于原有工具链的功能，插件只是让它们在 DSH 里继续生效。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个桥接插件，让 DeepSeek Harness 直接兼容 Claude Code、Codex 等已有项目的技能、记忆和钩子配置。",
+    "usage": {
+      "prompt_tokens": 3244,
+      "completion_tokens": 975,
+      "total_tokens": 4219,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 573
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2604
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "jiesou/dsh-stream-rules",
+  "analyzedAt": "2026-08-17T13:19:43.997Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，且 peerDependencies 包含 @deepseek-ai/cordis 与 @deepseek-ai/dsh-llm，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@jiesou/dsh-stream-rules",
+      "evidence": "dsh plugin --profile <name> add @jiesou/dsh-stream-rules"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你给 DSH 里的 AI 助手加一些“行为规则”。比如当 AI 打算用 pip install 装包时，插件会先拦住它，并提示 AI 改用 uvx 或 uv pip；或者当 AI 想用 curl 翻 GitHub API 时，提醒改用 gh 命令。规则只在匹配到某些关键词时触发一次，不会一直打扰对话。你可以自己写 JavaScript 规则文件，控制 AI 的做事边界。",
+      "level": "ok",
+      "risks": "它会读取你 ~/.dsh 下 profile 的配置，并执行你自己写的规则文件（rules.local.js）——如果从不可信来源复制规则，等于在本地运行不可信代码。它会观察代理每次工具调用的内容（命令和参数），并把匹配到的规则提示注入回对话上下文。除此之外，没发现它会上传数据或连接外部服务器。",
+      "postInstallNotes": "安装后不会自动生效。需要进入插件目录：$DSH_HOME/profiles/<name>/node_modules/@jiesou/dsh-stream-rules，把 rules/rules.js.example 复制为 rules/rules.local.js，然后按需编辑规则。也可以给插件配置 config.rules 指向你自己的规则目录。",
+      "notes": "这是真正的 DSH 插件（package.json 有 dsh.bundle，并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-llm）。注意规则是纯字符串匹配，可能误触发；默认没有任何规则，需要自行编写。peerDependencies 要求 DSH 版本 >=4.0.1 <5。"
+    },
+    "summaryZh": "一个 DSH 流式规则插件：按需给 AI 工具调用注入提醒或拦截，控制行为边界，不浪费上下文。",
+    "usage": {
+      "prompt_tokens": 2300,
+      "completion_tokens": 2550,
+      "total_tokens": 4850,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2017
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1660
+    }
+  }
+}

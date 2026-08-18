@@ -1,0 +1,37 @@
+{
+  "id": "XieZongChen/dsh-md-notes",
+  "analyzedAt": "2026-08-17T11:53:44.658Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 包含 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-md-notes",
+      "evidence": "dsh plugin --profile web add dsh-md-notes"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的 Markdown 笔记插件。它会在侧边栏加一个笔记入口，让你能管理、编辑、预览笔记；还能在 AI 回答下方一键把对话内容写进笔记。笔记以普通的 .md 文件存在每个工作区的 .dsh-notes 文件夹里，不用数据库、不联网，也可以选配 Git 仓库来同步备份。",
+      "level": "ok",
+      "risks": "它会在你的工作区里创建和修改 .dsh-notes 文件夹里的笔记文件；如果你启用了 Git 同步，它会在 $DSH_HOME/md-notes-repos/ 下克隆和操作 Git 仓库。README 明确说没有外部网络请求、没有遥测、不收集凭据，所以基本没有隐私风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效；如果需要 Git 同步，再到设置面板里配置仓库地址等信息。",
+      "notes": "package.json 版本是 0.2.0，README 里写的插件版本是 0.3.0，两者不一致，安装时以 npm 实际发布的版本为准。"
+    },
+    "summaryZh": "dsh-md-notes 是一个 DSH 的 Markdown 笔记插件，提供侧边栏笔记管理、对话内容一键存入笔记，并支持可选的 Git 同步。",
+    "usage": {
+      "prompt_tokens": 4151,
+      "completion_tokens": 1176,
+      "total_tokens": 5327,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 736
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3511
+    }
+  }
+}

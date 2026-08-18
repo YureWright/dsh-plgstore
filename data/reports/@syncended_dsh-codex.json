@@ -1,0 +1,37 @@
+{
+  "id": "@syncended/dsh-codex",
+  "analyzedAt": "2026-08-18T14:55:00.406Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@syncended/dsh-codex",
+      "evidence": "dsh plugin --profile web add @syncended/dsh-codex"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你用 ChatGPT Plus 或 Pro 的订阅作为 DeepSeek Harness 里的一个模型提供商。装好后，你可以在网页设置里或通过 /codex 命令登录 OpenAI，登录后 Codex 模型就会出现在模型选择器里，token 会自动刷新，还能查看使用限额。",
+      "level": "ok",
+      "risks": "它会把你的 OpenAI 登录凭据（access/refresh token）保存在本地文件 $DSH_HOME/openai-codex.json 里，如果别人能访问这个文件，就可能看到你的登录信息。另外，查询限额时会调用 OpenAI 的接口，但 token 不会传到浏览器。",
+      "postInstallNotes": "装完需要重启 DSH；必须有 ChatGPT Plus/Pro 订阅；某些 dsh 版本可能需要加 -w 参数运行安装命令；远程部署时不能用网页登录，需在服务器上执行 /codex login。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 中使用 ChatGPT Plus/Pro 订阅接入 Codex 模型的插件，支持网页/命令行设备码登录、自动刷新令牌和查看使用限额。",
+    "usage": {
+      "prompt_tokens": 2583,
+      "completion_tokens": 924,
+      "total_tokens": 3507,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 533
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1943
+    }
+  }
+}

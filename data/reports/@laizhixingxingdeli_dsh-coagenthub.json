@@ -1,0 +1,37 @@
+{
+  "id": "@laizhixingxingdeli/dsh-coagenthub",
+  "analyzedAt": "2026-08-17T11:11:20.424Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 含 dsh.client 配置并依赖 @deepseek-ai/cordis 等核心包，README 明确为 dsh 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@laizhixingxingdeli/dsh-coagenthub",
+      "evidence": "用 overlay 方式把本插件插入 dsh web 配置"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness（dsh）助手能和 CoAgentHub 配合使用。CoAgentHub 是一个跑在局域网里的协作服务，可以有多台电脑（参与者/执行器）一起干活。装上这个插件后，你可以直接用自然语言指挥 dsh 去列参与者、建群、发消息、派任务、查进度；它还会在浏览器里给 dsh 加一个悬浮面板，方便查看群、任务、执行器，并进行设置。简单说，就是让 dsh 变成一个指挥官，把活儿分给局域网里的其他机器。",
+      "level": "ok",
+      "risks": "插件本身没有偷偷做什么坏事。它需要连接一个 CoAgentHub 服务（默认 http://localhost:3001），这个服务本身没有登录验证，任何能访问到你局域网的人都能用它来发消息、派任务。所以千万别把这个服务暴露到公网。另外，插件会在你的用户目录下（~/.dsh/）保存一个配置文件，里面可能包含你的参与者 ID 和 API 地址，这些信息留在本机，一般没问题。",
+      "postInstallNotes": "需要先有一个 CoAgentHub 服务在跑（可以用它仓库的代码启动）；配置 CoAgentHub 的 API 地址（默认 http://localhost:3001/api）和你的参与者身份（可用环境变量 COAGENTHUB_API_BASE 和 COAGENTHUB_PARTICIPANT_ID 或面板设置）。然后用 README 里的 overlay 方式把插件挂到 dsh web 上（dsh web --patch ...）。",
+      "notes": "无"
+    },
+    "summaryZh": "让 dsh 助手能通过对话和浏览器面板操作 CoAgentHub 协作中枢，在局域网内分发任务、管理群组和执行器。",
+    "usage": {
+      "prompt_tokens": 5052,
+      "completion_tokens": 5162,
+      "total_tokens": 10214,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4649
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4412
+    }
+  }
+}

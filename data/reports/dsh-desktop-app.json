@@ -1,0 +1,37 @@
+{
+  "id": "dsh-desktop-app",
+  "analyzedAt": "2026-08-16T13:45:35.192Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，且 README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-desktop-app",
+      "evidence": "一键安装：`dsh plugin add dsh-desktop-app`（npm）或 `dsh plugin add github:happpsee/dsh-desktop-app`（GitHub）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫做「小南梁」，它把 DeepSeek Harness（DSH）包装成一个桌面应用，让你可以像普通软件一样在 macOS 或 Windows 上使用。它有系统托盘常驻、自动启动或复用本地 DSH 服务、任务完成通知，还附带一个鲸鱼娘桌宠。另外它还提供了一套‘国内加速’和‘Windows 无管理员构建’的实用技能，帮助你在国内网络环境下更方便地搭建和使用 DSH。简单说，它既是给 DSH 加了个漂亮桌面壳，又带了一堆实用小工具。",
+      "level": "ok",
+      "risks": "它会以一个桌面应用的形式在本地运行，常驻系统托盘，并启动或复用本地的 DSH Web 服务（127.0.0.1:3080）。它会在本地保存窗口位置、大小和桌宠位置等配置。它会在自己的应用窗口内把官方 logo 替换为鲸鱼娘形象（属于品牌修改）。非签名版本在 Windows 下载时可能触发 SmartScreen 警告。没有发现偷偷联网上传数据或读取私人文件的行为。",
+      "postInstallNotes": "安装后，如需使用技能，需要按 README 把 skill 目录复制到 DSH 的 skills 目录；桌面应用本身需要从 Releases 下载对应系统的安装包，或自行构建。",
+      "notes": "这是非官方桌面客户端，使用了 DeepSeek 官方鲸鱼形象（非商用许可），注意商标和许可协议；任务完成通知基于 DOM 启发式判断，可能不够精确；仓库主体是技能包，桌面壳是参考实现。"
+    },
+    "summaryZh": "把 DeepSeek Harness 封装成带托盘、桌宠和通知的桌面应用，并提供 Windows 无管理员构建与国内镜像加速技能。",
+    "usage": {
+      "prompt_tokens": 3179,
+      "completion_tokens": 3343,
+      "total_tokens": 6522,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2817
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2539
+    }
+  }
+}

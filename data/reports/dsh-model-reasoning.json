@@ -1,0 +1,37 @@
+{
+  "id": "dsh-model-reasoning",
+  "analyzedAt": "2026-08-18T14:56:54.074Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖多个 @deepseek-ai/dsh-client-* 核心包，README 给出 dsh plugin add 安装命令，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-model-reasoning",
+      "evidence": "From npm (recommended): The package is published to npm as `dsh-model-reasoning`:"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）用的外部插件，专门为第三方（pi-ai）模型提供商的每个模型单独设置“思考等级”（也就是推理努力程度，比如关闭、低、中、高、最高等）。它会在 DSH 的设置里新增一个“模型思考等级”页面，你可以给每个模型选一个等级，还能自定义每个等级实际发送给模型的词语（比如把 max 映射成 ultra），用来适配不同模型的叫法。它不修改 DSH 源码，作为独立 bundle 安装，官方更新也不会覆盖它。",
+      "level": "ok",
+      "risks": "它会读写 DSH 的本地配置（记录每个模型的思考等级），这些配置保存在你自己的电脑上，不会上传到外部。它不连接额外服务器，也不碰隐私文件。唯一要注意的是设置会改变模型请求时的思考参数，可能会影响响应速度或质量。",
+      "postInstallNotes": "安装后重启 `dsh web`，然后到设置里找到“模型思考等级 / Model reasoning”页面进行按模型的等级配置。若从 git 安装且使用 pnpm ≥ 10，需要在 profile 的 pnpm-workspace.yaml 中 allowlist 构建脚本后重新执行 add。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 外部 web 客户端插件，在设置中新增“模型思考等级”页面，可为 pi-ai 第三方提供商的每个模型配置推理努力级别并自定义发送值。",
+    "usage": {
+      "prompt_tokens": 3500,
+      "completion_tokens": 1257,
+      "total_tokens": 4757,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 790
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2860
+    }
+  }
+}

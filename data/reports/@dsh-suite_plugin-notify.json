@@ -1,0 +1,37 @@
+{
+  "id": "@dsh-suite/plugin-notify",
+  "analyzedAt": "2026-08-16T14:50:45.537Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 包含 @deepseek-ai/cordis 与 @deepseek-ai/dsh-session，且 README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-suite/plugin-notify",
+      "evidence": "dsh plugin --profile <name> add @dsh-suite/plugin-notify"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek 助手在每回合任务完成、出错或需要你审批时，自动把进度和结果推送到飞书、企业微信、钉钉、Slack、Discord 等聊天工具，也可以在你电脑上弹一个系统通知（仅 macOS）。你可以设置免打扰时段，也可以选择哪些事件才通知。",
+      "level": "ok",
+      "risks": "它会读取 DSH 会话事件（任务结束/错误/审批请求），并把任务标题、结果摘要、耗时、会话 ID 等内容发到你配置的 webhook 地址。如果 webhook 是公网第三方服务，这些信息就会发送到对应服务器。另外 macOS 下会调用 osascript 弹本地通知。除此之外没有发现其他明显风险。",
+      "postInstallNotes": "安装后需要在 profile 的 cordis.patch.yml 中给该插件添加 config，填入你想用的 webhook 地址、事件白名单、是否本地通知等。不配置则不会发送远程通知。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 通知插件：回合完成/出错/待审批时，将通知推送到飞书、企微、钉钉、Slack、Discord 等 IM webhook，并支持 macOS 本机通知和免打扰时段。",
+    "usage": {
+      "prompt_tokens": 3188,
+      "completion_tokens": 941,
+      "total_tokens": 4129,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 507
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2548
+    }
+  }
+}

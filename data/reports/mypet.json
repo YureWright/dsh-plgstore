@@ -1,0 +1,37 @@
+{
+  "id": "mypet",
+  "analyzedAt": "2026-08-16T13:31:31.753Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 依赖 @deepseek-ai/dsh-client-runtime，且 README 提供 dsh plugin add 命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "mypet",
+      "evidence": "dsh plugin --profile web add mypet"
+    },
+    "evaluationReport": {
+      "intro": "mypet 是一个住在浏览器里的电子宠物插件，会随着你写代码和 agent 工作而变化心情、体力、饱腹和牵绊值。宠物会升级、有性格、能攒金币抽皮肤、做每日任务，还能转生强化。主要功能包括四标签面板（状态、衣橱、成就、更多），24 种皮肤，26 个成就，还有音效、彩纸庆祝、离线进度等。",
+      "level": "ok",
+      "risks": "没发现明显风险。宠物数据存在浏览器 localStorage 里，只有你自己能看到；导出码只包含游戏数据，不涉及个人文件或隐私。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能使插件生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的电子宠物插件，陪伴编码、养成升级、抽皮肤做任务。",
+    "usage": {
+      "prompt_tokens": 2629,
+      "completion_tokens": 511,
+      "total_tokens": 3140,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 184
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1989
+    }
+  }
+}

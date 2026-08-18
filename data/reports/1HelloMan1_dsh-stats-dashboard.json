@@ -1,0 +1,37 @@
+{
+  "id": "1HelloMan1/dsh-stats-dashboard",
+  "analyzedAt": "2026-08-17T12:06:23.132Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确认是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:1HelloMan1/dsh-stats-dashboard#main",
+      "evidence": "dsh plugin --profile web add \"github:1HelloMan1/dsh-stats-dashboard#main\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件为 DSH 增加一个“用量统计看板”。装上后，你可以在 DSH 设置页面里看到所有 AI 模型调用的统计：花了多少钱、响应快不快、缓存命中多少、用了多少 Token，还能查看最近 500 条调用记录，按供应商、模型、会话、日期筛选，一键导出 CSV 表格。",
+      "level": "ok",
+      "risks": "它只读取本地 DSH 的会话统计信息（Token 数、耗时、费用等），不会修改你的数据，也不会把信息发送到外部服务器；导出的 CSV 只保存在你自己电脑上。没发现明显风险。",
+      "postInstallNotes": "安装后打开 DSH Web 界面，进入设置 → 插件 → 统计看板标签页即可查看，无需额外配置。",
+      "notes": "注意：npm 包尚未发布（README 标注“待发布”），请使用 GitHub 安装命令；依赖的 @deepseek-ai/dsh-* 核心包为 rc 版本，建议留意兼容性。"
+    },
+    "summaryZh": "DSH 用量统计看板插件：实时展示各供应商/模型的 Token 消耗、费用、响应速度与缓存率，支持多维筛选和 CSV 导出。",
+    "usage": {
+      "prompt_tokens": 3341,
+      "completion_tokens": 4553,
+      "total_tokens": 7894,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4115
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2701
+    }
+  }
+}

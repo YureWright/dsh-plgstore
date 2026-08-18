@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-advisor",
+  "analyzedAt": "2026-08-17T11:26:47.506Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-advisor",
+      "evidence": "dsh plugin --profile web add dsh-advisor      # web profile (Settings → Advisor card)"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫 dsh-advisor，是一个给 DeepSeek Harness 会话配的“顾问”。它会在后台用另一个模型观察你和 AI 的整个对话，每次 AI 回复后它都会悄悄给出一段建议，按严重程度分成“小瑕疵”“担心”“阻塞”三个档位。它不会直接替 AI 做决定，也不会干扰正常对话。支持在网页版设置里配置，也可以在终端里用 /advisor 命令开关。",
+      "level": "ok",
+      "risks": "它会读取当前会话的聊天记录，并发送给你配置的模型服务商（比如 DeepSeek 官方）来生成建议，这意味着对话内容可能被第三方模型 API 获取。它还会修改 DSH 的配置文件（settings.yaml）和临时设置。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要在 $DSH_HOME/settings.yaml 中添加 advisor 配置，把 enabled 设为 true，并填上必填的 provider 和 model（例如 provider: deepseek-official，model: deepseek-v4-flash）。也可以在网页设置里的 Advisor 卡片或 TUI 的 /settings 里配置。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-advisor 是一个为 DeepSeek Harness 会话提供后台顾问式审查的插件，用独立模型观察对话并给出分级的改进建议。",
+    "usage": {
+      "prompt_tokens": 3892,
+      "completion_tokens": 1974,
+      "total_tokens": 5866,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1534
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3252
+    }
+  }
+}

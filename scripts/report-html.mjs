@@ -12,7 +12,7 @@ import { CATS, CAT_LABEL, categorize } from "./lib/categories.mjs";
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const DATA = join(ROOT, "data");
-const CACHE = join(DATA, "cache", "llm");
+const CACHE = join(DATA, "reports");
 
 const esc = (s) =>
   String(s ?? "")

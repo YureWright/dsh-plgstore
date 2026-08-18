@@ -1,0 +1,37 @@
+{
+  "id": "dsh-artifact",
+  "analyzedAt": "2026-08-16T13:40:03.979Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 明确声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-artifact",
+      "evidence": "dsh plugin --profile web add dsh-artifact"
+    },
+    "evaluationReport": {
+      "intro": "这插件是给 DeepSeek Harness（dsh）加一种“artifact”功能：让 AI 在对话里直接生成独立的 HTML 文件，你可以在应用内的浏览器里打开看。有点像 Claude Code 的 artifact。它自带一个 AI 工具（增删改查）、一份写作指南、一个侧边栏按钮，还有全屏预览界面。因为这些 HTML 就是普通文件，也能用浏览器直接打开。",
+      "level": "ok",
+      "risks": "它会在你的工作目录下建一个 artifacts 文件夹，AI 可以往里面写、读、删文件。预览用的沙箱不能访问你的其他网页信息，但 AI 本身能写文件——如果你给它指令，它可能会在指定的目录里生成文件。除此之外没发现明显风险。",
+      "postInstallNotes": "重启 dsh web 让插件生效。可选：在配置文件里设置 artifact 根目录、最大字符数等。",
+      "notes": "无"
+    },
+    "summaryZh": "为 dsh 添加 Claude Code 风格的 artifact 功能，让 AI 生成并预览自包含的 HTML 文件。",
+    "usage": {
+      "prompt_tokens": 2564,
+      "completion_tokens": 778,
+      "total_tokens": 3342,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 409
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1924
+    }
+  }
+}

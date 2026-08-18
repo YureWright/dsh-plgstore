@@ -1,0 +1,37 @@
+{
+  "id": "dsh-openwolf",
+  "analyzedAt": "2026-08-18T14:53:59.540Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 与多个 @deepseek-ai/dsh-* 包，README 提供了 dsh plugin 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-openwolf",
+      "evidence": "dsh plugin --profile web add dsh-openwolf"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的“记忆增强”工具，相当于给 AI 助手装了个“第二大脑”。它会给你的项目建一个代码地图（索引），AI 干活时不用每次把整个文件从头读一遍，而是先看摘要，按需只读需要的部分，能省不少 token；它还能在会话之间保存工作进度、记住你纠正过它的事，避免上下文被压缩后“失忆”。",
+      "level": "ok",
+      "risks": "它会在你的项目文件夹里创建一个 .dshwolf 隐藏目录，里面存放项目索引、会话记忆、token 账本等；它会扫描并读取你项目里的文件（主要是代码）来生成索引；还会往 AGENTS.md 文件里注入一段标记围栏内容（说不会改动你原有的内容）；可能有后台进程持续监视文件变化并自动重扫。这些数据都留在本地，没看到它会发送到外部的迹象。",
+      "postInstallNotes": "无（推荐安装方式下开箱即用；若通过 CLI 独立安装，需运行 dshwolf init 初始化并接线到 harness。）",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-openwolf 是 DeepSeek Harness 的“第二大脑”插件，通过预索引项目地图和会话摘要，帮助 AI 代理减少重复读文件、节省 token 并记住工作进度。",
+    "usage": {
+      "prompt_tokens": 5679,
+      "completion_tokens": 3045,
+      "total_tokens": 8724,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2604
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5039
+    }
+  }
+}

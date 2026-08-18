@@ -1,0 +1,37 @@
+{
+  "id": "Suiwan/whale-purse",
+  "analyzedAt": "2026-08-17T13:18:12.963Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.85,
+      "reason": "package.json 声明了 dsh.client 字段并注入 @deepseek-ai/dsh-client-* 模块，符合 DSH 插件特征"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个住在 DeepSeek Harness 网页界面里的鲸鱼娘桌宠。它会悬浮在页面上，显示你的 DeepSeek 账户余额，并实时统计当前会话用了多少 token、大概花了多少钱。你可以拖动它换位置，点击它会弹出详情面板，有“当前”和“历史”两个标签页。任务跑完时它会弹跳提醒你。它还会根据北京高峰期自动切换计价，并适配深色/浅色主题。",
+      "level": "ok",
+      "risks": "它会读取你环境变量里的 DEEPSEEK_API_KEY，用于向 DeepSeek 官方接口查询余额；这个 key 只发给 DeepSeek 官方，不会发给第三方。它会在浏览器里用 localStorage 保存桌宠位置等设置。如果你在公用电脑上打开 DSH 网页，别人可能会看到你的余额和用量信息。",
+      "postInstallNotes": "装完还需要手动在 ~/.dsh/profiles/web/cordis.patch.yml 中添加插件配置（见 README），并确保 DEEPSEEK_API_KEY 环境变量已设置。",
+      "notes": "该插件未提供 dsh plugin add 标准安装命令，README 要求手动软链到 node_modules，可能不是通过市场正式发布的插件。"
+    },
+    "summaryZh": "鲸鱼娘桌宠：在 DSH 页面上显示 DeepSeek 余额和会话花费，可拖拽、带提醒。",
+    "usage": {
+      "prompt_tokens": 2333,
+      "completion_tokens": 4792,
+      "total_tokens": 7125,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4377
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1693
+    }
+  }
+}

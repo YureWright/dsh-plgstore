@@ -1,0 +1,37 @@
+{
+  "id": "ccq1/dsh-side-panel",
+  "analyzedAt": "2026-08-17T11:21:47.018Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:dsh-external/dsh-side-panel",
+      "evidence": "dsh plugin --profile web add github:dsh-external/dsh-side-panel"
+    },
+    "evaluationReport": {
+      "intro": "这是 DSH Web 的右侧工作区面板插件，能在聊天旁提供 Git 代码审查、文件浏览/编辑和内置终端，方便你边聊边改代码。点击会话里的文件链接会直接打开对应文件。",
+      "level": "caution",
+      "risks": "插件会在当前工作区读取和编辑文件，还提供终端命令执行能力，如果你在有敏感数据的目录下使用，这些文件可能被插件访问。插件本身没有发现恶意行为。",
+      "postInstallNotes": "安装后需运行 dsh web 启动 Web 界面；可在配置中调整 maxTextBytes、maxImageBytes、searchMaxResults 等参数。",
+      "notes": "作者已停止维护并归档本项目，推荐改用 DSH-better-sidebar；仓库地址与 README 中安装地址不一致，请确认来源。"
+    },
+    "summaryZh": "为 DSH Web 提供 Git 审查、终端和文件操作的侧边栏面板插件，已停止维护。",
+    "usage": {
+      "prompt_tokens": 1853,
+      "completion_tokens": 2289,
+      "total_tokens": 4142,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1940
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1213
+    }
+  }
+}

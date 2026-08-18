@@ -1,0 +1,37 @@
+{
+  "id": "shuguang1994/project-blueprint",
+  "analyzedAt": "2026-08-17T11:24:25.236Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 提供 dsh plugin 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:shuguang1994/project-blueprint",
+      "evidence": "dsh plugin --profile web add 'github:shuguang1994/project-blueprint'"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能一键帮你把新项目设置成适合 AI 编程的状态：它会自动扫描项目用的技术栈（比如什么语言、框架、数据库），然后生成 AI 助手要遵守的规则文件（AGENTS.md）、文档目录、CI/CD 配置、Git 规范、测试策略等，像一个智能的“开工布置员”。",
+      "level": "ok",
+      "risks": "它会在当前项目文件夹里新建或改写一些文件（如 AGENTS.md、docs/、.github/ 等）；遇到不认识的依赖时会联网搜索，可能把依赖名称等非敏感信息发给搜索引擎。不会碰个人隐私文件。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一键为新项目生成完整 AI 编程规范（AGENTS.md、文档、CI/CD 等）的 DSH 插件，能根据技术栈自动定制。",
+    "usage": {
+      "prompt_tokens": 3349,
+      "completion_tokens": 2234,
+      "total_tokens": 5583,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1902
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2709
+    }
+  }
+}

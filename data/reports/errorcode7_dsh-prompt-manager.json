@@ -1,0 +1,37 @@
+{
+  "id": "errorcode7/dsh-prompt-manager",
+  "analyzedAt": "2026-08-17T11:45:05.891Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，并依赖 @deepseek-ai/cordis 等 DSH 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-prompt-manager",
+      "evidence": "dsh plugin --profile web add dsh-prompt-manager   # 发布到 npm 后"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的系统提示词变得可视化、可配置。你可以把提示词分成段落，用预设文件替换、插入或删除某些段落，还能精确控制顺序。它提供了一个设置界面和全屏幕布，展示提示词是怎么一步步拼出来的，支持回看最近 20 轮历史。适合想精细管理提示词、或想了解提示词组装过程的用户。",
+      "level": "ok",
+      "risks": "它会在你的数据目录（$DSH_HOME/prompts/）读写预设文件，并监控文件变化自动热重载。插件会修改系统提示词，从而改变发给模型的内容，但只影响提示词，不碰其他隐私文件。没发现明显风险。",
+      "postInstallNotes": "无需额外配置。安装后可通过设置页或直接编辑 $DSH_HOME/prompts/ 下的预设文件来使用；要启用预设需在 active.yml 中指定。",
+      "notes": "无"
+    },
+    "summaryZh": "一个把 DeepSeek Harness 系统提示词变成可视化、可配置、可审计流水线的插件，支持预设替换、顺序控制和历史回看。",
+    "usage": {
+      "prompt_tokens": 3066,
+      "completion_tokens": 651,
+      "total_tokens": 3717,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 257
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2426
+    }
+  }
+}

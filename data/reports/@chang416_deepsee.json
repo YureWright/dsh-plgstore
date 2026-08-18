@@ -1,0 +1,37 @@
+{
+  "id": "@chang416/deepsee",
+  "analyzedAt": "2026-08-16T13:35:28.169Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，README 提供了 dsh plugin add 安装命令，且代码导出 DSH 接口"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@chang416/deepsee@latest",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add @chang416/deepsee@latest"
+    },
+    "evaluationReport": {
+      "intro": "DeepSee 是给 DeepSeek Harness 用的视觉增强插件。它让只能看文字的 DeepSeek 也能看懂截图：你直接把图片贴进对话，Gemini 负责看图并把内容转成结构化文字，DeepSeek 继续写代码。它还提供智能路由，能自动把简单任务交给更便宜的 Flash 模型、复杂任务交给更强的 Pro 模型，并且在界面开发完成前自动截图检查效果，减少返工。",
+      "level": "ok",
+      "risks": "需要在设置里填入 Google Gemini API 密钥（保存在本地）；使用时会把你粘贴的截图/图片发送给 Gemini 服务做识别；安装过程会扫描本机已有的 Claude Code、Codex 等工具登录状态并询问是否复用，涉及读取这些工具的配置；如果选择 Antigravity 作为免费引擎，会执行其官方安装脚本 curl | bash。",
+      "postInstallNotes": "打开 DeepSee Settings：粘贴 Gemini API 密钥（每行一个）、选择默认预览地址、自定义 Flash/Pro 分工；如需复用其他 CLI 登录按提示授权。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSee 让 DeepSeek Harness 具备视觉能力：Gemini 看图、DeepSeek 写码，支持按成本/难度自动路由和交付前的视觉自检。",
+    "usage": {
+      "prompt_tokens": 3771,
+      "completion_tokens": 2186,
+      "total_tokens": 5957,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1763
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3131
+    }
+  }
+}

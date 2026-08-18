@@ -1,0 +1,37 @@
+{
+  "id": "taichuy/deepseek-harness-auth",
+  "analyzedAt": "2026-08-17T11:54:48.198Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，确认为插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-harness-auth",
+      "evidence": "dsh plugin --profile web add deepseek-harness-auth@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页版加了一道门。原来只要知道网址，谁都能打开 Harness 管理界面；装上它后，打开网页会先要你输入账号密码，登录成功才看到真正的内容。它还能限制只有某些 IP 能免登录、弄个验证码防止撞库、密码输错太多次会自动锁一会。适合想把自己电脑上的 Harness 分享到公网或给同事用、又不想让别人乱碰的场景。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你电脑上开一个额外的网络服务（默认监听 0.0.0.0:3080），如果你的电脑直接暴露在公网，别人会看到登录页，有被尝试破解的风险（但有失败锁定和验证码缓解）。它会把自己的配置、密码哈希存在 ~/.dsh/auth 目录，默认权限较严。",
+      "postInstallNotes": "装完先运行 `dsh plugin --profile web exec dsh-auth init` 设置管理员账号和密码，然后再用 `dsh web` 启动。如果想改代理端口或白名单，参考 README 里的环境变量（如 DSH_AUTH_PORT、DSH_AUTH_HOST）。",
+      "notes": "README 里写的 License 是 Apache-2.0，但 npm 包声明是 MIT，建议留意。另外要求 Node.js 22.19+ 且依赖 Harness 0.1.x，版本太旧可能不兼容。从 GitHub 源码安装时会触发构建脚本，pnpm 默认会拦截，需要在 pnpm-workspace.yaml 里手动允许。"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 界面提供密码登录、IP 白名单和验证码保护的认证插件，防止未授权访问。",
+    "usage": {
+      "prompt_tokens": 5026,
+      "completion_tokens": 2492,
+      "total_tokens": 7518,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1971
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4386
+    }
+  }
+}

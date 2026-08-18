@@ -1,0 +1,37 @@
+{
+  "id": "dsh-full-remote",
+  "analyzedAt": "2026-08-16T13:25:31.008Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/schemastery，peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-client-runtime，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件标准。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-full-remote",
+      "evidence": "dsh plugin --profile web add dsh-full-remote"
+    },
+    "evaluationReport": {
+      "intro": "这个插件相当于给 DeepSeek Harness 加了一个带门锁的转发通道。平时 Harness 的网页只允许本机访问，通过公网隧道或局域网访问时，一些高级功能（比如改设置、看凭据、浏览文件）会被拒绝。这个插件在你和 Harness 之间加了一层代理，它会自动把访问伪装成本机访问，同时用访问令牌、设备登录、手机扫码等方式挡住外人，这样你就能在外面用手机或电脑安全地远程操作 Harness 的完整功能了。",
+      "level": "ok",
+      "risks": "它会开放一个网络端口，让 Harness 的网页可以被远程访问。如果访问令牌泄露、或者你把监听地址设成 0.0.0.0 又没配合防火墙，别人可能看到你的设置、凭据和文件目录。它也会在本地存一个状态文件（权限 0600）来保存令牌和会话信息。另外，它会把请求转发给 Harness 的本机服务，等于绕过了 Harness 原来的安全检查，所以一定要保管好令牌，别分享给不信任的人。",
+      "postInstallNotes": "装完后需要在 Harness 设置页面的“Reverse proxy”里启动代理，复制本地地址（默认 127.0.0.1:3081），然后自己配置隧道（比如 cloudflared、ngrok、frp）指向这个地址；如果要局域网内用，可以把监听地址改成局域网 IP。首次使用前建议设置或换一个自己的访问令牌，并确认设备审批、CIDR 白名单等安全选项按需开启。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 用的带认证反向代理插件，让你通过公网隧道或局域网远程安全访问完整 Web UI（含设置、凭据、文件浏览）并支持手机扫码登录。",
+    "usage": {
+      "prompt_tokens": 4288,
+      "completion_tokens": 1165,
+      "total_tokens": 5453,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 605
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3648
+    }
+  }
+}

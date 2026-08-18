@@ -1,0 +1,37 @@
+{
+  "id": "dsh-desktop-shortcut",
+  "analyzedAt": "2026-08-18T14:57:01.615Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis，README 给出 dsh plugin 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-desktop-shortcut",
+      "evidence": "dsh plugin --profile web add dsh-desktop-shortcut"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以在Windows桌面上创建一个“DeepSeek Harness”快捷方式，双击就能打开DSH Web界面，不用每次敲命令。它还会在DSH Web页面里加一个能拖动的刷新按钮，AI回复时会显示红色提示并禁用刷新。",
+      "level": "ok",
+      "risks": "会在桌面创建一个快捷方式文件，并在DSH Web页面插入一个刷新按钮；这些操作都在本地完成，没发现明显风险。",
+      "postInstallNotes": "装好后启动 dsh web，桌面会自动出现快捷方式。如需改用 Chrome 等浏览器，可在 cordis.patch.yml 中配置 desktop-shortcut 的 browser 选项。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 的 Web 界面在 Windows 桌面创建一键快捷方式，并添加可拖动的刷新按钮。",
+    "usage": {
+      "prompt_tokens": 2131,
+      "completion_tokens": 1826,
+      "total_tokens": 3957,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1505
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1491
+    }
+  }
+}

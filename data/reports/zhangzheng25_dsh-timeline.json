@@ -1,0 +1,37 @@
+{
+  "id": "zhangzheng25/dsh-timeline",
+  "analyzedAt": "2026-08-17T11:55:03.633Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及官方运行时包，README 给出 dsh plugin add 安装命令，符合 DSH 插件的真正证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:zhangzheng25/dsh-timeline",
+      "evidence": "dsh plugin --profile web add github:zhangzheng25/dsh-timeline"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的对话页面加一条右侧的时间线。每提问一次，时间线上就多一个圆点。鼠标移到圆点上，能预览你当时问了什么、AI 回了什么；点击圆点，页面会立刻跳到那条提问。它只读取你浏览器里已有的会话数据，不连数据库、不连外部服务器，装好就能用，基本不用配置。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在浏览器端读取当前会话的提问记录，并在界面显示；不读取本地文件，不联网发送数据，也没有安装脚本或隐藏操作。",
+      "postInstallNotes": "重启 DSH 后打开任意有提问的会话，右侧即出现时间线。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 极简提问时间线插件：右侧圆点展示每条提问，点击跳转、悬停预览。",
+    "usage": {
+      "prompt_tokens": 3149,
+      "completion_tokens": 1073,
+      "total_tokens": 4222,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 716
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2509
+    }
+  }
+}

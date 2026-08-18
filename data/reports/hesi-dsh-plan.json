@@ -1,0 +1,37 @@
+{
+  "id": "hesi-dsh-plan",
+  "analyzedAt": "2026-08-16T14:48:18.503Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 的 peerDependencies 包含 @deepseek-ai/cordis 与 dsh-* 核心包，README 描述通过适配层调用 ctx.planMode 等 DSH 接口"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "hesi-dsh-plan",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的自动化执行计划插件。你可以先规划好任务步骤，它会自动一步步执行，每步验证结果，失败就回滚，最后还能做一轮盲审。适合用来跑多步骤的自动化流程。",
+      "level": "ok",
+      "risks": "插件会执行计划里定义的命令/脚本（这些得你自己配置），并可能用 git stash 改动你的 git 仓库来做回滚。建议第一次用时先检查计划内容，别跑来源不明的计划。",
+      "postInstallNotes": "确保 DeepSeek Harness 及 @deepseek-ai/cordis、dsh-* 等依赖已安装；如果需要“圆桌”辅助验证，还需安装 dsh-roundtable 插件。",
+      "notes": "开发者提示当前回滚用 git stash 简化，生产环境建议换更可靠的安全快照。"
+    },
+    "summaryZh": "Hesi 一键执行流 DSH 插件：自动执行计划、验证结果、失败回滚，并支持盲审复核。",
+    "usage": {
+      "prompt_tokens": 2001,
+      "completion_tokens": 2199,
+      "total_tokens": 4200,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1848
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1361
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-turn-diff",
+  "analyzedAt": "2026-08-16T13:38:37.488Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis，README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-turn-diff",
+      "evidence": "或者直接从 npm 安装（发布后）：dsh plugin --profile web add dsh-turn-diff"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DeepSeek Harness (DSH) 的 Web UI 插件，作用是在每轮对话结束后，自动汇总这一轮中 AI 修改过的所有文件差异（diff），并在对话界面底部显示一个可折叠的「改动汇总」面板。你可以展开面板按文件查看具体的修改内容，点击文件路径还能直接打开文件。适合想快速了解 AI 每轮改了什么、改在哪里的用户。",
+      "level": "caution",
+      "risks": "该插件由 AI 生成，未经人工代码审查，因此可能存在隐藏的恶意行为或代码缺陷。安装后它会在浏览器端运行，能够读取对话内容和文件修改信息（这是它的功能），并显示在界面上。目前没有发现它连接外部服务器或修改系统文件的行为，但由于未经审查，无法保证没有其他风险。建议安装前仔细阅读其源码。",
+      "postInstallNotes": "安装后需重启 `dsh web` 才能生效；确认 DeepSeek Harness 版本不低于 0.1.0-rc.5。若通过 git 或 link 方式安装，则先执行 `pnpm run build` 构建插件。",
+      "notes": "该插件由 AI 生成、未经人工代码审查，建议谨慎使用。已知限制：diff 仅覆盖 Write/Edit 工具调用，通过终端命令间接修改的文件不会统计；在回放/历史页面中若某些工具未注册，视图可能缺失。"
+    },
+    "summaryZh": "DSH Web UI 插件，每轮对话结束后汇总并展示本轮所有文件修改的 diff 差异。",
+    "usage": {
+      "prompt_tokens": 3309,
+      "completion_tokens": 2433,
+      "total_tokens": 5742,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1961
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2669
+    }
+  }
+}

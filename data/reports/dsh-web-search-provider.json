@@ -1,0 +1,37 @@
+{
+  "id": "dsh-web-search-provider",
+  "analyzedAt": "2026-08-16T13:47:06.595Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 的 peerDependencies 声明了 @deepseek-ai/cordis 等 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-web-search-provider",
+      "evidence": "dsh plugin add dsh-web-search-provider"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 Deepseek Harness 用的网络搜索插件。它让 AI 在对话中通过网络搜索获取最新信息，而且搜索是由你的模型服务商在服务器端完成的，不用 DSH 自己开工具去搜，所以每个搜索请求更快；如果用的是 OpenAI Responses API，AI 还能直接查看或搜索网页里的具体内容。",
+      "level": "ok",
+      "risks": "插件会把你的对话内容和搜索词发送给模型服务商的服务器，请确保你信任该服务商。另外，某些服务商可能对搜索功能额外收费，使用前最好确认一下。",
+      "postInstallNotes": "安装后需确认你使用的模型提供商支持 OpenAI Responses API 或 Anthropic 兼容 Messages API，并带有网络搜索能力；若默认配置不生效，可能需要在 DSH 中为对应模型手动添加自定义 provider，或在插件配置里设置 baseURL、apiKeyEnv 等参数。",
+      "notes": "无"
+    },
+    "summaryZh": "为 Deepseek Harness 提供基于模型服务商端能力的网络搜索，搜索更快且能直接查看页面内容。",
+    "usage": {
+      "prompt_tokens": 2906,
+      "completion_tokens": 1391,
+      "total_tokens": 4297,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1021
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2266
+    }
+  }
+}

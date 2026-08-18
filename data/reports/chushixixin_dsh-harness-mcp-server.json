@@ -1,0 +1,37 @@
+{
+  "id": "chushixixin/dsh-harness-mcp-server",
+  "analyzedAt": "2026-08-17T11:47:20.757Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 明确说明是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@chushixixin/dsh-harness-mcp-server",
+      "evidence": "npm install @chushixixin/dsh-harness-mcp-server"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 DeepSeek Harness 的智能体能力打包成一个 MCP 服务器，让外面的 AI 助手（比如 Hermes）能通过网络调用 Harness 来执行实际的编程任务。简单说，它让一个 AI 负责思考决策，另一个负责动手写代码，两边配合干活。",
+      "level": "caution",
+      "risks": "它会在本机启动一个服务，可以执行 bash 命令和读写文件。默认只监听本机，但如果你把它暴露到网络，别人就能在未经授权的情况下远程运行代码、操作文件。另外，它需要用到你的 DEEPSEEK_API_KEY，该 key 会用于调用 AI 服务。",
+      "postInstallNotes": "需要设置 DEEPSEEK_API_KEY 环境变量；按 README 在 cordis.yml 中配置插件（端口、host、可选的 authToken 认证）；如果要用沙箱，需安装 bubblewrap。",
+      "notes": "该插件安装方式为 npm 包 + cordis patch，并非通过 dsh plugin add 直接安装；它依赖了多个 @deepseek-ai 的 rc 版本包，可能存在不稳定风险。"
+    },
+    "summaryZh": "将 DeepSeek Harness 包装成 MCP 服务器，让外部 AI 助手可以远程调用它来执行编码任务。",
+    "usage": {
+      "prompt_tokens": 2686,
+      "completion_tokens": 1817,
+      "total_tokens": 4503,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1398
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2046
+    }
+  }
+}

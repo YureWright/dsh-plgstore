@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-desktop",
+  "analyzedAt": "2026-08-16T14:55:06.916Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并注入 @deepseek-ai/dsh-client-runtime 等核心依赖，具备 DSH 插件的结构特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-desktop",
+      "evidence": "The package provides the `dsh-plugin-desktop` executable and the `dsh-desktop` alias; the registered npm package name is the reliable `npx` entry."
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 DSH 变成桌面应用，让它在电脑上有个独立的窗口（Electron），还有系统托盘、多配置文件切换、自动更新等功能。普通用户装上后，可以像用普通软件一样打开 DSH，不用一直在终端里操作。",
+      "level": "ok",
+      "risks": "它会在桌面创建快捷方式（Windows 安装包默认会），并读写 DSH 的配置文件和用户数据目录（比如 profiles、settings）。这些都是桌面应用正常行为，没发现窃取信息或偷偷上传数据的迹象。",
+      "postInstallNotes": "安装后一般无需额外操作；想切换模式（兼容/高级）可在托盘中操作，或手动编辑 DSH home 下的 settings.yaml 设置 dsh-desktop.mode。",
+      "notes": "这是一个桌面壳插件，运行在 Electron 环境中，与普通命令行插件不同；安装包体积较大，需要下载 Electron 相关文件。"
+    },
+    "summaryZh": "让 DSH 以桌面应用方式运行，提供原生窗口、托盘和多配置文件管理。",
+    "usage": {
+      "prompt_tokens": 3711,
+      "completion_tokens": 1721,
+      "total_tokens": 5432,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1342
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3071
+    }
+  }
+}

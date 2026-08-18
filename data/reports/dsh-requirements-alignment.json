@@ -1,0 +1,37 @@
+{
+  "id": "dsh-requirements-alignment",
+  "analyzedAt": "2026-08-16T13:30:32.157Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle、依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，README 给出 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-requirements-alignment",
+      "evidence": "dsh plugin --profile web add dsh-requirements-alignment"
+    },
+    "evaluationReport": {
+      "intro": "这个插件像是给 DeepSeek Harness 的 AI 助手装了一个‘方向感守护器’。你让助手干活时，它会默默记住你的目标和要求（比如‘别改界面’‘别动后端’），干活过程中如果发现助手想跑偏、做超出你要求的事，它会停下来问你一句‘你确定吗？’，你点头或给新方向后它才继续。它不会频繁打扰你，只有真正要改变任务方向时才问。",
+      "level": "ok",
+      "risks": "插件会读取当前会话的日志来记住你的目标和决定，并在你的系统提示里加一段策略文本，还会拦截一次助手提问的界面。这些都在本机 DSH 环境内，不会主动上传数据。它可能会在你没注意的时候多出一次提问，但不会碰个人文件或连接外部服务器。",
+      "postInstallNotes": "无。默认自动模式直接可用；如果想改成手动模式，需要去 profile 的 cordis.patch.yml 里把 mode 设为 manual。",
+      "notes": "依赖的 @deepseek-ai/dsh-* 核心包目前是 rc 版本，可能还不够稳定；另外插件卸载后不会删除已写入会话历史的 alignment/* 事件，属正常行为。"
+    },
+    "summaryZh": "一个防止 AI 助手跑偏的 DSH 插件：它会记住你的需求底线，发现方向漂移时先问你，而不是闷头改。",
+    "usage": {
+      "prompt_tokens": 3692,
+      "completion_tokens": 687,
+      "total_tokens": 4379,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 235
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3052
+    }
+  }
+}

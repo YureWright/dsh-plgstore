@@ -1,0 +1,37 @@
+{
+  "id": "PAKIKNOWLEDGE/dsh-client-ui-skin-claude",
+  "analyzedAt": "2026-08-17T11:45:01.867Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@pakiknowledge/dsh-client-ui-skin-claude",
+      "evidence": "dsh plugin --profile web add @pakiknowledge/dsh-client-ui-skin-claude"
+    },
+    "evaluationReport": {
+      "intro": "这是一款给 DSH Web 界面换肤的插件，让界面看起来像 Claude 的风格：暖黑色背景、陶橙色点缀、衬线字体，还支持跟随系统的亮暗主题。装上之后刷新页面就能看到效果。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是修改 DSH 客户端的界面皮肤，不涉及隐私文件或外部连接。",
+      "postInstallNotes": "装完需要重启 dsh web，然后刷新页面；如果要切换皮肤，需要编辑 ~/.dsh/cordis.patch.yml 配置文件。",
+      "notes": "无"
+    },
+    "summaryZh": "Claude 风格的 DSH Web 界面皮肤，暖黑画布、陶橙点缀、衬线 UI，支持亮暗主题跟随系统。",
+    "usage": {
+      "prompt_tokens": 1507,
+      "completion_tokens": 506,
+      "total_tokens": 2013,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 192
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 867
+    }
+  }
+}

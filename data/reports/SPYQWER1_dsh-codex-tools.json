@@ -1,0 +1,37 @@
+{
+  "id": "SPYQWER1/dsh-codex-tools",
+  "analyzedAt": "2026-08-17T12:13:22.258Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明 dsh.bundle 并依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/SPYQWER1/dsh-codex-tools.git",
+      "evidence": "dsh plugin --profile web add github:SPYQWER1/dsh-codex-tools"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 装上了三样新本事：第一，能上网搜索并给你带回摘要和链接；第二，能根据描述生成图片；第三，能“看”本地图片并回答关于它的问题。它用的是你已有的 ChatGPT/Codex 账号，自己不带账号。",
+      "level": "caution",
+      "risks": "它会读取你电脑上 ChatGPT/Codex 的登录凭证（比如 ~/.codex/auth.json），也可能在令牌过期时自动刷新并写回这个文件。你让它看的图片、问的问题和搜索词会发送到 ChatGPT 的服务器。它还会连接 auth.openai.com 刷新凭证。所以用了它，相当于跟 ChatGPT 分享这些内容。",
+      "postInstallNotes": "需要先确保有 ChatGPT/Codex 登录状态：可以运行 codex login，或在 DSH 中配置 OPENAI_CODEX_API_KEY 和 OPENAI_CODEX_REFRESH_TOKEN 凭证；装好后重启 DSH profile。",
+      "notes": "它调用的 chatgpt.com/backend-api/codex/responses 是内部接口，不是公开 API，可能随时失效；npm 包可能尚未发布（README 写“once published”），目前建议用 Git 方式安装；需要 Node.js >= 22。"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加网络搜索、图片生成和图片理解三种工具，基于 ChatGPT/Codex 账号工作。",
+    "usage": {
+      "prompt_tokens": 3040,
+      "completion_tokens": 2805,
+      "total_tokens": 5845,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2339
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2400
+    }
+  }
+}

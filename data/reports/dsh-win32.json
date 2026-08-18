@@ -1,0 +1,37 @@
+{
+  "id": "dsh-win32",
+  "analyzedAt": "2026-08-16T13:23:35.949Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 含 @deepseek-ai/cordis，README 提供 dsh plugin add 安装命令，是明确的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-win32",
+      "evidence": "dsh plugin --profile web add dsh-win32"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DSH（DeepSeek 的 AI 编程助手）在 Windows 电脑上能顺畅运行。它解决了 Windows 下终端命令无法在多次操作之间保持状态（持久 shell）的问题，让 AI 能像在 Linux 上一样连续执行命令；还让 DSH 的极简模式在 Windows 上真正可用，支持沙箱安全环境，修复了只读权限不严格、旧编码文件读不了等麻烦。简单说，就是给 DSH 在 Windows 上打补丁，让它好用。",
+      "level": "ok",
+      "risks": "它会修改 DSH 的配置文件，向 $DSH_HOME/.agent-presets/ 安装预设（即配置文件）；可能下载运行一个名为 busybox-w32 的小工具（GPL 开源协议）；如果使用 README 提供的 PowerShell 远程安装命令（irm ... | iex），会从 GitHub 下载并执行脚本，这需要你信任该来源。安装过程中可能创建桌面快捷方式。它不会读取你的个人文件，主要改动都在 DSH 自己的配置目录里。",
+      "postInstallNotes": "安装后需要：1) 确保装了 Git for Windows（没有就 winget install Git.Git）；2) 启动 DSH Web 界面（npx @deepseek-ai/dsh web）；3) 在左侧 Workspaces 里先添加一个工作区，否则输入框是灰的；4) 在预设选择器里选 Minimal (Windows, sandboxed)（沙箱）或 Minimal (Windows)（非沙箱）；5) 根据预设调整权限徽章（沙箱用 Workspace Write，非沙箱用 danger-full-access）。若用沙箱变体，还需要下载 busybox（setup 时会提示）。",
+      "notes": "注意：需要 Node.js 22.19+ 或 24+；通过 dsh plugin add 安装时可能需要 pnpm（缺少时会自动通过 corepack 启用）；该插件会自行下载 busybox（GPLv2 许可），请注意许可问题；它是第三方插件，不是官方出品，但 CI 有测试。另外 README 提到 v0.11 修复了 Read Only 权限漏洞，建议更新到最新版。"
+    },
+    "summaryZh": "让 DSH 在 Windows 上正常工作的补丁插件，提供持久 shell、沙箱支持和多项 Windows 专属修复。",
+    "usage": {
+      "prompt_tokens": 7141,
+      "completion_tokens": 4929,
+      "total_tokens": 12070,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4283
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 6501
+    }
+  }
+}

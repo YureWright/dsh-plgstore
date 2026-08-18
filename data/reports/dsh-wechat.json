@@ -1,0 +1,37 @@
+{
+  "id": "dsh-wechat",
+  "analyzedAt": "2026-08-18T14:54:05.685Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件的证据要求。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-wechat",
+      "evidence": "插件从 npm 官方源安装（`dsh plugin add` 即 `pnpm add dsh-wechat`）。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的微信变成 DeepSeek Harness 的第二个遥控器：你可以在微信里和 AI 助手聊天，发文字、图片、文件、语音，AI 的回复会直接发到微信。还能在微信里用斜杠命令（/workspace、/session、/model 等）管理会话、工作区、模型和权限。另外，它支持扫码登录、断点续传，还带一个设置页面，方便你调整连接配置。简单说，就是让你不打开电脑界面，用微信也能操控 DSH。",
+      "level": "ok",
+      "risks": "它会读取和存储微信登录凭证、消息记录以及下载的媒体文件到 `~/.dsh-wechat/` 目录，这些信息属于个人隐私，务必保管好电脑账号。它需要连接腾讯微信的官方服务器和本地的 DSH 服务，这是功能需要，但注意不要在不可信的设备上使用。另外，微信侧的审批/提问卡有 30 分钟超时，如果没及时处理可能会失效。",
+      "postInstallNotes": "安装后需要重启 DSH，然后在浏览器打开设置页面的 WeChat 部分，或者直接访问 http://127.0.0.1:3080/wechat/qr 扫描二维码登录微信。如果需要，还可以修改 `~/.dsh-wechat/config.json` 里的连接参数（如 baseUrl、cwd 等），保存后会自动生效。",
+      "notes": "这是一个第三方非官方插件，与 DeepSeek Harness 和腾讯微信官方没有隶属关系，属于个人学习用途，使用风险需自行承担。它明确声明零运行时 @deepseek-ai 依赖，直接调用 DSH 进程内服务，所以对 DSH 版本有一定要求，升级 DSH 后建议留意兼容性。"
+    },
+    "summaryZh": "让微信成为 DeepSeek Harness 的第二客户端，通过腾讯 iLink 桥接微信消息，支持文字、图片、文件、语音收发和会话管理。",
+    "usage": {
+      "prompt_tokens": 4724,
+      "completion_tokens": 1986,
+      "total_tokens": 6710,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1415
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4084
+    }
+  }
+}

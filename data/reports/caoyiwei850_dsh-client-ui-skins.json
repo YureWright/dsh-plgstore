@@ -1,0 +1,37 @@
+{
+  "id": "caoyiwei850/dsh-client-ui-skins",
+  "analyzedAt": "2026-08-17T11:58:18.367Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，并依赖 @deepseek-ai/cordis 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 提供一键安装脚本：'bash install-dsh-skins.sh'，但未说明 dsh plugin add 用法。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness (DSH) 网页界面换肤的插件。它内置了 4 套皮肤，也支持你上传自己的图片作为整个界面的背景，并且会自动根据图片的主色调调整配色。插件是纯客户端运行，不会改动 DSH 的源代码，卸载后能完全恢复原样。",
+      "level": "ok",
+      "risks": "没发现明显风险。自定义皮肤图片只保存在浏览器本地（localStorage），不会上传到服务器，也不触碰其他个人文件。",
+      "postInstallNotes": "安装后刷新 http://127.0.0.1:3080，在左下角 设置 → 通用设置 → 皮肤 中选择主题。",
+      "notes": "经评估是真正的 DSH 插件，但 README 给出的安装方式是本地脚本和 tgz 文件，并未提供标准的 dsh plugin add 命令；若通过市场安装需补充可用的安装源。"
+    },
+    "summaryZh": "给 DeepSeek Harness Web 界面换肤的插件，支持内置皮肤和自定义图片皮肤。",
+    "usage": {
+      "prompt_tokens": 1808,
+      "completion_tokens": 3323,
+      "total_tokens": 5131,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2952
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1168
+    }
+  }
+}

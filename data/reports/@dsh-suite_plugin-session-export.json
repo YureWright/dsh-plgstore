@@ -1,0 +1,37 @@
+{
+  "id": "@dsh-suite/plugin-session-export",
+  "analyzedAt": "2026-08-17T11:06:38.626Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle、依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-session/dsh-tools，且 README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-suite/plugin-session-export",
+      "evidence": "dsh plugin --profile <name> add @dsh-suite/plugin-session-export"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DSH 的会话记录（包含系统提示、思考过程、工具调用、子任务等）导出成一份排版清晰的 Markdown 或 HTML 文档，方便你贴到周报、飞书或者做复盘。可以只导出当前对话、指定某个会话，或者一次性导出全部；还能选择隐藏工具细节，生成适合对外分享的干净版本。",
+      "level": "ok",
+      "risks": "它会把导出的文件写到本地目录（默认是会话的工作目录），里面包含你的完整对话内容，包括思考过程和工具调用的参数与结果。如果你把生成的 HTML 分享给别人，注意别把敏感信息一起发出去。除此之外没发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个把 DSH 会话日志导出为可读 Markdown/HTML 的插件，按来源分组展示系统提示、思维链和工具调用，支持批量导出和隐藏工具细节。",
+    "usage": {
+      "prompt_tokens": 2562,
+      "completion_tokens": 614,
+      "total_tokens": 3176,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 244
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1922
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "HuanLinOTO/dsh-plugin-mineru",
+  "analyzedAt": "2026-08-17T11:16:02.651Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/dsh-* 核心包，README 给出 dsh plugin add 安装命令，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-mineru",
+      "evidence": "从 npm 安装（推荐）：dsh plugin --profile web add @huanlin/dsh-plugin-mineru"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DSH 助手直接解析本地文档（比如 PDF、图片、Word、PPT、Excel），把它们转成 markdown 或 JSON 文本，模型就能读懂内容。它还带一个网页设置页，可以配置 MinerU 解析服务的地址和参数。",
+      "level": "ok",
+      "risks": "插件会把你要解析的本地文档发送到你配置的 MinerU API 服务器（默认是 http://localhost:18000）。如果这个服务器不是你自己的，文档内容可能被服务器掌握；解析结果可能会在本地留下临时文件。建议只连接自己部署的、可信的 MinerU 服务。",
+      "postInstallNotes": "安装后需要在 DSH GUI 设置页或 cordis.patch.yml 中把 baseURL 改成你自己的 MinerU 服务地址（必填），并按需配置 apiKeyEnv、defaultBackend、defaultParseMethod 等；如果从 git 安装，需要在 profile 的 pnpm-workspace.yaml 中允许构建。",
+      "notes": "无"
+    },
+    "summaryZh": "向 DSH 助手提供 MinerU 文档解析能力，支持把 PDF、Word、PPT 等文件转成模型可读的 Markdown/JSON，并带网页设置界面。",
+    "usage": {
+      "prompt_tokens": 2836,
+      "completion_tokens": 2384,
+      "total_tokens": 5220,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1967
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2196
+    }
+  }
+}

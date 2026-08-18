@@ -1,0 +1,37 @@
+{
+  "id": "sunshine-lang/dsh-pdf",
+  "analyzedAt": "2026-08-17T13:20:06.172Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 配置，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-pdf",
+      "evidence": "README 原文：`dsh plugin --profile web add dsh-pdf`（从 npm 安装一节）"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的 PDF 工具箱。它可以读取你指定的 PDF 文件，把里面的文字、标题、总页数等信息提取出来，还能按页码范围（比如第 1-3,5 页）分段读取，方便 AI 处理大文件。所有解析都在本地完成，不需要联网，也不用额外 API key。装上之后，你只要在对话里让 AI「读一下某个 PDF」就行。",
+      "level": "ok",
+      "risks": "它会读取你指定路径下的 PDF 文件，并把内容传给 DeepSeek 模型（也就是会发送给提供模型服务的云端）。因此如果你用含敏感信息的 PDF，请确认这是你愿意暴露给模型/服务商的。文件读取权限受 Harness 的沙箱控制，插件自身没有额外联网行为。",
+      "postInstallNotes": "无（默认配置可直接使用；如需调整单次解析的页数、字符数或文件大小上限，可在 profile 的 patch 层覆盖配置，见 README）。",
+      "notes": "需要 Node.js ≥22.19；依赖含预发布版本 @deepseek-ai/dsh-tools@0.0.1-rc.1。"
+    },
+    "summaryZh": "一个本地运行的 PDF 读取工具，为 DeepSeek Harness 提供文本、元数据、页码提取能力，无需联网和 API key。",
+    "usage": {
+      "prompt_tokens": 2087,
+      "completion_tokens": 3158,
+      "total_tokens": 5245,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2710
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1447
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-free-vision",
+  "analyzedAt": "2026-08-18T14:54:49.255Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-free-vision",
+      "evidence": "dsh plugin --profile web add dsh-free-vision"
+    },
+    "evaluationReport": {
+      "intro": "这插件是给 DeepSeek Harness 用的免费视觉插件，能让原本只能看文字的模型“看图”：比如截图、报错信息、UI 分析、OCR 识别文档等。它优先调用阿里千问、火山豆包、硅基流动这些平台的免费视觉模型，不需要自己配置 MCP，装完在设置里填个 API Key 就能用。",
+      "level": "caution",
+      "risks": "1. 安装时会自动运行一个 postinstall 脚本（scripts/patch-luma.mjs），会修改 luma-mcp 包的内容，装前最好先打开看看它干了什么。2. 插件会把你的图片发送到第三方视觉 API（默认阿里云百炼，可切换），所以含敏感信息的截图/文档可能会被外部服务看到。3. 配置和 API Key 会保存在用户目录下的 ~/.dsh/free-vision.json 里。",
+      "postInstallNotes": "重启 dsh web 后，打开 设置 → Free Vision 填写 API Key（或直接设置 DASHSCOPE_API_KEY、VOLCENGINE_API_KEY 等环境变量），保存后下一次调用立即生效，不用再重启。",
+      "notes": "存在 postinstall 脚本，虽然大概率是在修补 luma-mcp，但属于安装时执行代码，建议手动审查 scripts/patch-luma.mjs；另外图片会发给第三方 API，别拿敏感截图去试免费档。"
+    },
+    "summaryZh": "免费的 DSH 视觉插件，让纯文本模型通过调用免费视觉 API（千问/豆包/硅基流动等）获得看图、OCR 能力，零 MCP 配置。",
+    "usage": {
+      "prompt_tokens": 3451,
+      "completion_tokens": 1849,
+      "total_tokens": 5300,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1369
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2811
+    }
+  }
+}

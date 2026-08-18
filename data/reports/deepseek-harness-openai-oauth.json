@@ -1,0 +1,37 @@
+{
+  "id": "deepseek-harness-openai-oauth",
+  "analyzedAt": "2026-08-16T13:35:05.530Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 包含 @deepseek-ai/cordis、@deepseek-ai/dsh-llm 等核心包，README 描述了作为 DSH 插件的安装与使用方式。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-harness-openai-oauth",
+      "evidence": "Run one command: npx -y deepseek-harness-openai-oauth install"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你直接用自己的 ChatGPT 账号登录，然后在 DeepSeek Harness 里使用 GPT 模型（比如 GPT-5.6-sol），不需要 OpenAI 的 API key。它通过本地的 Codex 程序来处理登录、存凭证和刷新 token，你把 ChatGPT 账号授权给它就能用。",
+      "level": "ok",
+      "risks": "它会在你电脑的 ~/.deepseek-harness/codex 目录下存你的 ChatGPT 登录凭据（相当于帮你保存了登录状态）。如果你用 --purge-auth 卸载会删掉这些。除此之外没发现它碰别的隐私文件或连外部服务器（登录时当然要连 OpenAI 官方页面）。",
+      "postInstallNotes": "装完后需要先运行安装命令注册到 Harness 配置，然后启动 Harness 网页界面，在设置里的 'OpenAI OAuth' 里点 'Sign in with ChatGPT' 完成授权；如果用 headless 模式，要在终端执行 npx @deepseek-ai/dsh plugin --profile headless exec dsh-codex-login 登录。之后还要在界面或 settings.yaml 里选择模型。",
+      "notes": "这是一个社区插件，不是 DeepSeek 或 OpenAI 官方出的，但代码看起来正规、来源明确（GitHub 仓库和 npm 包一致），目前没发现可疑行为。"
+    },
+    "summaryZh": "用 ChatGPT 账号免 API key 在 DeepSeek Harness 里使用 GPT 模型的社区插件。",
+    "usage": {
+      "prompt_tokens": 2606,
+      "completion_tokens": 1075,
+      "total_tokens": 3681,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 595
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1966
+    }
+  }
+}

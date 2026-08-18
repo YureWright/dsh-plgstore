@@ -1,0 +1,37 @@
+{
+  "id": "pandashere/dsh-self-control-guard",
+  "analyzedAt": "2026-08-17T11:58:18.756Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": null,
+      "evidence": "Install the generated tarball into a DSH profile, then restart `dsh web`."
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫“自我控制守卫”，专门用来防止 AI 助手在干活的时候不小心把 DeepSeek Harness 的宿主进程杀掉（比如执行了 pkill dsh 或 kill $PPID 这类命令）。它会拦截这些危险的 kill 命令，拒绝执行，并提醒 AI 用更安全的方式退出或重启，同时留下操作记录。简单说，就是一个防止 AI 手滑“自杀”的保险。",
+      "level": "ok",
+      "risks": "它会盯着终端里执行的 kill 类命令，如果匹配到要杀宿主进程的命令，会直接拦住，所以你或 AI 如果真的需要执行某些进程管理操作，可能会被阻止。它会在 AI 的工具列表里隐藏退出/重启工具，但不会碰你的个人文件，也不会把数据发给别人。",
+      "postInstallNotes": "安装后需要重启 `dsh web` 才会生效；默认配置可用，如果希望 AI 能使用重启工具，需要把配置里的 `restartEnabled` 设为 `true`。",
+      "notes": "README 未提供现成的 tarball 下载地址，需要自行按文档构建（npm install && npm run check && npm pack）后再安装。经评估确认是 DSH 插件。"
+    },
+    "summaryZh": "这是一款防止 AI 助手在 DeepSeek Harness 中误杀自身宿主进程的防护插件，能拦截危险的 kill 命令，并引导助手使用受控的退出/重启工具。",
+    "usage": {
+      "prompt_tokens": 3704,
+      "completion_tokens": 3239,
+      "total_tokens": 6943,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2781
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3064
+    }
+  }
+}

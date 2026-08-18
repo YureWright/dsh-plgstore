@@ -1,0 +1,37 @@
+{
+  "id": "cdxiaodong/dsh-guardian",
+  "analyzedAt": "2026-08-17T11:56:40.074Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 cordis，README 给出 dsh plugin 安装命令，代码调用 guardian/check 等 DSH 接口，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/cdxiaodong/dsh-guardian.git",
+      "evidence": "dsh plugin --profile web add github:cdxiaodong/dsh-guardian"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 AI 助手（比如 DeepSeek Harness）装的安全防护网。AI 助手能自己执行命令、读写文件、发网络请求，但有时候可能被坏人写的提示词骗了，或者自己判断失误，做出危险操作，比如删文件、偷看你的密钥、把重要信息发给陌生人。这个插件会在 AI 每次动手前先检查一遍，发现危险动作就拦下来，或者让你确认一下。",
+      "level": "ok",
+      "risks": "这个插件会关注 AI 在电脑上做的每一件事（工具调用），可能会记录到包含文件路径、密钥等信息的日志。如果这些日志存在不安全的位置，同电脑上的其他人可能看到。插件本身没有联网上传行为，也不会偷偷改你的文件。",
+      "postInstallNotes": "装好后需要在代码里配置 allowedRoots（允许访问的目录白名单），并接入人工确认按钮（guardian/approve 监听器），否则遇到 block 级操作会直接拒绝。",
+      "notes": "依赖 cordis RC 版本，建议留意后续更新；作者也提醒，护栏可能被绕过，关键操作仍需人工确认和沙箱。"
+    },
+    "summaryZh": "给 DeepSeek Harness 加一层安全护栏：拦截并审计危险工具调用，敏感操作需人工批准。",
+    "usage": {
+      "prompt_tokens": 2504,
+      "completion_tokens": 2899,
+      "total_tokens": 5403,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2467
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1864
+    }
+  }
+}

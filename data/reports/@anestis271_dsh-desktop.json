@@ -1,0 +1,37 @@
+{
+  "id": "@anestis271/dsh-desktop",
+  "analyzedAt": "2026-08-18T14:51:59.523Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，确为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@anestis271/dsh-desktop",
+      "evidence": "dsh plugin --profile desktop add @anestis271/dsh-desktop"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的官方网页界面变成一个真正的桌面应用。它不重新做一套界面，只是在外层加了一个桌面壳：有系统托盘、原生窗口按钮、统一的标题栏，还能创建桌面快捷方式。装好后启动 dsh，就会以桌面应用的方式运行，关窗口会收进托盘。",
+      "level": "ok",
+      "risks": "首次启动时会下载并解压 Electron 运行环境，占用一些磁盘空间和网络流量；可能会在系统菜单或桌面创建快捷入口（可在设置里关闭）；之后会常驻系统托盘。除此之外没发现明显风险。",
+      "postInstallNotes": "首次启动时会自动下载 Electron 运行环境，请耐心等待，无需手动配置；如需快捷入口，可在 WebUI 设置→通用设置中创建",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 官方 WebUI 套上原生桌面外壳的轻量 dsh 插件，提供托盘、原生窗口和快捷入口。",
+    "usage": {
+      "prompt_tokens": 3105,
+      "completion_tokens": 1899,
+      "total_tokens": 5004,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1539
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2465
+    }
+  }
+}

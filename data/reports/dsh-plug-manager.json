@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plug-manager",
+  "analyzedAt": "2026-08-16T13:29:29.340Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 README 给出了明确的 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plug-manager",
+      "evidence": "dsh plugin --profile web add -w dsh-plug-manager"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 的插件管理器，让你在网页界面上搜索 GitHub 上带 dsh-plugin 标签的插件，一键安装、更新、卸载，还能查看已装插件的信息；也可以让 AI 助手通过工具帮你操作。它自己处理下载、解压、依赖安装等，能避开常见的 git+ssh 安装坑，还支持配置代理。",
+      "level": "ok",
+      "risks": "它会读写 DSH 主目录（如 profiles、配置和缓存），安装插件时可能执行插件包的 prepare 脚本（和手动执行 dsh plugin 一样）；网络请求会连到 GitHub（api.github.com、raw.githubusercontent.com、codeload.github.com），如果你配置了代理，请求会经过你的代理服务器。",
+      "postInstallNotes": "需要重启 DSH 使插件生效；确保 PATH 中有 pnpm（dsh plugin 依赖），使用代理功能还需系统有 curl；在 profile 根目录下安装时可能需要带 -w 参数。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的图形化插件管理器：在 Web UI 里搜索、安装、更新、卸载社区插件，也提供 agent 工具，并支持代理配置。",
+    "usage": {
+      "prompt_tokens": 3701,
+      "completion_tokens": 1377,
+      "total_tokens": 5078,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 980
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3061
+    }
+  }
+}

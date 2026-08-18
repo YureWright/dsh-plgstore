@@ -1,0 +1,37 @@
+{
+  "id": "yequ172672/dsh-codex-subscription",
+  "analyzedAt": "2026-08-17T11:29:10.007Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明 dsh.bundle.patch 且依赖 @deepseek-ai/dsh-llm 等 DSH 核心包，README 给出 dsh plugin add 安装命令，属于标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-llm-codex",
+      "evidence": "已发布到 npm:[dsh-llm-codex@0.1.1]（安装命令：dsh plugin --profile web add dsh-llm-codex）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DSH（DeepSeek Harness）里直接使用 ChatGPT 的订阅模型，不需要 API Key。它会读取你电脑上 Codex CLI 的登录凭证（~/.codex/auth.json），把 Codex 的登录状态共享给 DSH，这样就能用 ChatGPT 的模型了。还支持自动刷新令牌、走代理、模型列表自动发现等功能。",
+      "level": "caution",
+      "risks": "它会读取你电脑上 Codex CLI 的登录凭证文件（~/.codex/auth.json），里面包含你的 ChatGPT 订阅令牌；如果这个文件泄露，别人可能用你的账号。令牌过期时插件会自动刷新并写回该文件。另外，插件会向 OpenAI 的服务器（chatgpt.com、auth.openai.com）发送请求，带上你的令牌；如果你配置了代理，流量会经过代理服务器。",
+      "postInstallNotes": "需要先安装 dsh 本体和 pnpm，并确保已登录 Codex CLI（codex login）。然后根据需要在 $DSH_HOME/settings.yaml 中配置 llm-codex 的 proxy 等选项，重启 dsh 后即可在模型选择器中看到 Codex provider。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 中复用 Codex CLI 登录凭证使用 ChatGPT 订阅模型的适配器插件。",
+    "usage": {
+      "prompt_tokens": 3878,
+      "completion_tokens": 1259,
+      "total_tokens": 5137,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 798
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3238
+    }
+  }
+}

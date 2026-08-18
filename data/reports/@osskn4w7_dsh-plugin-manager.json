@@ -1,0 +1,37 @@
+{
+  "id": "@osskn4w7/dsh-plugin-manager",
+  "analyzedAt": "2026-08-16T14:50:07.364Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-client-runtime，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@osskn4w7/dsh-plugin-manager",
+      "evidence": "dsh plugin --profile web add @osskn4w7/dsh-plugin-manager"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你不用手动改配置文件就能管理 DeepSeek Harness 插件。它会在网页的设置里加一个「插件管理」标签，你可以在那里安装新插件、一键启用/禁用、卸载插件，还能看到整个加载器树。它也提供命令行工具和聊天命令。它会自动帮你修改 cordis.patch.yml 配置文件，并且改动会实时生效，不用重启。",
+      "level": "ok",
+      "risks": "它会修改你 DSH 配置文件（cordis.patch.yml 和 package.json），并调用 pnpm 安装/卸载包。它提供一个仅本机回环地址访问的 HTTP API，默认没有认证，如果你把服务暴露到不可信的网络，别人可能通过这个接口操作你的插件。",
+      "postInstallNotes": "如果用标准方式安装，安装后需要重启 dsh web 服务（bundle 补丁在启动时加载）；如果用 bootstrap 方式，只需刷新浏览器。",
+      "notes": "这是第三方插件，不是 DeepSeek 官方出品；安装时确保使用官方 npm 仓库。"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 打造的插件管理器，支持在网页和命令行里安装、启用/禁用、卸载插件，无需手改配置文件。",
+    "usage": {
+      "prompt_tokens": 2869,
+      "completion_tokens": 1488,
+      "total_tokens": 4357,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1081
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2229
+    }
+  }
+}

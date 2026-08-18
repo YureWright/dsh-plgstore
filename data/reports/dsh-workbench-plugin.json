@@ -1,0 +1,37 @@
+{
+  "id": "dsh-workbench-plugin",
+  "analyzedAt": "2026-08-17T11:11:08.741Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-workbench-plugin@0.1.13",
+      "evidence": "dsh plugin --profile web add dsh-workbench-plugin@0.1.13"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页版用的工作台插件。装好后，聊天窗口右边会多出两个区域：一个是代码编辑器和终端，你可以写代码、看命令行；另一个是文件管理器和 Git 工具，可以浏览文件、查看改动、提交代码。它还带一个智能终端，你可以用大白话让 AI 帮你生成 shell 命令并自动填入终端执行。",
+      "level": "ok",
+      "risks": "它会在你的电脑上启动一个本地终端，AI 能帮你执行 shell 命令（虽然有一个危险命令黑名单），所以理论上可能修改或删除文件；它也能读取和编辑工作区里的文件，以及读取 Git 仓库信息。这些操作都在本地进行，只有能访问你 DSH 页面的人才能看到。",
+      "postInstallNotes": "安装后重启 dsh web，进入 Conversation 新建一个会话，工作台会自动出现在右侧。",
+      "notes": "该插件会执行本地命令，建议留意 AI 生成的命令；如果通过 GitHub 市场安装，需要仓库默认分支包含构建后的 lib 文件，否则会安装失败。"
+    },
+    "summaryZh": "DeepSeek Harness Web UI 的工作台插件，在聊天旁提供智能终端、代码编辑器以及文件与 Git 管理功能。",
+    "usage": {
+      "prompt_tokens": 3614,
+      "completion_tokens": 2866,
+      "total_tokens": 6480,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2457
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2974
+    }
+  }
+}

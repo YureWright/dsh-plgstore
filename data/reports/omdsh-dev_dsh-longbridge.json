@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-longbridge",
+  "analyzedAt": "2026-08-17T11:59:52.759Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖多个 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/dsh-longbridge.git",
+      "evidence": "或从 git/npm 源安装发布包；hub catalog 每 2h 自动收录本仓库"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 用的长桥（Longbridge）港美股券商插件。装上之后，你可以在 DSH 里查港股美股的实时行情、K线、指数，管理自选股，还能看自己的账户和持仓，甚至能下单和撤单。下单前会强制弹确认，避免误操作。不过要先用长桥的 App Key/Secret/Token 在设置里完成认证。",
+      "level": "ok",
+      "risks": "需要你填写长桥的 App Key、Secret 和 Access Token，这些会存在 DSH 的本地凭据文件里（$DSH_HOME/.credentials.yaml）。插件会连接长桥官方服务器获取行情和发送交易指令，所以网络流量里会包含账户相关数据。交易功能默认关闭，就算开启，每次下单也还是要你确认。如果电脑被入侵或你不信任这个插件，凭据有泄露或被滥用的可能。",
+      "postInstallNotes": "需要先到长桥开发者平台开通 OpenAPI 权限，拿到 App Key/Secret/Access Token；然后在 DSH 设置页的「长桥」栏里填好凭据并保存。账户和交易工具默认关闭，要用的话在设置里手动打开开关。",
+      "notes": "无"
+    },
+    "summaryZh": "长桥港美股券商级行情与交易插件：提供实时行情、K线、指数、自选、账户、持仓、下单撤单等工具，需配置长桥 OpenAPI 凭据。",
+    "usage": {
+      "prompt_tokens": 3189,
+      "completion_tokens": 2368,
+      "total_tokens": 5557,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1891
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2549
+    }
+  }
+}

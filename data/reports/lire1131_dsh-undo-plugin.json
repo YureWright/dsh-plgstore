@@ -1,0 +1,37 @@
+{
+  "id": "lire1131/dsh-undo-plugin",
+  "analyzedAt": "2026-08-17T11:14:17.858Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:lire1131/dsh-undo-plugin#master",
+      "evidence": "dsh plugin --profile web add github:lire1131/dsh-undo-plugin#master"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的『后悔药』插件。它会在你改配置、装插件、换皮肤等操作时自动拍快照，也能手动保存。如果改坏了，可以一键撤销/回退到之前正常的版本；就算 DSH 崩溃启动不了，它还有独立的命令行和窗口工具帮你恢复。",
+      "level": "ok",
+      "risks": "它会读取和修改 DSH 的配置文件（如 cordis.patch.yml、settings.yaml、.env 等），快照里可能包含密钥（虽然会脱敏）。另外在某些安装方式下需要手动建立目录链接或修改补丁文件，操作不当可能影响 DSH 启动。",
+      "postInstallNotes": "安装后需重启 DSH 生效；如果 DSH 不在默认安装位置，可能需要设置环境变量 DSH_ROOT；可选操作为创建桌面快捷方式。",
+      "notes": "注意：仓库名是 dsh-undo-plugin，但实际包名是 dsh-undo-savepoint，安装后目录名以包名为准。"
+    },
+    "summaryZh": "DSH 撤销/回退系统：自动快照配置与插件代码，崩溃后也能离线一键回滚。",
+    "usage": {
+      "prompt_tokens": 4779,
+      "completion_tokens": 1275,
+      "total_tokens": 6054,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 877
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4139
+    }
+  }
+}

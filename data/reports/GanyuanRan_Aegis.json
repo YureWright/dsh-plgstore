@@ -1,0 +1,37 @@
+{
+  "id": "GanyuanRan/Aegis",
+  "analyzedAt": "2026-08-16T11:39:07.772Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/dsh-* 核心包，且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:GanyuanRan/Aegis",
+      "evidence": "If the host is the official DeepSeek Harness (`dsh`), treat global/minimal installation as native profile-plugin installation with `dsh plugin --profile <profile> add github:GanyuanRan/Aegis`"
+    },
+    "evaluationReport": {
+      "intro": "Aegis 是一个给 AI 编程助手用的“方法包”，让它改代码之前先了解项目的真实情况（比如项目归属、接口约定），改完之后还要拿出证据证明任务完成了，避免乱改和返工。它支持 DeepSeek Harness 以及 Codex、Claude Code 等多种 AI 编程工具。",
+      "level": "ok",
+      "risks": "运行诊断脚本时会在项目或主机配置目录里写入配置文件（比如用 aegis-doctor.py --write-config），也可能会往项目里添加一些规则文件；这些改动都是本地配置，没发现连接外部服务器或读取隐私文件的行为。",
+      "postInstallNotes": "安装后需要按 README 的 Quick Install 指引运行验证：先找到方法包根目录，执行 `cd <aegis-method-pack-root> && python scripts/aegis-doctor.py --write-config --json`，确认输出包含 `\"ok\": true`、`\"workspaceSupport\": \"available\"` 和 `\"configStatus\": \"configured\"`，然后重启或重载 dsh。",
+      "notes": "无"
+    },
+    "summaryZh": "Aegis 是一个让 AI 编码代理更可靠的方法包，通过强制执行“先对齐项目基线、完成时提供证据”的纪律，减少返工和代码改动风险。",
+    "usage": {
+      "prompt_tokens": 3789,
+      "completion_tokens": 2449,
+      "total_tokens": 6238,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1995
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3149
+    }
+  }
+}

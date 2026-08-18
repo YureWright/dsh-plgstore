@@ -1,0 +1,37 @@
+{
+  "id": "limbo947/dsh-recall-plugin",
+  "analyzedAt": "2026-08-17T11:28:14.335Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，且 peerDependencies 包含 @deepseek-ai/cordis 等 DSH 核心包，README 也提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-recall-plugin",
+      "evidence": "dsh plugin --profile web add dsh-recall-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DSH 聊天界面里可以“撤回”自己发过的消息，并且不只是删除聊天记录，连当时项目里被 AI 改过的文件也会一起恢复到那条消息发送之前的样子。它会在你发消息时自动给项目文件拍快照，存到一个单独的文件夹里，不会动你项目自己的 git 仓库。撤回前会先弹窗列出将要改变的文件清单，确认后才执行，避免误操作。",
+      "level": "ok",
+      "risks": "它会读取项目文件并保存快照到 home 目录下的 dsh-recall-snapshots 文件夹，撤回时可能覆盖你在那之后修改的文件（但会先给你看清单确认）。快照里可能包含项目中的敏感信息（如密钥），但默认会排除 .env 等常见敏感文件。插件不会连接外部服务器，也不修改项目自身的 git 状态。",
+      "postInstallNotes": "装完后需要重启 DSH 进程（例如运行 dsh web 或用 pm2 restart），并确保系统已安装 git 且位于 PATH 中。可在“设置 → 插件 → 撤回设置”中调整快照排除项，也可以直接编辑 home 下的 exclude.txt 文件。",
+      "notes": "依赖 DSH 0.1.0-rc.x，且仅对插件启用后发送的消息显示撤回按钮。"
+    },
+    "summaryZh": "一个 DSH 插件，让你可以撤回自己发过的消息，同时把项目文件也回退到当时的状态。",
+    "usage": {
+      "prompt_tokens": 3588,
+      "completion_tokens": 1333,
+      "total_tokens": 4921,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 875
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2948
+    }
+  }
+}

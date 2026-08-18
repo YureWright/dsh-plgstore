@@ -1,0 +1,37 @@
+{
+  "id": "@openguardrails/dsh-auto-mode",
+  "analyzedAt": "2026-08-16T13:41:38.102Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令，代码明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@openguardrails/dsh-auto-mode",
+      "evidence": "dsh plugin --profile web add @openguardrails/dsh-auto-mode"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个叫“Auto”的权限模式。平时 dsh 在让 AI 干活前会问你“允不允许”，装了它以后，这类询问会交给 OpenGuardrails 规则来自动判断（比如按文本/正则规则，或者用你自己的模型当裁判），只有规则拿不准的才来问你。它底下还带了一套完整的安全评估引擎，能在每个工具调用执行前先过一遍，防止 AI 做危险操作。",
+      "level": "ok",
+      "risks": "它会拦截 AI 的工具调用和对话内容来做安全检查；如果你另外配了远程 OpenGuardrails 服务，这些数据会发给那个服务。它还会往 dsh 的权限选择器里加一项“Auto 模式”。除此之外没发现明显风险。",
+      "postInstallNotes": "装完后启动 dsh，在权限选择器里选“Auto Mode by OGR”即可生效；如果想用对话级（conversation）的守护，需要在配置里指定 OpenGuardrails 运行时地址。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加 Auto 权限模式，由 OpenGuardrails 规则自动审批工具调用，并内置完整的安全评估引擎。",
+    "usage": {
+      "prompt_tokens": 4184,
+      "completion_tokens": 1043,
+      "total_tokens": 5227,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 623
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3544
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-slackoff",
+  "analyzedAt": "2026-08-16T14:49:30.775Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 并依赖 @deepseek-ai/cordis，是可安装的 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-slackoff",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的摸鱼伴侣插件。当你用 AI 干活的时候，它会自动在屏幕上弹出一个小窗口播放视频（比如 B 站、YouTube），如果 AI 突然中断或来问你问题，它就自动暂停视频，让你看起来一直在认真工作。",
+      "level": "ok",
+      "risks": "插件会在屏幕上弹出视频窗口，旁边的人可能看到你在看视频；同时会联网访问 B站/YouTube 获取视频内容。除此之外没发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "README 缺失，具体用法和安全性未提供更多信息；但 package.json 完整，属于正常 npm 包。"
+    },
+    "summaryZh": "DSH 摸鱼伴侣：AI 工作时自动弹出视频小窗，AI 中断时自动暂停。",
+    "usage": {
+      "prompt_tokens": 1416,
+      "completion_tokens": 1162,
+      "total_tokens": 2578,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 879
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 776
+    }
+  }
+}

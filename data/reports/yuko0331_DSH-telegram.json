@@ -1,0 +1,37 @@
+{
+  "id": "yuko0331/DSH-telegram",
+  "analyzedAt": "2026-08-17T11:44:42.874Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 也给出 dsh plugin add 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/yuko0331/DSH-telegram.git",
+      "evidence": "dsh plugin --profile web add git+ssh://git@github.com/yuko0331/DSH-telegram.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你通过 Telegram 私聊远程使用和查看 DeepSeek Harness。你可以用它发消息跟 DSH 对话、查看工作区和实时会话、创建新会话、查看正在运行的任务、取消任务等。它只允许你指定的一个 Telegram 用户 ID 操作，不支持群聊，安全性设计比较谨慎。",
+      "level": "ok",
+      "risks": "它会让 DSH Web 连接 Telegram 服务器（长轮询），接收你发的私聊指令。需要提供 Telegram Bot Token 和你的数字 User ID；Token 存在 DSH 凭据系统里，不会明文显示。风险主要是如果 Token 泄露，别人可能冒充你的机器人，但插件只允许指定用户 ID，所以风险可控。",
+      "postInstallNotes": "需要先创建 Telegram Bot 获取 Token，再通过 @userinfobot 等获取自己的数字 User ID；安装后重启一次 DSH Web，然后在“设置 → Telegram”里填写 Token 和 User ID，开启“启用 Telegram 机器人”并保存应用。",
+      "notes": "无"
+    },
+    "summaryZh": "通过 Telegram 私聊远程监控和操作 DeepSeek Harness 的插件，支持查看工作区、会话、任务以及发送消息对话。",
+    "usage": {
+      "prompt_tokens": 2428,
+      "completion_tokens": 888,
+      "total_tokens": 3316,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 450
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1788
+    }
+  }
+}

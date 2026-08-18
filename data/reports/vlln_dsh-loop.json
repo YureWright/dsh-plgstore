@@ -1,0 +1,37 @@
+{
+  "id": "vlln/dsh-loop",
+  "analyzedAt": "2026-08-17T13:14:42.379Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 peerDependencies 依赖 @deepseek-ai/cordis，README 给出了 dsh plugin 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/vlln/dsh-loop.git",
+      "evidence": "dsh plugin --profile web add \"github:vlln/dsh-loop#main\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你设置定时循环任务：比如输入 `/loop 5m 检查我的 PR`，它就会每 5 分钟自动让 AI 执行这条 prompt，直到你手动停止。它还在对话页顶部显示一个状态条，告诉你当前有几个循环在跑、下次运行还要多久。适合需要反复执行的任务，比如定时轮询、PR 看护、自动跑测试等。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在本机按你设置的间隔持续向 AI 发送消息，可能增加 token 消耗；所有数据只在本地会话中处理，不额外上传。",
+      "postInstallNotes": "安装后需要重启 web 端才能生效；之后可在设置页「插件」面板停用/启用。",
+      "notes": "依赖 @deepseek-ai/cordis 等核心包的预发布版本（rc），请确保 DSH 环境满足 engines 要求（node >=22.19.0，dsh >=0.1.0-rc.5）。README 推荐安装命令使用 github: 缩写，与本报告给出的 git+https 地址等价。"
+    },
+    "summaryZh": "定时循环插件：用 /loop 命令或 loop 工具让 AI 按固定间隔重复执行 prompt，并在对话页显示活动状态条，支持多循环并行。",
+    "usage": {
+      "prompt_tokens": 2030,
+      "completion_tokens": 3847,
+      "total_tokens": 5877,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3406
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1390
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-rules-manager-client",
+  "analyzedAt": "2026-08-16T13:38:09.527Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client 字段，README 明确描述这是 DSH 的 client 插件并给出装配到 cordis.patch.yml 的步骤。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-rules-manager-client",
+      "evidence": "README 安装说明原文：'npm install dsh-rules-manager dsh-rules-manager-client'"
+    },
+    "evaluationReport": {
+      "intro": "这是 DeepSeek Harness（DSH）的一个设置面板插件，相当于一个图形界面的控制台，专门用来管理 DSH 的「规则、命令与技能」。你可以在这个面板里直接查看和编辑全局规则文件（AGENTS.md），添加或删除规则，保存后立即生效并自动备份；还能看到所有斜杠命令的列表，并且自己定义新的快捷指令，支持带参数（比如输入命令时替换成你填的内容）；另外它还提供备份和恢复功能，可以一键回到某个备份时刻，恢复前也会自动备份当前状态，防止误操作。",
+      "level": "ok",
+      "risks": "它会在本地读写 DSH 的规则文件（AGENTS.md）和备份数据，所有操作都在你自己的电脑上完成，别人不会看到。需要注意的是，编辑和删除规则可能改坏配置，但它自带自动备份，恢复功能也比较安全。",
+      "postInstallNotes": "装完后还需要按 README 的说明，在 $DSH_HOME/profiles/web/cordis.patch.yml 里装配这个插件，然后重启 DSH 才能生效。",
+      "notes": "需与主包 dsh-rules-manager 配合使用。"
+    },
+    "summaryZh": "DSH 设置页的「规则、命令与技能」管理面板，支持可视化编辑规则、自定义斜杠命令和备份恢复。",
+    "usage": {
+      "prompt_tokens": 1931,
+      "completion_tokens": 1034,
+      "total_tokens": 2965,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 602
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1291
+    }
+  }
+}

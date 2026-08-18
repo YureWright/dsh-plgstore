@@ -1,0 +1,37 @@
+{
+  "id": "@moonquake2004/dsh-doctor",
+  "analyzedAt": "2026-08-17T11:08:48.454Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis，README 也描述了 Web UI 设置中的 Doctor 面板，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@moonquake2004/dsh-doctor",
+      "evidence": "Installed via npm, the CLI is also available as the `dsh-doctor` bin."
+    },
+    "evaluationReport": {
+      "intro": "dsh-doctor 是一个专门给 DeepSeek Harness（DSH）做“体检”的工具。你可以在启动 DSH 或者安装新插件之前先跑一下它，它会检查你的系统环境（比如 Node 版本、依赖工具）、DSH 的配置文件和聊天记录，提前告诉你哪些地方可能出问题，免得之后启动失败或者卡住。它自带 26 项检查和一份能更新的额外清单，还会在 Web 设置页面里显示一个 Doctor 面板，方便你随时查看健康状况。",
+      "level": "ok",
+      "risks": "它会读取你本机的 DSH 配置文件（默认在 ~/.dsh 目录）和会话日志，并检查 PATH 上的程序，但这些读取只用于本地诊断，不会上传。它有一个自我更新功能，会从远程获取一份检查规则列表（catalog），需要联网；另外 --observe 模式可能涉及调用 LLM 进行观察，使用时注意数据发送范围。除此之外没有发现明显风险。",
+      "postInstallNotes": "安装后可以通过命令行直接运行 dsh-doctor，或者在 DSH 的 Web 设置界面中找到 Doctor 面板使用；如果默认端口被占用，可设置环境变量 DSH_DOCTOR_PORT。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-doctor 是 DeepSeek Harness 的离线诊断插件，在启动前检查环境、配置和会话日志，提前发现可能导致崩溃或卡死的问题。",
+    "usage": {
+      "prompt_tokens": 3575,
+      "completion_tokens": 1625,
+      "total_tokens": 5200,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1162
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2935
+    }
+  }
+}

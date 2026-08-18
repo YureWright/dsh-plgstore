@@ -1,0 +1,37 @@
+{
+  "id": "xwh-01/dsh-mediacrawler",
+  "analyzedAt": "2026-08-17T13:10:48.435Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置，README 提供了 dsh plugin add 安装命令，且代码是 DSH 的适配器。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:xwh-01/dsh-mediacrawler#v0.3.0",
+      "evidence": "npx --yes @deepseek-ai/dsh@0.1.0-rc.6 plugin --profile web add \"github:xwh-01/dsh-mediacrawler#v0.3.0\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能连接上 MediaCrawler（一个开源爬虫工具），从而帮你抓取小红书、抖音、B站、微博等平台的数据。你可以让 AI 搜索帖子、查看博主主页、导出评论等。它安装后相当于给 AI 加了个“抓取工具”，但它自己不带爬虫，需要你事先装好 MediaCrawler 和 Chrome。",
+      "level": "ok",
+      "risks": "它会在你的电脑上创建独立的 Python 环境，并启动 Chrome 浏览器访问目标平台；需要你扫码登录，登录状态会保存在它自己的文件夹里。抓取到的数据可能包含他人个人信息，导出时不会自动匿名化。它不会读取你系统上其他私人文件。",
+      "postInstallNotes": "需要先安装 Python 3.11+、Node.js 22.19+/24+、pnpm、Google Chrome 和 MediaCrawler；然后设置环境变量 MEDIACRAWLER_ROOT 和 MEDIACRAWLER_PYTHON，可选 DSH_MEDIACRAWLER_STATE_DIR；首次使用让 AI 执行 check(deep=true)。",
+      "notes": "安装命令使用的是 DSH 0.1.0-rc.6 预发布版本；插件依赖外部 MediaCrawler 环境，不是开箱即用。"
+    },
+    "summaryZh": "一个把 DeepSeek Harness 连接到 MediaCrawler 的适配插件，支持搜索和抓取多个中文社交媒体平台的内容。",
+    "usage": {
+      "prompt_tokens": 3335,
+      "completion_tokens": 3430,
+      "total_tokens": 6765,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2930
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2695
+    }
+  }
+}

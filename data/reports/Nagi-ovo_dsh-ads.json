@@ -1,0 +1,37 @@
+{
+  "id": "Nagi-ovo/dsh-ads",
+  "analyzedAt": "2026-08-16T11:43:08.350Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 配置、依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Nagi-ovo/dsh-ads.git",
+      "evidence": "Install the plugin from GitHub into DSH's `web` profile: `dsh plugin --profile web add github:Nagi-ovo/dsh-ads`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的恶搞娱乐插件。装完之后，你的 DSH 界面会变成老式网站那样，到处是虚构的广告：边栏、对话框、底部角落都会出现弹窗、大转盘、假游戏等，模仿中文门户广告和英文诈骗广告。它还搞了个‘推理奖励广告’，假装暂停推理让你看广告，其实模型还在后台干活，广告结束才展示答案。另外它还会推荐一些 GitHub 上其他 DSH 插件项目，都是些整活内容。",
+      "level": "ok",
+      "risks": "它会在界面上显示大量虚假广告和弹窗，可能让不知情的人误以为电脑中毒或 DeepSeek 出问题了。它会在后台向 GitHub 请求公开的插件项目列表，并且在点击‘验证’时查询仓库的 Star 状态（用本地 GitHub 登录或匿名接口），所以会有少量网络请求发往 GitHub。README 声明它不会扫描、读取或修改电脑上的文件，广告展示记录也只在本地浏览器里保存。",
+      "postInstallNotes": "重启 DSH web 服务并刷新页面；之后可以在 DSH 设置里的 “Ads (Unofficial)” 面板分别开关各个广告位。",
+      "notes": "无"
+    },
+    "summaryZh": "把 DeepSeek Harness 界面变成 2005 年风格门户、塞满虚构弹窗和奖励广告的恶搞娱乐插件。",
+    "usage": {
+      "prompt_tokens": 2635,
+      "completion_tokens": 4966,
+      "total_tokens": 7601,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4496
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1995
+    }
+  }
+}

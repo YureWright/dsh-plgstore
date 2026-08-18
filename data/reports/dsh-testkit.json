@@ -1,0 +1,37 @@
+{
+  "id": "dsh-testkit",
+  "analyzedAt": "2026-08-16T13:23:19.240Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，且依赖/peer 依赖包含 @deepseek-ai/cordis、@deepseek-ai/dsh-tools 等 DSH 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-testkit@0.3.1",
+      "evidence": "dsh plugin --profile web add dsh-testkit@0.3.1"
+    },
+    "evaluationReport": {
+      "intro": "这个工具是给 DeepSeek Harness 插件做生命周期测试的。它会把你的插件打包，装到一个临时的 DSH 环境里，启动、测试、卸载，再检查有没有残留，最后生成报告。整个过程不需要模型 API，但要装 Docker。",
+      "level": "ok",
+      "risks": "它会运行被测插件的安装脚本和代码（默认在 Docker 里），这些代码可能访问网络；会在项目目录下生成测试报告和日志（.dsh-testkit/）。需要 Docker 权限。它不会把源码或密钥上传到外部服务。",
+      "postInstallNotes": "需要 Node.js 22+ 和 Docker；如果作为测试工具，运行 pnpm dsh-test init 生成配置；如果作为 DSH 插件使用，注意当前适配的 DSH 版本是 0.1.0-rc.6。",
+      "notes": "该工具本身是一个 DSH 插件（注册了 dsh_test 工具），但主要用途是测试其他插件。依赖的 @deepseek-ai/cordis 等是 peer 依赖，需要安装。"
+    },
+    "summaryZh": "DSH Testkit 是一个用于 DeepSeek Harness 插件的确定性真实主机生命周期测试工具，能在隔离环境中自动验证插件的安装、运行和卸载。",
+    "usage": {
+      "prompt_tokens": 4123,
+      "completion_tokens": 2159,
+      "total_tokens": 6282,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1724
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3483
+    }
+  }
+}

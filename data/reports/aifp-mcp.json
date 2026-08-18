@@ -1,0 +1,37 @@
+{
+  "id": "aifp-mcp",
+  "analyzedAt": "2026-08-16T14:55:02.889Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.85,
+      "reason": "package.json 中声明了 dsh.bundle.patch，且 README 明确说明可自动接入 DSH，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "aifp-mcp",
+      "evidence": "npm install -g aifp-mcp"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个给 AI 助手用的“长期记忆”工具。它让 AI 能记住之前聊过的东西，下次再聊还能想起来。它会自动把值得记的内容存到电脑本地，还能理解口语、错别字，比如你说“拍森”它能知道是 Python。它还能关联相关的记忆，越用越懂你。支持很多 AI 工具，包括 DeepSeek Harness、Claude Code、Cursor 等，让它们共享同一份记忆。",
+      "level": "caution",
+      "risks": "安装时会自动修改电脑上多个 AI 工具的配置文件（比如 Claude Code、Cursor 的配置），可能影响这些工具的行为。默认的“远程模式”会把记忆通过服务器处理，记忆内容可能传到外部服务器，而且需要联系作者付费获取地址和 key。首次启动还要下载约 30MB 的模型文件。",
+      "postInstallNotes": "如果不想用远程模式，需要设置环境变量 COGNITION_MODE=local 并配置相关的 LLM 密钥（ COGNITION_LLM_API_KEY 等）才能启用自动记忆识别。如果要用远程增强功能，需要联系作者获取服务器地址和 key 并执行 aifp-mcp --connect。",
+      "notes": "经评估，这是一个 MCP 服务器，但包含 DSH 补丁，可作为 DSH 插件安装。安装脚本会自动修改多个 AI 工具的配置，且默认连接外部服务器，请留意。另外，首次启动需要下载嵌入模型，可能阻塞启动。"
+    },
+    "summaryZh": "AiFP 记忆感知系统——给 AI 助手装上跨会话的长期记忆，支持中文语义检索与关联，一套记忆多工具共享，默认本地运行但远程模式需向作者购买 key。",
+    "usage": {
+      "prompt_tokens": 5406,
+      "completion_tokens": 1157,
+      "total_tokens": 6563,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 664
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4766
+    }
+  }
+}

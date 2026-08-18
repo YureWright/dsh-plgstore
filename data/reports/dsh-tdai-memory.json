@@ -1,0 +1,37 @@
+{
+  "id": "dsh-tdai-memory",
+  "analyzedAt": "2026-08-16T13:25:27.729Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/dsh-tools 等核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tdai-memory",
+      "evidence": "dsh plugin --profile web add dsh-tdai-memory"
+    },
+    "evaluationReport": {
+      "intro": "这是给 DeepSeek Harness 加‘长期记忆’的插件。它会把你和 AI 的对话自动记下来，整理出你的习惯、偏好和重要事件，形成用户画像；下次聊天时，它会自动把相关的旧记忆翻出来，让 AI 显得‘记得’你。它还提供搜索工具，能手动搜索历史对话和记忆。如果你以前用过腾讯的 TencentDB Agent Memory，数据可以直接复用。",
+      "level": "ok",
+      "risks": "它会在你电脑上创建 ~/.memory-tencentdb 文件夹，把聊天记录和记忆存成 SQLite 数据库和向量文件。为了提取记忆，它会把对话内容发送到你配置的大模型和向量接口（也就是外部服务器），这些服务商可能会看到你的对话。另外它会直接读取旧的 memory-tdai 数据，如果你用过同类工具，建议先看看里面有什么。",
+      "postInstallNotes": "装完后需要配置 LLM 和 embedding 的 API key（在 Web UI 的‘记忆/ Memory’设置页，或直接改 $DSH_HOME/settings.yaml 的 tdai-memory: 部分），然后重启 dsh web。如果设置页没出现，再重启一次。配置改动都要重启才生效。",
+      "notes": "该插件测试于 DSH 0.1.0-rc.6，其他版本可能不兼容；依赖了 sqlite-vec 和 node-llama-cpp 等原生模块，安装时可能需编译。"
+    },
+    "summaryZh": "给 DSH 加长期记忆的插件：自动记录对话、整理用户画像并在聊天时智能召回，让 AI 记住你。",
+    "usage": {
+      "prompt_tokens": 3330,
+      "completion_tokens": 3848,
+      "total_tokens": 7178,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3357
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2690
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-cockpit",
+  "analyzedAt": "2026-08-16T13:28:38.322Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-cockpit",
+      "evidence": "dsh plugin --profile web add dsh-cockpit"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的桌面风格工作台，把项目管理和 AI 工具集中在一个界面里，方便你边看项目边和 AI 协作。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要提供界面功能，依赖的 mammoth 库用于解析 Word 文档，但仅在处理文档时生效。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Cockpit 是一个为 DeepSeek Harness 设计的桌面式项目与 AI 工作台插件，集成界面和布局，安装即用。",
+    "usage": {
+      "prompt_tokens": 1695,
+      "completion_tokens": 629,
+      "total_tokens": 2324,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 372
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1055
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@sakikotgw/pack-agent-dsh",
+  "analyzedAt": "2026-08-16T13:33:37.622Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin add 安装命令，且描述为 DeepSeek Harness 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@sakikotgw/pack-agent-dsh",
+      "evidence": "dsh plugin --profile web add @sakikotgw/pack-agent-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness 的配置像 Minecraft 整合包一样管理。它会把 .pack.json 或 .pack.zip 文件投影到 .agent-pack/modpacks/ 目录下，并允许你通过项目白名单调用其中的技能。简单说，就是帮你整理和切换不同的 Harness 配置包，不用手动折腾文件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在项目目录下创建 .agent-pack/modpacks/ 文件夹，不碰其他隐私文件。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个把 DeepSeek Harness 配置像 Modpack 一样管理的插件，支持打包、映射和技能白名单。",
+    "usage": {
+      "prompt_tokens": 1944,
+      "completion_tokens": 501,
+      "total_tokens": 2445,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 202
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1304
+    }
+  }
+}

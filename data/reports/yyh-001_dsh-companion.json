@@ -1,0 +1,37 @@
+{
+  "id": "yyh-001/dsh-companion",
+  "analyzedAt": "2026-08-17T13:12:41.254Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 的 peerDependencies 声明了 @deepseek-ai/dsh-tools 和 @deepseek-ai/dsh-llm 核心包，且 README 明确描述其为 DSH 插件并给出插件配置，符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/yyh-001/dsh-companion.git",
+      "evidence": "或从 GitHub: `pnpm add github:yyh-001/dsh-companion`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的聊天机器人配上“人格”和“长期记忆”。它让你定义 AI 的说话风格（人设段），并把聊过的重要信息（比如你的喜好）存到记忆文件里，下次接着聊还能记得。它还支持可选地接入 QQ 机器人，让人在 QQ 上跟这个 AI 聊天。核心的对话、搜索这些功能还是 DeepSeek Harness 提供的。",
+      "level": "ok",
+      "risks": "会读取和修改你在配置里指定的记忆文件夹（memoriesDir）里的文件，里面可能存有你的个人偏好、聊天记录等；如果开启 QQ 通道，它会用你配置的 QQ 开放平台凭据连接 QQ 官方服务器，收发消息，这些消息会经过腾讯服务器。除此之外没发现明显风险。",
+      "postInstallNotes": "装完后需要：1) 在 DSH 的 agent preset 配置里加一段（见 README），设置 memoriesDir（记忆目录），并可选配 QQ 的 appId/clientSecret；2) 从 DSH 的 standard 预设复制一份并删掉 persona 行，避免冲突；3) 在设置里选“陪伴模式”预设并新开会话。",
+      "notes": "package.json 是 private，未发布到 npm，需通过 GitHub 安装；依赖 @deepseek-ai/dsh-tools 和 @deepseek-ai/dsh-llm 作为 peerDependencies，需要 DSH 环境提供这两个核心包。另外，README 中的安装命令是 pnpm add github:...，如果 dsh plugin add 不支持这种简写，可手动用 git 地址。项目 stars 较少，属个人维护，但代码和文档看起来完整。"
+    },
+    "summaryZh": "让 DeepSeek Harness 的聊天 AI 拥有固定人设和长期记忆，还能接入 QQ 当陪伴机器人。",
+    "usage": {
+      "prompt_tokens": 3190,
+      "completion_tokens": 3919,
+      "total_tokens": 7109,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3341
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2550
+    }
+  }
+}

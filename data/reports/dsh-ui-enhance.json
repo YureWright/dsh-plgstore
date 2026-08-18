@@ -1,0 +1,37 @@
+{
+  "id": "dsh-ui-enhance",
+  "analyzedAt": "2026-08-16T14:46:16.447Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 配置，依赖 @deepseek-ai/cordis 和多个 dsh-client 核心包，README 给出了 dsh plugin add 安装命令，确为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ui-enhance",
+      "evidence": "dsh plugin --profile web add dsh-ui-enhance"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加了一些好用的增强功能：① 在输入框旁边加一个麦克风按钮，用浏览器的语音识别功能把你说的话变成文字；② 把连续相同的工具调用自动折叠成一个小卡片，点开才能看到详情，让界面更清爽；③ 允许你写自定义 CSS 来改变整个页面的外观，比如把发送按钮改成圆角加紫色。",
+      "level": "ok",
+      "risks": "它会修改 Harness 网页界面；语音输入需要浏览器授予麦克风权限；自定义 CSS 如果写得太宽泛或写错可能影响页面布局（但可以随时清空恢复）。不会偷数据，也没发现偷偷连外部服务器或碰你本地其他文件的行为。",
+      "postInstallNotes": "安装后需要重启 Harness Web profile（例如运行 dsh --profile web --host 127.0.0.1 --port 3177）。语音输入需使用支持 SpeechRecognition 的 Chromium 浏览器，并在浏览器中允许麦克风权限。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 界面提供语音输入、工具调用折叠和自定义 CSS 等可选增强功能。",
+    "usage": {
+      "prompt_tokens": 3349,
+      "completion_tokens": 778,
+      "total_tokens": 4127,
+      "prompt_tokens_details": {
+        "cached_tokens": 3328
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 364
+      },
+      "prompt_cache_hit_tokens": 3328,
+      "prompt_cache_miss_tokens": 21
+    }
+  }
+}

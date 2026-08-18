@@ -1,0 +1,37 @@
+{
+  "id": "vlln/dsh-task-status",
+  "analyzedAt": "2026-08-17T11:29:49.095Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 DSH 插件安装命令，代码调用了 DSH 接口，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:vlln/dsh-task-status#main",
+      "evidence": "dsh plugin --profile web add \"github:vlln/dsh-task-status#main\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在对话输入框上方显示一个后台任务状态条，让你看到有多少个后台任务在跑。点开任务行还能看到每个任务的详情、运行时间，以及实时滚动的输出日志（最多显示 10 行）。任务结束后状态条会自动消失。它本身不修改你的对话内容，只是多了一个查看任务进度的小面板。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取当前会话的后台任务列表和输出内容，但这些数据只显示在你自己的界面上，不会上传到外部服务器。",
+      "postInstallNotes": "安装后需要重启 DSH web 端才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "对话界面输入框上方的后台任务状态条，显示运行中任务数、支持展开查看详情和实时输出 tail。",
+    "usage": {
+      "prompt_tokens": 2018,
+      "completion_tokens": 1093,
+      "total_tokens": 3111,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 760
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1378
+    }
+  }
+}

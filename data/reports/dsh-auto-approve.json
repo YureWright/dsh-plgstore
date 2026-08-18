@@ -1,0 +1,37 @@
+{
+  "id": "dsh-auto-approve",
+  "analyzedAt": "2026-08-16T13:26:08.264Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，README 给出了 dsh plugin add 安装命令，且描述明确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Jiao-XXX/dsh-auto-approve.git",
+      "evidence": "从 GitHub 安装：dsh plugin --profile web add github:Jiao-XXX/dsh-auto-approve"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加了一个叫 Auto 的权限档，位置在“工作区可写”和“完全访问”之间。选了这个档后，像安装依赖这类常规操作，插件会用内置的 AI 分类器自动批准，不用每次弹窗问你；但遇到危险命令、分类器拿不准或超时，还是会跳出来让你手动确认。简单说，就是让安全、重复的操作静默通过，危险的交给人工。",
+      "level": "ok",
+      "risks": "插件会读取当前会话里的工具调用参数和你的最新用户消息，并发送给你配置的模型（如 DeepSeek 或自定义 API）做分类，所以这些信息可能被模型服务方看到。另外，自动批准会跳过部分人工确认，虽然内置危险规则会拦截高风险操作，但如果你自定义了规则或模型判断失误，仍有可能放行异常请求。",
+      "postInstallNotes": "重启 dsh web，在 Permissions 下拉框中选择 Auto 权限档。如果需要，可在配置中指定分类模型、超时时间或追加危险规则。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加自动批准权限档，例行沙箱升级由分类模型一次性放行，危险或不确定操作仍转人工审批。",
+    "usage": {
+      "prompt_tokens": 4754,
+      "completion_tokens": 4565,
+      "total_tokens": 9319,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4133
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4114
+    }
+  }
+}

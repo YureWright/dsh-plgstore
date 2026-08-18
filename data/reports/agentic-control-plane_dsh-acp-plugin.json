@@ -1,0 +1,37 @@
+{
+  "id": "agentic-control-plane/dsh-acp-plugin",
+  "analyzedAt": "2026-08-17T12:14:41.933Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 给出 dsh plugin add 安装命令，是原生 Cordis 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@agenticcontrolplane/dsh",
+      "evidence": "dsh plugin --profile <your-profile> add @agenticcontrolplane/dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个「安全门卫」，在 DeepSeek Harness 执行每个工具调用（比如运行命令、改文件、访问网页）之前，先对照你设定的规则检查一遍：允许的就放行并记录，危险的会拦下来问你，明确禁止的直接拒绝。它还能把每次决策（工具、输入、结果、原因）上传到 Agentic Control Plane 的云端控制台，方便你事后查看。适合想让 AI 助手更守规矩、留审计记录的人。",
+      "level": "caution",
+      "risks": "它会连接 agenticcontrolplane.com 的云服务，把工具调用的内容（包括命令、文件路径、网页地址等）上传到他们的服务器，需要注册并登录，凭证存在 ~/.acp/credentials。安装时执行了 curl | bash 脚本，建议先看看脚本内容。如果他们的服务器挂了，交互式会话会放行（但会打警告日志），无人值守的 agent 会直接阻止。",
+      "postInstallNotes": "安装后需要注册并登录 Agentic Control Plane 获取 key（安装脚本会自动保存到 ~/.acp/credentials，或手动设置 ACP_BEARER_TOKEN）；如果自建网关还需设置 ACP_GOVERN_BASE；最后用 dsh --dump-config 确认插件已挂载到对应 profile。",
+      "notes": "注意：package.json 里的包名是 dsh-plugin-acp（已弃用），实际应安装 @agenticcontrolplane/dsh。另外 dsh 核心还有一个同名的 @deepseek-ai/dsh-acp（Zed 的 Agent Client Protocol），是无关项目，别搞混。"
+    },
+    "summaryZh": "给 DeepSeek Harness 加一个策略门卫：每次工具调用前按规则检查、拦截或放行，并把决策记录到云端控制台。",
+    "usage": {
+      "prompt_tokens": 2535,
+      "completion_tokens": 1325,
+      "total_tokens": 3860,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 806
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1895
+    }
+  }
+}

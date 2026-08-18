@@ -1,0 +1,37 @@
+{
+  "id": "HuanLinOTO/dsh-plugin-d399",
+  "analyzedAt": "2026-08-17T11:52:22.045Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis 和 dsh-* 核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-d399",
+      "evidence": "dsh plugin --profile web add @huanlin/dsh-plugin-d399"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 客户端插件，当 AI 模型正在生成回复时，它会在屏幕右下角弹出一个小游戏菜单（蓝鲸弹窗），里面有 Wordle、消消乐和 190 多款小游戏（贪吃蛇、数独、2048、打砖块、问答等），帮你打发等待时间。它支持第三方插件注册新游戏，菜单会自动折叠同类变体。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "模型生成时右下角弹出蓝鲸游戏菜单，内置 190 多款小游戏（Wordle、消消乐、贪吃蛇等），支持第三方游戏扩展。",
+    "usage": {
+      "prompt_tokens": 5040,
+      "completion_tokens": 2269,
+      "total_tokens": 7309,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1967
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4400
+    }
+  }
+}

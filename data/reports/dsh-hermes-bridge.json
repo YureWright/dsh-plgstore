@@ -1,0 +1,37 @@
+{
+  "id": "dsh-hermes-bridge",
+  "analyzedAt": "2026-08-18T14:56:04.719Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，代码为 DSH 插件包。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-hermes-bridge",
+      "evidence": "dsh plugin --profile myprofile add dsh-hermes-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness（HD）能和另一个叫 Hermes 的 AI 助手互相配合。装了它，你可以在 HD 对话里直接让 Hermes 干活（比如部署网站、管理服务器、用记忆功能等），并把结果拿回来。它还带了一个监控功能，可以盯着 HD 的会话，发现卡住或出错时自动发消息通知你。",
+      "level": "ok",
+      "risks": "它会读取你 DSH 的会话缓存文件（也就是对话记录），并可能按你的配置发送到 webhook（一般是发给你自己的 Hermes 服务）。它还会调用 Hermes 的命令行工具去执行任务，因此可能运行你指定的系统命令。这些操作都需要你事先安装和配置，属于功能本身，没发现额外的隐私或安全风险。",
+      "postInstallNotes": "需要先安装 Hermes Agent，并确保 hermes 命令在 PATH 里（或设置 HERMES_BIN）。如果要使用 hd-events 监控功能，还需要配置 webhook 订阅（例如 hermes webhook subscribe）。可选设置 HERMES_TIMEOUT、DSH_HOME 等环境变量。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 与 Hermes Agent 互通，支持在对话中调用另一个 AI 助手执行任务并实现事件监控。",
+    "usage": {
+      "prompt_tokens": 2811,
+      "completion_tokens": 1950,
+      "total_tokens": 4761,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1531
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2171
+    }
+  }
+}

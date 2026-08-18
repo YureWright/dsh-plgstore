@@ -1,0 +1,37 @@
+{
+  "id": "dsh-claude-tui",
+  "analyzedAt": "2026-08-16T13:44:35.954Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，并依赖 @deepseek-ai/dsh、@deepseek-ai/cordis 等 DSH 核心包，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-claude-tui",
+      "evidence": "npm install --global dsh-claude-tui@0.1.3"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 做一个很像 Claude Code 的终端界面，让你在终端里用熟悉的操作方式和 DeepSeek 的 AI 模型聊天、管理会话、使用工具、审批操作等。它直接调用 DSH 的真实模型和功能，不是模拟。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 DSH 的配置和密钥（比如 API key），用来连接 DeepSeek 服务；可能会在你用户目录下创建 ~/.dsh-claude-tui 文件夹存放数据。你的对话内容会发送给 DeepSeek 官方 API，不会上传到其他不明服务器。",
+      "postInstallNotes": "装完后首次运行需要设置模型供应商的 API 密钥，可以在 TUI 里用 /provider 命令输入，也可以提前配置好环境变量。另外可以用 DSH_HOME 指定数据目录。",
+      "notes": "这是一个社区项目，不是 Anthropic 或 DeepSeek 官方出品，但声明了非官方、代码开源且有完整测试。注意需要 Node.js 22.19+ 或 24+ 版本。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供仿 Claude Code 风格的终端界面，支持真实模型、会话、工具和子代理。",
+    "usage": {
+      "prompt_tokens": 4471,
+      "completion_tokens": 1846,
+      "total_tokens": 6317,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1431
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3831
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "LeemanCheung/dsh-token-usage",
+  "analyzedAt": "2026-08-17T11:31:48.689Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:LeemanCheung/dsh-token-usage",
+      "evidence": "dsh plugin --profile web add github:LeemanCheung/dsh-token-usage"
+    },
+    "evaluationReport": {
+      "intro": "这个插件专门给 DeepSeek Harness 记录 Token 用量：它会统计每次对话用了多少输入、输出、缓存 Token，用图表展示趋势、热点和预算，还能估算公开费率下的费用。如果你想，它还可以把脱敏后的用量摘要发给 AI 模型，生成优化建议或会话轨迹报告。所有数据都保存在你自己电脑上，不会上传。",
+      "level": "ok",
+      "risks": "它会在本地保存 token 使用统计和预算设置，并在浏览器 localStorage 中保存最多 24 条轨迹报告；如果你主动点击 AI 分析，会把脱敏后的用量摘要发送给你配置的模型提供商，但不会发送对话内容。没有发现明显风险。",
+      "postInstallNotes": "重启当前 dsh web 进程并刷新页面，然后打开 设置 → Token 用量 查看仪表盘；如需预算/异常功能，可在插件内设置滚动 30 日预算。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供本地优先的 Token 用量记录、预算监控、费用估算与 AI 用量分析仪表盘。",
+    "usage": {
+      "prompt_tokens": 5699,
+      "completion_tokens": 1991,
+      "total_tokens": 7690,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1593
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5059
+    }
+  }
+}

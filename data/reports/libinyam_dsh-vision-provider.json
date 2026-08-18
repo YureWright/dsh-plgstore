@@ -1,0 +1,37 @@
+{
+  "id": "libinyam/dsh-vision-provider",
+  "analyzedAt": "2026-08-17T11:58:56.418Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 给出了 dsh plugin add 安装命令，符合 DSH 插件的真实证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/libinyam/dsh-vision-provider.git",
+      "evidence": "pnpm dsh plugin --profile web add github:libinyam/dsh-vision-provider"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的网页界面里可以选择不同的视觉模型（比如 GLM、Qwen、GPT-4.1 mini 等）来处理图片。它的工作方式是：你发一张图和问题，它会先用你选的视觉模型把图片“看”成一段描述，再把这段描述连同问题交给 DeepSeek 来思考和回答。这样 DeepSeek 本身不支持直接看图，也能回答图片相关的问题。适合想给 DeepSeek 加“眼睛”的普通用户。",
+      "level": "ok",
+      "risks": "它会把包含图片的消息发送给你所选的第三方视觉模型服务（如 OpenAI、智谱 GLM 等），这些服务能看到你的图片内容；API 密钥通过环境变量或 Harness 凭据服务保存，插件本身不写日志。它还会修改 DeepSeek Harness 的配置（通过补丁文件）并读取你设置的模型列表。除此之外没发现明显风险。",
+      "postInstallNotes": "需要先设置视觉模型的 API 密钥：最简单的办法是设置环境变量 VISION_OPENAI_API_KEY；也可以按 README 在 Web UI 的 Settings > Models 里配置第三方提供商的凭据。另外确保 DSH_HOME 一致，并且已经配置好原生 DeepSeek 的 API 密钥。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 在聊天界面里为图片消息自动搭配可选视觉模型（GLM/Qwen/GPT-4.1 等）的桥接插件：图片先由视觉模型理解，再由 DeepSeek 最终作答。",
+    "usage": {
+      "prompt_tokens": 3268,
+      "completion_tokens": 2983,
+      "total_tokens": 6251,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2495
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2628
+    }
+  }
+}

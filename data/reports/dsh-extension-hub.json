@@ -1,0 +1,37 @@
+{
+  "id": "dsh-extension-hub",
+  "analyzedAt": "2026-08-16T13:43:25.861Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/dsh-typert-protocol，README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-extension-hub@0.2.12",
+      "evidence": "dsh plugin --profile web add dsh-extension-hub@0.2.12"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness（DSH）的“扩展中心”。它能让你在网页设置界面里集中管理技能（skills）和 MCP 服务器（给模型接外部工具用的），可以新建、编辑、启停；还能导入 Claude 和 Codex 里的技能；同时自带一个插件管理器，能查看已装插件、开关、卸载，以及一个插件市场，可以浏览和安装社区插件（从 npm 或 GitHub 安装）。简单说，就是给 DSH 装一个“应用商店+控制台”。",
+      "level": "ok",
+      "risks": "它会修改你的 DSH 配置文件（cordis.patch.yml）来注册自己，并在你的用户目录下创建 ~/.dsh/extension-hub 文件夹用于存放它管理的插件代码。使用插件市场时，它会联网访问 npm 仓库和 GitHub 来搜索、下载插件，并且装上的第三方插件可能随后运行代码。除此以外没发现明显风险，不会偷偷上传你的数据。",
+      "postInstallNotes": "重启 dsh web，然后打开 设置 → 扩展管理（Settings → Extension Management）即可使用。",
+      "notes": "这是第三方开发者发布的插件，不是 DeepSeek 官方出品；用它安装其他插件时请确认来源可信。"
+    },
+    "summaryZh": "DSH 扩展中心：在网页端一站式管理技能、MCP 服务器和插件，并内置插件市场。",
+    "usage": {
+      "prompt_tokens": 3544,
+      "completion_tokens": 2587,
+      "total_tokens": 6131,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2139
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2904
+    }
+  }
+}

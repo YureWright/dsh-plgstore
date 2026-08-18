@@ -1,0 +1,37 @@
+{
+  "id": "dsh-checkpoint-rewind",
+  "analyzedAt": "2026-08-16T13:26:52.742Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，并在 peerDependencies 中依赖 @deepseek-ai/cordis 与多个 dsh-* 核心包，且 README 描述了完整的 DSH 插件行为。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-checkpoint-rewind",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，它能在每次要修改文件之前自动拍一张工作区的快照（用 git 对象或复制的方式）。之后你可以敲 /rewind 命令，选择恢复到某个检查点，把文件恢复回去，同时还会把会话倒回到当时的位置，这样模型看到的上下文和盘上的文件是一致的。它还支持预览恢复影响、撤销恢复、自动清理过期快照等。",
+      "level": "ok",
+      "risks": "它会读写你的工作区文件，可能创建一些 git 对象和保存快照数据到本地存储。它不会连接外部服务器（网络权限是 none）。所以没发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-checkpoint-rewind 为 DeepSeek Harness 提供工作区快照与一键回滚功能，/rewind 可以同时恢复文件和会话状态。",
+    "usage": {
+      "prompt_tokens": 4454,
+      "completion_tokens": 1742,
+      "total_tokens": 6196,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1399
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3814
+    }
+  }
+}

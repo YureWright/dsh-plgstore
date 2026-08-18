@@ -1,0 +1,37 @@
+{
+  "id": "@samecorner/dsh-client-ui-token-usage",
+  "analyzedAt": "2026-08-16T14:46:48.646Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@samecorner/dsh-client-ui-token-usage",
+      "evidence": "dsh plugin --profile web add @samecorner/dsh-client-ui-token-usage"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的插件。装好后，聊天界面顶部会多出一个「Token 用量」标签页，里面展示这次对话总共消耗了多少 token（可以理解成 AI 处理的字数/流量），包括输入、输出、缓存、推理等分类，还画了上下文占用进度条、每一轮的用量柱状图和累计费用曲线，也能按模型分开看，方便你了解对话的消耗情况。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在本地 DSH 网页里读取并展示会话的 token 用量数据，不会额外上传；安装时需从 npm 下载代码。",
+      "postInstallNotes": "重启 dsh web，顶部即出现「Token 用量」Tab；若之前在 cordis.patch.yml 手动 insert 过同 id，请删除该条目，避免重复挂载报错。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Web GUI 的 Token 用量分析插件，新增「Token 用量」Tab，展示整轮与逐轮的 token 明细、上下文占用和按模型拆分的数据。",
+    "usage": {
+      "prompt_tokens": 3604,
+      "completion_tokens": 2239,
+      "total_tokens": 5843,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1850
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2964
+    }
+  }
+}

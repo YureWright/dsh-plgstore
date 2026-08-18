@@ -1,0 +1,37 @@
+{
+  "id": "HR2AY/DSH-Plan-Graph",
+  "analyzedAt": "2026-08-17T12:01:55.833Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且描述为 out-of-tree DeepSeek Harness plugin bundle，这是 DSH 插件的核心证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/HR2AY/DSH-Plan-Graph.git",
+      "evidence": "From GitHub (sources, not built artifacts — the `prepare` script builds on install): `dsh plugin --profile demo add github:<you>/plan-graph-bundle#<sha>`."
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的会话窗口加了一个叫 'Plan Graph' 的标签页。它会把你和 AI 对话过程中的每一步工具调用和消息，自动画成一张可以缩放、拖动的流程图。每个节点是一张卡片，用不同颜色表示状态。你还可以右键节点收藏它、在对话里定位到对应位置，或者把节点信息复制下来。简单说，就是让你能直观地看到 AI 在会话里干了什么。",
+      "level": "caution",
+      "risks": "安装时会在你的电脑上运行一个 Node.js 构建脚本（scripts/build-client.mjs），用来生成插件的前端代码。这个脚本本身只是把源码转换一下，不会动你的文件，但如果你从不可信的地方下载了这个插件，脚本可能被恶意修改，所以尽量从官方仓库安装并固定版本。运行时，收藏的节点会以 JSON 格式保存在你浏览器的 localStorage 里，只存在你自己电脑上，不会上传。插件还会读取当前会话的对话数据来画图，但这些数据本来就在你屏幕上显示。没有发现它会偷偷上传数据或碰系统文件。",
+      "postInstallNotes": "如果从 GitHub 源码安装，pnpm 默认不允许运行 prepare 脚本，需要按 README 把 pnpm 提示的包名加入 profile 的 pnpm-workspace.yaml 的 allowBuilds 中（例如 allowBuilds: dsh-plan-graph: true），然后重新执行 add 命令安装。如果是通过 tarball 安装则无需此步骤。另外，如果希望 'Hide tool calls' 功能在聊天页生效，需要部署一个消费 chatNodeVisibility 服务的 ui-conversation；若希望启动后默认显示 Plan Graph，需要提供 conversationDefaultView 服务（这些是高级配置，普通用户可不做）。",
+      "notes": "项目尚未发布到 npm（README 标注 'once published'），因此 npm 安装暂不可用，目前推荐使用 git 或 tarball 方式。README 中的 GitHub 安装命令是占位符，实际应用 git+https://github.com/HR2AY/DSH-Plan-Graph.git 替换。该插件会通过 cordis.patch.yml 修改 DSH 配置，属于正常插件机制。另外，由于是较新的项目（stars 4），建议安装前查看代码。注意：README 中声称的定位功能依赖视图层的 data-chat-flow-key 锚点，如果未来 DSH 改动可能失效（但会静默降级）。"
+    },
+    "summaryZh": "为 DeepSeek Harness 会话添加可交互的调用流程图（Plan Graph），支持收藏节点、右键菜单与定位到对话。",
+    "usage": {
+      "prompt_tokens": 2554,
+      "completion_tokens": 5847,
+      "total_tokens": 8401,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5103
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1914
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "aaravarr/dsh-subagent-max",
+  "analyzedAt": "2026-08-17T13:14:13.200Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@aaravarr/dsh-subagent-max",
+      "evidence": "dsh plugin --profile web add @aaravarr/dsh-subagent-max"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了两项能力：一是启动子代理时可以临时指定用哪个模型（比如某个更快或更强的模型），不用跟着主代理走；二是一个网页界面，能同时打开多个浮动小窗口，实时看每个子代理正在想什么、调用了什么工具、输出了什么文字，还带一个汇总的子代理卡片列表。",
+      "level": "ok",
+      "risks": "它会在浏览器本地缓存一些子代理状态（如最后活动时间），并在屏幕上实时展示子代理的推理和输出内容，这些内容可能包含敏感对话，但只存在本地、不会自动上传；在共享屏幕或公共电脑上使用时要注意别让不该看到的人看到。",
+      "postInstallNotes": "无（配置均有默认值；如需调整 subagentProvider、toolName、backgroundMode、maxDepth，可参考 README 的 Config 段）。",
+      "notes": "客户端 UI 仅支持 web 平台；项目版本较新（0.1.1），功能可能随 DSH 更新而变化。"
+    },
+    "summaryZh": "一个 DSH 插件：可让子代理按次指定模型/提供商运行，并提供实时多面板直播子代理输出和状态卡片的网页界面。",
+    "usage": {
+      "prompt_tokens": 2247,
+      "completion_tokens": 2386,
+      "total_tokens": 4633,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1977
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1607
+    }
+  }
+}

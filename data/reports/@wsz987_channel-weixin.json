@@ -1,0 +1,37 @@
+{
+  "id": "@wsz987/channel-weixin",
+  "analyzedAt": "2026-08-17T11:11:04.536Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 依赖 @deepseek-ai/cordis，README 描述为 DeepSeek Harness 的微信渠道适配器，并给出 dsh plugin 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wsz987/channel-weixin",
+      "evidence": "pnpm add @wsz987/channel-weixin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能接入微信，通过微信官方的 iLink 协议，扫码登录后就能在 Harness 里收发文字和图片。属于实验阶段，还没在真实微信上完整验证过。",
+      "level": "ok",
+      "risks": "它会连接腾讯微信服务器，需要扫码登录。登录二维码会显示在 Harness Web 的设置页面里，如果你把 Harness 暴露给不信任的人，对方可能扫码登录你的微信。除此之外没发现明显风险。",
+      "postInstallNotes": "需要在 Harness 配置里加上渠道配置（可用 README 中的 YAML 示例），然后在 Harness Web 的「设置 → 渠道」里扫码完成登录。",
+      "notes": "状态为 experimental，真实微信环境尚未验证；依赖的 @wsz987/channel-control、@wsz987/channel-core 等包需确保已发布并可用。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供微信接入能力的频道适配器，支持扫码登录、收发文字和图片。",
+    "usage": {
+      "prompt_tokens": 1812,
+      "completion_tokens": 1569,
+      "total_tokens": 3381,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1211
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1172
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@yangzhe1991/dsh-web-enhance",
+  "analyzedAt": "2026-08-18T15:50:48.938Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 依赖 @deepseek-ai/dsh-client-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@yangzhe1991/dsh-web-enhance",
+      "evidence": "dsh plugin --profile web add @yangzhe1991/dsh-web-enhance"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面用的，装完之后能让对话页面用起来更顺手。它加了三个小功能：一是在每条对话旁边加两个浮动按钮，可以快速跳到当前这条回复的开头或结尾（再按一次就跳到上一条/下一条）；二是让“思考过程”默认全部展开，不用一条条点开看推理内容；三是在用官方 DeepSeek API 的时候，在页面上显示这次对话大概花了多少钱（按官方定价估算，还能区分峰谷时段）。这些都是纯前端的小工具，不动后台数据。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在你浏览器里操作 DSH 网页的页面元素，并用 localStorage 存一些设置（比如是否默认展开思考链）和费用统计信息，这些数据不会上传到外部服务器。",
+      "postInstallNotes": "安装后需要重启 web 进程（Ctrl+C 停掉 dsh web 再重新运行）并刷新浏览器标签页，功能才会生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页版增强小插件：对话逐轮跳转、思考链默认展开、官方 API 会话费用估算。",
+    "usage": {
+      "prompt_tokens": 3410,
+      "completion_tokens": 1869,
+      "total_tokens": 5279,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1449
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2770
+    }
+  }
+}

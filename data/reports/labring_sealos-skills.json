@@ -1,0 +1,37 @@
+{
+  "id": "labring/sealos-skills",
+  "analyzedAt": "2026-08-16T11:58:21.626Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且 README 提供了 dsh plugin 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/labring/sealos-skills.git",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add github:labring/sealos-skills"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一套“技能包”，能让 DeepSeek Harness（以及 Codex、Claude Code 等 AI 助手）学会把项目部署到 Sealos 云平台上。装好之后，你可以直接对 AI 说“把这个仓库部署到 Sealos 云”“给这个项目创建一个云数据库并配好连接串”等，它会帮你检查项目、准备 Dockerfile 等部署文件、构建镜像、连上云数据库和对象存储，最后把应用发布到 Sealos Cloud，还能在本地用只读画布查看部署的资源。总之就是让 AI 帮你完成从代码到上云的整套流程。",
+      "level": "caution",
+      "risks": "插件会通过 bash 运行 kubectl、sealos-cli 等命令，所以需要给 AI 开放很高的权限（danger-full-access），这意味着它理论上能读写你电脑上的大部分文件。登录 Sealos 云时，它会在你电脑的 home 目录下写入 ~/.sealos/kubeconfig 文件，里面保存着你的云平台访问凭据；部署过程中，你的项目代码、环境变量（比如数据库密码）会被发送到 Sealos 云端。如果你在敏感项目上使用，要留意这些信息会交给第三方云服务。",
+      "postInstallNotes": "安装后需要在 DSH 配置里给对应 profile 开启 sandbox_permissions: danger-full-access，否则登录写入 ~/.sealos/kubeconfig 会失败；同时保证 pnpm 在 PATH 中，然后重新启动 npx @deepseek-ai/dsh web。使用时需要先有一个 Sealos 云账号，并在 AI 执行部署时完成登录。",
+      "notes": "该插件同时支持 Codex、Claude Code 等多个 AI 工具，但本报告针对 DSH 安装方式。由于它需要完全访问权限，建议在可信环境使用，并留意部署内容会传到 Sealos 云。"
+    },
+    "summaryZh": "把 Sealos 云部署技能包装进 DeepSeek Harness 等 AI 助手，让 AI 帮你检查项目、构建镜像、连接云数据库并一键部署到 Sealos 云，还能在本地查看部署状态。",
+    "usage": {
+      "prompt_tokens": 3218,
+      "completion_tokens": 4059,
+      "total_tokens": 7277,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3451
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2578
+    }
+  }
+}

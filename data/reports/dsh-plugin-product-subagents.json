@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-product-subagents",
+  "analyzedAt": "2026-08-16T14:46:32.142Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 @deepseek-ai/cordis 和 @deepseek-ai/dsh-subagent 作为 peerDependencies，README 给出了在 dsh 配置文件中安装和注册的步骤，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-product-subagents",
+      "evidence": "npm i dsh-plugin-product-subagents"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能调用外部 AI 编程助手（比如 Claude Code、Codex、OpenCode 等）作为“子代理”。你可以给子代理分配角色（如代码审查、探索、调试），设置权限，让它们帮你完成子任务，还能控制它们能改动多少东西，防止乱改文件。它相当于一个桥梁，把外部 AI 工具安全地接入到 DSH 里。",
+      "level": "ok",
+      "risks": "它会启动你电脑上已安装的外部 AI 命令行工具，这些工具可能会读取你的项目文件并与外部 AI 服务通信。它还会修改你的 DSH 配置文件（~/.dsh/profiles/web/cordis.patch.yml）。如果设置了最高权限（full），子代理可能绕过权限检查，操作范围更广。",
+      "postInstallNotes": "装完后，你需要在 ~/.dsh/profiles/web/cordis.patch.yml 中添加一行配置（README 中有示例），并确保电脑上已经安装并登录了至少一个外部 AI 命令行工具（如 claude、codex 或 ACP 兼容的工具），然后重启 DeepSeek Harness 才能生效。",
+      "notes": "该插件通过 npm 包安装，但需要手动编辑配置文件来注册，未提供 `dsh plugin add` 一键安装命令。另外，它依赖外部 AI 服务，使用时会向这些服务发送数据，请确认你接受这些服务的使用条款。"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加基于角色的外部 AI 子代理（Claude Code / Codex / ACP），支持权限控制、会话恢复和委派。",
+    "usage": {
+      "prompt_tokens": 3256,
+      "completion_tokens": 2743,
+      "total_tokens": 5999,
+      "prompt_tokens_details": {
+        "cached_tokens": 3200
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2247
+      },
+      "prompt_cache_hit_tokens": 3200,
+      "prompt_cache_miss_tokens": 56
+    }
+  }
+}

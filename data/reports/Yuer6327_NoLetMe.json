@@ -1,0 +1,37 @@
+{
+  "id": "Yuer6327/NoLetMe",
+  "analyzedAt": "2026-08-17T11:56:14.189Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，devDependencies 含 @deepseek-ai/cordis 和 dsh-client-* 系列，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Yuer6327/NoLetMe.git",
+      "evidence": "Install directly from GitHub (the `prepare` script builds `lib/` on install): `dsh plugin --profile demo add github:Yuer6327/NoLetMe`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件在 DeepSeek Harness 的网页聊天界面右侧加一个小面板，实时统计模型在“思考”时用的关键词，比如“We need”“Let's”代表高效直接，“Let me”“I think”代表犹豫，还有中性复述。通过颜色和进度条让你直观看到模型当前是哪种思考风格。数据只存在你浏览器本地，不会上传。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取模型推理文本并统计关键词，数据仅保存在你浏览器的 localStorage 中，不上传任何服务器。",
+      "postInstallNotes": "装完后运行 dsh web 启动网页界面。若使用 pnpm ≥10 安装，需按 README 在 pnpm-workspace.yaml 里将 dsh-noletme 加入 allowBuilds，再重新执行 add 命令。",
+      "notes": "无"
+    },
+    "summaryZh": "NoLetMe 是一个 DSH 网页插件，在聊天界面实时展示模型推理关键词统计，帮助你看懂模型的思考风格（高效/犹豫/中性）。",
+    "usage": {
+      "prompt_tokens": 3705,
+      "completion_tokens": 2780,
+      "total_tokens": 6485,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2365
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3065
+    }
+  }
+}

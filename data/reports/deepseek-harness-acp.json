@@ -1,0 +1,37 @@
+{
+  "id": "deepseek-harness-acp",
+  "analyzedAt": "2026-08-16T13:46:11.494Z",
+  "result": {
+    "classification": {
+      "type": "script",
+      "confidence": 0.95,
+      "reason": "这是一个独立的 ACP 服务器 CLI，未声明 dsh.bundle/client 等插件入口，不能作为 DSH 插件安装。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明（仅提供 npm 全局安装，如 npm install -g deepseek-harness-acp）"
+    },
+    "evaluationReport": {
+      "intro": "这是一个基于 DeepSeek Harness 的独立 ACP（Agent Client Protocol）服务器。你可以把它接到支持 ACP 的软件（如 Zed 编辑器、FreeBuddy）里，从而在这些软件中使用 DeepSeek 模型对话。它支持实时流式输出、显示思考过程、工具调用状态更新、会话恢复等功能。只需要设置一个 DEEPSEEK_API_KEY 环境变量就能启动。",
+      "level": "ok",
+      "risks": "它会读取你设置的 DEEPSEEK_API_KEY，并把你的对话内容发送到 DeepSeek 的服务器；根据你的指令，它可能读写电脑上的文件、执行命令（依赖里有沙箱相关组件）；会话记录可能保存在本地。这些都属于正常功能范围，没有发现额外可疑行为。",
+      "postInstallNotes": "需要设置环境变量 DEEPSEEK_API_KEY（必填），可选设置 DEEPSEEK_BASE_URL 和 DSH_PERMISSION_MODE（默认 workspace-write）。",
+      "notes": "经评估可能并非 DSH 插件（理由：它是独立的 ACP 服务器，通过 npm 全局安装，不能通过 dsh plugin add 安装）。"
+    },
+    "summaryZh": "基于 DeepSeek Harness 的独立 ACP 服务器，为 Zed 等客户端提供 DeepSeek 模型的实时流式对话与工具调用能力。",
+    "usage": {
+      "prompt_tokens": 3519,
+      "completion_tokens": 1687,
+      "total_tokens": 5206,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1271
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2879
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-skin-center",
+  "analyzedAt": "2026-08-16T14:51:10.052Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，且代码调用 DSH 客户端接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-skin-center",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-skin-center"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 的网页图形界面装的一个“皮肤中心”。装好之后，你不需要敲命令，直接在设置页面里就能看到所有可用的皮肤（比如复古的 qq98、ths、xp 等），可以点一下先试穿看看效果，也可以直接点应用切换皮肤；另外还能调节背景遮挡和模糊程度，让界面更好看。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会修改 DSH 的配置文件（cordis.patch.yml）和 profiles 目录下的皮肤链接，这是切换皮肤所必需的；皮肤代码运行在你的浏览器页面里，如果使用第三方皮肤，那些代码也能访问页面内容，但本插件本身没有收集数据或连外部服务器的行为。",
+      "postInstallNotes": "装完后建议再安装 @linxin666/dsh-skins 皮肤合集包，否则皮肤中心只会显示官方默认皮肤；不需要额外配置。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH Web 界面内集成的皮肤中心插件，支持皮肤列表、实时试穿、一键切换和背景模糊调节。",
+    "usage": {
+      "prompt_tokens": 3624,
+      "completion_tokens": 2204,
+      "total_tokens": 5828,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1807
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2984
+    }
+  }
+}

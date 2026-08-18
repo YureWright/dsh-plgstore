@@ -1,0 +1,37 @@
+{
+  "id": "Noob-stupid/dsh-github-login",
+  "analyzedAt": "2026-08-17T11:41:10.719Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle（cordis.patch.yml）且 README 提供了 dsh plugin add 安装命令，符合 DSH 宿主端插件的定义。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Noob-stupid/dsh-github-login.git",
+      "evidence": "dsh plugin --profile web add github:Noob-stupid/dsh-github-login"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 GitHub 登录小工具，打开一个图形窗口就能完成 GitHub 授权登录，不用敲命令行。登录后会把令牌存到本地，同时写入 GitHub 命令行工具的配置，让 gh 命令也直接能用。它还可以作为 DSH 插件装进宿主，提供查询登录状态、唤起登录窗口的接口。",
+      "level": "ok",
+      "risks": "会在你电脑上写入登录令牌（~/.dsh/github-auth.json）和 GitHub 命令行配置（~/.config/gh/hosts.yml）。令牌保存在本地，如果电脑被别人拿到，可能被用来访问你的 GitHub 账号权限。它是第三方工具，代码来源需自行确认，但未发现连接到除 GitHub 官方外的外部服务器。",
+      "postInstallNotes": "如果之前用 gh 登录过且系统钥匙串里有旧凭证，需要先执行 gh auth logout 清理，否则 gh 会优先使用旧凭证。",
+      "notes": "经评估确实是 DSH 插件，但属于第三方发布，建议安装前浏览一下源码。"
+    },
+    "summaryZh": "通过图形窗口完成 GitHub 登录的 DSH 插件，登录后同步状态到 gh 命令行。",
+    "usage": {
+      "prompt_tokens": 2593,
+      "completion_tokens": 919,
+      "total_tokens": 3512,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1953
+    }
+  }
+}

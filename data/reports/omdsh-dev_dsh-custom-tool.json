@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-custom-tool",
+  "analyzedAt": "2026-08-17T11:16:50.504Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了明确的 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/omdsh-dev/dsh-custom-tool/archive/refs/tags/v0.1.2.tar.gz",
+      "evidence": "dsh plugin --profile web add https://github.com/omdsh-dev/dsh-custom-tool/archive/refs/tags/v0.1.2.tar.gz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让使用 DeepSeek Harness（DSH）的人可以自己编写小工具（JavaScript 代码）加进 AI 助手里，不用改程序本身。你可以在设置页面里用类似 VS Code 的编辑器写工具，AI 模型也能在对话中自己创建和删除工具（新建的工具会立刻生效）。你写的工具在独立的受限环境里运行，有内存、超时等限制，不能乱碰电脑上的东西。",
+      "level": "ok",
+      "risks": "它会在设置中保存你写的工具代码；如果允许网络，工具可以发起网络请求；工作区范围的工具可以读写当前工作区内的文件（但会被限制在根目录内，不能越界）；模型创建全局工具时需要你批准，但创建工作区工具则不需要。整体限制较严格，未发现明显风险。",
+      "postInstallNotes": "安装后需运行 `dsh web` 重启服务器；并确保宿主 Harness 的 `WEB_SETTINGS_NAMESPACES` 允许列表包含 `'custom-tools'`（上游 commit d6ea05b5 已加入），否则设置保存会被静默拒绝（settings-not-exposed）。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 设置界面里让用户和模型都能用 Monaco 编辑器创建、管理自定义 JavaScript 工具，并在受限沙箱中执行的插件。",
+    "usage": {
+      "prompt_tokens": 4020,
+      "completion_tokens": 2677,
+      "total_tokens": 6697,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2189
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3380
+    }
+  }
+}

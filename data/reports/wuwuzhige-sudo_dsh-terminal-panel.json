@@ -1,0 +1,37 @@
+{
+  "id": "wuwuzhige-sudo/dsh-terminal-panel",
+  "analyzedAt": "2026-08-17T13:09:06.510Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 字段并引用 @deepseek-ai/dsh-client-ui-slots，README 提供了 dsh 插件安装命令，功能与 DSH 接口对接。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/wuwuzhige-sudo/dsh-terminal-panel.git",
+      "evidence": "dsh plugin --profile web add <your-account>/dsh-terminal-panel"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 dsh 的网页聊天界面加上了两个新标签页：一个终端（可以像在电脑前一样敲命令）和一个文件管理器（用来上传下载文件）。你可以在浏览器里直接操作运行 dsh 的那台电脑，也可以连到其他 SSH 服务器。",
+      "level": "caution",
+      "risks": "它会在你的电脑上执行你输入的任何命令，等于给网页开了个“后门”。如果你把 dsh 网页服务暴露到局域网或公网，又没有加密码，别人就能控制你的电脑。另外，如果设置了 SSH 密码，会保存在你的主目录下的配置文件里（权限 0600）。通过 SFTP 传输文件有单文件 64MB 限制。",
+      "postInstallNotes": "需要编辑 ~/.dsh/profiles/web/cordis.patch.yml 添加插件配置（例如 trustedHosts），然后重启 dsh-web 服务，并硬刷新网页。若使用 SSH 模式，还需生成密钥并添加到 authorized_keys。",
+      "notes": "安装命令中的 <your-account> 需要替换为实际 GitHub 用户名 wuwuzhige-sudo；该插件功能强大，建议仅在本机使用或通过认证代理保护。"
+    },
+    "summaryZh": "给 dsh 网页版增加终端和 SFTP 面板，方便在浏览器里远程执行命令和传文件。",
+    "usage": {
+      "prompt_tokens": 3177,
+      "completion_tokens": 3029,
+      "total_tokens": 6206,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2583
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2537
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "chenw2759-wq/dsh-plugin-healthcheck",
+  "analyzedAt": "2026-08-17T11:31:50.631Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，且 peerDependencies 包含 @deepseek-ai/dsh-client-runtime 等核心包，README 提供了安装方法，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/chenw2759-wq/dsh-plugin-healthcheck.git",
+      "evidence": "git clone https://github.com/chenw2759-wq/dsh-plugin-healthcheck.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件就像一个“插件体检医生”，帮你检查 DSH 里已安装的插件有没有问题，比如缺文件、依赖不对、配置冲突、甚至包含恶意代码。它会在隔离环境里试运行插件，发现小问题能一键修复，严重问题能自动回滚到安全状态，还能把复杂问题打包成提示词交给 AI 助手处理。它严格遵守只改插件和配置、绝不碰 DSH 核心代码。",
+      "level": "ok",
+      "risks": "它会读取你 DSH 的插件和配置文件（一般在 ~/.dsh 下），运行检查时会在子进程里启动插件（使用独立端口，不影响当前运行）。如果发现问题，它可能会自动修改插件代码或配置文件，但每次都会弹窗要你确认。它不会修改 DSH 安装本体，但建议使用前备份重要配置以防万一。",
+      "postInstallNotes": "安装后需要重启一次 DSH 后端，然后打开左下角设置 → “插件检测”即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件健康检查工具：静态分析、配置组合、隔离试跑、木马扫描一条龙，发现即修复或回滚，还能把复杂问题打包给 AI 处理。",
+    "usage": {
+      "prompt_tokens": 4605,
+      "completion_tokens": 1898,
+      "total_tokens": 6503,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1470
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3965
+    }
+  }
+}

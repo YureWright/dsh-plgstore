@@ -1,0 +1,37 @@
+{
+  "id": "@fang2hou/dsh-locale-ja",
+  "analyzedAt": "2026-08-16T13:26:23.808Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-client-locale，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@fang2hou/dsh-locale-ja",
+      "evidence": "dsh plugin --profile web add @fang2hou/dsh-locale-ja"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）网页界面用的日语语言包。装上之后，你可以在界面的语言设置里选择“日本語”，整个界面就会变成日文，还会自动用你电脑上的日文字体来显示。你选的语言会被记住，刷新页面也不会丢。如果不想用了，把插件删掉就恢复原样，很干净。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只改界面文字和字体，不碰个人文件，也不连外部服务器。",
+      "postInstallNotes": "无。装完后到 DSH 的 设置 → 语言 里选“日本語”就行。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 的 Web UI 提供日语界面和日语字体的插件。",
+    "usage": {
+      "prompt_tokens": 2895,
+      "completion_tokens": 679,
+      "total_tokens": 3574,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 352
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2255
+    }
+  }
+}

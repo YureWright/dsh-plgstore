@@ -1,0 +1,37 @@
+{
+  "id": "dsh-vibe-math",
+  "analyzedAt": "2026-08-18T14:52:44.166Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle 配置，README 给出 dsh plugin add 安装命令，且依赖 DSH 宿主插件服务，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vibe-math",
+      "evidence": "dsh plugin --profile <你的 profile> add dsh-vibe-math"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的数学解题工具包。安装后会多出两个 AI 预设（vibe-math-v1 和 vibe-math-v2），它们会让多个 AI 代理分工合作：一个负责拆解问题、多个负责求解、至少三个负责交叉验证并辩论，最后把可信结论存下来。你只需要用大白话描述数学题，它就能自动调度代理完成证明或求解，还支持中途暂停、手动干预、断点续跑。",
+      "level": "ok",
+      "risks": "它会在你的工作区里创建项目文件夹、读写文件（如 qs.csv、json 状态文件），并可能调用 bash/pwsh、文件搜索等工具执行子代理任务。这些操作基本限制在 DSH 沙箱和项目目录内，没有明显越权或隐私收集行为。",
+      "postInstallNotes": "安装后需重启 DSH，新建会话时在预设选择器里选择「Vibe Math」或「Vibe Math V2」；建议确认 DSH 版本不低于 0.1.0-rc.5，否则可能无法正常挂载。",
+      "notes": "无"
+    },
+    "summaryZh": "一个在 DeepSeek Harness 内使用的多代理数学解题与验证框架，一键安装两个 AI 预设，自动拆题、多代理求解、交叉验证并支持断点续跑。",
+    "usage": {
+      "prompt_tokens": 5288,
+      "completion_tokens": 888,
+      "total_tokens": 6176,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 453
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4648
+    }
+  }
+}

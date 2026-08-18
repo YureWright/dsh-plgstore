@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-at-file",
+  "analyzedAt": "2026-08-16T11:46:36.784Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，属于标准 DSH 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/omdsh-dev/dsh-at-file/archive/refs/tags/v0.6.0.tar.gz",
+      "evidence": "dsh plugin --profile web add https://github.com/omdsh-dev/dsh-at-file/archive/refs/tags/v0.6.0.tar.gz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 网页界面用的。你可以在输入框里打一个 @，它会弹出一个小菜单，帮你搜当前工作区里的文件和文件夹。选中后会把路径插进去，生成一个引用标记。它只传路径给 AI 助手，不会自动打开或读取文件内容，所以即使是大文件或 PDF 也只当路径对待。",
+      "level": "ok",
+      "risks": "插件会扫描并索引当前工作区的文件和目录名称（不读内容），这些路径会作为引用发送给 AI 助手。它还会在 DSH web 的配置里保存你的文件过滤规则。除此之外没发现明显风险。",
+      "postInstallNotes": "装完需要重启 dsh web 让插件生效。如果想调整索引上限或忽略目录，可以编辑 ~/.dsh/profiles/web/cordis.patch.yml 加配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 网页版的 @ 路径引用插件，用来搜索并插入工作区文件/目录路径，不读取文件内容。",
+    "usage": {
+      "prompt_tokens": 3380,
+      "completion_tokens": 2401,
+      "total_tokens": 5781,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1984
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2740
+    }
+  }
+}

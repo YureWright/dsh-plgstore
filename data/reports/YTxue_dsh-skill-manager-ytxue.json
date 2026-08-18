@@ -1,0 +1,37 @@
+{
+  "id": "YTxue/dsh-skill-manager-ytxue",
+  "analyzedAt": "2026-08-17T11:39:54.534Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 等核心包，且 README 给出 dsh plugin add 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/YTxue/dsh-skill-manager-ytxue.git",
+      "evidence": "dsh plugin --profile web add git+https://github.com/YTxue/dsh-skill-manager-ytxue（带仓库地址，不经过 npm 同名包）"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的 Web 插件，用来在设置侧边栏里管理你的技能（skill）。它能列出、启用、停用技能，检查技能是否符合 DSH 的规范（比如名字要 kebab-case、要有描述），不合规的能自动修复；还能从文件夹批量导入技能，重名时先问你怎么处理，支持在“技能池”和“已启用目录”之间移动。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下的 ~/.dsh 里读写文件，包括 skills 和 skill-pool 目录，可能重命名、覆盖或移动技能文件；还会写日志和检查状态文件。所有操作都在本机，没有外部网络请求。",
+      "postInstallNotes": "安装后需要在 DSH 配置中挂载（例如在 cordis.patch.yml 追加条目或直接使用 dsh plugin add），然后重启 DSH。可选：在 settings.yaml 里配置 skill-manager-ytxue.projectRoots 来补充项目级目录。",
+      "notes": "注意 npm 上有一个无关的第三方包叫 dsh-skill-manager，千万不要装错，请以本仓库 git 地址安装。"
+    },
+    "summaryZh": "DSH 设置侧边栏的技能管理面板：支持技能列表、启用/停用、规范检查与自动修复、文件夹批量导入和重名处理。",
+    "usage": {
+      "prompt_tokens": 5054,
+      "completion_tokens": 900,
+      "total_tokens": 5954,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 418
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4414
+    }
+  }
+}

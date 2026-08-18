@@ -1,0 +1,37 @@
+{
+  "id": "ArvinQi/dsh-mcp",
+  "analyzedAt": "2026-08-17T13:13:02.005Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 配置（inject 引用了 @deepseek-ai/* 核心包），且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/ArvinQi/dsh-mcp.git",
+      "evidence": "dsh plugin --profile web add git+https://github.com/ArvinQi/dsh-mcp.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加一个图形化的 MCP 管理页面。你可以用它来添加、编辑、启动/停止、删除 MCP 服务器，还能单独勾选要加载哪些工具。它支持按需检索工具（tool search），这样不会一次性把上百个工具都塞给模型，能省很多 token，也不会让上下文爆掉。它还让工具列表保持稳定，提高缓存命中率，加快响应速度。",
+      "level": "ok",
+      "risks": "它会读写 DSH 的配置文件（比如 ~/.dsh 下的 profiles），并在本地凭据文档里保存服务器密钥和 OAuth token。如果你连接的 MCP 服务器在公网上，这些信息会按 MCP 协议发送给对应服务器（这是正常功能）。OAuth 授权时会打开浏览器让你登录，授权码走本地回环地址。目前看数据都存在本地，没有发现偷偷上传或访问隐私文件的行为。",
+      "postInstallNotes": "安装后，需要在 ~/.dsh/profiles/web/cordis.patch.yml 中追加插件注册配置（具体见 README），然后重启 dsh web，并在浏览器里硬刷新（Cmd/Ctrl+Shift+R）才能看到设置页。",
+      "notes": "README 中 npm 安装方式标注为“发布到 npm 后”，可能还没有发布到 npm 官方源，用 git 方式更稳妥。该插件零 npm 依赖，运行时从 DSH profiles 目录解析 @deepseek-ai/* 内部包，建议确保 DSH 环境完整。"
+    },
+    "summaryZh": "dsh-mcp 为 DeepSeek Harness 提供 MCP 服务器的可视化管理与按需工具检索，节省 token、稳定工具列表。",
+    "usage": {
+      "prompt_tokens": 3703,
+      "completion_tokens": 2373,
+      "total_tokens": 6076,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1845
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3063
+    }
+  }
+}

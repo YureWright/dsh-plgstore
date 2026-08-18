@@ -1,0 +1,37 @@
+{
+  "id": "dsh-lan-pass",
+  "analyzedAt": "2026-08-16T14:48:31.414Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，且 README 提供了 dsh plugin 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-lan-pass",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫 dsh-lan-pass，它让你在同一个局域网里，用手机或平板输入密码就能访问电脑上运行的 DSH 网页界面（地址是 http://电脑IP:3080）。电脑本地访问不需要密码，手机/平板访问时会要求输入密钥。它还内置了一个小补丁，解决浏览器兼容问题，登录页面也适配了手机屏幕。默认密码是公开的，装好后需要自己改。",
+      "level": "ok",
+      "risks": "插件会读取你电脑上的配置文件（%USERPROFILE%\\.dsh\\.credentials.yaml），里面可能有密钥；README 建议手动放行防火墙的 3080 端口，这会让局域网内其他设备能连到这个端口；访问时密码通过明文 HTTP 传输，在不可信网络下可能被偷看；默认密钥是公开的，不改的话等于没锁；未认证的设备理论上可以直接调用一些后台接口，但进不了界面。这些风险 README 都写了，适合在可信的家庭局域网使用。",
+      "postInstallNotes": "装完后需要修改默认密钥：设置环境变量 DSH_LAN_PASSWORD，或者在 %USERPROFILE%\\.dsh\\.credentials.yaml 里加一行 DSH_LAN_PASSWORD: 你的新密钥，然后重启 DSH。启动时要用命令 dsh web --host 0.0.0.0 才能让局域网访问，并且需要放行防火墙 TCP 3080 端口。",
+      "notes": "README 给出的安装命令是本地路径 link:/path/to/lan-pass，但该插件已发布在 npm 上，可以用 dsh plugin add dsh-lan-pass 安装。另外 README 提到它内置了 randomUUID polyfill，替代 dsh-web-lan-access 的作用，所以可能和其他类似插件冲突。默认密钥 deepseekyyds 是公开的，务必尽快修改。"
+    },
+    "summaryZh": "DSH 局域网密码门禁插件，让手机/平板在局域网内输密钥访问本机 3080 端口的 DSH Web UI。",
+    "usage": {
+      "prompt_tokens": 1951,
+      "completion_tokens": 3035,
+      "total_tokens": 4986,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2482
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1311
+    }
+  }
+}

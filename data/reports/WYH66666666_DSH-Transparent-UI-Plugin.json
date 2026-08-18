@@ -1,0 +1,37 @@
+{
+  "id": "WYH66666666/DSH-Transparent-UI-Plugin",
+  "analyzedAt": "2026-08-16T11:54:55.784Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 字段，依赖大量 @deepseek-ai/dsh-client-* 核心包，且 README 描述为 DSH 网页端主题插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/WYH66666666/DSH-Transparent-UI-Plugin.git",
+      "evidence": "git clone --depth 1 --branch v1.1.0 https://github.com/WYH66666666/DSH-Transparent-UI-Plugin.git"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页端换玻璃质感的主题插件，能让界面变成磨砂玻璃效果，支持调整模糊度、背景壁纸、粒子动画等，不喜欢可以一键关闭，完全还原原生界面。",
+      "level": "caution",
+      "risks": "安装脚本会从 GitHub 下载并执行，修改 DSH 的配置文件（cordis.patch.yml）和链接 node_modules；如果脚本被篡改可能影响你的 DSH 环境。建议查看脚本内容后再执行。",
+      "postInstallNotes": "刷新 Web 界面即可，默认开启；可在「设置 → 通用设置 → 外观」中调节各项效果。",
+      "notes": "注意：官方安装方式并非标准 dsh plugin add 命令，而是 PowerShell 脚本或手动链接；请确认脚本来源可靠。"
+    },
+    "summaryZh": "Aqua 玻璃质感主题插件，让 DeepSeek Harness 网页端变成可自定义的磨砂玻璃界面，支持背景、模糊度、粒子动画等，一键开关无损还原。",
+    "usage": {
+      "prompt_tokens": 2590,
+      "completion_tokens": 2039,
+      "total_tokens": 4629,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1640
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1950
+    }
+  }
+}

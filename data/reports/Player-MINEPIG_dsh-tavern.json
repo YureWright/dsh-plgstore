@@ -1,0 +1,29 @@
+{
+  "id": "Player-MINEPIG/dsh-tavern",
+  "analyzedAt": "2026-08-17T11:43:44.027Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 并依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Player-MINEPIG/dsh-tavern.git",
+      "evidence": "git clone https://github.com/Player-MINEPIG/dsh-tavern.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness（DSH）能使用 SillyTavern 风格的预设、角色卡和世界书，相当于给 DSH 加了一个 Tavern 内容兼容层。你可以在 DSH 网页里通过一个悬浮球菜单导入和管理这些内容，并针对每个会话绑定。插件不会复制 SillyTavern 的界面，只是读取它的数据格式并应用到模型请求中。",
+      "level": "ok",
+      "risks": "插件会在 DSH 的 profile 目录下创建数据文件夹（存放预设、角色卡、世界书等），并在网页里注入一个 Tavern 界面。它通过本机 API 提供资源访问，没有独立的账号鉴权，所以如果 DSH Web 被暴露到局域网或公网，其他进程可能访问到这些资源。另外，它会把第三方内容（角色卡、世界书等）作为模型指令发送，这些内容可能包含 prompt injection，建议只导入可信来源并审阅内容。不要把 API 密钥等秘密写进资源文件。",
+      "postInstallNotes": "安装完成后需要重启 dsh web 才能生效；建议确认 DSH Web 仅监听 127.0.0.1，不要直接暴露到公网。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 SillyTavern 风格预设、角色卡与世界书的兼容与加载能力的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 9797,
+      "completion_tokens": 4739,
+      "total_tokens": 14536
+    }
+  }
+}

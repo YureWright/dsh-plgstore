@@ -1,0 +1,37 @@
+{
+  "id": "dsh-context-lens",
+  "analyzedAt": "2026-08-16T13:41:05.452Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖了 @deepseek-ai/cordis，且 README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-context-lens",
+      "evidence": "dsh plugin --profile web add dsh-context-lens"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个‘请求上下文分析器’，专门为 DeepSeek Harness 平台设计。它能实时监控每次向 AI 模型发送请求时的上下文信息，比如系统提示词、工具设置、模型配置等，并且对比上一次请求，告诉你哪些地方发生了变化。它还会显示缓存重用的情况——也就是这次请求有多少是从之前的缓存中读取的，帮助你看懂为什么速度变快或变慢。你可以在对话界面切换到一个‘请求上下文’标签页，每一条请求都会显示一个简洁的卡片，方便你检查问题。",
+      "level": "ok",
+      "risks": "它只会在 DeepSeek Harness 的界面中显示会话相关的信息，不访问个人文件，也不会上传任何数据到外部服务器。它本身是一个‘观察者’，不会修改你的模型请求或会话内容，所以风险很小。唯一需要留意的是，它会读取并显示会话日志中的技术细节，如果你在共享屏幕上查看对话，可能会暴露一些上下文内容。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DeepSeek Harness 插件，用于分析每次模型请求的上下文变化与缓存重用情况，帮助用户快速定位问题。",
+    "usage": {
+      "prompt_tokens": 3678,
+      "completion_tokens": 3460,
+      "total_tokens": 7138,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3066
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3038
+    }
+  }
+}

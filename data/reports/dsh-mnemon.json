@@ -1,0 +1,37 @@
+{
+  "id": "dsh-mnemon",
+  "analyzedAt": "2026-08-16T13:22:27.600Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并且依赖了 @deepseek-ai/cordis 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mnemon",
+      "evidence": "dsh plugin --profile web add dsh-mnemon"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的本地记忆插件。它把记忆分成三层：运行时记忆（每次对话都会带上）、项目文档（可搜索）、记忆空间（按需回忆）。数据都存在本地电脑上，还可以和其他也装了 Mnemon 的代理共享长期记忆。它需要一个叫 Mnemon 的辅助程序才能工作。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的本地文件，比如 ~/.mnemon 和 $DSH_HOME/settings.yaml，这里面存着你的对话记忆和文档。如果你选择和其他代理共享记忆空间，那些代理也可能看到这些内容。另外安装时需要下载 Mnemon 程序。",
+      "postInstallNotes": "需要先安装 Mnemon（见 README），然后在 DSH 里打开 Memory System 并完成首次设置，比如创建记忆空间和确认存储路径。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供本地优先、可跨代理共享的三层记忆系统（运行时记忆、项目文档、记忆空间）的插件。",
+    "usage": {
+      "prompt_tokens": 4169,
+      "completion_tokens": 1201,
+      "total_tokens": 5370,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 836
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3529
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@meomeo-dev/dsh-voice-tts",
+  "analyzedAt": "2026-08-17T11:11:37.828Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，并 peerDependencies 依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也明确是 DSH 的 TTS bundle。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@meomeo-dev/dsh-voice-tts",
+      "evidence": "独立 npm bundle(`@meomeo-dev/dsh-voice-tts`)"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 把文字变成语音。它会把 AI 的回复文本交给火山引擎或硅基流动的语音合成服务，生成音频播放或保存成文件。你可以在 Web 面板里切换服务商、选音色、调整语速和音量，还支持中英文混合时分别用不同音色朗读。",
+      "level": "ok",
+      "risks": "使用第三方语音合成服务时，AI 回复的文本内容会发送到火山引擎/硅基流动的服务器；API key 保存在本地 .credentials.yaml（权限 0600），不会写进会话记录；如果选择落盘模式，会在机器上生成音频文件。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要先用 /dsh-voice-tts-key set 为所用 provider 设置 API key，再在设置或 /dsh-voice-tts config 里配置 provider、delivery 等参数。",
+      "notes": "README 指出 stream 交付模式的前端播放尚未实现；volcengine 技术文档标有“过期 D+90 天”（2026-08-14 起），使用时最好核对最新文档。"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加文本转语音（TTS）能力，支持火山引擎和硅基流动多 provider、多音色、双语播报与多种交付方式。",
+    "usage": {
+      "prompt_tokens": 3596,
+      "completion_tokens": 2295,
+      "total_tokens": 5891,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1838
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2956
+    }
+  }
+}

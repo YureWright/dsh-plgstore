@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-langfuse",
+  "analyzedAt": "2026-08-16T13:36:57.947Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖多个 @deepseek-ai/dsh-* 核心包，README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-langfuse",
+      "evidence": "dsh plugin --profile web add dsh-plugin-langfuse"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给用 DeepSeek Harness 跑任务的人用的。它能把每次跑的每一个步骤（比如调用模型、调用工具）自动记录下来，并发送到 Langfuse 这个可视化监控平台，让你在网页上查看每个请求是怎么处理的、花多少钱、用了多少时间、结果如何。它还支持把用户的反馈（好评/差评）作为评分打上去，方便你在 Langfuse 里对比不同版本的效果。简单说，装上它，你的 AI 任务就有了一个可视化仪表盘。",
+      "level": "caution",
+      "risks": "它会读取你设置的环境变量（LANGFUSE_PUBLIC_KEY、LANGFUSE_SECRET_KEY），并在你运行 dsh 时把每个会话的追踪记录（包括模型输入、输出、工具调用等）发送到你配置的 Langfuse 服务器（默认是 Langfuse 云端，可能位于境外）。这些数据会离开你的电脑，别人（如 Langfuse 服务商）可能看到。请确保你只追踪不敏感的内容，并确认你信任该项目。除此之外，它不会读写你电脑上的其他文件，也没有安装脚本自动运行。",
+      "postInstallNotes": "安装后需要设置环境变量 LANGFUSE_PUBLIC_KEY 和 LANGFUSE_SECRET_KEY（可选 LANGFUSE_HOST 指定区域），然后重启正在运行的 dsh 实例（dsh --profile web）。也可以用 dsh plugin --profile web remove dsh-plugin-langfuse 卸载。",
+      "notes": "社区插件，非官方维护。依赖的 @deepseek-ai/dsh-* 包版本为 0.1.0-rc.6（候选版本），可能随上游更新而变化。要求 Node.js ^22.19 或 >=24。默认 LANGFUSE_HOST 为 EU 区域，请注意密钥与区域匹配。"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加 Langfuse 可观测性，自动把每轮模型/工具调用导出为 OpenTelemetry 追踪，并支持反馈评分与 fork 血统记录。",
+    "usage": {
+      "prompt_tokens": 4015,
+      "completion_tokens": 4132,
+      "total_tokens": 8147,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3556
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3375
+    }
+  }
+}

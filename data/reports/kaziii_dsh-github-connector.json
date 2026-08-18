@@ -1,0 +1,37 @@
+{
+  "id": "kaziii/dsh-github-connector",
+  "analyzedAt": "2026-08-17T11:47:33.655Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 依赖 @deepseek-ai/cordis 等 dsh 核心包，README 提供 dsh plugin 安装命令，代码明显对接 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-github dsh-github-rest dsh-tool-github dsh-github-connect dsh-ui-github",
+      "evidence": "dsh plugin --profile web add dsh-github dsh-github-rest dsh-tool-github dsh-github-connect dsh-ui-github"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness（dsh）里直接连接 GitHub 账号，不用离开对话就能创建 PR、让 AI 审查 PR、合并 PR，还能搜索仓库、读取 issue 等。连接账号时走 GitHub 官方授权流程，不用手动复制粘贴 token。",
+      "level": "ok",
+      "risks": "需要授权你的 GitHub 账号，插件会代表你调用 GitHub API，因此能访问你账号下可见的仓库和操作权限。token 只保存在本地宿主环境，但注意你授权的范围（需要 repo 权限）。",
+      "postInstallNotes": "安装后需在 dsh 设置页点击“连接 GitHub”完成 Device Flow 授权；如果用 CLI/headless 模式，则需设置 GITHUB_TOKEN 环境变量。",
+      "notes": "该仓库 package.json 标记为 private，实际安装的是其子包（README 中的多个 npm 包），并非直接安装仓库本身。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 GitHub 连接能力，支持在对话中创建、审查和合并 PR。",
+    "usage": {
+      "prompt_tokens": 1742,
+      "completion_tokens": 2111,
+      "total_tokens": 3853,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1704
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1102
+    }
+  }
+}

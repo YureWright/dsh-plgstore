@@ -1,0 +1,37 @@
+{
+  "id": "dsh-config-manager",
+  "analyzedAt": "2026-08-18T14:55:50.720Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 中声明了 dsh.bundle/client 并依赖 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-config-manager@latest",
+      "evidence": "dsh plugin --profile web add dsh-config-manager@latest --config.auto-install-peers=false"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 的“搬家服务”。它可以把你当前 DSH 里的设置（模型配置、插件、技能、工作区等）一键打包成一个 ZIP 文件，然后到另一台电脑上导入，就能恢复成一样的开发环境。它支持导入前预览、冲突时自己选哪边、路径自动映射、密钥保护（默认不导出 API Key），还有失败自动回滚、快照恢复和通过私有 Git 仓库远程同步配置。总之，就是让换电脑、备份、迁移配置变得省心。",
+      "level": "ok",
+      "risks": "它会读写 DSH 的配置文件（放在 DSH 主目录下），导出时会把配置打包成 ZIP，如果你把 ZIP 发出去，接收者能看到你的配置内容（但 API Key 等密钥默认不会被导出）。导入别人的配置会改动当前 DSH 的设置，不过导入前有预览和确认，而且会自动备份，出问题能回滚。可选的远程同步功能会把配置推到你指定的 Git 仓库，如果用公共仓库，别人可能会看到配置。整体风险不大，自己保管好 ZIP 和加密密码就行。",
+      "postInstallNotes": "安装后重启 DSH，在设置里会出现“Backup & Migration”入口。没有需要额外配置环境变量的地方；如果想用远程同步，需要自己准备一个私有 Git 仓库。",
+      "notes": "依赖部分 @deepseek-ai/dsh-* 核心包可能尚未发布到公共 npm，安装命令用了 --config.auto-install-peers=false 来跳过，DSH 运行时会提供。另注意 pnpm 11 的 minimumReleaseAge 策略可能让 @latest 装到旧版本，按 README 里的说明处理即可。"
+    },
+    "summaryZh": "DSH 配置管理器：一键备份、导出、导入和迁移 DSH 配置，支持加密、预览回滚与远程同步。",
+    "usage": {
+      "prompt_tokens": 4477,
+      "completion_tokens": 2596,
+      "total_tokens": 7073,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2040
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3837
+    }
+  }
+}

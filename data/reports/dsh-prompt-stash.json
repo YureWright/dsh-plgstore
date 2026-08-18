@@ -1,0 +1,37 @@
+{
+  "id": "dsh-prompt-stash",
+  "analyzedAt": "2026-08-18T14:53:32.267Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖多个 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-prompt-stash",
+      "evidence": "dsh plugin --profile web add dsh-prompt-stash"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness Web 用的本地输入暂存插件。你可以把还没发出去的文本临时存起来（最多存10条，按会话分开），先处理别的问题，之后再恢复这些文字继续编辑。它不会碰你的草稿，只是额外给你几个‘暂存位’，方便来回切换。",
+      "level": "ok",
+      "risks": "它会在你当前浏览器里存一点文本数据（localStorage），并保存你的快捷键设置。这些数据只存在你自己电脑的浏览器里，不会上传网络。卸载插件后这些暂存数据不会自动删除，需要手动清理。",
+      "postInstallNotes": "安装后需要重启 DSH Web。重启后可在设置 → 插件 → 插件配置里调整快捷键，默认是 Ctrl+S。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-prompt-stash 是一个本地优先的输入暂存插件，让你在 DSH Web 里临时存下没写完的文本，随时恢复。",
+    "usage": {
+      "prompt_tokens": 4362,
+      "completion_tokens": 504,
+      "total_tokens": 4866,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 148
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3722
+    }
+  }
+}

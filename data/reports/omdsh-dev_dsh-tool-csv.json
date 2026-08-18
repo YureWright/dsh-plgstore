@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-tool-csv",
+  "analyzedAt": "2026-08-17T13:15:20.142Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:omdsh-dev/dsh-tool-csv",
+      "evidence": "dsh plugin --profile web add github:omdsh-dev/dsh-tool-csv"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 的一个小工具，专门用来处理 CSV 格式的表格文本。比如你在聊天里给出一段 CSV 数据，它能帮你解析成 JSON、按某列筛选行、或者统计行数列数等。它不用启动额外程序，直接调用函数就能快速返回结果，而且作者保证它不会读文件、不会联网、不会执行危险操作。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件本身不碰你电脑里的文件，也不联网，只处理你传给它的文本。不过要注意：传给这个工具的数据会被记进会话日志，所以别把密码、密钥这类敏感信息直接放进去。",
+      "postInstallNotes": "无",
+      "notes": "该插件的 package.json 标记为 private，可能未发布到 npm，安装时使用 GitHub 仓库地址。"
+    },
+    "summaryZh": "零依赖、纯函数的 DSH CSV 数据处理插件，支持解析、查询、统计和转换 CSV 文本。",
+    "usage": {
+      "prompt_tokens": 3497,
+      "completion_tokens": 3267,
+      "total_tokens": 6764,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2909
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2857
+    }
+  }
+}

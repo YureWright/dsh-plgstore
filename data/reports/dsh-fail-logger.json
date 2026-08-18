@@ -1,0 +1,37 @@
+{
+  "id": "dsh-fail-logger",
+  "analyzedAt": "2026-08-16T13:35:27.030Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 给出了 dsh plugin add 安装命令，并说明通过 session/event 等 DSH 接口工作，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-fail-logger",
+      "evidence": "dsh plugin --profile web add dsh-fail-logger"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会盯着 DeepSeek Harness 干活时的各种报错——比如读文件失败、运行代码崩了、内部工具抛异常——自动把这些失败原因记下来，去掉重复的，数一数每种错出现了几次，然后写进一个技能文件里的“机器维护区”；下次模型加载这个技能时，就能直接看到最常见的坑，从而少犯同样的错。配置好之后基本不用管，它会自己维护和清理过期的记录。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下（~/.dsh/skills/fail-log-guide 等）读写技能文件，把失败的工具调用信息（可能包含文件路径、命令行参数、代码片段）存成 Markdown 日志。这些日志默认会打码常见的密钥和令牌，但如果你在命令里放了其他敏感信息（比如内部 IP、用户名），仍可能被记录下来。这个日志只有你自己电脑上能看到，除非你把技能目录分享给别人或上传到别处。另外它会在每次运行时往系统提示里注入两条防错规则（约 90 字符），作用范围只在当前 DSH 会话里。",
+      "postInstallNotes": "重启 dsh（例如 dsh --profile web）后生效；默认零配置。若想调整目标技能目录、保留条数或脱敏规则，可编辑对应 profile 的 cordis.patch.yml 中的 config 段。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件：全模式工具失败自动实录——把原生工具、PTC(Code Mode) run_code、代码内嵌工具调用的失败按错因去重计数，自动写入 skill 的机器维护区段，越用越少错。",
+    "usage": {
+      "prompt_tokens": 3648,
+      "completion_tokens": 2487,
+      "total_tokens": 6135,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1979
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3008
+    }
+  }
+}

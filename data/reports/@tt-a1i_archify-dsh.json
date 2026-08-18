@@ -1,0 +1,37 @@
+{
+  "id": "@tt-a1i/archify-dsh",
+  "analyzedAt": "2026-08-18T14:50:16.357Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置，README 提供了 dsh plugin add 安装命令，且明确是 DeepSeek Harness 的 Skill-only bundle。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@tt-a1i/archify-dsh@0.1.0",
+      "evidence": "Use the prebuilt npm package with an exact version. Do not install from Git source. dsh plugin --profile web add @tt-a1i/archify-dsh@0.1.0"
+    },
+    "evaluationReport": {
+      "intro": "Archify 是一个画架构图的技能包。装上之后，你能让 DSH 分析某个代码仓库的运行时架构，自动生成一张包含核心组件、依赖关系和安全边界的架构图（JSON 和 HTML 文件）。它不额外联网、不收集数据，只通过 DSH 本身的文件和安全机制工作。",
+      "level": "ok",
+      "risks": "没发现明显风险。README 明确说没有遥测、没有网络连接、没有凭据处理、没有安装脚本。生成的架构图文件会保存在工作区里，可能包含代码结构信息，但这些都在本地 DSH 环境内。",
+      "postInstallNotes": "无",
+      "notes": "该插件是社区版，非 DeepSeek 官方产品，且兼容的是开发者预览版 @deepseek-ai/dsh@0.1.0-rc.6，版本较新，升级 DSH 后可能需要等待适配。"
+    },
+    "summaryZh": "Archify 是 DSH 的社区架构图技能插件，让 AI 通过 DSH 读取代码仓库并生成架构图（JSON/HTML），无遥测、无网络连接，仅作为纯技能包安装。",
+    "usage": {
+      "prompt_tokens": 2089,
+      "completion_tokens": 509,
+      "total_tokens": 2598,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 88
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1449
+    }
+  }
+}

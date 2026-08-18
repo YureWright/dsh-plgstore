@@ -1,0 +1,37 @@
+{
+  "id": "cendaifeng/dsh-learn-everything",
+  "analyzedAt": "2026-08-17T12:07:04.728Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 依赖 @deepseek-ai/cordis 等 DSH 核心包，README 明确为 DSH 费曼学习法插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/cendaifeng/dsh-learn-everything.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个“学习模式”。打开后，AI 会用费曼学习法来教新概念：先讲一遍，再出题让你用自己的话复述，然后指出你说得不准确或漏掉的地方，针对缺口再讲一遍。教学内容会显示成漂亮的卡片，里面有文字、代码示例、图表和类比。每次会话独立，不会记住你以前学的东西。",
+      "level": "ok",
+      "risks": "没发现明显风险。",
+      "postInstallNotes": "可能需要将仓库内的 cordis.patch.yml 合并到 DSH profile 补丁中，并在 web bundle 声明客户端入口；具体见 README。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供费曼学习法模式：开启后 AI 会以结构化卡片讲解概念、提问复述并针对缺口重讲。",
+    "usage": {
+      "prompt_tokens": 4891,
+      "completion_tokens": 3461,
+      "total_tokens": 8352,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3122
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4251
+    }
+  }
+}

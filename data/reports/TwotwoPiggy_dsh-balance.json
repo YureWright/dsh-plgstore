@@ -1,0 +1,37 @@
+{
+  "id": "TwotwoPiggy/dsh-balance",
+  "analyzedAt": "2026-08-17T11:37:37.929Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，且 README 给出了 dsh plugin add 安装命令，证据充分"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-balance",
+      "evidence": "dsh plugin --profile web add dsh-balance"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 的网页聊天界面下方，实时显示你的 DeepSeek 账户还剩多少钱，以及当前这轮对话大概花了多少钱。它用一个红黄绿的小圆点表示余额是否充足，鼠标悬停还能看到详细的余额构成和消费明细。默认开箱即用，不需要额外设置。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取并展示你的 DeepSeek 账户余额，查询时使用你自己配置的 API Key 请求 DeepSeek 官方服务器，不会把数据发给其他第三方。",
+      "postInstallNotes": "重启 dsh web 后生效；如需调整预警阈值、货币单位等，可在 $DSH_HOME/profiles/web/cordis.patch.yml 中覆盖配置。",
+      "notes": "无"
+    },
+    "summaryZh": "在 dsh Web 界面实时显示 DeepSeek 账户余额和本次会话花费估算，带红黄绿状态灯和悬停明细卡片。",
+    "usage": {
+      "prompt_tokens": 4760,
+      "completion_tokens": 1483,
+      "total_tokens": 6243,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1150
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4120
+    }
+  }
+}

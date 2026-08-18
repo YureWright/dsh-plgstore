@@ -1,0 +1,37 @@
+{
+  "id": "dsh-s1",
+  "analyzedAt": "2026-08-16T14:48:00.472Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，且依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-s1",
+      "evidence": "dsh plugin --profile web add dsh-s1"
+    },
+    "evaluationReport": {
+      "intro": "这个插件为 DeepSeek Harness (DSH) 添加了一组名为 s1_* 的原生工具（如 s1_search、s1_news、s1_crawl 等），让 AI 模型可以直接调用 Search1API 的搜索、新闻、网页抓取等功能，而不用通过 MCP 桥接。简单说，装上它，AI 就能自己上网搜索和抓取网页内容了。",
+      "level": "ok",
+      "risks": "它会使用你设置的一个环境变量 S1_KEY 作为密钥，向 Search1API 服务器发送搜索/抓取请求，因此你的查询内容会发送给第三方服务。除此之外，没发现它碰本地文件或执行可疑脚本。",
+      "postInstallNotes": "需要在运行 DSH 的环境里设置 S1_KEY 环境变量（例如 export S1_KEY=你的密钥）。如需禁用某些工具，可在 DSH 配置中将相应选项设为 false。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供原生 s1 搜索/抓取工具，通过 Search1API 实现在线搜索、新闻、爬取等功能。",
+    "usage": {
+      "prompt_tokens": 2746,
+      "completion_tokens": 1595,
+      "total_tokens": 4341,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1217
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2106
+    }
+  }
+}

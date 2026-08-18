@@ -1,0 +1,37 @@
+{
+  "id": "dsh-tui/dsh-tui",
+  "analyzedAt": "2026-08-17T11:22:21.552Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确认是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-tui/dsh-tui",
+      "evidence": "dsh plugin --profile tui add @dsh-tui/dsh-tui"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个类似 Claude Code 的终端聊天窗口。装上后，在命令行里敲 dsh --profile tui 就能打开一个交互界面，跟 AI 对话、看它流式输出回答、批准或拒绝它要执行的操作（比如运行命令、改文件），还可以用 /model 之类的斜杠命令切换模型、恢复之前的会话。",
+      "level": "ok",
+      "risks": "这个插件会读取你当前目录里的文件，而且 AI 可以调用命令行工具来执行操作（这是 DeepSeek Harness 本身的功能），所以要留意 AI 的动作。它需要你设置 DEEPSEEK_API_KEY，你和 AI 的对话会发送到你配置的 DeepSeek 端点（默认是 DeepSeek 官方服务器）。它还会在 ~/.dsh 下读写配置和会话记录。如果从 GitHub 安装，可能需要允许它的构建脚本。",
+      "postInstallNotes": "装完后需要先设置 DEEPSEEK_API_KEY（环境变量或 .env 文件），然后运行 dsh --profile tui 启动。如果要用本地/自托管端点，可以设置 DEEPSEEK_BASE_URL，或在 $DSH_HOME/settings.yaml 里配置。",
+      "notes": "该插件依赖 @deepseek-ai/dsh 的预发布 rc 版本，上游未稳定前可能遇到不兼容问题；测试套件尚未运行；从 Git 安装时可能需要根据提示在 ~/.dsh/profiles/tui/pnpm-workspace.yaml 中允许构建脚本。"
+    },
+    "summaryZh": "在终端里为 DeepSeek Harness 提供类似 Claude Code 的交互式聊天界面，支持流式输出、工具调用确认和会话管理等功能。",
+    "usage": {
+      "prompt_tokens": 3055,
+      "completion_tokens": 4008,
+      "total_tokens": 7063,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3480
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2415
+    }
+  }
+}

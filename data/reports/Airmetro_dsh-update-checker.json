@@ -1,0 +1,37 @@
+{
+  "id": "Airmetro/dsh-update-checker",
+  "analyzedAt": "2026-08-17T11:55:40.118Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch 与 dsh.client.inject，README 描述为 DSH Web GUI 插件，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-update-checker",
+      "evidence": "npm i dsh-update-checker --prefix <temp-dir> --no-save"
+    },
+    "evaluationReport": {
+      "intro": "这个插件安装在 DeepSeek Harness 网页界面上，会自动检查主程序和已安装的第三方插件有没有新版本，并在网页上显示提示。你可以点击按钮一键更新，如果更新出问题，它还能回滚到之前的版本，并自动重启服务。",
+      "level": "caution",
+      "risks": "它会联网检查 npm 和 GitHub 上的版本，更新时会运行 npm install，可能执行安装脚本（尤其是原生依赖）；会在配置目录下创建备份文件；网页上会暴露一些接口，局域网内可以看到更新状态，但只有本机才能触发更新/重启。",
+      "postInstallNotes": "按 README，需要手动把包放进 $DSH_HOME/profiles/node_modules，并在 $DSH_HOME/profiles/web/cordis.patch.yml 中添加对应行；如果通过市场自动安装，请确认此步骤是否已由安装器完成。",
+      "notes": "该插件对 GitHub 域名禁用了 TLS 证书校验（仅限 github.com），使用时需注意网络环境；此外它具备自动更新和重启 DSH 服务的能力，建议在测试环境先验证。"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面提供主程序和插件的一键更新、回滚与重启看护的插件。",
+    "usage": {
+      "prompt_tokens": 3271,
+      "completion_tokens": 2305,
+      "total_tokens": 5576,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1894
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2631
+    }
+  }
+}

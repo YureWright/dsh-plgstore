@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-toggle",
+  "analyzedAt": "2026-08-16T13:38:30.770Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle / dsh.client 并依赖 @deepseek-ai/dsh-client-runtime，README 给出 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-toggle",
+      "evidence": "dsh plugin --profile web add dsh-plugin-toggle"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 的网页设置界面加一个「第三方插件」页签，让你能直接在网页上启用或禁用非官方的第三方插件，不用手动改配置文件。它通过改写每个 profile 的 cordis.patch.yml 文件来实现开关，DSH 检测到变化会自动热重载，一般不用重启整个进程。",
+      "level": "ok",
+      "risks": "它会修改你电脑上 DSH 各个 profile 的 cordis.patch.yml 插件配置文件，以启用或禁用插件。这些文件是你自己电脑上的本地文件，只有你自己能看到，没发现隐私泄露或联网上传等风险。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后到设置 → 插件 →「第三方插件」页签使用。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 网页设置页里一键启用/禁用第三方插件的工具。",
+    "usage": {
+      "prompt_tokens": 2347,
+      "completion_tokens": 661,
+      "total_tokens": 3008,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 328
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1707
+    }
+  }
+}

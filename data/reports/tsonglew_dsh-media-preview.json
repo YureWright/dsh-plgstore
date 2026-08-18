@@ -1,0 +1,37 @@
+{
+  "id": "tsonglew/dsh-media-preview",
+  "analyzedAt": "2026-08-17T12:01:59.093Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并以 @deepseek-ai/cordis 为 peer dependency；README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/tsonglew/dsh-media-preview.git",
+      "evidence": "dsh plugin --profile web add github:tsonglew/dsh-media-preview"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 dsh 的网页侧边栏加了音视频预览功能。你在侧边栏文件树里点开 mp4/mp3 等文件，就能直接在面板里播放，支持拖动进度、播放大文件，不用下载下来。",
+      "level": "ok",
+      "risks": "它会读取你电脑上能被程序访问的媒体文件并串流到本地网页播放器；如果你的 dsh 网页被其他人访问，理论上他们也能播放这些文件。默认限制单文件最大 2GB，避免占用过多内存。",
+      "postInstallNotes": "需要先装 dsh-better-sidebar（≥0.4.0）；装好后可选用配置 maxMediaBytes 和 trustedHosts，不改也能用。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 侧边栏提供音视频内嵌播放与进度拖动（支持 Range 流式读取）的插件。",
+    "usage": {
+      "prompt_tokens": 1772,
+      "completion_tokens": 3996,
+      "total_tokens": 5768,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3645
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1132
+    }
+  }
+}

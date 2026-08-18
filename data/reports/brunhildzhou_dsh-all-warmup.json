@@ -1,0 +1,37 @@
+{
+  "id": "brunhildzhou/dsh-all-warmup",
+  "analyzedAt": "2026-08-17T12:08:48.248Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-all-warmup",
+      "evidence": "dsh plugin --profile web add dsh-all-warmup"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个‘热身’环节：每次会话（包括子代理、压缩后的上下文）正式开始前，先让模型用极简配置跑一次很短的预热，然后再正式处理你的第一条消息。目的是让模型的第一句回复更稳定，不会一上来就出现‘Let me...’这种废话。简单说，就是让 AI 先热个身再干活。注意：项目已经停止开发并归档了，但功能是验证过可用的。",
+      "level": "ok",
+      "risks": "它会修改会话流程，在正式回答前多消耗一次模型调用，也就是会多花一点点 token 费用；它只操作会话消息，不访问个人文件、不向外部服务器发数据。没发现明显风险。",
+      "postInstallNotes": "无（默认配置即可用；如想排除某些 preset，可加 excludePresets 配置）。",
+      "notes": "项目已存档（2026-08），但经验证满足其验收标准；依赖 @deepseek-ai/cordis >=4、@deepseek-ai/dsh-llm 等，需要 DSH >= 0.1.0-rc.5。"
+    },
+    "summaryZh": "全局无感热身插件：每次会话先做一次极简预热，让模型首个真实请求不带‘Let me’开场（已停止开发但可用）。",
+    "usage": {
+      "prompt_tokens": 3191,
+      "completion_tokens": 1888,
+      "total_tokens": 5079,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1456
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2551
+    }
+  }
+}

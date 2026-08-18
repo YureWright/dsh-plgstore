@@ -1,0 +1,37 @@
+{
+  "id": "@icelily/dsh-gitbash-preset",
+  "analyzedAt": "2026-08-18T14:49:52.841Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，且 README 给出了 dsh plugin 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@icelily/dsh-gitbash-preset",
+      "evidence": "dsh plugin --profile web add @icelily/dsh-gitbash-preset"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（简称 DSH）用的，解决 Windows 电脑上“极简模式”用不了的问题。它会在你电脑上安装一个叫“极简模式 (Git Bash)”的预设，让 DSH 里简单的工具调用能通过 Git 自带的 bash 来执行。装好后，你在网页界面新建会话时就能选到这个模式，自动找到 Git 的 bash 并运行命令。它还很小心，默认只在完全访问的沙箱里运行命令，不会绕过安全限制。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下的 .dsh 文件夹里创建一些预设文件（如果已经存在就不会覆盖）。当你在会话里把沙箱切成“完全访问”时，它会通过 Git 的 bash 执行命令——这些命令只在你电脑上运行，不会被上传到外部。它不会访问你的私人文件，也不会连外部服务器。",
+      "postInstallNotes": "装完后需要重启 DSH 才能生效。重启后在网页界面新建会话，选择“极简模式 (Git Bash)”；如果要让模型运行 bash 命令，需要把会话沙箱切换成“完全访问”，或者按提示走一次性的升级授权（走正常审批流程）。",
+      "notes": "使用前需要先安装 Git for Windows，否则插件找不到 bash 时可能会出错。除此之外没有其他明显问题。"
+    },
+    "summaryZh": "这是一款 DSH 插件，为 Windows 用户提供可用的“极简模式 (Git Bash)”预设，自动探测 Git bash 并接入沙箱门控。",
+    "usage": {
+      "prompt_tokens": 2707,
+      "completion_tokens": 2931,
+      "total_tokens": 5638,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2458
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2067
+    }
+  }
+}

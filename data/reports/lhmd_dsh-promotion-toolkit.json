@@ -1,0 +1,37 @@
+{
+  "id": "lhmd/dsh-promotion-toolkit",
+  "analyzedAt": "2026-08-17T11:32:28.423Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/skill/tool，并依赖 @deepseek-ai/dsh-tools，README 给出 dsh plugin 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 给出的安装命令为本地路径：`dsh plugin --profile web add /absolute/path/to/dsh-promotion-toolkit`，无法直接用于远程安装。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的一个宣传内容生成工具。你只要把一段原始材料（比如产品介绍、文章、项目 README、课程介绍甚至一个想法）喂给它，它就会先帮你提炼出核心观点、可引用的证据、需要注意的风险点，然后自动为 17 个不同平台（小红书、知乎、公众号、朋友圈、B站、抖音、微博、X、LinkedIn、Reddit 等）生成风格不一样、适合各自平台的原生文案和视频脚本。它的特色是每个平台的内容结构会真的不同，而不是简单地把一段话缩短几遍。",
+      "level": "ok",
+      "risks": "这个插件会把你要生成的原始内容发送给你配置的 AI 模型（如 DeepSeek）来处理，所以你自己提供的内容会经过第三方服务。除此之外，它不会自动安装额外脚本、不会偷偷上传文件，也不会自动发布内容，生成结果需要你自己复制去发布。",
+      "postInstallNotes": "安装后需先确保 DSH 环境可用，然后在 `dsh web` 界面里调用；使用前需要配置好模型服务（如 DeepSeek API）。",
+      "notes": "README 只提供了本地路径安装方式（`dsh plugin --profile web add /绝对路径`），没有给出 npm / git 安装方式，远程安装可能需手动 clone 后本地添加；另外该插件的 peerDependencies 版本可能较新，建议先确认依赖可获取。"
+    },
+    "summaryZh": "将任何原始想法/文章/README 自动改写成 17 个平台原生风格的宣发文案与脚本的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 3462,
+      "completion_tokens": 3191,
+      "total_tokens": 6653,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2686
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2822
+    }
+  }
+}

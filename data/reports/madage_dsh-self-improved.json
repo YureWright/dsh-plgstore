@@ -1,0 +1,37 @@
+{
+  "id": "madage/dsh-self-improved",
+  "analyzedAt": "2026-08-17T11:57:49.028Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin add 安装命令，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-self-improved",
+      "evidence": "dsh plugin --profile web add dsh-self-improved"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上“跨会话记忆”和“自我进化”能力。它会自动把聊天中的关键信息（事实、偏好、事件、指令）提取出来存到本地数据库，下次对话时自动把相关记忆塞给 AI 参考，让 AI 记得你。同时还会定期整理记忆、构建你的用户画像，甚至把成功的工作流程变成可复用的技能。所有数据都保存在本地，不会上传到任何地方。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在本地创建一个 SQLite 数据库来存放从对话中提取的记忆，并读取/写入 DSH 的配置文件；不联网、不上传，数据只保存在你电脑的 DSH 配置目录里。",
+      "postInstallNotes": "安装后重启 dsh 即可自动挂载；默认配置可直接使用，如需调整各模块开关或夜间整理时间，可在 settings.yaml 中修改 dsh-self-improved 配置节。",
+      "notes": "注意：README 提到两个已知安装陷阱——① 如果自动安装的 peerDependencies 与 dsh 主程序产生双实例，可能导致旧会话恢复时报 deployment:persona already registered，可按 README 的 fix（设置 auto-install-peers=false 或 symlink）解决；② 如果在 profile 级 cordis.patch.yml 里手动插入该插件（同时它声明了 dsh.bundle），会导致启动时 duplicate loader entry id 崩溃，应保持 cordis.patch.yml 为空。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供纯本地的长期记忆与自进化能力：自动提炼对话记忆、构建用户画像并在对话中召回，还能合成技能，数据不出本地。",
+    "usage": {
+      "prompt_tokens": 3566,
+      "completion_tokens": 4791,
+      "total_tokens": 8357,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4275
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2926
+    }
+  }
+}

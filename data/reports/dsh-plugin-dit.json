@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-dit",
+  "analyzedAt": "2026-08-18T14:53:28.612Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-dit",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-plugin-dit"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里直接用 DIT.ai 的模型，比如 Claude、DeepSeek V4、Gemini 等。装好之后，你可以在设置里选 DIT.ai 作为模型提供方，然后像平时一样聊天或跑任务。",
+      "level": "ok",
+      "risks": "插件本身不含 API key，你的 DIT_API_KEY 只在发送请求时由 Harness 读取。需要联网访问 DIT.ai 的 API，除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要设置环境变量 DIT_API_KEY，例如 export DIT_API_KEY=\"your-dit-api-key\"。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加 DIT.ai 模型提供商的插件，支持 OpenAI 和 Anthropic 两种协议。",
+    "usage": {
+      "prompt_tokens": 2676,
+      "completion_tokens": 414,
+      "total_tokens": 3090,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 100
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2036
+    }
+  }
+}

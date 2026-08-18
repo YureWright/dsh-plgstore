@@ -1,0 +1,37 @@
+{
+  "id": "MJ-Chang/dsh-vscode",
+  "analyzedAt": "2026-08-17T12:06:42.134Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.95,
+      "reason": "这是一个 VS Code 扩展，不是 DSH 插件；没有 dsh.bundle/client 声明，也不通过 dsh plugin add 安装。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "到 [Releases 页面](https://github.com/MJ-Chang/dsh-vscode/releases/latest) 下载 `deepseek-harness-chat-0.2.0.vsix`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 VS Code 扩展，让你在 VS Code 右侧边栏里和 DeepSeek 的 AI 助手聊天，像 Claude Code 那样，它能读取、编辑你打开的项目文件，还能执行命令。它还内置了一个完整的 DeepSeek Harness 运行时，所以支持插件、权限模式、历史对话等。用大白话说：装上它，你就能在 VS Code 里直接跟 AI 对话，让它帮你改代码、跑命令。",
+      "level": "ok",
+      "risks": "它会读取和修改你当前打开的项目文件，也能执行终端命令（比如 bash），默认只允许动工作区，但如果你切到 Full access，它就能访问你电脑上更多文件。你的 API key 会存在 VS Code 的 SecretStorage 里。它还有个“安装插件”功能，装第三方插件等于运行别人的代码，要小心。总的说，风险在正常可控范围内。",
+      "postInstallNotes": "打开 VS Code 右侧的 DeepSeek Harness 图标，首次使用需要输入 API key（或设置环境变量 DEEPSEEK_API_KEY）；建议开启一个项目文件夹再聊天。可选：装 Node.js 可以避免执行命令时闪出控制台窗口。",
+      "notes": "注意：这个项目本身不是 DSH 插件，而是一个 VS Code 扩展；它内部带了一个 Harness 运行时子进程，所以不能通过 dsh plugin add 安装。项目较新（stars 较少），但 README 和安全说明较完整。"
+    },
+    "summaryZh": "在 VS Code 里用 DeepSeek Harness 的 AI 助手，直接对话让它读取、编辑项目并执行命令。",
+    "usage": {
+      "prompt_tokens": 3376,
+      "completion_tokens": 2134,
+      "total_tokens": 5510,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1630
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2736
+    }
+  }
+}

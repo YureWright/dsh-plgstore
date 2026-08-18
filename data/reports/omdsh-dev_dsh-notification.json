@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-notification",
+  "analyzedAt": "2026-08-17T11:13:21.182Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 含 dsh.bundle/client 声明并依赖 @deepseek-ai/cordis，README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/omdsh-dev/dsh-notification/archive/refs/tags/v0.1.2.tar.gz",
+      "evidence": "dsh plugin --profile web add https://github.com/omdsh-dev/dsh-notification/archive/refs/tags/v0.1.2.tar.gz"
+    },
+    "evaluationReport": {
+      "intro": "当 DeepSeek Harness 在后台完成一轮对话时，浏览器会弹出系统通知，让你切到别的标签页也能知道任务结束了。你可以按完成/出错等结果分别开关通知，还能用关键词规则过滤，只让重要的消息弹出来。通知内容只包含会话标题、最后一条回复和工具名，并且可以在设置里调整。",
+      "level": "ok",
+      "risks": "需要浏览器通知权限，会在屏幕上弹出系统通知；通知中可能包含会话标题和回复片段，但这些内容本来就在你眼前。偏好设置保存在浏览器本地（localStorage），不会上传。没发现明显风险。",
+      "postInstallNotes": "重启 web 服务器让插件生效；在浏览器中允许该站点的通知权限；然后在 Settings > Notifications 中按需调整开关和关键词规则。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 浏览器桌面通知插件：任务完成时弹系统通知，支持按结果和关键词过滤。",
+    "usage": {
+      "prompt_tokens": 2972,
+      "completion_tokens": 1814,
+      "total_tokens": 4786,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1432
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2332
+    }
+  }
+}

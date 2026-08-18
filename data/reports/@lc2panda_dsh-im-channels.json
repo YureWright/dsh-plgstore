@@ -1,0 +1,37 @@
+{
+  "id": "@lc2panda/dsh-im-channels",
+  "analyzedAt": "2026-08-16T14:47:55.936Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.85,
+      "reason": "package.json 声明了 @deepseek-ai/cordis 等 DSH 核心依赖，且描述为 DeepSeek Harness 插件，属可信证据"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@lc2panda/dsh-im-channels",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DeepSeek Harness 接入微信和飞书（Lark），把多个聊天渠道统一管理，并且带一个网页界面来配置。装好之后，你可以在微信或飞书里直接跟 AI 对话，它会帮你处理消息。",
+      "level": "caution",
+      "risks": "插件需要登录你的微信/飞书账号，可能会在电脑上存储登录状态和二维码。如果你把二维码发给别人，对方可能拿到你的登录权限。另外，聊天内容会被转发到你的 DeepSeek Harness 处理，属于正常功能需要。",
+      "postInstallNotes": "安装后需要运行 `node setup.js` 或 `npm run setup` 来配置微信/飞书登录，并在 DSH 里启用相应渠道。",
+      "notes": "README 缺失，安装前建议查看源码确认行为；该插件由第三方发布，非 DSH 官方出品，请酌情使用。"
+    },
+    "summaryZh": "将微信和飞书统一接入 DeepSeek Harness 的渠道插件，提供网页配置界面。",
+    "usage": {
+      "prompt_tokens": 1886,
+      "completion_tokens": 832,
+      "total_tokens": 2718,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 479
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1246
+    }
+  }
+}

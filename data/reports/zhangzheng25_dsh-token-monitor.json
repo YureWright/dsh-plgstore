@@ -1,0 +1,37 @@
+{
+  "id": "zhangzheng25/dsh-token-monitor",
+  "analyzedAt": "2026-08-17T12:00:19.586Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，README 提供 dsh plugin add 安装命令，且代码明显调用 DSH 的 webServer/sessionQuery 接口，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:zhangzheng25/dsh-token-monitor",
+      "evidence": "dsh plugin --profile web add github:zhangzheng25/dsh-token-monitor"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DSH 侧边栏底部放一张“今日用量”卡片，实时显示今天用了多少 token（例如“今日用量：8888万”）。点击卡片会弹出一个统计窗口，里面能看到今天/7天/30天的用量总数、近30天每个模型每天用量的堆叠柱状图、模型使用量排行榜（分2x2卡片），还有对话数量统计。它还会把历史数据保存在本地，所以重启后数据还在。",
+      "level": "ok",
+      "risks": "它会读取 DSH 的会话日志（里面包含你和 AI 的对话记录），从中统计 token 用量，并把统计结果写到 $DSH_HOME/plugins/token-monitor/data.json 这个本地文件里。统计过程在本地完成，不会主动上传到任何服务器。如果你备份或共享了 DSH 数据目录，注意这些数据可能包含对话内容。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 DSH，侧边栏底部（设置图标旁）会出现“今日用量”卡片，点击即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "一个在 DSH 侧边栏显示今日 token 用量并提供 30 天分模型统计面板的插件。",
+    "usage": {
+      "prompt_tokens": 2907,
+      "completion_tokens": 3233,
+      "total_tokens": 6140,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2803
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2267
+    }
+  }
+}

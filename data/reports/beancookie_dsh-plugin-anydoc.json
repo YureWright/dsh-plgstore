@@ -1,0 +1,37 @@
+{
+  "id": "beancookie/dsh-plugin-anydoc",
+  "analyzedAt": "2026-08-17T11:53:24.818Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 字段，且依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出了明确的 dsh plugin 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:beancookie/dsh-plugin-anydoc",
+      "evidence": "dsh plugin --profile web add github:beancookie/dsh-plugin-anydoc"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件，能把 Word、PDF、PPT、Excel、EPUB 等常见文档转换成 Markdown 格式。你只要在 DSH Web 里让 Agent 转换某个文件，它就会调用这个工具，把文件内容变成 Markdown 返回给你，方便继续编辑或处理。",
+      "level": "ok",
+      "risks": "它会读取你指定的本地文档文件，转换后的内容会展示给 Agent 和相关使用者。如果你转换的是敏感文件，要注意信息可能被对话中的其他人看到（取决于你的使用场景）。整个过程在本地进行，没有发现会偷偷上传到外部服务器的迹象。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一款 DSH 文档转换插件，利用 @firecrawl/anydoc 将多种文档格式转为 GitHub 风格 Markdown。",
+    "usage": {
+      "prompt_tokens": 1676,
+      "completion_tokens": 1145,
+      "total_tokens": 2821,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 807
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1036
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "fakechris/dsh-track",
+  "analyzedAt": "2026-08-17T11:42:30.983Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，peerDependencies 依赖 @deepseek-ai/cordis 等核心包，且 README 给出了 dsh plugin add 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@fakechris/dsh-track",
+      "evidence": "npx -p @deepseek-ai/dsh dsh plugin --profile web add @fakechris/dsh-track"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的任务管理小插件，相当于在聊天界面旁边加了一个「想法收集墙」和「任务清单」。你可以随时把念头记下来，让 agent 把要做的事变成带状态的任务，还能记录重要决策的理由。所有数据都保存在本地 harness 里，不会传到外部。它带一个网页面板，能看到捕获的想法、任务进度，还能一键跳回相关的对话。",
+      "level": "ok",
+      "risks": "它会在本地存储你的任务、决策和想法数据（存在 dsh 的 storage KV 里），并读取会话历史用于跳转和同步。历史同步功能可能会调用 LLM 做整理，消耗 token 产生费用。如果你把 dsh web 服务暴露到公网，别人可能通过 /api/track/* 接口看到这些数据。另外安装时会向 ~/.dsh/skills 目录复制协议文件。",
+      "postInstallNotes": "需要手动安装协议 skill：执行 `mkdir -p ~/.dsh/skills && cp -r skills/dsh-track ~/.dsh/skills/`，然后重启 dsh web。其他配置（如 token 相似度阈值）可在面板的 ⚙ 设置中调整，非必需。",
+      "notes": "README 中 License 标注为「私有插件仓库」但 skill 元数据声明 BSD-3-Clause，且 package.json 的 publishConfig.access 为 public，存在不一致，建议安装前向作者确认。另外它依赖多个 @deepseek-ai/* 核心包，需确保 dsh 版本兼容（README 称已适配 final 正式版）。"
+    },
+    "summaryZh": "dsh-track 是 DeepSeek Harness 的嵌入式任务管理引擎，提供捕获墙、决策账本和任务生命周期管理，附带网页面板。",
+    "usage": {
+      "prompt_tokens": 4295,
+      "completion_tokens": 1678,
+      "total_tokens": 5973,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1128
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3655
+    }
+  }
+}

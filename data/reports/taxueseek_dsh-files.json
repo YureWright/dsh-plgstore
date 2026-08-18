@@ -1,0 +1,37 @@
+{
+  "id": "taxueseek/dsh-files",
+  "analyzedAt": "2026-08-17T11:45:39.781Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client 与 dsh.bundle，并依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，是标准 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-files",
+      "evidence": "dsh plugin --profile web add dsh-files"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加上了文件上传按钮和文档读取能力。上传方面，聊天输入框旁边会出现回形针图标，你可以点它选文件或直接把文件拖进页面，文件会以彩色小卡片显示，发送消息时自动带上文件路径；文档读取方面，它提供了一个 read_document 工具，能读取文本、PDF、Word、Excel 文件，自动识别真实格式（不看扩展名），支持中文编码、分页读取，还有缓存加速。",
+      "level": "ok",
+      "risks": "它会读取你交给它的文档内容（比如 PDF、Word、Excel 的文本），并把这些文件保存在会话工作区里，相关模型或会话清理可能接触到这些文件。不过文件按会话隔离，且有大小限制和过期清理。没发现恶意行为。",
+      "postInstallNotes": "安装后重启 dsh web；如需调整上传大小、缓存、保留时间等参数，可在配置文件中添加 config 配置。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-files 是 DeepSeek Harness 的双面插件，为 Web UI 提供文件上传按钮和文档读取工具，支持 PDF/DOCX/XLSX/文本，带格式嗅探、会话隔离和缓存。",
+    "usage": {
+      "prompt_tokens": 2801,
+      "completion_tokens": 1761,
+      "total_tokens": 4562,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1353
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2161
+    }
+  }
+}

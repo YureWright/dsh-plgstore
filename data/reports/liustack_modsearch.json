@@ -1,0 +1,37 @@
+{
+  "id": "liustack/modsearch",
+  "analyzedAt": "2026-08-16T11:53:15.991Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin add 安装命令，且代码明显调用了 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@liustack/modsearch@latest",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add @liustack/modsearch@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 等 AI 模型用的“联网插件”。很多模型本身不能上网，装上它之后，模型就能搜索网页、搜 X（推特）和抓取指定网页的内容。它默认用免费的 Antigravity CLI 作为搜索引擎，也支持 Tavily、Exa、Firecrawl 等，多个引擎还能自动切换。装好后你直接跟 AI 聊天提问，它就会自动去搜索，并把来源附上。",
+      "level": "ok",
+      "risks": "它会访问网络来执行搜索和抓取网页；你搜索的关键词会发给所选的搜索服务（如 Antigravity、Tavily、Exa、Firecrawl 等），这些服务商可能会记录你的搜索内容；API 密钥保存在你电脑上的 ~/.modsearch/config.json 文件里（权限 0600），拿到你电脑的人可能看到；默认还需要额外安装 Antigravity CLI 并通过浏览器登录。没发现窃取隐私或破坏系统的行为。",
+      "postInstallNotes": "安装后需要先配置至少一个搜索源：默认需安装并登录 Antigravity CLI（agy）；或配置 Tavily/Exa/Firecrawl 的 API key（可用 modsearch config set 或环境变量）。然后按 INSTALL.md 让 AI 完成后续配置并跑健康检查。",
+      "notes": "需要 Node.js 22.13 或更高版本；该插件不接受 PR，由单一作者维护；默认引擎 Antigravity CLI 需额外安装。经评估，这是真正的 DSH 插件，不是蹭标签。"
+    },
+    "summaryZh": "一个让 AI 模型具备联网搜索能力的 DSH 插件，支持网页搜索、X 搜索和网页抓取，自动多引擎切换。",
+    "usage": {
+      "prompt_tokens": 3656,
+      "completion_tokens": 2199,
+      "total_tokens": 5855,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1685
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3016
+    }
+  }
+}

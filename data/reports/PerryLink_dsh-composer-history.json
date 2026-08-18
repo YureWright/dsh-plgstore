@@ -1,0 +1,37 @@
+{
+  "id": "PerryLink/dsh-composer-history",
+  "analyzedAt": "2026-08-17T11:56:31.447Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 并依赖 @deepseek-ai/cordis，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-composer-history",
+      "evidence": "dsh plugin --profile web add dsh-composer-history"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页版聊天输入框加上类似终端的输入历史功能：按上箭头可以翻出之前发过的消息，按 Ctrl+R 可以反向搜索历史、片段和模板，还支持保存常用片段、使用模板变量，以及感知上下文压缩并提示 /compact。所有历史都保存在浏览器本地，不会联网，也不会向模型发请求，纯粹是界面增强。",
+      "level": "ok",
+      "risks": "会把你的输入历史、保存的片段和模板存放在浏览器本地存储里，数据只有你自己能看到，不涉及网络传输或隐私外泄。键盘操作（↑/↓/Ctrl+R）只在聊天输入框区域生效，不会影响其他地方。",
+      "postInstallNotes": "安装后需要重启 DSH 才能生效，可以用 `dsh --profile web --dump-config | grep -A3 'id: composer-history'` 验证；按键、历史条数等可在设置或 cordis.yml 中调整。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 网页聊天框加上终端式输入历史（方向键回忆、Ctrl+R 搜索、本地持久化），纯浏览器端、不联网。",
+    "usage": {
+      "prompt_tokens": 4308,
+      "completion_tokens": 1360,
+      "total_tokens": 5668,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 970
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3668
+    }
+  }
+}

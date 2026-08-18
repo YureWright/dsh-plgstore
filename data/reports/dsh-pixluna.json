@@ -1,0 +1,37 @@
+{
+  "id": "dsh-pixluna",
+  "analyzedAt": "2026-08-16T14:49:43.871Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-pixluna",
+      "evidence": "dsh plugin --profile web add dsh-pixluna"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的 AI 能自己去 Pixiv 等图片网站找图（包括涩图）。它把原来的聊天命令变成了 AI 可以调用的工具，AI 会根据你的要求获取图片链接并返回给你。你可以控制是否允许 R18、是否排除 AI 生成图、并发数等。",
+      "level": "ok",
+      "risks": "插件会向 Pixiv 或其它图源服务器发起网络请求，携带你配置的搜索条件；如果你填写了 Pixiv Cookie 或图源密钥，它们会保存在 DSH 的凭证库中，插件调用时会使用，但不会明文显示在浏览器里。图片不下载到本地，只返回远程链接。",
+      "postInstallNotes": "如果要用 Pixiv 的个人推荐、关注或按 PID 取图，需要到设置里填写 pixiv.phpSESSID；使用某些图源时也需要配置对应的 keyPairs。默认 R18 关闭，需要手动开启。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DSH 的 AI 能直接获取 Pixiv 等图源的图片链接，支持 R18 开关、多图源配置和关键词搜索。",
+    "usage": {
+      "prompt_tokens": 3128,
+      "completion_tokens": 914,
+      "total_tokens": 4042,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2488
+    }
+  }
+}

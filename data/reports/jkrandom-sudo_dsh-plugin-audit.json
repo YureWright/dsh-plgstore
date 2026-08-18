@@ -1,0 +1,37 @@
+{
+  "id": "jkrandom-sudo/dsh-plugin-audit",
+  "analyzedAt": "2026-08-17T12:07:13.959Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 给出 dsh plugin 安装命令，且代码接入 DSH 的 tools/pre-execute 接口"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-audit",
+      "evidence": "dsh plugin --profile web add dsh-plugin-audit"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的安全审计插件。它可以帮你检查其他第三方的 DSH 插件到底会动你电脑上的哪些东西：读哪些文件、跑哪些命令、连哪些网站、读哪些环境变量（比如密钥）。它会在插件运行前给你出一份“体检报告”，并且运行时如果某个工具想读取密钥或把数据发到陌生网站，它会先弹出确认让你批准或拒绝。",
+      "level": "ok",
+      "risks": "这个插件本身声明只读、不联网、不上传任何数据，所以风险很低。它需要读取你指定目录下的插件源码来扫描（最多400个文件，每个256KB），并且它的运行时检查功能会看到工具调用的参数，但这些本来就是 DSH 主机需要处理的。没有发现明显风险。",
+      "postInstallNotes": "装完后一般不用额外配置，但你可以检查 profile 的 cordis.patch.yml，按需调整 sentinelEnabled（是否开启运行时哨兵）和 allowedHosts（允许发送数据到哪些域名）。另外，可选地不要手动添加 invariant 行，除非你的 profile 已提供 invariants 服务，否则会启动失败。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-plugin-audit 是一个安全审计插件，能在安装前静态分析其他 DSH 插件的权限行为，并在运行时对高危操作进行人工确认。",
+    "usage": {
+      "prompt_tokens": 3396,
+      "completion_tokens": 1563,
+      "total_tokens": 4959,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1138
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2756
+    }
+  }
+}

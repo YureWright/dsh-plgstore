@@ -1,0 +1,37 @@
+{
+  "id": "dsh-notion-mcp",
+  "analyzedAt": "2026-08-16T13:36:55.232Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等 dsh 核心包，README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-notion-mcp",
+      "evidence": "dsh plugin --profile web add dsh-notion-mcp"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你的 dsh 助手能连上 Notion。装好后，只要在浏览器里授权一次，你的 agent 就能通过 mcp__notion__* 工具搜索、读取和修改 Notion 的页面、数据库和评论。它自动处理登录和令牌刷新，你基本不用管。",
+      "level": "ok",
+      "risks": "它会在本地开一个临时网页服务（127.0.0.1:53007）来完成 Notion 授权；授权后你的 dsh 助手能读取和修改你的 Notion 数据。登录令牌会保存在 dsh 的凭据存储里（本地文件），注意电脑安全。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要先运行 `dsh --profile notion notion login` 在浏览器里完成一次授权（要在最小 profile 下运行，如新增一个名为 notion 的 profile），之后所有安装该插件的 profile 才能使用 Notion 工具。",
+      "notes": "无"
+    },
+    "summaryZh": "让 dsh agent 通过官方 Notion MCP 连接并读写 Notion 页面、数据库和评论的插件。",
+    "usage": {
+      "prompt_tokens": 2735,
+      "completion_tokens": 2609,
+      "total_tokens": 5344,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2221
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2095
+    }
+  }
+}

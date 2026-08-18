@@ -1,0 +1,37 @@
+{
+  "id": "dsh-cost-log",
+  "analyzedAt": "2026-08-16T13:43:56.576Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin add 安装命令，代码明显是 DSH 原生插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-cost-log",
+      "evidence": "dsh plugin --profile web add dsh-cost-log"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件，能实时估算你当前对话花了多少钱。它把费用金额显示在输入框旁边，按 DeepSeek 官方峰谷价格和会话用量自动计算，支持人民币/美元切换，而且不会把你的数据发到外部服务器。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件不读取 API Key、不查余额、不发送外部请求，也不需要数据库或额外服务。",
+      "postInstallNotes": "安装后需要重启 DSH Web（停止旧进程后重新运行 dsh web）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 原生插件：按 DeepSeek 峰谷价格实时计算对话花费，并在输入框旁显示金额徽标。",
+    "usage": {
+      "prompt_tokens": 3575,
+      "completion_tokens": 410,
+      "total_tokens": 3985,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 123
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2935
+    }
+  }
+}

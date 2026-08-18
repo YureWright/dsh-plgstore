@@ -1,0 +1,37 @@
+{
+  "id": "vlln/whale-girl",
+  "analyzedAt": "2026-08-16T11:49:26.037Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 提供了 dsh plugin 安装命令，且代码明显面向 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/vlln/whale-girl.git",
+      "evidence": "dsh plugin --profile web add \"github:vlln/whale-girl#main\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 网页界面加一只右下角的桌面宠物（类似 QQ 宠物），可以拖拽、喂食、玩耍，它会根据你的工作状态（任务完成、出错、思考等）做出不同动作，还能积累等级和称号，增加陪伴感。",
+      "level": "ok",
+      "risks": "它只在浏览器端运行，不会碰电脑文件；会使用 localStorage 保存角色选择等本地数据，但不会上传。会读取 DSH 的会话/任务状态来触发动画，但仅用于展示，没有额外网络请求。",
+      "postInstallNotes": "安装后需重启 web 界面；默认隐藏，需在设置中启用（enabled: true）或通过欢迎页开启，可在 settings.yaml 中调整尺寸、透明度等参数。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页界面添加一只可互动、随工作状态变化的鲸鱼娘桌面宠物，支持积累等级和称号。",
+    "usage": {
+      "prompt_tokens": 2877,
+      "completion_tokens": 1308,
+      "total_tokens": 4185,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 955
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2237
+    }
+  }
+}

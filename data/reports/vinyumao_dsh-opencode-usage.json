@@ -1,0 +1,37 @@
+{
+  "id": "vinyumao/dsh-opencode-usage",
+  "analyzedAt": "2026-08-17T13:13:17.438Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin add 安装命令，且代码明显调用 DSH 的 ctx.tools.register 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/vinyumao/dsh-opencode-usage.git",
+      "evidence": "dsh plugin --profile web add github:vinyumao/dsh-opencode-usage#<ref>"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DSH 网页版聊天输入框下面显示一个常驻小徽章，展示 OpenCode Go 套餐的用量：滚动用量、每周用量、每月用量的百分比，以及重置倒计时。点一下徽章会展开一张卡片，里面有用量进度条、详细数字、刷新按钮，还有一个跳转到 opencode 官网用量页面的链接。另外，在聊天里可以让 AI 助手用 opencode_go_usage 工具直接查询套餐余额。API key 默认读取环境变量 OPENCODE_GO_API_KEY，也可以在卡片里手动填写。",
+      "level": "ok",
+      "risks": "它会把你的 OpenCode Go API key 保存在本机配置文件 ~/.dsh/dsh-opencode-usage.json 里（明文存储，但权限设为 0600，只有你能读）。它需要向 opencode.ai 发送网络请求来查询用量，不过请求是通过 DSH 主进程转发的，浏览器不会直接接触 API key。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。如果之前没有配置 OPENCODE_GO_API_KEY 环境变量，需要点击徽章展开卡片，在里面填入 API key。",
+      "notes": "该插件依赖的用量查询端点未在 opencode 官方公开文档中列出，响应格式可能随服务端变化（插件已做防御性解析）。API key 以明文存储，但文件权限为 0600。该插件只适用于 OpenCode Go 订阅套餐，不适用于 OpenCode Zen 预付费模式。"
+    },
+    "summaryZh": "在 DSH 网页界面显示 OpenCode Go 套餐用量（滚动/每周/每月百分比和重置倒计时）的插件，支持徽章、卡片和 Agent 查询。",
+    "usage": {
+      "prompt_tokens": 3294,
+      "completion_tokens": 2220,
+      "total_tokens": 5514,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1687
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2654
+    }
+  }
+}

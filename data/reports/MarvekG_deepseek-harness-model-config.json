@@ -1,0 +1,37 @@
+{
+  "id": "MarvekG/deepseek-harness-model-config",
+  "analyzedAt": "2026-08-17T11:22:40.219Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并注入 @deepseek-ai/dsh-client-runtime 等核心包，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:MarvekG/deepseek-harness-model-config",
+      "evidence": "dsh plugin --profile web add github:MarvekG/deepseek-harness-model-config"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的 Web 界面加了一个“模型高级配置”页面。你可以自己添加 AI 模型的服务地址和密钥，还能给每个模型设置不同的推理强度、上下文长度、输入输出限制等参数。它会自动从 models.dev 网站补齐一些模型信息，方便你管理多个模型。",
+      "level": "ok",
+      "risks": "没发现明显风险。API Key 会存在 Harness 的凭据存储里，不会显示在配置文件或预览中。使用时会向 models.dev 发送请求以获取模型补全信息，属于正常功能。",
+      "postInstallNotes": "安装后运行 `dsh web` 启动 Web UI，然后进入“设置 → 模型高级配置”即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web UI 添加模型高级配置页面，支持自定义端点、按模型调节推理参数，并自动补全模型能力数据。",
+    "usage": {
+      "prompt_tokens": 1756,
+      "completion_tokens": 1204,
+      "total_tokens": 2960,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 837
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1116
+    }
+  }
+}

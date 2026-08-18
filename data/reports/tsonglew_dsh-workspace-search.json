@@ -1,0 +1,37 @@
+{
+  "id": "tsonglew/dsh-workspace-search",
+  "analyzedAt": "2026-08-17T11:47:17.550Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，并依赖 @deepseek-ai/cordis 核心包，README 也明确描述为 DSH 网页端插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/tsonglew/dsh-workspace-search.git",
+      "evidence": "dsh plugin --profile web add ./plugins/dsh-workspace-search"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页界面加了一个“搜索”标签页，就像 VS Code 里的搜索一样。你可以在里面搜当前工作区里的文件名，也能搜文件内容，还能用通配符、正则来过滤，搜到结果点一下就能在侧边栏的编辑器里打开。它需要先装 DSH-better-sidebar 插件才能用。",
+      "level": "ok",
+      "risks": "这个插件会按你的指令扫描并读取当前工作区里的文件内容来搜索，扫描范围受配置里的 maxFiles 等上限限制。所有搜索都在本地完成，不会把文件内容发到外部。没发现明显风险。",
+      "postInstallNotes": "安装插件后无需额外配置（所有配置项可选）；但需确保已安装 dsh-better-sidebar ≥0.4.0，否则插件不生效。若从 git 安装，需先把仓库 clone 到本地。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页界面添加一个类似 VS Code 的工作区搜索标签，支持文件名/内容搜索、通配符与正则过滤，并集成到 better-sidebar。",
+    "usage": {
+      "prompt_tokens": 1628,
+      "completion_tokens": 3651,
+      "total_tokens": 5279,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3251
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 988
+    }
+  }
+}

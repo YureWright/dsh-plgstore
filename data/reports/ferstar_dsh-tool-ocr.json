@@ -1,0 +1,37 @@
+{
+  "id": "ferstar/dsh-tool-ocr",
+  "analyzedAt": "2026-08-17T12:13:53.833Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了依赖 @deepseek-ai/cordis 等 dsh 核心包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tool-ocr",
+      "evidence": "From npm (published as `dsh-tool-ocr`): `dsh plugin --profile web add dsh-tool-ocr`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个本地 OCR 工具，让不支持看图的大模型也能识别图片里的文字。你给它图片路径或对话里的图片附件，它会在本地调用 nbocr 引擎识别文字，把结果返回给模型。",
+      "level": "ok",
+      "risks": "插件会读取你指定的本地图片文件，并通过 nbocr 引擎在本地识别文字，不会把图片上传到云端。安装 nbocr 时 README 建议用 curl 管道执行安装脚本，这一步有潜在风险，建议改为手动下载可执行文件。",
+      "postInstallNotes": "需要先安装 nbocr 引擎（从 newbee-ocr-cli 的 release 下载或源码编译），然后在 cordis.patch.yml 中配置插件并指定 nbocr 的路径（command 字段），再根据实际情况设置语言和模型。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供本地 OCR 工具，让不支持视觉的模型也能识别图片文字。",
+    "usage": {
+      "prompt_tokens": 3331,
+      "completion_tokens": 740,
+      "total_tokens": 4071,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 368
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2691
+    }
+  }
+}

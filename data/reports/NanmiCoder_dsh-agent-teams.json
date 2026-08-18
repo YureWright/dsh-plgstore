@@ -1,0 +1,37 @@
+{
+  "id": "NanmiCoder/dsh-agent-teams",
+  "analyzedAt": "2026-08-16T11:45:00.025Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis、@deepseek-ai/dsh-agent 等核心包；README 给出了 dsh plugin add 安装命令，代码明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@nanmicoder/dsh-agent-teams",
+      "evidence": "dsh plugin --profile web add @nanmicoder/dsh-agent-teams"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DeepSeek Harness 会话变成一个多智能体团队：你说话提出目标，当前会话会变成队长，自动组建成员（子智能体），把任务拆分成带依赖关系的小任务，成员之间还能直接发消息协作。同时网页界面里会实时显示团队成员、任务进度和消息，不需要额外的工作流引擎。",
+      "level": "ok",
+      "risks": "会在工作目录下创建 .agent-teams 文件夹来保存团队状态，这些数据只存在你本地电脑上；运行时会启动多个子智能体，可能会消耗更多的 API 额度（按 token 计费）。没有发现上传数据或连接未知外部服务器的行为。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "让一个 DeepSeek Harness 会话变成由队长、成员、含依赖的任务和即时消息组成的多智能体协作团队，并在网页界面实时监控。",
+    "usage": {
+      "prompt_tokens": 3512,
+      "completion_tokens": 599,
+      "total_tokens": 4111,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 241
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2872
+    }
+  }
+}

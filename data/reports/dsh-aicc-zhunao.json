@@ -1,0 +1,37 @@
+{
+  "id": "dsh-aicc-zhunao",
+  "analyzedAt": "2026-08-16T13:40:06.773Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 并包含 agent.cordis.yml，README 给出了 dsh plugin 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-aicc-zhunao",
+      "evidence": "Install the published package into the DSH profile you use: dsh plugin --profile web add @cola1018/dsh-aicc-zhunao"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 装了一个“主脑”工作流预设。它会让你以“委派优先”的方式工作：先规划、把任务拆给子代理，自己负责总结。它还会在根会话里挡住直接写文件、编辑、PowerShell 和 Bash 等操作，避免主脑乱动底层工具。同时附带一个叫 aicc-law 的技能，用来设定任务边界、证据和安全性检查，规则很通用，不依赖特定文件或账户。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是提供预设配置和 JS 门控逻辑，不会主动连接外部服务器或碰隐私文件。",
+      "postInstallNotes": "装完后需要在 DSH 里选择“AICC Main Brain”作为 agent preset，并在派发或收尾工作前加载 aicc-law 技能。",
+      "notes": "README 示例安装命令写的是 @cola1018/dsh-aicc-zhunao，但 package.json 里 name 是 dsh-aicc-zhunao。实际安装时建议以 npm 上真实包名为准。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供“主脑”工作流预设，包含委派优先人设、根会话执行门控和可移植的 AICC 法则技能。",
+    "usage": {
+      "prompt_tokens": 1736,
+      "completion_tokens": 1034,
+      "total_tokens": 2770,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 596
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1096
+    }
+  }
+}

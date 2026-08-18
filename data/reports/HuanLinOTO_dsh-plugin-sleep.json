@@ -1,0 +1,37 @@
+{
+  "id": "HuanLinOTO/dsh-plugin-sleep",
+  "analyzedAt": "2026-08-17T11:39:24.585Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，并依赖/peerDependencies 包含 @deepseek-ai/dsh-tools 和 cordis，README 提供了 dsh plugin add 安装命令，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-sleep",
+      "evidence": "dsh plugin --profile web add @huanlin/dsh-plugin-sleep"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的模型提供一个小工具叫 sleep，模型可以按指定毫秒数暂停一下再继续干活，适合需要等待服务重启、防抖窗口或重试退避的场景。可以设置单次最大暂停时长和默认暂停时长，也支持中途取消暂停。",
+      "level": "ok",
+      "risks": "没发现明显风险。这个插件本身不乱碰你的电脑，只负责让模型暂停一会儿。",
+      "postInstallNotes": "无。若想调整暂停上限或默认值，可在 DSH 设置页或 cordis.patch.yml 里配置。",
+      "notes": "无"
+    },
+    "summaryZh": "一个简单的 DSH 插件，为模型提供可配置毫秒数、支持取消的 sleep 暂停工具。",
+    "usage": {
+      "prompt_tokens": 2505,
+      "completion_tokens": 619,
+      "total_tokens": 3124,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 300
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1865
+    }
+  }
+}

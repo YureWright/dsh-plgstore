@@ -1,0 +1,37 @@
+{
+  "id": "gxinxing/deepseek-harness-tui",
+  "analyzedAt": "2026-08-17T11:38:18.032Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 且依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/gxinxing/deepseek-harness-tui.git",
+      "evidence": "git clone https://github.com/gxinxing/deepseek-harness-tui"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的终端聊天界面。装上后运行 dsh --profile tui，就能在终端里和 DeepSeek 模型聊天。界面干净，支持把工具调用的过程折叠成小块、折叠模型的思考过程，还能根据终端背景色自动调整配色。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取 DSH 在 ~/.dsh 下的配置文件（比如 API 密钥），这些只用于连接你自己配置的模型服务。README 还建议手动修改 dsh 自带模块的一行源码来绕过某个 bug，这属于超常规操作，但并非恶意。",
+      "postInstallNotes": "需要先安装 DeepSeek Harness（npm install -g @deepseek-ai/dsh）。装好后设置 TOKENDANCE_API_KEY 环境变量，或写进 ~/.dsh/.credentials.yaml。还要按 README 先添加 @deepseek-ai/dsh-headless 插件，并可能需要手动应用工具调用 guard 补丁。",
+      "notes": "这个包 private 属性为 true，没发布到 npm，所以用 git 方式安装。另外它依赖的 @deepseek-ai/dsh-llm-deepseek 存在一个已知 bug，README 要求手动改 node_modules 里的文件，dsh 升级后补丁会失效，需要重新应用。若通过 git 安装，package.json 里的 prepare 脚本（husky install）可能会运行，但只影响仓库内 git hooks，无全局影响。"
+    },
+    "summaryZh": "一个让 DeepSeek Harness 获得终端聊天界面的插件，支持折叠工具调用与思考过程，并自动适配终端主题。",
+    "usage": {
+      "prompt_tokens": 3741,
+      "completion_tokens": 5440,
+      "total_tokens": 9181,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4924
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3101
+    }
+  }
+}

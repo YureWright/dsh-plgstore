@@ -1,0 +1,37 @@
+{
+  "id": "KinGao294/dsh-skin",
+  "analyzedAt": "2026-08-17T11:21:14.131Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令并调用 DSH 主题接口"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/KinGao294/dsh-skin.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 换个皮肤、换个壁纸。它内置 7 套配色（深色、浅色都有），你还可以把自己电脑上的图片或网络图片/视频链接设为背景，并调整透明度、模糊和拉伸方式。设置好后会保存在浏览器里，下次打开还在。",
+      "level": "ok",
+      "risks": "它会把壁纸图片以数据链接的形式存在浏览器的 localStorage 里，所以你的图片可能会被内嵌在浏览器数据中；如果你用别人的电脑，别人可能看到你选的壁纸。另外，它只是改界面外观，不碰你的文件。",
+      "postInstallNotes": "装完需要重启 DSH 的网页服务（先停掉再运行 `dsh web`），然后到 设置 → 通用 里使用皮肤和壁纸功能。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供皮肤切换和自定义壁纸的插件，内置多套配色并支持本地图片/URL 背景。",
+    "usage": {
+      "prompt_tokens": 3096,
+      "completion_tokens": 3777,
+      "total_tokens": 6873,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3417
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2456
+    }
+  }
+}

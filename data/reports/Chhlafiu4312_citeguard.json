@@ -1,0 +1,37 @@
+{
+  "id": "Chhlafiu4312/citeguard",
+  "analyzedAt": "2026-08-17T12:13:50.660Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle、peerDependencies 包含 @deepseek-ai/cordis 和 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/Chhlafiu4312/citeguard/releases/download/v0.1.7/dsh-citeguard-0.1.7.tgz",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add https://github.com/Chhlafiu4312/citeguard/releases/download/v0.1.7/dsh-citeguard-0.1.7.tgz"
+    },
+    "evaluationReport": {
+      "intro": "CiteGuard 是一个引用检查工具，帮你检查文章里的 DOI、arXiv、网页链接和 Markdown 引用是否真实有效。它能自动提取引用、验证链接能不能打开、标题是否匹配，并给出明确的检查结果（比如已验证、失效、可疑）。它不会把“链接能打开”吹成“内容是真的”，只是做机械性的核验，把人工判断的部分留给用户。",
+      "level": "ok",
+      "risks": "没发现明显风险。默认只连接固定的 Crossref 和 arXiv 提供商，不会随便访问任意网站；只有你明确开启 full 模式后才会检查任意 URL，并且有 SSRF 防护（限制域名、IP、重定向次数、响应大小等）。它不会读取你的隐私文件，只处理你给它检查的文本。",
+      "postInstallNotes": "安装后需要重启 Web UI（如果正在运行）才能生效。默认配置即可使用，但可以根据需要调整 networkMode（off/metadata/full）、timeoutMs、maxResponseBytes 等参数。",
+      "notes": "无"
+    },
+    "summaryZh": "CiteGuard 是 DeepSeek Harness 的引用验证插件，自动提取并检查 DOI、arXiv 和网址引用的真实性与可达性。",
+    "usage": {
+      "prompt_tokens": 3866,
+      "completion_tokens": 744,
+      "total_tokens": 4610,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 265
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3226
+    }
+  }
+}

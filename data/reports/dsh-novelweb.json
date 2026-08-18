@@ -1,0 +1,37 @@
+{
+  "id": "dsh-novelweb",
+  "analyzedAt": "2026-08-18T15:50:39.924Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 配置，并注入 @deepseek-ai/dsh-client-* 运行时，README 提供了 dsh plugin add 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-novelweb",
+      "evidence": "dsh plugin --profile web add dsh-novelweb"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的写作助手插件，专门帮助写小说。它能在聊天窗口里提供写作和策划两种模式：写作模式可以自动把当前章节、人物和检索到的正文内容放进对话，你直接说“续写”就能接着写；策划模式可以管理故事线、章节大纲、伏笔和未解的线索。它还支持全文检索（RAG）和 TXT 导入，并在网页侧边栏加一个“写作台”面板，方便操作。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会把小说数据保存到当前工作目录下的 .novelweb 文件夹，或者 DSH 主目录下的 novelweb-data 文件夹，这些数据只存在你自己的电脑上。",
+      "postInstallNotes": "安装后需要重启 DSH（运行 dsh --profile web），并刷新浏览器，侧边栏才会出现“写作台”入口。",
+      "notes": "无"
+    },
+    "summaryZh": "NovelWeb 写作助手：在 DSH 中提供小说写作/策划双模式、RAG 检索、伏笔与大纲管理的 Web 插件。",
+    "usage": {
+      "prompt_tokens": 1541,
+      "completion_tokens": 700,
+      "total_tokens": 2241,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 312
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 901
+    }
+  }
+}

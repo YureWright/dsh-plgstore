@@ -1,0 +1,37 @@
+{
+  "id": "@michengai/dsh-agency-agents",
+  "analyzedAt": "2026-08-17T11:10:06.517Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 包含 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@michengai/dsh-agency-agents",
+      "evidence": "dsh plugin --profile web add @michengai/dsh-agency-agents@latest --registry=https://registry.npmjs.org/"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一组“专家”——内置 271 个不同领域的专业人士。你可以在设置里勾选想用的专家，然后在对话里用 @ 或者专门的选单召唤他们，让专家针对你的问题给出专业意见。主要用途是让普通对话也能临时获得某个领域的深度解答。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在本地 DSH 配置中注册并挂载子代理功能；如果你额外设置外部专家目录，需要确保那个目录来自可信来源，因为里面的人物设定会作为子代理的系统提示。",
+      "postInstallNotes": "安装后需要重启 DSH Web 并硬刷新浏览器；然后在“设置 → Experts”里启用你需要的专家。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Agency Agents 是一个为 DeepSeek Harness 提供 271 个可召唤领域专家的插件，安装后可在对话中随时召唤专业子代理。",
+    "usage": {
+      "prompt_tokens": 4239,
+      "completion_tokens": 782,
+      "total_tokens": 5021,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 410
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3599
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-chat-timeline",
+  "analyzedAt": "2026-08-16T13:34:03.866Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-chat-timeline",
+      "evidence": "dsh plugin add dsh-chat-timeline"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DSH 聊天界面的右侧添加一条类似 DeepSeek 官网的「时间线」导航条。每一条用户消息都会对应一个指示线，鼠标悬停可以看到消息预览，点击可以快速跳转到对话中的对应位置，方便在长对话中回看和定位。它会自动跟随滚动高亮当前阅读位置，并且根据聊天区宽度自动避让右侧工具栏，界面简洁，适配深色和浅色主题。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是一个界面增强插件，不会读取本地文件或向外部服务器发送数据。",
+      "postInstallNotes": "安装完成后需重启 dsh web 并刷新浏览器。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 聊天界面添加类似 DeepSeek 官网右侧的会话时间线导航，支持悬停预览、点击跳转和自动避让。",
+    "usage": {
+      "prompt_tokens": 2733,
+      "completion_tokens": 811,
+      "total_tokens": 3544,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 479
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2093
+    }
+  }
+}

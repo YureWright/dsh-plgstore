@@ -1,0 +1,37 @@
+{
+  "id": "@shgroup/dsh-serenity-hooks",
+  "analyzedAt": "2026-08-17T11:07:46.944Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-* 核心包和 cordis，README 给出了 dsh plugin add 安装命令，符合 DSH 插件的典型特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@shgroup/dsh-serenity-hooks",
+      "evidence": "dsh plugin --profile web add @shgroup/dsh-serenity-hooks"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的会话加了一层\"宁静号\"认知容器：它会注册 9 个工具（比如文件系统、会话、Git 等），限制一些危险操作（安全模式、路径守卫），把会话记录保存到硬盘，还会往系统提示词里注入五块结构（ACC/CCE/约束/技能/会话），让 AI 的思考框架更规范。主要适合想在 DSH 里用\"宁静号\"那套认知架构的人，装好之后在特定标记的目录里会自动生效。",
+      "level": "ok",
+      "risks": "作为 DSH 插件，它会访问文件系统（cc_fs、路径守卫）、读写会话文件（session）、执行 Git 操作（cc_git），还会修改系统提示词。这些都属于插件的正常功能，数据留在本地，没看到上传到外部服务器的行为。但它有 safe-mode 黑名单配置，如果配置不当可能放行敏感路径，属于用户可控制的正常风险。",
+      "postInstallNotes": "重启 dsh web；在带 `.serenity` 标记的目录中会话会自动获得全部能力；可选：在 `.dsh/serenity.json`（或 `.opencode/serenity.json`）里配置 loop 默认模型、会话保存阈值、安全模式黑名单。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供宁静号认知容器基础设施的 DSH 插件，包含工具、安全约束和系统提示词注入。",
+    "usage": {
+      "prompt_tokens": 2229,
+      "completion_tokens": 705,
+      "total_tokens": 2934,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 227
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1589
+    }
+  }
+}

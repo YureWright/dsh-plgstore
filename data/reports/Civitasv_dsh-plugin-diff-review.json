@@ -1,0 +1,37 @@
+{
+  "id": "Civitasv/dsh-plugin-diff-review",
+  "analyzedAt": "2026-08-17T11:42:20.459Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Civitasv/dsh-plugin-diff-review#v0.1.2",
+      "evidence": "dsh plugin --profile web add github:Civitasv/dsh-plugin-diff-review#v0.1.2"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 界面里直接查看当前项目的代码改动（Git diff）。你可以看某个文件改了什么、选一段改动暂存或丢弃，还能提交和推送代码。它还提供了文件树和标签页，方便你浏览和编辑文件，以及把 AI 助手回复的内容一键加到对话里继续追问。",
+      "level": "ok",
+      "risks": "它会读取你当前项目的 Git 改动（包括已暂存、未暂存和未跟踪文件），并允许你在界面中暂存或丢弃这些改动，也能执行 git 提交和推送。这些操作都是在本地进行，但如果你在对话中触发相关功能，AI 可能会看到这些代码内容。另外，安装配置会修改你的 DSH 配置文件。",
+      "postInstallNotes": "安装后，需要在 ~/.dsh/profiles/web/cordis.patch.yml 中注册插件（open-editor 和 diff-review），然后重启 DSH。同时确保已安装依赖插件 dsh-plugin-open-editor。",
+      "notes": "README 安装命令指向 v0.1.2，而 package.json 显示版本为 0.1.0，请注意以安装命令或发布版本为准；安装时需一并安装依赖插件 dsh-plugin-open-editor。"
+    },
+    "summaryZh": "在 DSH 中查看与操作 Git 改动（diff 评审、暂存/丢弃、提交/推送）的插件。",
+    "usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 2507,
+      "total_tokens": 5314,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2043
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2167
+    }
+  }
+}

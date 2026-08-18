@@ -1,0 +1,37 @@
+{
+  "id": "dsh-vision-adapter",
+  "analyzedAt": "2026-08-18T14:56:07.618Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vision-adapter",
+      "evidence": "dsh plugin --profile web add dsh-vision-adapter"
+    },
+    "evaluationReport": {
+      "intro": "这是给 DeepSeek Harness 增加视觉能力的插件。装上以后，在 DSH 的设置里会出现一个「视觉」页面，你可以从 Kimi、智谱、通义等 8 家厂商里选一个，粘贴自己的 API Key。之后在聊天窗口就能直接拖图片进去，图片由你选的视觉模型识别，文字部分仍然由 DeepSeek 处理，等于给纯文本的 DeepSeek 加上了一双眼睛。",
+      "level": "ok",
+      "risks": "它会把你的 API Key 保存到本机的 ~/.dsh/.credentials.yaml 文件里，并向所选视觉厂商的服务器发送图片和请求。请确保 API Key 只属于你自己，不要在公共电脑上使用。没发现其他明显风险。",
+      "postInstallNotes": "装完后需要重启 DSH，然后打开「设置 → 视觉」，选择视觉厂商、粘贴 API Key 并保存。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 加视觉能力：选视觉厂商、填 API Key，聊天时就能拖图识别。",
+    "usage": {
+      "prompt_tokens": 3000,
+      "completion_tokens": 1364,
+      "total_tokens": 4364,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 995
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2360
+    }
+  }
+}

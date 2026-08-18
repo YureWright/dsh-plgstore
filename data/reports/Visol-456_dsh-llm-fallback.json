@@ -1,0 +1,37 @@
+{
+  "id": "Visol-456/dsh-llm-fallback",
+  "analyzedAt": "2026-08-17T11:47:31.192Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 和 dsh.bundle，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，且 README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@visol-456/dsh-llm-fallback",
+      "evidence": "dsh plugin --profile web add @visol-456/dsh-llm-fallback"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DeepSeek Harness 的备用模型自动切换插件。当你在使用主模型时遇到限流、超时、服务器错误等问题，它会自动把请求切换到事先配置好的备用模型上，避免对话中断。你可以在 Web 设置界面里管理备用目标，也可以写在配置文件里。",
+      "level": "ok",
+      "risks": "插件会读取和修改 DSH 的设置文件（settings.yaml），并在本机回环地址提供一个配置读写接口（仅允许本机访问，但绑到 0.0.0.0 时局域网无法写入，不建议暴露给不受信网络）。此外会向配置的模型服务商发送请求。未发现恶意行为。",
+      "postInstallNotes": "安装后需要在配置中设置 fallbacks 列表，或在 Web 界面的“回退链”页保存备用目标，否则插件不生效；建议将 cooldownMs 设为至少 30000。",
+      "notes": "注意：0.1.x 存在破坏性变更，若从早期版本升级需迁移旧配置（chains/match 等已移除）。依赖的官方核心包为 RC 版本，属正常情况。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供模型故障自动切换（fallback）的插件，主模型失败时自动改用备用模型。",
+    "usage": {
+      "prompt_tokens": 4829,
+      "completion_tokens": 1100,
+      "total_tokens": 5929,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 657
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4189
+    }
+  }
+}

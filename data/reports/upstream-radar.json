@@ -1,0 +1,37 @@
+{
+  "id": "upstream-radar",
+  "analyzedAt": "2026-08-16T13:39:54.526Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并导出 ./dsh 入口，README 明确给出 dsh plugin add 安装命令，代码明显为 DSH 生态设计。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "upstream-radar",
+      "evidence": "run `dsh plugin --profile web add upstream-radar@<exact-version>`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件像一台“依赖雷达”，专门盯着你 DSH 项目里用到的各种第三方包。一旦某个包被发现漏洞、或者有新版本可能会搞坏现有功能，它会准确告诉你这个包是通过哪条依赖链被引用的、影响哪些地方，然后交给 DSH 里的 AI 助手去进一步分析怎么处理。你不用自己去翻一堆依赖关系，它能自动持续监控。",
+      "level": "ok",
+      "risks": "它会读取你项目里安装的依赖清单（比如 lock 文件和相关配置），需要联网查询 npm 和漏洞数据库（OSV）来比对信息。安装时可能会通过 DSH 安装自身到指定 profile，但不会悄悄执行别的事。整体风险不大。",
+      "postInstallNotes": "装完后需要运行 `upstream-radar setup` 生成配置文件（含 inventory 和 DSH overlay），仔细确认生成的文件后再启动 DSH；如果已经在 profile 里装好了，加 `--no-install` 跳过重复安装。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 插件提供持续依赖安全监控，精确定位受漏洞影响的依赖路径并联动 DSH Agent 处理。",
+    "usage": {
+      "prompt_tokens": 4065,
+      "completion_tokens": 673,
+      "total_tokens": 4738,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 280
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3425
+    }
+  }
+}

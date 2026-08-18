@@ -1,0 +1,37 @@
+{
+  "id": "dsh-monitor",
+  "analyzedAt": "2026-08-16T14:49:19.369Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-monitor",
+      "evidence": "npx @deepseek-ai/dsh@latest plugin --profile web add dsh-monitor"
+    },
+    "evaluationReport": {
+      "intro": "这个插件相当于给 DeepSeek Harness 智能体装了一个“门铃”：你可以让它盯着某个文件（比如新消息不断追加进来的 NDJSON 文件），或者每隔几秒运行一条命令查看输出变化。一旦发现新内容，它就会自动唤醒空闲的智能体，或者把消息塞给正在忙的智能体，让智能体及时处理新消息。",
+      "level": "ok",
+      "risks": "它会在你指定的路径轮询文件、运行你指定的 shell 命令，因此会占用少量 CPU；如果监控的是敏感文件或命令，相关输出会被智能体读取。此外，命令的 cwd 默认是进程当前目录，注意不要意外运行危险命令。",
+      "postInstallNotes": "无需额外配置；安装后通过对话让智能体调用 monitor 工具即可开始使用。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-monitor 是一个 DSH 插件，让智能体通过持续监控文件或命令输出来自动唤醒处理新消息。",
+    "usage": {
+      "prompt_tokens": 2837,
+      "completion_tokens": 784,
+      "total_tokens": 3621,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 414
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2197
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dpskh/dsh-a2a",
+  "analyzedAt": "2026-08-17T13:15:36.234Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 字段，并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 描述了完整的插件配置与功能，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/dpskh/dsh-a2a.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让多个 DeepSeek Harness 实例组成一个实时对等网络（mesh），互相发送消息、同步项目清单和聊天记录。它自带一个中心服务器（hub）和客户端，还提供 /a2a 命令和 a2a_peers 等工具，方便在多个 AI 助手之间协作。",
+      "level": "ok",
+      "risks": "插件会在你的电脑上开启一个网络端口（默认 127.0.0.1:43123），如果配置不当暴露到公网，任何人都可能连接并读取消息历史。收到的附件会存到系统临时文件夹。除此之外没发现明显风险。",
+      "postInstallNotes": "需要配置 hub 和 mesh 参数，并且要挂载存储后端（如 storage-sqlite）并路由到 a2a 域，否则无法正常工作。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供实时 Agent 间通信网格，支持项目注册、消息历史和跨实例协作。",
+    "usage": {
+      "prompt_tokens": 3677,
+      "completion_tokens": 1129,
+      "total_tokens": 4806,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 767
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3037
+    }
+  }
+}

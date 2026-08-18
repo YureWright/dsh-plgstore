@@ -1,0 +1,29 @@
+{
+  "id": "dsh-stock-watch",
+  "analyzedAt": "2026-08-18T14:50:20.796Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 包含 dsh.bundle 和 dsh.client 声明，README 给出 dsh plugin 安装命令，且描述为 DSH Web 界面插件，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-stock-watch",
+      "evidence": "已发布到 npm，一条命令安装到你的 web profile：```bash dsh plugin --profile web add dsh-stock-watch```"
+    },
+    "evaluationReport": {
+      "intro": "这是一个A股行情盯盘插件，在 DeepSeek Harness（DSH）网页的右上角显示一个可折叠弹窗。你可以添加自选股分组，实时查看股票价格、涨跌幅、分时走势和K线图，还能设置买入/卖出目标价，触发提醒。另外它还提供一些快捷按钮，可以一键新建对话让AI分析股票或生成复盘报告。",
+      "level": "ok",
+      "risks": "插件会读取你电脑上的 ~/.stocking/settings.json（如果存在）来迁移自选股配置，并把两个技能文件复制到 ~/.agents/skills/ 目录（可禁用）。行情数据来自腾讯财经的公开接口，你的自选股配置和界面设置会存储在浏览器 localStorage 中。没发现明显的恶意行为。",
+      "postInstallNotes": "安装后需要重启 dsh web 服务，然后刷新页面，右上角会出现「📈 自选股」药丸。",
+      "notes": "无"
+    },
+    "summaryZh": "A股自选股实时行情盯盘插件，在DSH Web右上角提供可折叠弹窗，支持分时/K线、目标价提醒、多分组自选股和暗/浅主题。",
+    "usage": {
+      "prompt_tokens": 7817,
+      "completion_tokens": 1346,
+      "total_tokens": 9163
+    }
+  }
+}

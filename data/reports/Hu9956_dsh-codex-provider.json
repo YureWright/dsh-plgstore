@@ -1,0 +1,37 @@
+{
+  "id": "Hu9956/dsh-codex-provider",
+  "analyzedAt": "2026-08-17T11:45:31.673Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 中声明了 dsh.bundle 与 dsh.client，并依赖多个 @deepseek-ai 核心包，README 也给出了 dsh plugin add 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-codex-provider",
+      "evidence": "dsh plugin --profile web add dsh-codex-provider"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness (DSH) 用的供应商插件，让你能用 ChatGPT Plus/Pro 订阅来调用 OpenAI Codex 模型。它通过设备码 OAuth 登录你的 OpenAI 账号，自动刷新令牌，并在 DSH 设置里加一个“供应商”面板，登录后就能在模型选择器里选 Codex 模型（比如 gpt-5.4）干活。不需要 API Key，花的是订阅额度。",
+      "level": "ok",
+      "risks": "插件会读取你电脑上 ~/.codex/auth.json 里的 Codex CLI 登录信息，并把 OpenAI 的访问令牌和刷新令牌存到 DSH 的凭证库。它还会连接 OpenAI 的服务器（auth.openai.com 和 chatgpt.com）来完成登录和请求。注意它和 Codex CLI 共享同一个 OAuth 会话，一边刷新令牌另一边可能会失效。使用时别把令牌、设备代码或凭证文件内容截图发出去。",
+      "postInstallNotes": "重启 dsh web 服务；首次使用前需要先在 ChatGPT 网页端的“账户安全与登录”里打开“为 Codex 启用设备代码授权”开关，登录完成后可再关掉。",
+      "notes": "这是社区维护的非官方插件，与 OpenAI、DeepSeek 官方无隶属关系。"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加 OpenAI Codex 供应商，用 ChatGPT Plus/Pro 订阅通过设备码登录并自动刷新令牌。",
+    "usage": {
+      "prompt_tokens": 3093,
+      "completion_tokens": 1144,
+      "total_tokens": 4237,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 683
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2453
+    }
+  }
+}

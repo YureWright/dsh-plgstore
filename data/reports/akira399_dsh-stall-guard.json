@@ -1,0 +1,37 @@
+{
+  "id": "akira399/dsh-stall-guard",
+  "analyzedAt": "2026-08-17T13:08:37.351Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch 配置，README 提供了 dsh plugin add 安装命令，代码是典型的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/akira399/dsh-stall-guard.git",
+      "evidence": "npx -p @deepseek-ai/dsh dsh plugin --profile web add github:akira399/dsh-stall-guard"
+    },
+    "evaluationReport": {
+      "intro": "这是给 DeepSeek Harness（DSH）用的‘任务看门狗’插件。它会盯着你的 AI 任务是不是卡住了：如果任务既没有新动静、也没有正在跑的长操作，静默超过一定时间，它就分等级给 AI 发提醒，先让 AI 自己检查原因，再让它修复，不行就换个方向重试。它不会杀死任务，也不会打断正在工作中的操作，只是不断引导 AI 自己恢复。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只会在本地写一个事件日志文件（~/.dsh/stall-guard/events.jsonl），并在本机 3080 端口开一个状态查询接口（只有本机可访问）；它不会上传数据，也不会读取隐私文件。",
+      "postInstallNotes": "安装后重启 DSH 即可，插件默认启用；如需调整‘静默多久算卡住’等参数，可在 settings.yaml 的 stall-guard 命名空间里改，改完热生效，不用重启。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 任务看门狗插件：监控任务是否真卡死，通过诊断→修复→换方向的提示引导 AI 自行恢复，永不终止任务。",
+    "usage": {
+      "prompt_tokens": 2665,
+      "completion_tokens": 1866,
+      "total_tokens": 4531,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1442
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2025
+    }
+  }
+}

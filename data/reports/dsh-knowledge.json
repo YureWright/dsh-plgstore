@@ -1,0 +1,37 @@
+{
+  "id": "dsh-knowledge",
+  "analyzedAt": "2026-08-18T14:52:43.189Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peer 依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-knowledge",
+      "evidence": "dsh plugin --profile <name> add dsh-knowledge"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 用的知识库插件。你可以把各种文档（txt、pdf、word、网页等）导进去，它会自动切成小块、做向量化，之后 AI 就能根据知识库内容回答你的问题。它还带一个管理面板，可以创建知识库、分组管理、上传文件、测试检索效果，也支持让模型调用知识库工具。",
+      "level": "ok",
+      "risks": "它会在本地写入 SQLite 数据库（知识库内容），可能把 API 密钥明文保存在本地配置文件里；如果开启本地模型，首次使用会从 Hugging Face 下载模型权重到本地缓存。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需重启 DSH web 服务。若是 pnpm 10+，需在 profile 的 pnpm-workspace.yaml 中允许 onnxruntime-node、sharp、protobufjs 的构建脚本。使用本地模型时，首次运行会下载模型，可设置 HF_ENDPOINT 镜像加速。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness (DSH) 打造的知识库系统，支持文档管理、智能分块、向量化与混合检索，并提供管理面板与模型调用工具。",
+    "usage": {
+      "prompt_tokens": 6080,
+      "completion_tokens": 3292,
+      "total_tokens": 9372,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2890
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5440
+    }
+  }
+}

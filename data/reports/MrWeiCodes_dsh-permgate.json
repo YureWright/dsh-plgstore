@@ -1,0 +1,37 @@
+{
+  "id": "MrWeiCodes/dsh-permgate",
+  "analyzedAt": "2026-08-17T12:03:18.005Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/dsh-tools 等核心包；README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/MrWeiCodes/dsh-permgate.git",
+      "evidence": "dsh plugin --profile web add -w github:MrWeiCodes/dsh-permgate"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）加装一个更细致的“权限门卫”。原本 DSH 只有只读、工作区可写、完全访问三个档位，这个插件新增一个「自定义审查」模式，把 AI 的各种操作（比如读文件、写文件、执行命令、访问工作区外目录、启动子代理等）分成几类，每一类都可以单独设置“每次都问我”、“直接允许”或“直接拒绝”。还能设置全局规则和每个项目自己的规则，加白名单/黑名单，自定义禁止某些命令，审批时能看到改动前后 diff，拒绝时还能给 AI 写理由。所有设置都保存在本地配置文件里。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在本机读写配置文件（$DSH_HOME/dsh-permgate/config.json）并在 DSH 界面弹审批窗口，不连接外部服务器，也不收集隐私。",
+      "postInstallNotes": "重启 dsh web；在会话的权限选择器（/permission）里选择「自定义审查」，也可以到设置 → Permission 里把它设为新会话默认。",
+      "notes": "依赖 @deepseek-ai/dsh-tools 等核心包的 rc 版本，升级 DSH 时可能需要同步更新；它通过补丁覆盖了 permission 预设表，不要与其它修改 permission 配置的补丁共存；建议同一时间只装一个权限审查类插件。"
+    },
+    "summaryZh": "为 DSH 提供细粒度权限控制，按目录、命令、文件操作等分类逐项审查 AI 工具调用，支持白名单、自定义规则与审批弹窗。",
+    "usage": {
+      "prompt_tokens": 4187,
+      "completion_tokens": 3717,
+      "total_tokens": 7904,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3206
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3547
+    }
+  }
+}

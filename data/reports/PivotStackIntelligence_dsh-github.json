@@ -1,0 +1,37 @@
+{
+  "id": "PivotStackIntelligence/dsh-github",
+  "analyzedAt": "2026-08-17T11:18:53.552Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-github",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个 GitHub 面板，可以查看和管理代码仓库、做版本控制相关操作。",
+      "level": "ok",
+      "risks": "没发现明显风险。由于缺少 README，无法确认具体行为；作为 GitHub 面板，可能要求你登录 GitHub 或提供访问令牌以读取仓库信息。",
+      "postInstallNotes": "无",
+      "notes": "README 缺失，建议先查看源码了解具体功能；devDependencies 中的本机绝对路径链接仅影响开发环境，不影响安装使用。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供源代码管理与 GitHub 集成面板的插件。",
+    "usage": {
+      "prompt_tokens": 2119,
+      "completion_tokens": 1852,
+      "total_tokens": 3971,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1595
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1479
+    }
+  }
+}

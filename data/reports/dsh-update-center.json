@@ -1,0 +1,37 @@
+{
+  "id": "dsh-update-center",
+  "analyzedAt": "2026-08-16T13:34:10.378Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 peerDependencies 依赖 @deepseek-ai/dsh-llm 等 dsh 核心包，README 给出 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-update-center",
+      "evidence": "推荐 npm 安装（秒级，无需构建）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness (dsh) 提供了一个“应用商店”和“更新中心”。你可以在里面浏览、搜索插件，一键安装/卸载/禁用插件，还能检查并更新所有已安装的插件以及 dsh 本体。它会自动比对版本、处理更新，并避免弄坏现有配置。",
+      "level": "ok",
+      "risks": "它会读取和修改 dsh 的源码目录、配置文件和插件目录（都位于你安装 dsh 的地方）。它通过 GitHub API 和 npm registry 拉取公开的插件列表，安装插件时会下载代码到本地。更新时会执行 pnpm 安装和构建命令，可能占用较多资源。它不会上传你的个人数据，但网络请求的响应会缓存到本地磁盘。",
+      "postInstallNotes": "安装后重启 dsh web，设置页会出现「更新中心」面板。",
+      "notes": "无。不过该插件可自动更新 dsh 本体，建议更新前留意版本变化。"
+    },
+    "summaryZh": "dsh 的更新中心与插件市场：内置插件商店，支持一键安装/更新/卸载/禁用插件，并能更新 dsh 本体。",
+    "usage": {
+      "prompt_tokens": 3478,
+      "completion_tokens": 3396,
+      "total_tokens": 6874,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3002
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2838
+    }
+  }
+}

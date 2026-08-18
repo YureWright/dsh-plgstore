@@ -1,0 +1,37 @@
+{
+  "id": "@perrylink/dsh-skill-pack-security-provider",
+  "analyzedAt": "2026-08-18T14:53:22.155Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@perrylink/dsh-skill-pack-security-provider",
+      "evidence": "README 原文：dsh plugin add @perrylink/dsh-skill-pack-security-provider 一键挂载。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是“安全技能包”的可选安装组件。它把一套安全检查技能（比如许可证、SBOM、依赖锁定、恶意软件扫描、供应链风险）注册到 DSH 里，不用手动复制技能文件。同时提供一个叫 plugin_vet 的工具，用来审查其他插件是否有偷偷连服务器、碰敏感文件等风险。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取技能目录（files:read）并通过网络获取信息（network:fetch），但都是为了完成安全审计功能，属于合理权限。",
+      "postInstallNotes": "默认即可用；如需英文版技能，把插件配置里的 language 设为 'en'。",
+      "notes": "无"
+    },
+    "summaryZh": "将 dsh-skill-pack-security 技能包注册进 DSH 的可选 provider 插件，并附带 plugin_vet 供应链安全审查工具。",
+    "usage": {
+      "prompt_tokens": 4557,
+      "completion_tokens": 1912,
+      "total_tokens": 6469,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1564
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3917
+    }
+  }
+}

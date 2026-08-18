@@ -1,0 +1,37 @@
+{
+  "id": "dsh-office",
+  "analyzedAt": "2026-08-16T13:38:28.060Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且以 @deepseek-ai/cordis 为 peerDependency，README 给出了 dsh plugin 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-office",
+      "evidence": "README 安装节原文：`dsh plugin --profile web add dsh-office`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的一个悬浮面板，叫「办公室」。它会把你的工作区、会话、token 用量和子代理等东西，排列成一个 6 列的可视化面板。装好之后，你可以在右下角点一个按钮打开它，一眼就能看到每个 agent 在干什么，不用再一个个点开会话去看了。",
+      "level": "ok",
+      "risks": "它会读取你本地 DSH 的工作区、会话、token 用量等数据，并在 ~/.dsh/office/ 目录下生成配置文件（如 office-config.json、token-usage.json）。这些操作只发生在你电脑本地，没发现会向外部服务器上传数据的迹象。",
+      "postInstallNotes": "安装后重启 dsh web，然后在右下角点击「办公室」悬浮按钮即可使用，无需额外配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的「办公室」可视化插件：把工作区、会话、token 用量和子代理汇总成 6 列面板，让你一眼看清所有 agent 的状态。",
+    "usage": {
+      "prompt_tokens": 2509,
+      "completion_tokens": 2006,
+      "total_tokens": 4515,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1627
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1869
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "kc0ed/dsh-bottom-bar",
+  "analyzedAt": "2026-08-17T11:53:11.960Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 与 dsh-typert-protocol，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@kc0ed/dsh-bottom-bar",
+      "evidence": "dsh plugin --profile web add @kc0ed/dsh-bottom-bar"
+    },
+    "evaluationReport": {
+      "intro": "这个插件专门改 DSH 聊天界面最底下那行统计栏，让它变成可以自己拼装的：想显示轮数、耗时、token 数、缓存命中还是预估费用，都可以开关注册、拖拽排序，还能点开看明细。它还会按“渠道@模型”记账，把每次对话的 token 用量和估算费用记到一个本地账本文件里，方便你心里有数、事后对账。",
+      "level": "ok",
+      "risks": "它会在本地读写一个账本文件（~/.dsh/cost-estimate.ledger.json），记录你的 token 用量和费用估算，这些数据留在你自己电脑上，不会自动上传外部。如果用 GitHub 直装方式，可能会触发 pnpm 的构建脚本审批，需要你手动确认。除此之外没发现明显风险。",
+      "postInstallNotes": "装完以后要彻底退出 DSH 再重新启动（光刷新页面不够），然后在浏览器里按 Ctrl+Shift+R 硬刷新一次。另外确认已经装好 pnpm 和 dsh CLI；如果从 GitHub 直装遇到 pnpm 构建拦截，需要按 README 在 ~/.dsh/profiles/web/pnpm-workspace.yaml 里加 allowBuilds 配置。",
+      "notes": "README 提醒：装了静态包之后别再同时跑“动态插件”形态，两个实例写同一个账本会打架。另外费用是估算值，不一定和官方账单完全一致。"
+    },
+    "summaryZh": "一个可自由定制的 DSH 底栏统计插件，能显示 token 用量、耗时等指标并实时预估费用，还带本地持久化账本。",
+    "usage": {
+      "prompt_tokens": 3220,
+      "completion_tokens": 2052,
+      "total_tokens": 5272,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1546
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2580
+    }
+  }
+}

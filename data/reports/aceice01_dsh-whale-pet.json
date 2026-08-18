@@ -1,0 +1,37 @@
+{
+  "id": "aceice01/dsh-whale-pet",
+  "analyzedAt": "2026-08-17T12:07:33.848Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，符合真正的 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:aceice01/dsh-whale-pet",
+      "evidence": "dsh plugin --profile web add github:aceice01/dsh-whale-pet"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的桌面宠物插件，叫“鲸鱼娘桌宠”。它会在你的电脑屏幕上（桌面版或网页版）显示一个蓝发女仆小鲸鱼动画，会撒娇、有预合成的语音，还能在你任务完成时提醒你。另外附带一个显示 DeepSeek 账户余额的小徽章，点击可以一键跳转到充值页面。",
+      "level": "ok",
+      "risks": "安装脚本会修改 DSH 的配置目录（如 %APPDATA%\\dsh-desktop-client\\dsh\\profiles\\web 和 %USERPROFILE%\\.dsh\\profiles\\web），可选补丁还会改动客户端 main.js。余额功能会把你的 DeepSeek 账户余额显示在界面上，但 API Key 只在服务端使用，不会传到浏览器。除此之外没有发现明显风险。",
+      "postInstallNotes": "装完后需要重启 DSH 桌面应用或 dsh web 服务才能生效；首次使用语音时需点击一下桌宠以解锁浏览器音频；如果桌面版桌宠在主窗口关闭后不消失，可运行 apply-main-patch.ps1 应用补丁修复（需要管理员权限）。",
+      "notes": "这是一个非官方同人项目，与 DeepSeek 官方无隶属关系；角色素材版权归原作者所有；许可证禁止商业用途。安装脚本和补丁会改动 DSH 客户端文件，建议先查看脚本内容再运行。但该插件确实是真正的 DSH 插件。"
+    },
+    "summaryZh": "DeepSeek 鲸鱼娘桌宠：带动画、离线语音、撒娇互动和任务提醒的桌面宠物，另含余额徽章与充值入口。",
+    "usage": {
+      "prompt_tokens": 4047,
+      "completion_tokens": 2006,
+      "total_tokens": 6053,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1490
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3407
+    }
+  }
+}

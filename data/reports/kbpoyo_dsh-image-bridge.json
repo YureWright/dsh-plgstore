@@ -1,0 +1,37 @@
+{
+  "id": "kbpoyo/dsh-image-bridge",
+  "analyzedAt": "2026-08-17T11:54:41.542Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@kbpoyo/dsh-image-bridge@0.1.0",
+      "evidence": "dsh plugin --profile web add @kbpoyo/dsh-image-bridge@0.1.0"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 用的，解决纯文本模型不能直接看图片的问题。你在聊天框粘贴图片后，它会自动把图片存到会话工作区的隐藏文件夹里，然后转换成一段文字（包含图片路径和提示）发给模型，让模型自己调用视觉工具去“看图”。如果你用的是多模态模型，它就不插手，图片直接原样发送。",
+      "level": "ok",
+      "risks": "图片会临时保存在当前会话工作区的隐藏目录 .dsh-image-bridge/ 里，24 小时自动清理，超过 512MB 按最旧删除；图片内容会通过模型自己的视觉工具发送给对应模型服务商（这是模型功能）。插件本身不连其他服务器，也不碰隐私文件。",
+      "postInstallNotes": "装完重启 dsh web 即可生效；npm 安装会自动挂载配置层，无需手动改配置。",
+      "notes": "无"
+    },
+    "summaryZh": "让纯文本模型也能看图：粘贴图片自动转成文本标记并调用模型自带视觉工具的 DSH Web 插件。",
+    "usage": {
+      "prompt_tokens": 2986,
+      "completion_tokens": 1782,
+      "total_tokens": 4768,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1405
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2346
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@plur-ai/dsh",
+  "analyzedAt": "2026-08-16T13:36:22.300Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 补丁，README 给出了明确的 dsh plugin add 安装命令，且 peerDependencies 包含 @deepseek-ai/cordis 和 dsh-* 核心包。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@plur-ai/dsh",
+      "evidence": "dsh plugin --profile web add @plur-ai/dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上长期记忆：你纠正过它一次，下次它就记住了，不用每次重新解释。所有记忆都存在你电脑本地的 YAML 文件里，你可以自己查看、修改和删除。",
+      "level": "ok",
+      "risks": "记忆内容会注入到发送给模型提供商的提示中（默认是 DeepSeek 的云 API），所以如果你用云端模型，你记住的内容会传到对方的服务器。另外它会读取全局记忆（~/.plur），里面可能有个人敏感信息，但都保存在本地，插件不会主动上传到其他外部服务。",
+      "postInstallNotes": "重启 dsh 即可生效；如需控制记忆范围或关闭注入，可在 ~/.dsh/settings.yaml 的 plur 命名空间下设置 scope 和 injectionMode。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加持久记忆的插件，纠正一次下次就记住，数据本地存储。",
+    "usage": {
+      "prompt_tokens": 4163,
+      "completion_tokens": 1177,
+      "total_tokens": 5340,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 821
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3523
+    }
+  }
+}

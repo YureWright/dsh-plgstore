@@ -1,0 +1,37 @@
+{
+  "id": "superdesigndev/treg",
+  "analyzedAt": "2026-08-16T11:43:44.078Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段（dsh/index.js + cordis.patch.yml），具备明确的 DSH 插件结构"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "treg-dsh",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 treg（一个号称“OpenRouter for tools”的服务）接进 DSH。treg 像一个中介，提供约 2600 个现成的 API 工具（查外链、找客户邮箱、发社媒、看趋势等），你只需要一个令牌，按次付费，不用去各个服务商注册账号。它还能让你团队自己的 API 密钥、命令行工具和技能通过同一个入口共享给 Agent 使用。",
+      "level": "caution",
+      "risks": "这个插件会引导你安装并使用 treg 的 CLI，连接 treg.to 这个第三方服务。你的 Agent 调用工具时，请求会经过 treg 的服务器，并由它代管凭据。如果你运行 `treg upload`，它会扫描你电脑上的 .env、技能目录和已安装的 CLI，把 API 密钥和工具信息上传到 treg 服务器（文档说会加密存储）。也就是说，你的部分密钥和项目配置会交给第三方保管。另外，部分命令支持在 treg 服务器上远程执行（--server），服务器端能看到你执行的命令。请只在信任的项目中使用，并注意上传前用 `treg scan` 预览。",
+      "postInstallNotes": "按 README 描述，装好后无需 token 和配置；首次运行插件会引导你安装 treg CLI、登录（GitHub 或邮箱），并运行 `treg mcp install` 完成集成。随后你可以用 `treg upload` 上传你自己的工具和密钥，或用 `treg catalog search` 开始调用目录中的工具。",
+      "notes": "该插件实际上是 treg 服务的客户端，核心功能需连接 treg.to 并使用其付费服务；免费额度有限。README 主要展示了 Claude Code 的安装方式，没有给出 DSH 的显式安装命令，但 package.json 确实是 DSH 插件结构。另外，npm 包名为 treg-dsh，与仓库名不完全一致，请确认该包已发布并可用。"
+    },
+    "summaryZh": "把 treg 的 2600+ 个工具“超市”接入 DSH，用一个令牌按次调用付费 API，并支持团队密钥与技能的集中共享。",
+    "usage": {
+      "prompt_tokens": 3151,
+      "completion_tokens": 4148,
+      "total_tokens": 7299,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3564
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2511
+    }
+  }
+}

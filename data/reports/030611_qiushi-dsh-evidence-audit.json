@@ -1,0 +1,37 @@
+{
+  "id": "030611/qiushi-dsh-evidence-audit",
+  "analyzedAt": "2026-08-17T12:06:40.917Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，代码明显是 DSH Profile Bundle。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "qiushi-dsh-evidence-audit",
+      "evidence": "`dsh plugin --profile web add qiushi-dsh-evidence-audit`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的审计工具。它只做旁观者，不改变 AI 的对话或工具调用行为，而是把每次工具调用结果和会话事件的关键信息（比如事件类型、工具名、各种哈希值）追加到一个本地文件里，而且用哈希链连接起来，这样之后可以检查这些记录有没有被偷偷改动。它不会保存提示词、工具参数原文这些敏感内容，只保存哈希摘要。默认记录文件在 ~/.dsh/evidence-audit/evidence-receipts.jsonl。",
+      "level": "ok",
+      "risks": "会在你的电脑上创建记录文件（默认在 ~/.dsh/evidence-audit/），里面包含事件类型、工具名、会话 ID 哈希、参数哈希等元数据。虽然不存原文，但哈希不是加密，如果某些值太简单（比如常见单词），别人可能离线猜出来。如果你把这个文件分享出去，他们能看到这些元数据。插件本身是观察式的，不碰你的提示词和工具结果原文。",
+      "postInstallNotes": "安装后可用 `dsh --profile <profile> --dump-config` 确认配置里出现 qiushi-evidence-audit；默认无需额外设置即可使用，如果需要可配置绝对路径覆盖默认输出文件位置。",
+      "notes": "这是社区维护项目，非 DeepSeek 官方；兼容性严格限定在 deepseek-harness 特定 commit（47f9438...）上验证过，其他版本可能不适用。另外哈希不是数字签名，不能当作强证据。"
+    },
+    "summaryZh": "一个只读的 DSH 审计插件，用哈希链在本地记录工具调用和会话事件的元数据，不保存原文，方便事后验证记录是否被篡改。",
+    "usage": {
+      "prompt_tokens": 3566,
+      "completion_tokens": 1757,
+      "total_tokens": 5323,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1231
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2926
+    }
+  }
+}

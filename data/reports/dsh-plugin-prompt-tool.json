@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-prompt-tool",
+  "analyzedAt": "2026-08-18T14:57:52.395Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-prompt-tool",
+      "evidence": "dsh plugin --profile prompt-tool add dsh-plugin-prompt-tool"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 提示词管理工具，能自动优化模型的思维链和回答内容。它会在第一次启动时生成一套预设，让模型首轮只使用最基础的工具、避免被多余信息干扰，之后再逐步恢复完整工具。同时提供一个网页界面，让你能在线编辑 preset.md 和 AGENTS.md，还可以开关各种技能模块。",
+      "level": "ok",
+      "risks": "插件会在你电脑的 ~/.dsh 目录下创建和修改配置文件（预设、skills 等），并可能修改 DSH 的 profile 设置。插件自称只监听本机回环、不发起网络请求、没有遥测，从代码结构看也没有可疑的外部连接。",
+      "postInstallNotes": "安装后需要先运行一次 `dsh --profile prompt-tool` 完成初始化（第一次启动会自动退出），之后通过 `dsh web` 或 `dsh-tui` 使用；如果直接装进官方 web profile，则运行 `dsh --profile web`。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 提示词工具插件：自动优化首轮工具选择与 persona，提供 Web UI 编辑预设文件，并支持按技能目录开关技能。",
+    "usage": {
+      "prompt_tokens": 5911,
+      "completion_tokens": 528,
+      "total_tokens": 6439,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 121
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5271
+    }
+  }
+}

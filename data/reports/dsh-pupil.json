@@ -1,0 +1,37 @@
+{
+  "id": "dsh-pupil",
+  "analyzedAt": "2026-08-16T14:48:34.293Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-pupil",
+      "evidence": "dsh plugin --profile web add dsh-pupil"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让纯文本的 AI（比如 DeepSeek）拥有“眼睛”和“手”——可以看图片（描述内容、识别文字、回答图片相关问题）和画图（根据文字描述生成图片）。你只需要在对话里发一张图片或说“画一只猫”，AI 就会自动调用对应的功能。配置不需要改复杂文件，用向导或环境变量就能搞定。",
+      "level": "ok",
+      "risks": "它会读取你指定的本地图片文件，并把图片内容发送给你配置的 AI 服务商（如智谱、OpenAI 等）进行分析或生成，相当于图片会经过第三方服务器。API Key 会保存在环境变量中，注意不要泄露。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要运行 setup.ps1 配置向导（或手动设置 DASHEYE_PRESET、DASHEYE_API_KEY 等环境变量），然后重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek 等文本模型拥有看图（描述/OCR/视觉问答）和画图能力的 DSH 插件，支持多个 OpenAI 兼容后端，配置零 YAML。",
+    "usage": {
+      "prompt_tokens": 3698,
+      "completion_tokens": 1579,
+      "total_tokens": 5277,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1182
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3058
+    }
+  }
+}

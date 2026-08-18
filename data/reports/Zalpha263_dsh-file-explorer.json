@@ -1,0 +1,37 @@
+{
+  "id": "Zalpha263/dsh-file-explorer",
+  "analyzedAt": "2026-08-17T12:02:57.116Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.client 和 dsh.bundle，依赖 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Zalpha263/dsh-file-explorer",
+      "evidence": "dsh plugin --profile web add github:Zalpha263/dsh-file-explorer"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的聊天界面加了一个文件浏览器：你可以在聊天窗口旁边直接查看和编辑工作区里的文件——像资源管理器一样展开文件夹、点开文件预览、改代码、新建/重命名/复制/粘贴/删除（删除进回收站），还能拖放移动文件。面板可以固定在右侧、中间，也可以变成悬浮窗口。它还会记住你的偏好设置。",
+      "level": "ok",
+      "risks": "它会读写你 DSH 工作区里的文件（这是它的功能），删除时先移到系统回收站（不可用时落到内置回收站目录）；面板位置等偏好存在浏览器 localStorage。注意：它的写操作直接调 Node fs，绕过了 DSH 的只读/工作区写入策略，所以别在不可信的环境里用它。除此之外没发现连外部服务器等风险。",
+      "postInstallNotes": "重启 DSH 后，点击会话标题栏右侧的「📁 文件」按钮打开面板；如果装了 ui-beautify，入口在「🧩 插件面板」里。",
+      "notes": "写操作不受 DSH 策略约束，请勿在不可信环境使用；README 说针对 DSH 0.1.0-rc.6 编写，升级 DSH 后可能需要复核；目前需通过 GitHub 安装，发布到 npm 后可改用 dsh-file-explorer 直接装。"
+    },
+    "summaryZh": "DSH 聊天界面的文件浏览器插件，让你不离开聊天就能浏览、预览、编辑工作区文件，支持新建/重命名/复制/删除、拖放移动，面板可停靠可悬浮。",
+    "usage": {
+      "prompt_tokens": 5212,
+      "completion_tokens": 3036,
+      "total_tokens": 8248,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2537
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4572
+    }
+  }
+}

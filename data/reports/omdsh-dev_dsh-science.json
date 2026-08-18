@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-science",
+  "analyzedAt": "2026-08-17T13:13:51.254Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.95,
+      "reason": "package.json 为 DeepSeek Harness 主仓库根配置，未声明 dsh.bundle/client，README 也未提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个仓库看起来是 DeepSeek Harness 的主程序本身，它是一个让 AI 助手能安装各种插件的框架，并不是一个单独的插件。和它名字里的 \"science\"（科学计算）没有直接关系，更像是一个未改动的官方仓库副本。",
+      "level": "warning",
+      "risks": "没发现明显风险，但它不是 DSH 插件，如果尝试安装会失败。",
+      "postInstallNotes": "无",
+      "notes": "经评估可能并非 DSH 插件（理由：package.json 是主仓库根配置，缺少 dsh.bundle/client 声明，README 无插件安装指令）"
+    },
+    "summaryZh": "这个仓库看起来是 DeepSeek Harness 主仓库本身，而不是名为 dsh-science 的插件。",
+    "usage": {
+      "prompt_tokens": 2572,
+      "completion_tokens": 1682,
+      "total_tokens": 4254,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1401
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1932
+    }
+  }
+}

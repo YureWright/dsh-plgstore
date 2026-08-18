@@ -1,0 +1,37 @@
+{
+  "id": "solknight48/dsh-memoryhub",
+  "analyzedAt": "2026-08-17T12:13:43.513Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 与多个 dsh-* 核心包，符合 DSH 插件的真实证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/solknight48/dsh-memoryhub.git",
+      "evidence": "README 安装命令为 `dsh plugin --profile web add github:solknight48/dsh-memoryhub`（即 GitHub 简写，等价于 git+https://github.com/solknight48/dsh-memoryhub.git）。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把你的项目记忆（MemoryHub 保存的检查点）自动接入 DeepSeek Harness。每次开始新会话时，它会自动加载之前的记忆，让 AI 接着上次的进度继续；你也能把当前会话存回记忆里，还能在网页界面多一个“Memory”标签页，像地图一样查看和管理记忆。它需要你另外安装 MemoryHub 命令行工具。",
+      "level": "ok",
+      "risks": "它会在你的项目目录下创建或读取 .memoryhub/ 文件夹，并调用你安装的 mh 命令。为了在网页显示记忆地图，它会在本机（127.0.0.1）启动一个临时的本地服务，只允许本机访问且带一次性令牌。除此之外没发现明显风险。",
+      "postInstallNotes": "需要先安装 mh 命令行工具（`uv tool install git+https://github.com/solknight48/memoryhub`），并确保它在 PATH 里。安装后可选编辑 $DSH_HOME/profiles/<name>/cordis.patch.yml 来调整配置（如 autoLoad、uiTab 等）。",
+      "notes": "无"
+    },
+    "summaryZh": "MemoryHub 的 DSH 插件：让 DeepSeek Harness 自动加载/保存项目记忆，并在网页端提供记忆地图标签页。",
+    "usage": {
+      "prompt_tokens": 4078,
+      "completion_tokens": 1305,
+      "total_tokens": 5383,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 832
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3438
+    }
+  }
+}

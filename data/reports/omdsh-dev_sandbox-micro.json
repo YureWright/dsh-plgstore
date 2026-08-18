@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/sandbox-micro",
+  "analyzedAt": "2026-08-17T12:09:30.075Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/dsh-* 核心包和 cordis，README 明确描述为 DSH profile bundle，符合真实插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/sandbox-micro.git",
+      "evidence": "The root artifact keeps Git/profile installation self-contained while preserving two Cordis entry points."
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加了一个‘微观沙箱’能力。它会在一个隔离的小虚拟机里执行命令和读写文件，不让模型直接碰你的电脑，避免乱改系统或偷看隐私。装上后，模型有两个新工具：一个用来跑命令，一个用来在沙箱里读写文件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它默认不启用，需要你手动打开才会运行。沙箱本身有严格限制，不会直接接触宿主机文件。唯一要注意的是它依赖外部 SDK，且需要 Linux 的 /dev/kvm 才能正常跑。",
+      "postInstallNotes": "装完后需要在 DSH 配置里显式启用：把 microsandbox 的 config.enabled 设为 true，并单独启用 tool-microsandbox 这一行，否则不会生效。另外确认你的 Linux 系统有 /dev/kvm。",
+      "notes": "依赖的 @deepseek-ai/dsh-* 核心包可能尚未公开，安装时需确认这些包可用。"
+    },
+    "summaryZh": "为 DSH 提供 fail-closed 微型虚拟机（microVM）能力的插件，让模型在隔离沙箱中安全执行命令和读写文件。",
+    "usage": {
+      "prompt_tokens": 2121,
+      "completion_tokens": 1517,
+      "total_tokens": 3638,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1104
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1481
+    }
+  }
+}

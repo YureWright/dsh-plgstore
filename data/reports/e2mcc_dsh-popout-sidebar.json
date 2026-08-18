@@ -1,0 +1,37 @@
+{
+  "id": "e2mcc/dsh-popout-sidebar",
+  "analyzedAt": "2026-08-17T12:01:48.134Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，README 给出 dsh plugin add 安装命令，且代码调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:e2mcc/dsh-popout-sidebar",
+      "evidence": "dsh plugin --profile web add github:e2mcc/dsh-popout-sidebar"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加了一个侧边栏，用来展示 AI 助手创建或修改的文件（叫“产物”），还能浏览整个工作区的文件树。侧边栏可以直接预览文本、Markdown、图片和 HTML 文件，编辑过的文件还能看到改动对比。最方便的是可以把侧边栏“弹”成一个独立的浏览器标签页，拖到另一个显示器上放大看。它也支持复制文件路径、在对话里引用文件，并能和其他侧边栏插件同时显示。",
+      "level": "ok",
+      "risks": "它会在浏览器里读取并显示 Harness 工作区中的文件内容（文本、图片等），这些内容不会上传到外部网络；仅把设置保存在浏览器的 localStorage 里。没发现明显风险。",
+      "postInstallNotes": "装完后需要重启 DSH 服务（dsh web），并硬刷新浏览器（Cmd/Ctrl+Shift+R）让界面出现“产物”按钮；之后可在 DSH 的设置面板里调整侧边栏的自动刷新、文件树和最短宽度等选项。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 增加可弹出侧边栏，用于查看 AI 生成的产物和文件树，支持多种预览并可将面板弹出为独立浏览器标签页。",
+    "usage": {
+      "prompt_tokens": 3219,
+      "completion_tokens": 2646,
+      "total_tokens": 5865,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2225
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2579
+    }
+  }
+}

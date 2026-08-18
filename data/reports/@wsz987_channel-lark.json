@@ -1,0 +1,37 @@
+{
+  "id": "@wsz987/channel-lark",
+  "analyzedAt": "2026-08-16T14:54:29.571Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-* 核心包，README 提供 dsh plugin 安装命令，是飞书/Lark 通道适配器。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wsz987/channel-lark",
+      "evidence": "pnpm add @wsz987/channel-lark"
+    },
+    "evaluationReport": {
+      "intro": "这是一个让 DeepSeek Harness 接入飞书/Lark 的插件。它负责把飞书收到的消息转给 DSH 机器人处理，再把机器人的回复发回飞书，支持文字、图片、文件、音频等，还能用可编辑卡片实现流式回复（类似打字效果）。你需要在飞书开放平台创建一个应用，拿到 AppId，并把 AppSecret 安全地配置到 DSH 的凭证系统里。",
+      "level": "ok",
+      "risks": "需要提供飞书应用的 AppSecret，该密钥会存在 DSH 的凭证管理里，仅用于与飞书服务器通信；插件会连接飞书（或自建网关）收发消息。没发现访问本地文件或其他敏感操作。",
+      "postInstallNotes": "需要在 DSH 配置文件中添加该插件的配置（如 accountId、upstream 模式、appId、domain），并把 AppSecret 配置到 credentials 中（默认读取环境变量 DSH_CHANNEL_LARK_MAIN_APP_SECRET）。",
+      "notes": "无"
+    },
+    "summaryZh": "飞书/Lark 通道适配器，让 DSH 机器人接入飞书，支持消息收发、文件与流式卡片回复。",
+    "usage": {
+      "prompt_tokens": 2451,
+      "completion_tokens": 2916,
+      "total_tokens": 5367,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2512
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1811
+    }
+  }
+}

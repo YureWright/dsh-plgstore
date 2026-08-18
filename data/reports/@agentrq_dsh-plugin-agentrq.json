@@ -1,0 +1,37 @@
+{
+  "id": "@agentrq/dsh-plugin-agentrq",
+  "analyzedAt": "2026-08-18T14:51:17.786Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，README 给出 dsh plugin add 安装命令，并依赖多个 @deepseek-ai/dsh-* 核心包。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@agentrq/dsh-plugin-agentrq",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile agentrq-<workspace> add @agentrq/dsh-plugin-agentrq"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里直接管理 AgentRQ 任务，不用切换窗口就能创建、查看、更新和自动接收任务。它会给模型提供一些工具，比如拉取任务、创建任务、回复消息等，而且每个任务有独立的会话，不会串线。",
+      "level": "caution",
+      "risks": "这个插件会连接到 AgentRQ 的外部服务器，需要你提供带 token 的网址，所以你的工作区信息会发给那个服务。如果你用 GitHub 方式安装，安装时会运行构建脚本。其他没发现明显风险。",
+      "postInstallNotes": "安装后需要配置 AgentRQ 的 MCP 地址：在对应的 profile 的 cordis.patch.yml 里设置 agentrq 的 url，或者先设置环境变量 AGENTRQ_WORKSPACE_MCP_URL。",
+      "notes": "安装前需要先装 pnpm（dsh plugin 依赖 pnpm）。如果从 git 安装，需要允许构建脚本。建议每个 AgentRQ workspace 用单独的 profile。"
+    },
+    "summaryZh": "在 DeepSeek Harness 中管理 AgentRQ 任务的插件，支持任务创建、状态更新、自动拉取和消息回复。",
+    "usage": {
+      "prompt_tokens": 4254,
+      "completion_tokens": 2583,
+      "total_tokens": 6837,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2171
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3614
+    }
+  }
+}

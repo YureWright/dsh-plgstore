@@ -1,0 +1,37 @@
+{
+  "id": "@feiyang666/deepseekharnessdesktop",
+  "analyzedAt": "2026-08-16T14:49:01.372Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis，README 提供 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@feiyang666/deepseekharnessdesktop",
+      "evidence": "dsh plugin --profile web add @feiyang666/deepseekharnessdesktop"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的“记账本”。它会自动记录你每次跟 AI 对话用了多少 token、花了多少钱，还能按天/月看热力图、查 DeepSeek 账户余额、导出 CSV/JSON/PNG 报表。数据存在你自己电脑的工作区里，不用额外注册任何服务。",
+      "level": "ok",
+      "risks": "会读取你配置的 DeepSeek API Key 用于查余额，这个 key 会发到 DeepSeek 官方 API；会在你的电脑上写文件（使用记录、价格配置、导出文件都在 DSH 的工作区文件夹里）；在 macOS/Linux 上会调用系统命令来打开文件夹。此外它是第三方个人开发的插件，源码公开，但升级包理论上可能夹带私货，介意的话可以先看源码再装。",
+      "postInstallNotes": "在 DSH 的「设置 → 模型」里配置 DeepSeek API Key（查询余额和按需显示价格需要）；重启 dsh web 服务让插件生效。",
+      "notes": "该插件由第三方开发者（feiyang-dev）个人维护，并非 DeepSeek 官方出品；npm 包名与仓库名不同，但可通过 npm 正常安装。注意安装时需要 pnpm，使用记录保存在本地，建议定期备份。"
+    },
+    "summaryZh": "记录每次对话的 token 用量与花费，提供日历热力图、余额查询和 CSV/JSON/PNG 导出的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 5179,
+      "completion_tokens": 3404,
+      "total_tokens": 8583,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2937
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4539
+    }
+  }
+}

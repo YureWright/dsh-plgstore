@@ -1,0 +1,37 @@
+{
+  "id": "buguoshixc/deepseek-harness-external-migration",
+  "analyzedAt": "2026-08-17T11:59:25.634Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch，peerDependencies 包含 @deepseek-ai/cordis 等核心包，且 README 给出了 dsh plugin 安装命令，符合真实 DSH 插件特征。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "file:///absolute/path/deepseek-harness-external-migration-0.1.0.tgz",
+      "evidence": "dsh plugin --profile web add /absolute/path/deepseek-harness-external-migration-0.1.0.tgz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你把之前在 Codex、Claude Code、Qoder 或 OpenCode 这些工具里的配置和聊天记录，安全地搬进 DeepSeek Harness。它提供三个功能：扫描（只查看）、预览（看内容片段）和导入（需你确认）。它不会改动原来的文件，也不会复制你的密码等敏感信息，MCP 密钥会改成环境变量引用，生成的配置不会自动应用。",
+      "level": "ok",
+      "risks": "它会读取上述工具的配置和会话文件（具体位置取决于你当前系统），用于迁移；导入时会在 DSH_HOME 下的 migrations/external-agents/ 目录生成配置文件。整个流程只读源文件、信任用户确认，没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 Harness 的 profile 才能生效；另外确认 $DSH_HOME 环境变量已设置，按需在 Harness 中启用/调用这三个工具。",
+      "notes": "该插件要求 DeepSeek Harness 0.1.0-rc.5 或兼容版本，Node.js 22.19+ 或 24+。"
+    },
+    "summaryZh": "把 Codex、Claude Code 等外部工具的配置和会话安全迁移到 DeepSeek Harness 的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 1602,
+      "completion_tokens": 1565,
+      "total_tokens": 3167,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1101
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 962
+    }
+  }
+}

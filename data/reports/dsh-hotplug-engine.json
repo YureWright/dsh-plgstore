@@ -1,0 +1,37 @@
+{
+  "id": "dsh-hotplug-engine",
+  "analyzedAt": "2026-08-16T13:46:37.057Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，且依赖 @deepseek-ai/cordis 核心包，README 给出 dsh plugin add 安装命令，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-hotplug-engine",
+      "evidence": "# 或 dsh plugin add dsh-hotplug-engine"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 的“插件管家”，专门帮你管理其他插件：安装、卸载、启用/停用、出问题时回滚，还会记下所有操作日志。它本身不提供插件商店，而是让市场、AI 助手或其他插件调用它来干活。",
+      "level": "ok",
+      "risks": "它会修改 DSH 的插件配置文件（cordis.patch.yml），并通过 pnpm 执行安装/卸载命令，属于插件管理的正常操作。会记录审计日志，有权限的人可能看到这些操作记录。除此之外没发现明显风险。",
+      "postInstallNotes": "安装或卸载后需要重启 profile；客户端面板需刷新页面才能加载。若要在宿主插件中使用其服务，需要在该插件中注入 hotplugEngine。",
+      "notes": "要求 Node.js >=22。"
+    },
+    "summaryZh": "DSH 插件热插拔执行引擎，为市场、agent 和宿主插件提供安装、卸载、启停、回滚、审计等统一管理服务。",
+    "usage": {
+      "prompt_tokens": 2604,
+      "completion_tokens": 985,
+      "total_tokens": 3589,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 632
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1964
+    }
+  }
+}

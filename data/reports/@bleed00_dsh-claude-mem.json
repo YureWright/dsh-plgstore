@@ -1,0 +1,37 @@
+{
+  "id": "@bleed00/dsh-claude-mem",
+  "analyzedAt": "2026-08-16T13:42:00.511Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，并依赖 @deepseek-ai/cordis、@deepseek-ai/dsh-llm 等核心包，README 提供了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@bleed00/dsh-claude-mem",
+      "evidence": "README 安装章节写明：`dsh plugin --profile demo add @bleed00/dsh-claude-mem`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 claude-mem 的记忆功能接入 DeepSeek Harness，让 AI 能查询跨会话的记忆、在会话开始时自动注入相关项目背景、手动保存记忆，并可选地在对话结束时总结会话。它通过本地 claude-mem worker 的 HTTP 接口工作，默认地址是 http://127.0.0.1:37700。",
+      "level": "ok",
+      "risks": "它会读取本机 claude-mem 的记忆数据；如果开启 ingest 或 summarize 配置，还会把工具执行结果和会话总结写入本地记忆库。这些数据都由本机 claude-mem 管理，不会上传到外部服务器。没发现明显风险。",
+      "postInstallNotes": "需要先启动 claude-mem worker（默认 http://127.0.0.1:37700）；并按需在 cordis.patch.yml 中设置 baseUrl、ingest、summarize 等配置项。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 集成 claude-mem 记忆功能的插件，支持记忆查询、上下文注入、手动保存与会话总结。",
+    "usage": {
+      "prompt_tokens": 3532,
+      "completion_tokens": 1260,
+      "total_tokens": 4792,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 847
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2892
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-web-lan-access",
+  "analyzedAt": "2026-08-16T13:30:12.729Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle，且 README 明确给出了 'dsh plugin --profile web add dsh-web-lan-access' 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-web-lan-access",
+      "evidence": "dsh plugin --profile web add dsh-web-lan-access"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的网页界面可以从局域网里的其他设备（比如手机、另一台电脑）或者通过远程域名访问。原本网页界面在非本机地址（如 192.168.x.x）的 HTTP 下会崩溃，因为浏览器在那种环境下不支持 crypto.randomUUID，导致对话和模型列表无法加载。插件会在网页加载时自动注入一个小补丁，并把服务的监听地址改成 0.0.0.0，这样就能从别的设备打开了。",
+      "level": "caution",
+      "risks": "装上后，DeepSeek 网页服务会对所有网络接口开放，同一局域网里的任何设备都能直接打开网页，不需要登录就能看到对话记录、模型列表，部分操作也可能被远程执行（敏感设置仍限制在本机）。如果这台服务器有公网 IP，整个互联网都能访问。所以必须在可信网络中使用，最好配合防火墙限制来源，或通过 Tailscale / 带认证的反向代理暴露。",
+      "postInstallNotes": "装完重启 `dsh web`，并在浏览器强制刷新（如 Ctrl+Shift+R）使补丁生效。如果用域名（如 Tailscale）访问，需要在 `cordis.patch.yml` 的 `web-runtime` 配置中把短名、完整域名和 IP 都加入 `trustedHosts`（短名要单独一行），否则 API 会返回 403。另外，设置页和凭据管理功能目前只能从 `http://127.0.0.1:3080` 本机操作，远程访问会报错。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web UI 添加局域网/远程访问能力，自动修复非本机 HTTP 地址下 crypto.randomUUID 缺失的问题，并让服务监听 0.0.0.0。",
+    "usage": {
+      "prompt_tokens": 2781,
+      "completion_tokens": 2757,
+      "total_tokens": 5538,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2235
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2141
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "hellodigua/dsh-emoji",
+  "analyzedAt": "2026-08-17T11:17:35.324Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 中声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-emoji",
+      "evidence": "dsh plugin --profile web add dsh-emoji"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的 AI 回复里出现表情。AI 在合适的时候会输出像 ::happy:: 这样的标记，插件自动把它变成一张小表情图。你可以选不同的表情包（内置的鱼表情、贴吧、B站等），调整表情出现的频率和大小，也能上传自己做的表情包。",
+      "level": "ok",
+      "risks": "它会把用户上传的表情包存到 ~/.dsh/emoji-packs/（默认用户目录下），占用一点磁盘空间；AI 回复里会出现表情图片。没有发现它读取隐私文件或主动连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 Web Host 让插件生效。之后可在「设置 → 插件 → 表情（Whale Emoji）」里调整频率、尺寸或上传表情包。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 回复添加可切换、可自定义行内表情的插件。",
+    "usage": {
+      "prompt_tokens": 3624,
+      "completion_tokens": 1799,
+      "total_tokens": 5423,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1452
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2984
+    }
+  }
+}

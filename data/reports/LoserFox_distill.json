@@ -1,0 +1,37 @@
+{
+  "id": "LoserFox/distill",
+  "analyzedAt": "2026-08-17T11:19:17.997Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle 字段，peerDependencies 全部是 @deepseek-ai/dsh-* 核心包，属真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/LoserFox/distill.git",
+      "evidence": "dsh plugin --profile web add <目录|git-url>"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能自动回顾你和 AI 的聊天记录，把其中有用的经验或技巧提炼成『技能』保存下来，以后 AI 在对话中就能直接使用这些技能。整个过程在后台运行，每隔几条新消息自动触发一次，不需要你手动整理。",
+      "level": "ok",
+      "risks": "它会读取你的聊天消息（仅限人类用户发送的消息），并把生成的技能文件写入项目下的 .agents/skills 或用户主目录下的 ~/.agents/skills 文件夹。后台反省过程会调用你配置的大模型，消耗一定的 token 额度；除此之外没有发现其他风险。",
+      "postInstallNotes": "确保 DSH 组合中已包含 subagent-spawn-in-process 和 tool-skill 插件（README 说 base bundle 默认存在），然后重启目标 profile 的 DSH 进程。如果不想用默认对话模型做反省，可配置 provider/model 字段指定专用模型。",
+      "notes": "依赖多个 rc 版本的 @deepseek-ai 核心包，可能需留意版本兼容性；经评估确认是正式 DSH 插件。"
+    },
+    "summaryZh": "自动对话反思与技能蒸馏插件——在后台分析对话并将经验提炼成可复用的技能文件。",
+    "usage": {
+      "prompt_tokens": 2624,
+      "completion_tokens": 1067,
+      "total_tokens": 3691,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 663
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1984
+    }
+  }
+}

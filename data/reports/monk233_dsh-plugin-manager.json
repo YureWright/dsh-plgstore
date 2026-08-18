@@ -1,0 +1,37 @@
+{
+  "id": "monk233/dsh-plugin-manager",
+  "analyzedAt": "2026-08-17T11:52:26.165Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/monk233/dsh-plugin-manager.git",
+      "evidence": "dsh plugin --profile web add .（README 中提供的安装命令，对应 git 仓库）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的网页界面里直接管理插件：启用、禁用、删除，不用手动改配置文件，改完自动热重载。",
+      "level": "ok",
+      "risks": "它会在网页界面上修改配置文件 cordis.patch.yml，以达到启用/禁用/删除插件的目的。没有发现其他明显风险。",
+      "postInstallNotes": "安装后一定要重启 DSH 服务，否则可能不生效。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH Web UI 里直接管理插件启停删，自动热重载，免手改配置。",
+    "usage": {
+      "prompt_tokens": 1431,
+      "completion_tokens": 645,
+      "total_tokens": 2076,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 354
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 791
+    }
+  }
+}

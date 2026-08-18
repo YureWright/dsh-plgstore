@@ -1,0 +1,37 @@
+{
+  "id": "@meomeo-dev/dsh-voice",
+  "analyzedAt": "2026-08-16T14:54:57.647Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@meomeo-dev/dsh-voice",
+      "evidence": "dsh plugin --profile demo add @meomeo-dev/dsh-voice"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的 AI 能切换不同的说话口吻（语气风格）。你可以在对话里输入 /voice 命令查看当前口吻，或输入 /voice 加名字来切换，比如 /voice sun-wukong 让 AI 用孙悟空那样的古白话口吻说话。它自带 16 个口吻，包括乔布斯、图灵、巴菲特等名人的风格，也有孙悟空、帅哥、美女等角色原型，以及一些抽象助手风格。口吻文件是 YAML 格式，你也可以自己新建，插件还提供了一个 create-voice 技能让 AI 帮你生成。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和写入口吻配置文件（如在用户目录或项目目录下的 .dsh/voice 文件夹），但这些都是你主动操作的结果。",
+      "postInstallNotes": "无",
+      "notes": "推荐使用 npm 安装方式；如果通过 git 方式安装，pnpm≥10 可能需要手动放行 allowBuilds（详见 README）。"
+    },
+    "summaryZh": "DeepSeek Harness 的对话口吻切换插件，预置 16 种名人与角色风格，用 /voice 命令即可即时切换。",
+    "usage": {
+      "prompt_tokens": 4399,
+      "completion_tokens": 2176,
+      "total_tokens": 6575,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1763
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3759
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "penguin-oo/dsh-bookmarks",
+  "analyzedAt": "2026-08-17T11:37:32.219Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-bookmarks",
+      "evidence": "README 安装命令：`dsh plugin --profile web add dsh-bookmarks`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页聊天界面加了一个“书签”功能。你可以在每条 AI 回复旁边点一下收藏，写上备注、打几个标签。它还有一个“书签中心”面板，把你所有会话里收藏的回复集中在一起，可以搜索、筛选、修改、删除，还能一键导出成 Markdown 文件。键盘按 Alt+B 就能随时打开这个面板。",
+      "level": "ok",
+      "risks": "这个插件会把你的书签（包括 AI 回复的摘要、备注和标签）保存到 DSH 的本地数据目录（$DSH_HOME/storages/bookmarks.json）。这些数据不会自动上传到网络；如果你手动导出 Markdown，文件会存到下载目录。如果电脑可能被别人使用，对方理论上能看到这些书签内容。除此之外没发现明显风险。",
+      "postInstallNotes": "装完后重启 DSH（dsh web）即可使用，插件会自动挂载，无需额外配置。如果想调整备注大小、摘要长度或标签数量，可以编辑 $DSH_HOME/profiles/web/cordis.patch.yml 中的对应配置项。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-bookmarks 是一个为 DSH 网页界面提供书签功能的插件：可收藏任意一条 AI 回复并添加备注和标签，在跨会话的书签中心中浏览，并一键导出为 Markdown。",
+    "usage": {
+      "prompt_tokens": 2356,
+      "completion_tokens": 3277,
+      "total_tokens": 5633,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2835
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1716
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "mytianyi0712/dsh-tui-plugin-OhMyPi",
+  "analyzedAt": "2026-08-17T11:57:20.819Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了多个 @deepseek-ai/dsh-* 核心依赖且 README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/mytianyi0712/dsh-tui-plugin-OhMyPi/releases/download/v0.1.3/dsh-omp-tui-0.1.3.tgz",
+      "evidence": "tarball 已包含构建后的 `lib/`，用户机器无需编译本项目。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（dsh）用的终端界面插件，让 dsh 在终端里显示得更好看、更好操作。它提供 OMP 风格的界面、主题、快捷键、斜杠命令、会话管理、模型切换、权限切换等功能，还能通过微信远程控制 dsh（比如在微信里发消息让 dsh 干活、查看状态）。安装后需要用 `dsh --profile tui` 启动，适合喜欢在终端里用 AI 的人。",
+      "level": "caution",
+      "risks": "它会读写你电脑上的一些配置文件（比如 `~/.dsh/` 下的 settings、会话、微信桥接状态等）。微信桥功能需要扫码登录微信，并会把 dsh 和微信连接起来，陌生微信用户可能通过配对码获得访问权限，微信消息会注入你的 dsh 会话，模型也能主动发微信消息，需要留意隐私和远程控制风险。另外，项目作者提到 DeepSeek 涨价后已停止主动更新，可能存在兼容性问题。",
+      "postInstallNotes": "需要先安装 Node.js（^22.19.0 或 >=24.0.0）和 pnpm 11，然后按 README 或用 `dsh plugin add` 安装。安装后需要设置 `DEEPSEEK_API_KEY`（或其他模型供应商的密钥），并用 `dsh --profile tui` 启动。如果要用微信桥，还要在 TUI 里执行 `/wechat-login` 扫码登录，并根据提示设置白名单/配对码。",
+      "notes": "作者称因 DeepSeek 涨价，项目将进入缓慢维护阶段，建议关注更新状态；另外 README 提到微信桥的远程控制功能，使用前请确认信任场景。"
+    },
+    "summaryZh": "一个带微信远程控制功能的 OMP 风格终端界面插件，让 DeepSeek Harness 在终端里更好看、更好用。",
+    "usage": {
+      "prompt_tokens": 5876,
+      "completion_tokens": 1134,
+      "total_tokens": 7010,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 543
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5236
+    }
+  }
+}

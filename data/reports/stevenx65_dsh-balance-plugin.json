@@ -1,0 +1,37 @@
+{
+  "id": "stevenx65/dsh-balance-plugin",
+  "analyzedAt": "2026-08-17T11:43:16.805Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client、依赖 @deepseek-ai/dsh-client-ui-primitives，README 给出了 dsh plugin add 安装命令，且代码调用了 dsh 的凭证与会话日志接口"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-balance-plugin",
+      "evidence": "dsh plugin --profile web add dsh-balance-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（dsh）用的网页插件，装好后会在 dsh 网页侧边栏底部显示你的 DeepSeek API 余额和 token 用量，可以切换查看今天或全部时间的用量，并且只统计 DeepSeek 官方渠道的数据。它直接复用 dsh 已有的 API 凭证，不需要你手动填写密钥，也会读取 dsh 的会话日志来计算各种 token 消耗。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 dsh 的凭证文件（~/.dsh/.credentials.yaml）和本地会话日志（~/.dsh/sessions/）来查询余额、统计用量。这些数据只用于在本地网页侧边栏展示，不会上传到第三方；但如果你把浏览器页面截图或共享给别人，可能会让对方看到你的余额和用量信息。",
+      "postInstallNotes": "重启 dsh web 并刷新页面；需要系统装有 zstd 命令行工具（用于解压会话日志）。",
+      "notes": "无"
+    },
+    "summaryZh": "在 dsh 网页侧边栏显示 DeepSeek API 余额和 token 用量的插件，复用现有凭证，支持今天/全部切换。",
+    "usage": {
+      "prompt_tokens": 1934,
+      "completion_tokens": 1744,
+      "total_tokens": 3678,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1342
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1294
+    }
+  }
+}

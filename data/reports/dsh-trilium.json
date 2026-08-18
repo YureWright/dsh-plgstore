@@ -1,0 +1,37 @@
+{
+  "id": "dsh-trilium",
+  "analyzedAt": "2026-08-16T13:39:26.122Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且依赖 @deepseek-ai/cordis、@deepseek-ai/dsh-client-* 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-trilium",
+      "evidence": "dsh plugin --profile web add dsh-trilium"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以把你的 Trilium 笔记库（一款本地笔记软件）接到 DeepSeek Harness 上，让 AI 助手能帮你读写笔记、搜索内容、做周报、管理附件和日历，还带一个图形设置页面。",
+      "level": "ok",
+      "risks": "它会读取和修改你在 Trilium 里的笔记内容，所以需要你提供 ETAPI 地址和 token。配置和 token 存在你自己的用户目录下（权限 0600），不会把 token 发给模型。删除笔记时需要确认，平时注意别把 token 泄露给他人。",
+      "postInstallNotes": "装完后需要先在 Trilium 里开启 ETAPI，然后在插件的设置页里填上服务器地址、token，并指定记忆目录，之后才能正常使用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 记忆知识库插件：通过 ETAPI 把 Trilium 笔记库接入 AI agent，支持记忆读写、笔记管理、搜索、周报、附件、日历和备份。",
+    "usage": {
+      "prompt_tokens": 3092,
+      "completion_tokens": 1185,
+      "total_tokens": 4277,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 813
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2452
+    }
+  }
+}

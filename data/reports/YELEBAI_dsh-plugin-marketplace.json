@@ -1,0 +1,37 @@
+{
+  "id": "YELEBAI/dsh-plugin-marketplace",
+  "analyzedAt": "2026-08-17T11:19:33.030Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 配置，peerDependencies 包含 @deepseek-ai/cordis，且 README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:YELEBAI/dsh-plugin-marketplace#v0.9.1",
+      "evidence": "dsh plugin --profile web add github:YELEBAI/dsh-plugin-marketplace#v0.9.1"
+    },
+    "evaluationReport": {
+      "intro": "这个插件相当于一个 DSH 的『应用商店』。装好之后，你可以在 DSH 设置里打开一个市场页面，浏览、搜索、安装、更新和卸载其他 DSH 插件。它还自带安全审查：自动扫描候选插件、检查有没有恶意行为、在隔离环境里试运行，只有通过检查的插件才会显示为一键安装。如果某些插件需要构建或额外配置，它会启动一个安装助手 Agent，引导你完成安装。",
+      "level": "ok",
+      "risks": "它会读取和修改 DSH 的配置文件（比如插件启用列表），在 DSH 的 node_modules 里安装/卸载插件，也可能会在你指定的自定义目录里创建文件。它会连接 GitHub 来获取插件市场列表和更新信息，但不会主动把你的个人数据传出去。安装其他插件时，如果走 Agent 流程，需要你手动批准每一步操作。",
+      "postInstallNotes": "装好后，启动 DSH，进入『设置 → 插件 → 插件市场』即可使用。如需使用自建仓库，可设置环境变量 DSH_PLUGIN_REGISTRY_URL 或插件配置项 registryUrl。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件市场：在 DSH 内浏览、验证并一键安装其他插件的官方市场插件。",
+    "usage": {
+      "prompt_tokens": 5307,
+      "completion_tokens": 2830,
+      "total_tokens": 8137,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2384
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4667
+    }
+  }
+}

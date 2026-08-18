@@ -1,0 +1,37 @@
+{
+  "id": "tianji-qingtian/dsh-composer-polish",
+  "analyzedAt": "2026-08-17T11:18:08.591Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-composer-polish",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的输入框加一个 ✨ 按钮，点一下就能把当前草稿用 AI 润色成更顺滑的文字，然后自动填回输入框。适合写东西卡壳或者想让文字更精致的时候用。",
+      "level": "ok",
+      "risks": "它会读取输入框里的文字并发送给大模型做润色，所以草稿内容会离开本机。除此之外没发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 编辑器加一个 ✨ 按钮，一键润色当前草稿并写回输入框。",
+    "usage": {
+      "prompt_tokens": 1256,
+      "completion_tokens": 1469,
+      "total_tokens": 2725,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1197
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 616
+    }
+  }
+}

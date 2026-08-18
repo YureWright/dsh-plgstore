@@ -1,0 +1,37 @@
+{
+  "id": "Zhenyu98/dsh-context-doctor",
+  "analyzedAt": "2026-08-17T11:26:09.941Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，且 README 给出了 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Zhenyu98/dsh-context-doctor#main",
+      "evidence": "dsh plugin --profile web add \"github:Zhenyu98/dsh-context-doctor#main\""
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 用的审计工具，能帮你查看每次请求模型时到底背了多少上下文（比如 AGENTS.md 指令、技能列表、工具定义等），找出重复、冲突和浪费 token 的地方，并给出裁剪建议。它有两种用法：一个图形面板显示在发送按钮旁边，另一个是让模型直接调用的 context_audit 工具。",
+      "level": "ok",
+      "risks": "它会读取你项目里的 AGENTS.md、CLAUDE.md 等文件来统计，也会读取技能和工具信息，但全程只读，不会修改或删除任何文件。报告只包含路径、统计和重复内容的片段，不含完整文件内容，也不会把数据发到外部服务器。它会在本地开一个 HTTP 接口（/api/context-doctor/audit），仅供本地 DSH 使用。整体风险很低。",
+      "postInstallNotes": "安装后需重启 dsh web，并确认 `dsh --profile web --dump-config | grep context-doctor` 能看到条目；若要使用 UI 面板，需确保 DSH 版本支持 conversation.input.context 插槽（插件自带补丁）。可选配置：在 dsh.yml 中设置 context-doctor.defaultCwd 和 cacheTtlMs。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 上下文审计插件：量化 AGENTS.md 指令链、技能目录、工具 schema 和 MCP 工具的 token 占用，检测重复与冲突并给出裁剪建议。",
+    "usage": {
+      "prompt_tokens": 4429,
+      "completion_tokens": 2254,
+      "total_tokens": 6683,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1785
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3789
+    }
+  }
+}

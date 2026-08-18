@@ -1,0 +1,37 @@
+{
+  "id": "dsh-llm-auto-route",
+  "analyzedAt": "2026-08-16T13:32:56.457Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，README 明确定位为 DeepSeek Harness 的 Cordis 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-llm-auto-route",
+      "evidence": "```bash\npnpm add dsh-llm-auto-route\n```"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，作用是自动帮你选择用哪个大模型服务商（比如 DeepSeek、OpenAI、Anthropic、本地 Ollama 等）来处理请求。它会根据环境变量、模型前缀等线索自动选路，并且在输出第一个字之前，如果发现当前服务商不可用，会自动切换到下一个备选，防止请求失败。它只管选路和切换，不碰具体的模型接口。",
+      "level": "ok",
+      "risks": "它会读取环境变量（如 DEEPSEEK_API_KEY、OPENAI_API_KEY 等）来判断有没有配置对应服务，但不会把密钥值写入日志。健康检查时可能会连接本地或远程的模型服务地址（如 Ollama 或 vLLM），这属于正常请求流量。未发现其他隐私或文件风险。",
+      "postInstallNotes": "需要先安装并配置官方的 @deepseek-ai/dsh-llm-pi-ai 插件，确保已有想要选择的路由（如 deepseek、openai 等），然后通过 Cordis 命令加载本插件附带的 cordis.patch.yml；如需自定义路由规则，可在应用配置中覆盖默认配置。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 自动选择最优 LLM 提供商路由，并在首个输出前进行失败切换的社区插件。",
+    "usage": {
+      "prompt_tokens": 4131,
+      "completion_tokens": 676,
+      "total_tokens": 4807,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 224
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3491
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "humblebanana/dsh-record-replay",
+  "analyzedAt": "2026-08-17T11:36:17.373Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，peerDependencies 包含 @deepseek-ai/cordis 等核心依赖，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "./dsh-record-replay-0.1.0.tgz",
+      "evidence": "dsh plugin --profile web add ./dsh-record-replay-0.1.0.tgz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness（一个 AI 助手框架）在 macOS 上学会你演示的电脑操作。它通过录制你的鼠标和键盘动作，把一套流程变成 AI 可以使用的技能，以后 AI 就能照着做。它提供录制开始/停止、权限检查、查看录制事件、验证录制内容和生成技能等功能。",
+      "level": "caution",
+      "risks": "这个插件需要 macOS 的辅助功能和输入监控权限，这意味着它能够看到并记录你在电脑上的实际操作（包括键盘输入，可能包含密码、聊天内容等敏感信息）。录制结果会保存为文件，生成的内容可能存到你的用户目录（如 ~/.agents/skills/）。这些数据默认只存在你本机，不会自动上传，但你要注意保管。另外，它依赖外部开源项目 open-record-replay，你需要自己下载并配置，如果从非官方渠道获取该依赖也可能带来风险。",
+      "postInstallNotes": "需要先安装 open-record-replay 仓库，并在配置中指定 repoRoot 或 cliPath（可通过环境变量 ORR_REPO_ROOT/ORR_CLI_PATH 或 cordis.patch.yml 覆盖）；然后在 macOS 系统设置中给相关终端应用授予辅助功能/输入监控权限。",
+      "notes": "README 中打包文件名写的是 dsh-record-replay-0.1.0.tgz，但 package.json 版本为 0.2.0，实际打包文件名可能是 0.2.0.tgz，请以实际为准。另外，该插件依赖外部项目 open-record-replay，需确保其与本插件版本兼容。"
+    },
+    "summaryZh": "在 macOS 上录制用户操作，把工作流程变成给 DeepSeek Harness 使用的技能，支持回放与进一步自动化的插件。",
+    "usage": {
+      "prompt_tokens": 2392,
+      "completion_tokens": 3923,
+      "total_tokens": 6315,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3386
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1752
+    }
+  }
+}

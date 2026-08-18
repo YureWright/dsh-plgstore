@@ -1,0 +1,37 @@
+{
+  "id": "clearkurt/dsh-win-terminal-inspector",
+  "analyzedAt": "2026-08-17T12:06:25.253Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.85,
+      "reason": "代码通过 LocalSubprocessRuntime 的 terminalInspector 钩子注入 Windows 进程监视能力，明确调用 DSH 内部接口，属于 DSH 插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "把本包复制到 profile 的 plugins 目录"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DSH 在 Windows 上更好地管理持久化终端（比如 Git Bash）。它负责监控终端进程、判断进程是否还活着、以及帮你把 Ctrl-C 之类的信号发给终端里正在跑的命令。以前这些功能在 Windows 上不支持，装上它就能用了。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会运行 PowerShell 命令来查看进程列表，也可能用 taskkill 强杀进程，但这些都属于它正常工作要用的功能，不会偷数据。",
+      "postInstallNotes": "装完需要手动把它复制到 DSH 的 plugins 目录，然后在 cordis.patch.yml 里加一条配置；另外建议配置 terminal-bash 使用 Git Bash，详见 README。",
+      "notes": "它不是通过 dsh plugin add 安装的，要手动复制；依赖 @deepseek-ai/dsh-subprocess-local 和 @deepseek-ai/dsh-terminal-bash，确保环境里已有这些包。"
+    },
+    "summaryZh": "为 DSH 在 Windows 上补齐终端进程监视和 Ctrl-C 注入能力的插件，需手动安装并配置。",
+    "usage": {
+      "prompt_tokens": 2900,
+      "completion_tokens": 1465,
+      "total_tokens": 4365,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1099
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2260
+    }
+  }
+}

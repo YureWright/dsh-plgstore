@@ -1,0 +1,37 @@
+{
+  "id": "pitetow/dsh-notify-on-complete",
+  "analyzedAt": "2026-08-17T13:19:50.515Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 依赖 @deepseek-ai/cordis，且 README 描述了通过 dsh plugin 注册安装。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/pitetow/dsh-notify-on-complete.git",
+      "evidence": "GitHub source distribution, no npm"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 跑完任务、模型向你提问或者需要你审批的时候，在电脑桌面弹出通知，还会响一声提示音，省得你一直盯着屏幕。支持 macOS、Linux 和 Windows，可以自己开关声音和提示类型。",
+      "level": "caution",
+      "risks": "它会调用系统自带的通知命令（比如 macOS 的 osascript、Linux 的 notify-send 等），这些命令只负责弹通知，不会读你的文件或联网。安装时会在你用户目录下的 ~/.dsh/ 里写插件文件和改配置文件；如果你用官方的一行安装脚本，等于直接执行了远程代码，存在一定风险，不过脚本是公开的，可以事先检查。",
+      "postInstallNotes": "装完后需要重启 dsh 的 web 服务（或下次跑 CLI 时自动生效）。可以用 `dsh --profile web --dump-config | grep notify-on-complete` 确认插件已加载。如果之前手动装过，要避免重复安装导致一次跑出两条通知。",
+      "notes": "官方推荐的安装方式是一行 curl 脚本，而不是标准的 dsh plugin add；它没有发布到 npm，需要从 GitHub 获取。安装脚本会执行远程代码，建议先审阅。该插件零依赖，但要求 Node.js ^22。"
+    },
+    "summaryZh": "给 DeepSeek Harness 加上桌面通知：任务结束、模型提问或等待审批时弹系统通知并播放提示音。",
+    "usage": {
+      "prompt_tokens": 3574,
+      "completion_tokens": 4991,
+      "total_tokens": 8565,
+      "prompt_tokens_details": {
+        "cached_tokens": 3456
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4535
+      },
+      "prompt_cache_hit_tokens": 3456,
+      "prompt_cache_miss_tokens": 118
+    }
+  }
+}

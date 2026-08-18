@@ -1,0 +1,37 @@
+{
+  "id": "hellodigua/dsh-share",
+  "analyzedAt": "2026-08-17T11:18:03.766Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，并依赖 @deepseek-ai 核心包，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-share",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件，可以把 DSH 里的问答或选中的对话内容导出成 PNG 图片或 Markdown 文件，方便分享或保存。",
+      "level": "ok",
+      "risks": "会读取 DSH 对话内容以生成分享文件，但所有处理都在本地完成，没发现上传或额外联网行为。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "将 DSH 问答或对话导出为 PNG 或 Markdown 的分享工具。",
+    "usage": {
+      "prompt_tokens": 1815,
+      "completion_tokens": 725,
+      "total_tokens": 2540,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 492
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1175
+    }
+  }
+}

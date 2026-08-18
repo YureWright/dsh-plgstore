@@ -1,0 +1,37 @@
+{
+  "id": "agi-fans/oh-my-dsh",
+  "analyzedAt": "2026-08-17T11:23:37.186Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.92,
+      "reason": "这是一个独立的终端 AI 编程应用（omdsh），构建在 DeepSeek Harness 之上，但不是可安装的 DSH 插件，也没有依赖核心 dsh 包或提供 dsh plugin add 安装方式。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 提供的是 `npm install --global @agi-fans/oh-my-dsh`，未提供 dsh plugin add 安装方式。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个运行在终端里的 AI 编程助手（TUI），基于 DeepSeek Harness 构建。你可以用键盘操作，让 AI 帮你写代码、改文件、跑命令；支持保存会话、回退、重试，还能调用各种工具和技能。简单说，就是一个在命令行里帮你编程的 AI 工具。",
+      "level": "ok",
+      "risks": "它会把你的 DeepSeek API 密钥保存在本机（通过 Harness 的凭证库），并读取你工作目录里的文件来协助编程；使用时需要联网调用 DeepSeek API。没有发现窃取数据或连接可疑服务器的行为。",
+      "postInstallNotes": "安装后首次运行需要执行 `/login` 输入并验证 DeepSeek API 密钥；如需自定义模型设置，可编辑 `$DSH_HOME/settings.yaml`。",
+      "notes": "经评估，这实际上是一个独立的终端应用（omdsh），并不是可安装到 DSH 里的插件，不能通过 `dsh plugin add` 安装；它是基于 DeepSeek Harness 构建的社区项目（非官方）。"
+    },
+    "summaryZh": "oh-my-dsh 是一个基于 DeepSeek Harness 的终端 AI 编程助手，提供键盘优先的沉浸式对话与工具调用体验。",
+    "usage": {
+      "prompt_tokens": 3076,
+      "completion_tokens": 2300,
+      "total_tokens": 5376,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1869
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2436
+    }
+  }
+}

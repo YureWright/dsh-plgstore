@@ -1,0 +1,37 @@
+{
+  "id": "dsh-permission-rules",
+  "analyzedAt": "2026-08-16T13:25:06.398Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/dsh-client-* 相关包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件的真实证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:PerryLink/dsh-permission-rules#main",
+      "evidence": "dsh plugin --profile web add \"github:PerryLink/dsh-permission-rules#main\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件像一个权限门卫，给 DeepSeek Harness（一个 AI 助手工具）添加规则。你可以用简单的 YAML 文件写下规则，比如“不准读取 secrets 文件夹”“写文件需要先问我”，AI 每次调用工具前都会先过一遍规则：拒绝就拦下来，允许就放行，需要确认就弹出提示。它还会把所有决策记录下来，方便事后查看。",
+      "level": "ok",
+      "risks": "它会读取并监控你项目目录里的 .dsh/rules.yaml 规则文件，可能向上扫描父目录；还会记录工具调用的决策日志（包含工作目录和结果），这些日志只留在本地会话里。没有发现把数据发到外部服务器或执行不明脚本的行为。",
+      "postInstallNotes": "装好后需要自己创建规则文件 .dsh/rules.yaml，按 README 里的格式写规则；如果想让 ask 规则由另一个 AI 模型自动裁决，还需要另外安装并配置 dsh-auto-review。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供基于 YAML 的权限规则插件，在工具调用前按 allow/deny/ask 顺序拦截并审计，类似给 AI 加一道可配置的审批防火墙。",
+    "usage": {
+      "prompt_tokens": 4385,
+      "completion_tokens": 5583,
+      "total_tokens": 9968,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5152
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3745
+    }
+  }
+}

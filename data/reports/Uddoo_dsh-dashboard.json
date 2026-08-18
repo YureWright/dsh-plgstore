@@ -1,0 +1,37 @@
+{
+  "id": "Uddoo/dsh-dashboard",
+  "analyzedAt": "2026-08-17T13:12:41.386Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-* 核心包，README 提供 dsh plugin add 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-dashboard@0.7.0",
+      "evidence": "dsh plugin --profile web add dsh-dashboard@0.7.0"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个任务仪表盘。它能从 Linear、GitHub、Jira、Asana、GitLab 或本地文件里读取任务，然后交给 Harness 的 Agent 自动处理，你可以在 Harness 界面里看到任务进度、运行记录和配置面板。",
+      "level": "ok",
+      "risks": "它会在你的电脑上创建工作文件夹（比如 .dsh-dashboard/workspaces）和一个本地任务文件（默认在 ~/.dsh-dashboard/tasks.json）。如果你接入了 GitHub/Linear/Jira 等服务，它会用你提供的 API 凭据去读取那些平台的任务——这些凭据只保存在本机，不会传到浏览器。另外，如果工作流里配置了生命周期钩子，它可能会在本地执行相应命令，相当于你同意它运行这些操作。",
+      "postInstallNotes": "装完后需要：1) 准备一份 WORKFLOW.md（可参考项目里的示例）；2) 在 Harness 配置里指定项目根目录、Agent 权限预设，并为要接入的任务源设置 API 凭据（如 Linear API key、GitHub token 等）；3) 如果使用本地任务，可能要设置 local.storePath。",
+      "notes": "依赖多个 DeepSeek Harness 的 rc 版本包，要求 Harness Web profile 0.1.0-rc.6；建议按 README 指定版本安装，避免和较新/较旧的核心包不兼容。"
+    },
+    "summaryZh": "DeepSeek Harness 的多源任务编排仪表盘，支持 Linear、GitHub、Jira、Asana、GitLab 和本地任务。",
+    "usage": {
+      "prompt_tokens": 4330,
+      "completion_tokens": 2771,
+      "total_tokens": 7101,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2264
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3690
+    }
+  }
+}

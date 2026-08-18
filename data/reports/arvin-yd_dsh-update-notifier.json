@@ -1,0 +1,37 @@
+{
+  "id": "arvin-yd/dsh-update-notifier",
+  "analyzedAt": "2026-08-17T13:09:51.394Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，peerDependencies 依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-update-notifier",
+      "evidence": "dsh plugin --profile web add dsh-update-notifier"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DSH 网页界面的侧边栏底部显示当前安装的 dsh 版本号。它会自动检查 npm 上有没有新版本，如果有新版本，版本号旁边会亮起红点，点击后弹出窗口告诉你当前版本和最新版本，并提供复制升级命令、忽略本次更新或稍后提醒的按钮。如果是最新版本，绿灯常亮。",
+      "level": "ok",
+      "risks": "它只读取本机 dsh 的安装位置和访问 npm 公共仓库查询版本信息，不会向第三方发送任何数据，也不会在磁盘上写文件。浏览器端会在本地存储（localStorage）里记一个你忽略的版本号，仅供自己判断。",
+      "postInstallNotes": "安装后需要重启 dsh（或 dsh web 服务）才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 侧边栏显示当前版本并自动检查 npm 更新的小插件，有新版本时亮红点提示。",
+    "usage": {
+      "prompt_tokens": 2925,
+      "completion_tokens": 560,
+      "total_tokens": 3485,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 204
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2285
+    }
+  }
+}

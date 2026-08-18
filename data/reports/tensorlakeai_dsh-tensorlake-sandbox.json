@@ -1,0 +1,37 @@
+{
+  "id": "tensorlakeai/dsh-tensorlake-sandbox",
+  "analyzedAt": "2026-08-17T11:52:13.804Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@tensorlakeai/dsh-sandbox",
+      "evidence": "dsh plugin --profile headless add @tensorlakeai/dsh-sandbox"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 DeepSeek Harness 的文件、子进程、Bash、终端和 LSP 操作放到一个临时的 Tensorlake 微虚拟机（microVM）里执行，相当于给 AI 工具加了一个隔离沙箱，避免直接在主电脑上跑可能危险的操作。你需要有 Tensorlake 项目和 API key，同时也要有 DeepSeek 的 API key。",
+      "level": "caution",
+      "risks": "它会将你的代码、文件和命令输出发送到 Tensorlake 的云端服务器，因此这些内容会被 Tensorlake 看到。它会在主机环境读取 TENSORLAKE_API_KEY 和 DEEPSEEK_API_KEY，但不会把它们复制进沙箱进程；另外它依赖的 tensorlake SDK 版本带有已知的高危安全漏洞（npm audit 报告），可能带来额外风险。",
+      "postInstallNotes": "需要设置环境变量 TENSORLAKE_API_KEY 和 DEEPSEEK_API_KEY；如需自定义工作目录，可设置 DSH_TENSORLAKE_CWD；建议通过 dsh --profile headless --dump-config 验证配置生效。",
+      "notes": "该插件确实是 DSH 插件，但 README 自述依赖的 tensorlake@0.5.103 存在高危漏洞且暂无纯净版本，生产使用前需审查上游公告并更新 SDK。"
+    },
+    "summaryZh": "让 DeepSeek Harness 在 Tensorlake 微VM沙箱中执行文件、子进程和 Bash 操作，实现隔离运行。",
+    "usage": {
+      "prompt_tokens": 3150,
+      "completion_tokens": 1375,
+      "total_tokens": 4525,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 910
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2510
+    }
+  }
+}

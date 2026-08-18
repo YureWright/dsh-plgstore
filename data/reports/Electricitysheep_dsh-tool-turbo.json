@@ -1,0 +1,37 @@
+{
+  "id": "Electricitysheep/dsh-tool-turbo",
+  "analyzedAt": "2026-08-17T11:56:26.859Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 依赖 @deepseek-ai/cordis 与 dsh-agent/dsh-settings 核心包，README 也明确描述其为 dsh host 插件并注入 agent/request 瀑布。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Electricitysheep/dsh-tool-turbo.git",
+      "evidence": "git clone https://github.com/Electricitysheep/dsh-tool-turbo.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 在调用工具时更聪明地分配“思考预算”。当模型进行多步工具操作时，它会自动把简单任务（比如读写文件）的思考强度调低，加快速度；遇到复杂任务再调高，保证质量。相当于给 AI 装了个“油门”。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取当前会话的工具调用记录，并修改模型请求配置，不碰用户其他文件，也不上传数据。",
+      "postInstallNotes": "需要按 README 手动配置：1) 在目标 profile 的 package.json 中加入 link 依赖；2) 在 cordis.patch.yml 中插入插件注册；3) 重启对应 dsh 服务。后续版本会提供 dsh-settings 命名空间来调整开关。",
+      "notes": "注意：0.1.0 版本还比较早期；依赖的是 rc 版核心包；package.json 标记 private，未发布到 npm；目前只能通过 git + 手动注册方式安装，不使用 dsh plugin add 命令。另外，可选的 max 档位默认关闭，需要自行开启。"
+    },
+    "summaryZh": "自动调整推理强度的 DSH 插件，显著减少多步工具调用的等待时间。",
+    "usage": {
+      "prompt_tokens": 2126,
+      "completion_tokens": 2563,
+      "total_tokens": 4689,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2125
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1486
+    }
+  }
+}

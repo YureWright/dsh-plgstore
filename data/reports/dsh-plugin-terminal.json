@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-terminal",
+  "analyzedAt": "2026-08-18T14:56:42.096Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，依赖 @deepseek-ai/dsh-client-ui-conversation，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-terminal",
+      "evidence": "dsh plugin --profile web add dsh-plugin-terminal && dsh web"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DSH 网页界面的底部添加一个终端面板，支持多个标签页，可以运行各种命令行程序（比如 codex、claude code），还带会话持久化——就算重启 DSH 服务，之前开着的终端标签和输出也能恢复，就像浏览器恢复标签页一样。",
+      "level": "ok",
+      "risks": "它会在你自己电脑上启动一个真实的终端，你在里面敲的命令都会在系统里执行；终端会话数据（包括命令输出）会保存到 DSH 主目录下的 plugin-data/terminal 文件夹里。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要重新运行 `dsh web` 使插件生效；使用 Ctrl+` 快捷键切换终端面板。若要在终端里运行 codex / claude code 等全屏工具，建议按 README 中的说明调整终端环境（如 TERM、tmux 配置等）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH Web 界面添加一个底部多标签终端面板，支持会话持久化和多种 AI 命令行工具。",
+    "usage": {
+      "prompt_tokens": 2314,
+      "completion_tokens": 1299,
+      "total_tokens": 3613,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 919
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1674
+    }
+  }
+}

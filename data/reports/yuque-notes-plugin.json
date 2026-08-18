@@ -1,0 +1,37 @@
+{
+  "id": "yuque-notes-plugin",
+  "analyzedAt": "2026-08-16T13:38:22.826Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，依赖 @deepseek-ai/dsh-* 核心包，README 提供 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "yuque-notes-plugin",
+      "evidence": "dsh plugin --profile <name> add yuque-notes-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以把零散的笔记（文字和图片）自动整理保存到语雀知识库，并让 AI 根据内容自动分类。它提供了三个工具：查看目录、创建分类、保存文档；图片会自动上传到 GitHub 图床并替换为链接。还附带一个把 PDF 课件整理成带图笔记的技能。",
+      "level": "ok",
+      "risks": "它需要访问你的语雀账号（通过 YUQUE_TOKEN）和 GitHub 账号（通过 GITHUB_TOKEN，用于存图片）。笔记内容会发送到语雀和 GitHub 服务器，图片会公开（如果图床仓库是公开的）。需要确保 token 只给可信环境使用。",
+      "postInstallNotes": "需要配置 cordis.patch.yml：设置 bookName（知识库名）、tokenEnv（语雀 token 的凭据名）、imageHosting.repo（图床仓库）和 GITHUB_TOKEN。把对应 token 写入凭据存储或环境变量。",
+      "notes": "无"
+    },
+    "summaryZh": "把零散笔记（文本+图片）自动分类保存到语雀知识库的 DSH 插件，附带 PDF 整理技能。",
+    "usage": {
+      "prompt_tokens": 4197,
+      "completion_tokens": 629,
+      "total_tokens": 4826,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 238
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3557
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-connect",
+  "analyzedAt": "2026-08-18T14:56:38.545Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 依赖并 peer 依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 给出 dsh plugin add 安装命令，明确是 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-connect",
+      "evidence": "dsh plugin --profile web add dsh-connect dsh-connect-feishu"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness（DSH）的智能体接到聊天软件上（比如飞书/Lark）。装好之后，你可以在聊天窗口里直接给智能体派活，它会实时把思考过程和结果推给你，还能用按钮卡片操作、查看任务历史、切换模型等。适合想通过聊天工具远程指挥 AI 干活的人。",
+      "level": "ok",
+      "risks": "它会在你电脑上保存一些数据文件（比如聊天和智能体会话的绑定关系、下载的图片附件等），如果配置了飞书，还会保存飞书应用的密钥（appSecret）。聊天内容会经过飞书等第三方平台，不过这是正常使用方式。默认情况下没有配置访问白名单时，任何能给你的机器人发消息的人都能使用它，建议按需设置 allowUsers / allowChats。",
+      "postInstallNotes": "需要在 ~/.dsh/profiles/<profile>/cordis.patch.yml 里添加配置，至少配置 dsh-connect-feishu 的 appId 和 appSecret（或用环境变量、一键扫码授权）。核心包 dsh-connect 本身也要配置 workDir 等可选参数。配置好后运行 dsh web 或 dsh run 启动。",
+      "notes": "该包是核心模块，需搭配适配器（如 dsh-connect-feishu）才能连接具体聊天平台；README 显示最后验证时间为 2026-08-16，针对 DSH 0.1.0-rc.6。"
+    },
+    "summaryZh": "dsh-connect 是 DSH 的聊天平台连接核心，把飞书等聊天工具变成操控 AI 智能体的入口。",
+    "usage": {
+      "prompt_tokens": 3795,
+      "completion_tokens": 944,
+      "total_tokens": 4739,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 444
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3155
+    }
+  }
+}

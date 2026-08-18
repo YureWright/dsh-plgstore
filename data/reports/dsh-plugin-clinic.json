@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-clinic",
+  "analyzedAt": "2026-08-16T13:28:49.255Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client，并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-clinic",
+      "evidence": "dsh plugin --profile web add dsh-plugin-clinic"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫 Plugin Clinic（插件诊所），相当于给 DeepSeek Harness 装了一套“体检工具”。它会把你已安装的所有插件挨个检查一遍，看看它们有没有加载失败、依赖不完整、版本不兼容、安装脚本有没有风险、有没有重复安装、补丁有没有问题等等。检查结果会以一个模型工具（plugin_health）和一个网页仪表盘的形式给你，在会话里输入“体检一下我的插件”就能看到，或者在网页设置里的“体检”标签页查看。整个过程只读，不会改任何东西。",
+      "level": "ok",
+      "risks": "它只会读取 DSH 的配置文件和插件信息，不会修改或删除任何文件，也不会把数据发到外部网络。网页仪表盘默认只允许本机访问，不过它没有登录验证，如果在局域网里开放了端口，同一网络的人可能看到你的插件健康状态，但这些都是不敏感的信息。其他没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 profile 才生效。重启后，在网页设置 Settings → Plugins 里会新增一个“体检”标签，同时会话里会出现 plugin_health 工具。如果只想检查某些 profile，可以编辑对应 profile 的 cordis.patch.yml 里的 clinic 配置，设置 profiles 列表。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-plugin-clinic 是一个只读的插件健康检查工具，能检查 DSH 插件集的加载、依赖、版本、安装脚本风险等，并提供模型工具与网页仪表盘。",
+    "usage": {
+      "prompt_tokens": 3537,
+      "completion_tokens": 2042,
+      "total_tokens": 5579,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1577
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2897
+    }
+  }
+}

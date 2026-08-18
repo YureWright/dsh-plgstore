@@ -1,0 +1,37 @@
+{
+  "id": "MuziIsabel/dsh-win-notify",
+  "analyzedAt": "2026-08-17T13:14:13.640Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，README 给出 dsh plugin 安装命令，功能围绕 dsh 事件钩子实现。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:MuziIsabel/dsh-win-notify",
+      "evidence": "dsh plugin --profile web add github:MuziIsabel/dsh-win-notify"
+    },
+    "evaluationReport": {
+      "intro": "这插件是装在 DeepSeek Harness (dsh) 里的一个“任务完成提醒”。它会在你在 Windows 上跑 dsh 代理干活时，等任务跑完（或者出错、需要你审批、需要你回答问题时）弹一个 Windows 系统通知，还带声音。点一下通知能直接切到 dsh 的网页界面，不用自己去找标签页。",
+      "level": "ok",
+      "risks": "它会在你电脑的 %LOCALAPPDATA%\\DeepSeek 放一个小程序文件，并在开始菜单建一个 DeepSeek 快捷方式，用来让通知显示成 DeepSeek 的图标；还会注册一个 dsh-win-notify:// 协议，用来接收点击。这些都在本地，不会上传你的数据。另外会往你的 DSH 目录写一个日志文件。没有发现向外部发送信息的迹象。",
+      "postInstallNotes": "装好后重启 dsh profile（或等 HMR 生效）。如果没看到通知，去 Windows 设置 → 系统 → 通知里确认 DSH.WinNotify 已开启；开始菜单里的 DeepSeek.lnk 快捷方式不要删掉。",
+      "notes": "只支持 Windows 10/11；如果没在 Windows 上跑 dsh，这插件用不了。通知图标用的是官方 favicon，MIT 许可。"
+    },
+    "summaryZh": "代理任务完成时在 Windows 上弹带声音的 Toast 通知，支持错误、等待审批、提问提醒，点击通知可直接切到 GUI 标签页。",
+    "usage": {
+      "prompt_tokens": 2571,
+      "completion_tokens": 2680,
+      "total_tokens": 5251,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2206
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1931
+    }
+  }
+}

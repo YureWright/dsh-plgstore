@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-office",
+  "analyzedAt": "2026-08-17T11:27:52.220Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huiliyi37/dsh-office",
+      "evidence": "dsh plugin --profile <name> add @huiliyi37/dsh-office"
+    },
+    "evaluationReport": {
+      "intro": "这是一个让 DSH 智能体处理 Office 文档的工具包：能生成、读取和编辑 Excel 表格、PDF、PPT 演示文稿和 Word 文档。比如从数据创建表格、合并 PDF、在 PPT 里查找替换文字、生成带格式的 Word 报告。共有 14 个工具，安装后会自动注册。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你指定的本地路径读取/生成 Office 文件，属于正常功能；不会连接外部服务器。",
+      "postInstallNotes": "无（如需使用随附的用法技能，可手动将 node_modules/@huiliyi37/dsh-office/skills/dsh-office 复制到 ~/.dsh/skills/）",
+      "notes": "兼容性提醒：需要 dsh ≥ 0.1.0-rc.5，否则工具调用会因 dsh-tools 版本不匹配而崩溃。"
+    },
+    "summaryZh": "为 DeepSeek Harness 打造的全能 Office 文档工具插件，支持 xlsx/pdf/pptx/docx 的生成、读取与编辑。",
+    "usage": {
+      "prompt_tokens": 2998,
+      "completion_tokens": 1847,
+      "total_tokens": 4845,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1456
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2358
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "omdsh-dev/dsh-minigames",
+  "analyzedAt": "2026-08-17T12:01:27.587Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis，README 描述为 DSH Web UI 插件，符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/dsh-minigames.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个装在 DSH 网页界面右侧的小游戏面板，内置 18 款离线小游戏（比如恐龙跳一跳、俄罗斯方块、坦克大战、扫雷等），既能折叠成小竖条不占地方，展开后可以玩，适合等模型回复或者修 bug 的时候摸鱼。所有游戏都是离线运行的，最高分会存在浏览器本地。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Web UI 右侧小游戏面板，提供 18 款离线摸鱼小游戏，可折叠可扩展。",
+    "usage": {
+      "prompt_tokens": 11987,
+      "completion_tokens": 1853,
+      "total_tokens": 13840
+    }
+  }
+}

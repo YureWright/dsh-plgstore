@@ -1,0 +1,37 @@
+{
+  "id": "nexu-io/open-design",
+  "analyzedAt": "2026-08-16T05:43:57.330Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.9,
+      "reason": "仓库是独立桌面应用，不是DSH插件；package.json无dsh.bundle/dsh.client，也未依赖DSH核心包，README未提供dsh plugin add命令。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个开源的设计工具，装在你电脑上，可以让你用AI生成网页、手机和电脑端的界面原型、幻灯片、图片、视频等。它支持很多AI编程助手（比如DeepSeek Harness、Claude Code等），会自动识别你电脑上装了哪些，然后用它们来帮你做设计。它还可以读取你团队的设计规范（DESIGN.md），让生成的东西风格一致。",
+      "level": "caution",
+      "risks": "安装时会运行一个安装脚本，可能下载额外的依赖；它会扫描你电脑上已安装的代码代理命令行工具；生成的预览会放在沙盒里，但导出或使用云服务时，你的设计内容和提示词可能会发给外部AI服务。",
+      "postInstallNotes": "无",
+      "notes": "经评估可能并非 DSH 插件：虽然仓库标了 dsh-plugin 且支持 DeepSeek Harness，但 package.json 没有 dsh.bundle/dsh.client 声明，也没有依赖 @deepseek-ai/cordis 或 dsh-* 包，README 也没给出 dsh plugin add 安装方式。它其实是一个独立的设计应用。"
+    },
+    "summaryZh": "开源本地优先的AI设计工具，支持DeepSeek Harness等编码代理，可生成原型、幻灯片、图片和视频。",
+    "usage": {
+      "prompt_tokens": 3985,
+      "completion_tokens": 2225,
+      "total_tokens": 6210,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1831
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3345
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "Letter2025/dsh-approval-llm",
+  "analyzedAt": "2026-08-17T11:44:15.632Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Letter2025/dsh-approval-llm.git",
+      "evidence": "Read https://github.com/Letter2025/dsh-approval-llm/blob/main/README.md and follow its `## Install` section to install the `dsh-approval-llm` bundle into the DeepSeek Harness web profile"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个‘模型审批’权限模式：当工具需要批准时，它让另一个 AI 模型（独立审查员）来做出允许、拒绝或转给人工的决定，而不是直接弹窗给人类。它平时不干扰其他权限模式，只在设定的模式下工作，适合低风险工作流。",
+      "level": "ok",
+      "risks": "它会读取会话记录里工具调用的参数，并把它们发送给你配置的审查模型（如果用的是远程 API，这些数据会发给对应服务商）。AI 审查可能被提示注入骗过，从而误批危险操作或误拒正常操作，所以不要用于高风险场景。",
+      "postInstallNotes": "需要配置审查所用的 provider/model（也可留空以复用当前会话的路由），并按需设置 allowlist、denyList、humanOnlyList、maxConsecutiveDenials 等；之后重启 dsh web 服务器并确认权限选择器出现 model-approval（帮我批准）预设。",
+      "notes": "无"
+    },
+    "summaryZh": "基于独立审查模型的 DSH 权限审批插件，自动允许/拒绝/转人工，实现‘帮我批准’模式。",
+    "usage": {
+      "prompt_tokens": 3406,
+      "completion_tokens": 3073,
+      "total_tokens": 6479,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2647
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2766
+    }
+  }
+}

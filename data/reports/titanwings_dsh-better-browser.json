@@ -1,0 +1,37 @@
+{
+  "id": "titanwings/dsh-better-browser",
+  "analyzedAt": "2026-08-17T11:31:08.777Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 与多个 dsh-* 核心包，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:titanwings/dsh-better-browser#v0.3.6",
+      "evidence": "dsh plugin --profile web add github:titanwings/dsh-better-browser#v0.3.6"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 里的 AI 助手能操作你电脑上正在运行的、已经登录的真实浏览器。它靠本地的 Kimi WebBridge 桥接，把浏览器变成 13 个工具，比如打开网页、点击、填表、截图、查看网络请求、上传文件、保存 PDF、管理标签页。简单说，AI 能像你本人一样用浏览器，还能边做边看到页面变化。",
+      "level": "caution",
+      "risks": "它会让你正在登录的浏览器被 AI 操控，AI 能看到你打开的网页内容和登录状态，还能替你点击、发消息、提交表单。如果你安排它处理网银、邮箱等敏感信息，这些内容可能会被发送给模型服务商。另外，它需要安装月之暗面的 Kimi WebBridge 扩展和后台守护进程，这个第三方组件同样可以读取浏览器数据。AI 操作真实页面也可能造成不可逆的后果（比如误发内容），插件虽会限制在独立标签组，但不会自动关标签页。",
+      "postInstallNotes": "还需要先安装并启用 Kimi WebBridge 浏览器扩展，并确保运行 kimi-webbridge status 时看到 \"extension_connected\": true；然后重启 dsh web 并刷新页面。默认 baseUrl 是 http://127.0.0.1:10086，一般不用改。",
+      "notes": "该插件依赖第三方 Kimi WebBridge（月之暗面产品），请留意其隐私条款；模型可能会看到浏览器中的敏感页面内容，建议在可信环境使用；如果之前装过旧包 @dsh-external/dsh-kimi-browser，需要先移除再安装新包。"
+    },
+    "summaryZh": "让 DeepSeek Harness 的 AI 助手通过 Kimi WebBridge 操控你真实登录的浏览器，完成导航、点击、截图、网络检查等任务，并保持登录态和标签页不被打乱。",
+    "usage": {
+      "prompt_tokens": 4075,
+      "completion_tokens": 5721,
+      "total_tokens": 9796,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5139
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3435
+    }
+  }
+}

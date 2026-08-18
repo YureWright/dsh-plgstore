@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-skins",
+  "analyzedAt": "2026-08-17T11:06:30.381Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并提供 README 安装命令，确为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-skins",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-skins"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 皮肤合集插件。装上它，就等于同时得到了一个‘皮肤中心’和一整套皮肤（例如 qq98、ths、xp、蓝色幻想、龙裔、我的世界、初音未来、交易风格等），不用再一个个单独安装皮肤包。装完后可以用 dsh-skin use 命令切换皮肤，同一时间只启用一个皮肤；皮肤仅影响 DSH Web 界面的外观，不改变后台数据和模型请求。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改浏览器里 DSH Web 界面的展示效果，不会改动聊天记录、系统文件，也不会连接外部服务器。",
+      "postInstallNotes": "装完后使用 dsh-skin use <皮肤ID> 切换皮肤（例如 dsh-skin use qq98）；同一时间只有一个皮肤生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 皮肤全家桶插件：一个包集齐皮肤中心与多套内置皮肤，切换互斥。",
+    "usage": {
+      "prompt_tokens": 1408,
+      "completion_tokens": 2684,
+      "total_tokens": 4092,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2346
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 768
+    }
+  }
+}

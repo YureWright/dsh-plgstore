@@ -1,0 +1,37 @@
+{
+  "id": "EdgeTypE/dsh-better-deepseek",
+  "analyzedAt": "2026-08-17T11:53:14.795Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 给出了 dsh plugin 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-better-deepseek",
+      "evidence": "README 提供安装命令 `npx @deepseek-ai/dsh --profile web add -w dsh-better-deepseek`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个为 Better-DeepSeek 浏览器扩展准备的桥接插件。它让你在 Chrome 里装的 Better-DeepSeek 扩展能和你电脑上正在运行的 DeepSeek Harness 联系上。插件会启动一个本地小服务，提供几个接口，扩展通过这些接口来测试连接、给你推送任务进度、帮你创建新任务、获取结果等。打个比方，它就像一条电话线，把浏览器里的扩展和后台的 DSH 连起来。",
+      "level": "caution",
+      "risks": "会在本地开启一个 HTTP 服务，开放几个接口。默认允许跨域请求（CORS 开着），这意味着任何网页如果知道地址，也能向这个本地服务发请求，可能会被陌生人 Web 页面触发任务。请关掉不用的功能或只让可信的扩展使用。",
+      "postInstallNotes": "无",
+      "notes": "依赖声明里用了 workspace:^ 版本号，这类版本在 npm 上可能无法直接安装，若安装失败建议从 GitHub 源码安装；CORS 默认开启，如需更安全可配置 enableCors=false。"
+    },
+    "summaryZh": "把 Better-DeepSeek 浏览器扩展接入 DeepSeek Harness 的桥接插件，通过本地 HTTP 接口让扩展与 DSH 通信。",
+    "usage": {
+      "prompt_tokens": 1762,
+      "completion_tokens": 2212,
+      "total_tokens": 3974,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1784
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1122
+    }
+  }
+}

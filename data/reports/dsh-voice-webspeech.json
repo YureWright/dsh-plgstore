@@ -1,0 +1,37 @@
+{
+  "id": "dsh-voice-webspeech",
+  "analyzedAt": "2026-08-16T14:46:37.407Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 peerDependencies 包含 @deepseek-ai/cordis 等 DSH 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/anweat/dsh-voice-webspeech.git",
+      "evidence": "pnpm dsh plugin --profile web add github:anweat/dsh-voice-webspeech"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页界面用的语音输入插件。装上后，输入框旁边会出现一个麦克风按钮：按住它说话，松手就自动把语音转成文字，直接填进输入框，也可以设置成松手直接发送。它完全靠浏览器自带的语音识别功能，不需要你装任何服务端、不用 API 密钥、也不用下载模型。支持中文、粤语、英语、日语等多种语言，还能实时显示识别中的文字。",
+      "level": "ok",
+      "risks": "使用时会用到麦克风，音频数据会发送给浏览器对应的语音服务（Edge 走微软 Azure，Chrome 走 Google），但不会经过 DSH 服务端，也不落盘。首次使用浏览器会弹窗请求麦克风权限，请留意允许。",
+      "postInstallNotes": "装完后重启 `dsh web` 才能生效；首次使用需在浏览器中允许麦克风权限；如果用 pnpm 且提示 allowBuilds，按提示把对应包键加到 profile 的 pnpm-workspace.yaml 后重跑。",
+      "notes": "无"
+    },
+    "summaryZh": "纯浏览器语音输入 DSH 插件：按住说话松手转文字，零服务端、零 API 密钥、零模型下载。",
+    "usage": {
+      "prompt_tokens": 3676,
+      "completion_tokens": 2129,
+      "total_tokens": 5805,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1701
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3036
+    }
+  }
+}

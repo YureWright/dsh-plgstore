@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-skin-minecraft",
+  "analyzedAt": "2026-08-17T11:08:58.827Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 客户端插件特征"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-skin-minecraft",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-skin-minecraft"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页图形界面换 Minecraft 风格皮肤的小插件。装上以后，界面会变成类似《我的世界》主菜单的样子：方块状的立体背景、像素云、草方块、经典按钮样式、木牌输入框等。它只是改改外观，不会动你的数据或发送请求。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改网页界面的外观，没有注入服务、不碰文件、也不上传数据。",
+      "postInstallNotes": "安装后需要运行 dsh-skin use minecraft 来激活这个皮肤（同一时间只能有一个皮肤生效）。",
+      "notes": "无"
+    },
+    "summaryZh": "一个把 DSH 网页界面换成 Minecraft 风格外观的皮肤插件，纯视觉改造，安全无副作用。",
+    "usage": {
+      "prompt_tokens": 1908,
+      "completion_tokens": 702,
+      "total_tokens": 2610,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 388
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1268
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "wz-heng/dsh-feishu-bridge",
+  "analyzedAt": "2026-08-17T11:47:40.090Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装方式，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/wz-heng/dsh-feishu-bridge.git",
+      "evidence": "README 中 Quickstart 首行是 `git clone https://github.com/wz-heng/dsh-feishu-bridge.git`，安装命令示例为 `dsh plugin --profile <name> add /path/to/dsh-feishu-bridge`。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在飞书（Lark）里直接指挥 DeepSeek Harness 的 AI 代理：给飞书机器人发条消息，它就跑一个代理回合，然后把结果发回聊天。它还支持在飞书卡片上点“允许/拒绝”来批准代理执行 bash 命令，相当于给 AI 加了一个人工确认闸门。",
+      "level": "ok",
+      "risks": "它会在本地启动一个 Python 进程，读取你设置的环境变量（如 DeepSeek API 密钥、飞书应用密钥），并且 AI 代理可能读写你指定的工作区文件。默认开启 fail-closed 白名单，只有你列出的飞书用户才能触发，消息会经过飞书服务器。没发现其他明显风险。",
+      "postInstallNotes": "装完插件后，还需要先手动安装 Python 侧桥接器并在仓库根目录创建 .venv（git clone、python3.12 -m venv .venv、pip install -e .），再设置 FEISHU_APP_ID、FEISHU_APP_SECRET、FEISHU_ALLOWED_OPEN_IDS 等环境变量。插件不会自动装 Python 依赖。",
+      "notes": "这是独立社区项目，非 DeepSeek 官方背书；README 建议通过本地路径安装，使用 git URL 安装可能未经验证。"
+    },
+    "summaryZh": "把飞书变成 DeepSeek Harness 遥控器的桥接插件：在飞书里发消息即可驱动 AI 代理，并支持远程批准工具执行。",
+    "usage": {
+      "prompt_tokens": 3396,
+      "completion_tokens": 6620,
+      "total_tokens": 10016,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6099
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2756
+    }
+  }
+}

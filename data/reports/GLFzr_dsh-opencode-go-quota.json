@@ -1,0 +1,37 @@
+{
+  "id": "GLFzr/dsh-opencode-go-quota",
+  "analyzedAt": "2026-08-17T11:45:57.116Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，并提供 client 入口和 cordis.patch.yml，README 给出 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/GLFzr/dsh-opencode-go-quota.git",
+      "evidence": "dsh plugin --profile web add github:GLFzr/dsh-opencode-go-quota"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH Web 的聊天界面加一个“用量圆环”。它会显示你的 OpenCode Go 账号在 5 小时、每周、每月里用了多少额度（百分比），颜色从绿到红表示紧张程度，快用完时会闪烁，并在对话里适时提醒你省着点用。",
+      "level": "ok",
+      "risks": "它会读取你电脑上的 OpenCode Go 登录凭证（~/.local/share/opencode/auth.json 里的 key）并调用 opencode.ai 查询用量；这些数据只在本地显示，不会发给第三方。另外它会在 DSH 宿主里执行 node 子进程，Windows 沙箱可能需要额外配置工作目录，否则会报错。",
+      "postInstallNotes": "重启 dsh web；确认 OpenCode Go 已登录（auth.json 里有 opencode-go.key）或设置环境变量 OPENCODE_GO_API_KEY；Windows 下如遇 shell.run 限制，在 cordis.patch.yml 里配置 sandbox-policy.workspaceRoot。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH Web 输入框旁显示 OpenCode Go 额度圆环，并随用量档位在对话中提醒用户。",
+    "usage": {
+      "prompt_tokens": 2327,
+      "completion_tokens": 2773,
+      "total_tokens": 5100,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2354
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1687
+    }
+  }
+}

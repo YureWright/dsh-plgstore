@@ -1,0 +1,37 @@
+{
+  "id": "dsh-catppuccin",
+  "analyzedAt": "2026-08-16T13:29:55.876Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-catppuccin",
+      "evidence": "dsh plugin --profile web add dsh-catppuccin"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面换肤的主题插件，提供 Catppuccin 的四种柔和配色（Latte、Frappé、Macchiato、Mocha）。装上后，你可以在网页设置的“常规”里选择喜欢的主题，界面里的按钮、消息气泡、代码高亮等都会变成对应的柔和色调，也可以随时切回默认外观。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器本地保存你选择的主题偏好（localStorage），不会上传任何数据，也不会碰你电脑上的其他文件。",
+      "postInstallNotes": "安装后需要重启 dsh web 服务（运行 dsh web），然后在浏览器打开网页 UI，进入 Settings → General，选择 Catppuccin 主题中的任意一种口味。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面提供 Catppuccin 柔和配色主题，含四种口味，可随时切换回默认外观。",
+    "usage": {
+      "prompt_tokens": 3236,
+      "completion_tokens": 998,
+      "total_tokens": 4234,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 642
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2596
+    }
+  }
+}

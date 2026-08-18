@@ -1,0 +1,37 @@
+{
+  "id": "1624318455/dsh-plugin-tts",
+  "analyzedAt": "2026-08-17T12:03:34.154Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 明确声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-web，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/1624318455/dsh-plugin-tts.git",
+      "evidence": "dsh plugin --profile web add \"github:1624318455/dsh-plugin-tts#main\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 把 AI 的回复用语音读出来。它默认用微软 Edge 的免费在线语音（Edge TTS），也可以接入你自己训练的 RVC 声音模型，让声音更有个性。长文章会自动分成一小段一小段连续播放，听起来不卡顿。你可以在每条消息旁边点朗读按钮，也可以打开自动朗读，让新回复自动读出来。还有设置面板可以选声音、调语速、调音量，甚至一键安装别人做好的音色包。",
+      "level": "ok",
+      "risks": "它会把要朗读的文本发送给微软的 Edge 语音服务器，这是实现朗读功能必需的；如果你安装第三方音色包，会从外部地址下载文件。除此之外，没发现它会访问你的隐私文件或执行其他危险操作。",
+      "postInstallNotes": "安装后重启 dsh web（Restart `dsh web`），插件会自动加载。如果浏览器没有声音，可能需要在页面上先点击一下以允许自动播放。",
+      "notes": "它依赖 @deepseek-ai/dsh-web 的 rc 版本，目前属于预发布状态；Edge TTS 使用的是非官方端点，有可能失效，README 中也提到需更新内部版本号。另外包名是 @dsh-external/dsh-plugin-tts，但 README 推荐用 GitHub 方式安装，npm 上可能未发布。"
+    },
+    "summaryZh": "一款 DeepSeek Harness 插件，为 AI 回复添加朗读功能，支持微软 Edge 免费语音和自定义 RVC 音色，能流畅朗读长文。",
+    "usage": {
+      "prompt_tokens": 3427,
+      "completion_tokens": 4929,
+      "total_tokens": 8356,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4423
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2787
+    }
+  }
+}

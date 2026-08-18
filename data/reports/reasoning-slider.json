@@ -1,0 +1,37 @@
+{
+  "id": "reasoning-slider",
+  "analyzedAt": "2026-08-16T13:29:25.683Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 提供了 dsh plugin add 安装命令，代码通过 window.__ModuleLoader__ 调用 DSH 运行时接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "reasoning-slider",
+      "evidence": "dsh plugin --profile web add reasoning-slider"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的模型选择器加了一个推理等级滑块。你选完模型后，下方会出现一个滑块，拖动它就能切换模型的推理档位（从 off 到 max 共七档），松手就生效。切换模型时它会自动带上你选的档位，如果新模型不支持当前档位，会自动回退到默认值。还支持键盘左右键和滚轮操作。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改 DSH 的界面，不碰系统文件，也不上报数据。",
+      "postInstallNotes": "安装完成后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 模型选择器里嵌入推理档位滑块，方便快速切换模型的推理强度。",
+    "usage": {
+      "prompt_tokens": 1924,
+      "completion_tokens": 495,
+      "total_tokens": 2419,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 185
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1284
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "2768651338/dsh-plugin-manager",
+  "analyzedAt": "2026-08-17T11:46:04.542Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 也给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:2768651338/dsh-plugin-manager#main",
+      "evidence": "dsh plugin --profile web add github:2768651338/dsh-plugin-manager#main"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫“插件管家”，是给 DeepSeek Harness（DSH）用的。它能让插件列表变得好看又好懂：每个插件都显示中文名和一句话说明，还能在网页界面里一键启用或停用，不用再去手改配置文件。也可以自己给插件写备注，方便记住它是干嘛的。",
+      "level": "ok",
+      "risks": "它会修改 DSH 的全局配置文件 ~/.dsh/cordis.patch.yml，以及在自己的目录 ~/.dsh/plugin-manager/ 下保存备注文件。如果你自己手动改过配置文件，它的自动修改可能会和你写的内容打架。它不会联网，也不会读取聊天记录、密钥等隐私数据。",
+      "postInstallNotes": "安装后需要重启 DeepSeek Harness，并在网页里按 Ctrl+F5 强制刷新一次，然后到 Settings → Plugins → Plugin Manager 就能用了。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件管家：为 DeepSeek Harness 提供图形化插件管理，显示中文名/说明、一键启停、支持在界面中编辑备注。",
+    "usage": {
+      "prompt_tokens": 3429,
+      "completion_tokens": 2068,
+      "total_tokens": 5497,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1677
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2789
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@frost_with_snow/dsh-plugin-manager",
+  "analyzedAt": "2026-08-16T13:40:34.486Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle（cordis.patch.yml），且 README 描述为 dsh 插件管理控制台，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@frost_with_snow/dsh-plugin-manager",
+      "evidence": "npm install -g @frost_with_snow/dsh-plugin-manager"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个 dsh 插件管理控制台。它会在你电脑上开一个本地网页（端口 12333），让你在浏览器里看到已经安装的自定义 dsh 插件，可以一键启用或禁用，还能从 npm 上搜索并安装作者发布的 dsh 插件。改完设置后需要重启 dsh 才会生效。",
+      "level": "ok",
+      "risks": "它会在本地开一个 HTTP 服务（端口 12333），默认只听本地地址，一般只有你自己能访问。它能读写 dsh 的配置文件（cordis.patch.yml）来启用/禁用插件，也会连接 npm 搜索和下载插件。由于是个人发布的插件，代码未经广泛审查，但功能看起来不涉及隐私文件。",
+      "postInstallNotes": "启动 dsh 后，在浏览器打开 http://127.0.0.1:12333 使用控制台。修改插件状态后需要重启 dsh 才能生效。",
+      "notes": "README 未直接给出 `dsh plugin add` 的 npm 安装命令，只给了 `npx dsh plugin add link:...`（开发模式），但包已发布在 npm，可用 `dsh plugin add @frost_with_snow/dsh-plugin-manager` 安装。另外，该插件面向自定义 dsh 插件，可能不管理内置插件。"
+    },
+    "summaryZh": "一个开在本地网页上的 dsh 插件管理小面板，可以启用、禁用和安装自定义 dsh 插件。",
+    "usage": {
+      "prompt_tokens": 1538,
+      "completion_tokens": 4313,
+      "total_tokens": 5851,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3855
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 898
+    }
+  }
+}

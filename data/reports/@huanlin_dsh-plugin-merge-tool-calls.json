@@ -1,0 +1,37 @@
+{
+  "id": "@huanlin/dsh-plugin-merge-tool-calls",
+  "analyzedAt": "2026-08-16T13:28:51.890Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 包含 dsh.bundle/dsh.client 配置，依赖 @deepseek-ai/dsh-client-* 系列包，README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-merge-tool-calls",
+      "evidence": "dsh plugin --profile web add \"@huanlin/dsh-plugin-merge-tool-calls\"     # npm registry 分发"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把聊天界面里连续出现的同一个工具（比如连续读文件、搜索）的卡片合并成一张主卡片，下面用子行展示每个具体操作，这样聊天记录更整洁。默认会合并所有内置工具，也可以自己配置。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "安装完成后需要重启 dsh web 进程，并按 Ctrl+Shift+R 硬刷新浏览器。",
+      "notes": "无"
+    },
+    "summaryZh": "把连续相邻的同工具调用合并为一张主卡片加紧凑子行的展示，减少聊天流中的重复卡片。",
+    "usage": {
+      "prompt_tokens": 4395,
+      "completion_tokens": 1909,
+      "total_tokens": 6304,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1620
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3755
+    }
+  }
+}

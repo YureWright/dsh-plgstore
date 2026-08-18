@@ -1,0 +1,37 @@
+{
+  "id": "jasonsun29/ds-balance-card",
+  "analyzedAt": "2026-08-17T13:18:14.854Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 配置并依赖 @deepseek-ai/dsh-client-runtime 等 DSH 核心包，README 描述的是 DSH 插件的安装与使用方法，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/jasonsun29/ds-balance-card.git",
+      "evidence": "git clone https://github.com/jasonsun29/ds-balance-card.git \"$DSH_HOME/profiles/web/plugins/ds-balance-card\""
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的常驻额度卡片插件，会在界面右下角显示你各个 AI 平台（如 DeepSeek、Kimi、智谱等）的账户余额和套餐剩余额度。它自动读取你在 DSH 凭证库里配置的 API Key，然后去各平台官网查询余额，余额低会变色提醒。你也可以拖拽卡片、手动刷新、设置预警阈值。",
+      "level": "ok",
+      "risks": "它会读取 DSH 凭证库中的 API Key（用于查询余额），但 Key 不会进入浏览器，只通过本机命令传给各平台官方接口。需要网络访问各平台 API，不会把 Key 发给第三方。没有发现其他明显风险。",
+      "postInstallNotes": "安装后需要在 DSH 凭证库中配置至少一个平台的 API Key（如 DEEPSEEK_API_KEY），并在 cordis.patch.yml 中插入插件配置，然后重启 dsh web 生效。",
+      "notes": "该插件官方安装方式不是 dsh plugin add，而是手动 git clone 和符号链接，可能需要手动处理 node_modules 链接；如果使用 npm 管理则可在 profile 目录执行 npm install ds-balance-card。"
+    },
+    "summaryZh": "DSH 常驻余额卡片插件，自动显示多个 AI 平台账户余额与套餐额度，支持低余额预警。",
+    "usage": {
+      "prompt_tokens": 2896,
+      "completion_tokens": 1119,
+      "total_tokens": 4015,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 660
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2256
+    }
+  }
+}

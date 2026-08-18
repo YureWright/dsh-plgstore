@@ -1,0 +1,37 @@
+{
+  "id": "LiuMengxuan04/oh-my-dsh",
+  "analyzedAt": "2026-08-17T11:28:52.697Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "README 给出了 dsh plugin add 安装命令，且包描述明确面向 DSH/Cordis，属于可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-autopilot@next",
+      "evidence": "dsh plugin --profile web add dsh-autopilot@next"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个“自动驾驶”层，让长时间跑的任务更可靠。它会帮你把大任务拆成小步骤、记录进度、检查结果，即使中途出问题也能恢复，最后还给你一份报告。适合那种需要跑很久、要求不能中断的开发任务。",
+      "level": "ok",
+      "risks": "它会在你的项目里创建文件和运行命令（比如测试和构建），可能会读取你的代码和仓库信息。如果你启用了可视化检查，它可能会打开浏览器访问指定网站。它也会在本地保存运行记录和审计数据。默认情况下这些数据只留在你电脑上，但如果你主动配置了外部通知，数据可能会发到外部服务。",
+      "postInstallNotes": "安装后先运行 dsh plugin --profile web exec dsh-autopilot doctor --profile web 检查环境，并按需阅读 docs/autonomy-and-security.md 再决定是否开启高级功能（如 host 自修改、外部通知、MCP 等）。",
+      "notes": "当前是 0.1.0-alpha.3 预发布版本，API 可能会变；需要使用指定版本的 DeepSeek Harness 和 Cordis。这是社区独立项目，不是官方 DeepSeek 出品。"
+    },
+    "summaryZh": "给 DeepSeek Harness 增加长期任务自动管理能力的社区插件（开发者预览版）。",
+    "usage": {
+      "prompt_tokens": 3754,
+      "completion_tokens": 2513,
+      "total_tokens": 6267,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2092
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3114
+    }
+  }
+}

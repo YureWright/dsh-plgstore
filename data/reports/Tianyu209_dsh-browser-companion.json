@@ -1,0 +1,37 @@
+{
+  "id": "Tianyu209/dsh-browser-companion",
+  "analyzedAt": "2026-08-17T13:17:58.684Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-browser-companion",
+      "evidence": "dsh plugin --profile web add dsh-browser-companion"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的智能体配一个专用的、看得见的浏览器窗口。你可以实时看它在干嘛，需要登录时它会弹出窗口让你自己输密码，密码不会经过智能体。登录状态会保存下来，下次重启还能保持。它还提供各种浏览器操作工具，比如打开网页、点击、输入、截图等，用起来很方便。",
+      "level": "ok",
+      "risks": "它会在你电脑上创建一个浏览器配置文件（默认在 ~/.dsh/browser-profile），里面存有 cookie 和登录状态；智能体可以访问你浏览的网页内容、截图、上传文件等。但密码和 OAuth 登录由你本人输入，不会经过智能体，整体风险可控。",
+      "postInstallNotes": "需要先全局安装 agent-browser 并运行 agent-browser install 下载 Chromium；如果是从 GitHub 安装且使用 pnpm，需要在 pnpm-workspace.yaml 里允许 agent-browser 的构建脚本。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 智能体提供持久化、可见的浏览器，支持人工登录和多种浏览器操作工具。",
+    "usage": {
+      "prompt_tokens": 2779,
+      "completion_tokens": 589,
+      "total_tokens": 3368,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 204
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2139
+    }
+  }
+}

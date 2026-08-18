@@ -1,0 +1,37 @@
+{
+  "id": "dsh-voice",
+  "analyzedAt": "2026-08-16T13:30:07.486Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 提供 dsh plugin add 安装命令，且描述为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-voice",
+      "evidence": "dsh plugin --profile web add dsh-voice"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH（DeepSeek Harness）加上语音能力。它提供了三个工具：voice_tts 可以把文字变成语音（利用微软 Edge 的朗读服务，目前免费），voice_stt 可以把语音转成文字（需要你配置一个第三方语音识别服务，比如 Groq 或 OpenAI），voice_list 可以列出可用的音色。简单说，装上它你的 AI 助手就能说话和听懂语音了。",
+      "level": "ok",
+      "risks": "使用这个插件时，你让它合成的文字会发送到微软的 Edge 服务（用于 TTS），你让它转写的音频会发送到你配置的第三方 ASR 服务（如 Groq/OpenAI）。这些数据会经过网络，相关服务商可能能看到内容。如果你配置了代理，流量还会经过代理服务器。除此之外，没发现它读取或修改你电脑上的其他文件。",
+      "postInstallNotes": "安装后，voice_tts 和 voice_list 开箱即用；voice_stt 需要先配置 ASR 的 API 密钥：在插件配置文件里设置 asrApiKey（或设置环境变量 DSH_VOICE_ASR_KEY），并根据你的服务商调整 asrEngine 和 asrModel。另外，该插件要求 Node.js 版本 >= 22。",
+      "notes": "语音合成走的是非官方 edge-tts 协议，免费但可能受微软策略影响（未来可能变动）；语音转文字需要自备第三方 ASR 密钥，会产生相应费用。"
+    },
+    "summaryZh": "DSH 语音双件套插件：通过免费 edge-tts 实现文字转语音，通过 OpenAI 兼容接口实现语音转文字，让 AI 助手会说话、能听懂。",
+    "usage": {
+      "prompt_tokens": 2495,
+      "completion_tokens": 2867,
+      "total_tokens": 5362,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2370
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1855
+    }
+  }
+}

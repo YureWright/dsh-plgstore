@@ -1,0 +1,37 @@
+{
+  "id": "jiangnanquan/dsh-ux",
+  "analyzedAt": "2026-08-17T11:51:46.429Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-client-runtime 与 @deepseek-ai/dsh-client-ui-theme，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/jiangnanquan/dsh-ux.git",
+      "evidence": "dsh plugin --profile web add github:jiangnanquan/dsh-ux#main"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH（DeepSeek Harness）网页界面用的美化增强工具。它能把网页换成 Solarized 浅色主题、用 Maple Mono 字体（没有会自动换别的），把对话框排得更紧凑；还能把思考过程折叠成“Think ×N”的小胶囊、工具调用折叠成“A → B → C”的一条链，点一下才展开，让聊天记录看起来清爽很多。另外它会在底部显示你的 DeepSeek 官方账户余额、这一轮对话花了多少钱，以及最近 30 天的用量图表。",
+      "level": "ok",
+      "risks": "它主要改动的是 DSH 网页界面的外观和显示，会通过你本地的 DeepSeek API 密钥去查询官方账户余额和用量，然后显示在界面上。如果你在公开场合使用，别人可能会看到你的余额信息。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh 让插件生效；如果想用 Maple Mono 字体，需要先安装该字体（不装也能用，只是字体效果略有差别）；要显示余额和用量，需要你的 DSH 已经配置好 DEEPSEEK_API_KEY，否则那几个位置会显示查询失败/不可用，但不影响其他功能。",
+      "notes": "仓库里除了这个插件还带了一个 Electron 桌面壳（desktop/ 子目录），但那个不是插件本身，安装命令只安装 dsh-enhance。注意安装命令指定了 profile 为 web，如果你的 profile 不同需自行调整。"
+    },
+    "summaryZh": "DSH 网页界面体验增强插件：Solarized 浅色主题、紧凑布局、思考/工具折叠胶囊，以及官方账户余额和用量统计。",
+    "usage": {
+      "prompt_tokens": 1927,
+      "completion_tokens": 2641,
+      "total_tokens": 4568,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2106
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1287
+    }
+  }
+}

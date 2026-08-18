@@ -1,0 +1,37 @@
+{
+  "id": "@wsgsety/dsh-plugin-manager",
+  "analyzedAt": "2026-08-16T13:39:32.099Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/client 字段并 peer 依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wsgsety/dsh-plugin-manager",
+      "evidence": "dsh plugin --profile web add @wsgsety/dsh-plugin-manager"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 网页插件管理器。装上之后，你可以在 DSH 的网页设置页面里直接开关已经装好的插件，不用去敲命令或改配置文件。它会列出所有插件，显示每个插件的运行状态，还会标记哪些是官方插件。开关一拨就立刻生效，并且会把你的选择存下来，重启后也保持。",
+      "level": "ok",
+      "risks": "它会修改 DSH 的配置文件（~/.dsh/profiles/.../cordis.patch.yml）来记录你启停过哪些插件；也会在本机开一个仅限本机访问的小接口给设置页用。它不会主动上传数据，但如果你自己手写了配置文件，它在写入时会尽量保留注释和原格式。总的来说风险很低。",
+      "postInstallNotes": "安装后需要重启 dsh web（命令行或 DeepSeek Harness 桌面应用）才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页插件管理器：在设置页里直接启用/停用已安装插件。",
+    "usage": {
+      "prompt_tokens": 2911,
+      "completion_tokens": 1838,
+      "total_tokens": 4749,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1470
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2271
+    }
+  }
+}

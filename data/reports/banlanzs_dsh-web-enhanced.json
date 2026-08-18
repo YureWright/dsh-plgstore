@@ -1,0 +1,37 @@
+{
+  "id": "banlanzs/dsh-web-enhanced",
+  "analyzedAt": "2026-08-17T13:13:10.214Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis，确为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-web-enhanced",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加了一堆增强功能：一个任务看板（可以按时间定时自动跑任务）、Git 分支和提交历史的图形视图、类似文件管理器的侧栏（能预览文档、图片、PDF、Office 文件，还能看代码差异）、聊天流中加入节点导航条、界面换肤、粘贴大段文字时自动转成附件、在输入框里 @ 文件、显示 DeepSeek API 余额和估算费用，还能让纯文本模型理解图片。",
+      "level": "ok",
+      "risks": "它会在本地读取/操作项目文件和 Git 仓库（如切换分支、暂存改动），也会在浏览器里保存界面设置（如皮肤、粘贴的大文本），还会向 DeepSeek 官方服务器查询余额和费用估算；这些操作都在你主动使用时发生，没发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页端提供任务看板、Git 图谱、文件预览/SCM 面板、API 余额显示、界面皮肤和图片理解等增强功能的插件。",
+    "usage": {
+      "prompt_tokens": 4099,
+      "completion_tokens": 3241,
+      "total_tokens": 7340,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2875
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3459
+    }
+  }
+}

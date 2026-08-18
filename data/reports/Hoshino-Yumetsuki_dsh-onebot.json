@@ -1,0 +1,37 @@
+{
+  "id": "Hoshino-Yumetsuki/dsh-onebot",
+  "analyzedAt": "2026-08-17T12:11:20.279Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，同时 README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-onebot",
+      "evidence": "dsh plugin --profile web add dsh-onebot"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能接入支持 OneBot v11 协议的聊天平台（比如 QQ 机器人），通过 HTTP 或 WebSocket 收发消息。你可以设置监听地址和端口，配置访问令牌，控制哪些用户/群能用，AI 会在收到消息后自动回复。",
+      "level": "ok",
+      "risks": "会连接你配置的 OneBot 服务器，并在本地开放监听端口接收消息。涉及访问令牌等凭据，但都保存在 DSH 的凭据系统里。没发现恶意行为。",
+      "postInstallNotes": "需要在 DSH 设置里配置传输方式、地址、端口、访问令牌等参数，正确设置后才能连接你的 OneBot 服务。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 OneBot v11 适配器，支持 HTTP 和 WebSocket，让 AI 能接入 QQ 等聊天平台。",
+    "usage": {
+      "prompt_tokens": 3356,
+      "completion_tokens": 796,
+      "total_tokens": 4152,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 464
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2716
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "Tabbit-Browser/dsh-plugin",
+  "analyzedAt": "2026-08-17T11:14:39.441Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件的真实证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Tabbit-Browser/dsh-plugin.git",
+      "evidence": "dsh plugin --profile web add github:Tabbit-Browser/dsh-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能控制 Tabbit 浏览器。它会自动检查你有没有装 Tabbit 浏览器、版本够不够，如果没装或版本太低，它会自动下载对应地区的安装包到你的“下载”文件夹，然后由你自己打开安装。装上之后，模型就能通过它来操控浏览器干活了。",
+      "level": "ok",
+      "risks": "它会检查你的系统地区设置（macOS/Windows），并根据地区决定下载国内版还是国际版的 Tabbit 浏览器安装包，下载的文件放在“下载”文件夹。它还会调用本机的命令来检查浏览器和后台服务，但这些都是正常操作，没发现明显的隐私或安全问题。",
+      "postInstallNotes": "需要确保已安装 Tabbit 浏览器 1.9.0 或更高版本（国际版或国内版均可）。如果没有，插件会自动下载安装包，你需要手动打开安装，并重启一次 Tabbit 让后台服务运行。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 获得控制 Tabbit 浏览器的能力，自动检测/下载安装配套浏览器版本。",
+    "usage": {
+      "prompt_tokens": 1997,
+      "completion_tokens": 1260,
+      "total_tokens": 3257,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 868
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1357
+    }
+  }
+}

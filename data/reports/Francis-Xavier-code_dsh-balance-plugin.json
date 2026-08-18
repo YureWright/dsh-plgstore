@@ -1,0 +1,37 @@
+{
+  "id": "Francis-Xavier-code/dsh-balance-plugin",
+  "analyzedAt": "2026-08-17T11:17:47.526Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 明确声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Francis-Xavier-code/dsh-balance-plugin",
+      "evidence": "dsh plugin --profile web add github:Francis-Xavier-code/dsh-balance-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用户用的，它能在聊天界面里显示你的 DeepSeek API 余额（人民币和美元），余额低了会变红提醒你，点一下就能跳到官方充值页面。它还会生成很漂亮的用量统计图表，显示你最近花了多少、调用了多少次模型、速度怎么样。另外它还能管理第三方插件，列出你装的非官方插件。你可以直接在对话里问“DeepSeek 余额还剩多少”，它会自动回答。",
+      "level": "ok",
+      "risks": "它需要读取你电脑上的 DeepSeek API Key（环境变量或你在面板里手输的），Key 只保存在进程内存里，不会上传到第三方；运行时会向 DeepSeek 官方服务器（api.deepseek.com、platform.deepseek.com）发送请求来查余额和跳转充值；还会读写 DSH 的配置文件（~/.dsh/cordis.patch.yml）来记录插件启用状态。如果用一键安装脚本，会从网上下载并执行脚本。这些都属于插件的正常功能，没有发现把数据发给第三方的情况。",
+      "postInstallNotes": "安装后需要重启 DeepSeek Harness 才能生效。重启后，输入框右侧会出现三个图标（💰 钱包 / 📊 用量 / 🧩 插件）。如果机器上已经配置了 DEEPSEEK_API_KEY，插件会自动读取，无需手动填；也可以点 💰 图标添加更多账户、设置告警阈值和刷新间隔。",
+      "notes": "注意：npm 上存在一个同名第三方包，README 提醒不要用 npm 包名安装，要使用 github:Francis-Xavier-code/dsh-balance-plugin 这个源。另外建议优先使用手动安装命令，而不是一键 curl 脚本，因为后者会直接执行远程 bash 脚本（虽然脚本内容是公开的）。"
+    },
+    "summaryZh": "DeepSeek 余额监控与用量统计插件：实时查看余额、低余额提醒、一键充值入口、Miyu 风格用量图表，还附带三方插件管理器。",
+    "usage": {
+      "prompt_tokens": 3135,
+      "completion_tokens": 4134,
+      "total_tokens": 7269,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3556
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2495
+    }
+  }
+}

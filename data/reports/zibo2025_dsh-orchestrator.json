@@ -1,0 +1,37 @@
+{
+  "id": "zibo2025/dsh-orchestrator",
+  "analyzedAt": "2026-08-17T11:48:59.464Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle、依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-orchestrator",
+      "evidence": "dsh plugin --profile <name> add dsh-orchestrator"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 可以同时指挥多个 AI 智能体干活：一个主智能体负责把大任务拆成小任务，分派给多个 worker 智能体去执行；worker 之间还能互相发消息讨论，每个 worker 都可以单独指定用哪个模型、思考强度多大。适合需要分工协作才能完成的复杂任务。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "重启 dsh 使插件生效；如果选择“仅预设”方式，还需在预设的 agent.cordis.yml 中添加插件配置。",
+      "notes": "注意：worker 完成任务后会离开注册表，需要时重新派生；消息是回合制的，无法打断正在进行的调用。"
+    },
+    "summaryZh": "dsh-orchestrator 为 DeepSeek Harness 提供多智能体编排能力：主智能体分解任务、worker 网格互通，可单独指定每个 worker 的模型和思考强度。",
+    "usage": {
+      "prompt_tokens": 2864,
+      "completion_tokens": 2633,
+      "total_tokens": 5497,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2284
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2224
+    }
+  }
+}

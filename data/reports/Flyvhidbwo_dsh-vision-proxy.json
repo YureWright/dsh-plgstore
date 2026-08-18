@@ -1,0 +1,37 @@
+{
+  "id": "Flyvhidbwo/dsh-vision-proxy",
+  "analyzedAt": "2026-08-17T11:30:02.177Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 engines.dsh，且 README 提供了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vision-proxy",
+      "evidence": "dsh plugin --profile web add dsh-vision-proxy"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 里的 DeepSeek 也能看懂图片。你在聊天框粘贴图片，它会自动用另一个视觉模型（比如阿里的通义、智谱、或者你电脑上装的 Ollama）把图片内容识别成文字，再把文字交给 DeepSeek 做回答。这样即使 DeepSeek 本身不支持图片输入，也能基于图片内容聊天。",
+      "level": "ok",
+      "risks": "它会把你发的图片内容发送到配置好的视觉识别服务（比如阿里云百炼、智谱等）去转成文字；如果你不想图片离开电脑，可以配置本地 Ollama，图片就不会上传。插件会读取环境变量里的 VISION_API_KEY / DASHSCOPE_API_KEY，并且用 dsh --dump-config 查看配置时可能明文显示这些 key，注意别把输出发给别人。安装时它会询问你有没有 API key，不会偷偷跑到外部。",
+      "postInstallNotes": "重启 dsh web，在模型选择器里选择“DeepSeek + 自动识图”；如果要用云端视觉模型，设置 VISION_API_KEY 或 DASHSCOPE_API_KEY（或直接写进插件配置）；如果使用 pnpm 且安装时提示忽略构建脚本，需要允许 dsh-vision-proxy 和 sharp 后重新安装一次。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加图片理解能力：自动把图片转成文字，让纯文本 DeepSeek 也能识图。",
+    "usage": {
+      "prompt_tokens": 5079,
+      "completion_tokens": 2227,
+      "total_tokens": 7306,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1772
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4439
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "sereinmono/dsh-desktop-pet",
+  "analyzedAt": "2026-08-17T11:59:23.904Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-* 系列包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-desktop-pet",
+      "evidence": "dsh plugin --profile <name> add dsh-desktop-pet"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 deepseek-harness 用的桌面宠物插件。装好后桌面上会出现一只小宠物，它会根据任务状态变化：空闲时休息、模型思考时发呆、工具运行时忙碌、任务完成时庆祝或皱眉。它只是个状态指示器，不是聊天窗口或任务管理器，也不联网、不额外消耗大模型额度。你可以调整宠物大小、选择不同宠物、设置点击穿透等。",
+      "level": "ok",
+      "risks": "宠物会显示在桌面上，占用一小块屏幕空间。它会在系统上创建透明覆盖窗口，底层调用 Windows/Linux 的窗口 API（koffi）。另外它会在 ~/.dsh/desktop-pet/ 下保存一个窗口位置文件。除此之外没发现明显风险，不联网、不上传数据。",
+      "postInstallNotes": "若希望设置卡片在 Web 界面显示，需要让 Harness 暴露 desktop-pet 设置命名空间（配置 WEB_SETTINGS_NAMESPACES 允许列表）。Linux 下需要运行合成器（如 picom）才能正常显示透明效果。",
+      "notes": "无"
+    },
+    "summaryZh": "给 deepseek-harness 添加一只桌面宠物，用可爱的动画实时显示任务运行状态。",
+    "usage": {
+      "prompt_tokens": 3676,
+      "completion_tokens": 959,
+      "total_tokens": 4635,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 539
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3036
+    }
+  }
+}

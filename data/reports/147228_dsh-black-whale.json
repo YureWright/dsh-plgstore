@@ -1,0 +1,37 @@
+{
+  "id": "147228/dsh-black-whale",
+  "analyzedAt": "2026-08-17T11:58:52.149Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/147228/dsh-black-whale/releases/download/v0.1.3/xiaoyao-ai-dsh-client-ui-skin-black-whale-0.1.3.tgz",
+      "evidence": "dsh plugin --profile web add https://github.com/147228/dsh-black-whale/releases/download/v0.1.3/xiaoyao-ai-dsh-client-ui-skin-black-whale-0.1.3.tgz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 网页版换皮肤用的，名字叫“黑鲸实验室”，由夕小瑶科技说制作。装上后，界面背景会变成鲸鱼和小瑶的图案，而且能自动调整文字颜色保证看清楚，还带一个“专注模式”可以把背景压暗，方便看代码和长对话。它只改外观，不碰你的聊天记录和模型，也不上传任何数据。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只修改浏览器里的界面样式，不读取会话、不上传数据，但会覆盖全局主题变量，如果同时装了其他皮肤可能会显示冲突。",
+      "postInstallNotes": "安装后重启 dsh web；如果之前装过其他全局皮肤，先移除再装这个。可以用 dsh web --dump-config | grep -n ui-skin-black-whale 验证是否挂载成功。",
+      "notes": "无"
+    },
+    "summaryZh": "“黑鲸实验室”是夕小瑶出品的 DeepSeek Harness 主题皮肤插件，让网页界面更好看且支持专注模式，纯前端实现，安全无隐私风险。",
+    "usage": {
+      "prompt_tokens": 3167,
+      "completion_tokens": 2398,
+      "total_tokens": 5565,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1946
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2527
+    }
+  }
+}

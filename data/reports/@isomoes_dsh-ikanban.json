@@ -1,0 +1,37 @@
+{
+  "id": "@isomoes/dsh-ikanban",
+  "analyzedAt": "2026-08-16T13:24:37.550Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，并依赖大量 @deepseek-ai/dsh-* 核心包，符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@isomoes/dsh-ikanban",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的看板（iKanban）插件，主打键盘操作，让你在命令行环境里快速管理任务卡片、看板流程。它把一套网页界面打包进 DSH，装好后可以直接在 DSH 里打开使用。",
+      "level": "ok",
+      "risks": "没发现明显风险。它作为 npm 包发布，来源是可信发布者（GitHub Actions），但缺少 README，无法完全确认其行为。",
+      "postInstallNotes": "无",
+      "notes": "README 为空，评估基于 package.json 元数据；依赖多个 rc 版本核心包，可能存在 API 变动；要求 Node.js 版本 ^22.19.0 或 >=24.0.0，请提前确认环境。"
+    },
+    "summaryZh": "为 DeepSeek Harness 打造的键盘优先 iKanban 看板插件，可通过 npm 安装。",
+    "usage": {
+      "prompt_tokens": 2401,
+      "completion_tokens": 1036,
+      "total_tokens": 3437,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 716
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1761
+    }
+  }
+}

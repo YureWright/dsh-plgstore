@@ -1,0 +1,37 @@
+{
+  "id": "@dsh-suite/themes",
+  "analyzedAt": "2026-08-16T13:28:08.578Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle.patch 和 dsh.client.inject，依赖 @deepseek-ai/dsh-client-* 核心包，README 给出 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-suite/themes",
+      "evidence": "dsh plugin --profile web add @dsh-suite/themes"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH Web 界面换肤的插件，把 151 款皮肤打包成一个，装上之后在设置里会多一个“皮肤中心”，你可以点卡片试穿各种皮肤，还能搜索、收藏、随机换肤，也支持昼夜主题跟随系统。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会往网页的 body 上加一些 data 属性来换肤，收藏记录存在浏览器的 localStorage 里，不会上传到任何服务器。",
+      "postInstallNotes": "装完需要重启 dsh web，然后在设置里找到“皮肤中心”使用。",
+      "notes": "无"
+    },
+    "summaryZh": "151 款 DSH 皮肤聚合包，带试穿面板，支持搜索、收藏、随机和昼夜切换。",
+    "usage": {
+      "prompt_tokens": 2297,
+      "completion_tokens": 575,
+      "total_tokens": 2872,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 257
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1657
+    }
+  }
+}

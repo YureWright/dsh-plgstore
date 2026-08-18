@@ -1,0 +1,37 @@
+{
+  "id": "dsh-safe-delete",
+  "analyzedAt": "2026-08-18T14:50:04.665Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client 并依赖 @deepseek-ai/cordis 等 DSH 核心包，确认是 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-safe-delete",
+      "evidence": "README 安装部分写有 `pnpm add dsh-safe-delete`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让删除文件变得更安全：删除文件或文件夹时，先移到回收站（.dsh-trash）而不是直接抹掉，能随时恢复；还能清空回收站、查看回收站内容，并且会自动拦截模型执行的 rm / Remove-Item 删除命令，引导它改用安全删除，防止误删。",
+      "level": "ok",
+      "risks": "它会在工作区或 $DSH_HOME 下创建 .dsh-trash 回收站目录，里面存放被删除文件及其元数据，可能占用磁盘空间；它会拦截 bash/pwsh 的删除命令，有时可能挡住原本要执行的删除，需要额外配置或环境变量才能强制删除。没发现连接外部服务器或窃取隐私的行为。",
+      "postInstallNotes": "需要在 DSH 的插件配置（composition）里注册：plugins 下加入 dsh-safe-delete，并 $include node_modules/dsh-safe-delete/lib/index.js；之后可在 DSH Web → 设置 → 插件里调整回收站位置、保留天数、容量上限等。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 安全删除插件：删除时移入回收站而非永久删除，支持恢复、清空和删除命令劫持。",
+    "usage": {
+      "prompt_tokens": 4040,
+      "completion_tokens": 2209,
+      "total_tokens": 6249,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1810
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3400
+    }
+  }
+}

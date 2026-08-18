@@ -1,0 +1,37 @@
+{
+  "id": "fly233338/dsh-overleaf",
+  "analyzedAt": "2026-08-17T11:35:17.463Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，且依赖 @deepseek-ai/dsh-mcp-client，README 给出了 dsh plugin 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-overleaf",
+      "evidence": "README 原文：dsh plugin --profile web add dsh-overleaf"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以把你的 Overleaf（在线 LaTeX 编辑器）项目接到 DeepSeek Harness 上，让 AI 能直接读取你项目里的文件、查看章节内容、甚至通过 Git 把修改写回 Overleaf。它特别适合用在“理解整个 LaTeX 工程、自动修编译错误、统一全篇术语”这类场景。",
+      "level": "ok",
+      "risks": "需要你提供 Overleaf 的 Git 集成令牌，这个令牌会存在配置文件里，有泄露风险；插件会访问你指定的 Overleaf 项目，AI 能读取和修改这些项目的内容。建议不要把令牌提交到公开仓库或发布到包内容里。",
+      "postInstallNotes": "安装后需要在插件目录下创建 dsh-overleaf.config.json，填入你的 Overleaf Git 令牌和项目 ID（一行一个），然后重启 DSH。",
+      "notes": "无"
+    },
+    "summaryZh": "将多个 Overleaf 项目通过 OverleafMCP 接入 DSH，让 AI 读写 LaTeX 项目并自动修复编译问题。",
+    "usage": {
+      "prompt_tokens": 1953,
+      "completion_tokens": 592,
+      "total_tokens": 2545,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 229
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1313
+    }
+  }
+}

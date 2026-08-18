@@ -1,0 +1,37 @@
+{
+  "id": "yascitom/dsh-opencode-go-box",
+  "analyzedAt": "2026-08-17T11:41:32.199Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis 等核心包，且 README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/yascitom/dsh-opencode-go-box.git",
+      "evidence": "dsh plugin --profile web add github:yascitom/dsh-opencode-go-box"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 的设置侧边栏里加一个“OpenCode Go”栏目，用来查看 OpenCode Go 订阅的用量情况，比如 5 小时/每周/每月的额度用了多少、什么时候重置；还能看到每段会话和每次模型调用消耗了多少 token，以及缓存命中的情况。底部输入框旁边还会常驻一个小挂件，实时显示额度百分比，颜色会根据用量变化（绿/橙/红）。",
+      "level": "ok",
+      "risks": "插件会读取本地的 DSH 会话日志和已保存的 API 密钥，并定时（默认 30 秒）向 opencode.ai 发送用量查询请求。这些信息只用于展示用量，不会上传到其他服务器。没有发现删除文件或运行恶意脚本之类的危险行为。",
+      "postInstallNotes": "重启 dsh web；确保已在设置中添加 opencode-go 模型，并且配置了对应的 API key，否则插件会显示引导提示。",
+      "notes": "依赖的用量接口（https://opencode.ai/zen/go/v1/usage）未出现在官方文档中，可能随服务端更新而变化。"
+    },
+    "summaryZh": "在 DeepSeek Harness 中查看 OpenCode Go 订阅额度、会话 token 用量与缓存命中率的插件。",
+    "usage": {
+      "prompt_tokens": 3356,
+      "completion_tokens": 1967,
+      "total_tokens": 5323,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1537
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2716
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@wishp3/dsh-friend-stage",
+  "analyzedAt": "2026-08-16T13:36:19.434Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client.inject、peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-host-webserver，且 README 描述其在 DSH 中提供 /friend/pet 界面，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wishp3/dsh-friend-stage",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加了一个 Live2D 桌宠/看板娘页面，访问 http://127.0.0.1:<端口>/friend/pet 就能看到。内置了奶龙和官方 Hiyori 模型，会在网页里浮动展示，还能上传自己的 Live2D 模型（zip 包），并支持好几种表情和动作对应工作状态。",
+      "level": "ok",
+      "risks": "首次使用时会在你的电脑上（$DSH_HOME/friend/vendor/ 或 ~/.dsh/friend/vendor/）下载 Live2D 官方模型和运行库文件，需要你同意官方条款。另外支持上传自定义模型，上传接口有 zip 路径校验，但建议只上传可信来源的模型。",
+      "postInstallNotes": "装好后需要启动 DSH，浏览器打开 /friend/pet 页面，阅读并同意 Live2D 官方条款，然后点击“下载并启用 Live2D”下载模型。如果官方文件哈希校验失败（目前 integrity 还是 TODO 占位符），需要设置环境变量 FRIEND_LIVE2D_HIYORI_ZIP_SHA256、FRIEND_LIVE2D_CUBISM_SDK_ZIP_SHA256、FRIEND_LIVE2D_CUBISM_CORE_JS_SHA256 或更新 vendor-integrity.json 里的哈希值。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 里显示 Live2D 桌面宠物/看板娘，支持自带模型、表情互动和自定义模型上传。",
+    "usage": {
+      "prompt_tokens": 2632,
+      "completion_tokens": 774,
+      "total_tokens": 3406,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 281
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1992
+    }
+  }
+}

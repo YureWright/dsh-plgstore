@@ -1,0 +1,37 @@
+{
+  "id": "biociao/dsh-science",
+  "analyzedAt": "2026-08-17T11:24:03.794Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 提供了 dsh plugin add 安装命令，并描述为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-science",
+      "evidence": "dsh plugin --profile web add dsh-science"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（一个 AI 助手工具）用的科研工作台插件。它能帮你像做实验一样管理研究项目：记录研究问题和假设、安排实验步骤、保存每次实验数据和结果，并给文件加上版本和来源记录，方便以后追溯和复现。另外还附带 10 个科学相关技能，比如生物信息学、写论文、查文献等，适合做基因组、病原体相关研究的人用。",
+      "level": "ok",
+      "risks": "它会在你的项目文件夹里创建研究记录文件（如 research-manifest.json）、artifacts 目录和 .science.log 日志，还会在需要时安装一些技能文件到你的用户目录（比如 ~/.dsh）。它只和你自己的文件打交道，没发现会连接外部服务器或偷偷上传数据的迹象。",
+      "postInstallNotes": "安装后需要重启对应的 DSH profile（或刷新 Web GUI），这样 research_* 和 artifact_* 工具才会生效。如果你是用 agent-preset 方式安装的，还要在会话里选择“科学模式”预设。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-science 是一个面向基因组学/生物信息学的科研工作台插件，为 DSH 提供 ReAct 研究循环、带溯源版本的工件管理及 10 个科学技能。",
+    "usage": {
+      "prompt_tokens": 3399,
+      "completion_tokens": 2835,
+      "total_tokens": 6234,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2426
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2759
+    }
+  }
+}

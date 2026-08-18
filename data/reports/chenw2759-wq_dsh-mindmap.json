@@ -1,0 +1,37 @@
+{
+  "id": "chenw2759-wq/dsh-mindmap",
+  "analyzedAt": "2026-08-17T11:49:24.537Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/dsh-host-webserver、dsh-llm 等核心包，属于标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/chenw2759-wq/dsh-mindmap.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 PPT、PDF、Word 课件和电子书的内容自动整理成打印出来就能用的复习思维导图 HTML。思维导图采用 A3 横向的大括号布局，每页一个知识点，右侧留白可记笔记，还附带封面和交互式测试题，有四种风格可选。生成结果是单个 HTML 文件，可直接打印成 PDF。",
+      "level": "ok",
+      "risks": "会在 DSH 插件目录和 web profile 下安装依赖、修改配置；会读取你指定的课件/电子书文件，生成包含这些内容的 HTML；如果文档里有敏感信息，生成的思维导图里也会带上。未发现连接外部服务器或执行额外安装脚本的行为。",
+      "postInstallNotes": "安装后需要重启 DSH web 服务；建议同时安装 dsh-IDE 插件来预览生成的 HTML；使用前需确认本机已安装 MinerU（用于解析 PPT/PDF/Word）。",
+      "notes": "package.json 标记为 private，未发布到 npm，需通过 git 地址安装并自行构建；peerDependencies 依赖 rc 版本，可能不太稳定；README 未提供 dsh plugin add 命令，安装步骤偏手动。"
+    },
+    "summaryZh": "把课件和电子书自动整理成打印级复习思维导图 HTML 的 DSH 插件，支持四种风格与交互式测试题。",
+    "usage": {
+      "prompt_tokens": 3834,
+      "completion_tokens": 3436,
+      "total_tokens": 7270,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2997
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3194
+    }
+  }
+}

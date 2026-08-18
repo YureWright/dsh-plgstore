@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-security-audit",
+  "analyzedAt": "2026-08-17T11:26:18.115Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:omdsh-dev/dsh-security-audit",
+      "evidence": "dsh plugin --profile web add github:omdsh-dev/dsh-security-audit"
+    },
+    "evaluationReport": {
+      "intro": "这是个给 DSH（DeepSeek Harness）用的安全审计插件。它会在你电脑上做一次“只读体检”：检查 DSH 的配置文件、存放 API Key 和 Token 的那些文件（只看属性和指纹，不读完整内容）、装过哪些插件、插件来自哪里、会话文件结构是否正常、有没有端口暴露到公网等。最后生成一份脱敏的风险报告（比如“发现了疑似密钥，长度 35，在第 13 行”），但不会自己修复任何问题，也不会联网。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 DSH 相关的配置文件、凭据文件（.env 等）的元数据、插件源码、会话文件、网络配置等信息。所有读取都是只读的，不会修改或上传；输出报告中的秘密只显示指纹和类型，不是完整值。但报告会包含本地文件路径、行号等，如果你把报告发给别人，可能会暴露一些本机信息。",
+      "postInstallNotes": "需要分别给要用的 profile 安装（web 和 headless 是分开的）；安装后可以用 `dsh --profile web --dump-config | grep security-audit` 验证是否注册成功，然后用 `dsh run` 来让它扫描风险。",
+      "notes": "这个包的 package.json 标记了 private: true，应该没有发布到 npm，所以要用 README 里的 GitHub 源安装；当前版本是 0.0.1，README 说兼容 0.1.0-rc.6，使用时留意 DSH 版本匹配。"
+    },
+    "summaryZh": "DSH 本机安全审计插件：只读扫描配置、凭据、插件、会话与网络暴露面，输出脱敏风险报告。",
+    "usage": {
+      "prompt_tokens": 4302,
+      "completion_tokens": 3758,
+      "total_tokens": 8060,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3241
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3662
+    }
+  }
+}

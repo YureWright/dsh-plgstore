@@ -1,0 +1,37 @@
+{
+  "id": "jiezeng2004-design/dsh-chatgpt-bridge",
+  "analyzedAt": "2026-08-17T11:41:12.632Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-chatgpt-bridge",
+      "evidence": "dsh plugin --profile web add dsh-chatgpt-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 ChatGPT 能指挥你电脑上的 DeepSeek Harness（DSH）干活。它通过 MCP 协议把 ChatGPT 和 DSH 连起来，ChatGPT 可以创建、查看、继续任务，甚至参与批准一些操作，但所有操作仍然在 DSH 的监管之下，只有你注册过的文件夹才能被动。",
+      "level": "ok",
+      "risks": "它会在你电脑上生成一个 token 文件（~/.dsh/chatgpt-bridge.token），这个 token 能让 ChatGPT 通过 MCP 控制你的 DSH。如果 token 泄露，别人也可能控制你的 DSH，修改你注册过的文件夹里的文件（在 DSH 的批准策略范围内）。另外，为了让 ChatGPT 远程连接，通常需要开一个隧道把本地端口暴露出去，这会让本地服务在互联网上可访问（但需要 token 才能操作）。",
+      "postInstallNotes": "安装后需要：1) 启动 `dsh web`（和 bridge 同一 profile）；2) 读取或设置 DSH_CHATGPT_BRIDGE_TOKEN；3) 在 ChatGPT 里配置 MCP 连接（隧道 + Authorization Bearer token）；4) 在 ChatGPT 里扫描/刷新 MCP 工具；5) 确保要用的 workspace 已在 DSH 注册。",
+      "notes": "无"
+    },
+    "summaryZh": "通过 MCP 协议让 ChatGPT Web 连接并管理 DeepSeek Harness 代理会话的桥接插件，保留 DSH 的安全模型。",
+    "usage": {
+      "prompt_tokens": 3950,
+      "completion_tokens": 2216,
+      "total_tokens": 6166,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1749
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3310
+    }
+  }
+}

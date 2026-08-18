@@ -1,0 +1,37 @@
+{
+  "id": "dsh-smart-approval",
+  "analyzedAt": "2026-08-16T13:24:10.967Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-smart-approval@0.1.0-rc.5",
+      "evidence": "dsh plugin --profile web add dsh-smart-approval@0.1.0-rc.5"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的“AI 操作审批员”。它会在 AI 请求执行命令、写文件等操作时，先把请求内容拿给一个审查模型看看，判断是安全、危险还是恶意，然后决定自动放行、让人确认还是直接拒绝。它有三种模式：手动、智能和无人值守。默认是智能模式，低风险操作自动放行，高风险或不确定的会问你，明确恶意的就拒绝。它不会改变原本的权限设置。",
+      "level": "ok",
+      "risks": "它会把你让 AI 执行的命令和要写的文件路径发给审查模型（默认是当前会话用的模型提供商），所以这些信息会被那个服务方看到。它可能会自动放行一些操作，如果审查模型判断失误，可能有风险。另外它是开发预览版，可能存在 bug。如果你把模式设为“无人值守”，AI 的低风险操作都不会再问你，要慎重。",
+      "postInstallNotes": "安装后默认就能用，默认模式是智能审批。如果你想用另一个独立的模型来做审查，需要编辑 profile 的 cordis.patch.yml，配置 reviewerProvider 和 reviewerModel（两个要一起配）。建议运行 dsh --profile web --dump-config 确认插件已加载。",
+      "notes": "README 安装示例写的是 0.1.0-rc.5，但 package.json 版本是 0.1.0-rc.6，注意核对。要求 Node.js 24+ 和 DeepSeek Harness >=0.1.0-rc.5 <0.2.0。这是开发预览版。"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 提供“智能审批”的插件，在 AI 执行操作前自动区分安全等级并决定放行、询问或拒绝。",
+    "usage": {
+      "prompt_tokens": 4460,
+      "completion_tokens": 4500,
+      "total_tokens": 8960,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3954
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3820
+    }
+  }
+}

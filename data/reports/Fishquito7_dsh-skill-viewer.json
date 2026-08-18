@@ -1,0 +1,37 @@
+{
+  "id": "Fishquito7/dsh-skill-viewer",
+  "analyzedAt": "2026-08-17T11:14:28.747Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/dsh-home-paths 等核心包，README 也给出了 dsh plugin add 安装命令，符合真正 DSH 插件的证据要求。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/Fishquito7/dsh-skill-viewer/releases/download/v0.7.0/dsh-skill-viewer-0.7.0.tgz",
+      "evidence": "dsh plugin --profile web add https://github.com/Fishquito7/dsh-skill-viewer/releases/download/v0.7.0/dsh-skill-viewer-0.7.0.tgz"
+    },
+    "evaluationReport": {
+      "intro": "这是给 DSH 用的一个插件，让你在网页设置界面里直接管理和查看“技能”（skill）文件，比如启用、停用、删除、添加、迁移，还附带一个命令行工具（dsh-skill）也能做同样的事。技能文件就是一些 Markdown 或 zip 包，存在全局或工作区目录里。",
+      "level": "ok",
+      "risks": "它会读写你用户目录下的技能文件夹（全局 ~/.dsh/skills）以及各工作区的 .dsh/skills 目录，进行改名、复制、删除等操作。如果你操作不小心，可能会删掉或覆盖同名技能文件，但插件有确认提示和校验回滚。没发现连接外部服务器或执行恶意脚本的迹象。",
+      "postInstallNotes": "安装后需要重启 DSH 网关（运行 dsh-restart），然后刷新网页，在设置里找到“技能”入口。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，让你在网页界面或命令行里方便地管理技能（启用/停用/增删/迁移），支持全局与工作区作用域。",
+    "usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 1200,
+      "total_tokens": 4006,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 744
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2166
+    }
+  }
+}

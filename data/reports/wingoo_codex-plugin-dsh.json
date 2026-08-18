@@ -1,0 +1,37 @@
+{
+  "id": "wingoo/codex-plugin-dsh",
+  "analyzedAt": "2026-08-17T11:47:55.390Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 及多个 dsh-* 包，README 给出了 dsh plugin add 安装命令，符合真正 DSH 插件的证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:wingoo/codex-plugin-dsh",
+      "evidence": "dsh plugin --profile web add github:wingoo/codex-plugin-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里直接使用本机已经登录的 Codex 作为模型提供商，不需要额外配置 OpenAI API Key。安装后模型选择器里会出现 \"Codex App Server (local)\"，选它就能开始对话，还支持图片输入和把 Codex 图片生成结果直接回写到对话里。",
+      "level": "ok",
+      "risks": "插件会在你的 DSH 配置里添加一个 provider，并在运行时启动本机的 Codex App Server 进程。你的对话请求会经过本地 Codex 发送给 OpenAI 的 Codex 服务，所以使用这个模型时，OpenAI 那边会看到你的对话内容。插件需要读取本机 Codex 的登录状态，但不会读取或保存你的 API Key。",
+      "postInstallNotes": "安装后需要重启 DSH Web 服务，刷新页面，然后在模型选择器中选择 \"Codex App Server (local)\"。另外确保本机已安装 Codex CLI（>=0.147.0）并已执行 codex login 登录。",
+      "notes": "依赖的 @deepseek-ai/dsh-* 目前是 rc 版本，安装时可能出现 peer-dependency 警告，按 README 说明不影响使用。"
+    },
+    "summaryZh": "在 DeepSeek Harness 中直接使用本机 Codex 作为模型提供商的插件，支持图片和工具调用，无需另配 OpenAI API Key。",
+    "usage": {
+      "prompt_tokens": 4372,
+      "completion_tokens": 2627,
+      "total_tokens": 6999,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2167
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3732
+    }
+  }
+}

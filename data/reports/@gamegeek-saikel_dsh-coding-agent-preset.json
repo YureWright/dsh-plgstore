@@ -1,0 +1,37 @@
+{
+  "id": "@gamegeek-saikel/dsh-coding-agent-preset",
+  "analyzedAt": "2026-08-18T14:51:32.689Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@gamegeek-saikel/dsh-coding-agent-preset",
+      "evidence": "dsh plugin --profile web add @gamegeek-saikel/dsh-coding-agent-preset"
+    },
+    "evaluationReport": {
+      "intro": "这是一款给 DeepSeek Harness（DSH）用的“编码模式”预设插件，专门为 Windows 系统优化。它把官方在 Linux/Mac 上使用的编程助手终端换成了 Windows 上的 PowerShell 7，并且这个终端会“记住”之前的操作状态（比如当前目录、变量），这样 AI 在帮你写代码、改文件时能更连贯地执行多条命令。它还自带一个文件编辑工具，方便 AI 修改代码。",
+      "level": "ok",
+      "risks": "这个插件在安装时会在你电脑上写入 DSH 的配置目录（例如 ~/.dsh），并需要一个 PowerShell 7 环境。使用后，AI 助手可以通过它在你电脑上执行 PowerShell 命令，如果你给它完全访问权限，它就能操作你的文件系统。请确保你在受信任的环境中使用，并留意 AI 执行的命令。除此之外，没有发现它会上传你的数据到额外服务器（仍会经由 DeepSeek 的正常 API 通信）。",
+      "postInstallNotes": "需要先安装 PowerShell 7（pwsh），然后重启 DSH 的 web 服务。首次使用建议在对话中测试一条命令（如 Write-Output 'hello'）验证是否正常工作。",
+      "notes": "安装包包含 postinstall 脚本用于自动部署文件，来源为 npm 官方仓库且有签名，整体可信度较高。"
+    },
+    "summaryZh": "面向 Windows 的 DSH 编程模式预设，用持久化 PowerShell 7 终端替代 bash，让 AI 编码助手在 Windows 上也能记住状态、高效执行命令。",
+    "usage": {
+      "prompt_tokens": 4799,
+      "completion_tokens": 2732,
+      "total_tokens": 7531,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2242
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4159
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "zebbkira/dsh-skills-mcp-manager",
+  "analyzedAt": "2026-08-17T11:43:56.585Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@zebbkira/dsh-skills-mcp-manager",
+      "evidence": "# 2. 把本插件装进 web profile\n    dsh plugin --profile web add @zebbkira/dsh-skills-mcp-manager@0.1.3"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DeepSeek Harness 的网页界面的“设置”里加一个“技能与 MCP”页面，用来管理技能（skills）和 MCP 服务器。你可以浏览、启用、禁用、导入、删除技能，还可以添加、编辑、测试和连接 MCP 服务器，启用的 MCP 服务器会真正连接上并把工具注册到会话里。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的技能目录（比如 ~/.dsh/skills）和 MCP 配置文件 ~/.dsh/mcp.json，MCP 服务器的凭证（环境变量、请求头）会以明文存在这个文件里，建议你把文件权限设成 0600。另外，删除技能是物理删除，操作前会有两步确认。",
+      "postInstallNotes": "安装后重启 dsh web（运行 dsh web），打开 Web GUI 的设置页就能看到“技能与 MCP”入口。建议检查 ~/.dsh/mcp.json 的权限，必要时设为 0600。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness Web 设置里管理技能和 MCP 服务器的插件，支持真实连接 MCP 并注册工具。",
+    "usage": {
+      "prompt_tokens": 3495,
+      "completion_tokens": 683,
+      "total_tokens": 4178,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 246
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2855
+    }
+  }
+}

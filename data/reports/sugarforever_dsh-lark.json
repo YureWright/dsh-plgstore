@@ -1,0 +1,37 @@
+{
+  "id": "sugarforever/dsh-lark",
+  "analyzedAt": "2026-08-17T11:40:05.502Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@sugarforever/dsh-lark",
+      "evidence": "从 npm 安装到 Harness Web Profile：`npx @deepseek-ai/dsh plugin --profile web add @sugarforever/dsh-lark`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你直接在飞书或 Lark 里和 DeepSeek Harness 的 AI 助手对话。装好后，你可以把机器人拉进群或直接私聊它，就能使用 Harness 里配置好的模型、工具、系统提示和会话记忆。它用 WebSocket 长连接，不需要公网服务器、域名或回调地址，普通电脑和内网环境都能跑。支持单聊、群聊（需 @机器人）和话题群，还可以通过白名单控制谁能用。",
+      "level": "ok",
+      "risks": "它会把飞书里的消息转发给本机的 Harness 处理，AI 可能会在你配置的工作区里读写文件（这和你在 Harness 网页里的操作一样）。你需要在飞书开发者后台创建应用并拿到 App ID/App Secret，这些密钥如果泄露，别人可能冒充你的机器人。默认只读取单聊和群里 @机器人的消息，不会读取全部群消息。整体风险不大，但建议别把密钥提交到代码仓库或写进公开配置文件。",
+      "postInstallNotes": "装完后需要做这几步：1) 在飞书/Lark 开发者后台创建自建应用，启用机器人，并申请 im:message.p2p_msg:readonly、im:message.group_at_msg:readonly、im:message:send_as_bot 三个权限，同时添加 im.message.receive_v1 事件，选择长连接接收事件；2) 发布应用并安装到企业或测试范围；3) 在启动 Harness 的终端设置环境变量 FEISHU_APP_ID 和 FEISHU_APP_SECRET（国际版可用 LARK_APP_ID/LARK_APP_SECRET）；4) 编辑 ~/.dsh/profiles/web/cordis.patch.yml，把 lark-channel 实例的 disabled 从 true 改为 false，并按需配置 domain、requireMention、dmMode、workspace 等。",
+      "notes": "无"
+    },
+    "summaryZh": "一个让 DeepSeek Harness 接入飞书/Lark 的插件，支持单聊、群聊和话题群，无需公网服务器。",
+    "usage": {
+      "prompt_tokens": 5064,
+      "completion_tokens": 3440,
+      "total_tokens": 8504,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2817
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4424
+    }
+  }
+}

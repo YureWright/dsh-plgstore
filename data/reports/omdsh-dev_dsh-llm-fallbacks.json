@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-llm-fallbacks",
+  "analyzedAt": "2026-08-17T11:40:15.929Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合真正的 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-llm-fallbacks",
+      "evidence": "dsh plugin --profile web add dsh-llm-fallbacks      # web profile (Settings → Fallbacks card)"
+    },
+    "evaluationReport": {
+      "intro": "这个插件的作用是：当 DeepSeek Harness 里的 AI 助手（agent）调用大模型失败时（比如额度用完、被限流、认证出错、重试次数耗尽），它会自动按照你预先设置的顺序切换到下一个可用的模型或服务商，让当前任务不中断。它同时支持网页版和终端版界面。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和修改 DSH 的配置文件（如 settings.yaml），并在会话中记录模型切换事件，这些操作都在 DSH 自己的工作目录范围内。",
+      "postInstallNotes": "安装后需要在 DSH 设置文档（默认 $DSH_HOME/settings.yaml）中添加 fallbacks 配置，并把 enabled 设为 true（默认是关闭的）。保存后重启会话，然后执行 /fallbacks 验证是否生效。",
+      "notes": "注意：插件会在会话中写入 fallbacks/switch 事件；如果之后卸载插件，包含这类事件的会话在 rc.6 版本下可能无法再次加载，直到上游提供注册接口。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供大模型供应方/模型自动故障转移，当请求失败时沿链路切换模型，保证任务不中断。",
+    "usage": {
+      "prompt_tokens": 3896,
+      "completion_tokens": 1876,
+      "total_tokens": 5772,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1441
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3256
+    }
+  }
+}

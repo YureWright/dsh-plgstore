@@ -1,0 +1,37 @@
+{
+  "id": "Han-1413141/dsh-cost-meter",
+  "analyzedAt": "2026-08-17T11:14:54.911Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-credentials 等 dsh 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/Han-1413141/dsh-cost-meter/archive/refs/tags/v1.3.1.tar.gz",
+      "evidence": "dsh plugin --profile web add https://github.com/Han-1413141/dsh-cost-meter/archive/refs/tags/v1.3.1.tar.gz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，能统计你每次和 AI 聊天花了多少钱。它会显示本会话的费用、当天的总费用、你的账户余额、预算使用情况，还有历史记录。界面是中英双语的，还能自动同步官方的价格表，支持按高峰/低谷时段计价。总之，让你心里有数，看看每个月在 AI 上烧了多少钱。",
+      "level": "ok",
+      "risks": "它会读取你的 DeepSeek 账户余额（使用同一个 API Key），并往你的电脑上写入一个账本文件（记录每次调用的费用和 token 数），这些数据只存在本地。网络请求只发往 DeepSeek 官方 API 和官方定价页。另外，README 提供了一键安装脚本（PowerShell），会从 GitHub 下载并执行，需要信任该来源。",
+      "postInstallNotes": "重启 dsh web 使插件生效。",
+      "notes": "安装方式包含远程执行的 PowerShell 一键脚本，建议先审阅脚本内容再执行；插件本身看起来是正规 DSH 插件，依赖官方核心包，代码开源。"
+    },
+    "summaryZh": "DeepSeek Harness 会话费用统计插件：实时本会话费用、当日/月度/累计开销、官方余额与预算图框，支持峰谷计价和官方价格同步，界面中英双语。",
+    "usage": {
+      "prompt_tokens": 5109,
+      "completion_tokens": 4528,
+      "total_tokens": 9637,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4047
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4469
+    }
+  }
+}

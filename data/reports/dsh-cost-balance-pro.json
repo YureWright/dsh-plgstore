@@ -1,0 +1,37 @@
+{
+  "id": "dsh-cost-balance-pro",
+  "analyzedAt": "2026-08-18T14:51:14.340Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并引用了 @deepseek-ai/dsh-client-runtime 等核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-cost-balance-pro",
+      "evidence": "dsh plugin --profile web add dsh-cost-balance-pro"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在聊天输入框下面加一条文字显示的统计条，让你直接看到本次会话花了多少钱、账户还剩多少余额。点击可以展开看更详细的缓存命中率、Token 用量等信息。它还带一个设置页，你可以开关显示项、调字号、改颜色，甚至一键恢复默认设置。另外，它会根据 DeepSeek 的峰谷计费规则自动按当前时段算钱，并显示峰或谷的标记。",
+      "level": "ok",
+      "risks": "没发现明显风险，插件只在界面显示统计信息，并把配置保存在系统用户目录下的一个 JSON 文件里。",
+      "postInstallNotes": "装完后需要重启一次服务（或下次登录），然后刷新页面就能看到统计条；具体样式可以去设置页调整。",
+      "notes": "无"
+    },
+    "summaryZh": "在输入框下方显示可见的会话花费与余额统计条，带设置页和一键还原，并支持 DeepSeek 峰谷计费自动计价。",
+    "usage": {
+      "prompt_tokens": 2585,
+      "completion_tokens": 960,
+      "total_tokens": 3545,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 607
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1945
+    }
+  }
+}

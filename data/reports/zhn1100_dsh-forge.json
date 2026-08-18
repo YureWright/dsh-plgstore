@@ -1,0 +1,37 @@
+{
+  "id": "zhn1100/dsh-forge",
+  "analyzedAt": "2026-08-17T13:19:21.278Z",
+  "result": {
+    "classification": {
+      "type": "script",
+      "confidence": 0.7,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis，但安装方式是 git clone + node lib/cli.js install，而非 dsh plugin add，更像独立开发工具而非可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明 dsh plugin add 安装方式，实际为 git clone 后运行 node lib/cli.js install。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个面向 DeepSeek Harness 插件开发者的独立环境工具。它会在你的电脑上创建单独的 ~/.dsh-forge 文件夹，把插件开发需要用到的文档、代码、配置和实验记录都放进去，这样开发插件时就不会弄乱你平时用的 DSH 环境。它还能同步你原本的 DSH 配置，但会保护好开发环境里的修改。",
+      "level": "caution",
+      "risks": "它会读取并复制你原有的 ~/.dsh 目录里的配置到 ~/.dsh-forge，这些配置里可能包含个人信息或密钥。启动后会在 127.0.0.1:3188 端口运行一个本地服务（仅本机可访问）。安装过程涉及运行构建脚本，可能消耗较多资源。",
+      "postInstallNotes": "安装后需要设置 DSH_HOME 环境变量指向 ~/.dsh-forge，并用 npx @deepseek-ai/dsh@0.1.0-rc.6 --profile forge 启动，然后在 Web UI 中选择 DSH Forge 开发者 Preset。",
+      "notes": "经评估可能并非 DSH 插件，而是一个独立的开发工具/脚本；当前版本针对 @deepseek-ai/dsh@0.1.0-rc.6 和特定官方提交，可能存在时效性。"
+    },
+    "summaryZh": "为 DeepSeek Harness 插件开发提供隔离、可复现的开发环境，方便开发者安全地实验和验证插件而不影响日常环境。",
+    "usage": {
+      "prompt_tokens": 2603,
+      "completion_tokens": 1535,
+      "total_tokens": 4138,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1057
+      },
+      "prompt_cache_hit_tokens": 2560,
+      "prompt_cache_miss_tokens": 43
+    }
+  }
+}

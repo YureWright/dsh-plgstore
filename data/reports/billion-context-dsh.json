@@ -1,0 +1,37 @@
+{
+  "id": "billion-context-dsh",
+  "analyzedAt": "2026-08-18T14:50:09.030Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-compaction，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "billion-context-dsh",
+      "evidence": "dsh plugin --profile web add billion-context-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，就像给 AI 装了一个“智能记忆管家”。当对话太长、AI 快要记不住前面的内容时，它会让 AI 自己决定把哪些旧内容压缩成摘要，腾出空间，同时把原文存到日志里，需要时还能找回。它还提供搜索和恢复工具，让 AI 在长对话里也能高效工作，不丢关键信息。",
+      "level": "ok",
+      "risks": "会读取和修改你的 DSH 配置文件（比如 ~/.dsh 下的 profile 补丁），用来安装和启用插件；不会碰其他个人文件。但因为是测试版，可能会有 bug 导致对话记录处理异常，建议先在非重要环境试用。",
+      "postInstallNotes": "安装后需要重启 dsh。如果使用 bundle 方式，会自动配置好基本项，但你最好检查一下 profile 中的配置，确保已经禁用了默认的 compaction-basic（避免冲突），并根据需要设置 modelContextLimit 等参数。",
+      "notes": "经评估，该包确实是 DSH 插件（package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 与 dsh-compaction）。注意 README 明确声明为测试版，预期有破坏性变更，请勿用于生产环境。"
+    },
+    "summaryZh": "基于 Active Context Pruning 的 DeepSeek Harness 上下文管理插件，让模型自主决定何时压缩、压缩什么，支持搜索与恢复压缩内容。",
+    "usage": {
+      "prompt_tokens": 5146,
+      "completion_tokens": 1787,
+      "total_tokens": 6933,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1320
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4506
+    }
+  }
+}

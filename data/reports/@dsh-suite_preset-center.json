@@ -1,0 +1,37 @@
+{
+  "id": "@dsh-suite/preset-center",
+  "analyzedAt": "2026-08-16T13:27:20.821Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/dsh-client-* 核心包，README 提供了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-suite/preset-center",
+      "evidence": "dsh plugin --profile web add @dsh-suite/preset-center"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一套中文预设模板包，装上后能获得三个现成的 AI 助手角色：小红书笔记助手、中文文案润色、日报周报生成器。无需自己写配置，一键就能应用到官方预设里，直接拿来对话干活。",
+      "level": "ok",
+      "risks": "安装后插件会在你的 DSH 用户目录下写入 .agent-presets/ 文件夹，用于存放预设；可随时删除卸载。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需重启 dsh web，然后到 Settings → 场景包/Preset Packs 一键应用即可。",
+      "notes": "无"
+    },
+    "summaryZh": "中文开箱即用预设全家桶，提供小红书笔记、文案润色、日报周报三套一键应用的中文 agent 预设。",
+    "usage": {
+      "prompt_tokens": 1963,
+      "completion_tokens": 630,
+      "total_tokens": 2593,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 309
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1323
+    }
+  }
+}

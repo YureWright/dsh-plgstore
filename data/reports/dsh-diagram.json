@@ -1,0 +1,37 @@
+{
+  "id": "dsh-diagram",
+  "analyzedAt": "2026-08-18T14:49:52.182Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且在 devDependencies/peerDependencies 中包含多个 @deepseek-ai/dsh-* 核心包，README 给出了明确的 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-diagram",
+      "evidence": "npx -y @deepseek-ai/dsh@0.1.0-rc.6 plugin --profile web add dsh-diagram@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness 会话里已经生成的文章，变成一张可以直接编辑的 Excalidraw 图表画布。你可以在对话里让 AI 根据文章内容自动生成流程图、架构图、时间线等，然后打开“Canvas”标签页，手动修改文字、节点和连线，还能导出成图片或原始文件。编辑结果会自动保存，并且 AI 能通过读取你改过的内容来继续协作。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件自带存储，会把图表数据保存在 DSH 的本地存储区，不会上传到外部服务器；也没有安装脚本会在你电脑上乱执行东西。不过要注意，导出的图表文件如果分享给别人，里面会包含你编辑的内容。",
+      "postInstallNotes": "装完后重启 DSH Web（如果 DSH Web 正在运行）。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-diagram 是一款 DSH 插件，可将会话中的文章转化为可编辑的 Excalidraw 画布，支持流程图、架构图等多种图表，并支持手动编辑、自动保存和导出。",
+    "usage": {
+      "prompt_tokens": 4476,
+      "completion_tokens": 1126,
+      "total_tokens": 5602,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 712
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3836
+    }
+  }
+}

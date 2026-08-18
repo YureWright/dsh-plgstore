@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-skin-blue-fantasy",
+  "analyzedAt": "2026-08-17T11:09:35.868Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-skin-blue-fantasy",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-skin-blue-fantasy"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 网页版换主题的皮肤，名叫“蓝色幻想”。装上并激活后，背景会变成一张鲸鱼插画，窗口变成半透明，整体配色变成蓝紫色调，看起来更美观。它只是改页面样式，不碰聊天数据，也不影响模型功能。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是在网页里插入了背景图和图标，不连接外部服务器，不读取个人文件。",
+      "postInstallNotes": "安装后需要用命令激活：dsh-skin use blue-fantasy。如果用 git 方式安装，需要先构建 lib 目录。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页界面的一款蓝色幻想皮肤，带有鲸鱼背景和半透明面板。",
+    "usage": {
+      "prompt_tokens": 2132,
+      "completion_tokens": 2495,
+      "total_tokens": 4627,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2186
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1492
+    }
+  }
+}

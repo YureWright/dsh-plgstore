@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-sidechain",
+  "analyzedAt": "2026-08-17T11:35:46.444Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/dsh-sidechain.git",
+      "evidence": "README 安装命令为 `dsh plugin --profile web add github:Buyi-wsgzg/dsh-sidechain`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在不打断当前对话的情况下，开一个侧边小窗问问题或聊天。用 /btw 可以快速问一句，用 /side 可以开一个能持续追问的线程。侧会话独立运行，不会搅乱主对话，历史会保存在本地，重启后还能看到。右侧面板可以看到执行过程和结果。",
+      "level": "ok",
+      "risks": "没发现明显风险。侧会话执行工具调用时可能读写文件，但实际权限由 DSH 的 sandbox 机制控制，不会超出你给 DSH 的权限。",
+      "postInstallNotes": "安装后需要重启 dsh web 并刷新页面；如果使用 pnpm 10 及以上，可能需要把插件键加入 Web profile 的 pnpm-workspace.yaml 后重新执行安装命令。",
+      "notes": "README 中安装命令使用的 GitHub 用户名（Buyi-wsgzg）与仓库链接（omdsh-dev）不一致，建议以仓库链接为准。另外依赖多个 DSH 核心包的 RC 版本，可能随 DSH 更新而变化。"
+    },
+    "summaryZh": "DSH 侧会话插件，让你在聊天的同时开小窗问问题，不打断主对话。",
+    "usage": {
+      "prompt_tokens": 2997,
+      "completion_tokens": 3424,
+      "total_tokens": 6421,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3002
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2357
+    }
+  }
+}

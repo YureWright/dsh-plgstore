@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-fun-weather",
+  "analyzedAt": "2026-08-17T12:08:36.208Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "./deepseek-ai-dsh-fun-weather-0.1.0.tgz",
+      "evidence": "dsh plugin --profile web add ./deepseek-ai-dsh-fun-weather-0.1.0.tgz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个为 DSH 添加天气功能的扩展。安装后，你可以在 DSH 网页界面看到天气标签页，里面显示当前天气、未来 7 天预报和逐小时预报。你可以设置自己的城市，插件会自动调用 Open-Meteo 这个免费天气服务获取数据，不需要申请 API 密钥。另外，它还会根据外面的天气状况自动切换界面的主题和壁纸，比如下雨天就换成下雨的壁纸。如果你不喜欢，可以关闭这个功能。",
+      "level": "ok",
+      "risks": "插件需要联网向 Open-Meteo 的服务器发送请求（包括你所在城市或你设置的城市），所以会看到你的大概位置或城市信息；它会修改 DSH 网页的主题和样式来显示天气壁纸，但你可以用开关恢复；如果你允许浏览器定位，它会使用定位权限；你保存的城市设置会存在 DSH 的配置文件里。另外，如果你把 DSH 网页端口暴露到不信任的网络，由于这些接口没有单独认证，别人有可能读取到你的天气设置。建议只在可信网络环境下使用。",
+      "postInstallNotes": "无",
+      "notes": "该插件目前是本地私有原型，未发布到 npm，需要先获得 tarball 才能安装。它依赖多个 @deepseek-ai/dsh-* 包的 RC 版本，可能随着 DSH 更新而变化。天气数据来自 Open-Meteo，需要联网。"
+    },
+    "summaryZh": "DSH 天气插件：展示实时天气、逐小时和 7 天预报，支持城市设置，并根据天气自动切换主题壁纸。",
+    "usage": {
+      "prompt_tokens": 2473,
+      "completion_tokens": 5547,
+      "total_tokens": 8020,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5035
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1833
+    }
+  }
+}

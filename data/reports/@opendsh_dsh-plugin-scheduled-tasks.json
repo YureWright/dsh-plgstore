@@ -1,0 +1,37 @@
+{
+  "id": "@opendsh/dsh-plugin-scheduled-tasks",
+  "analyzedAt": "2026-08-17T11:08:34.436Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@opendsh/dsh-plugin-scheduled-tasks",
+      "evidence": "dsh plugin --profile web add @opendsh/dsh-plugin-scheduled-tasks"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页版用的插件，让你可以在侧边栏创建定时任务。你给每个任务写一段提示词，插件会按设定的时间（一次性、间隔或 cron 规则）自动在对应项目目录里启动一个 AI 智能体会话去执行，并把每次运行的结果、时间、报错等记录下来。你也可以手动立即运行某个任务，或者给任务单独指定用哪个模型。",
+      "level": "ok",
+      "risks": "它会在你配置的项目目录里创建 AI 会话并执行提示词，这可能会消耗模型 token；定时任务只在 DSH web 进程运行时才会触发，进程关闭时不会自动补跑（除非重启后有补跑逻辑）；运行历史会保存在本地，包含任务输出（截断到 20KB），注意别把敏感信息写进提示词。",
+      "postInstallNotes": "安装后通常无需额外配置即可使用；可选配置项有 maxConcurrentRuns（同时运行的最大任务数，默认 2）和 keepRunsPerTask（每个任务保留的历史记录条数，默认 20），可在 DSH 配置中调整。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页版定时任务插件，支持按时间/间隔/cron 自动触发 AI 提示词执行，并记录运行历史。",
+    "usage": {
+      "prompt_tokens": 3492,
+      "completion_tokens": 723,
+      "total_tokens": 4215,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 290
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2852
+    }
+  }
+}

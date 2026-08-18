@@ -1,0 +1,37 @@
+{
+  "id": "Apageoflove/DSH-arena",
+  "analyzedAt": "2026-08-17T13:09:44.593Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 依赖 @deepseek-ai/cordis 和 @deepseek-ai/schemastery，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Apageoflove/DSH-arena.git",
+      "evidence": "README 中安装示例为 `pnpm dsh plugin --profile arena add <本目录路径>`，并说明可先用 `npm pack` 打包本地 tgz 再 add；仓库未发布 npm，故推荐使用 git 地址安装。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的“实验擂台”插件。你可以把同一个任务交给好几个不同的配置（profile）去跑，它会先自动把不达标的跑法淘汰掉，再按质量、速度、花费等指标排出名次，帮你选出最优方案。它还带一个网页界面，可以直观地看对比结果；导出报告时还会自动把密码、令牌等敏感信息打码。",
+      "level": "ok",
+      "risks": "它会在项目目录下创建一个 `.dsh-arena/state.json` 文件来保存实验数据；运行实验时会执行你自己配置的命令（由你主动提供），相当于让它在你的电脑上跑程序。导入报告时文件只留在浏览器里，不会上传，也没有发现外部连接或收集隐私的行为。",
+      "postInstallNotes": "因为还没发布到 npm，需要先 `npm run build` 构建，再用 `dsh plugin add`（本地目录或 git 地址）安装。装好后用 `dsh --profile arena web` 打开实验台；如果需要关闭持久化，可设置 `persistencePath: false`。",
+      "notes": "package.json 标记 `private: true`，尚未发布 npm，安装需走 git 或本地构建；README 自述“真实 DSH 上的 Web / Headless E2E 还没跑通”，兼容性需真机验证。"
+    },
+    "summaryZh": "本地优先的 DeepSeek Harness 实验与评估工作台：多配置对比、硬性过滤、Pareto 排名，带 Web 实验台和离线报告。",
+    "usage": {
+      "prompt_tokens": 2485,
+      "completion_tokens": 3133,
+      "total_tokens": 5618,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2592
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1845
+    }
+  }
+}

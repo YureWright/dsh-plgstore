@@ -1,0 +1,37 @@
+{
+  "id": "dsh-ui-notify",
+  "analyzedAt": "2026-08-16T13:28:23.380Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-client-* 包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ui-notify",
+      "evidence": "The package is published to the npm registry."
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 网页界面中，当任务输出完成时播放提示音。你可以在设置里选择开关、音色、音量和提醒时机（比如只在后台任务完成时提醒，或任何任务完成都提醒）。设置保存在浏览器本地，不用改服务器配置。",
+      "level": "ok",
+      "risks": "会在浏览器 localStorage 中保存你的提醒设置（如开关、音量），这些数据只存在本地浏览器，不会上传到任何服务器；插件不访问文件、不执行系统命令。没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 DSH 的 web profile（运行 `dsh --profile web`）让插件生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面提供任务完成提示音通知的插件，支持自定义声音、音量和提醒时机，设置保存在浏览器中。",
+    "usage": {
+      "prompt_tokens": 2541,
+      "completion_tokens": 2781,
+      "total_tokens": 5322,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2448
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1901
+    }
+  }
+}

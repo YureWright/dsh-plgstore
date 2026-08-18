@@ -1,0 +1,29 @@
+{
+  "id": "dsh-plugin-hub",
+  "analyzedAt": "2026-08-16T13:44:18.850Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-hub",
+      "evidence": "dsh plugin --profile web add dsh-plugin-hub"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的图形化插件商店，直接嵌在 Web 界面里。你可以像逛手机应用商店一样浏览、搜索、一键安装 GitHub 上的 DSH 插件，还能看插件的评分、评价、依赖关系和健康度排行。另外它还能管理已装插件、记录谁在什么时候做过什么操作，甚至帮你把自制的插件发布到 GitHub 和 npm。",
+      "level": "ok",
+      "risks": "它会往你电脑的 DSH 数据目录（$DSH_HOME/storages/plugin-store/）写入 SQLite 数据库，保存插件镜像、评分和审计日志；安装和卸载插件时会调用 pnpm，可能下载并执行第三方插件的安装脚本；如果你想用发布功能，需要输入 GitHub 或 npm 令牌，但说明是会话级使用不落盘。总体来说没有发现明显恶意行为，但毕竟它是个能装插件和发布代码的工具，建议留意被安装插件的来源。",
+      "postInstallNotes": "安装后侧边栏底部会出现「插件商店」按钮。首次使用请先在商店「设置」页点击「立即同步」，把 GitHub 上的 dsh-plugin 仓库数据拉取到本地。另外，若使用频率高，建议配置 GitHub Token 以提高 API 访问限额。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 图形化插件商店：在 Web UI 中浏览、搜索、一键安装和发布插件，并附带评分评论、依赖分析、审计日志和健康度排行。",
+    "usage": {
+      "prompt_tokens": 12199,
+      "completion_tokens": 1702,
+      "total_tokens": 13901
+    }
+  }
+}

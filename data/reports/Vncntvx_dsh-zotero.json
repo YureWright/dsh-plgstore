@@ -1,0 +1,37 @@
+{
+  "id": "Vncntvx/dsh-zotero",
+  "analyzedAt": "2026-08-17T11:57:44.600Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-zotero",
+      "evidence": "dsh plugin --profile <name> add dsh-zotero"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你的 DeepSeek Harness 助手能直接搜索、阅读和引用你自己电脑上的 Zotero 文献库。比如你可以说“帮我找 FlashAttention 相关论文”，它会去你的库里找；还可以让它看某篇论文的笔记和批注、按问题提取相关段落、打开原文 PDF、生成 APA 等格式的参考文献。它提供几个工具，Agent 会自动调用，你只需要一个手动命令 /zotero status 检查连接。",
+      "level": "ok",
+      "risks": "插件会读取你本地 Zotero 文献库中的数据（包括标题、摘要、笔记、批注，甚至全文），这些内容会被发送给 AI 助手（可能由远程 AI 服务处理）。它只通过本地回环地址访问 Zotero 的本地 API，是只读操作，不会修改你的文献库。如果你在对话中讨论敏感研究内容，请注意这些信息可能会离开你的电脑。除此之外未发现明显风险。",
+      "postInstallNotes": "确保 Zotero 桌面版（7.0 及以上）已安装，并启用本地 API：设置 → 高级 → 勾选“Allow other applications on this computer to communicate with Zotero”。安装插件后新建一个会话，让 Agent 获得 Zotero 工具。如需调整搜索数量、超时等，可运行 dsh plugin config 修改配置。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 打造的 Zotero 插件，让 AI 助手搜索、阅读并引用你的本地文献库。",
+    "usage": {
+      "prompt_tokens": 5037,
+      "completion_tokens": 4319,
+      "total_tokens": 9356,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3839
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4397
+    }
+  }
+}

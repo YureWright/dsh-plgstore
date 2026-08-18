@@ -1,0 +1,37 @@
+{
+  "id": "Vim0x3c/dsh-skin-appearance",
+  "analyzedAt": "2026-08-17T11:53:56.992Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-skin-appearance",
+      "evidence": "如果插件已经发布到包仓库，可以把本地路径换成包名："
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面换肤用的。装上之后，设置里会多出一个「外观定制」页面，里面有八套自带主题（比如 DeepSeek 娘、QQ2008 水晶蓝等），还能选一张本地图片当壁纸，自己调透明度和模糊程度。它会自动从图片里提取颜色来搭配界面，选好的设置会一直记住，想恢复原版界面也有一个键。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要改的是 Harness 网页界面的外观。你会主动选一张本地图片，插件会在浏览器里压缩它，然后把图片数据写进 DSH 的用户设置文档里。如果你把设置文件分享出去，别人可能看到你设置的壁纸图片。除此之外它不碰其他个人文件或连接外部服务器。",
+      "postInstallNotes": "装完需要重启 Web 端（运行 dsh web）让插件生效，然后到设置里的「外观定制」页面进行配置。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 网页界面换肤的插件，内置八套主题，还支持自定义壁纸和自动取色。",
+    "usage": {
+      "prompt_tokens": 2916,
+      "completion_tokens": 2000,
+      "total_tokens": 4916,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1601
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2276
+    }
+  }
+}

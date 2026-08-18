@@ -1,0 +1,37 @@
+{
+  "id": "liguobao/deepseek-harness-remote",
+  "analyzedAt": "2026-08-17T12:12:54.957Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 peerDependencies 依赖 @deepseek-ai/cordis 及多个 dsh-client 包，符合 DSH 插件定义"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/liguobao/deepseek-harness-remote.git",
+      "evidence": "Or install it for the `web` profile: `dsh plugin --profile web add \"github:liguobao/deepseek-harness-remote#v0.2.23\"`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在手机、平板或任何浏览器上，远程连接到你正在运行 DeepSeek Harness 的电脑，继续同一个工作会话。电脑上的 Harness 持续运行，你可以随时用另一台设备查看进度、发送指令、回答权限请求、打开工作区，相当于给 Harness 加了个远程遥控器。",
+      "level": "caution",
+      "risks": "它需要你注册一个第三方账号（dsh.r2049.cn），并让数据经过该服务的中继服务器（虽然声称加密且不留存私钥）。远程功能只能列目录不能读文件，也不能提供 shell，但你在公共设备上使用时要留意会话内容可能被屏幕看到。另外，目前是开发者预览版，存在不稳定或安全问题。",
+      "postInstallNotes": "装完后需要：1) 在 dsh.r2049.cn 注册账号并输入邀请码；2) 登录后生成一次性链接码；3) 在 Host 插件的设置里填入这个码；4) 重启 Harness 并确认设备上线。",
+      "notes": "此插件为开发者预览版，README 建议安装时固定版本。它连接的是第三方中继服务，不是官方服务，介意的话可以等后续自托管中继。"
+    },
+    "summaryZh": "一个让你从手机或浏览器远程连接和控制正在运行的 DeepSeek Harness 会话的插件（开发者预览版）。",
+    "usage": {
+      "prompt_tokens": 2252,
+      "completion_tokens": 2269,
+      "total_tokens": 4521,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1788
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1612
+    }
+  }
+}

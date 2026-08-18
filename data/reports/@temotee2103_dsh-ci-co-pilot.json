@@ -1,0 +1,37 @@
+{
+  "id": "@temotee2103/dsh-ci-co-pilot",
+  "analyzedAt": "2026-08-16T13:30:47.209Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，peerDependencies 包含 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，符合 DSH 插件的核心证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@temotee2103/dsh-ci-co-pilot",
+      "evidence": "dsh plugin --profile web add @temotee2103/dsh-ci-co-pilot"
+    },
+    "evaluationReport": {
+      "intro": "这插件能让 DeepSeek Harness 的 AI 助手变成你的 GitHub 小帮手：帮你审查代码（PR）、分析并修复 CI 失败、整理 issue、生成发布说明，还能直接发 GitHub release。它通过 GitHub 官方 API 干活，不需要额外装其他依赖，装好后你跟 AI 说句话就能让它去干这些事。",
+      "level": "ok",
+      "risks": "主要是网络层面的：它会连接 GitHub API。如果你设置了 GITHUB_TOKEN，它就能以你的身份操作 GitHub（评论、改 issue、创建 release），所以要保管好 token。另外，仓库代码和 diff 等内容会发给 AI 处理。它不会乱动你电脑上的本地文件。",
+      "postInstallNotes": "装完需要重启 Harness 会话（或运行 dsh web）。如果要访问私有仓库或想提高 API 频率，需要设置环境变量 GITHUB_TOKEN 或 GH_TOKEN；也可以在 cordis.patch.yml 里配置默认仓库和 API 地址。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 的 AI 成为 GitHub 副驾驶：自动审查 PR、修复 CI、整理 issue 和生成发布说明的插件。",
+    "usage": {
+      "prompt_tokens": 2754,
+      "completion_tokens": 979,
+      "total_tokens": 3733,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 569
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2114
+    }
+  }
+}

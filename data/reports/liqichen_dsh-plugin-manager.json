@@ -1,0 +1,37 @@
+{
+  "id": "liqichen/dsh-plugin-manager",
+  "analyzedAt": "2026-08-17T11:41:37.807Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/dsh-client-* 核心包，README 说明是标准 DSH 双端插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/liqichen/dsh-plugin-manager.git",
+      "evidence": "git clone https://github.com/liqichen/dsh-plugin-manager.git"
+    },
+    "evaluationReport": {
+      "intro": "在 DeepSeek Harness（DSH）的设置面板里加一个图形化管理页面，让你像用普通 App 一样开关或删除 MCP 服务、浏览和删除技能（可恢复）、查看内置插件包，改动实时生效，不用重启。",
+      "level": "ok",
+      "risks": "会读写你电脑上 ~/.dsh 目录里的配置文件（cordis.patch.yml）和技能文件夹。每次改动前会自动备份，删除的技能会放进回收站，可手动恢复。代码不连外部服务器，但作为第三方插件，会在你电脑上运行，请确认来源可信。",
+      "postInstallNotes": "按 README 步骤操作：把仓库文件复制到 ~/.dsh/plugins/dsh-plugin-manager，然后用 dsh plugin add 注册，再在 profile 的 package.json 和 cordis.patch.yml 里声明依赖和插件 ID，最后重启 dsh web。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 设置面板里用图形化界面管理 MCP 服务、技能和内置插件包，改动即时生效。",
+    "usage": {
+      "prompt_tokens": 3927,
+      "completion_tokens": 1939,
+      "total_tokens": 5866,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1552
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3287
+    }
+  }
+}

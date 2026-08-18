@@ -1,0 +1,37 @@
+{
+  "id": "Noob-stupid/dsh-plugin-hub",
+  "analyzedAt": "2026-08-17T11:15:11.139Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 README 提供了 dsh plugin 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Noob-stupid/dsh-plugin-hub",
+      "evidence": "dsh plugin --profile web add github:Noob-stupid/dsh-plugin-hub"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 加装插件管理面板的工具。装好后，你可以在网页设置里看到一个“插件管理”页面，一键打开或关闭已装的插件；还能像逛应用商店一样浏览 GitHub 上其他人分享的 DSH 插件，点了就自动下载安装。",
+      "level": "ok",
+      "risks": "它会修改 DSH 的配置文件（cordis.patch.yml）来开关插件；会从 GitHub 搜索并下载第三方插件并安装到你的环境；如果常规安装全失败，可选的“AI 兜底”会调用 DeepSeek API 来帮你排查安装问题，这可能产生 API 费用（需要你弹窗确认）。",
+      "postInstallNotes": "安装后重启 dsh 服务，刷新页面，在“设置 → 插件 → 插件管理”里就能使用了。",
+      "notes": "该项目虽然是第三方仓库，但包名带 @deepseek-ai 前缀，本质上属于社区维护；注意 AI 兜底费用问题，可以随时在界面关闭。"
+    },
+    "summaryZh": "为 DSH 提供图形化的插件管理面板，支持一键开关插件并浏览安装 GitHub 上的 dsh 插件。",
+    "usage": {
+      "prompt_tokens": 3119,
+      "completion_tokens": 2819,
+      "total_tokens": 5938,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2434
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2479
+    }
+  }
+}

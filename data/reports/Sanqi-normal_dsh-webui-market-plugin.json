@@ -1,0 +1,37 @@
+{
+  "id": "Sanqi-normal/dsh-webui-market-plugin",
+  "analyzedAt": "2026-08-17T11:12:59.397Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@sanqi-normal/dsh-webui-market-plugin",
+      "evidence": "dsh plugin --profile web add @sanqi-normal/dsh-webui-market-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 dsh 的网页界面加了一个'插件市场'面板。你可以在设置→插件→插件市场里浏览社区插件列表（数据来自 awesome-dsh-plugin.com），查看详情、排序、搜索，并直接一键安装、更新或卸载插件，不用再手动敲命令。它还会显示插件是否已安装、有没有更新，并能管理本机已装的插件。",
+      "level": "ok",
+      "risks": "它会在你的 DSH 配置目录里修改 package.json 等文件，并调用 pnpm 命令来安装/卸载插件；同时会连接 awesome-dsh-plugin.com 和 npm registry 获取数据。这些操作都限于 DSH 插件管理范围，没发现明显隐私风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 服务（pnpm dsh web）才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "在 dsh web 界面中提供社区插件市场，可直接浏览、安装、更新和卸载插件。",
+    "usage": {
+      "prompt_tokens": 3914,
+      "completion_tokens": 3194,
+      "total_tokens": 7108,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2826
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3274
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "gnulife/dsh-plugin-wechat",
+  "analyzedAt": "2026-08-17T12:13:14.925Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis、@deepseek-ai/dsh-agent 等核心包，README 也描述了 DSH 集成。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-wechat",
+      "evidence": "npx -y dsh-plugin-wechat（README 原文）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的微信变成 AI 机器人：用微信扫码登录后，DSH 的 AI 会自动回复你的微信消息，还能用联网搜索查资料。需要一台电脑常开，并且要在网页里填一个 DeepSeek API Key 才能用。",
+      "level": "caution",
+      "risks": "它会读取并保存你的微信登录凭证（~/.dsh/wechat/accounts.json），相当于把你的微信账号授权给这个机器人；它会在本地启动一个服务（3080 端口），日志存在 ~/.dsh-plugin-wechat/logs/；它会把你的聊天内容发送给 DeepSeek API 用于生成回复（这是功能本身）。另外，如果配置不当（如工作目录设置过大），AI 可能访问你电脑上的文件。请确认代码后再运行。",
+      "postInstallNotes": "装完后需要：1）在 http://127.0.0.1:3080 的设置里填入 DeepSeek API Key；2）用手机微信扫码登录；3）如有代理工具，需要给微信域名（weixin.qq.com 等）加直连规则。",
+      "notes": "该插件宣称使用腾讯官方 ClawBot（iLink）通道，但第三方个人微信机器人仍有被微信风控的风险，建议仅用于小号或非重要账号。"
+    },
+    "summaryZh": "把 DeepSeek Harness 变成个人微信 AI 机器人，扫码登录后自动回复消息，支持联网搜索。",
+    "usage": {
+      "prompt_tokens": 3168,
+      "completion_tokens": 1699,
+      "total_tokens": 4867,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1247
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2528
+    }
+  }
+}

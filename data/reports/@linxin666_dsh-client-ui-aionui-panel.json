@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-aionui-panel",
+  "analyzedAt": "2026-08-17T11:07:03.255Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis，且 README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-aionui-panel",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-aionui-panel"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页聊天界面加了一个右侧面板，模仿 AionUi 的样式，提供文件浏览器（文件树、文件名搜索、Git 变更）和预览面板（支持 Markdown、HTML、代码、PDF、Word、Excel、PPT、图片等 10 多种格式）。还能拖拽文件到聊天输入框，自动插入路径；支持 Mermaid 图表渲染。所有数据来自你电脑上真实的项目文件和 Git 仓库，不是模拟的。",
+      "level": "ok",
+      "risks": "它会读取你当前打开的项目目录里的文件列表和文件内容，也能查看和修改 Git 状态（比如暂存/丢弃更改），但所有操作都被限制在项目根目录内，而且服务只允许本机访问，不会把数据发送到外部。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后打开一个项目会话，右侧会出现「预览」和「文件/变更」面板。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页界面添加 AionUi 风格的右侧面板，集文件树、Git 变更和多种格式预览于一体。",
+    "usage": {
+      "prompt_tokens": 3590,
+      "completion_tokens": 2202,
+      "total_tokens": 5792,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1811
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2950
+    }
+  }
+}

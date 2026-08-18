@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-tool-regex",
+  "analyzedAt": "2026-08-17T12:10:38.643Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:omdsh-dev/dsh-tool-regex",
+      "evidence": "dsh plugin --profile web add github:omdsh-dev/dsh-tool-regex"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 AI 助手（DSH 环境）能直接在文本上做正则表达式的测试、查找、替换，还能用大白话解释一个正则表达式是什么意思。它做得很安全：所有操作都有限制，遇到特别复杂的正则也不会卡死，而是自动超时返回。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只处理传进来的文本和正则，有大小和时间限制，不会读写你的文件、不会联网，也不执行额外代码。",
+      "postInstallNotes": "无",
+      "notes": "注意：web 与 headless 是两个不同 profile，若两者都要用，需分别安装；包标记为 private，暂时无法直接通过 npm 安装，用 GitHub 方式即可；版本 0.0.1 为早期版本，但自带测试并内置 ReDoS 防护。"
+    },
+    "summaryZh": "DSH 正则工具插件：提供测试、查找、替换和静态解释正则的功能，零依赖并内置多重 ReDoS 防护。",
+    "usage": {
+      "prompt_tokens": 7066,
+      "completion_tokens": 3700,
+      "total_tokens": 10766,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3317
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 6426
+    }
+  }
+}

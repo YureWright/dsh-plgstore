@@ -1,0 +1,37 @@
+{
+  "id": "dsh-chrome",
+  "analyzedAt": "2026-08-16T13:26:47.080Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/dsh-llm 和 @deepseek-ai/dsh-tools 核心包，README 给出了 dsh plugin add 安装命令，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-chrome",
+      "evidence": "README 原文：`dsh plugin --profile web add dsh-chrome`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个把浏览器接入 DeepSeek Harness（dsh）的配套插件。装上后，你可以在 Chrome 的侧边栏里直接使用 dsh 的完整界面，同时让 AI 助手看到你当前打开的网页内容，在你明确要求时抓取网页的网络请求、帮你点击页面元素、打开新标签页等。它包含一个 Chrome 扩展和几个 dsh 主机插件，适合喜欢用自然语言控制浏览器的用户。",
+      "level": "caution",
+      "risks": "它会读取你当前网页的文字内容，并在你要求时抓取该网页发出的网络请求（包括请求和响应的正文），这些信息会发送给你本地的 dsh 服务，如果模型是远程的，可能会被服务商看到。它还能模拟点击、打开标签等操作，虽然需要你的明确指令且对网页里的恶意指令做了拦截，但并非绝对安全。抓包时默认会隐藏密码等敏感字段，但存在漏网的可能。",
+      "postInstallNotes": "装完还需要：1. 确保本地已运行 dsh web（默认 http://127.0.0.1:3080）；2. 执行 `npx dsh-chrome install` 将扩展文件复制到固定目录；3. 打开 chrome://extensions，启用开发者模式，点“加载已解压的扩展程序”选择该目录；4. 点击工具栏的 dsh-chrome 图标打开侧边栏。每次升级包后都要重新运行 install 并重新加载扩展。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-chrome 是一个把 Chrome 浏览器接入 DeepSeek Harness 的配套插件，让 AI 助手能看网页、抓请求、操作浏览器。",
+    "usage": {
+      "prompt_tokens": 3725,
+      "completion_tokens": 1968,
+      "total_tokens": 5693,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1445
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3085
+    }
+  }
+}

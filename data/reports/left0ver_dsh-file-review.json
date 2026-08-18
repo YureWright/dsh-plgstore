@@ -1,0 +1,37 @@
+{
+  "id": "left0ver/dsh-file-review",
+  "analyzedAt": "2026-08-17T11:20:35.421Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且 peerDependencies 依赖 @deepseek-ai/cordis 与多个 @deepseek-ai/dsh-* 核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-file-review",
+      "evidence": "dsh plugin --profile web add dsh-file-review"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 网页版里，不用离开界面就能仔细查看智能体（agent）刚刚改过的每个文件。它用一个带行号的对比面板展示改动内容，还能一键撤销这些改动，方便你复核或反悔。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取和显示工作区中 agent 改动的文件内容（方便你看差异），撤销功能会改写文件，但都是你主动触发，且作用在 DSH 管理的工作目录内。",
+      "postInstallNotes": "安装前需要手动在 ~/.dsh/profiles/web/pnpm-workspace.yaml 中加入 minimumReleaseAgeExclude: - dsh-file-review，否则 pnpm 的最小发布年龄限制可能导致装不上最新版；装完后运行 dsh web 即可。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 网页版中直接查看智能体改动文件的带行号差异，并支持一键撤销。",
+    "usage": {
+      "prompt_tokens": 2801,
+      "completion_tokens": 1139,
+      "total_tokens": 3940,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 773
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2161
+    }
+  }
+}

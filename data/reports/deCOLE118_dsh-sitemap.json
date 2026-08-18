@@ -1,0 +1,37 @@
+{
+  "id": "deCOLE118/dsh-sitemap",
+  "analyzedAt": "2026-08-17T13:12:14.804Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 明确声明了 dsh.bundle 与 dsh.client，peerDependencies 依赖 @deepseek-ai/cordis，README 也详细描述了 DSH 插件的宿主/浏览器双半区实现。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/deCOLE118/dsh-sitemap.git",
+      "evidence": "git clone https://github.com/deCOLE118/dsh-sitemap.git <DSH插件目录>/dsh-sitemap"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加一个“站点地图”侧边栏按钮，点开后能把工作区里已经发现的各种网站接口按域名整理成一棵树，方便查看每个接口的方法、参数、出现次数，还能一键复制成 curl 命令。它不自己扫描，数据来自你自己生成的 sitemap_data.json 文件。",
+      "level": "ok",
+      "risks": "它会读取工作区里的 sitemap_data.json 文件（默认在工作区根目录，也可通过配置指定子目录），只读这一个文件，不会碰其他文件，也不会上传数据到外部。仓库内示例用的都是占位域名。",
+      "postInstallNotes": "装好后重启 DSH；需要提前生成符合格式的 sitemap_data.json（默认放工作区根目录），如果放在子目录需配置 dataDir；数据更新后点“刷新”即可，无需重启。",
+      "notes": "安装方式是 git clone 到插件目录（README 未提供 dsh plugin add 命令）；lib/ 构建产物已随仓库提交，clone 即可直接使用。"
+    },
+    "summaryZh": "dsh-sitemap 是一个 DSH 侧边栏插件，把 Yakit 风格的站点地图搬进 DSH，按主机树展示工作区接口并支持搜索、详情和复制 curl。",
+    "usage": {
+      "prompt_tokens": 3400,
+      "completion_tokens": 2213,
+      "total_tokens": 5613,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1766
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2760
+    }
+  }
+}

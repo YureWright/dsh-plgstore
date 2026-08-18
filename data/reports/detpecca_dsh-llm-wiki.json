@@ -1,0 +1,37 @@
+{
+  "id": "detpecca/dsh-llm-wiki",
+  "analyzedAt": "2026-08-17T12:02:05.680Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 提供了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@detpecca/dsh-llm-wiki",
+      "evidence": "dsh plugin --profile web add @detpecca/dsh-llm-wiki"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的 AI 助手能直接管理你的 LLM-Wiki 个人知识库。装了它之后，你可以让 AI 帮你搜索知识库、读页面、统计数量、检查结构问题、自动修复、查看错误记录，还能把新笔记加入知识库。它本身只是把 AI 指令翻译给一个 Python 引擎，真正的工作由引擎完成。",
+      "level": "ok",
+      "risks": "它会读取和修改你配置的 Wiki 目录（默认 ./wiki）；若配置了 LLM API key，该 key 会保存在 DSH 配置文件中，并可能被用于调用外部大模型 API；Windows 一键脚本会创建 Python 虚拟环境并安装依赖，但只在你主动运行时才会执行。",
+      "postInstallNotes": "安装后需要编辑 DSH profile 的 cordis.patch.yml，设置 wikiPath 指向你的知识库目录；可选配置 pythonPath、LLM API key（用于 wiki_ingest 和 wiki_fix finalize）。配置完成后重启 DSH 生效。",
+      "notes": "README 提示 npm 包可能尚未发布，若无法从 npm 安装，请改用 git 方式（github:detpecca/dsh-llm-wiki）安装；另外，依赖的 Python 引擎 LLM-Wiki 需要单独用 pip 安装。"
+    },
+    "summaryZh": "DSH 插件，让 AI 助手直接管理 LLM-Wiki 知识库，提供搜索、阅读、统计、校验、修复、错误本、入库七个工具。",
+    "usage": {
+      "prompt_tokens": 3878,
+      "completion_tokens": 3274,
+      "total_tokens": 7152,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2805
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3238
+    }
+  }
+}

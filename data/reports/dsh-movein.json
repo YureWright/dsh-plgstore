@@ -1,0 +1,37 @@
+{
+  "id": "dsh-movein",
+  "analyzedAt": "2026-08-16T13:24:53.656Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-movein",
+      "evidence": "dsh plugin --profile web add dsh-movein"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你把 Claude Code 的配置（技能、MCP 服务器、钩子、指令等）一次性搬到 DeepSeek Harness (DSH) 里。它默认先做一次预览（dry run），告诉你都会改哪些东西，确认没问题再加 --apply 才真正执行。它还支持反向迁移，把 DSH 里新做的技能搬回 Claude Code，还带健康检查和从备份恢复的功能。",
+      "level": "ok",
+      "risks": "它会修改你用户目录下的配置文件，主要是 ~/.claude 和 ~/.dsh 下的内容，比如把 Claude Code 的技能链接到 DSH 的 skills 目录，往 ~/.dsh/cordis.patch.yml 里写入 MCP 和 hooks 配置。可能会读取你的 MCP 配置中的环境变量，但不会把密钥写进生成的文件，而是保留为引用。默认不实际写入，只有你确认（--apply）后才动手。整个过程都在本机，不会上传到任何地方。",
+      "postInstallNotes": "安装后需要重启 dsh web（Restart dsh web），然后对 DSH 说 “move my Claude Code setup over” 来触发迁移，或者直接用 npx dsh-movein 命令行操作。",
+      "notes": "该插件同时提供独立 CLI（npx dsh-movein），不装进 DSH 也能单独运行。"
+    },
+    "summaryZh": "一条命令把 Claude Code 的整套配置（技能、MCP、hooks、指令）搬进 DeepSeek Harness，支持预览、反向迁移和健康检查。",
+    "usage": {
+      "prompt_tokens": 3715,
+      "completion_tokens": 2859,
+      "total_tokens": 6574,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2399
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3075
+    }
+  }
+}

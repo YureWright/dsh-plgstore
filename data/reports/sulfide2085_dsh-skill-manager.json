@@ -1,0 +1,37 @@
+{
+  "id": "sulfide2085/dsh-skill-manager",
+  "analyzedAt": "2026-08-17T11:29:41.499Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 并注入 @deepseek-ai 核心包，README 给出 dsh plugin 安装命令，确为 DSH 插件"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "dsh plugin --profile web add .   # 在插件目录内执行"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 的设置页面加一个「技能管理」分区。平时各种 AI 工具（DSH、Codex、Claude）的技能文件分散在电脑不同位置，它能把它们汇总到一个面板里，让你一眼看到都有哪些技能、来自哪里、是不是开着。你可以在面板里直接开关技能，也可以从 GitHub 仓库或本地 ZIP 文件安装新技能，装完不用重启就能用。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下读取和修改技能文件夹（如 ~/.dsh/skills、~/.codex/skills、~/.claude/skills），启用/停用技能靠重命名文件实现，不会删除内容。从网上安装技能会把文件下载到这些目录，AI 可能会读取并执行其中的指令，所以建议只安装信得过的来源。除此之外没发现明显风险。",
+      "postInstallNotes": "装好后需要重启 DSH Web 才能看到新接口；Windows 上如果 node_modules 缺失，需要按 README 手动创建指向 DSH 安装目录的 junction。",
+      "notes": "该插件是本地目录安装（在源码目录执行 dsh plugin --profile web add .），目前没有 npm 包或 release tarball，通过市场的标准 dsh plugin add 无法直接安装；需要先 clone 仓库。另外它依赖 zod 和 @deepseek-ai/dsh-typert-protocol，这些依赖跟随 DSH 安装树分发，独立安装可能缺依赖。"
+    },
+    "summaryZh": "DSH 设置页的技能管理器：统一查看/启停 DSH、Codex、Claude 的全部技能，并支持从 GitHub 仓库或本地 ZIP 安装新技能。",
+    "usage": {
+      "prompt_tokens": 2151,
+      "completion_tokens": 4722,
+      "total_tokens": 6873,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4217
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1511
+    }
+  }
+}

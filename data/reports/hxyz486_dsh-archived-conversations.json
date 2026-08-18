@@ -1,0 +1,37 @@
+{
+  "id": "hxyz486/dsh-archived-conversations",
+  "analyzedAt": "2026-08-17T11:38:57.914Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 明确声明了 dsh.client 字段，且 peerDependencies 依赖 @deepseek-ai/dsh-typert-protocol，README 描述了宿主/浏览器半身及 DSH 接口调用。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件用来管理 DSH 里被归档的聊天会话。你可以把聊天窗口从侧边栏收起来（归档），然后在这个插件里统一查看、按工作区分组浏览、随时恢复它们，也能彻底删除（清理本地日志文件）。",
+      "level": "ok",
+      "risks": "会读取和删除本机 DSH 的会话日志文件（比如 session.jsonl.zstd），删除操作需要两次确认，删除后不可恢复。所有操作都在本机，不会上传到外部服务器。",
+      "postInstallNotes": "安装不是用 dsh plugin add，需要手动把插件目录链接到 DSH profile 的 node_modules，并在 cordis.patch.yml 里加入插件配置，然后重启 DSH Web。",
+      "notes": "无"
+    },
+    "summaryZh": "归档对话管理插件：查看、恢复和彻底删除 DSH 中归档的会话记录。",
+    "usage": {
+      "prompt_tokens": 1686,
+      "completion_tokens": 1225,
+      "total_tokens": 2911,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 907
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1046
+    }
+  }
+}

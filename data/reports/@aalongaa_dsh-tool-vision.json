@@ -1,0 +1,37 @@
+{
+  "id": "@aalongaa/dsh-tool-vision",
+  "analyzedAt": "2026-08-17T11:09:09.581Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 配置，并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@aalongaa/dsh-tool-vision",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 拥有“看图片”的能力——你把图片交给它，它会调用你配置的、兼容 OpenAI 接口的视觉识别服务（比如 OpenAI、其他云厂商的视觉模型）来分析图片内容，再把结果带回给 AI 使用。相当于给 AI 加了一双眼睛。",
+      "level": "caution",
+      "risks": "使用这个插件时，你让 AI 分析的图片会被发送到你配置的第三方视觉 API 服务器，图片内容可能被服务商看到。另外，本地会使用 sharp 库处理图片，可能占用 CPU 和内存；配置 API 密钥时会存在本地，有权限的人可能读取到。",
+      "postInstallNotes": "需要在 DeepSeek Harness 的设置中配置兼容 OpenAI 的视觉 API 地址和 API 密钥（具体配置项请参考插件源码或包内说明）。",
+      "notes": "该插件 README 缺失，安装前建议查看仓库源码或包内文档确认具体用法和配置方式；图片会发送至外部 API，请确认服务商的隐私政策。"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加图像识别能力的视觉工具，支持接入任意 OpenAI 兼容的视觉 API。",
+    "usage": {
+      "prompt_tokens": 1926,
+      "completion_tokens": 1741,
+      "total_tokens": 3667,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1350
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1286
+    }
+  }
+}

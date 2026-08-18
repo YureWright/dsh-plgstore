@@ -1,0 +1,37 @@
+{
+  "id": "dsh-statecore",
+  "analyzedAt": "2026-08-18T14:53:02.697Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装示例。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-statecore",
+      "evidence": "dsh plugin --profile web add -w dsh-statecore"
+    },
+    "evaluationReport": {
+      "intro": "dsh-statecore 是 DeepSeek Harness 的原生记忆插件，会自动把会话中的用户消息和助手回复整理成带证据链的事实，保存到本地，并在网页设置界面提供查看、追溯和删除功能。它还能在上下文压缩时保留关键记忆，并提供五个工具（remember/recall/facts/why/forget）供模型调用。",
+      "level": "caution",
+      "risks": "它会读取并存储你的会话消息到本地 ~/.statecore 文件夹；默认开启的 digest 功能会把部分对话内容发送给 dsh 已配置的模型服务（可能离开电脑）。依赖的 statecore-mcp 包有 postinstall 脚本（Prisma 生成），需要你批准或手动执行。",
+      "postInstallNotes": "若首次运行提示缺少 Prisma 客户端，需运行 'pnpm --dir ~/.dsh/profiles/web approve-builds' 或手动执行 statecore-mcp 的 postinstall 脚本。",
+      "notes": "README 提醒在 dsh@0.1.0-rc.6 中 dsh plugin add 需加 -w 参数；该插件与 statecore-mcp 共享同一本地存储。"
+    },
+    "summaryZh": "dsh-statecore 为 DeepSeek Harness 添加带证据链的原生记忆功能，自动记录会话并可在网页端管理。",
+    "usage": {
+      "prompt_tokens": 4012,
+      "completion_tokens": 1768,
+      "total_tokens": 5780,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1338
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3372
+    }
+  }
+}

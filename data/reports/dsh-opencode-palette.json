@@ -1,0 +1,37 @@
+{
+  "id": "dsh-opencode-palette",
+  "analyzedAt": "2026-08-18T14:55:27.269Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出 dsh plugin add 安装命令，符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-opencode-palette",
+      "evidence": "Then install the plugin into your profile: dsh plugin --profile web add dsh-opencode-palette"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 一键换肤，内置 34 款来自 opencode 的经典主题（比如东京夜、德古拉、复古工坊、黑客帝国数字雨等），点一下界面就换装，还能调字体大小和代码字体，选择会记住，重启不丢。面板跟随 DSH 界面语言，中英文都能用。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会往 DSH 的 profile 配置里注册一个 bundle（cordis.patch.yml），并把主题和字体选择存到浏览器本地；不读私人文件，也不向外部发数据。",
+      "postInstallNotes": "装完重启 DSH（或刷新浏览器页面）即生效；无需额外配置。若从 1.4.x 或更早升级，需先手动删除 ~/.dsh/profiles/web/cordis.patch.yml 里的 opencode-palette 旧注册块，再重新 dsh plugin add。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 34 款 opencode 经典主题的一键换肤插件，支持字体定制、双语面板和设置持久化。",
+    "usage": {
+      "prompt_tokens": 2800,
+      "completion_tokens": 2143,
+      "total_tokens": 4943,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1743
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2160
+    }
+  }
+}

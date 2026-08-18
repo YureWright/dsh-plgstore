@@ -1,0 +1,37 @@
+{
+  "id": "lehhair/dsh-split-panes",
+  "analyzedAt": "2026-08-17T11:49:21.871Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/dsh-client-runtime 等官方核心包，符合 DSH 插件特征"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/lehhair/dsh-split-panes.git",
+      "evidence": "git clone https://github.com/lehhair/dsh-split-panes.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness 的对话界面分成多个窗格，每个窗格各聊各的，还可以拖拽会话到窗格上、调整分隔条大小，让多任务对话更清爽。",
+      "level": "caution",
+      "risks": "插件本身只改界面布局，不碰你的聊天记录和隐私文件；但它需要给 DSH 渲染器打一个补丁，如果补丁没打对，可能会导致界面显示异常或崩溃。",
+      "postInstallNotes": "需要确保你的 DSH 渲染器支持会话绑定能力；如果官方版本还没有，请按 patches/README 里的说明应用补丁，然后重启 dsh web。",
+      "notes": "这个插件标记为 private，不能从 npm 直接安装，只能通过 git clone 后本地添加；且当前官方 DeepSeek Harness 尚未内置所需能力，需要额外打补丁或使用内测版。"
+    },
+    "summaryZh": "DSH 对话分屏插件：多窗格独立会话、侧边栏拖拽分配，但需要先补齐渲染器能力。",
+    "usage": {
+      "prompt_tokens": 2902,
+      "completion_tokens": 2196,
+      "total_tokens": 5098,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1812
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2262
+    }
+  }
+}

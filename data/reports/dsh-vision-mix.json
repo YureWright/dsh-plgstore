@@ -1,0 +1,37 @@
+{
+  "id": "dsh-vision-mix",
+  "analyzedAt": "2026-08-16T13:26:46.646Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 DSH 插件安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vision-mix",
+      "evidence": "pnpm dsh plugin --profile web add dsh-vision-mix"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的智能体看懂图片。以前文本模型不能处理图片，装上它以后，你可以上传图片问“这是什么”，它还能看网页截图、继续追问图片细节，甚至生成或编辑图片（比如“把这张图改成夜景”）。图片识别和生成可以用不同的中转站服务，API Key 还是用 DSH 里已经配置好的。",
+      "level": "ok",
+      "risks": "它会调用你配置的模型 API（会产生少量费用），会读取你上传或让 Agent 截图的图片，并在本地保存识图和生图记录（默认在 $DSH_HOME/vision-mix 下）。所有图片仅在当前会话内访问，不会上传到其他服务器。",
+      "postInstallNotes": "装完后需要打开“设置 → 模型”配置至少两个模型（基础文本模型和视觉模型），然后在“设置 → Vision Mix”里测试并启用图片能力、选择路由；如果要生图，还要单独配置 Images API Provider 并测试生图接口。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 智能体增加看图、识图追问及图片生成/编辑能力的视觉增强插件。",
+    "usage": {
+      "prompt_tokens": 5206,
+      "completion_tokens": 634,
+      "total_tokens": 5840,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 244
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4566
+    }
+  }
+}

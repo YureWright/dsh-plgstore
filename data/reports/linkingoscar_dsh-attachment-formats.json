@@ -1,0 +1,37 @@
+{
+  "id": "linkingoscar/dsh-attachment-formats",
+  "analyzedAt": "2026-08-17T12:09:40.637Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 明确描述为 DeepSeek Harness web 插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/linkingoscar/dsh-attachment-formats.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的网页对话界面能直接识别和处理更多格式的附件，比如 PDF、Word、Excel、PPT，以及扫描版的 PDF（通过 OCR 识别文字）。它会把这些文档内容转换成文本卡片，你发消息时自动贴进对话里，不用自己复制粘贴。如果文档太长，它会自动生成一个索引卡，让模型按需分页读取，不会一下子塞爆。",
+      "level": "ok",
+      "risks": "它会读取你拖进对话里的各种文件并提取文字，这些内容会随对话发送给模型。如果你处理的是扫描件且没配置外部 OCR，它会在浏览器里用开源的 tesseract.js 识别，首次使用会从网上下载约 24MB 的语言包。如果你配置了百度 OCR 或远程 VLM 服务，文件内容会发送到那些第三方服务。长文档会暂存在项目工作区的 .dsh-attachments 文件夹里，7 天没访问会自动清理。没发现明显恶意风险。",
+      "postInstallNotes": "无需额外配置即可使用；如需启用百度 OCR 或外部解析服务，请按 README 设置相应环境变量。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 网页版支持更多附件格式（PDF/Office/OCR 等），长文档自动转成索引卡，方便模型阅读。",
+    "usage": {
+      "prompt_tokens": 3749,
+      "completion_tokens": 3033,
+      "total_tokens": 6782,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2608
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3109
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "lhh010/dsh-bash-encoding",
+  "analyzedAt": "2026-08-17T11:35:48.643Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.92,
+      "reason": "package.json 的 peerDependencies 包含 @deepseek-ai/dsh-bash、cordis、schemastery，且 README 明确说明替换 ctx.bash 执行器，属于标准的 DSH 宿主侧插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 中安装方式为 `cd /path/to/dsh-bash-encoding && pnpm install && pnpm build` 和 `pnpm add -w link:/path/to/dsh-bash-encoding`，未提供 dsh plugin add 命令。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能修复在 Windows 上用 WSL 运行 bash 命令时，中文输出变成乱码的问题。它替换掉 DSH 自带的 bash 执行器，自己启动子进程并直接收集原始字节，然后自动识别编码（UTF-16、GBK 等）并正确转换成中文，解决乱码。需要手动配置一下 profile 才能生效。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会接管 bash 命令的执行并清理环境变量中带敏感字样的变量，这反而是更安全的行为。",
+      "postInstallNotes": "需要在 profile 的 cordis.yml（或 cordis.patch.yml）中停用原来的 bash 条目，并添加本插件的配置（如 cwd、timeoutMs 等），然后重启 dsh web。可选：设置 .wslconfig 的 networkingMode=mirrored 或 WSL_UTF8=1 可从源头消除警告。",
+      "notes": "插件包本身是 private 未发布到 npm（@dsh-external/dsh-bash-encoding），需要通过 GitHub 仓库克隆后手动 pnpm install && pnpm build，再用 pnpm link 方式接入，不能用 dsh plugin add 直接安装。兼容特定 snapshot 版本（0808/0809 及 npm rc.1），若遇 peer 冲突需加 --legacy-peer-deps。"
+    },
+    "summaryZh": "修复 Windows/WSL 下 DSH bash 中文乱码的插件，自动识别 UTF-16LE/GBK 等编码并正确解码。",
+    "usage": {
+      "prompt_tokens": 4539,
+      "completion_tokens": 3114,
+      "total_tokens": 7653,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2599
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3899
+    }
+  }
+}

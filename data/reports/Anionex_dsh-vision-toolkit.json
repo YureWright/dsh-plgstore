@@ -1,0 +1,37 @@
+{
+  "id": "Anionex/dsh-vision-toolkit",
+  "analyzedAt": "2026-08-16T11:40:56.342Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 等多个核心包，且 README 给出明确的 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@anionex/dsh-vision-toolkit",
+      "evidence": "**Install:** `dsh plugin --profile web add @anionex/dsh-vision-toolkit`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 里的纯文本 AI 也能“看懂”图片，比如回答图片内容、识别文字（OCR）、精确定位坐标、对比截图差异、把草图或截图还原成可编辑的网页界面。它提供十个独立的小工具，装在插件里按需调用。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取和处理你指定的图片文件，可能调用外部视觉服务的 API（需要配置密钥），还会在本地准备一个独立的 Python 环境。这些都是插件自身的正常功能。",
+      "postInstallNotes": "需要按文档配置 API 凭据（DSH Credentials），并确保系统有 Python 3.11+ 用于运行时环境。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 纯文本模型提供图像问答、OCR、像素级定位、UI 还原与截图对比等视觉能力的原生插件。",
+    "usage": {
+      "prompt_tokens": 4250,
+      "completion_tokens": 1261,
+      "total_tokens": 5511,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 910
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3610
+    }
+  }
+}

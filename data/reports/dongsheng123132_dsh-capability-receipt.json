@@ -1,0 +1,37 @@
+{
+  "id": "dongsheng123132/dsh-capability-receipt",
+  "analyzedAt": "2026-08-17T12:10:12.043Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，代码调用 DSH 的 ctx.skills.get() 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/dongsheng123132/dsh-capability-receipt.git",
+      "evidence": "`dsh plugin --profile capability-proof add github:owner/dsh-capability-receipt#<commit>`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个‘加载凭证’功能：当 AI 代理加载某个技能（skill）时，它会算出这个技能内容的哈希值，连同来源、提供者等信息写成一个收据文件。这样你可以核对实际加载的技能是不是你当初审核过的那份，有没有被偷偷改过。它还提供了和 pack-agent 打包工具对账的桥，能确认运行时加载的技能体和打包时锁定的一致。它只观察、不执行技能，也不会把技能内容返回给你。",
+      "level": "ok",
+      "risks": "它会读取 DSH 已加载技能的内容和部分本地资源目录来做哈希计算，但读取范围有大小限制、会拒绝符号链接，而且这些数据只用于本地生成收据，不会上传到网络。工具输出也不包含技能原文和绝对路径。没发现明显风险。",
+      "postInstallNotes": "无强制配置。安装后即可使用相关 DSH 工具；调用时按需传入技能名、期望哈希或输出目录。离线验证可使用自带的 CLI。",
+      "notes": "README 安装示例中的 owner 是占位符，实际应替换为 dongsheng123132；pack-agent 桥接目前固定在某 commit 的哈希契约上，使用不同版本 pack-agent 时需自行核对。@deepseek-ai/dsh-tools 是可选 peer 依赖。"
+    },
+    "summaryZh": "为 DeepSeek Harness 生成内容寻址的加载收据，证明实际加载的技能内容与固定来源或 pack-agent 锁文件一致，防止技能被篡改。",
+    "usage": {
+      "prompt_tokens": 2441,
+      "completion_tokens": 3545,
+      "total_tokens": 5986,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3041
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1801
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@mimichunterz/agent-compact",
+  "analyzedAt": "2026-08-16T14:47:10.131Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch、依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出 dsh plugin add 安装命令，并实现 context_compact 工具调用 DSH 引擎接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@mimichunterz/agent-compact",
+      "evidence": "dsh plugin --profile web add @mimichunterz/agent-compact"
+    },
+    "evaluationReport": {
+      "intro": "这是给 DeepSeek Harness 用的一个上下文压缩插件。平时 AI 对话太长时，官方会自动从头压缩，容易把开头的重要计划和最新内容一起弄丢。这个插件让 AI 自己挑一段已经用完的对话（比如做完的任务、调试记录），把这一小段替换成 AI 自己写的简短总结，这样开头和最近的内容都留着，丢的信息最少。",
+      "level": "ok",
+      "risks": "它会把你选中的原始对话片段存档到本地 ~/.dsh/spill/ 文件夹里（可配置关闭）；压缩时会用 AI 写的总结替换掉选中的对话，虽然设计上尽量保留细节，但仍有可能丢失部分信息；每次调用会按正常对话回合计费。",
+      "postInstallNotes": "装完后需要重启 profile（Restart the profile），会话才能看到 context_compact 工具；如需调整自动存档等行为，可在 profile 的 cordis.patch.yml 中配置。",
+      "notes": "该插件面向 DeepSeek Harness 0.1.0-rc.6 构建（依赖 @deepseek-ai/dsh-compaction-basic@0.1.0-rc.6），其他版本可能需要自行验证兼容性。"
+    },
+    "summaryZh": "agent-compact：让 AI 自主选择并压缩对话中的某一段、由 AI 自己写总结的 DeepSeek Harness 上下文压缩插件，减少关键信息丢失。",
+    "usage": {
+      "prompt_tokens": 3013,
+      "completion_tokens": 2151,
+      "total_tokens": 5164,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1686
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2373
+    }
+  }
+}

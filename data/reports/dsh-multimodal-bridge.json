@@ -1,0 +1,37 @@
+{
+  "id": "dsh-multimodal-bridge",
+  "analyzedAt": "2026-08-18T14:51:39.218Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明 dsh.bundle，依赖 @deepseek-ai/cordis 与 dsh-tools，README 给出 dsh plugin add 安装命令，确为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-multimodal-bridge",
+      "evidence": "dsh plugin --profile <name> add dsh-multimodal-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的插件，让只有文字的模型也能看图、生成图片、生成视频、语音合成，还能请其他大模型帮忙审查答案。它调用阿里云的 Qwen 系列模型，提供图像理解（qwen_vision）、文生图/图生图（qwen_generate）、文生视频/图生视频（qwen_video）、LLM 咨询（qwen_chat）和语音合成（qwen_tts）等功能。",
+      "level": "ok",
+      "risks": "需要把要分析的图片发送到阿里云（或你配置的网关）服务器，因此图片内容会离开你的电脑；调用外部 API 需要阿里云的密钥，密钥建议存放在 ~/.dsh/.credentials.yaml；生成的文件会保存在本地目录（默认 generated/）。除此之外没发现明显风险。",
+      "postInstallNotes": "运行前需要在 ~/.dsh/.credentials.yaml 中设置 API Key（如 QWEN_DASHSCOPE_API_KEY）；如果使用专属网关，还需在 ~/.dsh/.env 设置 QWEN_API_BASE。完成后启动 dsh 即可。",
+      "notes": "需要 Node.js ≥22.19；处理大图时需自行安装 sharp（sharp 不随包安装）；依赖的 @deepseek-ai/dsh-tools 为 RC 版本。"
+    },
+    "summaryZh": "为 DSH 纯文本模型补充视觉理解、图像生成、视频生成、语音合成与跨模型第二意见能力。",
+    "usage": {
+      "prompt_tokens": 5495,
+      "completion_tokens": 2395,
+      "total_tokens": 7890,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1929
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4855
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "nekogpt/dsh-ui-quote-selection",
+  "analyzedAt": "2026-08-17T12:03:22.715Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ui-quote-selection",
+      "evidence": "dsh plugin --profile web add dsh-ui-quote-selection"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DSH 网页版聊天里选中一段文字，然后一键把这段文字引用到输入框，方便你针对这段话继续提问，不用自己复制粘贴。输入框里只显示短短的预览，发送时模型会收到完整的原文。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只处理聊天界面里的选中文字，不改动核心代码，也不会碰你电脑上的其他文件。",
+      "postInstallNotes": "安装后重启 dsh web，并刷新浏览器（如果没生效按 Ctrl+Shift+R 强制刷新）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页版划词引用插件，选中聊天文字一键变成输入框引用，发送时带上完整原文。",
+    "usage": {
+      "prompt_tokens": 1695,
+      "completion_tokens": 389,
+      "total_tokens": 2084,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 96
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1055
+    }
+  }
+}

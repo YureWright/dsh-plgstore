@@ -1,0 +1,37 @@
+{
+  "id": "dsh-sight",
+  "analyzedAt": "2026-08-16T13:36:53.912Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-settings，README 提供 dsh plugin add 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-sight",
+      "evidence": "dsh plugin --profile web add dsh-sight"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让只能处理文字的 DeepSeek Harness 模型也能“看图”。你直接把图片粘贴到对话里，它会自动把图片存到临时文件夹，并给模型一个路径提示，模型再通过内置的视觉模型（比如免费的 OpenCode Zen 或 Gemini Flash）来描述图片内容。还支持一次分析多张图片、自定义任意兼容 OpenAI 接口的视觉服务，并提供了一个网页设置界面。",
+      "level": "ok",
+      "risks": "插件会把粘贴的图片保存到系统临时目录（Linux 的 /tmp，macOS 的 /var/folders 等），并使用外部视觉服务（如 OpenCode Zen、Gemini）来分析图片，这意味着图片内容会发送给第三方服务。如果你配置了 API key，key 会保存在本地设置文件中。整体没有发现恶意行为。",
+      "postInstallNotes": "安装后需要打开 DSH Web 的「设置 → Vision」，选择一个视觉服务后端（免费预设或自定义接口），必要时填入 API key 并保存。",
+      "notes": "无"
+    },
+    "summaryZh": "为纯文本 DeepSeek Harness 模型添加视觉能力，支持粘贴图片、批量分析，内置免费视觉模型预设和网页设置界面。",
+    "usage": {
+      "prompt_tokens": 3352,
+      "completion_tokens": 660,
+      "total_tokens": 4012,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 266
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2712
+    }
+  }
+}

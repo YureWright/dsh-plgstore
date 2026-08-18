@@ -1,0 +1,37 @@
+{
+  "id": "brittanistrehlowll-oss/dsh-quota-panel",
+  "analyzedAt": "2026-08-17T13:16:22.277Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:brittanistrehlowll-oss/dsh-quota-panel",
+      "evidence": "dsh plugin --profile web add \"github:brittanistrehlowll-oss/dsh-quota-panel\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面加一个右下角的悬浮小卡片，用来显示你各个服务商的额度/余额。平时是一个小胶囊，显示几个小圆点和数字，点击展开能看详细卡片，比如 DeepSeek 余额还剩多少、OpenCode Zen Go 本月用了多少。它会自动刷新，也能手动刷新。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你的 Harness 网页右下角显示一个小组件，并通过后台服务器去查询你的 API 额度。你的 API key 只在服务器端使用，不会发到浏览器。它读取的是你自己配置的凭证和环境变量。",
+      "postInstallNotes": "安装后需要在配置（如 cordis.patch.yml）里添加要监控的 provider，设置好对应的 API key（通过环境变量或凭证文件），然后重启 dsh web 服务才会生效。",
+      "notes": "无"
+    },
+    "summaryZh": "一个在 dsh 网页界面右下角显示各服务商额度/余额的小插件，支持 DeepSeek 余额和 OpenCode 用量，带自动刷新和折叠展开。",
+    "usage": {
+      "prompt_tokens": 3041,
+      "completion_tokens": 1553,
+      "total_tokens": 4594,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1161
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2401
+    }
+  }
+}

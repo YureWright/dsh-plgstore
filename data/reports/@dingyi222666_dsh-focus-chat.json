@@ -1,0 +1,37 @@
+{
+  "id": "@dingyi222666/dsh-focus-chat",
+  "analyzedAt": "2026-08-17T11:09:55.894Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，依赖 @deepseek-ai/cordis 及多个 dsh-client-* 核心包，README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dingyi222666/dsh-focus-chat",
+      "evidence": "Install from npm (requires dsh >= 0.1.0-rc.6)"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 dsh 网页版加一个“专注聊天”标签页：把对话变成摘要式的阅读视图——每一条助手回复被折叠成一行总结（比如“思考了 36 秒、加载 3 个上下文项、运行了 2 条命令、编辑了 8 个文件”），整个回合还可以再折叠成“工作了 X 分钟 Y 秒”。点击任意一行就能展开看细节，包括工具调用、思考过程、上下文注入和生成的文件。适合快速回顾“刚才发生了什么”，想仔细看时也能切回普通的完整对话视图。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只渲染 dsh 本地已有的对话快照，不发起模型请求，也不会把数据传到外部。",
+      "postInstallNotes": "安装后重启 dsh web，然后在任意对话中打开 Focus chat 标签；确保 dsh 版本不低于 0.1.0-rc.6。",
+      "notes": "无"
+    },
+    "summaryZh": "为 dsh 网页聊天界面增加一个“专注聊天”标签页，将完整对话折叠成方便速读的摘要视图。",
+    "usage": {
+      "prompt_tokens": 2991,
+      "completion_tokens": 2060,
+      "total_tokens": 5051,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1652
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2351
+    }
+  }
+}

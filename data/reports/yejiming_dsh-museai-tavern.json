@@ -1,0 +1,37 @@
+{
+  "id": "yejiming/dsh-museai-tavern",
+  "analyzedAt": "2026-08-17T11:31:29.586Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@yejiming/dsh-museai-tavern",
+      "evidence": "dsh plugin --profile web add @yejiming/dsh-museai-tavern"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加了一个叫 MuseAI 的标签，就在会话轨迹旁边。里面有五个页面：背景、聊天、冒险、羁绊、设置。你可以用它管理世界书和角色卡，和角色聊天、玩文字冒险，看角色关系，还能调整提示词和模型参数。所有对话都用 DeepSeek Harness 里已经配置好的模型，不用再单独填 API 密钥。数据会保存到本地文件，重启不丢。",
+      "level": "ok",
+      "risks": "插件会把你的世界书、角色卡、聊天记录、设置等内容写入本地文件 $DSH_HOME/storages/museai.json。这些数据只存在你自己电脑上，插件本身没有连接外部服务器，也没有调用额外的网络服务。安装插件会运行它的代码，但来源是 npm 官方仓库，风险很低。",
+      "postInstallNotes": "装完后需要先在 DeepSeek Harness 里配置至少一个模型，否则 MuseAI 的设置页会显示空态。启动时用 dsh --profile web 命令，然后在浏览器里打开任意会话，就能在标签栏看到 MuseAI 了。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面增加 MuseAI 标签页，提供角色聊天、冒险、羁绊等功能的插件。",
+    "usage": {
+      "prompt_tokens": 3990,
+      "completion_tokens": 957,
+      "total_tokens": 4947,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3350
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "Yuuz12/dsh-webui-auth",
+  "analyzedAt": "2026-08-17T11:37:09.844Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-webui-auth",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-webui-auth"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH WebUI 加“门禁”的插件。装了之后，第一次需要在设置里创建管理员账号和密码。以后打开 DSH 的网页界面，必须先登录才能看页面、调用接口或建立实时连接，否则会被拦在登录页。它还支持会话有效期、登录失败限流、审计日志，密码用 scrypt 加密存储。",
+      "level": "ok",
+      "risks": "它会改动 DSH 核心包里的文件（打补丁）来强制认证，升级 DSH 后可能需要重启才能完全生效；会把密码哈希和审计日志（含登录 IP、浏览器信息）存到数据目录（默认 ~/.dsh/dsh-webui-auth/），只有本机用户能读到；默认没设置账号密码时认证是关闭的，不用担心一装上就把自己锁外面。",
+      "postInstallNotes": "装完需要重启 DSH，然后在「设置 → 身份认证」或直接访问 /dsh-webui-auth/login 创建管理员账号；若升级 DSH 后出现黄色警告，需再重启一次。",
+      "notes": "该插件通过给核心包打补丁实现认证，卸载时最好按 README 操作，避免残留。"
+    },
+    "summaryZh": "给 DSH WebUI 加登录认证，未登录的浏览器无法访问任何页面和接口。",
+    "usage": {
+      "prompt_tokens": 3609,
+      "completion_tokens": 1617,
+      "total_tokens": 5226,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1200
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2969
+    }
+  }
+}

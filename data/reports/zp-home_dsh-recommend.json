@@ -1,0 +1,37 @@
+{
+  "id": "zp-home/dsh-recommend",
+  "analyzedAt": "2026-08-17T11:21:05.661Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 含 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-recommend",
+      "evidence": "dsh plugin --profile web add dsh-recommend"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 插件生态做一个透明的排行榜和推荐。它每隔几小时自动抓取 GitHub 上所有标记了 dsh-plugin 话题的仓库，用公开的评分公式打分排序，生成榜单。装到 DSH 后，你可以在设置页看到“插件排行”标签，能搜索、筛选、排序、看趋势、一键复制安装命令，甚至一键安装插件；它还提供几个模型工具，让 AI 助手帮你查榜单、搜插件、按需求推荐插件、看发展榜、刷新数据。不想装插件的话，也可以直接用它的网页版排行榜。",
+      "level": "ok",
+      "risks": "会联网从 GitHub 拉取公开的插件元数据，不会读取你的私人文件或上传私密信息。唯一需要注意的是默认数据源 raw.githubusercontent.com 在国内可能访问不了，功能会异常，需要按 README 改成镜像。",
+      "postInstallNotes": "安装后需要重启 DSH web 生效；如果网络访问不了 raw.githubusercontent.com，编辑 node_modules/dsh-recommend/cordis.patch.yml，把 dataUrl 改成 README 提供的 jsDelivr CDN 地址，再重启。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件生态透明排行榜与推荐工具：自动抓取 GitHub 上所有 dsh-plugin 仓库并公开评分排序，提供网页版榜单和 DSH 内的查询/推荐/趋势工具及设置页排行标签。",
+    "usage": {
+      "prompt_tokens": 5225,
+      "completion_tokens": 3192,
+      "total_tokens": 8417,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2744
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4585
+    }
+  }
+}

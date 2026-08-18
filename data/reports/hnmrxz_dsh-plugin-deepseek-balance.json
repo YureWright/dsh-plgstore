@@ -1,0 +1,37 @@
+{
+  "id": "hnmrxz/dsh-plugin-deepseek-balance",
+  "analyzedAt": "2026-08-17T11:51:16.555Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 描述了完整的 DSH 插件安装与工作原理。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-deepseek-balance",
+      "evidence": "npm install dsh-plugin-deepseek-balance"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 的底部状态栏里显示你的 DeepSeek 账户余额，每 30 秒自动刷新，也可以点一下立刻刷新。它直接复用你已有的 DeepSeek API Key，不用另外填写，而且 Key 只在后台进程里用，浏览器页面看不到。支持中文和英文界面。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会用你的 DeepSeek API Key 去查询余额，但这个 Key 本身不会传到浏览器或第三方。",
+      "postInstallNotes": "需要手动在你的 DSH web profile 目录（如 ~/.dsh/profiles/web）下安装依赖，并在 cordis.patch.yml 里加入插件配置，然后重启 dsh。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 底部状态栏实时显示 DeepSeek 账户余额的小插件。",
+    "usage": {
+      "prompt_tokens": 2209,
+      "completion_tokens": 616,
+      "total_tokens": 2825,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 292
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1569
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "leavestring/awesome-dsh-background-plugin",
+  "analyzedAt": "2026-08-17T11:59:12.398Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 包含 dsh.bundle/dsh.client 字段，且依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "dsh plugin --profile web add ./awesome-dsh-background-plugin-0.1.9.tgz"
+    },
+    "evaluationReport": {
+      "intro": "这款插件可以给 DSH Web 聊天界面换上你喜欢的背景图片，也可以选择预设的氛围效果（比如极光、余烬、宣纸），还支持调整透明度、模糊度、图片显示方式等。所有设置会自动保存，重启后依然有效。图片是在你自己的电脑上处理的，不会上传到第三方服务。",
+      "level": "ok",
+      "risks": "安装脚本会修改 DSH 的 host-apiproxy 配置文件，把背景设置所需的命名空间加入白名单，这属于对 DSH 安装目录的修改；你的背景图片会以 base64 编码存在本地设置文件（如 ~/.dsh/settings.yaml），设置文件可能因此变大，其他能访问该文件的人理论上能看到图片内容。除此之外没有发现明显风险。",
+      "postInstallNotes": "装完后需要完全停止并重启 DSH（dsh web），并在浏览器中强制刷新（Ctrl+F5）；如果设置保存后回滚，需要重新运行 node scripts/expose-namespace.mjs。",
+      "notes": "该插件未以 npm 包形式直接发布，需要从 GitHub 克隆后本地打包（pnpm pack）再通过 dsh plugin add 安装；同时它依赖修改 DSH 官方白名单，升级 DSH 后可能需要重新执行一次脚本。"
+    },
+    "summaryZh": "让 DSH Web 界面支持自定义图片/氛围背景的插件，带实时预览和自动保存。",
+    "usage": {
+      "prompt_tokens": 4567,
+      "completion_tokens": 4128,
+      "total_tokens": 8695,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3682
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3927
+    }
+  }
+}

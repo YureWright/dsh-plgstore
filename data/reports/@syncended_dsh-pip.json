@@ -1,0 +1,37 @@
+{
+  "id": "@syncended/dsh-pip",
+  "analyzedAt": "2026-08-16T13:46:00.719Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 包含 @deepseek-ai/cordis 及多个 dsh-client 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@syncended/dsh-pip",
+      "evidence": "dsh plugin --profile web add @syncended/dsh-pip"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加了一个小窗聊天功能。它能让聊天窗口悬浮在其他窗口上面，这样你就不用切回主页面，也能继续对话、切换会话、查看流式回复和发消息。如果浏览器不支持原生画中画，它会在页面内显示一个浮窗来替代。要求使用较新的 Chromium 浏览器和 DeepSeek Harness 的 web 模式。",
+      "level": "ok",
+      "risks": "没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后网页右下角会出现一个聊天气泡按钮；若要用原生画中画，需使用支持 Document Picture-in-Picture API 的 Chromium 浏览器。",
+      "notes": "该插件要求 DeepSeek Harness 0.1.0-rc.6 或更高版本并使用 web profile；原生画中画仅 Chromium 支持，其他浏览器会自动使用页面内浮窗。"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面添加画中画小窗聊天，支持悬浮、切换会话、流式回复和快速发送消息。",
+    "usage": {
+      "prompt_tokens": 2942,
+      "completion_tokens": 1627,
+      "total_tokens": 4569,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1236
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2302
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@mlgbnb/dsh-archive-manager",
+  "analyzedAt": "2026-08-18T14:57:08.157Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@mlgbnb/dsh-archive-manager",
+      "evidence": "dsh plugin --profile web add -w @mlgbnb/dsh-archive-manager"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页版用的，专门管理那些被归档（暂时隐藏）的聊天会话。装好之后，你可以在设置页里看到所有归档的会话，能搜索、按项目查看、预览里面的对话内容，也可以一键恢复或彻底删除，方便整理聊天记录。界面风格和 Codex 很像。",
+      "level": "ok",
+      "risks": "它会读取 DSH 本地的会话归档数据（包括具体对话内容），在网页里显示给你看；如果你点了“物理删除”，会真正删除磁盘上的会话文件。没发现会把数据传到外部服务器或偷偷摸别的文件。",
+      "postInstallNotes": "README 提醒要确认 ~/.dsh/profiles/web/package.json 里的 dsh.profile.bundles 已经加上 @mlgbnb/dsh-archive-manager，然后重新启动 dsh --profile web，再到 设置->插件 里找到“归档管理”卡片使用。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DSH 网页版增加会话归档管理功能，可以预览、恢复和删除归档的聊天记录。",
+    "usage": {
+      "prompt_tokens": 3069,
+      "completion_tokens": 1497,
+      "total_tokens": 4566,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1122
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2429
+    }
+  }
+}

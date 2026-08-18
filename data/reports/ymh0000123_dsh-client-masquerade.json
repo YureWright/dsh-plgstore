@@ -1,0 +1,37 @@
+{
+  "id": "ymh0000123/dsh-client-masquerade",
+  "analyzedAt": "2026-08-17T11:59:23.987Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/ymh0000123/dsh-client-masquerade.git",
+      "evidence": "dsh plugin --profile web add github:ymh0000123/dsh-client-masquerade"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你在 DSH 里把自定义模型伪装成 Claude Code 或 Codex 客户端。它通过给配置的 provider 添加假请求头，让一些靠请求头识别客户端的网关（比如 agentrouter）以为你用的是这些官方客户端，从而放行或正确路由。它提供一个设置页面和一个 mask_client 工具，可以一键开启、关闭或切换伪装，还能测试伪装是否生效。",
+      "level": "ok",
+      "risks": "它会修改你 DSH 本地安装中 dsh-llm-pi-ai 适配器的代码文件（打补丁），并会把伪装用的请求头写进你的配置文档，这些头会随每次请求发送到你配置的上游网关。卸载后补丁不会自动还原，需要手动操作。另外，伪装行为可能违反你所连接的服务商的使用条款，使用前请自行评估。",
+      "postInstallNotes": "安装后需要应用 User-Agent 补丁（在设置页一键应用，或手动运行 patches/apply-pi-ai-useragent-patch.mjs），然后重启 dsh web；同时确保已经在 Settings → Models 里配置好 llm-pi-ai 自定义 provider。",
+      "notes": "该插件会修改 dsh-llm-pi-ai 适配器文件，升级或重装该适配器后需重新应用补丁；卸载后有两个残留需手动清理（补丁和已写入的 headers）。"
+    },
+    "summaryZh": "让 DSH 中的自定义模型在请求时伪装成 Claude Code / Codex 客户端，以通过某些网关的身份识别。",
+    "usage": {
+      "prompt_tokens": 3865,
+      "completion_tokens": 3731,
+      "total_tokens": 7596,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3227
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3225
+    }
+  }
+}

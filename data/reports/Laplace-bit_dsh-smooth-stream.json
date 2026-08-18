@@ -1,0 +1,37 @@
+{
+  "id": "Laplace-bit/dsh-smooth-stream",
+  "analyzedAt": "2026-08-17T11:33:58.929Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-smooth-stream",
+      "evidence": "README 原文：dsh plugin --profile web add dsh-smooth-stream"
+    },
+    "evaluationReport": {
+      "intro": "这是 DeepSeek Harness 聊天界面的一个社区插件，主要让 AI 回复的文字显示得更丝滑——文字会像打字机那样一个个出现，不会突然整段蹦出来或卡一下再补上；新行和工具卡片会平滑滑入；看历史消息时滚动条不会被抢走；系统开启“减弱动态效果”时会自动改用直接显示全文。总之就是让阅读回复更顺眼、不闪烁。",
+      "level": "ok",
+      "risks": "会修改 DeepSeek Harness 的本地用户设置文件（比如保存“自动展开思考”的偏好），数据只存在你电脑上，不会上传；插件本身不读取聊天内容，也不连接外部服务器。代码来自公开的 GitHub 仓库，安装的 npm 包由作者发布，没有发现隐私风险。",
+      "postInstallNotes": "安装后需要启动或重启 DeepSeek Harness Web 界面让插件生效（启动后日志出现 \"[dsh-smooth-stream] plugin loaded!\" 即成功）。默认设置即可用；如需调整，可在 Web 设置的插件配置里改“自动展开思考”，或在 profile 的 cordis.patch.yml 里修改 preset。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-smooth-stream 是 DeepSeek Harness 的社区插件，为 Web 对话提供丝滑流式渲染，让 AI 回复逐字平滑出现、不闪烁。",
+    "usage": {
+      "prompt_tokens": 3366,
+      "completion_tokens": 3885,
+      "total_tokens": 7251,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3436
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2726
+    }
+  }
+}

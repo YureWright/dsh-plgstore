@@ -1,0 +1,37 @@
+{
+  "id": "@moguiyu/dsh-tavily-backend",
+  "analyzedAt": "2026-08-16T13:29:57.065Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，且 peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-home-paths，README 描述其注册到 harness webServer，属于 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@moguiyu/dsh-tavily-backend",
+      "evidence": "See the [workspace README](../../README.md) for install and configuration."
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的一个后台服务，专门管 Tavily 搜索的开关和 API 密钥列表。它提供几个网页接口，可以查看每个密钥的使用量、管理密钥列表（密钥会打码）、以及切换搜索功能的开和关。设置数据存在 ~/.dsh/ 目录下的文件里，权限只允许自己读写，不存密钥明文。",
+      "level": "ok",
+      "risks": "它会在你的电脑上创建或修改 ~/.dsh/tavily-manager.json 和 ~/.dsh/tavily-toggle.json 两个配置文件，用于保存搜索开关和密钥列表（密钥打码）。不会上传数据到外部服务器，也没有发现其他明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Tavily 搜索引擎的后台管理插件，支持密钥列表管理和搜索开关控制。",
+    "usage": {
+      "prompt_tokens": 1728,
+      "completion_tokens": 861,
+      "total_tokens": 2589,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 503
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1088
+    }
+  }
+}

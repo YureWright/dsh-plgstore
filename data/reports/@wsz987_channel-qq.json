@@ -1,0 +1,37 @@
+{
+  "id": "@wsz987/channel-qq",
+  "analyzedAt": "2026-08-17T11:12:07.789Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-* 核心包，README 给出 DSH 安装命令，代码是 DSH 频道适配器。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wsz987/channel-qq",
+      "evidence": "pnpm add @wsz987/channel-qq"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 用的 QQ 机器人频道适配器，让 DSH 能通过腾讯官方 SDK 连接 QQ 开放平台的机器人，收发消息（文本、图片、文件、音频、视频），还支持流式输出（私聊原生流式、群聊缓冲一次发送）。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只使用腾讯官方 SDK 与 QQ 服务器通信，不碰本地文件；AppSecret 通过凭证系统读取，不会出现在配置或日志里。",
+      "postInstallNotes": "需要在配置里填 QQ 开放平台的 appId（非机密），并通过环境变量 QQBOT_APP_SECRET 设置 AppSecret；根据需要调整 markdownSupport、streaming 等选项。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 QQ 频道适配器，基于腾讯官方 SDK，支持文本/媒体消息和流式输出，需要配置 QQ 开放平台凭证。",
+    "usage": {
+      "prompt_tokens": 1790,
+      "completion_tokens": 1039,
+      "total_tokens": 2829,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 691
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1150
+    }
+  }
+}

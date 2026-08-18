@@ -1,0 +1,37 @@
+{
+  "id": "dsh-file-drop",
+  "analyzedAt": "2026-08-16T13:33:41.928Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client，依赖 @deepseek-ai/dsh 核心包，且 README 给出 dsh plugin add 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-file-drop",
+      "evidence": "dsh plugin --profile <name> add dsh-file-drop"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你把电脑上的文件或文件夹直接拖进 DSH 窗口，松手后真实路径就会自动填到输入框里，不用手动找路径。它只读取路径，不传文件内容，所以再大的文件也是瞬间完成。",
+      "level": "caution",
+      "risks": "它会在后台启动一个隐藏的 PowerShell 小窗和本地服务，用来截获拖放的文件路径；会在工作区创建 .dsh-file-drop 文件夹存放日志和临时文件。拖放时真实路径会发给本地服务，但不会联网。整体在本地运作，不过涉及系统级拖放拦截，建议留意。",
+      "postInstallNotes": "需要先安装 pnpm（npm install -g pnpm）；若通过 git 方式安装，需在 pnpm-workspace.yaml 的 allowBuilds 放行 prepare 脚本。",
+      "notes": "仅支持 Windows（依赖 OLE/CF_HDROP 拖放机制）。"
+    },
+    "summaryZh": "拖放文件/文件夹到 DSH 窗口，自动把真实路径写入输入框，不传输文件内容。",
+    "usage": {
+      "prompt_tokens": 2578,
+      "completion_tokens": 1126,
+      "total_tokens": 3704,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 752
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1938
+    }
+  }
+}

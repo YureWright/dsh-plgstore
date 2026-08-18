@@ -1,0 +1,37 @@
+{
+  "id": "NanmiCoder/dsh-auto-mode",
+  "analyzedAt": "2026-08-16T11:59:55.375Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 明确声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@nanmicoder/dsh-auto-mode",
+      "evidence": "dsh plugin --profile web add @nanmicoder/dsh-auto-mode"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个叫 Auto 的权限模式，介于\"只能写工作区\"和\"完全放开\"之间。打开后，AI 干活时日常的读写项目文件、跑构建、跑测试会自动放行；一旦遇到删已有数据、改 Git/数据库、往外部写东西这类有风险的操作，它会先用大模型判断一下，拿不准就问你要不要继续；如果是想删系统目录、绕过权限、偷凭据这类危险动作，会直接拦住。它相当于给 AI 的权限上了一道智能闸门，但本身不是操作系统级沙箱，官方沙箱还得继续开着。",
+      "level": "ok",
+      "risks": "它在 Auto 模式下会把 AI 的执行权限放大到 danger-full-access，全靠大模型来判断每一步危不危险，判断万一出错，AI 可能误删项目里的文件或把敏感数据发到外部。另外它会看到当前会话里你给 AI 的指令和待执行的命令描述，插件本身也会读取一些配置。它不是操作系统沙箱，挡不住绕过 Harness 直接调系统的操作。",
+      "postInstallNotes": "装完后需要刷新 DSH 的 Web UI，把权限模式从 Workspace Write 切到 Auto（在它和 Full access 之间），并确认风险提示。之后可以按需在配置里指定 classifierProvider、classifierModel 等参数，不指定会默认用当前会话的 DSH 模型。注意前提是已经装好 DeepSeek Harness。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 增加一个 Auto 自动审批模式：日常开发操作自动放行，风险操作先由大模型分类判断，拿不准才问人，危险操作直接拒绝。",
+    "usage": {
+      "prompt_tokens": 3189,
+      "completion_tokens": 2170,
+      "total_tokens": 5359,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1642
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2549
+    }
+  }
+}

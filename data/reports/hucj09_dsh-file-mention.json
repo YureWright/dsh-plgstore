@@ -1,0 +1,37 @@
+{
+  "id": "hucj09/dsh-file-mention",
+  "analyzedAt": "2026-08-17T12:12:33.856Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 字段，README 给出 dsh plugin add 安装命令，确属 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@hucj/dsh-file-mention",
+      "evidence": "dsh plugin --profile web add @hucj/dsh-file-mention"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH（DeepSeek Harness）的网页版界面用的，让用户能在聊天输入框里输入 @ 来快速选择工作区里的文件，然后插入 @路径 让 AI 能直接读取那个文件。它会根据 git 追踪和 .aiinclude 配置来过滤文件，支持实时搜索、目录引用、最近修改优先等功能。用户不用懂技术也能理解。",
+      "level": "ok",
+      "risks": "它会在你电脑上运行 git 命令，读取工作区里被 git 跟踪的文件列表和未跟踪的新文件，还可能根据 .aiinclude 配置读取被忽略文件的路径。这些信息只用于在 DSH 界面显示文件菜单，不会上传到外部服务器。但如果你屏幕被别人看到，可能泄露项目文件结构。",
+      "postInstallNotes": "安装后需要重启 dsh web（新 bundle 只在下次启动时加载），浏览器按 Ctrl+F5 强刷，然后在输入框输入 @ 验证。另外需确保宿主已包含 @deepseek-ai/dsh-client-ui-input-trigger（标准 web 部署默认包含）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页版提供 @ 引用工作区文件的功能，支持 git 过滤、.aiinclude 配置和实时搜索。",
+    "usage": {
+      "prompt_tokens": 3703,
+      "completion_tokens": 1229,
+      "total_tokens": 4932,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 820
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3063
+    }
+  }
+}

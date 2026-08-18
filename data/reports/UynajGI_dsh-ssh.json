@@ -1,0 +1,37 @@
+{
+  "id": "UynajGI/dsh-ssh",
+  "analyzedAt": "2026-08-17T11:48:44.556Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 依赖了 @deepseek-ai/cordis 和多个 @deepseek-ai/dsh-* 核心包，README 将其描述为 DeepSeek Harness 的 SSH 远程执行插件，属于 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ssh",
+      "evidence": "npm i dsh-ssh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 通过 SSH 远程操作另一台电脑。装好之后，AI 可以像在本地一样在远程服务器上运行命令、读写文件、打开终端，还能通过跳板机连接内网机器。适合需要把 AI 接到远程开发环境、远程服务器上的场景。",
+      "level": "ok",
+      "risks": "会读取本机的 ~/.ssh/config 和 SSH 私钥用于连接远程主机；会在远程主机上执行命令和文件操作；会在本地创建一个路由目录来映射远程路径。这些操作都是功能所需，但请确保你信任所连接的远程主机，并保护好 SSH 凭据。",
+      "postInstallNotes": "需要在 cordis.yml 中配置 SSH 连接参数（host、username、privateKey/password 或 agent、cwd 等），Web 界面还需在对应 patch 文件中启用并配置 dsh-ssh 相关组件。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-ssh 是 DeepSeek Harness 的 SSH 远程执行插件，让 AI 通过 SSH 在远程主机上跑命令、读写文件，支持跳板机和多种认证。",
+    "usage": {
+      "prompt_tokens": 3744,
+      "completion_tokens": 2172,
+      "total_tokens": 5916,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1779
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3104
+    }
+  }
+}

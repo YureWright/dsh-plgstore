@@ -1,0 +1,37 @@
+{
+  "id": "yoke233/dsh-openai-codex-auth",
+  "analyzedAt": "2026-08-17T12:08:30.537Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 给出了 dsh plugin 安装命令，符合 DSH 插件的判定标准。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/yoke233/dsh-openai-codex-auth.git",
+      "evidence": "dsh plugin --profile web add github:yoke233/dsh-openai-codex-auth"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness（DSH）用户用自己的 ChatGPT 订阅账号登录 OpenAI Codex。装好后，你可以在 DSH 设置页面点“登录 OpenAI”，完成授权后插件会自动保存登录凭据、自动续期，并把 Codex 模型接入 DSH，还能查看你的 Codex 用量、剩余额度和重置时间。",
+      "level": "ok",
+      "risks": "它会把你的 OpenAI 登录令牌保存在本地文件（默认位于 DSH 数据目录下的 openai-codex-auth.json）。为了登录和显示设置页，它会在本机启动两个只监听 127.0.0.1 的小服务，正常情况下只有你自己电脑上的程序能访问。它还会连接 OpenAI 官方服务器来换取和刷新令牌、查询用量。没发现它会向其他第三方服务器发送数据。",
+      "postInstallNotes": "安装后重启 DSH 的 web profile，然后在 DSH Web 的“设置 → OpenAI Codex”里完成 OpenAI 登录，并在“模型提供方”中选择 openai-codex。如果网络需要代理，启动 DSH 前设置 HTTP_PROXY/HTTPS_PROXY 并加上 NODE_USE_ENV_PROXY=1。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 中直接用 ChatGPT 账号登录 OpenAI Codex，自动管理凭据并查看用量。",
+    "usage": {
+      "prompt_tokens": 2665,
+      "completion_tokens": 2415,
+      "total_tokens": 5080,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1954
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2025
+    }
+  }
+}

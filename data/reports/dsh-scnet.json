@@ -1,0 +1,37 @@
+{
+  "id": "dsh-scnet",
+  "analyzedAt": "2026-08-16T13:35:11.530Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.skills，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/lql341/dsh-scnet.git",
+      "evidence": "dsh plugin --profile web add \"github:lql341/dsh-scnet#main\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能指挥操作超算互联网（scnet.cn）这类国产超算集群。装上后，模型遇到集群、Slurm 作业、海光 DCU/DTK 这些话题时，会加载专门的技能，还能调用工具去做：列出/查看集群配置、生成 Slurm 作业脚本、配置 SSH 连接、探测新集群。简单说，就是帮你在 DSH 里管理超算集群的工具包。",
+      "level": "ok",
+      "risks": "插件会修改你电脑的 ~/.ssh 目录（用于添加集群 SSH 配置），生成的作业脚本里可能包含你的本机用户名。它还连接你指定的超算集群，但这些操作都需要你主动发起，不会悄悄传数据给别人。配置时注意别填错私钥路径和集群地址。",
+      "postInstallNotes": "安装后需要在 DSH 里配置集群连接信息（如 SSH 私钥、主机名等），具体可参考 scnet-hpc 技能的说明；首次使用建议先运行 scnet_probe_cluster 探测集群。",
+      "notes": "经评估确认是 DSH 插件。注意项目版本 0.1.0，且内容从 canonical 仓库同步，更新节奏以 canonical 为准；建议用 git 源安装以保证最新。"
+    },
+    "summaryZh": "DSH 插件：在 DeepSeek Harness 中管理超算集群（scnet.cn 等），支持 SSH 配置、Slurm 作业生成和集群探测。",
+    "usage": {
+      "prompt_tokens": 2083,
+      "completion_tokens": 3249,
+      "total_tokens": 5332,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2779
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1443
+    }
+  }
+}

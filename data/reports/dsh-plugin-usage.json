@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-usage",
+  "analyzedAt": "2026-08-18T14:55:05.377Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-usage",
+      "evidence": "dsh plugin --profile web add dsh-plugin-usage"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的 Token 用量统计插件。它能按天或自定义时间范围查看你用了多少 Token，按模型筛选看调用次数、输入/输出 Token、缓存命中和费用，还能自己给不同模型设置每百万 Token 的价格。界面有深色/浅色主题，图表是纯手写的，不依赖第三方图表库。",
+      "level": "ok",
+      "risks": "它会读取本机 DSH 的会话日志（~/.dsh/sessions/）来统计用量，但只是读取用量数据，不会读取对话内容，也不会把数据上传到其他地方。",
+      "postInstallNotes": "安装后需要重启 DSH web（运行 dsh web）才能生效。价格表有默认值，不配置也能用；如果要自定义，在设置里改就行。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 Token 用量统计插件，提供按天/自定义范围查看调用量、费用，支持模型筛选和自定义价格表。",
+    "usage": {
+      "prompt_tokens": 3637,
+      "completion_tokens": 1207,
+      "total_tokens": 4844,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 852
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2997
+    }
+  }
+}

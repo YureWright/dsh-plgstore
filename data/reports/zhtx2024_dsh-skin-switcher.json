@@ -1,0 +1,37 @@
+{
+  "id": "zhtx2024/dsh-skin-switcher",
+  "analyzedAt": "2026-08-17T13:17:12.309Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，导出 ./client，且提供 dsh plugin 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-skin-switcher",
+      "evidence": "dsh plugin --profile web add dsh-skin-switcher"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面换皮肤的小工具。装好之后，在设置界面会多出一个「皮肤」页面，你可以看到所有已经装好的皮肤，点一下按钮就能切换，也能一键恢复官方默认外观。切换皮肤不用重启服务器，等几秒页面会自动刷新。",
+      "level": "ok",
+      "risks": "这个插件会读写你电脑上的 ~/.dsh/cordis.patch.yml 配置文件（用来记录当前选了哪个皮肤），也会扫描插件目录里的皮肤包。它还会自动禁用官方自带的皮肤中心，避免两个管理器打架。除此之外没有发现其他明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web（或者等热重载），然后打开 设置 → 皮肤 页面使用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Web GUI 皮肤切换器，在设置界面里一键切换和管理已安装的皮肤，支持热重载无需重启。",
+    "usage": {
+      "prompt_tokens": 2259,
+      "completion_tokens": 563,
+      "total_tokens": 2822,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 221
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1619
+    }
+  }
+}

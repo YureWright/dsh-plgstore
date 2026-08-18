@@ -1,0 +1,37 @@
+{
+  "id": "KeLearns/dsh-navigation-bar",
+  "analyzedAt": "2026-08-17T12:01:34.866Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，并依赖 @deepseek-ai/dsh-client-ui-slots，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@kelearns/dsh-navigation-bar",
+      "evidence": "dsh plugin --profile web add @kelearns/dsh-navigation-bar"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页版用的导航条插件。它会在对话界面上加一排钢琴键样式的按钮，每个键对应一条你发的消息。鼠标悬停时能看到那轮对话的预览，点击就能跳转到对应的消息位置，方便在长对话里快速翻看和定位。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取当前会话的对话数据和界面滚动位置，不访问个人文件，也不连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web 实例，再刷新页面才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "钢琴键风格的会话内导航条，为 DeepSeek Harness Web 界面提供快速定位和预览多轮对话的能力。",
+    "usage": {
+      "prompt_tokens": 2619,
+      "completion_tokens": 481,
+      "total_tokens": 3100,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 162
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1979
+    }
+  }
+}

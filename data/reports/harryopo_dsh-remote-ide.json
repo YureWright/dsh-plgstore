@@ -1,0 +1,37 @@
+{
+  "id": "harryopo/dsh-remote-ide",
+  "analyzedAt": "2026-08-17T13:10:45.271Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle，且 peerDependencies 依赖 @deepseek-ai/dsh-settings 等官方核心包，README 给出了 dsh plugin add 安装命令，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-remote-ide",
+      "evidence": "dsh plugin --profile web add dsh-remote-ide"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 变成一个「远程 IDE」：你可以通过 SSH 连接一台远程 Linux 服务器，然后在 DSH 的网页界面里直接浏览服务器上的文件、用内置编辑器修改并保存（走 SFTP），还能打开一个真实的 SSH 终端窗口，就像直接在浏览器里操作那台服务器。不需要在服务器上安装任何代理，只要你有 SSH 账号就行。",
+      "level": "caution",
+      "risks": "它会读取你电脑上的 ~/.ssh/config 来帮你导入服务器配置；你填写的 SSH 密码会以明文形式保存在 ~/.dsh/dsh-remote-ide.json 文件里（权限设为 0600，只有你的账户能读，但其他以你身份运行的程序可能看到）。连接后，你在浏览器里打开的远程终端可以执行服务器上的命令，请确保你连接的是自己信任的服务器。官方说所有本地接口只对本机开放，局域网内其他人不会直接看到。",
+      "postInstallNotes": "重启 dsh web 后，在侧边栏打开“远程 IDE”，添加 SSH 主机（或从 ~/.ssh/config 导入），然后连接即可使用。无需额外配置环境变量。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 通过 SSH 连接远程服务器，直接在网页里管理远程文件、编辑保存并打开远程终端，实现远程开发。",
+    "usage": {
+      "prompt_tokens": 3700,
+      "completion_tokens": 1741,
+      "total_tokens": 5441,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1299
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3060
+    }
+  }
+}

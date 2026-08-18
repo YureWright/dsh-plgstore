@@ -1,0 +1,37 @@
+{
+  "id": "kunjinkao-os/dsh-mobile-gui-agent",
+  "analyzedAt": "2026-08-17T13:15:15.157Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出 dsh plugin add 安装命令，确为可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:kunjinkao-os/dsh-mobile-gui-agent#v0.2.0",
+      "evidence": "dsh plugin --profile web add github:kunjinkao-os/dsh-mobile-gui-agent#v0.2.0"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能控制你的安卓手机。把手机用 USB 调试连上电脑后，在 Harness 网页界面里选一台设备，告诉它要做什么（比如“打开设置设个 12 点的闹钟”），AI 就会自己截图、看界面、点击、滑动、输入文字，做完一步还会核对一下是否成功。敏感操作（发消息、转账、删除、安装应用等）会先问你同不同意。",
+      "level": "caution",
+      "risks": "它会通过 ADB 连接你的安卓手机，能读取屏幕截图和界面上的文字（可能包含聊天、账号等隐私信息），也能代替你执行点按、滑动、输入、发消息、转账等操作。这些敏感操作会先征求你的批准，但你需要确保手机只在自己可信的电脑上授权。它不会主动把数据上传到外部服务器，也不会改动你电脑上除 Harness 配置以外的文件。",
+      "postInstallNotes": "需要先安装 Android Platform Tools 和 adb，在手机上开启开发者选项和 USB 调试，并用 adb devices 确认设备状态为 device；然后在 Harness Web 配置里确认插件已加载；首次使用前建议先发一条普通消息初始化会话，再在 mobile_gui_agent 标签页里输入手机任务。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供安卓手机 GUI 操控能力，用自然语言通过 ADB 在网页端控制真实 Android 设备。",
+    "usage": {
+      "prompt_tokens": 4151,
+      "completion_tokens": 3359,
+      "total_tokens": 7510,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2855
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3511
+    }
+  }
+}

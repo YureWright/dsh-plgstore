@@ -1,0 +1,37 @@
+{
+  "id": "@wsz987/channel-dingtalk",
+  "analyzedAt": "2026-08-17T11:10:46.850Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-credentials 等 DSH 核心包，README 给出 dsh plugin 安装命令，确为 DSH 频道适配器"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wsz987/dsh-channels@beta",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add -w @wsz987/dsh-channels@beta"
+    },
+    "evaluationReport": {
+      "intro": "这是一个把钉钉（DingTalk）接入 DeepSeek Harness 的适配器，让钉钉机器人可以调用 DeepSeek 的能力。它支持收发文字、图片、文件、音频，回复时用钉钉的 AI 卡片进行流式更新。你可以选择走官方 SDK 的 WebSocket 模式，也可以用老的自建网关模式。",
+      "level": "ok",
+      "risks": "没发现明显风险。它需要配置钉钉应用的 AppKey 和 AppSecret，这些会保存在本机凭据里；运行时会连接钉钉的服务器。",
+      "postInstallNotes": "需要按 README 配置 config，例如 clientId 和 upstream.mode；AppSecret 通过环境变量 DSH_CHANNEL_DINGTALK_MAIN_CLIENT_SECRET 或凭据管理传入。",
+      "notes": "无"
+    },
+    "summaryZh": "钉钉（DingTalk）频道适配器，让 DeepSeek Harness 能通过钉钉收发消息并流式回复 AI 卡片。",
+    "usage": {
+      "prompt_tokens": 1881,
+      "completion_tokens": 2379,
+      "total_tokens": 4260,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1996
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1241
+    }
+  }
+}

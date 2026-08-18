@@ -1,0 +1,37 @@
+{
+  "id": "AnacondaKC/dsh-stock-market",
+  "analyzedAt": "2026-08-17T11:26:57.490Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "构建后通过 DSH bundle 安装：`dsh plugin --profile web add link:/absolute/path/to/dsh-stock-market`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加了一个沪深 A 股行情侧栏和一堆股票查询工具。右侧能看到上证指数、深证成指等指数涨跌，还能查股票报价、K 线、排行、资金流、公司财报、新闻研报等。数据来自东方财富、腾讯、新浪等网站的免费公开接口，不需要你填任何 API 密钥。",
+      "level": "ok",
+      "risks": "它需要联网访问东方财富、腾讯财经等公开网站来获取行情，你的 IP 可能会被这些网站看到；它不读取本地文件或隐私，也不要求提供任何凭据。",
+      "postInstallNotes": "无；注：当前安装方式需先从源码构建，构建时需设置 DSH_WORKSPACE_ROOT。",
+      "notes": "该插件未发布到 npm，README 提供的安装命令是本地 link 路径，需要先手动构建；数据源为免费公开接口，可能随上游改版失效；依赖的 @deepseek-ai 包均为 rc 版本，建议确认与当前 DSH 兼容。"
+    },
+    "summaryZh": "为 DSH 提供沪深 A 股实时行情侧栏与免费股票数据查询工具。",
+    "usage": {
+      "prompt_tokens": 3393,
+      "completion_tokens": 2672,
+      "total_tokens": 6065,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2271
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2753
+    }
+  }
+}

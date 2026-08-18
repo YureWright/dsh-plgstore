@@ -1,0 +1,37 @@
+{
+  "id": "sulfide2085/dsh-llm-wechat",
+  "analyzedAt": "2026-08-17T11:38:44.395Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 配置并依赖 @deepseek-ai/cordis，且 README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@deepseek-ai/dsh-llm-wechat",
+      "evidence": "发布到 npm 后（待发布）：\n\n```sh\ndsh plugin --profile web add @deepseek-ai/dsh-llm-wechat\n```"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness（DSH）能把微信小程序「Coding Plan」里的 Deepseek-v4-flash 模型当成官方 DeepSeek 来用。它会自动处理微信返回内容里特殊的思考标签和工具调用格式，让 DSH 的界面和功能都正常显示。装上之后，你可以在模型选择器里选到 WeChat 的模型，还能调思考强度（off/high/max）。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 $DSH_HOME/.credentials.yaml 文件里的 WECHAT_API_KEY（微信 API 令牌），并把请求发送到微信的服务器（chatapi.weixin.qq.com）。这些信息只用于调用微信接口，但如果你把配置文件或日志分享出去，令牌可能会泄露。另外它会在 DSH 的 profile 配置里追加一段 bundle 补丁，属于正常插件行为。",
+      "postInstallNotes": "装完后需要配置微信 API 令牌：在 $DSH_HOME/.credentials.yaml 里写入 WECHAT_API_KEY（或导出环境变量）。可选地在 $DSH_HOME/settings.yaml 里加 llm-wechat 配置段调整默认设置，然后重启 dsh web。如果之前用 llm-pi-ai.providers.weixin 配过微信，需要先删除那段旧配置，否则会冲突。",
+      "notes": "README 标注 npm 包“待发布”，如果 dsh plugin add 失败，可能还没发布到 npm，可考虑从 GitHub 仓库获取。另外插件复制了官方 dsh-llm-deepseek 的部分内部代码，DSH 升级后可能需要重新对齐。微信网关本身有限流（每5小时约1200次）和60秒超时限制，日常建议用 high 思考档。"
+    },
+    "summaryZh": "让 DeepSeek Harness 接入微信小程序「Coding Plan」的 Deepseek-v4-flash 模型，并自动转换思考标签与工具调用格式的适配插件。",
+    "usage": {
+      "prompt_tokens": 4035,
+      "completion_tokens": 6714,
+      "total_tokens": 10749,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6124
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3395
+    }
+  }
+}

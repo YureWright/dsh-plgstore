@@ -1,0 +1,37 @@
+{
+  "id": "sanshanya/better-model-provider",
+  "analyzedAt": "2026-08-17T11:59:07.917Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 明确声明了 dsh.bundle 与 dsh.client，且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/sanshanya/better-model-provider.git",
+      "evidence": "dsh plugin --profile web add github:sanshanya/better-model-provider"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个“模型能力”设置页面。以前有些模型设置（比如支持哪些“推理努力”档位、能不能接收图片、上下文窗口多大）只能手写 YAML 配置；装上它之后，可以在界面里直接勾选和填写，不用再碰 YAML。它本身不管理 API 密钥，密钥还是放官方 Models 页面。",
+      "level": "ok",
+      "risks": "它会在你的 DeepSeek Harness 设置里新增一个配置页，修改的是模型能力相关的本地配置；不会连接外部服务器，也不会读取密钥或私人文件。只要按说明先在官方 Models 页配好 provider 再使用，没有明显风险。",
+      "postInstallNotes": "装好后需要重启 dsh web，并硬刷新浏览器，设置侧边栏就会出现“Model capabilities”；建议先在官方 Models 页把 provider 和 API 密钥配好，再用这个插件补全模型能力。",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 增加图形化模型能力配置（推理档位、图片输入、上下文长度）的插件。",
+    "usage": {
+      "prompt_tokens": 2331,
+      "completion_tokens": 1650,
+      "total_tokens": 3981,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1266
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1691
+    }
+  }
+}

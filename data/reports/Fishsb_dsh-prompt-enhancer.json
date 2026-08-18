@@ -1,0 +1,37 @@
+{
+  "id": "Fishsb/dsh-prompt-enhancer",
+  "analyzedAt": "2026-08-17T11:27:35.581Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 且依赖 @deepseek-ai/dsh-client-runtime，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Fishsb/dsh-prompt-enhancer.git",
+      "evidence": "dsh plugin --profile web add github:Fishsb/dsh-prompt-enhancer#v3.1.3"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的提示词增强插件。你在输入框写个草稿，点一下✨，它会调用另一个大模型帮你把草稿写得更专业、更清晰，直接替换你的输入，不满意还能撤回。有5种优化模式，还支持模型链、记忆开关等。",
+      "level": "ok",
+      "risks": "增强时会把你的草稿发送给你配置的大模型服务，注意不要在草稿里放敏感信息；插件会通过补丁修改 DSH 的配置文件，建议提前备份。",
+      "postInstallNotes": "重启 DSH；到设置→模型与插件中配置优化模型链（填入 API 密钥等）。",
+      "notes": "无"
+    },
+    "summaryZh": "一键让 DeepSeek Harness 提示词更专业的增强插件，支持多模式、模型链与撤回。",
+    "usage": {
+      "prompt_tokens": 2142,
+      "completion_tokens": 3536,
+      "total_tokens": 5678,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3190
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1502
+    }
+  }
+}

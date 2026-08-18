@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-tool-describe-image",
+  "analyzedAt": "2026-08-17T11:07:21.845Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-tool-describe-image",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-tool-describe-image"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给纯文本大模型（例如 DeepSeek V4）增加“看图”能力的 DSH 插件。你在对话里发一张图片（本地文件、网址或聊天附件），它会自动调用一个支持视觉的大模型服务（如 Qwen-VL、GLM-4V、GPT-4o 或本地 Ollama）来描述图片，并把描述文字返回给当前对话，这样原本不能看图的模型也能理解图片内容。它还支持把拖拽/粘贴的图片自动转为引用、自定义提示词、多种接口协议（Chat Completions 或 Responses）等。",
+      "level": "ok",
+      "risks": "它会把你指定的图片内容发送到你配置的外部视觉服务，因此如果使用第三方云服务，图片会离开你的电脑；还会在 DSH 配置中保存 API 密钥。该插件自带的图片预览路由仅监听本机回环地址，其他设备无法访问。整体没有发现恶意行为。",
+      "postInstallNotes": "装完后需要到 DSH 设置（Settings → Plugin config → Web UI Plugins → “Image understanding”卡片）填写视觉服务的 baseURL、模型名，以及可选的 API 密钥（推荐用环境变量 VISION_API_KEY 引用），否则第一次调用会报错。",
+      "notes": "注意：包名 @linxin666/dsh-tool-describe-image 是个人/第三方作用域，并非 DeepSeek 官方发布；GitHub 仓库（zhu1090093659/dsh-web-ui）与包名不一致，安装时建议以 npm 包为准。另外插件要求 Node.js 22.19+ 或 24+，较旧版本可能无法运行。"
+    },
+    "summaryZh": "给纯文本大模型增加图像理解能力的 DSH 插件，通过调用 OpenAI 兼容视觉接口把图片转为文字描述。",
+    "usage": {
+      "prompt_tokens": 3870,
+      "completion_tokens": 2671,
+      "total_tokens": 6541,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2132
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3230
+    }
+  }
+}

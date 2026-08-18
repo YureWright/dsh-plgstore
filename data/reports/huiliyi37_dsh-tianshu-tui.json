@@ -1,0 +1,37 @@
+{
+  "id": "huiliyi37/dsh-tianshu-tui",
+  "analyzedAt": "2026-08-16T11:49:12.892Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huiliyi37/dsh-tianshu-tui",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile tui add @huiliyi37/dsh-tianshu-tui"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个好看的终端界面（TUI）。装上之后，你在终端里用 DeepSeek 写代码时，会看到更直观的界面：有快捷键、主题、会话切换、成本统计、代码智能检索等功能，还支持图像识别和 TDD 驱动的工作流。简单说，就是把 DeepSeek 编程助手在终端里的体验升级了一下，更好看更好用。",
+      "level": "ok",
+      "risks": "它会在你电脑的 ~/.dsh 目录下读写配置和会话数据；启动时会联网检查 npm 上的新版本，有更新会自动写入 profile（可以设置环境变量 DSH_TUI_SKIP_UPDATE=1 关掉）。运行时会临时接管终端界面，但退出时会恢复。除此之外没发现明显风险。",
+      "postInstallNotes": "需要先安装官方 CLI @deepseek-ai/dsh（0.1.0-rc.6），并确保 Node.js 版本符合要求（^22.19 || >=24），PATH 上有 pnpm。然后执行 README 里的安装命令，最后用 `npx -y @deepseek-ai/dsh --profile tui` 启动。如果之前装过旧版 dsh，注意避免 PATH 冲突，建议按 README 用 npx 方式启动。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 打造交互式终端 UI 的插件，提供主题、快捷键、会话管理和成本统计等增强功能。",
+    "usage": {
+      "prompt_tokens": 6214,
+      "completion_tokens": 2413,
+      "total_tokens": 8627,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1920
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5574
+    }
+  }
+}

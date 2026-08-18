@@ -1,0 +1,37 @@
+{
+  "id": "happyren/dsh-agent-messaging",
+  "analyzedAt": "2026-08-17T13:17:27.035Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 也给出了安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-agent-messaging",
+      "evidence": "npx -p @deepseek-ai/dsh dsh plugin --profile web add dsh-agent-messaging"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让两个独立的 DeepSeek Harness 会话（比如你在网页里开的两个会话）之间可以直接互相发消息，还能记录谁说了什么、谁验证了什么、谁决定了什么。这样两个会话就不会重复干活、互相矛盾，也不会卡住等对方。它还自带一个账单功能，能告诉你每条消息花了多少轮对话，帮你省钱。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你的用户目录下创建一个状态文件夹（比如 ~/.dsh/agent-messaging）来存消息记录，和正常插件行为一样。",
+      "postInstallNotes": "重启对应的 profile（README 说 Restart the profile），然后可以运行 npx dsh-agent-messaging doctor 检查安装是否正常。",
+      "notes": "无"
+    },
+    "summaryZh": "跨会话智能体消息插件，让多个 DeepSeek Harness 会话之间能互相通知、验证并记录决策，避免重复、矛盾和死锁。",
+    "usage": {
+      "prompt_tokens": 4228,
+      "completion_tokens": 717,
+      "total_tokens": 4945,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 360
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3588
+    }
+  }
+}

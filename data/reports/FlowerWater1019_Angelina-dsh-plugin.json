@@ -1,0 +1,37 @@
+{
+  "id": "FlowerWater1019/Angelina-dsh-plugin",
+  "analyzedAt": "2026-08-17T12:14:09.039Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-client-* 包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:FlowerWater1019/Angelina-dsh-plugin#main",
+      "evidence": "dsh plugin --profile web add github:FlowerWater1019/Angelina-dsh-plugin#main"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页端加了一套“安洁莉娜”主题皮肤和一只可拖拽的桌面小宠物。它会根据你电脑的本地时间自动切换黎明、白天、黄昏、夜晚的视觉效果，还带动态背景、终端风格美化，以及各种动画和互动效果（比如鼠标靠近时小宠物会看你、点击会说话、双击有重力特效）。它不会读取你的聊天内容或输入文字，所有偏好设置都只保存在浏览器的 localStorage 里。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在浏览器里存一些界面偏好（localStorage），并在本地提供一些图片和动画资源。插件本身不读取聊天内容，也不连接外部服务器。不过它包含角色媒体，媒体文件的授权和代码（MIT）是分开的，需注意不要随意分发。",
+      "postInstallNotes": "装完后，打开 http://127.0.0.1:3080 进入设置，在 Settings → Angelina Theme 里启用主题。如果 pnpm 在安装时拒绝构建，需要把 pnpm 提示的包名加到 Web profile 的 pnpm-workspace.yaml 的 allowBuilds 里，再重新安装。",
+      "notes": "非官方插件，与 Arknights/DeepSeek 无关。目前针对 DeepSeek Harness 0.1.0-rc.6 的 next 包，Harness 还在开发者预览阶段，后续版本可能需要更新插件。若你的开发版已内置 ui-rhodes-theme，需先禁用相关行避免重复主题。"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页端添加安洁莉娜主题皮肤、动态背景、桌面小宠物及多种互动效果的非官方美化插件。",
+    "usage": {
+      "prompt_tokens": 3014,
+      "completion_tokens": 1679,
+      "total_tokens": 4693,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1132
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2374
+    }
+  }
+}

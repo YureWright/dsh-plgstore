@@ -1,0 +1,37 @@
+{
+  "id": "@ulabe/dsh-conversation-nav",
+  "analyzedAt": "2026-08-16T13:37:14.447Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，引用了 @deepseek-ai/dsh-client-runtime，README 给出了 dsh plugin add 安装命令并调用 DSH 客户端 API。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@ulabe/dsh-conversation-nav",
+      "evidence": "dsh plugin --profile web add @ulabe/dsh-conversation-nav"
+    },
+    "evaluationReport": {
+      "intro": "这个插件在 DeepSeek Harness（DSH）的聊天界面右侧加一个悬浮按钮，点开后会出现一个抽屉，列出当前会话中你发过的所有消息。点击任意一条，界面就会平滑滚动到那条消息的位置并高亮，方便在长对话里快速找到之前说过的话，效果类似 DeepSeek 网页版。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取当前会话的消息列表并在界面上展示，数据本来就在本地客户端，不连接外部服务器，也不碰隐私文件。",
+      "postInstallNotes": "装完需要重启 DSH 才生效；如果用的是不含 dsh CLI 的桌面打包版，需要改用 install.ps1 脚本安装。",
+      "notes": "插件使用的 DSH 客户端 API 与版本耦合，DSH 大版本升级后可能需要适配。"
+    },
+    "summaryZh": "在 DSH 对话界面增加右侧悬浮导航，一键查看并跳转到所有用户消息的位置。",
+    "usage": {
+      "prompt_tokens": 2363,
+      "completion_tokens": 1611,
+      "total_tokens": 3974,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1252
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1723
+    }
+  }
+}

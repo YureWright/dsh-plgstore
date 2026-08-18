@@ -1,0 +1,37 @@
+{
+  "id": "lco117/dsh-think-any-lang",
+  "analyzedAt": "2026-08-17T12:11:06.520Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/schemastery，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/lco117/dsh-think-any-lang.git",
+      "evidence": "dsh plugin --profile web add github:lco117/dsh-think-any-lang"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的设置页面加了一个“思考语言”的下拉框，让你选择模型在思考（推理）时用哪种语言，比如中文、英语、日语等。它只是改了一下系统提示，不会额外调用模型，所以速度不受影响。最终回复还是用你平时用的语言，不会变成你选的思考语言。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读写本机上的设置文件，并往系统提示里加一段话，不会连接外部服务器或碰隐私文件。",
+      "postInstallNotes": "装完后打开 DSH 的设置 → 通用，在“思考语言”下拉框里选一个语言就行。默认是中文。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加“思考语言”设置，让你指定模型用哪种语言进行内部推理，而回复语言不受影响。",
+    "usage": {
+      "prompt_tokens": 3268,
+      "completion_tokens": 1194,
+      "total_tokens": 4462,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 835
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2628
+    }
+  }
+}

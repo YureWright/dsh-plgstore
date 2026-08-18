@@ -1,0 +1,37 @@
+{
+  "id": "dsh-agy",
+  "analyzedAt": "2026-08-17T11:12:18.350Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-llm，README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-agy",
+      "evidence": "dsh plugin --profile web add dsh-agy"
+    },
+    "evaluationReport": {
+      "intro": "这是给 DeepSeek Harness 用的插件，让你能用 Google Antigravity 的模型。它帮你用 Google 账号登录 Antigravity，支持管理多个账号，遇到限流会自动换账号，还能在网页上查看每个模型还剩多少额度。你可以用命令行或网页界面来操作，适合想用 Antigravity 但不想手动处理登录和限流的人。",
+      "level": "caution",
+      "risks": "它会在你电脑上存放登录凭据（加密在 ~/.dsh 目录下），并把你的 Google 账号信息发给 Google 和 Antigravity 的服务器。它还默认启用多账号切换、设备指纹模拟等绕过限制的手段，这可能违反 Antigravity 的使用条款，导致你的 Google/Antigravity 账号被限制或封禁。",
+      "postInstallNotes": "安装后需要先登录：运行 dsh-agy login 按提示用 Google 账号授权，或者启动 DSH Web 后访问 /agy 页面点“Login with Google”。",
+      "notes": "README 自带免责声明：该插件使用 Google 的消费者 OAuth 客户端和 Antigravity Cloud Code API，可能违反 Antigravity 服务条款；默认启用的多账号轮换、设备指纹和签名绕过功能旨在规避上游限制，请自行承担风险。"
+    },
+    "summaryZh": "将 Google Antigravity 接入 DeepSeek Harness 的插件，支持多账号池、429 自动轮换、设备指纹和网页/命令行管理，但使用非官方 OAuth 有封号风险。",
+    "usage": {
+      "prompt_tokens": 3653,
+      "completion_tokens": 3122,
+      "total_tokens": 6775,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2653
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3013
+    }
+  }
+}

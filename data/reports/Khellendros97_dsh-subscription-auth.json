@@ -1,0 +1,37 @@
+{
+  "id": "Khellendros97/dsh-subscription-auth",
+  "analyzedAt": "2026-08-17T13:17:14.066Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis 等核心包，README 提供 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-subscription-auth",
+      "evidence": "dsh plugin --profile web add dsh-subscription-auth"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DSH 用 ChatGPT、Claude、Grok、Kimi 的会员账号直接登录，不需要 API key。登录后可以在对话里选这些订阅账号对应的模型，还能调整思考强度（比如高中低）。支持四个渠道：ChatGPT 订阅、Claude Pro/Max、Grok 和 Kimi 订阅。",
+      "level": "ok",
+      "risks": "登录时会在浏览器打开对应服务的官方授权页，你在官方页面输入账号密码。插件会拿到授权码并换成登录令牌，令牌保存在本机 DSH 配置里（credential 服务）。如果有人能访问你的电脑或配置文件，可能冒用你的订阅身份。插件本身没有额外上传你的个人信息。",
+      "postInstallNotes": "装完需要重启 dsh 并硬刷新浏览器（Cmd/Ctrl+Shift+R）。另外确保 Node.js ≥20 且已安装 pnpm（没有的话先 npm install -g pnpm）。可选：在设置里按需调整各渠道的 apiBaseURL、redirectPort 等参数。",
+      "notes": "该插件使用各平台内置的 client_id 进行 OAuth，可能违反相关平台的服务条款，存在账号风险，请自行判断。依赖了 @deepseek-ai/dsh-llm 等可能尚未公开的包，建议确认与当前 DSH 版本兼容。"
+    },
+    "summaryZh": "为 DSH 增加订阅会员 OAuth 登录（ChatGPT/Claude/Grok/Kimi），用订阅账号而非 API key 使用各厂商模型。",
+    "usage": {
+      "prompt_tokens": 4375,
+      "completion_tokens": 1286,
+      "total_tokens": 5661,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 820
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3735
+    }
+  }
+}

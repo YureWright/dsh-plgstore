@@ -1,0 +1,37 @@
+{
+  "id": "anweat/dsh-web-search-pro",
+  "analyzedAt": "2026-08-17T11:24:38.489Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令，确为 DSH bundle 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-web-search-pro",
+      "evidence": "dsh plugin --profile web add dsh-web-search-pro   # 自动装 dsh-browser（dependency）+ 自动挂载 browser 行（本 patch）"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的增强版网页搜索工具。它能帮你同时搜索多个搜索引擎（如 DuckDuckGo、Bing、Exa 等）和多个平台（如 GitHub、B站、YouTube、小红书、Twitter 等），还能抓取网页内容、截图、保存搜索历史和缓存，甚至能按站点自定义解析规则。你装好后，AI 模型就可以直接调用它来搜索和读取网页，相当于给 AI 加了个多功能的‘网络浏览器’。",
+      "level": "caution",
+      "risks": "它会安装一些外部命令行工具（如 gh、yt-dlp、playwright 等），会占用磁盘空间；搜索历史和缓存会以 SQLite 文件形式存在本地；使用 Playwright 驱动浏览器时可能会打开网页、加载你保存的登录态（尤其是中文平台，如知乎、微博等），这意味着你的登录 cookie 可能被用于访问这些网站；如果配置了 API key（如 Exa、Jina），这些 key 会保存在本地配置或环境变量里。整体来看，它访问的都是你自己的本地数据和配置，没有明显的上传或外连行为。",
+      "postInstallNotes": "装完需要按 README 配置 settings.yaml 里的 API key（如 EXA_API_KEY、JINA_API_KEY）或环境变量；如果需要搜索某些平台（如 B站、YouTube、小红书等），还要额外安装对应的外部依赖（gh、bili-cli、yt-dlp、opencli 等）；如果要使用中文平台的登录态功能，还需要运行 save-login.mjs 脚本保存登录状态，并在配置里指定 storageStatePath。",
+      "notes": "注意依赖 @anweat/dsh-browser 目前可能尚未发布到 npm，本地测试需要显式用 dsh plugin add ../dsh-browser ../dsh-web-search-pro 一起安装；另外它依赖的 @deepseek-ai/* 版本是 rc 版，如果你用的是非标准版本的 DeepSeek Harness，可能需要对齐版本。"
+    },
+    "summaryZh": "增强型多引擎网页搜索与抓取插件，支持多平台搜索、缓存、截图和登录态爬取。",
+    "usage": {
+      "prompt_tokens": 3049,
+      "completion_tokens": 1180,
+      "total_tokens": 4229,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 561
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2409
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@kakadeka/dsh-baton",
+  "analyzedAt": "2026-08-17T11:11:25.589Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 字段并依赖多个 @deepseek-ai/dsh-* 核心包，README 明确给出 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@kakadeka/dsh-baton",
+      "evidence": "dsh plugin --profile web add @kakadeka/dsh-baton"
+    },
+    "evaluationReport": {
+      "intro": "这是一个帮你“接力干活”的插件。平时你可能在不同电脑、不同 AI 工具之间切换，每次都要重新解释项目进展，很麻烦。Baton 就是解决这个的：你只要说一句“打卡上班”或“继续干活”，它就能自动同步代码、记住任务和设计决定、检查 Git 状态，让你无缝接着做。它包含了 19 个 baton_* 小工具，帮你管理任务、记录设计、自动提交推送、甚至根据任务难度自动选择 AI 模型。",
+      "level": "ok",
+      "risks": "它会读写你项目文件夹里的文档、记忆、任务记录等文件，还会自动执行 git 提交和推送（如果远程仓库是公开的，代码可能被别人看到）。安装包里带有 PowerShell 脚本，安装时可能会在电脑上执行。但这些都属于它宣称的功能范围，没发现额外的偷隐私或连外部服务器的行为。",
+      "postInstallNotes": "重启 dsh；首次使用时在项目目录运行 Baton init 初始化。",
+      "notes": "无"
+    },
+    "summaryZh": "Baton 是一个项目接力协作系统，让你在换电脑、换 AI 工具时用一句话无缝继续工作，自动管理 Git 同步、任务、设计规范和模型路由。",
+    "usage": {
+      "prompt_tokens": 3683,
+      "completion_tokens": 1438,
+      "total_tokens": 5121,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1026
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3043
+    }
+  }
+}

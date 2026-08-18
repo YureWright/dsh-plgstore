@@ -1,0 +1,37 @@
+{
+  "id": "Sqhao-O/dsh-docs",
+  "analyzedAt": "2026-08-17T11:20:36.170Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-doc",
+      "evidence": "Install the published plugin package:\n   dsh plugin --profile web add dsh-doc"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的本地文档处理插件。你把 PDF、Word、Excel、PPT、图片或扫描件放到工作区，它可以直接解析成 Markdown、纯文本或 JSON，还能离线 OCR 识别扫描图片里的中文和英文。所有操作都在本机完成，不会把文档传到云端，也不需要 API key。",
+      "level": "ok",
+      "risks": "它会读取你明确允许的本机文件（默认是 DSH 会话工作区，或你额外配置的 allowedLocalRoots 目录）；安装时会在你的用户目录下下载一个固定的 Python + OCR 运行环境（Windows x64 需要），下载过程有 SHA-256 校验；转换过程通过本地进程通信完成，不联网。除你授权外，不会碰其他文件。",
+      "postInstallNotes": "装完还需要手动编辑 cordis.patch.yml 加入 dsh-doc 的配置（比如 engine、runtimeDir、defaultOcr 等）；Windows x64 用户需运行 node scripts/fetch-runtime-win32-x64.mjs <目标目录> 下载离线 OCR 运行时；设置好后重启 dsh web，然后调用 dshdoc_health 验证。",
+      "notes": "仓库名为 dsh-docs，而 npm 包名为 dsh-doc，安装命令以 dsh-doc 为准；插件自带 Python 运行时的拉取脚本，首次配置步骤略多，但文档齐全。"
+    },
+    "summaryZh": "本地文档智能 DSH 插件：无需联网即可解析 PDF/Office/图片并进行 OCR，输出 Markdown/文本/JSON。",
+    "usage": {
+      "prompt_tokens": 3855,
+      "completion_tokens": 2225,
+      "total_tokens": 6080,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1745
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3215
+    }
+  }
+}

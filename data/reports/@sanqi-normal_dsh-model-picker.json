@@ -1,0 +1,37 @@
+{
+  "id": "@sanqi-normal/dsh-model-picker",
+  "analyzedAt": "2026-08-16T14:49:55.288Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@sanqi-normal/dsh-model-picker",
+      "evidence": "dsh plugin --profile web add @sanqi-normal/dsh-model-picker"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 dsh 的网页聊天界面换一个更好用的模型选择器：左侧是提供商列表（带模型数量），右侧是当前提供商的模型列表，两边都可以独立滚动，还支持跨提供商搜索，不用在一长串列表里翻找。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只改网页上的模型选择面板，不读取你的文件，也不联网上传数据。",
+      "postInstallNotes": "安装后需重启 web 服务（pnpm dsh web）才会生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 dsh 网页版打造的双栏模型选择器增强插件，左侧提供商列表、右侧模型列表，支持跨提供商搜索。",
+    "usage": {
+      "prompt_tokens": 2572,
+      "completion_tokens": 1470,
+      "total_tokens": 4042,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1169
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1932
+    }
+  }
+}

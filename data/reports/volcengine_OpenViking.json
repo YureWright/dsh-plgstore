@@ -1,0 +1,37 @@
+{
+  "id": "volcengine/OpenViking",
+  "analyzedAt": "2026-08-16T05:44:15.756Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.95,
+      "reason": "只提供 Python 包（pip install openviking），没有 package.json、dsh.bundle/dsh.client 或 dsh plugin add 安装命令，属于独立工具而非 DSH 插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "OpenViking 是一个面向 AI 代理的上下文数据库。它把记忆、资源、技能像文件一样组织在 viking:// 目录里，分三层（摘要、概览、详情）按需加载，能省 token，还能看每次检索的路径。需要自己安装并运行一个本地服务，或用它提供的在线演示。",
+      "level": "caution",
+      "risks": "它会在你的电脑上创建 ~/.openviking/ 文件夹保存配置文件，里面可能包含 API 密钥；运行时会作为一个本地服务，并联网调用你配置的 LLM 提供商（比如 OpenAI、Volcengine 等）。如果你把敏感内容放进 AI 代理的上下文，这些内容可能会被发送到外部 API。",
+      "postInstallNotes": "装完需要先运行 openviking-server init 按向导配置模型和提供商（会生成 ov.conf），再用 openviking-server 启动服务；如需接入特定 AI 代理，还要参考官方文档做集成配置。",
+      "notes": "经评估可能并非 DSH 插件（理由：没有 package.json、未声明 dsh.bundle/dsh.client，也没有 dsh plugin add 安装方式；GitHub 标签里的 dsh-plugin 不足以证明）。它是一个独立的 Python 服务，注意不要误装。"
+    },
+    "summaryZh": "OpenViking 是一个面向 AI 代理的开源上下文数据库，把记忆/资源/技能组织成 viking:// 文件系统并分层加载，以节省 token、支持可观测检索。",
+    "usage": {
+      "prompt_tokens": 3044,
+      "completion_tokens": 1892,
+      "total_tokens": 4936,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1449
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 2276
+    }
+  }
+}

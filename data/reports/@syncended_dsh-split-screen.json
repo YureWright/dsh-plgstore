@@ -1,0 +1,37 @@
+{
+  "id": "@syncended/dsh-split-screen",
+  "analyzedAt": "2026-08-16T13:45:55.102Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-client-* 核心包，且 README 明确给出了 dsh plugin add 安装命令，符合真正的 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@syncended/dsh-split-screen",
+      "evidence": "dsh plugin --profile web add @syncended/dsh-split-screen"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加了一个像 iTerm 那样的分屏功能，让你可以在一个浏览器窗口里同时打开多个会话，每个小窗格可以显示不同的工作区或会话，还能拖拽调整大小、交换窗格内容，方便同时盯好几个对话。",
+      "level": "ok",
+      "risks": "它会把你的分屏布局、窗格大小、选中的会话 ID 和没发出去的草稿保存在浏览器的本地存储（localStorage）里，只存在于当前浏览器和配置文件中，不会上传到外部服务器，也没发现其他风险。",
+      "postInstallNotes": "装完后需要重启 dsh web，并刷新已有的网页界面，然后在任意非空白会话里找到原生的 Split 标签页开始使用。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页版提供 iTerm 风格的分屏会话管理，支持多会话同屏、拖拽调整和持久化布局。",
+    "usage": {
+      "prompt_tokens": 2769,
+      "completion_tokens": 764,
+      "total_tokens": 3533,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 390
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2129
+    }
+  }
+}

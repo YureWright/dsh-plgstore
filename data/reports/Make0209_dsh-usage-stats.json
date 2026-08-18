@@ -1,0 +1,37 @@
+{
+  "id": "Make0209/dsh-usage-stats",
+  "analyzedAt": "2026-08-17T11:22:40.413Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin 安装命令，确为可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-usage-stats",
+      "evidence": "dsh plugin --profile web add dsh-usage-stats"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加一个用量统计页面：有一个 GitHub 风格的绿色热力图，显示你每天用了多少次；还有几个卡片，会统计总共花了多少 Token、缓存命中率、账户余额、使用次数等。另外你还可以给每个工作区起个更方便记忆的别名，方便查看统计。",
+      "level": "ok",
+      "risks": "它会读取本地的 DSH 会话日志（包含聊天记录和用量数据）来生成统计，这些数据只留在本地处理；余额查询会用你已配置的 DeepSeek API Key 请求 DeepSeek 官方接口。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后刷新页面即可生效；若需查看账户余额，请确保已配置 DeepSeek API Key。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 提供 GitHub 风格用量热力图、Token/余额统计看板和工作区别名管理。",
+    "usage": {
+      "prompt_tokens": 1960,
+      "completion_tokens": 1570,
+      "total_tokens": 3530,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1225
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1320
+    }
+  }
+}

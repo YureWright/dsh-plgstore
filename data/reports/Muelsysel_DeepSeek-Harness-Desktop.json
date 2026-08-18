@@ -1,0 +1,37 @@
+{
+  "id": "Muelsysel/DeepSeek-Harness-Desktop",
+  "analyzedAt": "2026-08-17T13:11:11.720Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 与 dsh-commands，确属 DSH 插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Muelsysel/DeepSeek-Harness-Desktop.git",
+      "evidence": "git clone https://github.com/Muelsysel/DeepSeek-Harness-Desktop.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你把 DeepSeek Harness 当成一个普通的桌面软件来用。装好后，你可以双击桌面上的图标，就会弹出一个独立窗口，里面显示的是你正在运行的 dsh web 界面，对话、工具、计划这些功能都在，不用在浏览器里切来切去。它还帮你自动创建快捷方式，也支持深色主题，关掉窗口就会退出后台程序。",
+      "level": "ok",
+      "risks": "它会在你的电脑上创建桌面快捷方式，修改你的 dsh profile 配置（有备份），并可能下载 Electron 等运行组件；安装版会在 %APPDATA% 存储自己的数据。除此之外没发现访问隐私或连接可疑服务器等风险。",
+      "postInstallNotes": "装完即可用；如想固定端口或让启动时自动开窗，可额外设置 DSH_DESKTOP_PORT 或 DSH_DESKTOP_LAUNCH 环境变量。",
+      "notes": "注意它需要 Node.js 22.19 或更高版本；安装方式比较特殊（不是靠 dsh plugin add，而是运行仓库里的 start.cmd / install.cmd）。"
+    },
+    "summaryZh": "把 DeepSeek Harness 装进原生桌面窗口的插件，支持一键快捷方式、深色主题和自动启动。",
+    "usage": {
+      "prompt_tokens": 3806,
+      "completion_tokens": 3186,
+      "total_tokens": 6992,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2756
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3166
+    }
+  }
+}

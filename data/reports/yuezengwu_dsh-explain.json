@@ -1,0 +1,37 @@
+{
+  "id": "yuezengwu/dsh-explain",
+  "analyzedAt": "2026-08-17T11:26:58.902Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/yuezengwu/dsh-explain.git",
+      "evidence": "npx @deepseek-ai/dsh@0.1.0-rc.6 plugin --profile web add github:yuezengwu/dsh-explain"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的学习模式插件。它能把你在多个工作会话里产生的有用内容，汇总成一个私人的、只存在你本地的学习笔记线程。你可以在对话框输入 /explain 来请求解释，也可以选中文字或对某条助手回复使用快捷操作，它会生成一条可编辑的命令草稿，不会自动发送。插件会记录你的偏好和进度，并根据你的反馈不断调整解释方式。学习历史存在你电脑上的一个 SQLite 数据库里，所有工作会话都会看到同一个学习线程。",
+      "level": "ok",
+      "risks": "它会在你的 DSH 数据目录（$DSH_HOME）下创建 dsh-explain/v1/thread.sqlite 数据库文件，并读写 $DSH_HOME/settings.yaml 来保存设置。这些数据都只存在本地，不会主动上传到外部服务器。插件会在界面上增加一个“Learning”标签页，展示学习内容。",
+      "postInstallNotes": "安装后需要确认 DSH 版本为 0.1.0-rc.6。如果 pnpm 在构建时要求审批，需要把提示的 dsh-explain 条目添加到当前 profile 的 pnpm-workspace.yaml 中，然后重新执行安装命令。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-explain 是一个把 DSH 工作会话变成私人本地学习笔记的插件，提供全局学习线程、/explain 命令和可自动调整的解释功能。",
+    "usage": {
+      "prompt_tokens": 4030,
+      "completion_tokens": 826,
+      "total_tokens": 4856,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 333
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3390
+    }
+  }
+}

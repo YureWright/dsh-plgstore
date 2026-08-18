@@ -1,0 +1,37 @@
+{
+  "id": "xiaoxianyu-office/dsh-router-flash",
+  "analyzedAt": "2026-08-17T11:46:16.182Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 README 提供了 dsh plugin add 安装命令，代码会写入 ~/.dsh/.agent-presets，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:xiaoxianyu-office/dsh-router-flash#v0.1.0",
+      "evidence": "dsh plugin --profile web add -w github:xiaoxianyu-office/dsh-router-flash#v0.1.0"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是个「模型调教包」。它针对 opencode-go 里的 DeepSeek V4 Flash 模型——默认情况下 Flash 会偷懒、回答肤浅（作者称「鬼模式」）。装上它并重启 DSH 后，它会在 DSH 的配置目录里放一个叫 router-flash 的预设法宝，给模型注入一套「先分类、先回顾、别跑题、深度思考、决策闭环」的引导词，让 Flash 进入高质量输出的「神模式」。整个过程只影响 Flash 模型，其他模型按原逻辑走。",
+      "level": "ok",
+      "risks": "它会在你的用户目录 ~/.dsh/.agent-presets 里写入一个预设文件（属于 DSH 配置区）；并声明了 danger-full-access 权限策略，理论上可访问更多文件，但代码目前只用于复制文件。不联网、不碰隐私；卸载后残留的 preset 文件夹需手动清理。",
+      "postInstallNotes": "重启 DSH 后，手动编辑 ~/.dsh/settings.yaml：把默认模型设为 opencode-go 的 deepseek-v4-flash（reasoningEffort: max），并把 agent-presets.default 指向 router-flash，再次重启。",
+      "notes": "确属 DSH 插件（package.json 含 dsh.bundle 与 dsh.client）。安装命令里的 --profile web 和 -w 是按 web profile 写的，若你的 profile 不同请对应调整。依赖 opencode-go 的 deepseek-v4-flash 模型，需先保证该模型可用。"
+    },
+    "summaryZh": "给 DeepSeek V4 Flash 模型自动加装高质量引导 preset 的 DSH 插件，让回答更深入、更靠谱。",
+    "usage": {
+      "prompt_tokens": 2756,
+      "completion_tokens": 5721,
+      "total_tokens": 8477,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5174
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2116
+    }
+  }
+}

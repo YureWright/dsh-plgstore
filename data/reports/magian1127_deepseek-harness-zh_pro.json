@@ -1,0 +1,37 @@
+{
+  "id": "magian1127/deepseek-harness-zh_pro",
+  "analyzedAt": "2026-08-17T11:40:37.156Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-harness-zh_pro",
+      "evidence": "dsh plugin --profile web add deepseek-harness-zh_pro"
+    },
+    "evaluationReport": {
+      "intro": "这是一个让 DeepSeek Harness 的中文界面更完整、更好用的插件。它能修正界面上残留的英文，统一术语和格式，让统计信息完整显示，还能自动展开最新的思考内容，调整对话宽度。另外它有一个默认关闭的‘提示词注入’功能，可以让你设置一段提示词，让大模型优先用中文回复。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会在浏览器 localStorage 里存一些界面设置，在 DSH 的 settings.yaml 里存提示词相关配置（仅当你开启提示词注入时）。它不会上传你的数据，也不会偷偷改模型请求。",
+      "postInstallNotes": "安装后需要重启一次 DSH（或者用热安装方式）。如果想用‘提示词注入’功能，需要到 DSH 设置里手动开启并编辑提示词。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 中文界面增强插件：补全残留英文、优化统计显示、自动展开思考，并可选注入中文优先提示（默认关闭）。",
+    "usage": {
+      "prompt_tokens": 2429,
+      "completion_tokens": 605,
+      "total_tokens": 3034,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 242
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1789
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "Einskyle/dsh-llm-vision-bridge",
+  "analyzedAt": "2026-08-17T12:09:49.226Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且 peerDependencies 依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-llm-vision-bridge",
+      "evidence": "dsh plugin --profile web add dsh-llm-vision-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DSH 网页聊天里的 DeepSeek 学会“看图”。平时 DeepSeek 这类纯文字模型遇到图片会报错，装了它之后，你在聊天框里粘贴图片，插件会自动先把图片交给一个视觉模型（默认是你自己电脑局域网里的 llama.cpp，也可以配置成阿里云、OpenAI 等云服务）看一遍，生成文字描述，再把描述交给 DeepSeek，让它像真的能看图一样继续回答你。",
+      "level": "ok",
+      "risks": "会把聊天里的图片内容发给配置的视觉模型去描述：默认是局域网里的 llama.cpp，图片不会出你的网络；但如果你自己配置了云服务商，图片就会发到第三方服务器。插件还会读取和修改 dsh 的模型配置。除此之外没发现明显风险。",
+      "postInstallNotes": "装完需要重启 web 服务；然后到“设置 → 模型”把主模型切到「DeepSeek（视觉桥接）」（provider 为 deepseek-vision），并按需在 llm-vision-bridge 的设置里配置视觉模型（默认走本地 llama.cpp，用云服务需要填 API Key）。",
+      "notes": "README 同时提供了 GitHub 和 npm 两种安装方式，本报告按 npm 包名评估；该插件依赖 @deepseek-ai/dsh-llm 等 DSH 核心包，需要正常的 DSH 环境。"
+    },
+    "summaryZh": "让 DSH 网页聊天里不会看图的 DeepSeek 变得能“看图”：自动把图片转成文字描述再继续对话，默认用本地视觉模型，也可切换云服务。",
+    "usage": {
+      "prompt_tokens": 3350,
+      "completion_tokens": 1699,
+      "total_tokens": 5049,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1203
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2710
+    }
+  }
+}

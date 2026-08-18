@@ -1,0 +1,37 @@
+{
+  "id": "lxj808624/dsh-tool-git",
+  "analyzedAt": "2026-08-17T11:57:15.164Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tool-git",
+      "evidence": "dsh plugin --profile web add dsh-tool-git"
+    },
+    "evaluationReport": {
+      "intro": "这是一款给 DeepSeek Harness 用的 Git 工具插件，让智能体可以安全地执行查看状态、对比差异、查看日志、分支管理、暂存、提交、stash 等 Git 操作，并且默认挡住强制推送、硬重置这类危险操作，避免搞坏代码仓库。",
+      "level": "ok",
+      "risks": "它会运行你电脑上的 Git 命令，可能读取或修改当前 Git 仓库里的文件和提交历史。不过它默认拦截破坏性操作，需要你配置授权才会放行。没有发现上传数据或连接外部服务器的行为。",
+      "postInstallNotes": "无必需配置，所有选项都有默认值。若需要调整危险操作策略（如改成询问或允许），可在配置中设置 destructivePolicy。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-tool-git 是一套结构化的 Git 工具插件，为 DeepSeek Harness 提供安全、防误操作的 Git 操作能力。",
+    "usage": {
+      "prompt_tokens": 3509,
+      "completion_tokens": 661,
+      "total_tokens": 4170,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 302
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2869
+    }
+  }
+}

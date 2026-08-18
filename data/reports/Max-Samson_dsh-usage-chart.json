@@ -1,0 +1,37 @@
+{
+  "id": "Max-Samson/dsh-usage-chart",
+  "analyzedAt": "2026-08-17T11:41:54.171Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 中声明了 dsh.bundle 和 dsh.client，peerDependencies 包含 @deepseek-ai/cordis 与多个 @deepseek-ai/dsh-client 包，README 给出了 dsh plugin add 安装命令，证据充分。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-usage-chart",
+      "evidence": "dsh plugin --profile web add dsh-usage-chart   # 安装并自动登记为 profile 插件层"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness Web 界面加一个“用量仪表盘”。装好后，在聊天输入框下方会实时显示本次会话用了多少 token、大概花了多少钱、当前是哪个模型、账户余额还剩多少。点一下还能展开一个图表面板，里面有详细的用量统计、成本估算、每轮调用的耗时和异常标记，还支持美元/人民币切换和汇率刷新。所有图表都是自己画的，不依赖额外图表库。",
+      "level": "ok",
+      "risks": "它会读取你的 DeepSeek API Key 来查询账户余额，但 key 是存在 DSH 的凭据服务里，插件经宿主代理访问官方接口，不会直接暴露给浏览器。价格覆盖文件是可选的本地文件，风险很低。还可能需要从网上拉取汇率，但断网时会用上次成功的值。没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 进程。如果网页端没有配置 DeepSeek API Key，需在环境变量中设置 DEEPSEEK_API_KEY，或在插件配置中指定 apiKey（明文落盘，建议优先用前两种）。插件版本 0.1.1 起才支持读取网页端配置的密钥。",
+      "notes": "升级时 pnpm 可能不自动升级，建议显式指定版本号或先卸载再安装。从 GitHub 安装会执行 prepare 脚本（源码构建），需确认信任来源。"
+    },
+    "summaryZh": "DSH Web 的用量/成本/余额仪表盘插件，在输入框下方实时显示 token 消耗、成本与余额，并可展开查看可视化图表。",
+    "usage": {
+      "prompt_tokens": 5763,
+      "completion_tokens": 1302,
+      "total_tokens": 7065,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 787
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5123
+    }
+  }
+}

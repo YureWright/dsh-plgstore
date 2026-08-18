@@ -1,0 +1,37 @@
+{
+  "id": "dsh-gadgets",
+  "analyzedAt": "2026-08-16T14:47:41.599Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin add 安装命令，且依赖 dsh-skin/dsh-tidy/dsh-task-alerts 等 DSH 子插件，属于 DSH 插件聚合包。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-gadgets@0.4.1",
+      "evidence": "dsh plugin --profile web add dsh-gadgets@0.4.1"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的“聚合包”，装一个就能同时启用三个小工具：外观定制（换皮肤、调字号、改颜色）、对话整理（折叠消息、加导航栏、显示总 Token 数）、任务提醒（任务完成/出错/等待审批时响提示音并弹窗）。",
+      "level": "ok",
+      "risks": "没发现明显风险。该插件主要修改界面外观和本地交互行为，不涉及上传数据或访问敏感文件。",
+      "postInstallNotes": "重启 dsh web 进程，并硬刷新页面（Ctrl+F5）。如果是从旧版本升级，先移除旧版手动添加的 cordis.patch.yml 行。",
+      "notes": "这是一个聚合包，安装时会同时拉取 dsh-skin、dsh-tidy、dsh-task-alerts 三个子插件；请勿与单独安装这些子插件混用。"
+    },
+    "summaryZh": "DSH 一键聚合插件，融合外观定制、对话整理与任务提醒三个实用功能。",
+    "usage": {
+      "prompt_tokens": 1820,
+      "completion_tokens": 1503,
+      "total_tokens": 3323,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1127
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1180
+    }
+  }
+}

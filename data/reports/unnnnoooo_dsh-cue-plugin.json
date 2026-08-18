@@ -1,0 +1,37 @@
+{
+  "id": "unnnnoooo/dsh-cue-plugin",
+  "analyzedAt": "2026-08-17T11:48:24.898Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/dsh-llm，README 给出 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:unnnnoooo/dsh-cue-plugin",
+      "evidence": "dsh plugin add github:unnnnoooo/dsh-cue-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里，从另一个对话框里选几条用户消息，把它们的内容快照“借”到当前对话框，让模型直接阅读，不用你自己翻找或复制。点击输入框上的 cue 按钮，选会话和消息，确认后就会变成输入框里的引用标签，发送后模型就能看到这些跨会话的上下文。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会在你确认时读取另一个会话的消息内容，这些内容会成为当前会话消息的一部分发送给模型，这属于功能本身。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "跨会话结点引用插件：在当前对话中直接引用另一对话的用户消息并注入模型上下文。",
+    "usage": {
+      "prompt_tokens": 2882,
+      "completion_tokens": 822,
+      "total_tokens": 3704,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 509
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2242
+    }
+  }
+}

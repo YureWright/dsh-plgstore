@@ -1,0 +1,37 @@
+{
+  "id": "dsh-notify-win",
+  "analyzedAt": "2026-08-16T14:47:34.109Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch，并且 README 给出了 dsh plugin add 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Andyqwe44/dsh-notify-win",
+      "evidence": "dsh plugin --profile web add github:Andyqwe44/dsh-notify-win"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 Windows 专用通知插件：当 DeepSeek Harness 里的任务跑完，或者需要你确认问题/做决定时，它会在电脑右下角弹出系统风格的提示，并让任务栏图标闪一下，提醒你回来操作。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在本机注册一个通知身份（创建开始菜单快捷方式），并调用 PowerShell 显示通知和闪烁任务栏，不会上传你的数据。",
+      "postInstallNotes": "装完重启 DSH（运行 dsh web）。首次完成一个任务后会自动注册通知，如果通知没显示图标，重启一次 Explorer。可按需编辑配置：$env:USERPROFILE\\.dsh\\profiles\\web\\cordis.patch.yml",
+      "notes": "仅支持 Windows 10/11，需要 PowerShell 5.1 或 7。"
+    },
+    "summaryZh": "DSH 的 Windows 原生通知插件：任务完成或需要你输入时，在右下角弹系统通知并闪烁任务栏。",
+    "usage": {
+      "prompt_tokens": 2766,
+      "completion_tokens": 2550,
+      "total_tokens": 5316,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2188
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2126
+    }
+  }
+}

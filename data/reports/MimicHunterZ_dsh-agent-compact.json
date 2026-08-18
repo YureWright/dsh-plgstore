@@ -1,0 +1,37 @@
+{
+  "id": "MimicHunterZ/dsh-agent-compact",
+  "analyzedAt": "2026-08-17T11:56:36.822Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，并依赖 @deepseek-ai/dsh-compaction-basic 等核心包，README 给出了 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@mimichunterz/agent-compact",
+      "evidence": "dsh plugin --profile web add @mimichunterz/agent-compact"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 AI 代理自己决定压缩对话中的哪些片段。它可以在一个任务步骤完成后，把这段对话压缩成一句摘要，只替换掉没用的中间部分，重要的开头和最近的对话保持不变。就像人有选择地遗忘一些琐事，留下重要信息。",
+      "level": "ok",
+      "risks": "它会把被压缩的对话原文保存到家目录下的 ~/.dsh/spill 文件夹，这些内容可能包含你与 AI 的敏感信息，请确保该目录权限合适。另外安装/卸载会修改 DSH 的 profile 配置。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要重启对应的 DSH profile（如 web），之后每个会话都会看到 context_compact 工具。",
+      "notes": "无"
+    },
+    "summaryZh": "让 AI 代理自主压缩对话中不再需要的中间片段，用代理自己写的摘要替换，保留重要上下文。",
+    "usage": {
+      "prompt_tokens": 2787,
+      "completion_tokens": 1995,
+      "total_tokens": 4782,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1658
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2147
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-permissions",
+  "analyzedAt": "2026-08-16T13:28:54.503Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-permissions",
+      "evidence": "README 原文：dsh plugin add dsh-permissions"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的权限管理插件。它可以让你给 AI 设定一些规矩，比如哪些文件不能读、哪些命令不能执行，还可以让 AI 在执行敏感操作前先问你一下。规则分成四级：hard（最高级，无论如何都拦住）、deny（拒绝）、ask（问一下）、allow（允许）。它自带一些默认保护规则，比如.ssh、.aws、.pem 文件等。你还可以在浏览器的设置页面里可视化地添加和修改规则，改完点“保存并应用”才会生效。规则会保存下来，重启也不会丢。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在本地 settings.yaml 文件里保存你的权限规则，并且本地浏览器界面会显示这些规则。规则内容会注入给 AI 模型看，但这本来就是它的设计。",
+      "postInstallNotes": "安装后重启应用，然后在“设置 → 权限”页面按需调整规则。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-permissions 是 DeepSeek Harness 的权限规则引擎，提供 hard/deny/ask/allow 四级规则和可视化编辑器，帮助控制 AI 对文件与命令的访问权限。",
+    "usage": {
+      "prompt_tokens": 2555,
+      "completion_tokens": 1742,
+      "total_tokens": 4297,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1348
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1915
+    }
+  }
+}

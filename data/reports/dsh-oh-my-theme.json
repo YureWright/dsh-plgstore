@@ -1,0 +1,37 @@
+{
+  "id": "dsh-oh-my-theme",
+  "analyzedAt": "2026-08-16T13:25:18.503Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-oh-my-theme",
+      "evidence": "本插件是标准 dsh bundle。发布到 npm 后，使用包名安装到 `web` profile："
+    },
+    "evaluationReport": {
+      "intro": "这是给 DSH 网页端用的美化+效率插件。它能给聊天界面换主题皮肤（悬停就能预览效果），调整文字大小；输入 @ 可以搜索并引用项目文件，让 AI 直接读指定文件；右侧会多出一个文件面板，能看项目文件树、预览 Markdown 和代码；还能查看 Git 改动和提交记录（只读，不会改动仓库）；另外会在会话栏显示 DeepSeek 账号实时余额。",
+      "level": "ok",
+      "risks": "它会读取当前工作区的项目文件并在网页里显示，也会对当前 Git 仓库执行 status/diff/log 等只读命令（不会修改仓库）；查询余额时宿主会用 DEEPSEEK_API_KEY 调官方接口，但 key 不会传到浏览器或日志。皮肤等偏好只保存在浏览器 localStorage，不碰会话数据。没发现明显恶意风险。",
+      "postInstallNotes": "运行 `dsh web` 启动网页端即可；如果需要用 @ 引用和文件树，打开一个会话工作区。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页端定制的主题 + 文件工作台插件：支持皮肤切换与悬停预览、@ 引用文件、右侧文件树/预览和只读 Git 查看。",
+    "usage": {
+      "prompt_tokens": 5479,
+      "completion_tokens": 2298,
+      "total_tokens": 7777,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1873
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4839
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/7d7d",
+  "analyzedAt": "2026-08-17T13:17:45.583Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 且依赖 @deepseek-ai/cordis 等 DSH 核心包，符合插件定义。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/7d7d.git",
+      "evidence": "发布物通过 Git source 安装，不承诺将本插件发布为公共 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这插件能让 DeepSeek Harness 变成游戏机。装好以后，对话框旁边会多出一个“7D7D”标签，点开就是一个小游戏门户，像 7k7k 那样分类展示游戏。模型可以按规则写 HTML5 小游戏，或者你自己放游戏文件进去，门户里马上就能玩。也支持 Flash 游戏，用内置的 Ruffle 模拟器播放，不需要装 Flash。还带一个社区游戏库，别人投稿的游戏会自动同步进来。",
+      "level": "ok",
+      "risks": "它会在你电脑的 ~/.dsh/7d7d/ 目录下创建游戏库，往里面复制示例和社区游戏；如果配置了远程社区目录，会从网上下载游戏文件；游戏在受限的 iframe 里运行，理论上不能偷你的数据，但毕竟是在跑别人写的代码，建议别玩来路不明的游戏。另外，Flash 游戏只支持你拥有授权的文件。",
+      "postInstallNotes": "需要将 cordis.patch.yml 合并进 Web Profile 层，或使用 dsh.plugin.json 清单安装；重启 dsh web 后才会出现 7D7D 标签；要让模型生成游戏，还需要把 skills/7d7d/SKILL.md 放到 DSH 的 skills 目录；如要玩 Flash 游戏，先运行 pnpm fetch:ruffle 安装 Ruffle。",
+      "notes": "该插件是私有包（private: true），未发布到 npm，只能通过 Git 地址安装；依赖 DSH RC.6 预发布版本，需确保宿主匹配；社区游戏投稿有版权提醒，不要扒商业游戏资源。"
+    },
+    "summaryZh": "7d7d 是一个让 DeepSeek Harness 变成游戏机的小游戏门户插件，可生成、同步并游玩 HTML5 与自托管 Ruffle Flash 小游戏。",
+    "usage": {
+      "prompt_tokens": 5277,
+      "completion_tokens": 2252,
+      "total_tokens": 7529,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1697
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4637
+    }
+  }
+}

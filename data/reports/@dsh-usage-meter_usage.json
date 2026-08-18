@@ -1,0 +1,37 @@
+{
+  "id": "@dsh-usage-meter/usage",
+  "analyzedAt": "2026-08-16T14:49:09.883Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-usage-meter/usage",
+      "evidence": "pnpm dsh plugin --profile web add @dsh-usage-meter/usage"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DeepSeek Harness 的用量统计插件，会自动记录模型调用消耗的 token 数量，按模型和小时整理，在 Web 设置页面用柱状图展示，方便你直观了解每小时、每个模型的用量。",
+      "level": "ok",
+      "risks": "没发现明显风险。数据只保存在本地 $DSH_HOME/usage-meter/usage.jsonl 文件中，不会上传到外部服务器。",
+      "postInstallNotes": "安装后重启 dsh web，然后到设置页的“用量统计”里查看。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 用量统计插件：自动记录并按模型、小时展示 token 消耗。",
+    "usage": {
+      "prompt_tokens": 2136,
+      "completion_tokens": 527,
+      "total_tokens": 2663,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 229
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1496
+    }
+  }
+}

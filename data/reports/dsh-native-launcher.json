@@ -1,0 +1,37 @@
+{
+  "id": "dsh-native-launcher",
+  "analyzedAt": "2026-08-18T14:58:45.645Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 并依赖 @deepseek-ai/dsh-client-* 核心包，README 提供 dsh plugin add 命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-native-launcher",
+      "evidence": "dsh plugin --profile web add dsh-native-launcher"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的网页版在 Windows 上获得类似桌面软件的体验：安装后会在桌面生成一个快捷方式，双击就能静默启动服务并自动打开浏览器（或你已安装的 PWA 独立窗口）；系统托盘会常驻，任务完成、等待批准等时候会弹 Windows 原生通知；关掉所有页面窗口后，服务会根据是否还有任务来决定自动退出还是继续驻留。简单说，就是把网页版包装成好用的桌面 App。",
+      "level": "ok",
+      "risks": "它会在你的桌面创建一个“DSH WebUI”快捷方式，并在你的用户目录下创建 ~/.dsh-webui-launcher 文件夹，存放启动脚本、图标和日志；它还会启动一个托盘程序，能帮你启动/退出 dsh 服务。这些操作都是本地的，没有发现会把数据传出去或偷看隐私文件的行为。唯一需要注意的是卸载插件时，这些快捷方式和文件夹不会自动清理，需要手动删除。",
+      "postInstallNotes": "装完需要重启 dsh web 生效；另外 dsh plugin 命令依赖 pnpm，若没装先执行 npm install -g pnpm 或 corepack enable pnpm；想要独立窗口体验，可以按提示在浏览器里把 http://127.0.0.1:3080 这个站点“安装为应用”。",
+      "notes": "仅支持 Windows 平台；卸载时需按 README 说明手动清理桌面快捷方式和 ~/.dsh-webui-launcher 目录。"
+    },
+    "summaryZh": "Windows 桌面启动器：为 DeepSeek Harness WebUI 提供一键快捷方式、托盘原生通知与独立应用窗口体验的官方插件。",
+    "usage": {
+      "prompt_tokens": 5607,
+      "completion_tokens": 1925,
+      "total_tokens": 7532,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1419
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4967
+    }
+  }
+}

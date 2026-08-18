@@ -1,0 +1,37 @@
+{
+  "id": "useful-dsh-plugins",
+  "analyzedAt": "2026-08-16T14:49:31.075Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin add 安装命令，且依赖 DSH 生态插件，是一个元插件包"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "useful-dsh-plugins",
+      "evidence": "dsh plugin --profile web add useful-dsh-plugins"
+    },
+    "evaluationReport": {
+      "intro": "这个包是给 DeepSeek Harness 用的'全家桶'，安装一条命令就能同时获得两个小插件：一个是在聊天输入框添加回形针按钮，可以上传文件并在发送消息时自动带上文件；另一个是让 AI 模型能直接读取你上传的文本、PDF、Word 或 Excel 文档内容（只读文字，不能识别图片）。适合想要快速给 DSH 加文件上传和文档阅读功能的普通用户。",
+      "level": "ok",
+      "risks": "没发现明显风险。使用文档读取功能时，你上传的文件内容会被发送给模型处理，但这是该功能本身的预期行为。",
+      "postInstallNotes": "安装完成后需要重启 dsh web 服务才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "一个元插件包，一条命令同时安装文件上传按钮和文档读取工具两个 DSH 社区插件。",
+    "usage": {
+      "prompt_tokens": 1811,
+      "completion_tokens": 1679,
+      "total_tokens": 3490,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1355
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1171
+    }
+  }
+}

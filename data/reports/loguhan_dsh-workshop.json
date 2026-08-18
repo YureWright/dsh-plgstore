@@ -1,0 +1,37 @@
+{
+  "id": "loguhan/dsh-workshop",
+  "analyzedAt": "2026-08-17T12:03:06.580Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-workshop",
+      "evidence": "dsh plugin --profile web add dsh-workshop"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页界面加了一个“创意工坊”侧边栏，像手机应用商店一样，你可以浏览、搜索社区里其他人为 DeepSeek Harness 做的插件，看到评分和介绍，点一下就能自动下载安装，它还内置了国内镜像加速功能，让下载更快。同时它还有安全检查，防止安装到和网页版冲突的插件。",
+      "level": "ok",
+      "risks": "它会下载并安装第三方插件，这些插件会在你的电脑上运行代码，请自行审查源码。它会连接 GitHub 镜像来加速下载，相关服务器可能看到你的网络请求。它只监听本机回环地址，不会暴露到公网，但如果你用隧道暴露端口，安装/卸载接口会被拒绝。",
+      "postInstallNotes": "重启 dsh web 使插件生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH Web UI 提供 Steam 创意工坊风格的插件商店，支持浏览、搜索、一键安装、镜像加速与安全校验。",
+    "usage": {
+      "prompt_tokens": 3244,
+      "completion_tokens": 1902,
+      "total_tokens": 5146,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1548
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2604
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "springbrand-lab/dsh-oauth-mcp-client",
+  "analyzedAt": "2026-08-17T11:31:56.879Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，并依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，README 也提供了 dsh plugin add 安装步骤。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/springbrand-lab/dsh-oauth-mcp-client.git",
+      "evidence": "This repository is not published to npm, so installation currently uses the local checkout."
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加了一个支持 OAuth 2.1 登录的 MCP 客户端。它默认连接 Springbrand 的 MCP 网关，让你可以通过浏览器登录 Springbrand 账户，然后让 DSH 助手搜索和执行 Springbrand 市场里的各种服务能力。它也支持手动添加其他支持 OAuth 的 MCP 服务器，并能在 DSH Web 界面里管理连接状态。",
+      "level": "caution",
+      "risks": "它会打开浏览器让你登录 Springbrand 并授权，OAuth 令牌会通过 DSH 的凭据服务保存。它会连接外部服务器 connector.springbrand.ai，并可能修改 DSH 的配置文件（~/.dsh/profiles/web/cordis.patch.yml）。此外，插件来自第三方仓库，未发布到 npm 需要自行构建，建议留意授权范围和代码来源。",
+      "postInstallNotes": "需要先克隆并构建（git clone、pnpm install、pnpm build），然后用 dsh plugin add 添加本地目录；首次启动会打开浏览器完成 OAuth 授权；如需连接其他 MCP 服务器，可在 DSH Web 的设置中添加。",
+      "notes": "该插件未发布到 npm，安装使用本地 checkout；维护方为 SpringBrand，连接的是其生产 MCP 网关；建议审查 OAuth 授权范围和代码。"
+    },
+    "summaryZh": "支持 OAuth 登录的 MCP 客户端插件，让 DSH 能连接 Springbrand 市场及任意符合 OAuth 的 MCP 服务器。",
+    "usage": {
+      "prompt_tokens": 3421,
+      "completion_tokens": 2699,
+      "total_tokens": 6120,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2209
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2781
+    }
+  }
+}

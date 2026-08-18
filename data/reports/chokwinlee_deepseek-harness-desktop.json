@@ -1,0 +1,37 @@
+{
+  "id": "chokwinlee/deepseek-harness-desktop",
+  "analyzedAt": "2026-08-17T11:23:03.836Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.95,
+      "reason": "该项目是桌面宿主应用，并非 DSH 插件；依赖 DSH 核心包但本身是独立应用，未暴露 dsh.bundle/client 接口"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个项目把 DeepSeek Harness（官方命令行 AI 编程工具）打包成桌面应用，让不熟悉命令行的用户也能通过图形窗口使用。它自带 Node.js 和 Harness 运行时，打开后自动在后台管理本地服务，并把服务绑定到本机随机端口，避免暴露到网络。它还内置插件管理界面，可以安装社区插件，但需要自己去设置里填 API 密钥和选择工作区。",
+      "level": "caution",
+      "risks": "它会读写你电脑上 ~/.dsh 目录（包含配置、工作区和会话数据）；会自动启动/停止本地进程；如果你安装第三方插件，这些插件可以在你电脑上运行任意代码，可能访问文件、网络或隐私；macOS 版是 ad-hoc 签名、Windows 版未签名，系统可能警告，需确认下载来源；它还可能发送使用统计（若启用 session-telemetry）。",
+      "postInstallNotes": "安装后打开应用，进入 Settings → Models 配置 API 提供商和密钥，然后添加或选择工作区，再开始会话。macOS 首次打开若被系统拦截，需要在系统设置里允许。",
+      "notes": "此项目并非 DSH 插件，而是独立桌面应用；README 明确声明是社区项目、非官方产品；Windows 构建目前未签名。"
+    },
+    "summaryZh": "一个把 DeepSeek Harness 封装成桌面应用的社区项目，让普通用户免命令行操作，并支持可视化插件管理。",
+    "usage": {
+      "prompt_tokens": 3638,
+      "completion_tokens": 2132,
+      "total_tokens": 5770,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1701
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2998
+    }
+  }
+}

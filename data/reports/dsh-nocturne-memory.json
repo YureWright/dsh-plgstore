@@ -1,0 +1,37 @@
+{
+  "id": "dsh-nocturne-memory",
+  "analyzedAt": "2026-08-16T13:32:37.787Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-nocturne-memory",
+      "evidence": "dsh plugin --profile web add dsh-nocturne-memory"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 用上长期记忆。它会连接你自己的 Nocturne MCP 服务器，在会话开始时自动加载核心记忆、最近上下文和术语，还能按关键词搜索、创建、更新记忆，就像给 AI 装了一个可以长期保存和回想笔记的记事本。",
+      "level": "ok",
+      "risks": "它会连接你自己配置的 Nocturne 服务器（mcp_url），并把记忆内容和访问令牌（mcp_auth）发送到那个服务器。令牌只存在配置文件里，插件本身不存储记忆。没有发现其他明显风险。",
+      "postInstallNotes": "需要在 DSH 配置里添加插件实例，并设置 mcp_url（指向你的 Nocturne MCP 服务器），必要时设置 mcp_auth。",
+      "notes": "依赖 @deepseek-ai/dsh-tools 是 rc 版本，接口可能随上游调整。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Nocturne Memory 客户端，实现基于自有 MCP 服务器的长期记忆读写与搜索。",
+    "usage": {
+      "prompt_tokens": 2325,
+      "completion_tokens": 1039,
+      "total_tokens": 3364,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 655
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1685
+    }
+  }
+}

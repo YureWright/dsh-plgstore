@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-voice-funasr",
+  "analyzedAt": "2026-08-17T12:10:36.102Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/dsh-voice-funasr.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 聊天界面用的语音输入插件。你按住麦克风按钮说话，它会用你电脑本地的人工智能模型把语音转成文字，然后自动填到输入框里发出去。如果本地模型没准备好，它也会自动改用浏览器自带的语音识别功能。识别出的文字还可以选择用大模型帮你改得更通顺、去掉口头禅。整个过程不需要联网（除了你额外开启润色时），语音数据不会上传到任何服务器，注重隐私。",
+      "level": "ok",
+      "risks": "插件会在你的用户目录下创建 ~/.dsh/voice-funasr/ 文件夹来存放语音模型（约 520MB），运行时会占用约 1GB 内存，并调用你电脑上的 Python 运行本地识别引擎。它会使用你的麦克风。音频数据默认不写入硬盘，只临时在内存里处理。如果开启润色功能，识别出的文字会发送到你配置的 LLM 服务（和普通对话一样）。没有发现它会悄悄上传数据或偷看其他文件。",
+      "postInstallNotes": "装完插件后，还需要：1) 安装 Python 包：python3 -m pip install -U funasr-onnx modelscope；2) 下载模型：python3 python/download_models.py --model-root ~/.dsh/voice-funasr/models；3) 在 DSH 设置里找到'本地语音（FunASR）'加载模型预热。另外，这个插件和 dsh-voice-chat 不能同时启用，否则会有两个麦克风按钮。",
+      "notes": "此插件在 package.json 中标记为 private，未发布到 npm，需要从 GitHub 仓库或本地 tarball 安装。它依赖较多 DSH 核心包，建议确认 DSH 版本在 0.1.0-rc.3 到 0.2.0 之间。插件目前较新（GitHub 仅 3 stars），但代码和文档看起来完整。"
+    },
+    "summaryZh": "DSH Web UI 的本地离线语音输入插件：按住说话，本地 FunASR 精准转写，可选 LLM 润色，自动发送，断网可用。",
+    "usage": {
+      "prompt_tokens": 3691,
+      "completion_tokens": 3465,
+      "total_tokens": 7156,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2859
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3051
+    }
+  }
+}

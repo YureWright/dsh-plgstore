@@ -1,0 +1,37 @@
+{
+  "id": "beav-creator-dsh",
+  "analyzedAt": "2026-08-16T13:26:57.234Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 README 给出了 dsh plugin add 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "beav-creator-dsh",
+      "evidence": "dsh plugin --profile web add beav-creator-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能连接你电脑上的 Beav 应用（一个小红书/社交媒体创作工具），用来做选题调研、写文案、生成封面图、配音和短视频，还能管理整个创作流程。简单说，就是给 Harness 装上小红书内容创作的能力。",
+      "level": "ok",
+      "risks": "需要安装并授权连接本地的 Beav 桌面应用，授权后会在本地环境变量里保存一个访问令牌；插件只连接本机回环地址，不会把原始媒体文件上传给模型，也没发现偷传数据的迹象。",
+      "postInstallNotes": "安装后需要在 Harness 的 设置→插件→Beav Creator 里点击 Connect Beav，完成授权；确保 Beav 2.7.4 以上、Node.js 22 以上。",
+      "notes": "这是社区插件，非 DeepSeek 官方出品；Beav 本体是闭源商业软件，但插件源码公开。"
+    },
+    "summaryZh": "为 DeepSeek Harness 接入小红书创作助手 Beav，支持选题研究、文案、图片/音频/视频生成和内容流程管理。",
+    "usage": {
+      "prompt_tokens": 3083,
+      "completion_tokens": 1012,
+      "total_tokens": 4095,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 634
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2443
+    }
+  }
+}

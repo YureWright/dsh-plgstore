@@ -1,0 +1,37 @@
+{
+  "id": "liustack/modlens",
+  "analyzedAt": "2026-08-16T11:37:15.897Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle / dsh.client 字段，且 README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@liustack/modlens@3.17.3",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add @liustack/modlens@3.17.3"
+    },
+    "evaluationReport": {
+      "intro": "让纯文字大模型拥有'眼睛'：装好后，你直接在聊天框里粘贴图片，它就能识别图片内容并用文字回答你。支持截图、图表、OCR 等，适合 DeepSeek、GLM 这类本身看不懂图片的模型。",
+      "level": "ok",
+      "risks": "它会调用外部视觉服务（如 Gemini、OpenAI、Anthropic 等）来分析图片，所以粘贴的图片会被发送到这些第三方服务器；如果图片里有隐私信息，可能会被那些服务商看到。另外它可能会读取你本机已登录的 Claude Code、Codex 等工具的登录状态（经同意后复用），相关配置也会被读取。",
+      "postInstallNotes": "需要配置至少一个视觉引擎：建议免费申请一个 Gemini API key，或安装并登录 Antigravity CLI；如果本机已有 Claude Code 等登录凭证，安装时也可以授权复用。装完建议运行健康检查确认可用。",
+      "notes": "README 中安装命令写的版本是 3.17.3，而 package.json 当前版本是 3.16.7，可能存在发布滞后或文档更新较快的情况，安装时请以 npm 实际版本为准；另外要求 Node.js >=22.19。"
+    },
+    "summaryZh": "给 DeepSeek 等纯文字大模型加视觉能力的 DSH 插件，直接粘贴图片即可让模型读图并回答。",
+    "usage": {
+      "prompt_tokens": 3642,
+      "completion_tokens": 1212,
+      "total_tokens": 4854,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 758
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3002
+    }
+  }
+}

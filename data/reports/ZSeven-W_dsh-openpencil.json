@@ -1,0 +1,37 @@
+{
+  "id": "ZSeven-W/dsh-openpencil",
+  "analyzedAt": "2026-08-16T11:55:23.898Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 配置，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@zseven-w/dsh-openpencil@latest",
+      "evidence": "pnpm dlx --package=@deepseek-ai/dsh@0.1.0-rc.6 dsh plugin --profile web add @zseven-w/dsh-openpencil@latest"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）用的设计工具插件，让 AI 在对话里直接打开、预览和编辑 OpenPencil 设计文件（.op 格式）。你可以让 AI 根据你的要求新建设计稿、在现有画布上修改元素、生成多帧预览图，甚至打开一个可交互的缩放画布来查看细节，就像在设计软件里操作一样。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会在本地运行 OpenPencil 程序来渲染和编辑 .op 文件，因此会读取和修改你指定的设计文件；预览和编辑能力有签名授权保护，不会在浏览器里暴露任意文件路径。它会在本机查找 OpenPencil 桌面应用，如果没装，部分渲染功能会降级为内置的 Jian 预览（会标注为 runtime-preview）。",
+      "postInstallNotes": "无需强制配置。若要获得精确渲染效果，请安装 OpenPencil 桌面应用，或通过环境变量 DSH_OPENPENCIL_BINARY / DSH_OPENPENCIL_DESKTOP 指定可执行文件路径。",
+      "notes": "依赖 DSH 0.1.0-rc.6 和 Node.js >=24.11 的预发布版本；若本机没有 OpenPencil 桌面版，精确渲染会降级为 Jian fallback（预览图会明确标注 runtime-preview），不会静默失败。"
+    },
+    "summaryZh": "把 OpenPencil 设计工具接入 DSH，让 AI 能直接在对话中预览、创建和编辑 .op 设计稿。",
+    "usage": {
+      "prompt_tokens": 4247,
+      "completion_tokens": 2819,
+      "total_tokens": 7066,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2290
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3607
+    }
+  }
+}

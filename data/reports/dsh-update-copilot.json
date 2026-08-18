@@ -1,0 +1,37 @@
+{
+  "id": "dsh-update-copilot",
+  "analyzedAt": "2026-08-16T13:26:27.126Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-update-copilot",
+      "evidence": "dsh plugin --profile web add dsh-update-copilot"
+    },
+    "evaluationReport": {
+      "intro": "这是 DeepSeek Harness 的更新助手：自动扫描 DSH 核心、自带组件和各个配置里的插件，看有没有新版本，把每个包的变更内容、风险高低总结给你看，你确认后它才真正执行更新。核心部分只提醒不自动升级，更新操作也走官方命令，比较稳妥。",
+      "level": "ok",
+      "risks": "它会读取你的 DSH 配置、已装插件和 git 仓库信息，并向外部的 npm registry 和 GitHub API 发送只读请求；更新时需你明确确认，不会偷偷改东西。没发现明显隐私或安全风险。",
+      "postInstallNotes": "装完后重启 dsh web，然后打开 设置 → Update Copilot 即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 更新助手：帮你扫描核心、内置包和所有插件的新版本，汇总变更并评估风险，确认后才执行更新。",
+    "usage": {
+      "prompt_tokens": 3547,
+      "completion_tokens": 766,
+      "total_tokens": 4313,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 422
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2907
+    }
+  }
+}

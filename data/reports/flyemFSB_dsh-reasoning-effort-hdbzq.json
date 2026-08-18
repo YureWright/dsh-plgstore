@@ -1,0 +1,37 @@
+{
+  "id": "flyemFSB/dsh-reasoning-effort-hdbzq",
+  "analyzedAt": "2026-08-17T11:47:10.536Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle / dsh.client，依赖 @deepseek-ai/cordis 与 dsh-* 核心包，README 给出 tarball 安装命令，符合 DSH 插件证据。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/flyemFSB/dsh-reasoning-effort-hdbzq/releases/download/v0.1.0/dsh-reasoning-effort-hdbzq-0.1.0.tgz",
+      "evidence": "dsh plugin --profile web add https://github.com/flyemFSB/dsh-reasoning-effort-hdbzq/releases/download/v0.1.0/dsh-reasoning-effort-hdbzq-0.1.0.tgz"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页版换皮肤的插件：把输入框旁边的模型选择器，换成一个大列表加一个三档推理强度滑杆。滑杆上的三档叫“小难梁、梁子、梁圣”，只是显示名和头像，真实控制推理力度的是底下的 Effort ID，不会把花名写进请求。拖动跟手、松手吸附，还能用键盘操作。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器界面里替换一个控件，不碰你的文件，也不发任何请求到外部服务器。",
+      "postInstallNotes": "装完后用 dsh --profile web 启动即可，不需要额外配置。",
+      "notes": "无"
+    },
+    "summaryZh": "一个给 DeepSeek Harness 网页端换模型选择器的插件：模型列表 + 三档推理滑杆（小难梁/梁子/梁圣），纯界面增强，不碰模型请求。",
+    "usage": {
+      "prompt_tokens": 3851,
+      "completion_tokens": 606,
+      "total_tokens": 4457,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 164
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3211
+    }
+  }
+}

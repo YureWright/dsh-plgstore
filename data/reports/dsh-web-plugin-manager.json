@@ -1,0 +1,37 @@
+{
+  "id": "dsh-web-plugin-manager",
+  "analyzedAt": "2026-08-16T13:43:25.268Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-web-plugin-manager@latest",
+      "evidence": "dsh plugin --profile <name> add dsh-web-plugin-manager@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 的 Web 界面插件管理器，让用户能在浏览器里查看、安装、卸载、启停、更新插件，还能做健康检查、环境管理和浏览插件市场。简单说就是给 DSH 装了个图形化的「应用商店/管理面板」，不用敲命令就能管理各种插件。",
+      "level": "ok",
+      "risks": "它会修改 DSH 的配置文件（如 cordis.patch.yml）、安装和卸载 npm 包、从 GitHub 克隆仓库、读取系统环境变量（用于检测插件需要的变量），并会向 npm registry、GitHub、dsh.so 等发起网络请求。这些操作都在 DSH 主机的用户权限下进行，但插件自身做了较多安全防护（如质量门、自动回滚、环境变量过滤），没发现明显恶意行为。",
+      "postInstallNotes": "安装后需重启 profile 生效，重启后 Web UI 的设置会出现「插件管理」标签页。若使用 pnpm 11 且当天发布的版本装不上，需在 profile 的 pnpm-workspace.yaml 中设置 minimumReleaseAge: 0。",
+      "notes": "无"
+    },
+    "summaryZh": "在 Web UI 中一键管理 DSH 插件的工具，支持安装、卸载、启停、更新、健康检查和插件市场。",
+    "usage": {
+      "prompt_tokens": 5429,
+      "completion_tokens": 1143,
+      "total_tokens": 6572,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 712
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4789
+    }
+  }
+}

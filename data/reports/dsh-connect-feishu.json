@@ -1,0 +1,37 @@
+{
+  "id": "dsh-connect-feishu",
+  "analyzedAt": "2026-08-18T14:56:09.386Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 将 dsh-connect 和 @deepseek-ai/cordis 列为 peerDependencies，README 给出 dsh plugin 安装命令和 cordis 配置，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-connect dsh-connect-feishu",
+      "evidence": "dsh plugin --profile web add dsh-connect dsh-connect-feishu"
+    },
+    "evaluationReport": {
+      "intro": "这是一个让 DeepSeek Harness（DSH）机器人接入飞书/Lark 的适配器。它通过飞书开放平台的长连接接收用户消息，交给 DSH 智能体处理，然后把回复以流式方式发回飞书，还支持交互式菜单卡片。主要用在飞书群里，机器人被 @ 时才会回复，也支持私聊。",
+      "level": "ok",
+      "risks": "需要使用你自己的飞书应用凭据（App ID 和 App Secret），这些信息会保存在 DSH 的配置文件中。机器人收到的飞书消息会被发送给 DSH 智能体处理，消息内容会经过飞书服务器。如果配置文件泄露，别人可能冒用你的机器人身份。除此之外没发现明显风险。",
+      "postInstallNotes": "需要配置 cordis.patch.yml，填入 appId、appSecret、transport 等参数；同时在飞书开放平台启用 Bot 能力、订阅 im.message.receive_v1 和 card.action.trigger 事件，并发布应用版本。",
+      "notes": "无"
+    },
+    "summaryZh": "飞书/Lark 频道适配器，让 DSH 机器人通过长连接接入飞书，支持流式回复和交互卡片。",
+    "usage": {
+      "prompt_tokens": 2047,
+      "completion_tokens": 3065,
+      "total_tokens": 5112,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2654
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1407
+    }
+  }
+}

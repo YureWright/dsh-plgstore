@@ -1,0 +1,37 @@
+{
+  "id": "@yun520-1/deepseek-heartflow",
+  "analyzedAt": "2026-08-16T13:42:29.148Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@yun520-1/deepseek-heartflow",
+      "evidence": "dsh plugin add @yun520-1/deepseek-heartflow"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫“心虫”，是一个给 AI 大模型当“质检员”的工具。它能在 AI 说出或写出内容之前，先自动检查一遍有没有问题，比如过度自信、逻辑矛盾、带偏见的言论、情绪操控等。它有 47 种检查维度和很多现成的小工具，还能在 AI 调用其他工具前后自动把关，防止危险操作。所有检查都在本地完成，不联网。",
+      "level": "ok",
+      "risks": "它会读取本地安装的 HeartFlow 引擎文件（如果你设置了环境变量，也可能读取你指定路径的文件），并分析 AI 和用户的对话文本。但所有数据都在本地处理，不会上传到网络。",
+      "postInstallNotes": "通常无需额外操作；若想使用完整 131 子系统功能，可能需要安装完整引擎或设置 HEARTFLOW_FULL_PATH 环境变量。",
+      "notes": "该插件由个人开发者发布，且自带引擎与依赖说明略有出入，建议留意版本更新；未发现明显恶意行为。"
+    },
+    "summaryZh": "把心虫 47 维判别引擎接入 DeepSeek Harness，为 AI 输出提供本地自动安全门禁。",
+    "usage": {
+      "prompt_tokens": 5118,
+      "completion_tokens": 1299,
+      "total_tokens": 6417,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 903
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4478
+    }
+  }
+}

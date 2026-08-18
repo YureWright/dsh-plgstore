@@ -1,0 +1,37 @@
+{
+  "id": "dsh-memory-bundle",
+  "analyzedAt": "2026-08-16T13:36:33.492Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 字段，并依赖/对等依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-memory-bundle",
+      "evidence": "dsh plugin --profile <name> add dsh-memory-bundle"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的本地记忆插件。它能让 AI 在本地 SQLite 数据库里记住信息，并提供三个工具：search（搜索）、remember（记住）、context（查看上下文）。不需要装额外的数据库，开箱即用。",
+      "level": "ok",
+      "risks": "它会在你电脑上创建一个数据库文件（默认在 $DSH_HOME/memory.db 或 ~/.dsh-memory.db），里面保存你想让 AI 记住的内容。如果电脑多人共用或文件被同步到云端，这些内容可能被别人看到。",
+      "postInstallNotes": "默认配置即可用；想改数据库位置，在 cordis.patch.yml 里给 memory 配置 path。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供本地 AI 记忆功能的插件，支持记住、搜索和查看上下文。",
+    "usage": {
+      "prompt_tokens": 1989,
+      "completion_tokens": 775,
+      "total_tokens": 2764,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 439
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1349
+    }
+  }
+}

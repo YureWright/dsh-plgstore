@@ -1,0 +1,37 @@
+{
+  "id": "bradeGithub/DSH-Plugins-Marketplace",
+  "analyzedAt": "2026-08-16T11:57:39.901Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/dsh-client-runtime 等 DSH 核心包，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/bradeGithub/DSH-Plugins-Marketplace.git",
+      "evidence": "dsh plugin --profile web install bradeGithub/DSH-Plugins-Marketplace"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness (DSH) 用的“插件商店”插件。装上之后，你 DSH 网页版的设置页面会多出一个“DSH Plugin Marketplace”入口，自动列出 GitHub 上所有打了 dsh-plugin 标签的插件（据说有 3900+），每张卡片上有安装、更新、版本检测按钮，点击就能一键安装，不用敲命令行。它还附带一个 14000+ 的通用技能列表（SKILL.md）可以浏览和安装。",
+      "level": "caution",
+      "risks": "这个插件会连接 GitHub、jsDelivr CDN 等外部网络来获取插件列表；当你点击安装某个插件时，它会去克隆仓库、识别插件类型，甚至可能运行仓库自带的安装脚本（如果是脚本型插件）。这些第三方脚本可能有权限修改你的系统文件、读取环境变量或向外部发送数据。插件自身也会读取 DSH 的配置和已安装插件信息。虽然作者声称有风险确认和环境隔离，但安装来源不明的插件仍需谨慎。",
+      "postInstallNotes": "装完后需要重启 DSH（重新运行 dsh web）并刷新页面，然后进入 Web GUI 的 Settings → DSH Plugin Marketplace 使用。",
+      "notes": "经评估确认是 DSH 插件。但注意它自动汇总 GitHub 上所有 dsh-plugin 标签的仓库，其中可能存在未经验证的第三方插件，安装时请留意来源。另外系统要求的 dsh plugin add 命令未在 README 中出现，官方推荐的是 dsh plugin --profile web install 命令。"
+    },
+    "summaryZh": "DSH 网页版插件市场：自动聚合 GitHub 上所有 dsh-plugin 标签插件，支持一键安装、更新和版本检测。",
+    "usage": {
+      "prompt_tokens": 3190,
+      "completion_tokens": 2137,
+      "total_tokens": 5327,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1605
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2550
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "suzike/freestyle-dsh-theme",
+  "analyzedAt": "2026-08-17T11:27:06.563Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-client-runtime 等核心包，README 明确说明是 DSH Web GUI 主题插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/suzike/freestyle-dsh-theme.git",
+      "evidence": "git clone https://github.com/suzike/freestyle-dsh-theme.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 的网页界面换主题用的。它自带 6 套预设主题，还提供了一个可视化调色设计器，用专业的 OKLCH 颜色模式来调色，可以分别调整色相、彩度、明度，还能锁定某个通道，自动生成搭配色，甚至让 AI 给配色起名字，也支持导出和导入主题配置。装好后，在设置里的主题板块就能找到自定义选项，点一下就能换肤，重启 DSH 后主题依然保留。",
+      "level": "ok",
+      "risks": "它主要改动界面外观和设置，会把你的主题偏好存到 DSH 的配置文件里；如果你使用“AI 命名”功能，它会把当前配色方案发给 AI 模型（走 DSH 自带的模型），除此之外没发现明显风险。",
+      "postInstallNotes": "根据 README，安装后需要先构建（pnpm install && pnpm build），然后手动在 DSH profile 的 package.json 和 cordis.patch.yml 里注册插件，再重启 dsh web 才能生效。如果通过 dsh plugin add 安装，可能还需确认是否自动构建。",
+      "notes": "README 未提供 dsh plugin add 命令，安装方式是手动构建和配置；注意 package.json 中的包名是 @linxin666/freestyle-dsh-theme，而 GitHub 仓库是 suzike/freestyle-dsh-theme，来源需自行确认；插件依赖的 DSH 核心包版本为 rc 版，建议匹配对应 DSH 版本。"
+    },
+    "summaryZh": "DSH 网页界面主题插件：提供 OKLCH 配色预设和可视化调色设计器，支持 AI 命名、JSON 导入导出。",
+    "usage": {
+      "prompt_tokens": 3610,
+      "completion_tokens": 2980,
+      "total_tokens": 6590,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2452
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2970
+    }
+  }
+}

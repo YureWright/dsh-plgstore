@@ -1,0 +1,37 @@
+{
+  "id": "lehhair/dsh-mobile",
+  "analyzedAt": "2026-08-17T11:22:48.932Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-client-* 核心包，README 给出了 dsh plugin 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/lehhair/dsh-mobile/releases/latest/download/dsh-external-dsh-mobile.tgz",
+      "evidence": "dsh plugin --profile web add \"https://github.com/lehhair/dsh-mobile/releases/latest/download/dsh-external-dsh-mobile.tgz\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DSH 的网页聊天界面在手机上更好用。原来的三栏布局在窄屏上会挤成一团，它改成两页可以左右滑动切换（一页是侧边栏，一页是聊天），像手机 App 一样。还自动适配手机刘海屏和键盘，按钮也变大方便手指点，桌面端则完全不受影响。",
+      "level": "ok",
+      "risks": "它只在前端页面里改样式和交互，不碰文件系统、不连外部服务器（安装时从 GitHub 下载除外），没发现收集隐私或执行系统命令的行为。",
+      "postInstallNotes": "重启 dsh web 服务，再用手机或浏览器设备模拟模式访问。",
+      "notes": "README 提示：用 latest 链接升级时 pnpm 可能缓存旧包，装到旧版需先 remove 再重新安装（必要时 pnpm store prune）。"
+    },
+    "summaryZh": "DSH 移动端 WebUI 适配插件：把桌面三栏变成手机左右翻页，优化触控、安全区与键盘适配。",
+    "usage": {
+      "prompt_tokens": 3377,
+      "completion_tokens": 2502,
+      "total_tokens": 5879,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2080
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2737
+    }
+  }
+}

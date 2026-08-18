@@ -1,0 +1,37 @@
+{
+  "id": "opensetk/dsh-xiaohei",
+  "analyzedAt": "2026-08-17T11:49:28.137Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:opensetk/dsh-xiaohei#dsh-plugin",
+      "evidence": "dsh plugin --profile web add github:opensetk/dsh-xiaohei#dsh-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这是一个住在 DSH 网页界面右下角的小宠物，会跟着你使用 AI 助手的进度变换样子——空闲时发呆、思考时啃鸡腿、输出时奔跑、调用工具时玩耍、完成时庆祝、出错时翻滚。你点它一下，它还会随机表演个小动画。它分成后台和浏览器两部分配合工作，需要安装在 DSH 的 web profile 里。",
+      "level": "ok",
+      "risks": "它会读取 DSH 每轮会话的事件记录（比如 AI 在思考、调用工具、报错等），用来决定宠物的状态；这些数据只在你电脑上的 DSH 进程里处理，不会发给外部。安装时它的构建脚本可能会读取本机 DSH 安装的 @deepseek-ai 相关包来打包；宠物图片来自公开网络资源，但已经打包进代码里，不会额外联网。整体没发现明显风险。",
+      "postInstallNotes": "装完后，需要编辑 ~/.dsh/profiles/web/cordis.patch.yml，把宿主插件行加进去（- insert: - id: dsh-pet-host, name: dsh-pet），然后重启 dsh web 并刷新浏览器。如果 pnpm 版本 ≥10 拦截了构建脚本，还要在 profile 的 pnpm-workspace.yaml 里加上 allowBuilds: { dsh-pet: true }。",
+      "notes": "仓库名是 dsh-xiaohei，但 package.json 里包名是 dsh-pet，安装命令用的是 github:opensetk/dsh-xiaohei#dsh-plugin，注意别搞混。依赖 @deepseek-ai/dsh-client-runtime 等可能还没完整发布到 npm，构建时会复用本机 DSH 的包，若环境不满足可能装不上。另外插件是针对 DSH 0.1.0-rc.6 验证的，其他版本可能需要对 API 做适配。"
+    },
+    "summaryZh": "一只住在 DSH Web 界面右下角的宠物，会随 AI 运行状态自动切换姿态，点击还有互动反馈，是 Host+浏览器双半的 Web UI 插件示例。",
+    "usage": {
+      "prompt_tokens": 4894,
+      "completion_tokens": 3764,
+      "total_tokens": 8658,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3150
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4254
+    }
+  }
+}

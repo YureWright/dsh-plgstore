@@ -1,0 +1,37 @@
+{
+  "id": "PerryLink/dsh-plugin-guide",
+  "analyzedAt": "2026-08-17T12:11:38.392Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段并依赖 @deepseek-ai/dsh，README 给出了 dsh plugin 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-guide",
+      "evidence": "npm channel (published releases): `dsh plugin --profile web add dsh-plugin-guide`."
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 DSH 插件开发的知识都打包成了一个可安装的插件，装好后会变成一个「技能」，你让 AI 助手用这个技能，它就能帮你查官方文档、学 Cordis 入门、避开常见的坑，还能参考社区里的深度文章，相当于带了一个开发手册。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读自己的文件，不联网、不写文件、不调用模型，权限也只有读取文件系统。",
+      "postInstallNotes": "安装后需要重启 DSH 的 profile（比如 `dsh --profile web`），然后可以用 `dsh --profile web --dump-config` 查看是否注册成功。",
+      "notes": "无"
+    },
+    "summaryZh": "将 DSH 插件开发知识库打包成可安装插件，以 agent skill 形式提供官方文档、Cordis 入门与实战避坑指南。",
+    "usage": {
+      "prompt_tokens": 3601,
+      "completion_tokens": 1652,
+      "total_tokens": 5253,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1317
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2961
+    }
+  }
+}

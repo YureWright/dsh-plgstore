@@ -1,0 +1,37 @@
+{
+  "id": "Fisfzy/ego-browser",
+  "analyzedAt": "2026-08-17T11:20:05.129Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 字段并依赖 @deepseek-ai/dsh-tools 和 cordis，README 也给出了 dshx install 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Fisfzy/ego-browser.git",
+      "evidence": "README 摘录：\"dshx install ego-browser <ego-browser.tgz> # tarball 或 git URL 均可\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把一个叫 ego-lite 的 AI 专用浏览器接进 DeepSeek Harness，给 AI 提供 32 个跟浏览器打交道的工具（比如点击、填表、截图、下载、处理验证码等），还带一个实时观察窗口，你可以像看直播一样看着 AI 在网页上操作，随时能亲手接管。它甚至能看到 AI 操作 DSH 自身界面的过程。",
+      "level": "caution",
+      "risks": "插件会启动一个真正的 Chromium 浏览器，可以下载/上传文件、读写登录状态（cookie），观察窗通过本地网络推流画面。它还提供了一些能让你（或 AI）在浏览器里执行任意命令和脚本的工具，所以有执行代码、访问文件系统的能力。这些都属于浏览器自动化功能的正常范围，但如果你从不明渠道获取这个插件，请仔细检查代码。",
+      "postInstallNotes": "装完需要在带图形界面的 DSH Web 里才能用观察窗；可选的配置项（如 egoBin、defaultSpace 等）可以写在 ~/.dsh/config.yaml 对应插件条目下；重启后网站登录态可能失效，需要重新登录。",
+      "notes": "该插件未发布到 npm，只能通过 git 或 tarball 安装，来源为个人仓库，建议安装前自行审查。底层 ego-lite 在 Linux 上依赖未合并的社区补丁，复杂流程稳定性可能一般。"
+    },
+    "summaryZh": "ego-browser 是一个把 AI 专用浏览器接入 DeepSeek Harness 的插件，提供 32 个浏览器自动化工具和实时观察窗口，让你看得见、控得住 AI 的浏览操作。",
+    "usage": {
+      "prompt_tokens": 4717,
+      "completion_tokens": 2053,
+      "total_tokens": 6770,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1526
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4077
+    }
+  }
+}

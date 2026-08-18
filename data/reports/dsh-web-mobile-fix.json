@@ -1,0 +1,37 @@
+{
+  "id": "dsh-web-mobile-fix",
+  "analyzedAt": "2026-08-16T13:27:13.955Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，确实是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-web-mobile-fix",
+      "evidence": "dsh plugin --profile web add dsh-web-mobile-fix"
+    },
+    "evaluationReport": {
+      "intro": "这是一个专门为 DeepSeek Harness 网页版做手机端适配的小插件。它只是在浏览器里加一段 CSS 样式，让设置面板、侧边栏、弹窗等在窄屏手机上显示得更好，不会改动产品源码，卸载也干净。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器里注入样式，不碰用户文件，也不连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web（或等待热重载），然后在浏览器里强制刷新（硬刷新）一次才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "移动端布局修复插件，纯前端 CSS 覆盖，让 DSH 网页版在手机上更好用。",
+    "usage": {
+      "prompt_tokens": 2106,
+      "completion_tokens": 760,
+      "total_tokens": 2866,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 468
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1466
+    }
+  }
+}

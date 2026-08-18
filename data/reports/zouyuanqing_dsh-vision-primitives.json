@@ -1,0 +1,37 @@
+{
+  "id": "zouyuanqing/dsh-vision-primitives",
+  "analyzedAt": "2026-08-17T12:11:37.162Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/dsh-tools 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vision-primitives",
+      "evidence": "该包同时是一个 npm 包(`dsh-vision-primitives`), `dsh plugin add dsh-vision-primitives` 也可。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 智能体装上“精确的眼睛”。它能截屏或读取图片，通过编号网格、局部放大、画框标注、测量距离、颜色查找、OCR 识别文字等工具，帮智能体把图片里的东西转换成精确到像素的坐标，从而准确操作界面或分析图片。还支持接入小米 MiMo 多模态模型，用来描述图片或定位物体。核心计算都在本地完成，不需要外部 MCP 服务器。",
+      "level": "ok",
+      "risks": "插件会读取你的屏幕（截屏），并用 Windows 自带 OCR 识别屏幕文字，这些内容可能被发送给 AI 模型；如果启用多模态功能，图片还会传到小米 MiMo 云端。它会把图片文件缓存在工作区 .vispri 目录。截屏时注意别让敏感信息入镜。",
+      "postInstallNotes": "可选：设置 MiMo API key（`dsh credentials set MIMO_API_KEY <your-key>`）以使用多模态描述/定位功能；不设置也能用本地视觉原语。",
+      "notes": "截屏和原生 OCR 目前仅支持 Windows；动态插件沙箱形态下 WebUI 配置卡片不可用（建议用 bundle 安装形态）。"
+    },
+    "summaryZh": "为 DeepSeek Harness 打造的原生视觉推理插件，通过编号网格和像素级坐标让智能体精确看懂屏幕/图片，内置放大、标注、测量、OCR 等工具，并可接入小米 MiMo 多模态后端。",
+    "usage": {
+      "prompt_tokens": 4092,
+      "completion_tokens": 3553,
+      "total_tokens": 7645,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3064
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3452
+    }
+  }
+}

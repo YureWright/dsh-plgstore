@@ -1,0 +1,37 @@
+{
+  "id": "dsh-memoria",
+  "analyzedAt": "2026-08-16T13:33:03.462Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-memoria",
+      "evidence": "dsh plugin --profile <profile> add dsh-memoria"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上长期记忆功能。它会在后台启动一个 Python 小程序来管理记忆，让 AI 能记住之前说过的重要信息。它自带四个工具：存记忆、回忆记忆、删除记忆、查看记忆状态，并且默认每次对话开始时自动把相关记忆塞给 AI，让它不用你提醒也能想起以前的事。",
+      "level": "ok",
+      "risks": "它会在你电脑上启动一个 Python 子进程，需要你提前装好 Python 的 memoria 包。它只在本机跑，不连外部服务器，不碰隐私文件。",
+      "postInstallNotes": "需要确认 Python 环境能 import memoria，并在配置里指定 python 路径和 cwd（如果默认的不对的话）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供长期记忆能力的插件，通过 Python 子进程管理记忆并自动注入上下文。",
+    "usage": {
+      "prompt_tokens": 2078,
+      "completion_tokens": 523,
+      "total_tokens": 2601,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 179
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1438
+    }
+  }
+}

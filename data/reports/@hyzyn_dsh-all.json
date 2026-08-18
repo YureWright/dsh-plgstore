@@ -1,0 +1,37 @@
+{
+  "id": "@hyzyn/dsh-all",
+  "analyzedAt": "2026-08-17T11:06:26.926Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle patch，并依赖 @deepseek-ai/cordis 作为开发依赖，README 给出了 dsh plugin add 安装命令，是典型的 DSH 聚合插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@hyzyn/dsh-all",
+      "evidence": "dsh plugin --profile web add link:$(pwd)"
+    },
+    "evaluationReport": {
+      "intro": "这是一个「全家桶」安装包，帮你一次性装好一组 @hyzyn 出品的 DSH 插件（代码图谱、环境管理、MCP、RSS、搜索等），通过一条 bundle patch 自动挂载全部插件，不用一个个单独装。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是一个挂载器，安装后会在 DSH 配置里追加一个 cordis.patch.yml，把多个子插件一起加载。每个子插件可能有各自权限，但该包本身不做额外操作。",
+      "postInstallNotes": "无",
+      "notes": "注意：该包的 dependencies 和 cordis.patch.yml 由脚本自动生成，请勿手动修改。README 给出的安装命令是本地开发用的 link 方式，市场安装请用 npm 包名 @hyzyn/dsh-all。"
+    },
+    "summaryZh": "DSH 插件全家桶：一次安装自动挂载 codegraph、env、hello、mcp、profile、prompt、rss、search 等插件。",
+    "usage": {
+      "prompt_tokens": 1331,
+      "completion_tokens": 1896,
+      "total_tokens": 3227,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1534
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 691
+    }
+  }
+}

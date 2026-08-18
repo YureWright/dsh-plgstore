@@ -1,0 +1,37 @@
+{
+  "id": "dsh-token-cost",
+  "analyzedAt": "2026-08-16T14:49:33.393Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client 注入点并依赖 @deepseek-ai/cordis 等核心包，且 README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-token-cost",
+      "evidence": "dsh plugin --profile web add dsh-token-cost"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DeepSeek Harness 里显示每次对话和每条消息大概花了多少钱（token 费用）。它会在会话标题旁边显示总花费，鼠标悬停能看到明细；每条 AI 回复下面也会显示这条消息的成本。设置页面里能看到所有会话的总花费和按模型分类的统计。价格按照 DeepSeek 官方价格自动同步（每天更新一次），也支持你自己手动改价格文件。",
+      "level": "ok",
+      "risks": "它会在你的 DSH 配置目录（~/.dsh/prices/）下创建和修改价格 JSON 文件；如果你启用自动更新功能，它会每天定时联网访问 DeepSeek 官网获取最新价格。除此之外没发现它碰其他隐私文件或上传数据。",
+      "postInstallNotes": "如果用 `dsh plugin add dsh-token-cost` 安装，需要手动在配置中添加 `cordis.patch.yml` 条目（README 有示例），然后重启 `dsh web`；也可以直接用 `npx dsh-token-cost setup` 自动完成安装和配置。价格自动更新需要另外设置定时任务（非必需）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 追踪每次会话和每条消息的 token 费用，支持官方价格自动同步和本地价格覆盖。",
+    "usage": {
+      "prompt_tokens": 2687,
+      "completion_tokens": 1848,
+      "total_tokens": 4535,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1434
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2047
+    }
+  }
+}

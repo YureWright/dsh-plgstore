@@ -1,0 +1,37 @@
+{
+  "id": "dsh-model-meta-autofill",
+  "analyzedAt": "2026-08-18T14:51:48.707Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch 和 dsh.client，peerDependencies 依赖 @deepseek-ai/cordis 与 dsh-settings，README 给出了 dsh plugin add 安装命令，是标准的 DSH 宿主侧插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-model-meta-autofill",
+      "evidence": "dsh plugin --profile web add dsh-model-meta-autofill"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你自动补齐自定义模型的信息。如果你在 DSH 里添加了某个模型（比如从网关发现的），它通常只有个 ID，没有上下文长度、最大输出、显示名称这些参数。这个插件会从 models.dev 这个公开的模型目录里查找已知数据，自动填到设置里，让你在界面上能直接看到，也让系统更好地调度容量。它只填缺失的字段，绝不会覆盖你手动设置过的内容，所以很安全。",
+      "level": "ok",
+      "risks": "插件启动时会连接 models.dev 拉取最新模型目录（可关闭），除此之外主要读写 DSH 自己的配置文件（llm-pi-ai 设置区）。它不会碰你的私人文件，也不会把数据发给第三方。",
+      "postInstallNotes": "安装后需要重启 dsh web（或对应管理面重载插件）才会生效；重启后首次运行会自动补填一次已有模型的元数据。",
+      "notes": "无"
+    },
+    "summaryZh": "自动为 DSH 自定义供应商模型补全上下文长度、输出上限、显示名等元数据，数据来自 models.dev，只填缺失字段，不覆盖手动设置。",
+    "usage": {
+      "prompt_tokens": 4506,
+      "completion_tokens": 573,
+      "total_tokens": 5079,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 166
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3866
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-gif-background",
+  "analyzedAt": "2026-08-18T14:52:39.200Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 的接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-gif-background",
+      "evidence": "dsh plugin --profile web add dsh-gif-background"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 网页界面加自定义背景，支持图片、GIF 和动态壁纸。它有一个开关和本地素材库，你可以上传、删除、重命名背景图，也能手动把文件丢进 gifs/ 文件夹后刷新。它自动适配官方主题和皮肤中心，背景只在本地显示。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在网页上改样式，上传的图片存在你自己电脑的 gifs/ 目录里，本地接口只在本机回环地址上跑，不会暴露到外网。",
+      "postInstallNotes": "安装后需要重启 dsh web，并按 Ctrl+F5 硬刷新浏览器。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面添加自定义 GIF/图片背景的插件，支持本地素材库和开关。",
+    "usage": {
+      "prompt_tokens": 3129,
+      "completion_tokens": 728,
+      "total_tokens": 3857,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 408
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2489
+    }
+  }
+}

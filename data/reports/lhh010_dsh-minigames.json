@@ -1,0 +1,37 @@
+{
+  "id": "lhh010/dsh-minigames",
+  "analyzedAt": "2026-08-17T11:18:19.645Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 peerDependencies 包含 @deepseek-ai/cordis，符合 DSH 插件的真正证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/lhh010/dsh-minigames.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 网页界面加了一个右侧的小游戏面板，里面内置了 18 款完全离线的小游戏，比如恐龙跳一跳、俄罗斯方块、扫雷、数独、五子棋等。你可以在等 AI 回复或者无聊的时候点开右边的 🎮 图标，玩一局放松一下。面板可以折叠成一条小竖条，点开就占窗口右半部分，还能拖动调大小。所有游戏都保存在浏览器本地玩，不需要联网。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在浏览器里保存每局最高分（localStorage），不会读写电脑上的其他文件，也不会上传任何数据。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页界面右侧的小游戏面板，内置 18 款离线小游戏，专治等模型回复时的手痒。",
+    "usage": {
+      "prompt_tokens": 5979,
+      "completion_tokens": 2146,
+      "total_tokens": 8125,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1813
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5339
+    }
+  }
+}

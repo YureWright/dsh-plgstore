@@ -1,0 +1,37 @@
+{
+  "id": "harness-lark",
+  "analyzedAt": "2026-08-18T14:58:50.920Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "harness-lark",
+      "evidence": "README 原文：dsh plugin --profile web add harness-lark"
+    },
+    "evaluationReport": {
+      "intro": "这是 DeepSeek Harness 的飞书/Lark 渠道插件。装上之后，你可以用飞书当聊天入口指挥 AI：它负责收发消息、卡片式流式回复（边思考边显示）、发送图片/文件，还能让 AI 读写飞书云文档、多维表格、电子表格、日历和任务，以及通过斜杠命令（如 /status、/model、/cd）控制会话和本地目录。适合想用飞书和 Harness 对话、并让 AI 操作飞书办公资料的用户。",
+      "level": "ok",
+      "risks": "它会读取你设置的环境变量中的飞书应用凭据，并长期连接飞书服务器收发消息；你的飞书对话内容会交给 Harness 的大模型处理，可能会发送到外部模型服务。插件提供的工具能操作飞书云文档/表格/日历，也可能按你允许的权限读写本地文件（/cd、/permission）。如果开放群聊，群里其他人也能和 AI 对话，需要留意权限设置。",
+      "postInstallNotes": "装完后还需要：1) 在飞书开放平台创建应用，拿到 appId/appSecret；2) 设置环境变量 FEISHU_APP_ID 和 FEISHU_APP_SECRET；3) 在飞书后台把事件订阅改为「使用长连接接收事件」并订阅 im.message.receive_v1；4) 根据需要在 DSH 配置里给插件填写 appId/appSecret、dmPolicy、groupPolicy 等参数。",
+      "notes": "npm 包 harness-lark@0.1.14 已发布，README 方式二注明「发布后」即可直接安装；依赖了多个 @deepseek-ai/dsh-* 的 rc 版本，请确保 DSH 核心版本满足 peerDependencies（如 @deepseek-ai/cordis ^4.0.1）。"
+    },
+    "summaryZh": "让 DeepSeek Harness 接入飞书/Lark 的渠道插件，支持聊天、流式卡片、云文档/表格/日历等办公操作及斜杠命令。",
+    "usage": {
+      "prompt_tokens": 4550,
+      "completion_tokens": 4812,
+      "total_tokens": 9362,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4220
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3910
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-lark-bot",
+  "analyzedAt": "2026-08-16T13:22:15.703Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-sdk-client，且 README 明确说明 dsh plugin add 可直接安装。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-lark-bot",
+      "evidence": "执行标准的 `dsh plugin --profile dsh-lark add dsh-lark-bot@<版本>`（版本号由当前包固定，避免 pnpm 裸名解析到旧版本）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness（dsh）编程助手接入飞书/Lark。你在飞书里私聊或群聊中 @ 它，就能指挥本机上的 dsh 干活，比如跑任务、管理项目工作区、切换角色、归档会话等，还能收到流式卡片和主动通知。适合在手机上或团队群里远程使用本机 AI 编程助手。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件需要扫码授权飞书应用，会读取你在飞书里发给它的消息；同时它会调用本机的 dsh 执行任务，相当于给了 AI 操作你电脑的权限，请确保飞书应用只给自己或信任的人使用。",
+      "postInstallNotes": "首次启动用飞书扫码绑定 PersonalAgent 应用；也可以设置环境变量 DSH_LARK_APP_ID、DSH_LARK_APP_SECRET、DSH_LARK_TENANT 跳过扫码。",
+      "notes": "README 推荐运行 `npx dsh-lark-bot@latest setup` 一键安装，它会自动执行 `dsh plugin add dsh-lark-bot@<版本>` 并安装安全网守护进程。"
+    },
+    "summaryZh": "把 DeepSeek Harness 接入飞书/Lark，让你在聊天里远程指挥本机编程智能体。",
+    "usage": {
+      "prompt_tokens": 4618,
+      "completion_tokens": 1740,
+      "total_tokens": 6358,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1279
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3978
+    }
+  }
+}

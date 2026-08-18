@@ -1,0 +1,37 @@
+{
+  "id": "@moguiyu/dsh-tool-tavily-search",
+  "analyzedAt": "2026-08-16T13:29:09.535Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 peerDependencies 包含 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，README 也明确是为 DeepSeek Harness 注册工具和设置卡片。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@moguiyu/dsh-tool-tavily-search",
+      "evidence": "See the [workspace README](../../README.md) for install and configuration."
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个『联网搜索』功能，底层用的是 Tavily 搜索服务。装上之后，AI 就能调用 tavily_search 工具去网上搜资料，同时会在设置界面里多出一张 Tavily Search 卡片，让你填 API 密钥、看用量、开关这个功能。它支持多个 API 密钥自动轮换，某个密钥失效（401/429）时会自动换下一个。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你发起搜索时把搜索词发给 Tavily 的服务器，这是联网搜索工具的正常行为；API 密钥由你自己配置和保管，插件本身不额外上传隐私文件。",
+      "postInstallNotes": "你需要准备 Tavily API 密钥，然后在 DSH 设置中的 Tavily Search 卡片里填入（或设置 TAVILY_API_KEYS 环境变量），并确认该工具的开关是打开的。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Tavily 联网搜索工具和对应的设置卡片，支持多 API 密钥轮换与用量统计。",
+    "usage": {
+      "prompt_tokens": 1829,
+      "completion_tokens": 1179,
+      "total_tokens": 3008,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 775
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1189
+    }
+  }
+}

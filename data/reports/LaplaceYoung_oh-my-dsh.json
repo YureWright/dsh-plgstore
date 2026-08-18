@@ -1,0 +1,37 @@
+{
+  "id": "LaplaceYoung/oh-my-dsh",
+  "analyzedAt": "2026-08-17T11:14:05.950Z",
+  "result": {
+    "classification": {
+      "type": "list",
+      "confidence": 0.85,
+      "reason": "仓库是一个包含 530 个插件的 monorepo 合集，本身不是单个可安装的 DSH 插件；package.json 为 private 且无 dsh.bundle/client 声明，README 也未提供 dsh plugin add 命令。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明 dsh plugin add 安装命令；仅提供 git clone 仓库方式。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的插件大礼包，收集了 530 个插件，把 Claude Code、kimi-code 等工具的各种能力（深度研究、多智能体协作、秘密扫描、会话管理、浏览器自动化、安全测试、可观测性等）移植成 DSH 插件。它不是单个插件，而是一个插件仓库，你可以挑选需要的插件手动挂载到 DSH 里。",
+      "level": "ok",
+      "risks": "没发现明显风险。安装时会运行 pnpm install，可能构建 esbuild；仓库里的插件带有文件扫描、shell 执行、浏览器自动化、网络访问等功能，但这些只在你主动启用对应插件时才会发生。",
+      "postInstallNotes": "需要手动将想要使用的插件写进 DSH 的 cordis.yml（例如 @oh-my-dsh/deep-research），并按需配置（如设置 provider/model）；部分功能可能需要设置 DEEPSEEK_API_KEY 等环境变量。",
+      "notes": "注意：它本身并非一个可安装的 DSH 插件，而是一个插件合集仓库；package.json 标记为 private 且未发布到 npm，需通过 git clone + pnpm install 自行构建后使用。"
+    },
+    "summaryZh": "一个包含 530 个 DSH 插件的合集仓库，把 Claude Code 等工具的能力移植为可挂载的 DSH 插件，涵盖深度研究、多智能体、安全、浏览器等领域。",
+    "usage": {
+      "prompt_tokens": 3226,
+      "completion_tokens": 4729,
+      "total_tokens": 7955,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4273
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2586
+    }
+  }
+}

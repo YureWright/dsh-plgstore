@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-open-in-vscode",
+  "analyzedAt": "2026-08-17T11:14:17.987Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/omdsh-dev/dsh-open-in-vscode/archive/refs/tags/v0.1.6.tar.gz",
+      "evidence": "Add the plugin to your web profile (this runs pnpm inside the profile and reconciles the bundle layer):"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DSH 网页界面的侧边栏工作区菜单里加一个“在 VSCode 中打开”的按钮。你点一下这个按钮，它就会用 VS Code（或其他你配置的编辑器）打开当前工作区的文件夹，省去手动在终端里敲 code 命令的麻烦。",
+      "level": "ok",
+      "risks": "它会在你的电脑上执行一条命令来打开编辑器（默认是 `code <文件夹路径>`）。它本身不读写任何文件，只打开你已经在 DSH 中打开的那个目录，也不会联网。唯一需要注意的是，如果你的编辑器命令没配好，插件会报错。",
+      "postInstallNotes": "确保你的电脑上装了 VS Code 并且 `code` 命令可用（macOS 需要在 VS Code 里安装 Shell Command，Windows 一般自动支持）。如果你用其他编辑器，可以修改配置里的 `command` 字段。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 网页界面的工作区菜单中添加“在 VSCode 中打开”选项，一键用 VS Code 打开当前工作区目录。",
+    "usage": {
+      "prompt_tokens": 2911,
+      "completion_tokens": 1323,
+      "total_tokens": 4234,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 905
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2271
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@chaoset/vision-router",
+  "analyzedAt": "2026-08-17T11:09:52.393Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了确切的 dsh plugin 安装命令，属真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@chaoset/vision-router",
+      "evidence": "dsh plugin --profile web add @chaoset/vision-router"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DSH 会话在遇到像 deepseek-v4-flash 这种只支持文字的模型时，照样处理图片。你把图片拖进对话框，或者让 AI 用 read_image 读图，它会自动调用一个免费的视觉模型（默认是智谱的 glm-4v-flash）把图片内容转成文字，再交给原来的模型继续分析。它还带图片压缩、结果缓存、来源标注等功能，普通文字对话不受影响，内部出错也只是记日志，不会拖垮整个工具。",
+      "level": "caution",
+      "risks": "使用这个插件时，图片会发送给第三方（智谱）的视觉模型服务，涉及图片内容外传，请注意不要让它处理敏感图片。另外它会读取 DSH 的配置和环境变量，修改模型路由逻辑，并在本地缓存图片转述结果。",
+      "postInstallNotes": "安装后需要重启 harness 才会生效。如果默认的 zai-open / glm-4v-flash 不可用，可以到 DSH 设置页的插件配置里调整视觉模型提供方。",
+      "notes": "连接外部视觉模型服务是本插件的预期功能，但图片内容会经过第三方，介意隐私的用户需谨慎。仓库位于个人 monorepo（winliyou/dsh-plugins），建议安装前自行确认版本和来源。"
+    },
+    "summaryZh": "让 DSH 会话在纯文本模型下也能处理图片，自动调用免费视觉模型将图片转述为文字后交给原模型继续分析。",
+    "usage": {
+      "prompt_tokens": 2330,
+      "completion_tokens": 1734,
+      "total_tokens": 4064,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1281
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1690
+    }
+  }
+}

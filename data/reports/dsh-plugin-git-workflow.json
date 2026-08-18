@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-git-workflow",
+  "analyzedAt": "2026-08-18T14:54:37.466Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-git-workflow",
+      "evidence": "dsh plugin --profile web add dsh-plugin-git-workflow"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 AI 助手能安全地操作 Git 仓库，比如查看当前有哪些改动、提交代码、看提交历史、切换分支等。以前模型要自己敲命令行，容易出错也危险；装了这个插件，它就能用规范、安全的方式完成这些操作。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读写你指定的 Git 仓库（比如读取状态、创建提交），但不会动仓库以外的文件，也不会联网。只读模式下写操作会被拒绝。",
+      "postInstallNotes": "需要把插件挂载到会话配置里（如 cordis.patch.yml 或 agent preset），并在目标 Git 仓库中配置 user.name 和 user.email，否则提交会失败。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 模型提供安全、结构化的 Git 工作流工具（状态、差异、提交、历史、分支），告别裸 shell 命令。",
+    "usage": {
+      "prompt_tokens": 2460,
+      "completion_tokens": 1020,
+      "total_tokens": 3480,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 686
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1820
+    }
+  }
+}

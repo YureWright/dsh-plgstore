@@ -1,0 +1,37 @@
+{
+  "id": "DietCokewithSugar/dsh-user-experience",
+  "analyzedAt": "2026-08-17T11:20:24.044Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 字段，peerDependencies 依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/DietCokewithSugar/dsh-user-experience.git",
+      "evidence": "`dsh plugin --profile web add github:DietCokewithSugar/dsh-user-experience`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，专门帮你在开发阶段找前端项目的用户体验毛病。它会让 AI 假装成不同类型的用户（比如普通用户、企业用户）去“体验”你的网页，检查布局、操作流程、反馈提示等，然后生成一份大白话的报告，告诉你哪个页面哪里体验不好、影响有多大。它支持 React 和 Vue 3 项目，你只要在对话里说一句“检查一下这个页面”或者直接改代码，它就会自动开始审查，并在你确认问题后生成一个可以直接复制给其他 AI 的修复任务提示。",
+      "level": "caution",
+      "risks": "安装插件时会自动运行来自 GitHub 的构建脚本（prepare 脚本），这可能执行作者写的任意代码，有一定安全风险。插件会读取你项目里的前端源代码和样式文件，并可能通过 DSH 的 AI 功能把这些代码发给大模型服务进行分析，所以如果你的项目代码是私密或敏感的，这些内容可能会被第三方处理。另外，如果启用了浏览器渲染检查，它可能会自动打开本地开发服务器上的页面并操作浏览器。它不会自动修改你的代码，只会给出建议。",
+      "postInstallNotes": "安装完成后需要重启 DSH 或重新加载 web profile（README 明确要求）。如果想控制报告语言，可以配置 outputLanguage（支持中文/英文）。首次使用时会自动根据项目 README 推断用户画像，也可以直接在对话里指定要检查的流程。",
+      "notes": "经评估确实是 DSH 插件，但安装源是第三方 GitHub 仓库，且安装时会执行构建脚本，建议先阅读 README 中的安全说明，并在生产环境固定到特定 commit。插件目前为 0.3.1 版本，peerDependencies 依赖多个 rc 版核心包，可能随 DSH 核心更新而快速迭代，如果遇到兼容问题可以关注版本更新。"
+    },
+    "summaryZh": "一个用于 DeepSeek Harness 的 UX 审查插件：让 AI 扮演目标用户，在开发阶段自动检查 React/Vue 项目的用户体验问题，并给出可执行、可验证的优化建议。",
+    "usage": {
+      "prompt_tokens": 4069,
+      "completion_tokens": 5051,
+      "total_tokens": 9120,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4425
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3429
+    }
+  }
+}

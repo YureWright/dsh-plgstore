@@ -1,0 +1,37 @@
+{
+  "id": "dsh-auth-gate",
+  "analyzedAt": "2026-08-18T14:50:57.051Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-auth-gate",
+      "evidence": "dsh plugin --profile web add dsh-auth-gate"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页版加一道登录门。装上去之后，任何人想访问你的 dsh 网页、API 或 WebSocket，都必须先登录。它支持两种登录方式：一种是管理员给每个人分配用户名密码，另一种是整个网站共用一个密钥 token。它还会把密码加密存起来，防止有人暴力猜密码（登录失败次数多了会临时封 IP）。总之，如果你想把 dsh 部署到公网上，又不想让陌生人碰你的聊天记录和 AI 模型密钥，这个插件就是干这个的。",
+      "level": "ok",
+      "risks": "没发现明显风险。它运行在服务器上，会修改 dsh 的配置文件（cordis.patch.yml），在 $DSH_HOME 下创建 auth/users.yaml 存储密码哈希，并可能读取环境变量 DSH_AUTH_TOKEN。不会上传外部数据或访问个人隐私文件。",
+      "postInstallNotes": "需要创建一个管理员账号（如执行 `dsh-auth user add admin --password-stdin`），然后根据选择的认证模式进行配置：默认 token 模式需设置 DSH_AUTH_TOKEN 环境变量；若改用密码模式则需在 cordis.patch.yml 中设置 mode: \"password\" 并配置 usersFile。配置完成后重启 dsh 生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 实例提供登录认证门，支持密码和 token 登录，保护后端代理与凭据安全。",
+    "usage": {
+      "prompt_tokens": 3561,
+      "completion_tokens": 2303,
+      "total_tokens": 5864,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1852
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2921
+    }
+  }
+}

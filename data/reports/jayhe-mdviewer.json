@@ -1,0 +1,37 @@
+{
+  "id": "jayhe-mdviewer",
+  "analyzedAt": "2026-08-16T13:42:29.865Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client（inject 多个 @deepseek-ai/dsh-client-* 包），peerDependencies 包含 @deepseek-ai/cordis 和 dsh-* 核心包，且 README 明确是 DeepSeek Harness 的文件预览插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "jayhe-mdviewer",
+      "evidence": "pnpm add jayhe-mdviewer"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，主要功能是预览 AI 对话过程中生成的文件。比如 AI 帮你写了代码或文档，在聊天界面下方会列出产生的文件，点击某个文件就能在右侧打开一个预览面板，直接看到 Markdown 渲染效果、带高亮代码、CSV 表格、图片或纯文本，不用下载到本地再打开。",
+      "level": "ok",
+      "risks": "它会读取 dsh 环境里允许访问的文件（通过 dsh 自己的文件服务），并在界面上显示内容，所以如果你在对话中让 AI 读取了敏感文件，这些内容可能会显示在预览面板里。另外 README 提到这个预览接口默认没有额外认证，多用户部署时需要注意访问控制。",
+      "postInstallNotes": "安装后需要手动编辑 profile 目录下的 cordis.patch.yml，加入 mdviewer 这一行的配置，然后重启 dsh web 进程才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供侧边文件预览面板，支持 Markdown、代码高亮、CSV、图片和文本渲染的插件。",
+    "usage": {
+      "prompt_tokens": 3277,
+      "completion_tokens": 2374,
+      "total_tokens": 5651,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1969
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2637
+    }
+  }
+}

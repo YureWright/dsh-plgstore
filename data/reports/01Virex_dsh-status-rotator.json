@@ -1,0 +1,29 @@
+{
+  "id": "01Virex/dsh-status-rotator",
+  "analyzedAt": "2026-08-17T11:23:04.505Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 exports 暴露 ./client，明显是 DSH 插件的标准结构。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/01Virex/dsh-status-rotator.git",
+      "evidence": "README 未说明 dsh plugin add 命令，但提供了手动安装步骤：把本项目目录放到 profile 的 node_modules 下（默认 `C:\\Users\\<你>\\.dsh\\profiles\\node_modules\\dsh-status-rotator\\`）。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness 网页界面底部那行“Deep diving...”状态文字换成你自己写的文案。你可以按思考、运行、超时三个不同阶段显示不同的话，还能让它像打字机一样一个字一个字蹦出来，或者显示流动的彩色渐变。另外它也带一个可选的小工具，用来把 QQ 群成员昵称批量变成状态文案。",
+      "level": "ok",
+      "risks": "它会读取插件目录下的 config.json 配置文件（仅用于显示文案），并且在 node half 注册了一个本地 HTTP 路由来让浏览器获取这个配置文件。如果你使用可选的 QQ 群抓取脚本，它会连接你配置的 OneBot HTTP API（默认 127.0.0.1:3000）去拉取群成员名单，但这一切都需要你自己主动配置和触发。没发现明显风险。",
+      "postInstallNotes": "需要手动把项目目录放到 `.dsh/profiles/node_modules/` 下，并在 `cordis.patch.yml` 中插入相应配置项；然后运行 `node gen-config.cjs` 初始化本地 config.json（或从 config.example.json 复制），最后重启 `dsh web` 并硬刷新浏览器。",
+      "notes": "该插件未提供 dsh plugin add 一键安装命令，需手动放置和修改配置文件；QQ 群抓取脚本是可选功能，不配置就不会用到。"
+    },
+    "summaryZh": "一个用于 DeepSeek Harness 网页界面的状态文字替换插件，支持分阶段自定义文案、打字机效果和炫彩渐变，还可选生成 QQ 群成员名单文案。",
+    "usage": {
+      "prompt_tokens": 6567,
+      "completion_tokens": 1595,
+      "total_tokens": 8162
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "mudden2380078550-creator/write-chinese-long-screenplay",
+  "analyzedAt": "2026-08-17T11:46:43.356Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 提供了 dsh plugin add 安装命令，符合 DSH 插件定义"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:mudden2380078550-creator/write-chinese-long-screenplay",
+      "evidence": "dsh plugin add \"github:mudden2380078550-creator/write-chinese-long-screenplay\""
+    },
+    "evaluationReport": {
+      "intro": "这是一个帮 AI 写中文长剧本的技能包。你只需要填好背景设定和人物设定，它就能自动帮你规划故事结构、保持剧情连续、检查对白有没有“AI 味”，还能生成剧本草稿。支持 DeepSeek Harness、Codex、Claude Code 等工具。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在你的项目和技能目录里读写文件，不会联网，也不会碰隐私文件。",
+      "postInstallNotes": "安装后重启 dsh 或新建任务让技能生效；首次使用前用它的 init_project.py 脚本初始化你的剧本项目。",
+      "notes": "这个包本质是一个 Agent Skill（SKILL.md），并非只服务 DSH，通过 dsh.bundle 机制也能作为插件安装；使用 GPL-3.0 许可。"
+    },
+    "summaryZh": "中文长剧本创作技能包：提供背景/人物设定驱动的结构化写作流程，帮 AI 写出长篇不崩、去 AI 味的剧本。",
+    "usage": {
+      "prompt_tokens": 3918,
+      "completion_tokens": 1709,
+      "total_tokens": 5627,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1347
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3278
+    }
+  }
+}

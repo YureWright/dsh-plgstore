@@ -1,0 +1,37 @@
+{
+  "id": "SenmuuuuW/dsh-whale-report",
+  "analyzedAt": "2026-08-17T11:21:43.729Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 且依赖 @deepseek-ai/cordis 与 dsh-session 等核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/SenmuuuuW/dsh-whale-report.git",
+      "evidence": "dsh plugin --profile web add \"github:SenmuuuuW/dsh-whale-report\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫“深迹 · DeepTrace”，能帮你把 DSH 里 Agent 干的活（会话记录）自动整理成日报、周报、月报、年报。它统计花了多少钱、用了多少 token、什么时候在跑、调用了哪些工具、有没有重试和危险操作，还能生成图片和 PDF 报告。它只读数据，不会改动你的会话，还注意不把密钥、危险命令原文写进报告。",
+      "level": "ok",
+      "risks": "它会读取你本地的 DSH 会话存档（~/.dsh/sessions 下的文件），用来做统计；还会在生成报告时联网获取模型官方价格（有缓存），如果你配置了平台 API key，它会查询余额。这些数据都留在本机，报告在本地生成，不会上传。",
+      "postInstallNotes": "装完后重启 DSH web 端让宿主代码生效；如需查看平台实时余额，可能需要配置对应平台的 API key。",
+      "notes": "无"
+    },
+    "summaryZh": "深迹 · DeepTrace —— 把 DSH 会话日志变成看得懂的成本、活跃度与风险报告（日报/周报/月报/年报）。",
+    "usage": {
+      "prompt_tokens": 4436,
+      "completion_tokens": 2645,
+      "total_tokens": 7081,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2236
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3796
+    }
+  }
+}

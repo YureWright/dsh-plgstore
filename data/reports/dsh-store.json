@@ -1,0 +1,37 @@
+{
+  "id": "dsh-store",
+  "analyzedAt": "2026-08-16T13:24:25.964Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 提供了 dsh plugin add 官方安装命令，且代码调用了 dsh 的接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-store",
+      "evidence": "或者官方命令：`dsh plugin --profile web add dsh-store`。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的插件商店，就像手机上的应用商店一样，你可以在这里浏览、搜索、安装、卸载和更新各种 DSH 插件。它从 npm、GitHub 和精选列表收集插件信息，还会自动验证哪些插件真的能用，并给它们分类和打星标排序。安装插件时它会调用 DSH 官方的安装命令，装完重启就能用。",
+      "level": "ok",
+      "risks": "它会访问 npm registry 和 GitHub API 来获取插件列表，可能在国内网络环境下需要设置代理。它会读写 `~/.dsh` 下的配置文件和缓存（如 plugin-store 目录和 cordis.patch.yml），并在安装/卸载插件时执行相应的命令。不会碰其他个人隐私文件。",
+      "postInstallNotes": "按 README 提示，安装后需要重启 dsh，然后打开 `http://<dsh地址>:<端口>/plugin-store` 使用。如需代理或指定 profile，可以编辑 `~/.dsh/plugin-store/config.json` 或设置环境变量。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-store 是一个 DSH 插件商店，聚合 750+ 插件，支持浏览、一键安装/卸载/更新，并带有质量验证和分类排序。",
+    "usage": {
+      "prompt_tokens": 2979,
+      "completion_tokens": 677,
+      "total_tokens": 3656,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 269
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2339
+    }
+  }
+}

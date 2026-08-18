@@ -1,0 +1,37 @@
+{
+  "id": "NanmiCoder/dsh-plugin-market",
+  "analyzedAt": "2026-08-17T11:59:47.240Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@nanmicoder/dsh-plugin-market",
+      "evidence": "dsh plugin --profile web add @nanmicoder/dsh-plugin-market"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加一个可视化插件市场：你可以在 DSH 的设置里打开“插件市场”，搜索、查看插件详情（来源、作者、许可证等），并一键安装或卸载经过验证的插件，不用手动敲命令。",
+      "level": "ok",
+      "risks": "它会从 GitHub/npm 拉取插件目录数据并缓存在本地；当你通过它安装插件时，会在你电脑上执行 pnpm 安装命令，让第三方插件代码运行在你机器上。同时它会读取和修改 DSH 配置文件（如 profile）来管理插件。插件本身没有发现恶意行为。",
+      "postInstallNotes": "安装后重启 DSH，打开 Web UI 进入 Settings → Plugin Marketplace 即可使用。如要获取实时目录，可在插件配置中设置 registryUrl（默认用内置种子数据）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供可视化插件市场，可在 Web UI 中浏览、验证、安装和卸载 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 4021,
+      "completion_tokens": 1872,
+      "total_tokens": 5893,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1515
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3381
+    }
+  }
+}

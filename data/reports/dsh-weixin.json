@@ -1,0 +1,37 @@
+{
+  "id": "dsh-weixin",
+  "analyzedAt": "2026-08-16T13:43:38.253Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle（./cordis.patch.yml），且 README 明确描述其为 DeepSeek Harness 的微信通道插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-weixin",
+      "evidence": "README 原文：dsh plugin --profile web add dsh-weixin"
+    },
+    "evaluationReport": {
+      "intro": "这是一个把微信接入 DeepSeek Harness 的插件，让 AI 助手能通过微信收发消息。它直接跑在 Harness 进程里，不用另开程序；每个微信用户会分到独立的对话记忆；自带一个网页面板，可以扫码登录、看状态、发消息；也支持其他插件或脚本主动给微信用户推送消息。",
+      "level": "caution",
+      "risks": "它会联网到腾讯的 iLink 服务器收发微信消息；会在本地保存登录凭证和会话映射（类似密码和聊天记录）；网页面板（/weixin）没有登录验证，如果你的电脑或内网能让别人访问，对方可能冒充机器人乱发消息、查看你的聊天记录，甚至踢掉机器人。",
+      "postInstallNotes": "先确保手机微信已开通 ClawBot（设置→插件→ClawBot，iOS ≥ 8.0.70）；启动 `dsh web --port 3080` 后，打开 http://127.0.0.1:3080/weixin 扫码登录；不要把 webServer 暴露到公网，建议只在本机或可信内网使用。",
+      "notes": "该插件网页面板无鉴权，官方已明确警告，务必注意部署环境；目前仅支持单聊，群聊未适配；登录二维码 5 分钟过期，超时需要重新扫码。"
+    },
+    "summaryZh": "微信 ClawBot（iLink）通道插件：把微信消息接入 DeepSeek Harness，支持扫码登录、独立会话和主动推送。",
+    "usage": {
+      "prompt_tokens": 3557,
+      "completion_tokens": 2772,
+      "total_tokens": 6329,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2310
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2917
+    }
+  }
+}

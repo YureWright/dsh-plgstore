@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-skin-qq98",
+  "analyzedAt": "2026-08-17T11:07:46.132Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，是标准的 DSH 客户端插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-skin-qq98",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-skin-qq98"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页界面换复古 QQ2008 风格皮肤的插件。装上后，界面会变成水晶蓝桌面、玻璃质感的藏青色标题栏、戴围巾的企鹅图标，整体走怀旧风格。它只改外观，不影响任何聊天或模型功能。",
+      "level": "ok",
+      "risks": "没发现明显风险，它只修改浏览器里的页面外观（DOM），不碰文件、不连外部服务器、不碰隐私。",
+      "postInstallNotes": "装完需要用命令激活皮肤：dsh-skin use qq98（在仓库的 scripts/dsh-skin 里）。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DSH 网页界面换上 QQ2008 复古皮肤，纯外观改动，安全无副作用。",
+    "usage": {
+      "prompt_tokens": 1957,
+      "completion_tokens": 512,
+      "total_tokens": 2469,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 196
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1317
+    }
+  }
+}

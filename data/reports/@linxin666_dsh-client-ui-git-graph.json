@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-git-graph",
+  "analyzedAt": "2026-08-17T11:07:33.756Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，确属 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-git-graph",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-git-graph"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页界面用的插件，会在聊天输入框旁边加一个 Git 分支选择器和 Git 图谱面板。你可以直接在这里搜索、切换或创建 Git 分支，操作会真实作用在你电脑上的代码仓库里，不用另外开终端敲 git 命令。",
+      "level": "ok",
+      "risks": "它会读取并操作你工作区的 Git 仓库（比如切换分支、创建分支），如果仓库有未提交的改动或冲突，切换时可能会失败或需要你处理。它提供的 /git/* 接口只允许本机访问，局域网里别人看不到你的仓库信息。没发现明显隐私风险。",
+      "postInstallNotes": "安装后需要重启一次 dsh web（或对应的 profile），然后刷新页面才能看到新加的 Git 分支按钮。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页界面的 Git 分支选择器与图谱插件，让你直接在输入框旁切换/创建 Git 分支。",
+    "usage": {
+      "prompt_tokens": 3529,
+      "completion_tokens": 1008,
+      "total_tokens": 4537,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 651
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2889
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-balance-display",
+  "analyzedAt": "2026-08-16T14:50:46.566Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，且 README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-balance-display",
+      "evidence": "dsh plugin --profile web add dsh-balance-display"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DSH 网页界面的左侧栏底部显示你的 DeepSeek API 余额，像一个余额小胶囊。它会用你已配置的 API Key 查询余额，余额太低时会提醒你，还能显示余额变化趋势，并一键跳转充值页面。你的 API Key 只在主机端处理，不会传到浏览器里。",
+      "level": "ok",
+      "risks": "插件会通过主机端读取你配置的 DeepSeek API Key 来查询余额，但不会把 Key 发送给浏览器或第三方。它会在浏览器本地存储余额历史和设置（localStorage）。没有发现其他明显风险。",
+      "postInstallNotes": "装完后需要重启 dsh web（或硬刷新浏览器）才能生效。可选：在设置页的「余额显示」标签页里调整刷新间隔、低余额阈值，或开启浏览器通知。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH Web 界面左下角显示 DeepSeek API 余额、支持低余额预警和充值快捷入口的插件。",
+    "usage": {
+      "prompt_tokens": 2099,
+      "completion_tokens": 1220,
+      "total_tokens": 3319,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 878
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1459
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "CAOGGL/dsh-ding",
+  "analyzedAt": "2026-08-17T13:08:50.370Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:CAOGGL/dsh-ding",
+      "evidence": "dsh plugin --profile web add github:CAOGGL/dsh-ding"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在对话完成时提醒你：当 AI 助手回复结束后，电脑会播放提示音并弹 Windows 通知，这样你切到别的窗口也不会错过。它还能在任务跑太久、AI 提问等你回答、或者工具需要你批准时提醒你。网页聊天界面上会多一个小铃铛，可以快速开关声音、调音量、换音效，所有设置都能在界面上直接改。",
+      "level": "ok",
+      "risks": "插件会在 Windows 上注册快捷方式和自定义协议（dsh-ding://），用来点击通知时跳回浏览器。它会读取和写入用户目录下的配置文件，并播放声音、弹出系统通知。所有数据都保存在本机，没有发现上传到外部服务器的行为。",
+      "postInstallNotes": "安装后需要重启 dsh web 才生效，并确保已安装 pnpm。首次使用插件会自动注册 Windows 的 AppUserModelID（用于显示通知）。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DSH 加提醒功能的插件——对话完成、运行超时、AI 提问或工具审批时，用声音和 Windows 通知叫你，网页上还有小铃铛快捷开关。",
+    "usage": {
+      "prompt_tokens": 5127,
+      "completion_tokens": 1036,
+      "total_tokens": 6163,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 634
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4487
+    }
+  }
+}

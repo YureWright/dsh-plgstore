@@ -1,0 +1,37 @@
+{
+  "id": "cdxiaodong/dsh-llm-inspector",
+  "analyzedAt": "2026-08-17T12:13:59.742Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 配置并依赖 cordis，README 给出了 DSH 插件安装命令，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/cdxiaodong/dsh-llm-inspector.git",
+      "evidence": "dsh plugin --profile <你的profile> add github:cdxiaodong/dsh-llm-inspector"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的工具，能帮你检查和记录与 AI 模型的通信内容。它有四个主要功能：调节模型推理的深度（比如关掉或调整思考级别）；让不显示思考过程的模型把推理写出来（通过额外工具引导）；统计发送和接收的流量大小；把整个对话过程存成日志文件。适合想调试 AI 请求、分析 token 用量或做审计的人。",
+      "level": "ok",
+      "risks": "插件会拦截并可能记录你发给 AI 模型的提示词和返回内容。如果你开启“会话落盘审计”，它会把这些内容写入本地日志文件（默认在 .dsh-inspector 目录），其中可能包含代码、隐私信息甚至 API 密钥。这些文件只留在你自己的电脑上，不会自动上传，但要注意别放在公共目录或同步盘里。另外，插件通过修改提示词来引导模型输出思考过程，可能会让模型的表现有些变化。",
+      "postInstallNotes": "需要在 DSH 的配置文件（profile）中启用该插件，并按需设置参数，比如 reasoningEffort（推理强度）、externalThinking（是否导出思考）、trafficAnalysis（是否分析流量）、persistSession（是否落盘）和 logDir（日志目录），然后重启 DSH 生效。",
+      "notes": "README 提到，对 OpenAI、Anthropic、Gemini 这类隐藏推理的模型，插件用“软强制”方式引导模型调用 think 工具，触发率不保证 100%。另外，这是一个第三方插件，安装前可以自己浏览一下源码（约 200 行）。"
+    },
+    "summaryZh": "统一 LLM 请求/响应检查器：可调节推理深度、导出模型思考过程、统计流量并落盘审计对话内容。",
+    "usage": {
+      "prompt_tokens": 2108,
+      "completion_tokens": 3062,
+      "total_tokens": 5170,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2527
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1468
+    }
+  }
+}

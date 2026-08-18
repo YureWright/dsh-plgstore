@@ -1,0 +1,37 @@
+{
+  "id": "whitelonng/dsh-plugin-describe-image",
+  "analyzedAt": "2026-08-17T11:43:49.756Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "README 明确给出 dsh plugin add 安装命令，package.json 依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，是 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:whitelonng/dsh-plugin-describe-image",
+      "evidence": "Run `dsh plugin --profile web add github:whitelonng/dsh-plugin-describe-image`, or paste the same spec into the desktop app's plugin install box."
+    },
+    "evaluationReport": {
+      "intro": "这个插件让没有图片识别能力的 DeepSeek 纯文本模型也能“看懂”图片。你给它一张图片（可以是本地文件、网址或附件），它会调用你配置的视觉大模型（比如通义千问 VL、GLM-4V、GPT-4o 或本地 Ollama）把图片描述成文字，再把这段描述文本带回到对话里。图片本身不会出现在对话记录中。安装后需要设置视觉模型的地址、模型名称和 API 密钥。",
+      "level": "ok",
+      "risks": "插件会读取你指定的图片文件或 URL，并把图片内容发送到你配置的视觉模型服务（如阿里云、OpenAI 等）的服务器上进行识别，这些服务商可能会看到图片内容；如果你使用本地 Ollama，则数据不出本机。另外，按配置它会调用外部 http(s) 端点，API 密钥由你保管，插件声称不会写入日志。",
+      "postInstallNotes": "在 Settings → Plugins → “Image understanding” 中配置 baseURL、model 和 API key（或设置环境变量 VISION_API_KEY），配置后重启应用（或按提示生效）。",
+      "notes": "安装命令使用的是 GitHub 简写（github:whitelonng/dsh-plugin-describe-image），该包名 @deepseek-ai/dsh-tool-describe-image 可能未发布到 npm；插件依赖由宿主 DeepSeek Harness 提供。"
+    },
+    "summaryZh": "为纯文本 DeepSeek 模型添加图片理解能力的 DSH 插件，通过调用视觉大模型将图片转为文字描述。",
+    "usage": {
+      "prompt_tokens": 2501,
+      "completion_tokens": 3429,
+      "total_tokens": 5930,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2924
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1861
+    }
+  }
+}

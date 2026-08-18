@@ -1,0 +1,37 @@
+{
+  "id": "Zhangbo-cn/dsh-voice-input-plugin",
+  "analyzedAt": "2026-08-17T11:41:26.380Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 配置并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@zhangbo-cn/dsh-client-ui-voice-input",
+      "evidence": "The package is a `dsh.bundle` installable, published on npm as [`@zhangbo-cn/dsh-client-ui-voice-input`](https://www.npmjs.com/package/@zhangbo-cn/dsh-client-ui-voice-input)."
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的对话输入框加一个麦克风按钮：点一下就能说话，说的话会实时变成文字填进输入框；按住说话再松开就直接发送，而且会把助手的回复朗读出来。语音识别在浏览器本地完成，不需要 API key；朗读优先用宿主自带的 Edge TTS，没有就退回浏览器自带的语音合成。",
+      "level": "ok",
+      "risks": "需要浏览器麦克风权限；语音识别在本地浏览器进行，不会上传第三方服务器。朗读会用宿主本地的 /api/tts（如果安装了对应插件）或浏览器 speechSynthesis。没发现明显风险。",
+      "postInstallNotes": "安装后刷新 Web UI 才能看到麦克风按钮；建议同时安装 @deepseek-ai/dsh-tts-edge 以启用更自然的回复朗读；可在配置里调整 language 和 interimResults。",
+      "notes": "注意需使用 0.1.1+ 版本，0.1.0 有注册 ID 错误；Firefox 浏览器因不支持 Web Speech API 无法使用麦克风输入（浏览器限制）。"
+    },
+    "summaryZh": "DeepSeek Harness 的语音输入插件：点击说话转文字、长按发送并朗读回复，无需 API key。",
+    "usage": {
+      "prompt_tokens": 3152,
+      "completion_tokens": 1824,
+      "total_tokens": 4976,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1369
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2512
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "morlay/session-persistence-rdb",
+  "analyzedAt": "2026-08-17T12:03:20.952Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 包含 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件的定义。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@morlay/session-persistence-rdb@^0.0.1",
+      "evidence": "dsh plugin --profile=web add \"@morlay/session-persistence-rdb@^0.0.1\" --config.@morlay:registry=https://npm.pkg.github.com/"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个“会话存档”功能：把 AI 对话的会话数据保存到 SQLite 或 PostgreSQL 数据库里，这样程序重启后聊天记录还在，不会丢。它支持两种数据库，SQLite 适合单机，PostgreSQL 适合多机共享。配置填在 DSH 的 settings.yaml 里，选一下数据库类型和连接信息就行。",
+      "level": "ok",
+      "risks": "会在本机创建/打开 SQLite 数据库文件（默认在 DSH_HOME/sessions 下），或连接你配置的 PostgreSQL 数据库并自动建表；会话数据会写入这些数据库。如果 PostgreSQL 连接串里有密码，注意别把它写进公共配置或提交到公开仓库。另外从 GitHub Packages 安装时需要在 .npmrc 里放一个 token，这个 token 也属于敏感信息，别泄露。没发现其他明显风险。",
+      "postInstallNotes": "安装后你需要在 DSH 的 settings.yaml 里给 session-persistence-rdb 写配置：选 type（sqlite 或 postgres），sqlite 可设 path/journalMode/busyTimeout，postgres 要写 connectionString。如果是从 GitHub Packages 装的，还要确保 profile 的 .npmrc 里有 npm.pkg.github.com 的访问 token。",
+      "notes": "该包发布在 GitHub Packages 而不是公开 npm registry，所以安装命令需要额外指定 @morlay scope 的 registry，并且要求配置 token（公开包也要）。它依赖的 @deepseek-ai/* 核心包目前都是 rc 版，将来可能有 API 变化；同时装有 drizzle-orm 和 pg，安装包会比较大。"
+    },
+    "summaryZh": "DSH 的会话持久化后端插件，支持把会话存到 SQLite 或 PostgreSQL，重启不丢聊天记录。",
+    "usage": {
+      "prompt_tokens": 2289,
+      "completion_tokens": 3054,
+      "total_tokens": 5343,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2468
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1649
+    }
+  }
+}

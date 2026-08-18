@@ -1,0 +1,37 @@
+{
+  "id": "JuneLearn/dsh-reasoning-settings",
+  "analyzedAt": "2026-08-17T11:52:45.776Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle / dsh.client 并依赖 @deepseek-ai/* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:JuneLearn/dsh-reasoning-settings",
+      "evidence": "npx --yes -p @deepseek-ai/dsh dsh plugin --profile web add github:JuneLearn/dsh-reasoning-settings"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的 Web 版加一个“推理强度（reasoning effort）”设置页面。原本这个功能只对 DeepSeek 自家模型开放，用了它以后，你自己接入的第三方/中转 OpenAI 兼容接口也能调“思考强度”，还能给不同模型设置不同档位，并让子任务（subagent）自动继承或指定模型与推理强度。",
+      "level": "ok",
+      "risks": "插件会读取并修改你 DeepSeek Harness 里配置的自定义模型提供商信息（不碰 API 密钥），所有操作都在本地。README 里放了一个作者推广的第三方 API 中转站链接，如果你点了注册，作者可能拿返利；插件本身不强制你用。",
+      "postInstallNotes": "装完先到官方的“模型”页添加你的自定义提供商和模型，然后打开“设置 > Reasoning effort”按需配置各模型的档位并保存，最后新建会话时选择模型和推理强度。",
+      "notes": "README 包含第三方推广链接（referral），留意其隐私与价格政策；插件还需 pnpm 环境。"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 版添加自定义提供商的推理强度设置与子代理按调用指定模型/强度的插件。",
+    "usage": {
+      "prompt_tokens": 3029,
+      "completion_tokens": 1733,
+      "total_tokens": 4762,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1295
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2389
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@cassius0924/dsh-usage-dashboard",
+  "analyzedAt": "2026-08-16T14:49:50.587Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，依赖 @deepseek-ai/cordis，且 README 提供了 dsh plugin add 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@cassius0924/dsh-usage-dashboard",
+      "evidence": "dsh plugin --profile web add @cassius0924/dsh-usage-dashboard"
+    },
+    "evaluationReport": {
+      "intro": "这是一个装在 DeepSeek Harness（DSH）网页界面里的小工具，让你随时看到 DeepSeek 的额度花在哪：余额还能撑几天、今天/本月花了多少、哪个模型最贵、缓存帮你省了多少钱，以及 8 月 17 日涨价后账单会变成什么样。装好后右下角会有一个可拖动的悬浮窗，顶部多一个“额度”标签页，点开就能看到各种统计图表。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取本机 DSH 的会话日志和余额信息，用于计算费用估算，不会上传你的数据到外部服务器。",
+      "postInstallNotes": "需要确保已配置 DEEPSEEK_API_KEY（在设置里填，或放在 $DSH_HOME/.credentials.yaml），然后重启 dsh 生效。另外，本机需要安装 pnpm。",
+      "notes": "无"
+    },
+    "summaryZh": "一款 DSH Web 插件，提供余额、用量、成本、缓存节省和峰谷定价预估的可视化仪表盘。",
+    "usage": {
+      "prompt_tokens": 4129,
+      "completion_tokens": 564,
+      "total_tokens": 4693,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 178
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3489
+    }
+  }
+}

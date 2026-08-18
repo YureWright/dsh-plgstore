@@ -1,0 +1,37 @@
+{
+  "id": "dsh-url-tools",
+  "analyzedAt": "2026-08-16T13:40:14.984Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 配置并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也提供了 dsh plugin add 安装命令，符合 DSH 插件的真实证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-url-tools",
+      "evidence": "dsh plugin --profile <name> add dsh-url-tools"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 助手用的工具插件，让 AI 能帮忙解析网址、去掉链接里的跟踪参数、给字符串做编码解码，还能展开短链接看看最终会跳到哪。全程不会报错，出错只会返回一个提示。",
+      "level": "ok",
+      "risks": "这个插件的 expand 功能会访问外部网络，跟随链接重定向，所以使用时会向目标网站发起请求，对方可能看到你的 IP 和请求来源。其他功能（解析、清理、编码解码）都是本地处理，不碰个人文件。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 提供 URL 解析、跟踪参数清理、编码解码和重定向展开能力的零依赖工具插件。",
+    "usage": {
+      "prompt_tokens": 2363,
+      "completion_tokens": 682,
+      "total_tokens": 3045,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 372
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1723
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-acp",
+  "analyzedAt": "2026-08-16T13:44:49.241Z",
+  "result": {
+    "classification": {
+      "type": "script",
+      "confidence": 0.8,
+      "reason": "独立 CLI 工具，README 提供 npm 全局安装而非 dsh plugin add，package.json 未声明 dsh.bundle/dsh.client"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-acp",
+      "evidence": "npm install -g dsh-acp # or npm install -g deepseek-harness-acp"
+    },
+    "evaluationReport": {
+      "intro": "这是一个独立的 ACP 服务器，能让 Zed、FreeBuddy 等第三方 AI 编辑器连接 DeepSeek 的模型。它支持实时显示生成内容、思考过程、工具调用状态，并且可以保存和恢复多轮对话。只需要设置 DEEPSEEK_API_KEY 就能直接使用。",
+      "level": "caution",
+      "risks": "使用它会把你的对话内容以及可能的工作区文件发送给 DeepSeek 的 API（需要 API key）。默认权限下可以在工作区内读写文件，如果配置成 danger-full-access 则能执行任意命令。另外，它依赖了多个 rc 预发布包，可能存在稳定性问题。",
+      "postInstallNotes": "需要设置 DEEPSEEK_API_KEY 环境变量（可写 .env 文件），可选设置 DEEPSEEK_BASE_URL 和 DSH_PERMISSION_MODE。",
+      "notes": "经评估可能并非 DSH 插件：README 给出的安装方式是 npm 全局安装，而不是 dsh plugin add，且 package.json 未声明 dsh.bundle 或 dsh.client。"
+    },
+    "summaryZh": "dsh-acp 是一个让 Zed、FreeBuddy 等 AI 编辑器通过 ACP 协议连接 DeepSeek 的独立工具，支持实时流式输出、思考过程展示和会话恢复。",
+    "usage": {
+      "prompt_tokens": 3508,
+      "completion_tokens": 3269,
+      "total_tokens": 6777,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2856
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2868
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "renat3u/dsh-web-archive",
+  "analyzedAt": "2026-08-17T11:36:52.210Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 README 给出了 dsh plugin add 安装命令，确为 DSH 插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/renat3u/dsh-web-archive.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH Web 客户端的界面优化插件。聊天界面里原本会显示一长串工具调用卡片（比如 Read、Think、Bash、web_search 等），装了这个插件后，它们会被折叠成一个小条目 'Deep Sleeping...'，点击可以展开/收起，这样聊天记录更清爽，不干扰看正文。它只在前端做改动，不修改 dsh 核心代码。",
+      "level": "ok",
+      "risks": "没发现明显风险。它在浏览器里操作页面元素，不读取本地文件，也不连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web 表面（如在源码目录重跑 pnpm dsh web），然后刷新浏览器页面；如果手动挂载，还需在 web profile 的 package.json 中把插件加入 dependencies 和 dsh.profile.bundles。",
+      "notes": "README 只给了本地路径安装方式（file:/path/to/dsh-web-archive），未提供 npm/git 安装命令；package.json 中 repository 指向 dsh-external/dsh-web-archive.git，与当前 GitHub 地址不一致，安装时以实际仓库为准。"
+    },
+    "summaryZh": "把 dsh Web 聊天里的工具卡片和推理块折叠成可展开的『Deep Sleeping...』小列表，让会话更清爽。",
+    "usage": {
+      "prompt_tokens": 3243,
+      "completion_tokens": 4905,
+      "total_tokens": 8148,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4488
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2603
+    }
+  }
+}

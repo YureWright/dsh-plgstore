@@ -1,0 +1,37 @@
+{
+  "id": "wjxn13/dsh-headroom",
+  "analyzedAt": "2026-08-17T12:13:24.479Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 配置并依赖 @deepseek-ai 核心包，README 提供 DSH 插件安装步骤，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/wjxn13/dsh-headroom.git",
+      "evidence": "git clone https://github.com/wjxn13/dsh-headroom.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件帮你给 DeepSeek 加一个‘压缩器’。它会在你电脑上启动一个本地小工具（Headroom），自动把发给 DeepSeek 的请求先压缩一遍（比如精简工具描述、去掉重复内容），再发出去，从而省 token 省费用。它还带一个开关，你可以随时切回原来的直连，不会锁死。",
+      "level": "ok",
+      "risks": "它会在你电脑上自动创建 Python 环境并安装第三方包（headroom-ai），还会启动一个后台代理进程；它会修改 DSH 的线路设置（把 baseURL 指向本地代理），你的对话内容会经过这个本地代理再转发给 DeepSeek，该代理不会上传数据到其他服务器，但属于第三方代码，建议从官方仓库下载。另外，首次启动可能要等 1 分钟左右。",
+      "postInstallNotes": "安装后需要手动在 ~/.dsh/profiles/web/cordis.patch.yml 中加入插件配置并重启 dsh web；然后进入‘设置 → 线路切换’，先点「安装 Headroom 引擎」，再点「启动压缩线路」。",
+      "notes": "依赖上游第三方项目 Headroom（Apache-2.0），安装方式为本地 git clone 后 file: 安装，未提供 npm 包名，市场可用 git URL 安装。"
+    },
+    "summaryZh": "为 DeepSeek Harness 集成 Headroom 上下文压缩代理，一键安装/启动本地压缩线路并支持随时切回直连，以节省 token 费用。",
+    "usage": {
+      "prompt_tokens": 3397,
+      "completion_tokens": 2730,
+      "total_tokens": 6127,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2256
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2757
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "Cavan-Ou/hermes-dsh-collab",
+  "analyzedAt": "2026-08-17T11:52:52.629Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Cavan-Ou/hermes-dsh-collab",
+      "evidence": "dsh plugin --profile headless add github:Cavan-Ou/hermes-dsh-collab"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一套给 DSH（DeepSeek Harness）用的技能包，目的是让 AI 助手（如 Hermes）和 DSH 协作更安全、更不容易出乱子。它规定了怎么给 DSH 下任务（任务说明书）、什么任务用哪种模型、质量检查怎么做，还规定只有编排者能提交 git 代码。利用它，你可以放心让 AI 全天候干活，只在关键时候插手。",
+      "level": "ok",
+      "risks": "它会在 DSH 会话里加载规则和模板，指导 DSH 在你的项目目录里直接执行任务（比如写代码、跑测试、构建），并且禁止执行器提交 git。这些操作都是你主动发起的，没有发现偷偷上传数据或连接外部服务器的行为。",
+      "postInstallNotes": "安装后建议按 README 的“验证三步”确认技能已加载；另外技能里引用了一些工作区路径（例如 ~/.dsh/profiles/headless/*.patch.yml），需要按你的实际情况修改。",
+      "notes": "这是一个技能包（skill pack），需要 DSH 0.1.x 的 headless profile 配合使用；也支持直接复制到 $DSH_HOME/skills/ 的轻量安装方式。"
+    },
+    "summaryZh": "把 DeepSeek Harness 接进 Hermes 流水线的技能包，提供任务规范、模型路由、质量门禁和 git 单写规则，让 AI 自动干活更可靠。",
+    "usage": {
+      "prompt_tokens": 2603,
+      "completion_tokens": 2604,
+      "total_tokens": 5207,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2158
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1963
+    }
+  }
+}

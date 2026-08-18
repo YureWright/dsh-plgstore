@@ -1,0 +1,37 @@
+{
+  "id": "@hyzyn/dsh-kit",
+  "analyzedAt": "2026-08-18T14:57:16.090Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.95,
+      "reason": "这是面向插件开发的类型助手工具包，自身不是可安装的 DSH 插件，未声明 dsh.bundle/client，也无 dsh plugin add 安装方式。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 插件开发者用的工具包，主要提供 definePlugin 等类型助手，写插件时能获得更准确的类型提示，本身不包含任何插件功能。",
+      "level": "ok",
+      "risks": "没发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "经评估可能并非 DSH 插件，而是插件开发辅助库，请按需使用。"
+    },
+    "summaryZh": "轻量级 DSH 插件开发类型工具包，零运行时依赖。",
+    "usage": {
+      "prompt_tokens": 1536,
+      "completion_tokens": 489,
+      "total_tokens": 2025,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 261
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 896
+    }
+  }
+}

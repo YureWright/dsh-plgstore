@@ -1,0 +1,37 @@
+{
+  "id": "Nagi-ovo/voyager",
+  "analyzedAt": "2026-08-16T05:44:58.977Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.95,
+      "reason": "浏览器扩展项目，package.json 无 dsh.bundle/client 声明，未依赖 DSH 核心包，README 也未提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一款给 Gemini、Claude、ChatGPT 等 AI 聊天页面加装增强功能的浏览器扩展，比如把对话分门别类整理、保存常用提示词、一键导出聊天记录、复制公式、渲染图表等，甚至能在本地 DeepSeek Harness 界面里使用提示词管理功能。它不是 DSH 插件，而是独立安装的浏览器扩展。",
+      "level": "warning",
+      "risks": "作为浏览器扩展，它会读取你在 Gemini、Claude、ChatGPT 等网站上的聊天内容和网页信息，并可能在本地处理。云同步功能会把你的文件夹和提示词同步到 Google Drive 或 iCloud。请确认你信任这个开发者。",
+      "postInstallNotes": "无",
+      "notes": "经评估可能并非 DSH 插件，因为它是浏览器扩展项目，package.json 没有声明 dsh.bundle/client，也没有依赖 @deepseek-ai/cordis 等 DSH 核心包，README 未提供 dsh plugin add 安装命令。"
+    },
+    "summaryZh": "为 Gemini、Claude、ChatGPT 等 AI 聊天界面提供增强功能的浏览器扩展（对话管理、提示词库、导出等），并非 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 4604,
+      "completion_tokens": 2671,
+      "total_tokens": 7275,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2298
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3964
+    }
+  }
+}

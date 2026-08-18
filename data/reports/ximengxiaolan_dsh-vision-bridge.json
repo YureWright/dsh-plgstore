@@ -1,0 +1,37 @@
+{
+  "id": "ximengxiaolan/dsh-vision-bridge",
+  "analyzedAt": "2026-08-17T12:11:08.663Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，且 README 提供了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vision-bridge",
+      "evidence": "dsh plugin --profile web add dsh-vision-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让只认文字的 DeepSeek 模型也“看”图片：你在聊天输入框粘贴图片发送，它会先用一个视觉 AI（比如阿里云的 qwen-vl-max）把图片内容识别成几段文字，再把文字交给 DeepSeek 继续处理。图片会照常显示在对话里，但发给模型的内容就变成了文字描述。",
+      "level": "ok",
+      "risks": "需要你自己配置第三方视觉模型的 API Key（环境变量），配置信息存在本机。发图片时，图片会发送到那个第三方服务（比如阿里云）去识别，所以这些服务商可能看到你发的图片内容。请选一个你信得过的服务，并留意 API Key 不要泄露。",
+      "postInstallNotes": "安装后需要设置 VISION_API_KEY、VISION_BASE_URL、VISION_MODEL 环境变量（可选 VISION_LANG），或者在 profile 的 cordis.patch.yml 里填写 apiKey、baseURL、model 等配置，然后重启 dsh web。",
+      "notes": "依赖项中有多个 @deepseek-ai/dsh-* 的 rc 预发布版本，后续升级可能有不兼容变化；README 里的 git 安装命令用了 <your-name> 占位符，实际仓库地址是 https://github.com/ximengxiaolan/dsh-vision-bridge。"
+    },
+    "summaryZh": "给 DeepSeek 文本模型装上“眼睛”：自动调用视觉模型把图片转成文字，再交给 DeepSeek 处理。",
+    "usage": {
+      "prompt_tokens": 1709,
+      "completion_tokens": 2521,
+      "total_tokens": 4230,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2054
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1069
+    }
+  }
+}

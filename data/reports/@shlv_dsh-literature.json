@@ -1,0 +1,37 @@
+{
+  "id": "@shlv/dsh-literature",
+  "analyzedAt": "2026-08-18T14:58:11.033Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，且 README 给出了 dsh plugin add 安装命令，确为 DSH 插件安装包"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@shlv/dsh-literature",
+      "evidence": "one `dsh plugin add` installs the seam (`ctx.literature`), the dblp and arXiv providers, and the model-facing `literature_search` / `literature_bibtex` / `literature_fulltext` tools."
+    },
+    "evaluationReport": {
+      "intro": "这是一个文献（学术论文）相关的 DSH 插件安装包。一条命令就能装上全套：包括一个叫 `ctx.literature` 的上下文接口，能查 DBLP 和 arXiv 两个学术数据库，还给模型提供了三个工具：搜索文献、获取 BibTeX 引用、获取全文。说白了，就是让 AI 能帮你查论文、给引用格式。",
+      "level": "ok",
+      "risks": "没发现明显风险。该包本身不含代码，只是安装器，实际功能由同作者的四个子包提供。",
+      "postInstallNotes": "无",
+      "notes": "该包为安装 bundle，自身不携带代码，功能由依赖的子包实现。"
+    },
+    "summaryZh": "DSH 文献插件全家桶：一条命令安装 DBLP/arXiv 检索、BibTeX 引用和全文获取工具。",
+    "usage": {
+      "prompt_tokens": 1606,
+      "completion_tokens": 2018,
+      "total_tokens": 3624,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1668
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 966
+    }
+  }
+}

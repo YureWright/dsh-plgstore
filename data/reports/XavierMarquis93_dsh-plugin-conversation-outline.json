@@ -1,0 +1,37 @@
+{
+  "id": "XavierMarquis93/dsh-plugin-conversation-outline",
+  "analyzedAt": "2026-08-17T11:54:36.145Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 配置并依赖 @deepseek-ai/cordis 等核心包，虽未提供安装命令，但明显是 DSH 客户端 UI 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@deepseek-ai/dsh-client-ui-conversation-outline",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek 网页聊天界面左侧加一个可折叠的“大纲”侧栏，把当前会话里的用户提问和 AI 回答按对话顺序列出来。点击任意一条就能跳到对应的消息，并闪烁一下提示位置。侧栏顶部还有搜索框，可以按关键词过滤整个对话内容，方便在长对话里快速找到某句话。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器里读取当前会话已加载的消息并展示，不会往外面发请求，也不碰模型请求。",
+      "postInstallNotes": "无",
+      "notes": "依赖使用了 workspace:^ 协议，可能尚未正式发布到 npm，安装时若失败请确认包源或等待作者发布。"
+    },
+    "summaryZh": "为 DeepSeek 网页对话添加可点击跳转的会话大纲侧栏，支持搜索定位历史问答。",
+    "usage": {
+      "prompt_tokens": 1787,
+      "completion_tokens": 1242,
+      "total_tokens": 3029,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 915
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1147
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "urzeye/dsh-outline",
+  "analyzedAt": "2026-08-17T11:29:31.881Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，并依赖 @deepseek-ai/cordis 与多个 @deepseek-ai/dsh-client-* 包，README 也提供了 dsh plugin add 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-outline",
+      "evidence": "dsh plugin --profile web add dsh-outline"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页版用的插件，能在聊天页面旁边加一个实时更新的对话大纲面板。它会根据你问的问题和助手回复里的 Markdown 标题自动生成树状结构，点一下就能跳到对应内容，还支持搜索、收藏、展开收起等功能。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在本地 DSH 界面里运行，不连接外部服务器，也不碰隐私文件。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web GUI 提供实时对话大纲面板，支持点击定位、搜索、收藏的实用插件。",
+    "usage": {
+      "prompt_tokens": 3386,
+      "completion_tokens": 474,
+      "total_tokens": 3860,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 164
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2746
+    }
+  }
+}

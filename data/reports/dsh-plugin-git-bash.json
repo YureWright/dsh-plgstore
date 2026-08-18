@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-git-bash",
+  "analyzedAt": "2026-08-16T13:46:27.741Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，且依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-git-bash",
+      "evidence": "README 原文：'从 npm 安装固定版本到 Web profile：dsh plugin --profile web add dsh-plugin-git-bash@0.3.0'"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 在 Windows 上把默认的命令行 shell 从 PowerShell 换成 Git for Windows 自带的 Bash，同时保留原有的权限控制（如只读、只允许写工作区、完全访问）。装了它之后，你在 DSH 里跑命令、写代码、跑脚本时，会用 Bash 环境来执行，网页界面上还能看到命令和输出的详细展开。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会修改 DSH 的 shell 行为，并带一个 Windows 下的原生权限控制小工具，但不会主动连外部服务器或碰隐私文件。",
+      "postInstallNotes": "装完后重启 dsh web，然后新建会话。如果要自定义 Git Bash 路径，可在插件设置里配置，或在启动前设置 DSH_GIT_BASH_PATH 环境变量。",
+      "notes": "仅支持 Windows x64 和 Node.js 24 或更高版本，且需要 DSH 0.1.0-rc.6；native guard 只在受限模式下使用，danger-full-access 模式不经过它。安装路径有 MAX_PATH 和系统代码页限制。"
+    },
+    "summaryZh": "让 DSH 在 Windows 上默认使用 Git Bash 作为 shell，并保持权限控制不变。",
+    "usage": {
+      "prompt_tokens": 3300,
+      "completion_tokens": 3371,
+      "total_tokens": 6671,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2937
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2660
+    }
+  }
+}

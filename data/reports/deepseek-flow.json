@@ -1,0 +1,37 @@
+{
+  "id": "deepseek-flow",
+  "analyzedAt": "2026-08-16T13:43:51.792Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis 和 dsh-* 核心包，且 README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/kanghelyu/dsh-deepseek-flow.git#main",
+      "evidence": "dsh plugin --profile web add \"github:kanghelyu/dsh-deepseek-flow#main\""
+    },
+    "evaluationReport": {
+      "intro": "DeepSeek Flow 是一个装在 DeepSeek Harness 里的可视化工作流编辑器。它可以把 WORKFLOW.md 和 STEP.md 这类 Markdown 文件变成一张流程图，你可以在画布上拖拽、连线、编辑节点，改动会同步回 Markdown 文件；反过来直接改 Markdown 也会更新画布。它还支持 IF/ELSE、AND/OR 等逻辑门，能对工作流做自动校验和 AI 优化，适合不想直接碰文本、想用图形方式设计 AI 工作流的用户。",
+      "level": "ok",
+      "risks": "主要会读写你工作区里的 Markdown 文件（WORKFLOW.md、STEP.md），并在本地保存一些编辑草稿和 AI 审查记录；删除工作流时会有二次确认。没发现明显风险。",
+      "postInstallNotes": "重启 dsh web，打开一个会话，选择 DeepSeek Flow 标签；可用 dsh web --dump-config | grep deepseek-flow 确认插件已挂载。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Flow 是 DeepSeek Harness 的可视化 Markdown 工作流编辑器，支持拖拽画布、双向同步、逻辑门和 AI 优化。",
+    "usage": {
+      "prompt_tokens": 3987,
+      "completion_tokens": 3214,
+      "total_tokens": 7201,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2784
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3347
+    }
+  }
+}

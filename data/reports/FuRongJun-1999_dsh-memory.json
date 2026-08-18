@@ -1,0 +1,37 @@
+{
+  "id": "FuRongJun-1999/dsh-memory",
+  "analyzedAt": "2026-08-17T11:42:25.937Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.93,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，且 README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@furongjun1999/dsh-memory",
+      "evidence": "dsh plugin --profile web add @furongjun1999/dsh-memory"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的长期记忆扩展。装上之后，AI 助手能跨对话记住你和它聊过的事情，自动把对话内容存进本地记忆库，以后聊天可以随时翻出旧账。它还带一些花哨的功能，比如让 AI 自我反思、自动总结学到的模式，号称能让 AI 越来越聪明。实现上，插件会启动一个 Python 写的小程序来管记忆，数据存在一个 SQLite 数据库文件里。",
+      "level": "ok",
+      "risks": "会在你电脑上创建一个数据库文件（默认在 data/lingshu.db），里面存着聊天记录和 AI 自动沉淀的内容。如果你开启了 ingest_file 工具，AI 可能会读取你指定路径的文件内容。如果开启 web_search，AI 可能会自动联网搜索并把结果存进记忆库。这些东西都保存在本地，一般不会上传，但要注意别让 AI 把敏感文件内容存进去。",
+      "postInstallNotes": "装完插件后，还需要先安装一个叫 aeis 的 Python 库（用 pip install 或 git 安装，README 里有两种方式），然后在 cordis.yml 里配置插件参数，比如 dbPath、identity、tools 等。不装 Python 库的话插件没法干活。",
+      "notes": "README 里自己说“不是 DeepSeek 插件”，但实际 package.json 和结构都符合 DSH 插件规范，可能是宣传话术。另外它依赖的几个 @deepseek-ai 核心包是 rc 版本，可能不太稳定。"
+    },
+    "summaryZh": "给 DeepSeek Harness 用的跨会话长期记忆插件，通过 Python 子进程和 SQLite 实现记忆存储、知识积累与自我反思。",
+    "usage": {
+      "prompt_tokens": 4918,
+      "completion_tokens": 1389,
+      "total_tokens": 6307,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 871
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4278
+    }
+  }
+}

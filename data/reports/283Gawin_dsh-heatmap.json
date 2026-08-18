@@ -1,0 +1,37 @@
+{
+  "id": "283Gawin/dsh-heatmap",
+  "analyzedAt": "2026-08-17T13:10:01.368Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，peerDependencies 包含 @deepseek-ai/cordis 等多个官方包，README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-activity-heatmap",
+      "evidence": "或从 npm 发布版安装： dsh plugin --profile web add @linxin666/dsh-client-ui-activity-heatmap"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DSH 网页左侧栏底部加一个 GitHub 风格的热力图（近 90 天），可以切换看每天的工作区提交次数、Token 用量和估算花费；热力图下方还会显示今天的 Token 总量、缓存命中率和按模型计算的花费。数据从 DSH 自己的会话日志和本地 git 仓库统计，不需要额外上传。",
+      "level": "ok",
+      "risks": "它会读取你 DSH 的会话记录（包含 Token 用量、模型名等）和所有工作区 git 仓库的提交历史，用来在本地网页界面上展示统计；这些数据不会离开你的电脑。需要手动修改 DSH 宿主的一个白名单配置文件，改错或升级 DSH 后失效可能导致设置卡片不可用。",
+      "postInstallNotes": "需要将 'activity-heatmap' 追加到 dsh-host-apiproxy 的 WEB_SETTINGS_NAMESPACES 白名单，然后重启 dsh web；升级 DSH 后需重新打这个补丁。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页左侧栏的活动热力图插件：统计近 90 天的提交、Token 用量与花费，并显示今日用量和缓存命中率。",
+    "usage": {
+      "prompt_tokens": 5082,
+      "completion_tokens": 1903,
+      "total_tokens": 6985,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1477
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4442
+    }
+  }
+}

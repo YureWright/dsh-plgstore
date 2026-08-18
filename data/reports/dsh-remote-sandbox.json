@@ -1,0 +1,37 @@
+{
+  "id": "dsh-remote-sandbox",
+  "analyzedAt": "2026-08-16T13:40:20.076Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 且依赖多个 dsh-* 核心包，是标准的 DSH 插件结构。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-remote-sandbox",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，它把代码运行的地方从你的电脑挪到云端 E2B 沙箱里。好处是就算运行崩了也不影响本地，还能自动恢复、保持心跳感应，并且同步工作区文件。简单说，让你的代码在更安全、隔离的环境中跑。",
+      "level": "caution",
+      "risks": "它会把你的代码和数据上传到 E2B 的远程服务器执行，这些内容会被第三方服务商看到；还会修改你的 DSH 配置文件。另外，使用它需要网络连接。",
+      "postInstallNotes": "可能需要配置 E2B 的 API 密钥（具体见官方文档，README 缺失）。",
+      "notes": "README 缺失，无法提供详细使用说明；依赖多个 dsh-* 包，请确认它们可以正常安装。"
+    },
+    "summaryZh": "一键将 DeepSeek Harness 执行环境迁移到 E2B 远程沙箱，实现崩溃隔离、心跳保活和工作区同步。",
+    "usage": {
+      "prompt_tokens": 1360,
+      "completion_tokens": 1672,
+      "total_tokens": 3032,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1335
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 720
+    }
+  }
+}

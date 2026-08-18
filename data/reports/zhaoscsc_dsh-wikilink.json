@@ -1,0 +1,37 @@
+{
+  "id": "zhaoscsc/dsh-wikilink",
+  "analyzedAt": "2026-08-17T12:12:41.237Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，并依赖 @deepseek-ai/cordis 等多个 DSH 核心包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/zhaoscsc/dsh-wikilink/archive/refs/heads/main.tar.gz",
+      "evidence": "README 安装章节：`dsh plugin --profile web add https://github.com/zhaoscsc/dsh-wikilink/archive/refs/heads/main.tar.gz`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的网页聊天输入框像记笔记软件 Obsidian 一样支持 [[双链]]：你输入两个左方括号，就会弹出一个搜索框，可以模糊搜索电脑上（指定工作区里）的笔记标题；选中后，按回车，这段笔记的内容就会在你发消息时自动附加到消息里，让 AI 模型看到并参考。比如你想让 AI 总结某篇笔记，就可以写“总结 [[曼谷美食]]”，它会自动把对应笔记读进来。",
+      "level": "ok",
+      "risks": "它会读取你指定的工作区里的笔记文件（最大文件大小和数量可配置），并在发送消息时把笔记全文附加到发给 AI 的请求中，所以不要在工作区里放你不想让模型看到的隐私内容。另外，安装后它会修改本机 npx 缓存中的 DSH 客户端文件（打补丁），如果以后重装或更新 DSH，这些补丁会丢失，需要按文档重新应用。除此之外没发现明显风险。",
+      "postInstallNotes": "重启 web 服务器，然后在「设置 → Wikilinks」里打开开关。如果你用中文输入法，需要在输入法设置里关闭「符号自动补全 / 智能标点 / 括号自动配对」，否则输入 [[ 时可能被输入法自动补全成 []，搜索框不会弹出。可选配置：maxIndexedFiles（索引上限）、maxFileBytes（单个笔记大小上限）、ignoreDirs（忽略的目录）。",
+      "notes": "该插件会向 DSH 客户端 bundle 应用 5 个小补丁（修改 npx 缓存），重新安装 @deepseek-ai/dsh 后需按 DEV.md 重新应用。推荐使用 README 提供的 tarball 链接安装，该包可能未发布到 npm。"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面添加 Obsidian 风格的 [[wikilink]] 笔记引用功能，输入 [[ 即可搜索笔记并附加到对话。",
+    "usage": {
+      "prompt_tokens": 3575,
+      "completion_tokens": 2686,
+      "total_tokens": 6261,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2058
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2935
+    }
+  }
+}

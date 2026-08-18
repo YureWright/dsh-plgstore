@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-session-import",
+  "analyzedAt": "2026-08-16T13:36:31.711Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/dsh 核心包，README 提供了 dsh plugin 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-session-import",
+      "evidence": "dsh plugin --profile web add dsh-plugin-session-import"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以把你在其他 AI 工具（如 Claude Code、Codex、Reasonix、Zcode）里的聊天记录导入到 DeepSeek Harness（dsh）里，变成 dsh 的会话，然后你就能直接接着聊。它会解析那些工具的历史消息，连工具调用、工作区绑定等都能带过去。",
+      "level": "ok",
+      "risks": "它会读取你电脑上多个工具的会话历史文件（比如 ~/.claude/projects、~/.codex/sessions 等），这些文件里可能包含你的代码和对话内容。插件只在本地处理，不会主动上传，但毕竟来自第三方，建议安装前简单看一眼源码或确认来源。",
+      "postInstallNotes": "安装后需要重启 dsh web（如果用的是 web profile）使插件生效；或者直接用 /import 命令调用。",
+      "notes": "该插件由个人开发者维护，依赖的 @deepseek-ai/dsh 还处于 RC 阶段，上游 API 变动可能影响插件兼容性。README 里提到的 awesome-dsh-plugin 收录和自动雷达验证属于外部声明，建议自行判断。"
+    },
+    "summaryZh": "将 claude-code、codex、reasonix、zcode 的历史聊天记录导入为 dsh 会话，方便在 dsh 中继续聊天。",
+    "usage": {
+      "prompt_tokens": 2998,
+      "completion_tokens": 2281,
+      "total_tokens": 5279,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1859
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2358
+    }
+  }
+}

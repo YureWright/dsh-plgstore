@@ -1,0 +1,37 @@
+{
+  "id": "dsh-session-import-codex",
+  "analyzedAt": "2026-08-16T13:42:12.458Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，README 也给出了 DSH 插件安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-session-import-codex",
+      "evidence": "dsh plugin --profile web add dsh-session-import-codex"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把你用 Codex（OpenAI 的编程助手）聊过的历史记录导入到 DSH 里，变成 DSH 的会话；它还会根据你以前的工作目录自动创建或复用对应的 DSH 工作区。不需要动代码，一条命令就能跑，适合想从 Codex 搬家到 DSH 的用户。",
+      "level": "ok",
+      "risks": "它会在你电脑上启动 codex 命令来读取聊天历史，所以需要你已经装好并登录了 Codex。运行导入时最好先停掉 DSH 的 web 服务，避免写冲突。除此之外没发现明显风险，它不会读你的私人文件，也不会直接改 DSH 的存储文件。",
+      "postInstallNotes": "装完后要确保 codex 命令在 PATH 里且已登录；建议先跑一次 --dry-run 预览效果，再正式导入；导入前记得先停止 DSH 的 web 进程。",
+      "notes": "这是第三方作者写的插件，依赖多个 DSH 的 rc 版本核心包，升级 DSH 时留意兼容性。"
+    },
+    "summaryZh": "一键把 Codex 聊天记录导入 DSH，并顺带还原工作区的迁移工具。",
+    "usage": {
+      "prompt_tokens": 4341,
+      "completion_tokens": 1420,
+      "total_tokens": 5761,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1002
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3701
+    }
+  }
+}

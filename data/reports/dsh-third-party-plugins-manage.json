@@ -1,0 +1,37 @@
+{
+  "id": "dsh-third-party-plugins-manage",
+  "analyzedAt": "2026-08-16T13:45:23.991Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 且依赖 @deepseek-ai/cordis，README 给出 dsh 安装命令，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-third-party-plugins-manage",
+      "evidence": "dsh plugin --profile web add dsh-third-party-plugins-manage"
+    },
+    "evaluationReport": {
+      "intro": "这个插件在 DSH 的“设置 → 插件”页面里加了一个“第三方插件”标签页。它能列出当前 web 配置下 node_modules 里安装的所有非官方插件（即不是 @deepseek-ai/dsh-* 开头的），并且可以对每个插件进行启用/禁用、删除、检查更新和更新操作。启用/禁用是实时生效的，删除和更新需要重启 dsh web 才能完全生效。它只操作当前 profile 的 node_modules 和配置文件，不碰用户数据。",
+      "level": "ok",
+      "risks": "它会改动你当前 profile 的配置文件（cordis.patch.yml 和 profile manifest）以及 node_modules 里的第三方插件目录；删除操作会删掉对应插件文件夹；每次打开标签页会联网向 npm 服务器查询已装插件的最新版本。它不碰聊天记录、账号密码等用户数据。",
+      "postInstallNotes": "安装后重启 dsh web 才能显示新标签；之后删除或更新插件也需要重启 dsh web 才能完全生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加一个管理第三方插件（启用/禁用、删除、更新）的设置标签页。",
+    "usage": {
+      "prompt_tokens": 2037,
+      "completion_tokens": 1698,
+      "total_tokens": 3735,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1292
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1397
+    }
+  }
+}

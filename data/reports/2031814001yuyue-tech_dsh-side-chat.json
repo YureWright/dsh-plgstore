@@ -1,0 +1,37 @@
+{
+  "id": "2031814001yuyue-tech/dsh-side-chat",
+  "analyzedAt": "2026-08-17T12:07:29.329Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且代码调用 DSH 的 agents.create/agent.send 等接口，是货真价实的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-side-chat",
+      "evidence": "npm install dsh-side-chat"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DSH 主对话旁边开多个并行的侧边对话。每个侧对话都有独立的上下文，不会干扰主对话；结束后还可以一键把侧对话的摘要带回到主对话里，方便你同时处理多个小任务。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在本地读写 DSH 的会话数据（创建侧对话、注入摘要），但不会主动连接外部服务器或碰隐私文件。",
+      "postInstallNotes": "手动安装后，需要在目标 profile 的 package.json 的 dsh.profile.bundles 数组里加上 'dsh-side-chat'（与 @deepseek-ai/dsh-base 等并列），然后重启 DSH。注意不要往 cordis.patch.yml 里手动加行，避免重复注册崩溃。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 侧边对话插件：在主对话外并行运行独立上下文的侧对话，结束后把摘要带回主对话，主对话上下文不被打扰。",
+    "usage": {
+      "prompt_tokens": 3340,
+      "completion_tokens": 1721,
+      "total_tokens": 5061,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1370
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2700
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-skin-dragon-heir",
+  "analyzedAt": "2026-08-17T11:08:22.704Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.92,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 客户端插件的真实证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-skin-dragon-heir",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-skin-dragon-heir"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页版界面换皮肤的插件。它内置了两幅画：亮色主题是一条水墨龙配朱砂印章，暗色主题是长城配金色点缀。安装后，皮肤会自动根据系统的明暗模式切换背景和图标，不改动任何数据或功能，纯粹是视觉美化。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改界面样式，不读取隐私文件，不连外部服务器，不执行额外脚本。",
+      "postInstallNotes": "装完后需要启用皮肤，运行 `dsh-skin use dragon-heir` 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "龙的传人主题皮肤，为 DSH 网页界面提供水墨龙和长城两套内嵌美术图，随明暗模式自动切换。",
+    "usage": {
+      "prompt_tokens": 2175,
+      "completion_tokens": 641,
+      "total_tokens": 2816,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 306
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1535
+    }
+  }
+}

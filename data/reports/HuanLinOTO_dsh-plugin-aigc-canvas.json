@@ -1,0 +1,37 @@
+{
+  "id": "HuanLinOTO/dsh-plugin-aigc-canvas",
+  "analyzedAt": "2026-08-17T11:37:06.468Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 明确声明了 dsh.bundle / dsh.client 字段，peerDependencies 依赖 @deepseek-ai/dsh-client-*、cordis、dsh-better-sidebar，且 README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-aigc-canvas",
+      "evidence": "README：“从 npm 安装(推荐): dsh plugin --profile web add @huanlin/dsh-plugin-aigc-canvas”"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 增加了一个“无限画布”，把 AI 生成的内容（图片、视频、音频）以节点和连线的形式展示出来。模型可以通过几个工具在画布上生成内容，比如文字生成图片、文字生成视频、首尾帧生成视频、多参考图生成视频、文字生成音频。生成的东西和提示词都会变成画布上的元素，自动连线表示关系。目前默认用内置的“模拟后端”，不会真的调用 AI 服务，而是生成占位用的合成文件；如果你装了 better-sidebar 插件，还能在侧边栏里可视化看到画布。",
+      "level": "ok",
+      "risks": "它会在当前项目目录下创建 .dsh-aigc-canvas 文件夹，用来保存画布状态和生成的媒体文件；如果你配置了 apiKeyEnv，它可能会读取对应的 API key 环境变量。除此之外没有发现访问隐私文件或偷偷联网的行为。",
+      "postInstallNotes": "无（默认使用 stub 后端，开箱即用；若以后接入真实后端，可在 cordis.patch.yml 或 DSH GUI 中配置 baseURL 和 apiKeyEnv）",
+      "notes": "当前后端为 stub，不会真正调用 AI 服务；画布可视化需要 dsh-better-sidebar 插件，但即使不装，工具和元素表也能正常工作。"
+    },
+    "summaryZh": "在 DSH 中提供一个节点连线式无限画布，让模型可以调用文生图/视频/音频等工具并把结果画到画布上（当前为演示用 stub 后端）。",
+    "usage": {
+      "prompt_tokens": 5023,
+      "completion_tokens": 1423,
+      "total_tokens": 6446,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 912
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4383
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "Len7183/DSH-Think-zh",
+  "analyzedAt": "2026-08-17T11:34:24.972Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 给出了 dsh plugin 安装命令且描述为 DeepSeek Harness 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Len7183/DSH-Think-zh.git",
+      "evidence": "dsh plugin --profile web add github:Len7183/DSH-Think-zh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的思考过程（reasoning）强制使用简体中文，回答语言跟着提问走（中文问题用中文答，英文问题用英文答），代码和路径等保持原样不翻译。它通过在每次请求的系统提示里加一段指令来实现，几乎不占用额外资源。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只是注入文本指令，不读取或修改用户文件，也不连接外部服务器。",
+      "postInstallNotes": "安装后重启 DSH 即默认生效，无需额外配置；可选的在 cordis.patch.yml 中调整注入开关或自定义指令文本。",
+      "notes": "无"
+    },
+    "summaryZh": "强制 DeepSeek Harness 的思考用简体中文、回复跟随提问语言的轻量插件。",
+    "usage": {
+      "prompt_tokens": 2482,
+      "completion_tokens": 897,
+      "total_tokens": 3379,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 576
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1842
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-workbench",
+  "analyzedAt": "2026-08-16T13:45:04.474Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis，README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-workbench",
+      "evidence": "dsh plugin --profile web add dsh-plugin-workbench"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页界面用的文件浏览器插件。装好后，你能在浏览器里像用 VS Code 一样浏览工作区文件：左边是文件树，右边可以打开多个代码文件并直接编辑保存，带语法高亮和标签页，还能切换亮暗主题。",
+      "level": "ok",
+      "risks": "它会修改 DSH 核心界面文件（打补丁），也会读取和编辑你的工作区文件（查看/保存代码）。补丁脚本会改动 node_modules 里的 dsh-client-ui-layout 文件。没发现上传数据到外部服务器或收集隐私的迹象。",
+      "postInstallNotes": "安装后需要运行补丁脚本：node node_modules/dsh-plugin-workbench/scripts/patch-layout.mjs，然后重启 dsh web。",
+      "notes": "注意：布局补丁针对 dsh-client-ui-layout@0.1.0-rc.6 编写，其他版本可能需要更新锚点；DSH 升级会覆盖布局 bundle，需重新运行补丁脚本。"
+    },
+    "summaryZh": "为 DSH Web GUI 提供 VS Code 风格的文件树与可编辑代码预览的插件。",
+    "usage": {
+      "prompt_tokens": 2339,
+      "completion_tokens": 2022,
+      "total_tokens": 4361,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1632
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1699
+    }
+  }
+}

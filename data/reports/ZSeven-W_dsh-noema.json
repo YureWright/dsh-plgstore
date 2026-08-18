@@ -1,0 +1,37 @@
+{
+  "id": "ZSeven-W/dsh-noema",
+  "analyzedAt": "2026-08-16T11:56:26.804Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@zseven-w/dsh-noema@latest",
+      "evidence": "dsh plugin --profile web add @zseven-w/dsh-noema@latest"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的长期记忆插件。它能帮 AI 记住你之前聊过的重要信息，下次对话还能想起来。你可以手动添加记忆，也可以从其他编程工具（比如 Codex、Claude Code、Cursor 等）导入记忆，还能在设置页面里查看、搜索和删除记忆。",
+      "level": "ok",
+      "risks": "它会在你电脑上本地保存记忆文件（默认放在 ~/.agent-memory/），如果你用导入功能，它会读取其他 AI 工具的记忆文件（比如 ~/.codex、~/.claude 下的内容）。这些数据只存在你的电脑上，不会自动上传到外部服务器，但如果别人用了你的电脑，可能会看到。",
+      "postInstallNotes": "安装后需要运行 `dsh web` 启动界面，也可以在设置页面里调整记忆存储位置（NOEMA_ROOT）等选项。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Noema 是一款为 DeepSeek Harness 提供长期记忆的插件，支持跨会话记忆召回、从多种 AI 编码工具导入记忆，并带有可视化设置页面。",
+    "usage": {
+      "prompt_tokens": 4567,
+      "completion_tokens": 1399,
+      "total_tokens": 5966,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1008
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3927
+    }
+  }
+}

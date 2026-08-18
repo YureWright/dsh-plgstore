@@ -1,0 +1,37 @@
+{
+  "id": "bpc-oss/dsh-web-billing",
+  "analyzedAt": "2026-08-17T11:32:55.145Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/dsh-home-paths，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/bpc-oss/dsh-web-billing.git",
+      "evidence": "dsh plugin --profile web add github:<owner>/dsh-web-billing"
+    },
+    "evaluationReport": {
+      "intro": "这是 DSH 网页版的一个计费插件：它能按 DeepSeek 官方价格（包括高峰/低谷不同费率）自动计算每次对话的花费，逐条记录账单，实时显示账户余额，并在界面上用人民币或美元展示费用。还能统计使用本地模型时省了多少钱。",
+      "level": "ok",
+      "risks": "它会在你电脑上保存账单记录文件（~/.dsh/storages/web-billing.json），并会读取 DeepSeek API Key 去查询账户余额（只读接口），Key 不会发送到浏览器。默认只有本机可以访问它的查询接口。没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web；如需定制币种、时区、价格等，可在 $DSH_HOME/profiles/web/cordis.patch.yml 中覆写配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页版 token 计费插件，按官方政策（含峰谷价）自动计价、记录每笔开销并实时显示余额。",
+    "usage": {
+      "prompt_tokens": 5396,
+      "completion_tokens": 2354,
+      "total_tokens": 7750,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1977
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4756
+    }
+  }
+}

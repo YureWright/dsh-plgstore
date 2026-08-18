@@ -1,0 +1,37 @@
+{
+  "id": "@kazecreator/dsh-settings-pro",
+  "analyzedAt": "2026-08-18T14:52:58.805Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client.inject 且 peerDependencies 包含 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@kazecreator/dsh-settings-pro",
+      "evidence": "dsh plugin --profile <name> add @kazecreator/dsh-settings-pro"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件，一个包提供五个功能：IM 桥接（Telegram/微信）、DeepSeek 官方用量统计、跨重启记忆、桌面宠物、视觉桥接（让纯文本模型能“看”图片）。所有功能默认关闭，你可以在 Web 界面（Settings Pro）里按需打开，打开后无需重启即可生效。",
+      "level": "caution",
+      "risks": "它可能会读取你电脑上 Chromium 系浏览器（Chrome/Edge/Brave/Arc/Opera）的会话数据，用于同步 DeepSeek 官方计费用量，这意味着相关浏览器的登录信息可能被插件读取。此外，它会定期连接 npm registry 检查更新；如果启用 IM 桥接或视觉功能，会连接 Telegram/微信或你配置的 VLM 服务；启用桌面宠物 App 模式会下载并运行 Electron。所有功能默认关闭，只有你主动开启才会触发这些行为。",
+      "postInstallNotes": "需要在 cordis.patch.yml 中挂载插件（在 Quick start 里有配置示例），然后重启 DSH。之后在 Web GUI 的 Settings Pro 中开启需要的功能；若启用 Vision 或 Telegram，还需配置对应的 API 地址/Token。",
+      "notes": "无"
+    },
+    "summaryZh": "一个集 IM 桥接（Telegram/微信）、DeepSeek 用量统计、跨重启记忆、桌面宠物和视觉桥接于一体的 DSH 设置增强插件。",
+    "usage": {
+      "prompt_tokens": 3537,
+      "completion_tokens": 1354,
+      "total_tokens": 4891,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 896
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2897
+    }
+  }
+}

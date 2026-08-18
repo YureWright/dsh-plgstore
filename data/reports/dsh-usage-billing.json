@@ -1,0 +1,37 @@
+{
+  "id": "dsh-usage-billing",
+  "analyzedAt": "2026-08-16T13:26:44.085Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 README 提供 dsh plugin add 安装命令，符合 DSH 插件构成要件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-usage-billing",
+      "evidence": "dsh plugin --profile web add dsh-usage-billing"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你统计使用 DeepSeek 模型花了多少钱、用了多少 token。它会自动记录每次会话的调用量，按官方价格分段计费（比如高峰和空闲时段价格不同），在主界面显示用量汇总面板，还能查看历史明细和图表。首次启动时还会扫描你之前的会话日志，把历史用量也补上。",
+      "level": "ok",
+      "risks": "它会读取本机的会话记录（用于历史回填），并在用户主目录写入一个统计文件（.dsh-usage-stats.json），记录你的用量和费用。这些数据只保存在本地，不会上传。但如果你不想让别人看到你的使用情况，注意这个文件的存在。",
+      "postInstallNotes": "首次安装后需重启应用并刷新页面；保持单实例运行，避免统计文件互相覆盖。",
+      "notes": "计费价格表为插件内置（截至 2026-08-17 调价），若官方价格变动请关注插件更新；peerDependency 为 @deepseek-ai/dsh-tools 预发布版（rc.6），安装时请确保该依赖可用。"
+    },
+    "summaryZh": "DeepSeek Harness 用量与消费统计插件：自动统计会话用量，按峰谷价格计费，提供主界面汇总面板与明细图表。",
+    "usage": {
+      "prompt_tokens": 2764,
+      "completion_tokens": 3119,
+      "total_tokens": 5883,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2709
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2124
+    }
+  }
+}

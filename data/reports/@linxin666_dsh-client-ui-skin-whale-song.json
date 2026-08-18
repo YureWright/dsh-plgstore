@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-client-ui-skin-whale-song",
+  "analyzedAt": "2026-08-17T11:08:29.595Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin add 安装命令，并且代码明显是 DSH 客户端皮肤插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-skin-whale-song",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-skin-whale-song"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页版换皮肤的主题插件，叫“鲸吟”。装上后，它会把 DeepSeek 网页界面背景变成一幅深海鲸鱼女神主题的画，配上半透明面板和冰蓝/青/藏蓝的配色，并跟随系统深浅色模式自动调整遮罩。它只改外观，不碰聊天记录、不发网络请求、不触达模型。",
+      "level": "ok",
+      "risks": "它只修改 DSH 网页界面自身的外观：给 body 加属性、插入内置背景图和网站图标、注入样式。不读取本地文件、不连接外部服务器、不访问模型请求。没发现明显风险。",
+      "postInstallNotes": "装完后需要执行 dsh-skin use whale-song 来激活该皮肤；如果是从仓库用 link: 方式安装，需要先在仓库里执行 pnpm install && pnpm -r build 生成 lib/ 产物。",
+      "notes": "无"
+    },
+    "summaryZh": "鲸吟是一款深海鲸鱼女神主题的 DSH 网页客户端皮肤，只改变界面外观，不涉及模型请求。",
+    "usage": {
+      "prompt_tokens": 2216,
+      "completion_tokens": 1297,
+      "total_tokens": 3513,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 912
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1576
+    }
+  }
+}

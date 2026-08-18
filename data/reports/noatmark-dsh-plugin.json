@@ -1,0 +1,37 @@
+{
+  "id": "noatmark-dsh-plugin",
+  "analyzedAt": "2026-08-16T13:32:28.263Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 明确说这是 DeepSeek Harness（dsh）插件并提供多个工具。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "noatmark-dsh-plugin",
+      "evidence": "Add this plugin to your dsh Web UI."
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了四个‘文本卫生’小工具：一个是清除隐藏字符和检查提示注入；一个是扫描报告不可见字符；一个是清理 AI 输出里多余的空行、代码围栏和尾部空格；还有一个是给 CSV 里以 =、+、-、@ 开头的单元格加引号，防止公式注入。所有处理都在本地完成，不会把数据发出去。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只做文本处理，所有数据都在本地跑，不会上传或连接外部服务器。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "NoAtMark 文本卫生插件，为 DeepSeek Harness 提供清除隐藏字符、检测提示注入、整理 LLM 输出格式和转义 CSV 公式注入的四个本地工具。",
+    "usage": {
+      "prompt_tokens": 1901,
+      "completion_tokens": 1398,
+      "total_tokens": 3299,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1064
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1261
+    }
+  }
+}

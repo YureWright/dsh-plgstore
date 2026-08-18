@@ -1,0 +1,37 @@
+{
+  "id": "030611/dsh-telemetry-redactor",
+  "analyzedAt": "2026-08-17T13:12:18.328Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch 且依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-session-telemetry，README 提供了 dsh plugin add 安装命令，符合 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-telemetry-redactor",
+      "evidence": "dsh plugin --profile web add dsh-telemetry-redactor"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DeepSeek Harness 的会话遥测数据被发送给后端之前，自动把密码、token、API 密钥等敏感信息打码替换成 [REDACTED]，同时不会改动原始会话日志。它只是给遥测数据加一层保护，不改变模型请求或提示词。",
+      "level": "ok",
+      "risks": "它会在内存中读取遥测记录里的字段来识别敏感信息，但不会修改原始日志，也不会把数据发到外部服务器（只影响发往已配置后端的副本）。未发现明显风险。",
+      "postInstallNotes": "安装后建议运行 `dsh --profile web --dump-config` 确认插件行已加载；如需自定义打码占位符，可在配置里设置 `replacement`（默认 `[REDACTED]`）。",
+      "notes": "社区维护，非 DeepSeek 官方项目；对未知格式的秘密可能识别不到，高安全场景建议自行审阅 SECRET-MATRIX.md 和 SECURITY.md。"
+    },
+    "summaryZh": "在 DeepSeek Harness 遥测数据外发前自动打码敏感凭据（token、密码、API 密钥等），且不改变原始会话日志。",
+    "usage": {
+      "prompt_tokens": 3279,
+      "completion_tokens": 898,
+      "total_tokens": 4177,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 481
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2639
+    }
+  }
+}

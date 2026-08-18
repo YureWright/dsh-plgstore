@@ -1,0 +1,37 @@
+{
+  "id": "dsh-deeptutor",
+  "analyzedAt": "2026-08-16T13:34:53.431Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-deeptutor",
+      "evidence": "dsh plugin --profile web add dsh-deeptutor -w"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（dsh）用的学习助手扩展。它把 dsh 的对话接到 DeepTutor 教学服务上，让你在同一个聊天窗口里获得深度主题讲解、自测题、学习路径规划，还能搜索你自己的知识库（RAG）并把学习笔记归档到一个笔记本里。比如你让智能体‘教我 async/await’，它会做深度解析，生成一个可以浏览器打开的 HTML 学习页面，并把摘要存到你的笔记本。",
+      "level": "ok",
+      "risks": "它会修改 dsh 的配置文件（添加一个插件依赖）、往你的用户目录（~/.dsh/skills/）复制技能文件；如果你配置了远程 DeepTutor，它会通过 SSH 连到那台服务器；它还会读取你指定的知识库文件、往你指定的笔记本里写笔记。这些都是你主动让它的功能，没有发现偷传数据或碰隐私文件的行为。",
+      "postInstallNotes": "需要先配置 DeepTutor 后端：要么在本地跑 deeptutor serve 并把 CLI 放 PATH，要么设置 DEEPTUTOR_SSH_HOST 等环境变量走远程；改完环境变量后重启 dsh。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 打造的学习助手插件，接入 DeepTutor 提供深度讲解、自测、学习路径、知识库检索与笔记归档。",
+    "usage": {
+      "prompt_tokens": 3908,
+      "completion_tokens": 2101,
+      "total_tokens": 6009,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1671
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3268
+    }
+  }
+}

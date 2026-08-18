@@ -1,0 +1,37 @@
+{
+  "id": "launch-panel",
+  "analyzedAt": "2026-08-18T14:55:37.476Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "launch-panel",
+      "evidence": "dsh plugin --profile web add launch-panel"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 网页版控制台加一个小面板，在屏幕右侧可以展开一个“火箭发射任务”列表，显示最近一个月有哪些火箭发射、什么时候发、哪个国家、什么轨道等，鼠标悬停还能看到更详细的信息。简单说就是个信息面板小工具。",
+      "level": "ok",
+      "risks": "它会联网获取公开的火箭发射数据（比如从第三方数据源拉取），并在你的浏览器里展示；面板开合状态会存到浏览器的 localStorage；插件本身只读取数据、展示数据，没有发现它会动你电脑上其他文件或偷偷上传隐私的行为。",
+      "postInstallNotes": "装完需要重启 dsh web 让面板生效；如果数据源连不上会自动用演示数据，无需额外设置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Web 界面右侧的火箭发射任务面板，汇总近一个月发射任务、悬停看详情、可折叠。",
+    "usage": {
+      "prompt_tokens": 3514,
+      "completion_tokens": 1703,
+      "total_tokens": 5217,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1373
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2874
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "mimo-vision",
+  "analyzedAt": "2026-08-16T13:45:08.021Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明 dsh.bundle，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，代码调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "mimo-vision",
+      "evidence": "dsh plugin --profile web add mimo-vision"
+    },
+    "evaluationReport": {
+      "intro": "这插件让 DeepSeek Harness 的大模型能“看见”图片。它注册一个 describe_image 工具：你告诉模型要看哪张图片，插件就把图片发给 mimo-v2.5 视觉模型，拿到文字描述再返回给主模型。支持常见格式，本地装了 ImageMagick 的话还能自动转换 SVG、HEIC 等特殊格式。",
+      "level": "ok",
+      "risks": "它会把你想让它看的图片文件发送到 opencode.ai 的服务器（默认用免费通道，失败时可能走付费通道）进行识别，所以图片内容会离开你的电脑。另外转码时会在系统临时目录写临时文件。API 密钥通过 DSH 的凭据机制管理，不会明文保存。",
+      "postInstallNotes": "需要在 ~/.dsh/.credentials.yaml 或环境变量里配置 OPENCODE_GO_API_KEY（或 OPENCODE_API_KEY）作为 API 密钥，然后重启 DSH 使插件生效。",
+      "notes": "README 写着“once this package is published”，但 npm 上已经有 0.1.0 版本，疑似 README 没更新；不过这不影响使用。"
+    },
+    "summaryZh": "DSH 原生视觉插件：让没有视觉能力的主模型通过 describe_image 工具调用 mimo-v2.5 多模态模型，把图片变成文字描述。",
+    "usage": {
+      "prompt_tokens": 4030,
+      "completion_tokens": 2342,
+      "total_tokens": 6372,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1920
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3390
+    }
+  }
+}

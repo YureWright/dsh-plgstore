@@ -1,0 +1,37 @@
+{
+  "id": "z953218350/dsh-np-ppt",
+  "analyzedAt": "2026-08-17T12:13:27.189Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，README 提供了 dsh plugin add 安装命令，且代码涉及 DSH 工具导出与前端注入，具备明确的 DSH 插件接口特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/z953218350/dsh-np-ppt.git",
+      "evidence": "README 示例：`dsh plugin --profile web add link:<项目路径>`（远程安装可使用 Git 源）"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的 PPT 演示文稿专家插件，主要让 AI 能直接生成 PPT。它内置了 9 种视觉风格、一种叫 PPTD 的文本格式来描述幻灯片，还带一个本地网页编辑器（打开 http://127.0.0.1:55173/ 就能用），可以可视化调整文字和排版，最后用内置的 Python 工具高保真导出成 .pptx 文件。安装后，DSH 里会多一个「PPT 演示文稿专家」预设，跟 AI 说想要什么样的幻灯片，它就能帮你做。",
+      "level": "ok",
+      "risks": "插件会在你的电脑上启动一个本地网页服务（只监听 127.0.0.1:55173），用来做编辑器。如果你用可视化编辑器，需要授权浏览器读取你选中的文件夹（用于打开和保存 PPTD 项目）。首次导出时，它会自动用 pip 安装 Python 库（pyyaml、python-pptx）到临时目录，可能需要联网。这些操作都是功能需要，没有发现上传个人数据或偷偷连外部服务器的迹象。",
+      "postInstallNotes": "装完后需要重启 dsh web 来加载插件。电脑上要有 Python 3，并能用 py -3 / python3 / python 命令调用；如果没有 pyyaml 和 python-pptx，插件会自动装，或者你手动执行 pip install pyyaml python-pptx。使用可视化编辑器时，建议用 Chrome/Edge 并允许文件目录权限。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 专用 PPT 演示文稿插件：内置 9 种风格、PPTD 文本格式、本地可视化编辑器和一键导出 PPTX 功能。",
+    "usage": {
+      "prompt_tokens": 4233,
+      "completion_tokens": 1092,
+      "total_tokens": 5325,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 554
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3593
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-skin",
+  "analyzedAt": "2026-08-16T14:47:19.275Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 且 README 提供 dsh plugin add 安装命令，确认为合法 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-skin",
+      "evidence": "dsh plugin --profile web add dsh-skin    # npm 发布版"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）换外观的小插件。你可以切换亮色/暗色模式、从 15 套预设皮肤里选一个（比如海盐白、薄荷绿、薰衣草紫），还能自己调整背景、文字、边框等 13 种颜色，以及把界面文字调大调小。设置会自动保存在浏览器本地，下次打开还在，也支持中英文界面。",
+      "level": "ok",
+      "risks": "它只会在你的浏览器里改界面颜色和字号，并把你的颜色选择保存在浏览器本地（localStorage）。不会上传数据到服务器，也不会动其他文件。",
+      "postInstallNotes": "无",
+      "notes": "字号和部分控件联动依赖 DSH 当前版本的内部类名哈希，如果 DSH 升级后这些类名变了，字号覆盖和控件联动可能会失效（但颜色主题的覆盖不受影响，仍能正常使用）。"
+    },
+    "summaryZh": "DSH 外观定制插件：亮暗切换、15 款预设皮肤、自定义颜色与字号，设置存本地浏览器，中英双语。",
+    "usage": {
+      "prompt_tokens": 2226,
+      "completion_tokens": 602,
+      "total_tokens": 2828,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 236
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1586
+    }
+  }
+}

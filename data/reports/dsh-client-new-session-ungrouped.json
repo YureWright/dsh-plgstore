@@ -1,0 +1,37 @@
+{
+  "id": "dsh-client-new-session-ungrouped",
+  "analyzedAt": "2026-08-16T13:32:14.918Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 并注入 @deepseek-ai/dsh-client-runtime，README 描述为 dsh Web GUI 行为插件，符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-client-new-session-ungrouped",
+      "evidence": "README 安装命令：npm i dsh-client-new-session-ungrouped --prefix \"$env:USERPROFILE\\.dsh\\profiles\\web\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面加一个“不在项目中工作”的散聊功能。平时新建会话如果没选项目，会自动放到你主目录下的 DSH-Chat 文件夹里，不加载项目的 AGENTS.md 等规则；你也可以手动指定聊天目录。另外它还修复了原界面里“未分组”组头的加号按钮没反应的问题，并解锁了空白散聊会话的输入框。",
+      "level": "ok",
+      "risks": "它会在你的用户主目录下自动创建一个叫 DSH-Chat 的文件夹，用来存放散聊相关数据；会读取浏览器本地存储（localStorage）来记住你选择的目录；如果没有手动选目录，它可能会根据已有的工作区路径猜你的家目录。不会上传数据到外部服务器，没有发现明显风险。",
+      "postInstallNotes": "安装后需要手动编辑 profiles/web/cordis.patch.yml 添加激活条目（README 有具体内容），然后刷新浏览器页面；不能直接用 dsh plugin add 安装（该包刻意不声明 dsh.bundle），否则可能导致重复配置。",
+      "notes": "该包刻意不声明 dsh.bundle，所以 dsh plugin add 可能不适用，推荐按 README 的 npm 安装方式。"
+    },
+    "summaryZh": "为 DSH Web 界面提供“不在项目中工作”的散聊会话功能，并修复未分组组头加号按钮和空白输入框问题。",
+    "usage": {
+      "prompt_tokens": 4312,
+      "completion_tokens": 2426,
+      "total_tokens": 6738,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1950
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3672
+    }
+  }
+}

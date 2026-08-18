@@ -1,0 +1,37 @@
+{
+  "id": "AKS1st/dsh-cyber-particle",
+  "analyzedAt": "2026-08-17T13:16:52.176Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:AKS1st/dsh-cyber-particle",
+      "evidence": "dsh plugin --profile web add github:AKS1st/dsh-cyber-particle"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加一层动态粒子背景：屏幕边缘会随机飞入灰白小点，小点之间距离近时自动连线，形成一张不断变化的网。你可以在「设置 → 粒子背景」里调节粒子数量、大小、速度、颜色等，调完立即生效，重启后也会自动恢复。它不会挡住鼠标操作，也不改动界面配色。",
+      "level": "ok",
+      "risks": "它会在 $DSH_HOME 目录下写一个配置文件（cyber-particle.json）保存你的设置；除此之外只在前端画布上展示动画，不读取其他文件，也不联网。",
+      "postInstallNotes": "装完后需要重启 dsh web 服务（运行 dsh web）让 profile 生效；之后进入「设置 → 粒子背景」调整参数即可。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 界面添加动态粒子网络背景的插件，支持实时调整参数并持久化设置。",
+    "usage": {
+      "prompt_tokens": 1874,
+      "completion_tokens": 2534,
+      "total_tokens": 4408,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2179
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1234
+    }
+  }
+}

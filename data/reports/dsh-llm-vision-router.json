@@ -1,0 +1,37 @@
+{
+  "id": "dsh-llm-vision-router",
+  "analyzedAt": "2026-08-16T13:32:33.104Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 @deepseek-ai/cordis、@deepseek-ai/dsh-llm、@deepseek-ai/dsh-agent 作为 peerDependencies，且 README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-llm-vision-router",
+      "evidence": "dsh plugin add dsh-llm-vision-router"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件，用来根据消息中是否有图片自动切换大模型。因为 DeepSeek 模型不认识图片，而有些工具（比如截图对比）会返回图片，这个插件检测到消息里带图时，就把这次请求交给支持视觉的模型（比如 GPT-4o-mini），没图的时候继续用便宜的 DeepSeek，既省钱又能看懂图片。",
+      "level": "ok",
+      "risks": "该插件只是本地判断和转发，不会额外上传你的数据；唯一的联网行为是调用你配置的视觉模型（如 OpenAI）时把含图片的消息发给对应服务。如果你设置 toolResultsOnly: true，只有工具返回的截图会发送出去。此外为了判断是否含图，它会在本地读取上下文消息。",
+      "postInstallNotes": "需要在 DSH 配置文件里添加插件配置（如 visionProvider、visionModel、toolResultsOnly），并确保你有可用的视觉模型 provider 的 API key（例如 OPENAI_API_KEY），否则路由会失败。",
+      "notes": "无"
+    },
+    "summaryZh": "按消息是否含图自动切换到视觉模型，既省钱又能让 DeepSeek 看懂工具返回的截图。",
+    "usage": {
+      "prompt_tokens": 2452,
+      "completion_tokens": 909,
+      "total_tokens": 3361,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 510
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1812
+    }
+  }
+}

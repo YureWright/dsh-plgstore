@@ -1,0 +1,37 @@
+{
+  "id": "dsh-check-update",
+  "analyzedAt": "2026-08-16T13:37:03.237Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin add 安装命令，且包含 host.js/client.js 等 DSH 插件典型结构。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-check-update",
+      "evidence": "dsh plugin --profile web add dsh-check-update"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 用的更新检查器。它会在设置页里显示 DSH 本体和已安装插件有没有新版本，如果有更新，导航栏会出现红点提醒。每 6 小时自动检查一次，你也可以手动触发更新，它会告诉你该运行什么命令，并且可以看更新说明和备份回滚。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只连接 npm registry 检查版本号，不收集个人信息，也不会改动你的文件。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 更新检查器，自动检查本体和插件新版本，红点提醒并一键更新。",
+    "usage": {
+      "prompt_tokens": 1947,
+      "completion_tokens": 492,
+      "total_tokens": 2439,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 206
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1307
+    }
+  }
+}

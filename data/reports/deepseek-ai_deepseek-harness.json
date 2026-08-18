@@ -1,0 +1,37 @@
+{
+  "id": "deepseek-ai/deepseek-harness",
+  "analyzedAt": "2026-08-16T11:36:19.540Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.99,
+      "reason": "该仓库是 DeepSeek Harness 核心框架（monorepo 根），并非可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "DeepSeek Harness（简称 dsh）是 DeepSeek 官方开源的智能体运行框架。它采用“一切都是插件”的设计，你可以把它理解成一个能让 AI 代理跑起来的工作台：通过一条命令启动网页界面，然后在里面配置和运行各种 AI 任务。目前还是开发者预览版，功能在快速迭代中。",
+      "level": "ok",
+      "risks": "它会在本机启动一个网页服务（默认地址是本地 127.0.0.1:3080），并在你授权下可能让 AI 代理调用本机工具或访问网络。因为所有功能都是插件，实际风险取决于你安装并启用了哪些插件。建议从官方渠道获取插件，并注意查看插件权限。",
+      "postInstallNotes": "无",
+      "notes": "这个仓库是 DeepSeek Harness 本体，不是可被 dsh plugin add 安装的插件；若需要安装插件，应去插件市场寻找独立插件。另外它处于开发者预览阶段，API 可能有破坏性变更。"
+    },
+    "summaryZh": "DeepSeek Harness 是 DeepSeek 开源的智能体运行框架，采用“一切都是插件”的架构，可通过 Web 界面启动和管理 AI 代理。",
+    "usage": {
+      "prompt_tokens": 2557,
+      "completion_tokens": 2381,
+      "total_tokens": 4938,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2009
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1917
+    }
+  }
+}

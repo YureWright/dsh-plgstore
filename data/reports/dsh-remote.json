@@ -1,0 +1,37 @@
+{
+  "id": "dsh-remote",
+  "analyzedAt": "2026-08-16T13:23:54.548Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 明确声明 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-remote",
+      "evidence": "dsh plugin add dsh-remote            # add the bundle"
+    },
+    "evaluationReport": {
+      "intro": "这是一个让 DeepSeek Harness（DSH）能远程操作 SSH 服务器的助手插件。你可以保存多台服务器的连接信息（密码或密钥），然后选择一个远程文件夹作为工作区，让 AI 助手直接在上面查看文件、读写代码、运行命令，还能把远程目录同步到本地，方便编辑后再传回去。",
+      "level": "ok",
+      "risks": "需要保存 SSH 服务器的地址、用户名和密码/密钥，这些信息会存在本地电脑上（插件自己说密码不会显示在界面上，但仍是敏感信息）。另外 AI 助手拿到权限后，可以在远程服务器上以你的身份执行 shell 命令，相当于给它一把远程电脑的钥匙，所以只能添加自己信任的机器。",
+      "postInstallNotes": "装完后需要到 DSH 的「Settings → 远程工作区」里添加 SSH 机器（填主机、端口、用户名和密码或私钥），也可以按 README 在 cordis.patch.yml 里配置默认主机（可选）。配置好之后，在新建工作区时选择「远程」标签页就能用了。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 远程工作助手：管理 SSH 机器、选择远程目录作为工作区，支持远程文件读写、执行命令和双向 SFTP 同步。",
+    "usage": {
+      "prompt_tokens": 3761,
+      "completion_tokens": 841,
+      "total_tokens": 4602,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 419
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3121
+    }
+  }
+}

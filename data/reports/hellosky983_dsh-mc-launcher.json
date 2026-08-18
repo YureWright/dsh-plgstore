@@ -1,0 +1,37 @@
+{
+  "id": "hellosky983/dsh-mc-launcher",
+  "analyzedAt": "2026-08-17T12:00:56.489Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis 与 dsh-tools，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/hellosky983/dsh-mc-launcher.git",
+      "evidence": "git clone https://github.com/hellosky983/dsh-mc-launcher.git"
+    },
+    "evaluationReport": {
+      "intro": "这是一个把 DeepSeek Harness 变成 Minecraft 启动器的插件。装上后，你可以在 DSH 界面里直接登录微软账号、下载安装 Minecraft 版本、启动游戏，还能让 AI 帮你操作游戏、分析崩溃日志、查看存档等。",
+      "level": "ok",
+      "risks": "它会读写你的 ~/.minecraft 游戏目录（版本文件、存档等）和新建 ~/.dsh-mc 目录（存放登录 token、设置、截图），登录 token 仅保存在本机。它还会连接 Mojang、微软、DashScope 等服务器，但只用于登录、下载游戏文件或 AI 看图分析。没有发现恶意行为。",
+      "postInstallNotes": "需要注册自己的 Azure 应用获取 client id 并填入设置；若使用 mc_see 功能还需设置 DASHSCOPE_API_KEY；启动游戏需要系统装有 Java 或 ~/.minecraft/runtime 下有对应版本。",
+      "notes": "非官方项目，与 Mojang/Microsoft 无关联；兼容性依赖 DSH 版本 0.1.0-rc.6，可能随 DSH 更新而失效。"
+    },
+    "summaryZh": "基于 DeepSeek Harness 的非官方 Minecraft 启动器插件，支持微软登录、版本下载、AI 控制与自主生存。",
+    "usage": {
+      "prompt_tokens": 4869,
+      "completion_tokens": 699,
+      "total_tokens": 5568,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 264
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4229
+    }
+  }
+}

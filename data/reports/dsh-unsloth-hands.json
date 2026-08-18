@@ -1,0 +1,37 @@
+{
+  "id": "dsh-unsloth-hands",
+  "analyzedAt": "2026-08-16T13:35:32.885Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，且依赖 @deepseek-ai/cordis 与多个 dsh-* 核心包，README 也给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-unsloth-hands",
+      "evidence": "dsh plugin --profile <name> add dsh-unsloth-hands        # from npm registry"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能给 DeepSeek Harness 智能体加上一双“本地手”。它注册两个工具：unsloth_run 处理文字（改写、翻译、摘要等），unsloth_vision 处理图片（看图、OCR、对比）。它会把你网上主模型的重复性小活转交给你自己电脑上正在运行的 Unsloth Desktop 本地模型去干，省 token、省时间。插件自己不启动或关闭任何程序，只是通过 HTTP 连接你本地的 Unsloth 服务。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你配置的 Unsloth API key，并发送到本地地址（默认 127.0.0.1:8888）；处理图片时会把图片发给本地模型，不会上传云端；如果你指定 http(s) 图片 URL，则会访问这些 URL。请确保这个 key 只给你信任的本地 Unsloth 服务。",
+      "postInstallNotes": "需要先启动 Unsloth Desktop、加载模型并在设置里创建 API key，然后在 DSH 配置中填写 baseURL 和 apiKey（或设置 UNSLOTH_API_KEY 环境变量）。通过 dsh plugin add 安装后，还要在 profile 的 cordis.patch.yml 里覆盖 unsloth-tool 的配置，填入你的 apiKey。",
+      "notes": "依赖的 @deepseek-ai/dsh-* 核心包是 rc 版本，需与 DeepSeek Harness 0.1.0-rc 系列匹配；当前版本 0.1.0 较新，若遇到问题可关注 GitHub 仓库。"
+    },
+    "summaryZh": "把重复文字和图片识别任务交给本地 Unsloth 模型处理，给 DeepSeek Harness 智能体一双省 token 的本地手。",
+    "usage": {
+      "prompt_tokens": 4475,
+      "completion_tokens": 2718,
+      "total_tokens": 7193,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2183
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3835
+    }
+  }
+}

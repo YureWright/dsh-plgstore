@@ -1,0 +1,37 @@
+{
+  "id": "dsh-git-rollback",
+  "analyzedAt": "2026-08-16T13:43:22.766Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 @deepseek-ai/cordis 等 peerDependencies，且 README 给出了 dsh plugin 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-git-rollback",
+      "evidence": "dsh plugin --profile web add dsh-git-rollback"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness (DSH) 用的插件，用来给每个对话回合的工作目录自动拍快照。如果 AI 改代码改乱了，你可以用 /rollback 命令把文件恢复到动手之前的状态，用 /redo 撤销回退，用 /checkpoints 查看所有快照。它回退时不会动你的 Git 提交历史，也不会弄乱你暂存区的内容。",
+      "level": "ok",
+      "risks": "它会直接操作你当前 Git 仓库的工作区，执行回退时会删除新增的未跟踪文件（但不会删 .gitignore 里忽略的文件）；会在你的仓库里写入隐藏的 refs/dsh/* 引用和 .dsh/rollback 记录文件；如果你没配 Git 用户信息，它会用内置身份创建临时提交对象（不会出现在你的提交历史里）。回退操作可能让你丢失最近的改动，但 /redo 可以恢复。",
+      "postInstallNotes": "安装后需要重启 DSH web（或对应 profile）使插件生效；默认配置即可，如需修改可在 ~/.dsh/profiles/web/cordis.patch.yml 中调整。",
+      "notes": "该插件要求本机有可用的 git 命令；peerDependencies 指向 DSH rc.6 核心包，请注意 DSH 版本兼容性。"
+    },
+    "summaryZh": "DSH 回合级 Git 回退插件：每个回合自动给工作区拍快照，支持 /rollback、/redo、/checkpoints 命令，回退不污染分支历史。",
+    "usage": {
+      "prompt_tokens": 2644,
+      "completion_tokens": 2742,
+      "total_tokens": 5386,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2280
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2004
+    }
+  }
+}

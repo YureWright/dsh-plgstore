@@ -1,0 +1,37 @@
+{
+  "id": "Chu-Xin-r/wanjiqi-meme",
+  "analyzedAt": "2026-08-17T11:51:45.110Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 补丁，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Chu-Xin-r/wanjiqi-meme",
+      "evidence": "dsh plugin --profile web add \"github:Chu-Xin-r/wanjiqi-meme\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 添加一个“玩机器风格”的调侃技能。它内置了 22771 条从玩机器直播间收集的弹幕梗，装上后你可以让 AI 用玩机器的口吻解说 CS 比赛、生成弹幕烂梗、锐评选手（比如 NiKo、device），还会混合 CS 和 DOTA 的梗，甚至夹带二次元梗。适合喜欢该主播的粉丝娱乐。",
+      "level": "ok",
+      "risks": "它只是在你电脑上读取自带的数据文件（JSON），不会动你的个人文件或连接外部服务器。不过它生成的内容可能带点冒犯性（弹幕文化），但只有你主动要求时才会输出，自己把握就行。另外，它引用的弹幕数据来自第三方网站，作者说只做风格参考，但建议别拿去做商业用途。",
+      "postInstallNotes": "无（直接在 DSH 中调用相关技能即可）",
+      "notes": "这个插件同时也是一个 AgentSkills 标准 skill，可以用于 Claude Code 等其他支持 AgentSkills 的环境。另外，数据来源网站 robots 声明禁止 AI 训练，作者声称仅用风格参考，使用时留意。梗内容偏粉丝向，可能含夸张/冒犯表达。"
+    },
+    "summaryZh": "玩机器直播间 22771 条烂梗打包成的 DSH 插件，让 AI 模仿主播口吻锐评选手、生成弹幕梗。",
+    "usage": {
+      "prompt_tokens": 2222,
+      "completion_tokens": 2941,
+      "total_tokens": 5163,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2489
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1582
+    }
+  }
+}

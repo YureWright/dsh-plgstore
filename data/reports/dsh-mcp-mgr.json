@@ -1,0 +1,37 @@
+{
+  "id": "dsh-mcp-mgr",
+  "analyzedAt": "2026-08-16T14:54:12.653Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 peerDependencies 包含 @deepseek-ai/cordis 等 DSH 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mcp-mgr",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个为 DeepSeek Harness 设计的工作区级 MCP 管理器，能自动发现每个工作区里的 .dsh/dshmm/mcp.json 配置文件，并动态注册 mcp-client 实例。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取工作区中的 MCP 配置文件并可能监听文件变化，但未发现连接外部服务器或上传数据的迹象。",
+      "postInstallNotes": "无",
+      "notes": "README 缺失，评估主要基于 package.json 描述。存在一个 UI 依赖（dsh-mcp-mgr-ui），安装时会自动处理。"
+    },
+    "summaryZh": "为 DeepSeek Harness 管理工作区级 MCP 配置的插件，自动发现并注册 MCP 客户端。",
+    "usage": {
+      "prompt_tokens": 1564,
+      "completion_tokens": 746,
+      "total_tokens": 2310,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 452
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 924
+    }
+  }
+}

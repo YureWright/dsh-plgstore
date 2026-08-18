@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/DSH-better-sidebar",
+  "analyzedAt": "2026-08-16T12:13:57.677Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-better-sidebar",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页端用的插件，能加一个类似 VSCode 的右侧边栏，里面带有文件浏览器、代码编辑器、终端、Git 面板和网页预览，并且每个对话会话独立使用。它还开放接口，让其他插件能往边栏里添加自己的标签页和文件查看器。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页端提供 VSCode 风格的右侧边栏（资源管理器/编辑器/终端/Git/浏览器），并支持其他插件扩展边栏标签页。",
+    "usage": {
+      "prompt_tokens": 2249,
+      "completion_tokens": 1044,
+      "total_tokens": 3293,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 782
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1609
+    }
+  }
+}

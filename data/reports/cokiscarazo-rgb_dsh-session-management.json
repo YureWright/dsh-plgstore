@@ -1,0 +1,37 @@
+{
+  "id": "cokiscarazo-rgb/dsh-session-management",
+  "analyzedAt": "2026-08-17T11:45:47.574Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-session-management",
+      "evidence": "插件已发布到 npm（`dsh-session-management`）。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）Web 用的，主要解决官方没有的会话管理功能：可以把聊天记录真正删掉（不只是藏起来）、把归档的会话恢复出来、批量导出聊天数据，还能一键全部归档。中英文界面自动切换。",
+      "level": "ok",
+      "risks": "没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能看到「设置」里的「会话管理」入口；如果 dsh plugin 提示缺少 pnpm，先安装 pnpm。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Web 会话管理插件：归档/取消归档、真正删除本地聊天记录、批量导出数据，中英双语。",
+    "usage": {
+      "prompt_tokens": 3147,
+      "completion_tokens": 3167,
+      "total_tokens": 6314,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2876
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2507
+    }
+  }
+}

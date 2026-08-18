@@ -1,0 +1,29 @@
+{
+  "id": "WhitePlusMS/dsh-input-plus",
+  "analyzedAt": "2026-08-17T11:57:49.554Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，并依赖 @deepseek-ai/cordis 及多个 dsh 核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/WhitePlusMS/dsh-input-plus/archive/refs/tags/v0.0.2.tar.gz",
+      "evidence": "dsh plugin --profile web add https://github.com/WhitePlusMS/dsh-input-plus/archive/refs/tags/v0.0.2.tar.gz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件用来强化 DeepSeek Harness 网页版的输入框。装好之后，你在输入框里打 @ 就能弹出菜单，搜索当前工作区里的文件和文件夹，选中的路径会直接填进输入框（比如 @src/contract.ts），方便 AI 按路径去查代码；打 /h 则能列出你在这个会话里提交过的提问，可以快速选择或继续输入关键词过滤。插件还附带一些输入状态显示。它不替换原有输入框，只是叠加增强。",
+      "level": "ok",
+      "risks": "它会读取并建立当前会话工作区（文件夹）的索引，让你能用 @ 搜到文件名和目录名，默认最多扫 3 层、保留 200 条，也可调整；它还会记录当前会话里你成功提交过的提示词，供 /h 历史菜单使用——这些数据只保存在本地会话内，没有看到上传外部服务器的逻辑。如果你在设置里把 referenceRoot 改成别的绝对路径，它也会去扫描那个目录。除此之外没发现明显风险。",
+      "postInstallNotes": "装完即可用。如果想要调整，可以在 DSH 设置里找 input-plus 命名空间，配置 maxIndexDepth（扫描深度）、maxIndexEntries（索引条目上限）、referenceRoot（覆盖工作区路径）。",
+      "notes": "README 给的安装 tarball 指向 tag v0.0.2，而 package.json 版本为 0.1.0，可能 README 未同步；如果安装后发现功能不符，可去仓库 Releases 确认最新 tag。另外安装要求 DSH 0.1.0-rc.6 或兼容的 Web profile，peerDependencies 需要 React 18 和官方 dsh 客户端包，请确保环境满足。"
+    },
+    "summaryZh": "DSH Web 输入框增强插件：在输入框用 @ 引用工作区文件/目录，用 /h 查看并过滤当前会话的输入历史。",
+    "usage": {
+      "prompt_tokens": 5413,
+      "completion_tokens": 3483,
+      "total_tokens": 8896
+    }
+  }
+}

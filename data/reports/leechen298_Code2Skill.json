@@ -1,0 +1,37 @@
+{
+  "id": "leechen298/Code2Skill",
+  "analyzedAt": "2026-08-17T13:12:07.448Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且 README 提供了 dsh plugin 安装命令，确认是可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/leechen298/Code2Skill.git",
+      "evidence": "DeepSeek Harness users can install the three Skills as a Bundle in a selected profile: `dsh plugin --profile web add github:leechen298/Code2Skill#v1.1.3`"
+    },
+    "evaluationReport": {
+      "intro": "Code2Skill 是一组帮 AI 编程助手把现有代码变成可复用 AI 能力的小工具。你给它指定要分析的页面、目录或功能入口，它会自动从代码里找出真正的业务调用点，生成可执行的函数、MCP 工具、工作流技能和离线测试。简单说，它能把你的代码“翻译”成 AI 能直接调用的功能模块。",
+      "level": "ok",
+      "risks": "它会读取你授权的源代码目录，并在本地生成文件。生成过程中，代码内容可能会发送给你使用的 AI 模型提供商（例如 GPT、Kimi 等），所以请只授权你不介意被模型看到的代码。它默认不会调用真实业务 API，生成的 MCP 服务器需要你自己决定是否注册和启用。",
+      "postInstallNotes": "安装后，你需要在目标代码仓库中调用对应的 Skill（如 $code2skill-generate），并显式指定允许分析的源代码根目录。如果使用生成的 MCP 服务器，还需要按各包内的 MCP-SETUP.md 单独注册和启动。",
+      "notes": "该包同时是一组 Agent Skills，但 package.json 声明了 dsh.bundle，确是 DSH 插件。要求 Node.js ^22.19.0 或 >=24.0.0，旧版本可能跑不起来。文档大部分为中文。"
+    },
+    "summaryZh": "把现有代码自动转换为 AI 可调用的函数、MCP 工具和技能包的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 2691,
+      "completion_tokens": 3281,
+      "total_tokens": 5972,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2797
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2051
+    }
+  }
+}

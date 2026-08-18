@@ -1,0 +1,37 @@
+{
+  "id": "cindyguyuehu123/dsh-webchatlike",
+  "analyzedAt": "2026-08-17T11:45:25.215Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 依赖 @deepseek-ai/cordis 及 dsh-client-* 核心包，README 也给出了 dsh plugin add 安装命令，符合真正的 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/cindyguyuehu123/dsh-webchatlike.git",
+      "evidence": "dsh plugin --profile web add <this-repo-git-url-or-npm-name>"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的网页聊天界面用起来更像 deepseek.com 网页版：你可以悬停自己的消息直接修改并重发，悬停 AI 的回复一键重新生成，每条消息还能像翻页一样切换多个版本，也支持把整个对话树复制成独立副本，以及从侧边栏删除会话。",
+      "level": "caution",
+      "risks": "它会直接修改你本地 DeepSeek Harness 的源码文件（共 9 个文件，通过 apply-patches.sh 覆盖）；会在浏览器 localStorage 里保存会话版本信息。没有发现连接外部服务器或读取隐私文件的行为。打补丁时如果遇到冲突或没有备份，可能影响原有功能。",
+      "postInstallNotes": "装完插件后，需要先运行 apply-patches.sh 给源码打两个补丁，然后重新执行 pnpm install 和 pnpm run build:lib:client && pnpm run build:web，再重启 dsh web 并刷新浏览器。",
+      "notes": "这不是一个纯插件：它依赖两个源码补丁才能完整工作，dsh.bundle 只负责加载插件本身，编辑按钮和侧边栏折叠功能必须打补丁才出现。上游更新后可能需要重新应用补丁。"
+    },
+    "summaryZh": "让 DSH 网页聊天界面获得 deepseek.com 式的编辑重发、重新生成、版本翻页和整树分叉功能，但需要额外打源码补丁。",
+    "usage": {
+      "prompt_tokens": 4159,
+      "completion_tokens": 1580,
+      "total_tokens": 5739,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1090
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3519
+    }
+  }
+}

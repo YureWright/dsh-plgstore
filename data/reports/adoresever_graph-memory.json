@@ -1,0 +1,37 @@
+{
+  "id": "adoresever/graph-memory",
+  "analyzedAt": "2026-08-16T11:40:32.435Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，提供了 cordis.patch.yml 作为 bundle 入口，并依赖 cordis 生态，README 明确说明通过 DSH/Cordis 插件生命周期加载，且有 gm_* 工具接入 DSH 的 Session/Tool/Prompt Assembly 等接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/adoresever/graph-memory.git",
+      "evidence": "README 中在 DSH Install 部分给出了 tarball 安装方式的测试说明（'Testing covered tarball installation...'），但未给出明确的 dsh plugin add 命令；package.json 的 repository 字段为 git+https://github.com/adoresever/graph-memory.git，因此采用 git 方式。"
+    },
+    "evaluationReport": {
+      "intro": "Graph Memory 是一个给 AI 助手（比如 DeepSeek Harness）用的记忆插件。它能把对话里学到的知识整理成一张知识图谱（分任务、技巧、事件等类型），并且记住它们之间的关系。下次再聊到相关话题时，它能自动把最相关的旧知识找出来塞进当前对话，不用把整个历史都翻出来，省 token、响应也更快。数据默认存在本地 SQLite 里，不会上传到云端。",
+      "level": "ok",
+      "risks": "插件会在本地 SQLite 数据库里存对话中提取的知识点，这些数据默认放在用户本地配置目录中。如果电脑上有其他人能访问你的用户目录，他们可能看到这些记忆内容。插件可选接入外部 embedding 服务（比如 OpenAI、DashScope），如果启用，部分对话内容可能会发送到这些服务商以生成向量，但默认不启用。除此之外没发现明显风险。",
+      "postInstallNotes": "装完后可能需要配置 embedding 提供方（默认可不配，会退化到 FTS5 词语匹配）；如果想用向量检索，需要在 DSH 的 Credentials 里设置 OpenAI 兼容的 API key（支持 DashScope、OpenAI 或本地服务）。建议确认 DSH 版本为 0.1.0-rc.5 或兼容版本，因为当前是 beta，DSH 主程序还在预览阶段，后续升级可能破坏兼容性。",
+      "notes": "该插件目前是 1.6.0-beta.1，属于测试版，稳定性可能有限。README 也提醒 DSH 仍在 Developer Preview，可能引入不兼容的改动。另外有少量外部链接（B站视频、新浪财经报道）用于佐证项目历史，本身不影响功能。"
+    },
+    "summaryZh": "Graph Memory 是一款为 DeepSeek Harness 设计的本地优先知识图谱记忆插件，能把跨会话的对话知识自动整理成可检索的图谱，显著减少上下文 token 占用。",
+    "usage": {
+      "prompt_tokens": 3467,
+      "completion_tokens": 652,
+      "total_tokens": 4119,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2827
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-gateway-provider",
+  "analyzedAt": "2026-08-16T13:34:34.361Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，peer 依赖 @deepseek-ai/cordis 等核心包，且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-gateway-provider",
+      "evidence": "dsh plugin --profile web add dsh-gateway-provider"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 连接各种 LLM 网关（newapi、LiteLLM、Higress 或任何兼容 OpenAI 的接口），自动发现网关上有什么模型，并从 models.dev 拉取每个模型的真实参数（如上下文窗口、输出上限），然后用对应协议（OpenAI/Anthropic/Gemini）调用这些模型。你不用手动维护模型列表，网关新增模型后会自动同步；它还提供设置页面，可以添加/编辑网关、隐藏或覆盖模型，不用改 YAML。",
+      "level": "ok",
+      "risks": "它需要读写 DSH 的配置文件（settings.yaml 和凭证文件 .credentials.yaml），并在凭证文件里保存你提供的网关 API 密钥（文件权限 0600）；使用时会连接你配置的网关和 models.dev 拉取数据，这些请求会暴露你的 IP 和请求来源。除此之外没发现明显风险。",
+      "postInstallNotes": "装完后需要配置网关地址和 API 密钥：在 $DSH_HOME/.credentials.yaml 里设置 NEWAPI_API_KEY（或环境变量），按需在 settings.yaml 的 llm-newapi 段填写网关 baseURL，然后重启 profile，并打开 Settings → Gateway Models 页面添加或同步网关模型。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 接入任意 LLM 网关（newapi/LiteLLM/Higress 等）的 DSH 插件，自动发现模型列表并补充 models.dev 真实参数，按各模型协议分发请求。",
+    "usage": {
+      "prompt_tokens": 3874,
+      "completion_tokens": 4241,
+      "total_tokens": 8115,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3769
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3234
+    }
+  }
+}

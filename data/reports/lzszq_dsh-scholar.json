@@ -1,0 +1,37 @@
+{
+  "id": "lzszq/dsh-scholar",
+  "analyzedAt": "2026-08-17T11:21:13.728Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也给出了插件安装与配置说明。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "当前 `@dsh-scholar/*` 包尚未发布，因此随后仍需把本仓库的绝对路径作为本地插件加入 DSH 的 `web` profile："
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件，叫 DSH Scholar，相当于一个『AI 科研工作台』。它把查找文献、规划研究思路、设计实验、跑实验、记录证据、写论文这些环节都整合到一个项目里，并且每一步都可以由人来审核把关。它还能把实验结果和论文中的论断对应起来，让研究过程更规范、可追溯。",
+      "level": "caution",
+      "risks": "它会在你的电脑上通过 Docker 运行实验代码，需要下载镜像并占用计算资源；能读写你项目文件夹里的文件；会读取一个保存在本地的访问令牌文件（权限是 0600）；如果你配置了云端模型服务，研究内容可能会发送给该服务商。它还有一个网页版终端，可以让你在项目环境里执行命令。目前没有发现偷偷上传数据或收集个人信息的行为。",
+      "postInstallNotes": "安装后需要自行构建项目（pnpm install 和 pnpm run build），并启动独立的 Standalone 工作台和实验 Runner；然后在 DSH 的设置里打开插件配置，按需调整治理模式等选项；如果 DSH Web 不是跑在默认端口，还需要设置 DSH_SCHOLAR_STANDALONE_FRAME_ANCESTORS 环境变量。",
+      "notes": "经评估确认是 DSH 插件，但当前 @dsh-scholar/* 包尚未发布，不能直接通过 npm 安装，只能从源码构建后以本地路径加入；README 标注『加急开发适配中』，且要求 Node.js 24、pnpm 11.20.0 和 Docker，环境门槛较高。"
+    },
+    "summaryZh": "DSH Scholar：一个让 AI 帮你做科研的 DSH 插件，从查文献、做实验到写论文全流程管理，并有人工审核把关。",
+    "usage": {
+      "prompt_tokens": 5135,
+      "completion_tokens": 3941,
+      "total_tokens": 9076,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3397
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4495
+    }
+  }
+}

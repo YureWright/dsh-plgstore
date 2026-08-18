@@ -1,0 +1,37 @@
+{
+  "id": "@modusensus/dsh-mneme",
+  "analyzedAt": "2026-08-17T11:08:57.961Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令，可判定为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@modusensus/dsh-mneme",
+      "evidence": "dsh plugin --profile web add @modusensus/dsh-mneme"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（一个 AI 助手框架）用的，让它拥有“长期记忆”。以前 AI 每次对话结束就忘事，装上它之后，AI 能自动记下你的偏好、项目进展、做过的决定等，下次聊天时开局就想起这些。它还会自动整理记忆，去掉重复、合并相似内容，并提供一个网页面板，方便你直接查看和编辑记忆，还能设置 AI 必须遵守的规则和自定义斜杠命令。高级功能如语义搜索、实体抽取等，需要你按需配置 API 或本地模型。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下创建 `~/.dsh/memory` 文件夹，里面有 SQLite 数据库和 Markdown 文件，记录你和 AI 的对话要点、偏好等（可能包含隐私）。如果你启用了向量搜索，填写的 API 密钥也会保存在这个本地数据库里。若使用离线语义搜索，会从网上下载模型文件到本机。插件还会开一个本地 API 服务，默认只监听 127.0.0.1，但如果没有设置访问令牌（apiToken），同一台电脑上的其他程序（或 DSH 暴露在局域网时其他设备）可能能读取或修改这些记忆。主要风险是对话信息会持久化留在本机，以及要留意本地 API 的访问控制。",
+      "postInstallNotes": "默认配置即可用，无需额外配置。可选：若要启用向量语义搜索、离线语义引擎或实体抽取，请按 README 在设置面板或 `cordis.patch.yml` 中配置相应项。",
+      "notes": "这是 bundle 类型插件，安装即自动激活。注意 README 要求 Node 24+；若将 DSH 暴露在局域网，记得设置 `apiToken` 保护插件 API。"
+    },
+    "summaryZh": "给 DeepSeek Harness 的跨会话记忆插件：让 AI 记住你、记住项目，支持自动整理、语义搜索和网页管理面板。",
+    "usage": {
+      "prompt_tokens": 5100,
+      "completion_tokens": 2657,
+      "total_tokens": 7757,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2072
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4460
+    }
+  }
+}

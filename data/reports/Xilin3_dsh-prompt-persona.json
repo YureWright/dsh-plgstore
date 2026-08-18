@@ -1,0 +1,37 @@
+{
+  "id": "Xilin3/dsh-prompt-persona",
+  "analyzedAt": "2026-08-17T11:51:49.083Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/* 核心包，且 README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:xilin3/dsh-prompt-persona",
+      "evidence": "dsh plugin --profile web add github:xilin3/dsh-prompt-persona"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DSH 的网页设置界面里直接编辑系统提示词（也就是给 AI 设定身份和行为的文字），支持实时预览、保存，还能选择替换或追加到原有提示词，不用手动改配置文件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要修改 DSH 自己的设置文件（settings.yaml），并在网页设置页增加一个编辑区，所有改动都在你的 DSH 环境内，不会把数据传到外部。",
+      "postInstallNotes": "安装后需要把插件 `@xilin3/dsh-prompt-persona` 添加到 profile 的 `dsh.profile.bundles` 列表里，然后在 profile 目录执行 `pnpm install`，最后重启 `dsh web` 并刷新浏览器。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 设置页可视化编辑系统提示词并实时预览保存的插件。",
+    "usage": {
+      "prompt_tokens": 3369,
+      "completion_tokens": 2860,
+      "total_tokens": 6229,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2516
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2729
+    }
+  }
+}

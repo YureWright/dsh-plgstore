@@ -1,0 +1,37 @@
+{
+  "id": "the-qian/dsh-commit-review",
+  "analyzedAt": "2026-08-17T12:06:24.121Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，README 提供了 dsh plugin 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/the-qian/dsh-commit-review.git",
+      "evidence": "dsh plugin --profile web add https://github.com/the-qian/dsh-commit-review.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页界面增加两个斜杠命令：/commit 和 /review。/commit 可以自动分析你本地的 git 改动，帮你生成规范的提交信息并真正执行 git commit；/review 会审查你还没提交的代码改动，生成一份带严重程度分级的审查报告。全程由模型调用本地的 git 工具完成，不额外上传代码。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "安装后需要重启 DSH profile（运行 dsh web）才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，为 Web GUI 提供 /commit 和 /review 斜杠命令，实现一键 git 提交与代码审查。",
+    "usage": {
+      "prompt_tokens": 2742,
+      "completion_tokens": 873,
+      "total_tokens": 3615,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 568
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2102
+    }
+  }
+}

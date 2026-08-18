@@ -1,0 +1,37 @@
+{
+  "id": "huanxi-drxx/dsh-client-ui-mobile",
+  "analyzedAt": "2026-08-17T12:14:25.435Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 字段并依赖 @deepseek-ai/cordis，是真正的 DSH 客户端插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/huanxi-drxx/dsh-client-ui-mobile.git",
+      "evidence": "git clone <仓库地址> dsh-client-ui-mobile"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DSH 的网页界面在手机浏览器上更好用，变成抽屉式的移动布局，同时加了消息编辑、多模型网页搜索、工具管理、文件上传、余额显示、聊天背景和头像设置等功能。桌面端保持原样。简单说，就是把 DSH 网页版适配成手机版，还加了不少实用小功能。",
+      "level": "ok",
+      "risks": "它会修改 DSH 的配置文件（cordis.patch.yml），并在 ~/.dsh/profiles/web/node_modules/ 下安装文件。配置的搜索 API Key 会保存在本地设置里。读取用户消息和工具调用记录用于编辑/删除功能，但都在本地处理。没发现明显隐私风险。",
+      "postInstallNotes": "重启 DSH 并强制刷新浏览器；按需在设置 - 插件中配置网页搜索服务。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DSH 网页界面在手机上更好用，并附带消息编辑、多模型搜索、工具管理等实用功能。",
+    "usage": {
+      "prompt_tokens": 2235,
+      "completion_tokens": 1668,
+      "total_tokens": 3903,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1312
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1595
+    }
+  }
+}

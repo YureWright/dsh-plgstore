@@ -15,7 +15,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = dirname(dirname(dirname(fileURLToPath(import.meta.url)))); // plgstore/
 const ENV_PATH = join(ROOT, ".env");
-const CACHE_DIR = join(ROOT, "data", "cache", "llm");
+const CACHE_DIR = join(ROOT, "data", "reports"); // 评估报告 = 仓库正式数据（随流水线提交，不入 gitignore）
 
 /** 极简 .env 解析（无第三方依赖；忽略注释/空行）。 */
 export async function loadEnv() {

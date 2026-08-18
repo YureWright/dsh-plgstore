@@ -1,0 +1,37 @@
+{
+  "id": "dsh-acp-enhanced",
+  "analyzedAt": "2026-08-16T13:26:03.636Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-acp-enhanced",
+      "evidence": "dsh plugin --profile acp-enhanced add dsh-acp-enhanced"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个增强版的 ACP 服务器，专门给 DeepSeek Harness 用，主要配合 Zed 编辑器。它能让 AI 的回答像网页版一样一段段实时蹦出来，还能看到思考过程、token 用量、响应速度、缓存命中率等；你也可以直接在编辑器里切换模型、调整 AI 的思考力度、设定权限等级，还能恢复以前的对话，甚至挂载 MCP 工具。简单说，就是让 DeepSeek 在 Zed 里用起来更顺手、更透明。",
+      "level": "ok",
+      "risks": "它会读取你电脑里 ~/.dsh/.credentials.yaml 的 API 密钥（或网关环境变量），用来连接模型服务；AI 在帮你读写文件时，会通过 Zed 的接口操作当前编辑的文件，这些操作通常会先征求你同意；如果你配置了 MCP 服务器，那些服务器提供的工具也能访问你的文件或外部网络，所以别随便加不信任的 MCP。聊天历史和会话记录会保存在本地磁盘。除此之外没发现明显风险。",
+      "postInstallNotes": "装完需要手动配置：在 ~/.config/zed/settings.json 的 agent_servers 里加一段配置，把 command 指向包内 scripts/dsh-acp-zed.sh 的绝对路径；如果不用默认 DeepSeek 官方路由，要设置 DSH_ACP_PROVIDER 和 DSH_ACP_MODEL；API 密钥放 ~/.dsh/.credentials.yaml（或在 env 里给）；然后在 Zed 的 AI Agent 面板选择 dsh-acp-enhanced。可选：要 web_search 还得装 dsh-web-search-openrouter 并改 cordis.patch.yml。",
+      "notes": "该包依赖多个 @deepseek-ai/dsh-* 预发布版本（rc），版本迭代可能较快，升级时注意兼容；这是第三方增强版，用来替代官方 dsh-acp 桥，并非官方发布。建议先本地跑 node scripts/acp-client.mjs 验证。"
+    },
+    "summaryZh": "为 DeepSeek Harness 打造的增强版 ACP 服务器，让 Zed 编辑器获得实时流式输出、遥测统计、模型切换与权限控制等高级功能。",
+    "usage": {
+      "prompt_tokens": 4201,
+      "completion_tokens": 4358,
+      "total_tokens": 8559,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3748
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3561
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "147228/dsh-xiaoyao-skins",
+  "analyzedAt": "2026-08-17T11:17:13.953Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.85,
+      "reason": "仓库本身是皮肤合集与安装工具，不是可安装的 DSH 插件；皮肤才作为 DSH 插件通过 dsh plugin add 安装。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一套给 DeepSeek Harness 换肤的社区皮肤合集，里面有六套不同的界面主题（比如黑鲸实验室、探索之境等）。它还提供了一个命令行小工具，可以一键切换皮肤、恢复官方界面，甚至能帮你创建自己的新皮肤。简单说，就是给 DSH 的网页界面换个好看的外观，不影响聊天、模型这些功能。",
+      "level": "ok",
+      "risks": "它会修改你电脑上 DeepSeek Harness 的界面配置文件（web profile 里的皮肤相关文件）；执行安装命令时，会从 GitHub 下载安装包到本地运行，需要网络连接；它明确声明不会读取或迁移会话数据，但会改动网页界面相关的文件。",
+      "postInstallNotes": "无",
+      "notes": "经评估，这个仓库本身不是 DSH 插件，而是一个皮肤合集和安装工具；皮肤才会作为 DSH 插件被安装。另外注意：里面的夕小瑶角色和美术素材是 CC BY-NC 4.0 许可，不可直接商用。"
+    },
+    "summaryZh": "给 DeepSeek Harness 换肤的社区皮肤合集与命令行工具，内含六套夕小瑶主题皮肤，支持一键切换和自制皮肤。",
+    "usage": {
+      "prompt_tokens": 4092,
+      "completion_tokens": 1741,
+      "total_tokens": 5833,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1366
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3452
+    }
+  }
+}

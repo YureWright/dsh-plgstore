@@ -1,0 +1,37 @@
+{
+  "id": "THU-MAIC/dsh-openmaic",
+  "analyzedAt": "2026-08-17T11:27:24.243Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/THU-MAIC/dsh-openmaic.git",
+      "evidence": "`dsh plugin --profile web add git+https://github.com/THU-MAIC/dsh-openmaic.git`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 OpenMAIC 在线课堂平台接进 DeepSeek Harness。它能让你用大白话要求 AI 生成一堂在线课（提交需求后返回可打开的课堂链接），还能把 AI 写的幻灯片、互动小游戏/模拟器、教学卡片直接渲染到对话里，并且带一个苏格拉底式提问的教学技能。",
+      "level": "caution",
+      "risks": "使用 openmaic_generate 时，你要求的课程内容会发送到第三方服务 open.maic.chat；渲染的 HTML 卡片由 AI 生成并在沙箱中执行，理论上存在代码执行风险。此外插件依赖较多，安装时需注意与现有环境的兼容性。",
+      "postInstallNotes": "无需额外配置，装完重启 dsh web 即可；可按需修改 baseUrl、accessCode 等配置项。",
+      "notes": "插件会连接外部服务 open.maic.chat，涉及数据传输；建议确认该服务可信后再使用。"
+    },
+    "summaryZh": "将 OpenMAIC 在线课堂与互动教学组件接入 DeepSeek Harness 的插件，可生成课堂、渲染幻灯片/互动组件并启用苏格拉底教学技能。",
+    "usage": {
+      "prompt_tokens": 2644,
+      "completion_tokens": 1755,
+      "total_tokens": 4399,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1337
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2004
+    }
+  }
+}

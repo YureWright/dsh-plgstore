@@ -1,0 +1,37 @@
+{
+  "id": "@ohoyo/dsh-file-mention-host",
+  "analyzedAt": "2026-08-16T14:54:22.548Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "依赖 @deepseek-ai/dsh-llm、@deepseek-ai/dsh-typert-protocol 等核心包，README 明确描述为 DeepSeek Harness host plugin，且实现了 DSH 的 Remote service 与 pre-step 注入。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@ohoyo/dsh-file-mention-host",
+      "evidence": "README 引言：DeepSeek Harness host half of the @file/@directory mention plugin."
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，让用户在对话里直接 @某个文件或目录，它会把对应文件内容或目录结构自动塞进上下文，方便 AI 参考。比如你 @一下某个代码文件，它就把文件内容带进来。",
+      "level": "ok",
+      "risks": "它能读取当前工作区的文件内容，但只在用户明确 @ 时才读，而且有大小和数量限制。索引和缓存都留在本地，没发现会把数据发给外部服务器。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 @文件/@目录提及增强插件，自动将引用的文件或目录内容注入对话上下文。",
+    "usage": {
+      "prompt_tokens": 2817,
+      "completion_tokens": 747,
+      "total_tokens": 3564,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 433
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2177
+    }
+  }
+}

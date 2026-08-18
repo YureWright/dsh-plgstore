@@ -1,0 +1,37 @@
+{
+  "id": "Ychris12138/dsh-usage-stats",
+  "analyzedAt": "2026-08-17T11:14:17.093Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-* 核心包，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:Ychris12138/dsh-usage-stats",
+      "evidence": "dsh plugin --profile web add \"github:Ychris12138/dsh-usage-stats\""
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页端（dsh web）用的插件，能帮你直观看到各个 AI 供应商的余额、订阅额度还剩多少，以及你的 Token 用了多少、哪天用得多，还能在后台每五分钟自动刷新一次。界面有中文和英文，侧边栏点一下就能看。",
+      "level": "ok",
+      "risks": "插件会在你电脑上运行一个本地服务，读取你配置的 API Key 等凭据去查询各供应商的余额和用量；这些凭据只会保存在服务端，不会发送到浏览器。它还会读取一些本地配置文件（如 ~/.dsh 下的凭据文件）和可能的 auth.json，但安装器不会修改或读取这些文件来上传。插件默认只允许本机访问，没有明显的外部数据泄露风险。",
+      "postInstallNotes": "安装后需要重启 dsh web，并在浏览器中硬刷新；如果还没配置供应商凭据，需要编辑 ~/.dsh/.credentials.yaml 填入对应的 API Key（如 DEEPSEEK_API_KEY、OPENROUTER_MANAGEMENT_KEY 等）。",
+      "notes": "要求 DeepSeek Harness web profile 版本 >= 0.1.0-rc.6；官方推荐用 dsh plugin 命令安装，npx 是备选路径，不要同时使用两种方式，否则会重复挂载。"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页端提供多供应商账户余额、订阅额度和 Token 用量分析面板，支持后台自动刷新和自定义适配器。",
+    "usage": {
+      "prompt_tokens": 4522,
+      "completion_tokens": 998,
+      "total_tokens": 5520,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 505
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3882
+    }
+  }
+}

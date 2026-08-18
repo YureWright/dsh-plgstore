@@ -1,0 +1,37 @@
+{
+  "id": "heartmove/dsh-side-chat",
+  "analyzedAt": "2026-08-17T11:35:13.642Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖多个 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/heartmove/dsh-side-chat.git",
+      "evidence": "README 原文：`npx -p @deepseek-ai/dsh dsh plugin --profile web add github:heartmove/dsh-side-chat`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加一个右侧边的聊天窗口。你可以在主对话里选中一段文字，然后到侧边聊天里问 AI，侧边聊天会继承主对话的模型、权限和工作目录等设置。它还能在主对话弹出问题对话框时，让你先到侧边聊天里和 AI 讨论一下，再把答案带回来回答，不用打断当前流程。AI 在侧边聊天的回复可以直接插回主对话，作为草稿或折叠的上下文。",
+      "level": "caution",
+      "risks": "安装时会运行构建脚本（pnpm prepare），相当于在电脑上执行这个包的代码；另外如果开启“需要时查找工作区/父对话”开关，插件可能会读取工作区文件。侧边聊天本身是隐藏的会话，会存档在你的 DSH 配置目录里。",
+      "postInstallNotes": "若用 git 安装，第一次 add 可能因 pnpm 的 allowBuilds 限制失败，需要在配置文件里允许 dsh-side-chat 的构建脚本；安装后重启 dsh web 并硬刷新页面（Ctrl/Cmd+Shift+R）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 侧边聊天插件：可在不打断主对话的情况下，用独立的右侧聊天区选中文字提问，并可将回复插回主对话。",
+    "usage": {
+      "prompt_tokens": 4392,
+      "completion_tokens": 943,
+      "total_tokens": 5335,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 486
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3752
+    }
+  }
+}

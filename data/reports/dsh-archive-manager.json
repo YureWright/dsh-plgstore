@@ -1,0 +1,37 @@
+{
+  "id": "dsh-archive-manager",
+  "analyzedAt": "2026-08-18T14:58:11.298Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-archive-manager",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-archive-manager"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 网页版加了一个“已归档”会话管理功能。原来官方只能把会话归档（隐藏），没法查看、恢复或删除。这个插件在侧边栏底部加一个“已归档”入口，打开面板按工作区分组显示归档会话，可以继续聊天、取消归档、彻底删除（先安全停止会话再删除磁盘记录），还支持搜索、排序、拖拽等，界面和官方风格一致，中英文自动切换。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在你主动操作时读取或删除 DSH 自己的会话存档，不会上传或收集你的数据。",
+      "postInstallNotes": "安装后需重启 dsh web（README 提示：Then restart dsh web）。",
+      "notes": "官方适配版本为 0.1.0-rc.6，DSH 升级后可能需要等待插件更新。"
+    },
+    "summaryZh": "为 DSH Web 添加已归档会话管理面板，支持继续、取消归档、彻底删除和搜索。",
+    "usage": {
+      "prompt_tokens": 2441,
+      "completion_tokens": 962,
+      "total_tokens": 3403,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 589
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1801
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "LoserFox/dsh-git-identity",
+  "analyzedAt": "2026-08-17T11:36:25.112Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin 安装命令，属于 DSH profile bundle 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/LoserFox/dsh-git-identity.git",
+      "evidence": "从本仓库 checkout 安装到 profile（web / headless 等），bundle 声明自动加入组合层"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH（DeepSeek Harness）用的一个“身份固定器”。你在电脑上用 DSH 让 AI 帮忙跑命令时，AI 可能会执行 git commit。以前如果 AI 不小心改了 git 的提交者配置，提交记录里就会显示错误的名字。装上这个插件后，它会自动从你电脑上已登录的 GitHub 账号（或环境变量/全局 git 设置）里取出你的名字和邮箱，塞进 git 相关的环境变量里，强制所有从 DSH 发起的提交都用你的身份，不会变成别人。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 GitHub CLI 的登录信息和全局 git 配置，并可能把解析出的姓名和 noreply 邮箱写回 `git config --global`（仅当原来没有或不对时）。这些信息一般是你公开的 GitHub 身份；它不会上传到别处。另外，它会用你的 gh 登录凭证向 GitHub 官方 API 请求账号信息，但不会发给第三方。如果你不想让插件改动全局 git 配置，使用前需要留意。",
+      "postInstallNotes": "安装后需要重启对应 profile 的 DSH 进程（例如 `dsh --profile web` 的进程）；如果不想靠自动解析，可以在 bundle 的 patch 里给插件配置显式的 `name` 和 `email`。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DSH 内所有 git 提交自动使用你本机的 GitHub 作者身份，防止 AI 改错提交人。",
+    "usage": {
+      "prompt_tokens": 1587,
+      "completion_tokens": 4943,
+      "total_tokens": 6530,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4464
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 947
+    }
+  }
+}

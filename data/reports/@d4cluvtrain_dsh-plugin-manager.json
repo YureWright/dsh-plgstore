@@ -1,0 +1,37 @@
+{
+  "id": "@d4cluvtrain/dsh-plugin-manager",
+  "analyzedAt": "2026-08-18T14:58:03.003Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 配置并引用 @deepseek-ai/dsh-client-* 核心包，README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@d4cluvtrain/dsh-plugin-manager",
+      "evidence": "已发布到 npm（npmjs.com/@d4cluvtrain/dsh-plugin-manager），一行命令安装："
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 的插件管理器：在 DSH 网页界面的侧边栏加一个“插件”按钮，点开后能看到你装过哪些插件、它们有没有在运行，可以随时打开或关闭它们；还能在“发现”标签里浏览社区插件，一键安装。",
+      "level": "ok",
+      "risks": "它会读写你的 DSH 配置目录（~/.dsh）里的插件列表，并在网页界面展示；不涉及隐私文件，也没发现明显风险。",
+      "postInstallNotes": "安装后需重启 dsh web，再打开 http://127.0.0.1:3080，侧边栏就会出现“插件”按钮。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件管理器：在 web 侧边栏提供“插件”按钮，可查看/开关已装插件，并可浏览社区插件一键安装。",
+    "usage": {
+      "prompt_tokens": 2352,
+      "completion_tokens": 2474,
+      "total_tokens": 4826,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2132
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1712
+    }
+  }
+}

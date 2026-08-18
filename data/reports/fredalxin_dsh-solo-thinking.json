@@ -1,0 +1,37 @@
+{
+  "id": "fredalxin/dsh-solo-thinking",
+  "analyzedAt": "2026-08-17T11:26:29.522Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-solo-thinking",
+      "evidence": "dsh plugin --profile web add dsh-better-sidebar dsh-plugin-solo-thinking"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的，能帮你把头脑风暴变成一棵可视化的“思考树”：一个话题可以自动分成几个独立的小分支，各自有独立的对话和状态，分支之间只通过 Agent 写的 Handoff 摘要来交流，不会互相干扰。你可以直接在树里看到每个分支的进展、给某个分支发消息、总结或回传结果。",
+      "level": "ok",
+      "risks": "插件会读写 DSH 的会话数据（相当于对话历史），用来保存思考树的状态；卸载时不会主动删除这些历史数据。它不调用外部网络服务，也不读取其他分支的原始对话。如果你用 README 里的 curl|bash 一行安装命令，会执行远程脚本，介意的话可以先审阅脚本或用官方 CLI 命令。",
+      "postInstallNotes": "安装后需要重启 DSH（或先运行 dsh --profile web --dump-config 验证），然后硬刷新浏览器。如果想要对话右侧栏的思考树，还需要额外安装 Better Sidebar（官方推荐命令已包含）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 提供头脑风暴思考树：可拆分独立分支、自动 Handoff、可视化界面，帮助多方向并行思考。",
+    "usage": {
+      "prompt_tokens": 5119,
+      "completion_tokens": 2078,
+      "total_tokens": 7197,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1674
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4479
+    }
+  }
+}

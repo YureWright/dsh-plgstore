@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-toolkit",
+  "analyzedAt": "2026-08-17T11:18:39.172Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，符合 DSH 插件特征"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/dsh-toolkit.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 工具包合集，把时间处理、编码、JSON、计算器、CSV、正则、Markdown、diff、统计、schema 等常用小工具打包进一个入口，方便 DSH 插件直接调用。零依赖。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是提供一些工具函数，不会额外触碰用户电脑上的敏感文件。",
+      "postInstallNotes": "无",
+      "notes": "README 为空，评估仅基于 package.json；建议查看 GitHub 仓库获取更详细信息。"
+    },
+    "summaryZh": "零依赖的 DSH 工具包合集，集成了时间、编码、JSON、CSV、正则、Markdown、diff、统计、schema 等常用工具。",
+    "usage": {
+      "prompt_tokens": 1273,
+      "completion_tokens": 1482,
+      "total_tokens": 2755,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1191
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 633
+    }
+  }
+}

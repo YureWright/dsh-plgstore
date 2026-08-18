@@ -1,0 +1,37 @@
+{
+  "id": "zhang787jun/dsh-finance",
+  "analyzedAt": "2026-08-17T12:00:01.269Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:zhang787jun/dsh-finance",
+      "evidence": "dsh plugin --profile web add github:zhang787jun/dsh-finance"
+    },
+    "evaluationReport": {
+      "intro": "这是给 DeepSeek Harness（一个AI助手）用的财务和会计插件。它把 Anthropic 的 Finance 插件移植了过来，包含八项会计技能：记账（日记账分录）、对账、财务报表、差异分析、月末结账、审计支持和 SOX 测试。还带几个小工具，比如检查借贷是否平衡、生成对账快照、算方差桥接，以及做投资研究和组合风险分析。简单说，就是让AI帮你干会计和财务分析的活，但最终还是要人来把关。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件本身不偷偷联网或收集密码，但你在使用时会把自己的财务数据（比如账目、银行对账单）提供给AI处理，这些数据会经过你使用的DSH服务。建议别把敏感数据输入到不信任的环境。另外，它生成的结论可能有错，涉及财报、审计、税务等正式用途前，一定要让专业财务人员复核。",
+      "postInstallNotes": "装完后先重启DSH（运行 `dsh web`）。如果要接入真实的财务系统（如ERP、数据仓库），需要按照 CONNECTORS.md 配置连接器（可参考 connectors.example.json）。",
+      "notes": "这是一个第三方社区改编插件，并非 Anthropic 官方出品。要求 Node.js 版本不低于 20，确认你的环境满足。"
+    },
+    "summaryZh": "面向 DeepSeek Harness 的财务与会计插件，移植了 Anthropic Finance 的八项会计技能，并提供凭证校验、对账快照、投资研究等工具。",
+    "usage": {
+      "prompt_tokens": 2863,
+      "completion_tokens": 2667,
+      "total_tokens": 5530,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2192
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2223
+    }
+  }
+}

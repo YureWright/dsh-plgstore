@@ -1,0 +1,37 @@
+{
+  "id": "GengDaPeng/dsh-agent-message",
+  "analyzedAt": "2026-08-17T11:57:46.668Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码结构明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-agent-message",
+      "evidence": "dsh plugin --profile web add dsh-agent-message"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 里同一个进程挂着的不同 Agent 会话可以互相发消息。比如让一个 Agent 给另一个派活、两个 Agent 协作接力、主会话给测试会话发指令。它提供了三个工具：列出可发送的会话、给指定会话发消息、查询消息送达状态。另外在输入框用 @ 就能选择目标会话，收到消息时会显示成卡片，还能一键跳转到发送方。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取本地会话列表、恢复离线会话以投递消息，但这些都在本机 Harness 进程内完成，不会上传数据到外部。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "跨会话 Agent 通信插件，让 DeepSeek Harness 里不同的 Agent 会话能互相收发消息、派活协作。",
+    "usage": {
+      "prompt_tokens": 4201,
+      "completion_tokens": 776,
+      "total_tokens": 4977,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 435
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3561
+    }
+  }
+}

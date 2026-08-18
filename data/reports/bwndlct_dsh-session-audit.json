@@ -1,0 +1,37 @@
+{
+  "id": "bwndlct/dsh-session-audit",
+  "analyzedAt": "2026-08-17T11:55:16.247Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且 peerDependencies 包含 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/bwndlct/dsh-session-audit.git",
+      "evidence": "dsh plugin --profile web add github:bwndlct/dsh-plugins/plugins/dsh-session-audit"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你复盘 DeepSeek Harness 里的 Agent 会话。它会分析一次运行留下的日志，告诉你这次会话跑了多久、有多少步骤、调了哪些工具、失败了多少次、有没有重复动作、花了多少 token，以及有没有跑过测试/构建/代码检查等验证命令，最后生成一份文字或表格形式的报告。",
+      "level": "ok",
+      "risks": "它会读取你本机 DSH 的会话日志（存在 ~/.dsh/sessions 下），这些日志里可能包含你让 Agent 执行的命令、读取或写入的文件信息等。报告只在本地生成并作为工具结果返回，不会上传网络或发送给第三方。",
+      "postInstallNotes": "安装后需要手动编辑 ~/.dsh/profiles/web/package.json，把 dsh-session-audit 加入 dsh.profile.bundles 列表，然后重启 dsh（dsh web）并运行 dsh --profile web --dump-config | grep -A2 session-audit 验证挂载。",
+      "notes": "注意：README 中 GitHub 安装命令为 github:bwndlct/dsh-plugins/plugins/dsh-session-audit，与当前仓库地址不同，如果该命令失败，可使用 git+https://github.com/bwndlct/dsh-session-audit.git。"
+    },
+    "summaryZh": "dsh-session-audit 是一个 DSH 会话审计插件，帮你分析 Agent 的执行过程，统计步骤、工具调用、失败、重复动作和 token 用量，并生成可读报告。",
+    "usage": {
+      "prompt_tokens": 4179,
+      "completion_tokens": 3837,
+      "total_tokens": 8016,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3332
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3539
+    }
+  }
+}

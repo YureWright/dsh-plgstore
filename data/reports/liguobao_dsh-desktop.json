@@ -1,0 +1,37 @@
+{
+  "id": "liguobao/dsh-desktop",
+  "analyzedAt": "2026-08-17T11:22:45.353Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.95,
+      "reason": "这是一个独立的 Electron 桌面应用，用于打包 DeepSeek Harness Web UI，并非可安装到 DSH 中的插件，且 package.json 声明 private 且无 dsh.bundle/client。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个项目是一个独立的桌面程序，它把 DeepSeek Harness 的网页界面打包成一个本地应用，你不需要自己安装 Node.js 就能在电脑上打开使用。它自带一个精简的 Harness 运行环境，有图形窗口、插件管理、更新检查等功能，适合不想用命令行的人。",
+      "level": "caution",
+      "risks": "它会以桌面应用的形式运行，在本地启动一个服务并监听随机端口；可以读取和修改你工作区里的文件；还会检查 GitHub 上的更新，并自动把新安装包下载到你的“下载”文件夹。另外，它的安装包是社区构建的，没有数字签名，所以系统可能会弹出安全警告。",
+      "postInstallNotes": "装完后需要打开“设置 → 模型”配置你的 DeepSeek API 密钥，然后添加工作区，才能开始使用。",
+      "notes": "经评估，这个项目其实是一个独立的桌面应用，并非 DSH 插件。它虽然带有 dsh-plugin 标签，但无法通过 dsh plugin add 安装，所以不应进入插件市场。"
+    },
+    "summaryZh": "一个把 DeepSeek Harness 网页界面打包成桌面应用的开源项目，支持 Windows、macOS 和 Linux。",
+    "usage": {
+      "prompt_tokens": 4026,
+      "completion_tokens": 1783,
+      "total_tokens": 5809,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1396
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3386
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-data-agent",
+  "analyzedAt": "2026-08-17T11:15:22.319Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 包含 @deepseek-ai/cordis，且 README 提供了 dsh plugin add 安装命令，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@yejiming/dsh-data-agent",
+      "evidence": "dsh plugin --profile web add @yejiming/dsh-data-agent"
+    },
+    "evaluationReport": {
+      "intro": "这是一个数据分析插件，装上之后，你可以让 DSH 直接连接数据库（比如 MySQL、PostgreSQL、SQLite），然后用大白话提问，它会自动查看表结构、写 SQL、执行查询，还能生成图表和报告，帮你做数据分析。支持网页界面和终端界面，也有只读模式保护数据。",
+      "level": "ok",
+      "risks": "它会连接你指定的数据库并执行 SQL 查询；如果你没有开启只读模式，它也可能按你的要求修改数据。数据库连接信息（密码除外）会保存在本地配置里，密码只用于当前连接，不会恢复。另外需要本机装有对应的数据库客户端（如 mysql、psql）。建议使用只读账号来降低风险。",
+      "postInstallNotes": "确保本机已安装目标数据库的客户端（如 mysql/psql），建议准备一个只读数据库账号；然后在 DSH 中创建“数据模式”会话，通过 /database 命令或 Web 工作台连接数据库。",
+      "notes": "如果你同时使用 Web UI 和 dsh-tui，需要在两个 profile 下分别安装这个插件。"
+    },
+    "summaryZh": "让 DeepSeek Harness 连接数据库，通过自然语言对话完成数据分析与商业洞察。",
+    "usage": {
+      "prompt_tokens": 4442,
+      "completion_tokens": 2362,
+      "total_tokens": 6804,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1952
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3802
+    }
+  }
+}

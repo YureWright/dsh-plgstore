@@ -1,0 +1,37 @@
+{
+  "id": "CheshireJCat/blender",
+  "analyzedAt": "2026-08-17T11:21:54.946Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，README 明确说明是可安装的 DeepSeek Harness 插件，并给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-blender",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-blender"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能直接指挥你电脑上的 Blender 软件，完成 3D 建模、场景检查、渲染、导出（GLB/FBX/OBJ 等）和自动验证等工作，不需要手动操作 Blender 界面。",
+      "level": "ok",
+      "risks": "它会在本地调用已安装的 Blender 后台进程，并创建一个 Python 虚拟环境安装 OpenCV 等依赖（用于 3D 分析）。未发现上传数据或访问隐私文件的行为。",
+      "postInstallNotes": "安装后需运行 `dsh-blender-setup` 命令创建 Python 虚拟环境并安装依赖；如果 Blender 不在 PATH 中，需要在配置里指定它的绝对路径。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供基于 Blender 的 3D 建模、渲染、导出与验证工作流的插件。",
+    "usage": {
+      "prompt_tokens": 2167,
+      "completion_tokens": 1623,
+      "total_tokens": 3790,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1288
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1527
+    }
+  }
+}

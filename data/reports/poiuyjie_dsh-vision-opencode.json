@@ -1,0 +1,37 @@
+{
+  "id": "poiuyjie/dsh-vision-opencode",
+  "analyzedAt": "2026-08-17T11:34:11.645Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 包含 dsh.client 声明并依赖 @deepseek-ai/dsh-llm 等核心包，README 描述的是标准 DSH 插件功能。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/poiuyjie/dsh-vision-opencode.git",
+      "evidence": "cd ~/.dsh/profiles/web && pnpm add -w github:poiuyjie/dsh-vision-opencode"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek 这类不认图片的纯文本大模型加一副'眼睛'的。它让你在 DSH 聊天界面里选择一个独立的识图模型（比如 MiMo），当你发图片时，插件会自动先把图片交给识图模型理解成文字，再交给主模型处理；也能在对话中调用专门的识图工具做 OCR、看图说话等。这样你就不用换主模型也能处理图片了。",
+      "level": "caution",
+      "risks": "安装时会通过 curl 直接从 GitHub 拉取并执行安装脚本，脚本会修改你 ~/.dsh 下的配置和依赖。插件会把聊天中上传的图片发送到你配置的第三方视觉模型（如 MiMo）进行识别，因此图片内容会经过外部模型服务。另外，插件会在本地启动一个 HTTP 接口用于卸载等操作。整体没有发现恶意行为，但建议先浏览脚本内容再安装。",
+      "postInstallNotes": "重启 dsh 并刷新浏览器页面，在输入框右侧的「识图模型」下拉里选择想用的视觉模型；若想手动配置，可编辑 ~/.dsh/settings.yaml 中的 vision-opencode 段，设置 provider 和 model 字段。",
+      "notes": "该包尚未发布到 npm，只能通过 GitHub 安装；插件依赖 DSH 0.1.0-rc.6 两个未文档化的运行时行为，未来升级 DSH 后若出现异常，可在设置中把 autoConvert 改为 false 作为逃生阀。"
+    },
+    "summaryZh": "给纯文本主模型增加可配置的识图模型，自动把图片转成文字描述并支持 OCR 与图表理解的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 3773,
+      "completion_tokens": 2312,
+      "total_tokens": 6085,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1790
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3133
+    }
+  }
+}

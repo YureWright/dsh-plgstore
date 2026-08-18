@@ -1,0 +1,37 @@
+{
+  "id": "@sakikotgw/pack-agent",
+  "analyzedAt": "2026-08-16T13:27:42.496Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 中声明了 dsh.bundle 字段（指向 ./dsh-plugin/cordis.root.yml），且 keywords 包含 dsh-plugin，这是 DSH 插件的明确证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@sakikotgw/pack-agent",
+      "evidence": "npm: @sakikotgw/pack-agent"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个“AI 配置打包工具”。你可以把技能（skills）、规则（rules）和 MCP 服务器配置打包成一个 .pack.zip 文件，然后一键安装到 Claude Code、Codex、Cursor 等 AI 编程工具里。它也支持 DeepSeek Harness。装好之后，你可以用 packagent 命令来管理这些配置，比如导出、安装、卸载。",
+      "level": "ok",
+      "risks": "它会在你的项目目录下创建或修改配置文件（如 .claude/skills、CLAUDE.md、AGENTS.md 等），使用 --global-config 还会修改用户全局配置。卸载时依靠安装记录。属于正常功能，但建议安装前了解它会改动哪些文件。",
+      "postInstallNotes": "需要安装 Bun（≥1.1.0）或 Node.js（≥20.11.0）；首次使用建议运行 packagent detect 看看它会检测到哪些工具。",
+      "notes": "README 提到 DeepSeek Harness 使用单独的包 @sakikotgw/pack-agent-dsh，但这个仓库本身也包含 dsh.bundle 配置，所以也可以作为 DSH 插件使用。"
+    },
+    "summaryZh": "一个将技能、规则和 MCP 配置打包并安装到多种 AI 编程工具的插件（类似 Minecraft 模组包管理）。",
+    "usage": {
+      "prompt_tokens": 2628,
+      "completion_tokens": 4592,
+      "total_tokens": 7220,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4168
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1988
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-whale",
+  "analyzedAt": "2026-08-17T11:10:26.297Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.7,
+      "reason": "依赖 @deepseek-ai/dsh 及多个 dsh 核心包，通过 cordis.patch.yml 以 DSH profile 方式加载 lib/*.js 插件，属于 DSH 插件实现。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-whale",
+      "evidence": "npm install -g dsh-whale"
+    },
+    "evaluationReport": {
+      "intro": "Whale 是架在 DeepSeek Harness 上的 AI 代理，给你一个能聊天、能跑任务的终端工具，还能开一个 HTTP 网关并接入微信（通过 ClawBot），而且会记住你之前聊过的偏好和习惯。简单说，就是给 DSH 套了个更好用的壳。",
+      "level": "caution",
+      "risks": "安装后会执行 postinstall 脚本（在电脑上跑代码）；setup.ps1 会修改用户环境变量；会把聊天记忆写到 $DSH_HOME/memories/ 下的两个文件里；启用微信时会连接微信的 iLink 接口（ilinkai.weixin.qq.com）以及 DeepSeek API，有网络通信。",
+      "postInstallNotes": "装完后先运行一次 `whale` 完成首次模型配置（选服务商、填 API Key、选模型）；要用微信就在 `whale serve` 时扫码登录；可按需设置 WHALE_WECHAT_*、WHALE_SKILLS 等环境变量。",
+      "notes": "不是标准的 dsh plugin add 流程，而是 npm 全局安装（自带 postinstall 和 setup.ps1）；依赖 DSH 的 rc 预发布版本（^0.1.0-rc.6），稳定性需留意。"
+    },
+    "summaryZh": "Whale：基于 DeepSeek Harness 的 AI 代理，提供终端聊天/命令、HTTP 网关和微信频道，并带持久记忆与技能。",
+    "usage": {
+      "prompt_tokens": 2808,
+      "completion_tokens": 3420,
+      "total_tokens": 6228,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2961
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2168
+    }
+  }
+}

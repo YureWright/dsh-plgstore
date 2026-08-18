@@ -1,0 +1,37 @@
+{
+  "id": "dsh-remote-plugin",
+  "analyzedAt": "2026-08-16T13:25:29.111Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/client 并注入 @deepseek-ai/dsh-client-runtime，README 给出了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-remote-plugin",
+      "evidence": "dsh plugin --profile web add dsh-remote-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DSH 左侧边栏加一个图标，点一下右侧会滑出一个管理面板。它自带一个小网关程序，会跟着 DSH 自动启动，让你的手机 App 能远程控制 DSH——比如查看会话、审批、提问、改目标，还能互相传文件（手机上能浏览、下载、上传你电脑上的文件）。面板上会显示连接令牌、电脑 IP 和设备状态。",
+      "level": "caution",
+      "risks": "它会在你电脑上启动一个监听 0.0.0.0:8787 的后台服务，也就是说同一局域网里的其他设备都可能尝试连上它；而且它默认允许手机访问你用户主目录（~）里的文件，可以列目录、下载和上传。如果令牌泄露或认证有漏洞，别人可能看到甚至拿走你的文件。它还会在 ~/.dsh-remote 下保存令牌和设置，并用 systemd 管理这个独立网关进程。",
+      "postInstallNotes": "装完后重启 DSH Web，在浏览器里 Ctrl+F5 强制刷新，左侧边栏底部会出现 App 图标。然后从 GitHub Releases 下载 dsh-remote.apk，在抽屉里点二维码或手动添加服务器地址来配对。如果你不想让网关自动启动，可以设环境变量 DSH_REMOTE_AUTOSTART=0；想限制文件访问范围，可以用 DSH_REMOTE_FS_ROOT 指定根目录（多个用冒号分隔）。",
+      "notes": "该插件默认把文件根目录设成用户主目录，且网关监听所有网卡，建议只在可信网络中使用，并定期在抽屉里轮换令牌；如不需要文件互传，最好用环境变量把根目录指向一个更小的目录。"
+    },
+    "summaryZh": "DSH Remote 平台插件：在 DSH 侧边栏加远程控制入口，内置网关配合安卓 App 实现远程操控会话、审批和文件互传。",
+    "usage": {
+      "prompt_tokens": 2152,
+      "completion_tokens": 3117,
+      "total_tokens": 5269,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2568
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1512
+    }
+  }
+}

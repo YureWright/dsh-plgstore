@@ -1,0 +1,37 @@
+{
+  "id": "deepseek-acp",
+  "analyzedAt": "2026-08-18T14:55:49.259Z",
+  "result": {
+    "classification": {
+      "type": "script",
+      "confidence": 0.9,
+      "reason": "独立分发的 ACP 适配器，有 bin 入口，依赖 dsh-* 库但没有 dsh.bundle/client 声明，也不通过 dsh plugin add 安装"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个工具能把 DeepSeek Harness 变成一个能跟你对话、帮你改代码的“代理”，通过 ACP 协议接到编辑器（比如 Zed 或 codeg）里。你可以让它读文件、写文件、跑命令、搜索代码，它还会展示思考过程、文件改动和待办计划。相当于在编辑器里内置了一个 AI 编程助手。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的文件，执行终端命令，但都限制在沙箱里（默认只允许操作当前工作目录和临时目录）。它会把你的 API 密钥存到 ~/.dsh/.credentials.yaml（权限 0600），会话日志存在 ~/.dsh/sessions。这些都是正常功能，没发现恶意行为。",
+      "postInstallNotes": "需要先配置 API 密钥：运行 `deepseek-acp --setup` 粘贴 API Key，或者在编辑器配置里设置环境变量 DEEPSEEK_API_KEY。如果是 Zed，需要在 settings.json 里添加 agent_servers 配置。",
+      "notes": "这个包实际上不是 DSH 插件，而是一个独立的 ACP 适配器（脚本/工具），不能通过 dsh plugin add 安装。它由社区开发，非官方，但源码公开、MIT 许可。"
+    },
+    "summaryZh": "把 DeepSeek Harness 变成编辑器里可用的完整 AI 编码代理，通过 ACP 协议接入 Zed、codeg 等编辑器。",
+    "usage": {
+      "prompt_tokens": 5154,
+      "completion_tokens": 3172,
+      "total_tokens": 8326,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2745
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4514
+    }
+  }
+}

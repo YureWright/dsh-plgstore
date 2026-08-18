@@ -1,0 +1,37 @@
+{
+  "id": "wdsjwzl/session-seed-plugin",
+  "analyzedAt": "2026-08-17T12:02:46.810Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 字段并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令，是明确的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:wdsjwzl/dsh-session-seed",
+      "evidence": "在终端运行：`dsh plugin --profile web add github:wdsjwzl/dsh-session-seed`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness（DSH）在每次新建对话时，自动塞进一段你预先设置好的历史对话，省得每次手动粘贴旧内容。它有两种模式：一种直接显示在聊天窗口里（当作真实对话历史），另一种隐藏起来、每次请求时悄悄带上（更省心但多耗 Token）。还能在设置页开关、改配置文件，且不会影响已经聊到一半的对话。",
+      "level": "ok",
+      "risks": "它会读取和修改你电脑上 DSH 的配置文件（如 ~/.dsh/session-seed.json）和会话数据，用来注入历史对话。配置文件里可能放有隐私内容，注意别把配置分享出去。除此之外没发现其他风险。",
+      "postInstallNotes": "安装后需要手动编辑 `~/.dsh/profiles/web/cordis.patch.yml`，加入插件条目（如 README 所示），然后重启 `dsh web`，并在浏览器里强制刷新一次。之后在「设置 → 对话注入」里启用插件并选择注入方式。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 新会话自动注入可配置的历史对话，支持显示写入和隐藏携带两种模式。",
+    "usage": {
+      "prompt_tokens": 2299,
+      "completion_tokens": 2596,
+      "total_tokens": 4895,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2174
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1659
+    }
+  }
+}

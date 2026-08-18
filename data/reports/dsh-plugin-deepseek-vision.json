@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-deepseek-vision",
+  "analyzedAt": "2026-08-16T13:26:30.059Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 peerDependencies 依赖 @deepseek-ai/dsh，README 给出了 dsh plugin add 安装命令，是明确的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-deepseek-vision@0.4.1",
+      "evidence": "README 原文：`npx -y @deepseek-ai/dsh@0.1.0-rc.6 plugin --profile web add dsh-plugin-deepseek-vision@0.4.1`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek 能看懂图片。你在 DSH 的聊天框里粘贴或拖入一张图片，它会把图片临时存到电脑上，调用你选的第三方视觉模型（默认是智谱的免费模型）来识别图片内容，然后把结果交给 DeepSeek 处理。图片显示为输入框里的缩略图，发送成功后自动清理，失败也不会丢。它还支持多家服务商切换、备用 Key、请求失败自动重试等。",
+      "level": "caution",
+      "risks": "它会把你的图片发送给第三方视觉模型服务（你配置的服务商），对方能看到图片内容；插件首次使用时会从 GitHub Releases 和 PyPI 下载 Python 后端和依赖到 $DSH_HOME/cache，如果电脑没有 Python 3.10+ 还会下载一个独立的 Python 运行时；你填写的 API Key 会存入 DSH 官方凭据文件。",
+      "postInstallNotes": "安装前先设置环境变量 VISION_API_KEY（或在 DSH 凭据文件里写），安装后进入 设置 → 插件 → DeepSeek Vision 选择服务商并保存，然后完全退出并重启 DSH。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 视觉插件：让文本版 DeepSeek 能通过粘贴/拖入图片调用第三方视觉模型进行图像理解，自动管理临时文件、多服务商容灾与 API Key。",
+    "usage": {
+      "prompt_tokens": 3423,
+      "completion_tokens": 2018,
+      "total_tokens": 5441,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1524
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2783
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@khorsheed/dsh-ankh-guard",
+  "analyzedAt": "2026-08-16T13:26:39.365Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 包含 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令并自称 dsh 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@khorsheed/dsh-ankh-guard",
+      "evidence": "dsh plugin --profile web add @khorsheed/dsh-ankh-guard"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 宿主（比如 dsh web 实例）装的一个保险丝。它管的是：当 AI 助手自己改完代码、想重启服务时，必须先通过构建和测试，拿到一个绑定当前代码版本的“安全凭证”，才能重启。如果构建失败了或者代码被改过，重启会被拦下来，避免把整个服务搞挂。它还带 watchdog 看门狗，宿主意外崩溃会自动拉起；支持检查点回滚，改坏了能退回之前的状态；重启后还会自动跑 canary 验证，并把重启结果报告给 AI 助手。简单说，就是让 AI 能安全地自我升级、自我重启，不会搞崩服务。",
+      "level": "ok",
+      "risks": "会在你的电脑上运行构建和测试命令，会往状态目录（默认 $DSH_HOME/state 或当前目录下的 .dsh-guard-state）写文件记录凭证和检查点；checkpoint/reset 会操作 git 工作树，reset 会硬重置到之前的提交，可能丢掉未提交的改动；supervise/restart 会杀死占用指定端口的进程并用新命令拉起，还会用 lsof 探测端口；watchdog 是个常驻后台进程，会持续运行直到显式停止。这些行为都在它声明的功能范围内，但如果你不放心，可以先在测试环境试。",
+      "postInstallNotes": "装完后需要重启宿主。可选配置项有 stateDir、repoDir、maxAgeMinutes、reportRestartContext、fallbackGraceMs 等，按需在配置里调整。如果端口发现不了监听进程，可能需要用 --pid 指定。",
+      "notes": "无"
+    },
+    "summaryZh": "让 AI 助手自己改代码后能安全重启的守护插件，带构建测试闸门、看门狗和回滚机制。",
+    "usage": {
+      "prompt_tokens": 4895,
+      "completion_tokens": 750,
+      "total_tokens": 5645,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 204
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4255
+    }
+  }
+}

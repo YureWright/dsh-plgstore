@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-writing-guard",
+  "analyzedAt": "2026-08-16T13:29:05.825Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis、@deepseek-ai/dsh-llm 等核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-writing-guard",
+      "evidence": "dsh plugin --profile web add dsh-plugin-writing-guard"
+    },
+    "evaluationReport": {
+      "intro": "这是一个帮你在写论文或润色时自动把关的插件。它能在写作前给出学术写作规则，写作过程中自动检查论文里有没有常见的 AI 味道（比如机械句式、修改残留、防御性表达），还能在 AI 润色时保护论文里的科研事实——像数字、百分比、p 值、引用、Figure/Table 编号，以及“从相关到导致”这类主张的强度变化，防止语言修改悄悄改变科学结论。支持中英文论文、SCI 手稿、毕业论文等。所有检查都在本地用正则/统计完成，不联网、不用大模型，速度很快。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在本地读取和分析论文文本，不联网，也不上传或调用外部服务。",
+      "postInstallNotes": "安装后需要重启 DSH 服务（dsh web）生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 论文写作守卫插件：边写边防 AI 味、修正残留，并在润色时锁定科研事实与主张强度（Scholarship Lock + Epistemic Lock）。",
+    "usage": {
+      "prompt_tokens": 5157,
+      "completion_tokens": 1485,
+      "total_tokens": 6642,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1102
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4517
+    }
+  }
+}

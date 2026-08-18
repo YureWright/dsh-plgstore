@@ -1,0 +1,37 @@
+{
+  "id": "bobleer/dsh-acp-for-bitfun",
+  "analyzedAt": "2026-08-17T11:29:37.783Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-acp-for-bitfun",
+      "evidence": "dsh plugin --profile web add dsh-acp-for-bitfun"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把另一个叫 BitFun 的 AI 助手接进 DeepSeek Harness（dsh），让 dsh 里的对话可以随时把任务扔给 BitFun 去处理。相当于给 dsh 加了一个“外包小帮手”，你用起来就像在对话里直接调用一个子工具。",
+      "level": "ok",
+      "risks": "它会在你的电脑上启动 BitFun 的命令行程序，通过本地通信把任务交给 BitFun。如果 BitFun 得到允许（默认是拒绝），它可能会读取或修改你的文件、执行命令，风险取决于 BitFun 本身的行为。另外它会读写 dsh 的配置文件（cordis.patch.yml）。除此之外没发现明显风险。",
+      "postInstallNotes": "装完还需要：1）先安装 BitFun CLI，并确认 `bitfun acp doctor` 能通过；2）如果 BitFun 不在 PATH 里，需要在 dsh 配置中指定 command 的绝对路径；3）按需调整工具名、权限等配置项。否则插件启动会报错。",
+      "notes": "依赖 dsh 和 BitFun 的 rc/preview 版本，dsh 升级时记得同步升级本插件。BitFun 是第三方项目，使用前建议先了解它的功能和安全边界。"
+    },
+    "summaryZh": "将 BitFun 作为子代理接入 DeepSeek Harness，让 dsh 会话能委派任务给 BitFun 执行。",
+    "usage": {
+      "prompt_tokens": 2422,
+      "completion_tokens": 1651,
+      "total_tokens": 4073,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1211
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1782
+    }
+  }
+}

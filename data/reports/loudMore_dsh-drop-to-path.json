@@ -1,0 +1,37 @@
+{
+  "id": "loudMore/dsh-drop-to-path",
+  "analyzedAt": "2026-08-17T11:28:57.904Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis，README 提供了 dsh plugin 安装命令，代码明显调用 DSH 接口，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/loudMore/dsh-drop-to-path.git",
+      "evidence": "dsh plugin --profile web add /path/to/dsh-drop-to-path"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的输入框里直接拖拽或粘贴图片、PDF、Office 文档、压缩包、视频、音频等文件。它不会把文件作为附件直接发给模型，而是先把文件复制到工作区的 .drops/ 目录，然后在发送消息时自动把文件的本地路径附加到文字里。这样即使你用的是不支持图片的纯文本模型，它也能通过视觉工具读取这些路径对应的文件。图片仍然保持原来的预览/删除体验，其他文件会显示成带格式图标的小方块，方便管理。",
+      "level": "ok",
+      "risks": "它会把拖入的文件复制到工作区 .drops/ 目录，发送时将路径写入消息，因此这些文件内容可能会被模型服务方读取和处理。除此之外，插件本身未发现访问隐私文件或连接外部服务器的行为。",
+      "postInstallNotes": "无；安装后重启 Web profile 即可，无需配置。",
+      "notes": "README 提供的安装命令是本地路径示例（dsh plugin --profile web add /path/to/dsh-drop-to-path），未给出远程 git/npm 安装命令；建议通过 git clone 后本地安装，或直接使用 git+https://github.com/loudMore/dsh-drop-to-path.git。"
+    },
+    "summaryZh": "拖放/粘贴文件到 DSH 输入框，自动转成工作区路径发给文本模型，让纯文本模型也能通过视觉工具读取图片和文档。",
+    "usage": {
+      "prompt_tokens": 3156,
+      "completion_tokens": 5010,
+      "total_tokens": 8166,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4542
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2516
+    }
+  }
+}

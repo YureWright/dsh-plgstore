@@ -1,0 +1,37 @@
+{
+  "id": "dsh-session-cleaner",
+  "analyzedAt": "2026-08-16T13:45:43.335Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-session-cleaner",
+      "evidence": "dsh plugin --profile web add dsh-session-cleaner            # from npm"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以让你在 DeepSeek Harness 的网页界面里彻底删除会话，不光是从列表里隐藏，还会把对应的文件、工作区记录和内存中的记录一起删掉，而且不用重启 dsh web。官方只提供隐藏功能，这个插件补上了真正的删除。",
+      "level": "ok",
+      "risks": "删除操作不可恢复，会话相关的磁盘文件和工作区记录会被永久移除。另外它给本地网页服务器加了一个删除接口，如果浏览器控制台里被注入恶意脚本，可能会被用来删会话，但正常使用风险不大。",
+      "postInstallNotes": "装完后需要重启 dsh web，运行中的实例不会自动加载新插件。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，让你无需重启 dsh web 就能彻底删除会话（包括文件、工作区记录和内存条目），官方只支持隐藏会话。",
+    "usage": {
+      "prompt_tokens": 2291,
+      "completion_tokens": 1002,
+      "total_tokens": 3293,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 666
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1651
+    }
+  }
+}

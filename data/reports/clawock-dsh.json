@@ -1,0 +1,37 @@
+{
+  "id": "clawock-dsh",
+  "analyzedAt": "2026-08-16T13:44:20.930Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-typert-protocol，peerDependencies 为 @deepseek-ai/cordis，README 给出 dsh plugin 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "clawock-dsh",
+      "evidence": "dsh plugin --profile web add clawock-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的 AI 助手加了一套“投资决策”流程：让 AI 在分析投资标的前先收集正反两方证据，然后写出决策报告，再用 Python 独立校验和结算。同时它还在网页对话界面里增加一个“Decision Mind”标签页，用来展示每笔真实成交的决策轨迹、盈亏情况和 T+1 结果，方便复盘。",
+      "level": "ok",
+      "risks": "它会读取你电脑上的交易记录（如 portfolio.json）和决策文件，并在 DSH 的网页界面里展示；安装时需要手动复制 skill 文件到你的用户目录；还会调用你机器上的 Python 命令行工具 clawock（需要你自己装）。数据不会自动上传，但如果你用自己的公开 dashboard，决策轨迹可能被渲染到公开页面。",
+      "postInstallNotes": "需要手动把 skill 目录复制到 DSH 可扫描的位置（~/.dsh/skills/ 或项目 .agents/skills/），然后重启 web profile；另外要先安装 Python 包 clawock（python -m pip install clawock）。",
+      "notes": "README 注明 rc.6 及以后版本验证过，安装步骤较多，建议按说明操作。"
+    },
+    "summaryZh": "为 DSH AI 增加投资决策工作流（证据收集→正反辩论→决策→Python结算）和 Decision Mind 可视化复盘面板。",
+    "usage": {
+      "prompt_tokens": 3202,
+      "completion_tokens": 1642,
+      "total_tokens": 4844,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1188
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2562
+    }
+  }
+}

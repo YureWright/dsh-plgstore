@@ -1,0 +1,37 @@
+{
+  "id": "dsh-webfile",
+  "analyzedAt": "2026-08-16T13:39:32.793Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-webfile",
+      "evidence": "README 原文：`dsh plugin --profile <name> add dsh-webfile`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的 AI 助手能直接帮你管理网盘或服务器上的文件，比如查看文件列表、上传下载、复制移动删除等。它支持两种存储：S3（包括 MinIO 等兼容对象存储）和 FTP/FTPS。涉及修改的操作（删除、移动、复制、上传下载）每次都会先征求你的同意，不会偷偷改。大文件传输在后台进行，可以在界面看到进度并随时取消。密钥等敏感信息不写进配置，而是存在本地的凭据文件里，换凭据也不用重启。",
+      "level": "ok",
+      "risks": "它需要你配置远程服务器（S3/FTP）的连接信息和凭据（访问密钥、密码），这些凭据会保存在本地的 .credentials.yaml 里，需要你自己保护好。它能够读取、修改甚至删除你配置的存储桶/服务器上的文件，所以不要把它连接到你不信任的服务器。除此之外没发现其他明显风险。",
+      "postInstallNotes": "装完后需要：1) 在 profile 的 cordis.patch.yml 中添加 connections 配置，告诉插件要连哪些服务器（S3 的 endpoint、bucket、区域等，FTP 的地址、端口等）；2) 在 $DSH_HOME/.credentials.yaml 中写入连接里引用的凭据（如 OSS_ACCESS_KEY、FTP_PASSWORD 等），文件权限需为 0600；3) 若要在 Web 界面看到传输卡片，需重启 Web 服务并刷新页面。",
+      "notes": "该插件依赖多个 rc 版本的核心包（如 @deepseek-ai/dsh-fs 等），可能随上游变动；但当前无其他异常。"
+    },
+    "summaryZh": "DeepSeek Harness 的 S3/FTP 文件管理插件，提供 8 个 agent 工具（列表、上传下载等），敏感操作需用户逐次批准。",
+    "usage": {
+      "prompt_tokens": 4473,
+      "completion_tokens": 1919,
+      "total_tokens": 6392,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1365
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3833
+    }
+  }
+}

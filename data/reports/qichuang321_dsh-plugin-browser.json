@@ -1,0 +1,37 @@
+{
+  "id": "qichuang321/dsh-plugin-browser",
+  "analyzedAt": "2026-08-17T12:00:42.316Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 字段并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:CriscolTheCoder/dsh-plugin-browser",
+      "evidence": "dsh plugin --profile web add github:CriscolTheCoder/dsh-plugin-browser"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加了一个“插件市场 + 已装插件管理”的界面。你可以浏览一个包含 250 多个插件的公开目录，看到哪些已经装好、哪些正在运行，并直接一键安装、更新或卸载（需要另外装 dshmarket 才能用按钮）。它还提供了两个给 AI 助手用的工具，一个能列出当前装了哪些插件，另一个能帮你搜索插件市场里的某个插件，不用开界面也能搞定。",
+      "level": "ok",
+      "risks": "它主要读取本机 DSH 的插件配置和加载状态，数据基本都留在本地，不会把隐私发到外面。浏览市场时会去拉取 awesome-dsh-plugin 目录的在线 JSON（有本地缓存和内置快照兜底）。如果你点了按钮安装/卸载插件，它会在本机执行相应操作，所以只在你自己点击时才动你的环境。",
+      "postInstallNotes": "安装后需要重启 DSH 才能生效。另外，如果要在“市场”页签里使用一键安装/更新/卸载按钮，还需要先安装 dshmarket 插件。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件市场浏览 + 已装插件管理面板，支持一键安装/更新/卸载，并提供列出已装插件和搜索市场的 agent 工具。",
+    "usage": {
+      "prompt_tokens": 2053,
+      "completion_tokens": 1966,
+      "total_tokens": 4019,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1533
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1413
+    }
+  }
+}

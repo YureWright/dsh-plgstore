@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-hub",
+  "analyzedAt": "2026-08-17T12:07:03.201Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 描述为 DeepSeek Harness 的扩展管理器。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/dsh-hub.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个为 DeepSeek Harness 管理扩展插件的工具。你可以浏览社区插件目录、安装、更新或恢复插件，还能管理相关的配置档案，并有一个图形设置界面。它内置了一些安全措施，比如安装插件时默认禁用安装脚本，防止恶意代码偷偷运行。",
+      "level": "ok",
+      "risks": "它会修改你电脑上 DeepSeek Harness 的配置文件和插件目录（这正是它的功能），但所有管理操作都只在本机回环地址上运行，不会对外暴露，也不会主动连接外部服务器。未发现隐私泄露风险。",
+      "postInstallNotes": "可能需要配置 npm 访问令牌（NPM_TOKEN）以获取 @deepseek-ai 系列依赖；另外它依赖一个未公开的 @omdsh/runtime 运行时，装完需要确认这个依赖能正常解析。",
+      "notes": "这是一个第三方社区项目，目前是 RC 版本，GitHub stars 较少。package.json 标记为 private，不能从 npm 安装，只能通过 git 方式安装。它依赖的 @omdsh/runtime 是私有包（0.0.1-private.0），可能未公开发布，实际安装可能会因找不到依赖而失败；同时依赖的 @deepseek-ai 包也是 RC 版本，使用时建议先验证兼容性。"
+    },
+    "summaryZh": "OMDSH Hub 是一个为 DeepSeek Harness 打造的社区扩展中心，用来浏览、安装和管理 DSH 插件与配置档案。",
+    "usage": {
+      "prompt_tokens": 2580,
+      "completion_tokens": 4932,
+      "total_tokens": 7512,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4468
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1940
+    }
+  }
+}

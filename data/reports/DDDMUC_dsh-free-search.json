@@ -1,0 +1,37 @@
+{
+  "id": "DDDMUC/dsh-free-search",
+  "analyzedAt": "2026-08-17T12:02:22.855Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-settings 与 @deepseek-ai/dsh-tools，且 README 提供 dsh plugin 安装命令，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/DDDMUC/dsh-free-search.git",
+      "evidence": "git clone https://github.com/DDDMUC/dsh-free-search.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一堆免费搜索引擎，比如 Bing、DuckDuckGo、SearXNG、Exa 等，不用官方 API key 就能让 AI 联网搜索。还带一个网页设置页面，可以切换引擎、填 API key，另外支持抓取网页全文、搜 GitHub/B站/V2EX 的内容。",
+      "level": "ok",
+      "risks": "它会读取和修改你的 dsh 配置文件（~/.dsh/settings.yaml 等），搜索时会向 Bing、DuckDuckGo 等第三方搜索网站发送请求，这些网站能看到你的 IP 和搜索词。另外网页抓取功能没有防内网访问的保护，如果让 AI 去抓取内网地址，可能把内部信息带出来，但需要你主动指示才会发生。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效；如果想用 Exa、Perplexity 或 DeepSeek 官方引擎，需要到设置页面填对应的 API key；国内用户访问部分搜索引擎可能需要给 dsh 进程设置代理（如 NODE_USE_ENV_PROXY=1）。",
+      "notes": "无"
+    },
+    "summaryZh": "一个让 DeepSeek Harness 无需官方 API key 就能免费联网搜索的插件，支持 Bing、DuckDuckGo 等 8 个引擎、网页抓取和平台搜索，带网页设置页面。",
+    "usage": {
+      "prompt_tokens": 3556,
+      "completion_tokens": 1436,
+      "total_tokens": 4992,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 964
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2916
+    }
+  }
+}

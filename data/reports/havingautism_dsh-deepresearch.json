@@ -1,0 +1,37 @@
+{
+  "id": "havingautism/dsh-deepresearch",
+  "analyzedAt": "2026-08-17T11:40:28.212Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/havingautism/dsh-deepresearch.git",
+      "evidence": "README 原文：dsh plugin --profile web add github:havingautism/dsh-deepresearch"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个“深度研究”工作台。它帮你把一个大研究问题拆成小问题，然后一步步收集资料、记录证据来源，最后自动整理成报告。所有项目都有一个网页界面可以管理，能随时暂停、继续或删除。",
+      "level": "ok",
+      "risks": "它会把你创建的研究项目、证据、报告等数据保存在本地 DSH 工作区里。运行研究时可能会通过宿主已有的搜索/抓取工具访问互联网，除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要启动 DSH 网页界面，并打开“深度研究”标签页使用。若要让搜索/抓取功能生效，还需要确认宿主已经安装了对应的 Web 或 subagent 插件。",
+      "notes": "无"
+    },
+    "summaryZh": "证据优先的深度研究工作流插件，带网页工作区，支持多项目管理、证据追踪和报告生成。",
+    "usage": {
+      "prompt_tokens": 2340,
+      "completion_tokens": 1267,
+      "total_tokens": 3607,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 907
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1700
+    }
+  }
+}

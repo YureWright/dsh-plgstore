@@ -1,0 +1,37 @@
+{
+  "id": "dingyi222666/dsh-session-notification",
+  "analyzedAt": "2026-08-17T11:32:08.256Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，并依赖 @deepseek-ai/cordis 和多个 dsh-client 包，README 给出了明确的 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dingyi222666/dsh-session-notification",
+      "evidence": "dsh plugin --profile web add @dingyi222666/dsh-session-notification"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 网页版加提醒的：当一次对话会话正常结束、出错、需要你回答问题，或者需要你批准某个操作时，它会发出声音和浏览器系统通知，让你不用一直盯着页面。你还可以给每种情况选不同的提示音，或者上传自己的音频文件，也支持在设置里调整音量和开关。",
+      "level": "ok",
+      "risks": "会请求浏览器通知权限（你自己同意才开启），自定义音频和偏好设置只存在浏览器本地（localStorage），不会上传到服务器；没发现其他明显风险。",
+      "postInstallNotes": "装完需要重启 dsh web 让插件生效；然后在网页设置里找到“Notifications”区域，按需开启声音或浏览器通知并授权。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页版会话状态通知插件：在会话完成、失败、提问或请求授权时，用内置/自定义声音和浏览器通知提醒你。",
+    "usage": {
+      "prompt_tokens": 3250,
+      "completion_tokens": 1056,
+      "total_tokens": 4306,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 689
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2610
+    }
+  }
+}

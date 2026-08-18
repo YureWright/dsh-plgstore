@@ -1,0 +1,37 @@
+{
+  "id": "mishibeikejie/zat-dsh-engine",
+  "analyzedAt": "2026-08-17T11:13:05.919Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，确认是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/mishibeikejie/zat-dsh-engine.git",
+      "evidence": "dsh plugin --profile web add github:mishibeikejie/zat-dsh-engine"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加了一个“插件市场”选项卡，让你像逛应用商店一样浏览、搜索、安装和卸载社区里的各种插件。它还能用 AI 帮你找插件，并在安装前做安全扫描和健康检查，减少装错插件的风险。",
+      "level": "ok",
+      "risks": "它需要运行命令行工具（pnpm）来安装和卸载插件，所以可能会执行插件自带的安装脚本；它会读取你本地的 Git 凭据（用于给仓库点星）；它会访问 GitHub 和备用镜像服务器获取插件列表；还可能修改 DSH 的配置文件。但这些都是插件市场功能所需的，而且它内置了回滚和备份机制。",
+      "postInstallNotes": "安装后重启 dsh，然后在 Web GUI 的 设置 → 插件 中点击“Plugin Market”标签开始使用。确保系统上有 pnpm 和 curl。",
+      "notes": "经评估确认为真正的 DSH 插件。npm 包可能尚未发布，建议按 README 用 GitHub 或镜像方式安装。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供可视化插件市场，支持浏览、搜索、AI 推荐和一键安装卸载社区插件。",
+    "usage": {
+      "prompt_tokens": 3307,
+      "completion_tokens": 2078,
+      "total_tokens": 5385,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1651
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2667
+    }
+  }
+}

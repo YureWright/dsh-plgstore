@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-tool-diff",
+  "analyzedAt": "2026-08-17T13:17:32.848Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch 且 peerDependencies 依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:omdsh-dev/dsh-tool-diff",
+      "evidence": "dsh plugin --profile web add github:omdsh-dev/dsh-tool-diff"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给DSH用的文本差异比较工具。你可以拿两段文本、JSON、CSV或Markdown让它在内存里对比，它会告诉你哪里不同，比如JSON里哪个字段变了，CSV里哪行增删了，还能生成统一的diff补丁。它不读写文件、不联网，纯粹在内存里计算，速度很快，而且有大小和时间限制，不会卡死。适合让AI在对比配置、测试响应或文档修订时使用。",
+      "level": "ok",
+      "risks": "它会把传入的工具参数记入DSH会话日志，所以不要把密码、密钥等敏感数据传进去。除此之外没有发现明显风险：零依赖、只读、不联网、不写文件。",
+      "postInstallNotes": "无",
+      "notes": "该 npm 包标记为 private，不能直接通过 npm 安装，请使用 README 提供的 github: 或 tarball 方式。"
+    },
+    "summaryZh": "DSH 文本差异工具插件：支持文本/JSON/CSV/Markdown 结构化比较与 unified diff 生成，零依赖、只读、安全。",
+    "usage": {
+      "prompt_tokens": 4349,
+      "completion_tokens": 2009,
+      "total_tokens": 6358,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1619
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3709
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-portable-tavern",
+  "analyzedAt": "2026-08-16T14:54:47.111Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等官方包，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-portable-tavern",
+      "evidence": "dsh plugin --profile web add dsh-portable-tavern"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH Web 图形界面用的「便携酒馆」插件。它能帮你生成 RPG 风格的 SillyTavern 角色卡（类似游戏角色设定），然后直接和这些角色 AI 聊天。你可以自定义模型接入（填自己的 OpenAI 兼容接口、API Key 和模型），角色卡、聊天记录、世界书、设置都会自动保存在浏览器的本地存储里，下次打开还在。还支持导入导出角色卡（JSON 或 PNG 格式）、自定义头像、背景图和本地音乐等，相当于一个集成了角色卡生成和角色扮演聊天的工具箱。",
+      "level": "ok",
+      "risks": "它会在你浏览器的本地存储（localStorage）里保存角色卡、聊天记录、设置，以及你手动填写的自定义模型 API Key（仅存在本浏览器，不会上传到别的服务器）。如果你配置了自定义模型接口，聊天时请求会发到你填写的那个地址。除此之外没发现会把你的数据发给第三方的情况。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Web GUI 的便携酒馆插件，集成 SillyTavern 角色卡生成、角色扮演聊天、世界书管理与导入导出功能。",
+    "usage": {
+      "prompt_tokens": 2566,
+      "completion_tokens": 1697,
+      "total_tokens": 4263,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1294
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1926
+    }
+  }
+}

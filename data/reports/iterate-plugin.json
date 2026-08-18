@@ -1,0 +1,37 @@
+{
+  "id": "iterate-plugin",
+  "analyzedAt": "2026-08-16T13:31:07.691Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 配置，依赖 @deepseek-ai/cordis 和 dsh-tools，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "iterate-plugin",
+      "evidence": "dsh plugin --profile web add iterate-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 iterate 技能变成 DeepSeek Harness 里的自治代码迭代工具：它可以自动规划、并行多轮审查代码，发现并修复小问题，跑验证命令，直到没有新问题；也支持只读的 dry-run 模式，只反复审查代码而不改动文件，最后输出报告。适合想自动检查/修复项目问题的人。",
+      "level": "ok",
+      "risks": "它会读取你项目里的配置（如 iterate.config.yaml）和上下文文件，在 normal 模式会直接修改代码文件并运行你配置的验证命令（如 npm test）。这些操作都在你的本地项目内，没发现上传数据或连外部服务器。",
+      "postInstallNotes": "需要在项目根目录创建 iterate.config.yaml 配置文件；若通过源码挂载方式安装，还要在 profile 的 cordis.patch.yml 中插入插件条目。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供自治闭环代码迭代与 dry-run 多轮审查能力的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 2860,
+      "completion_tokens": 1768,
+      "total_tokens": 4628,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1417
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2220
+    }
+  }
+}

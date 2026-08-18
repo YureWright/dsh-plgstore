@@ -1,0 +1,37 @@
+{
+  "id": "Moeblack/dsh-skins",
+  "analyzedAt": "2026-08-17T13:09:23.361Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 和 dshClient 字段，且 README 说明通过官方 ThemeService 注册皮肤，是真正的 DSH 客户端插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/dsh-external/dsh-skins.git#78349585a85ab94fd3ad22bfcfa9816058da2d93",
+      "evidence": "市场条目把 id 解析为 `@dsh-external/dsh-web-skins` 与不可变 Git spec `git+https://github.com/dsh-external/dsh-skins.git#78349585a85ab94fd3ad22bfcfa9816058da2d93`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 的网页界面换肤用的。它自带了几套好看的皮肤（比如 Nord、极光、纸张、云梦），装上之后你可以在设置里点一下就能切换界面颜色和背景图。背景图已经打包在插件里，不需要联网加载。",
+      "level": "caution",
+      "risks": "插件只在浏览器里运行，会修改 DSH 网页界面的样式，并把你的皮肤选择保存到 DSH 配置里。它不碰系统文件，也不会上传你的数据到外部。但因为这是私有仓库，安装前要确认你确实有访问权限，并且来源可信。",
+      "postInstallNotes": "安装后到『设置 → 通用设置 → 皮肤』里就能选皮肤；如果你想用官方 CLI 手动安装，可能还需要准备 DSH 官方仓库快照，具体看 docs/install.md。",
+      "notes": "这个仓库标记为私有，需要 dsh-external 组织读权限；GitHub 链接显示的是 Moeblack/dsh-skins，但 package.json 和 README 里写的是 dsh-external/dsh-skins，注意确认来源；另外 README 给出的安装命令是 omdsh，不是 dsh plugin add，直接使用 dsh plugin add 可能不兼容。"
+    },
+    "summaryZh": "为 DSH 网页界面提供多款主题皮肤的第三方插件，装好后可在设置中一键换肤。",
+    "usage": {
+      "prompt_tokens": 4031,
+      "completion_tokens": 2041,
+      "total_tokens": 6072,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1521
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3391
+    }
+  }
+}

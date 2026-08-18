@@ -1,0 +1,37 @@
+{
+  "id": "@botscape/bundle",
+  "analyzedAt": "2026-08-16T14:50:50.939Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且描述中给出 dsh plugin add 安装命令，符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@botscape/bundle",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个 BotScape 全家桶安装包。它本身不提供具体功能，而是把一堆 BotScape 功能（文件、工具、记忆、钱包、群聊、私聊、身份等）打成一个包，让你一次性全部装进 DSH，省得一个个装。适合想要快速体验整套 BotScape 功能的用户。",
+      "level": "ok",
+      "risks": "没发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "README 为空，功能描述仅基于 package.json；它是个聚合包，具体行为取决于所依赖的各个插件，建议在安装后查看对应插件说明。"
+    },
+    "summaryZh": "BotScape 全家桶插件，一条命令安装十余项功能模块。",
+    "usage": {
+      "prompt_tokens": 1479,
+      "completion_tokens": 1709,
+      "total_tokens": 3188,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1431
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 839
+    }
+  }
+}

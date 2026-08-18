@@ -1,0 +1,37 @@
+{
+  "id": "CocoSgt/dsh-inspector",
+  "analyzedAt": "2026-08-17T11:42:06.450Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 给出 dsh plugin 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-inspector",
+      "evidence": "Install from npm: dsh plugin --profile web add dsh-inspector"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 的网页界面右侧加一个“指令文件”面板，显示当前会话真正生效的指令链（AGENTS.md、CLAUDE.md 等），还能直接在面板里新建、编辑这些文件，并查看技能目录的状态。简单说，就是让用户看到模型到底读了哪些指令，并方便修改。",
+      "level": "ok",
+      "risks": "它会读写你电脑上项目目录里的 AGENTS.md、CLAUDE.md 等文件，以及用户目录（~/.dsh、~/.agents）下的技能文件。这些都是本地文件操作，不会上传到外部服务器。没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-inspector 在 DeepSeek Harness 网页界面右侧提供“指令文件”面板，实时查看和编辑当前会话生效的指令链与技能目录。",
+    "usage": {
+      "prompt_tokens": 3429,
+      "completion_tokens": 944,
+      "total_tokens": 4373,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 596
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2789
+    }
+  }
+}

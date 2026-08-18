@@ -1,0 +1,37 @@
+{
+  "id": "MuWinds/dsh-archived-sessions",
+  "analyzedAt": "2026-08-17T12:01:20.477Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis，且 README 提供 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:MuWinds/dsh-archived-sessions",
+      "evidence": "dsh plugin --profile web add github:MuWinds/dsh-archived-sessions"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 网页版的一个小工具，用来管理那些「已归档的会话」。装上它之后，你可以在设置页里看到所有归档的会话，每个会话占了多少磁盘空间，还能一键把某个会话「取消归档」放回原来的工作区，或者直接从硬盘上删掉这些会话文件（删除前会有两步确认）。也可以展开会话看到里面的聊天内容预览，支持单个或批量操作。",
+      "level": "caution",
+      "risks": "这个插件会读取 DSH 的归档会话数据（包括聊天内容、文件路径），并且具备直接从硬盘删除会话文件的功能，删除后无法恢复。它是以你电脑上的用户权限运行的，所以安装前请确认你信任这个仓库的代码。另外，它提供的本地接口没有额外鉴权，同一网页里运行的其他脚本也可能调用它。",
+      "postInstallNotes": "安装后需要重启 Harness（运行 npx @deepseek-ai/dsh web），然后到设置面板底部找到「归档会话」页面。",
+      "notes": "README 明确提示该插件包含删除文件的能力，安装即代表信任代码会以你的权限运行，建议先审阅源码；另外它目标 Harness 版本是 0.1.0-rc.6，其他版本可能需要自行验证兼容性。"
+    },
+    "summaryZh": "DSH 归档会话管理器，在设置页提供查看、释放、删除已归档会话的功能。",
+    "usage": {
+      "prompt_tokens": 2151,
+      "completion_tokens": 2809,
+      "total_tokens": 4960,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2356
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1511
+    }
+  }
+}

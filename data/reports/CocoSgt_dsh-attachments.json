@@ -1,0 +1,37 @@
+{
+  "id": "CocoSgt/dsh-attachments",
+  "analyzedAt": "2026-08-17T11:31:21.536Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis、@deepseek-ai/dsh-llm 等核心包，README 也提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-attachments",
+      "evidence": "dsh plugin --profile web add dsh-attachments"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个附件功能：你可以通过回形针按钮、拖拽文件到窗口或直接粘贴，把任意文件（图片、文本、代码等）带进对话。文件会先保存到当前项目目录的 .dsh/uploads/ 文件夹里，并在输入框上方显示成卡片；发送消息时插件会把文件路径信息附加给模型，模型可以通过路径读取文件内容。它不做文件类型限制，图片也可以被非视觉模型通过 read_image 工具读取，所以不会出现'不支持此格式'的报错。",
+      "level": "ok",
+      "risks": "它会在你的项目文件夹下新建一个 .dsh/uploads/ 目录来存放附件，这些文件会留在磁盘上且不会自动清理；如果你点附件卡片上的 ✕，对应的文件会被永久删除。文件内容可能会被 AI 模型读取（这是插件的用途），但不会上传到第三方服务器。另外，如果会话没有工作目录，这个插件用不了。",
+      "postInstallNotes": "安装后需要重启 dsh web（执行 dsh plugin --profile web add dsh-attachments 之后重启）。如果用的是自建 profile，请确保 ~/.dsh/profiles/你的配置名/package.json 的 dsh.profile.bundles 里有 @deepseek-ai/dsh-base 和 @deepseek-ai/dsh-web-app，否则启动会卡住。另外会话必须有工作目录（cwd）才能上传文件。",
+      "notes": "这是社区第三方插件，不是 DeepSeek Harness 官方发布；它依赖了一些 rc 版本的核心包，升级 dsh 时要注意兼容性。README 也说明 dsh-plugin 标签只是为了便于发现，没有官方市场。"
+    },
+    "summaryZh": "把任意文件拖进 DeepSeek Harness 对话，自动存入工作区并在发送时让模型按路径读取，免去类型不支持的烦恼。",
+    "usage": {
+      "prompt_tokens": 3292,
+      "completion_tokens": 2827,
+      "total_tokens": 6119,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2275
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2652
+    }
+  }
+}

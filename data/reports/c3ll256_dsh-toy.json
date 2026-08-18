@@ -1,0 +1,37 @@
+{
+  "id": "c3ll256/dsh-toy",
+  "analyzedAt": "2026-08-17T11:13:36.615Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch、依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:c3ll256/dsh-toy",
+      "evidence": "add the plugin directly from GitHub:"
+    },
+    "evaluationReport": {
+      "intro": "dsh-toy 是一个 DSH 插件，装好之后，你可以用自然语言让 DSH 智能体控制一些支持蓝牙、USB 或串口的小型玩具（比如 Lovense 等情趣玩具）。它会自动问品牌和型号，然后选择合适的方式连接；如果是未知型号，它会在 macOS 上用只读的蓝牙扫描来发现设备。它还支持通过 MonsterParty 分享链接远程控制。插件自带安全护栏，比如默认 30 秒自动停止、限制最大强度和时长。",
+      "level": "ok",
+      "risks": "它会下载并启动一个叫 Intiface Engine 的辅助程序（从官方源下载并校验哈希），用来扫描和连接蓝牙等设备；第一次用可能需要给终端蓝牙权限。如果你用 MonsterParty，需要把分享令牌放进配置里，插件承诺令牌不会给模型看到，但配置本身要保管好。它会在系统缓存目录写临时文件，用完会删。没发现收集隐私或连接未知服务器的行为。",
+      "postInstallNotes": "首次在 macOS 上做蓝牙扫描时，系统会请求蓝牙权限，请允许 DSH 所在终端或应用访问。若要使用 MonsterParty 分享链接，需设置 MONSTERPARTY_TOKEN 环境变量并在 cordis.patch.yml 中覆盖插件配置。如不想自动下载 Intiface Engine，可设置 intifaceAutoDownload: false。",
+      "notes": "该插件依赖可选的 @deepseek-ai/dsh-tools 包；它控制的是实体玩具，请只控制你拥有或获得授权的设备。自动下载 Intiface Engine 目前仅支持 macOS ARM64、Linux x64/ARM64、Windows x64。"
+    },
+    "summaryZh": "dsh-toy 是一个 DSH 插件，让智能体通过蓝牙/USB/串口或 MonsterParty 分享链接控制情趣玩具，并带时长和强度安全限制。",
+    "usage": {
+      "prompt_tokens": 3317,
+      "completion_tokens": 3973,
+      "total_tokens": 7290,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3433
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2677
+    }
+  }
+}

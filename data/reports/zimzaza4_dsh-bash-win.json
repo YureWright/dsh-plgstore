@@ -1,0 +1,37 @@
+{
+  "id": "zimzaza4/dsh-bash-win",
+  "analyzedAt": "2026-08-17T11:33:56.208Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/dsh-tools 与 @deepseek-ai/dsh-sandbox，README 提供 dsh plugin 安装命令，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@zimzaza4/dsh-bash-win",
+      "evidence": "dsh plugin --profile web add @zimzaza4/dsh-bash-win"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness (DSH) 在 Windows 上使用的，它增加了两个 bash 工具：一个用 Git Bash，一个用 WSL2。这样你在 Windows 上让 AI 帮你执行 Linux 终端命令时，就能正常工作。它还提供了沙箱和审批功能，让命令更安全可控。",
+      "level": "ok",
+      "risks": "它会在你的电脑上运行 bash 命令，默认没有沙箱，所以命令可以读写你的文件、安装软件、删除东西等，相当于把电脑权限交给了 AI 模型。建议在需要时开启审批模式或使用 WSL 沙箱（需要在 WSL 里装 bubblewrap）。插件自身不会把你的数据传到网上，但模型可能根据对话执行命令，所以要注意别让模型乱来。",
+      "postInstallNotes": "安装后需要重启 `dsh web`。使用 Git Bash 需先安装 Git for Windows；使用 WSL2 需启用 WSL 并安装发行版；若要用沙箱，需在 WSL 发行版内安装 bubblewrap。可通过环境变量或配置自定义程序路径。",
+      "notes": "依赖的 @deepseek-ai/dsh-tools 和 @deepseek-ai/dsh-sandbox 为 RC 版本，可能有不稳定；插件默认以完全权限运行，建议按需启用审批模式或沙箱。"
+    },
+    "summaryZh": "在 Windows 上为 DeepSeek Harness 提供 Git Bash 与 WSL2 两个 bash 工具的 Cordis 插件。",
+    "usage": {
+      "prompt_tokens": 3007,
+      "completion_tokens": 3432,
+      "total_tokens": 6439,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2947
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2367
+    }
+  }
+}

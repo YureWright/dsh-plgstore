@@ -1,0 +1,37 @@
+{
+  "id": "dsh-rollback",
+  "analyzedAt": "2026-08-18T14:57:08.924Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis 和 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件的明确证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-rollback",
+      "evidence": "dsh plugin --profile demo add dsh-rollback"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个文件回滚工具，专门给 DeepSeek Harness 用。它会自动记录每次写入或编辑文件之前的内容，当模型或用户改错文件时，可以一键恢复到之前的状态。支持通过模型调用 rollback_files 工具，或者用户输入 /rollback 命令来撤销最近的改动。它在后台用 git 或快照保存旧内容，不会弄乱你的 Git 仓库。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和写入你工作目录里的文件，并可能在你的 Git 对象库里存一些内容（但不会影响索引和分支），还会在 DSH 的配置目录下写一个记录文件。这些都属于它正常工作的范围。",
+      "postInstallNotes": "安装时需要用 dsh plugin add 指定一个 profile（比如 demo），并确保机器上有 dsh CLI 和 pnpm；装完后首次使用会自动初始化，可以直接开始会话验证是否生效。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 用的文件回滚插件，自动记录文件修改前的状态，支持模型撤销和用户 /rollback 命令，可随时恢复到任意一次写入/编辑之前的内容。",
+    "usage": {
+      "prompt_tokens": 3945,
+      "completion_tokens": 530,
+      "total_tokens": 4475,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 130
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3305
+    }
+  }
+}

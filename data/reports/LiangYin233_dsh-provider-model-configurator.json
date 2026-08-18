@@ -1,0 +1,37 @@
+{
+  "id": "LiangYin233/dsh-provider-model-configurator",
+  "analyzedAt": "2026-08-17T11:25:32.725Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 也给出了 dsh plugin 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/LiangYin233/dsh-provider-model-configurator/archive/refs/tags/v0.3.9.tar.gz",
+      "evidence": "dsh plugin --profile web add https://github.com/LiangYin233/dsh-provider-model-configurator/archive/refs/tags/v0.3.9.tar.gz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，它增加了一个“模型 Pro”设置页，让你能集中查看、新建、编辑、复制和删除不同服务商下的模型配置（比如上下文窗口、最大输出、支持图片还是文字、推理档位等）。你不用手动去改配置文件，直接在界面上点选就行。它还能从内置的模型预设列表里一键填充参数，省去查资料的时间。",
+      "level": "ok",
+      "risks": "它会读取和修改你配置的各个服务商的模型设置，也就是你的配置文件（比如存放模型列表的地方）。所有操作都在本地完成，不会上传数据。唯一需要注意的是，如果你对一个目录供应商（比如自动更新模型列表的服务商）做了修改，它会生成一份“快照”，之后这个列表就不会自动更新了。这是功能设计，不是风险，但如果你依赖自动更新，要了解这一点。",
+      "postInstallNotes": "安装后需要重启 Web 服务器并刷新页面，然后到设置 → 左侧导航“模型 Pro”（在 Models 页之后）使用。另外安装命令可能需要在 web profile 下执行（如 README 中的 `--profile web`）。",
+      "notes": "该插件确实是一个 DSH 插件；安装命令是 `dsh plugin --profile web add` 形式，注意指定 profile。"
+    },
+    "summaryZh": "在 DeepSeek Harness 中提供一个可视化的“模型 Pro”设置页，方便你管理各大服务商的模型参数，还能从预设目录一键填充。",
+    "usage": {
+      "prompt_tokens": 2616,
+      "completion_tokens": 2206,
+      "total_tokens": 4822,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1685
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1976
+    }
+  }
+}

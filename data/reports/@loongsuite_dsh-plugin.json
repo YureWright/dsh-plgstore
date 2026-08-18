@@ -1,0 +1,37 @@
+{
+  "id": "@loongsuite/dsh-plugin",
+  "analyzedAt": "2026-08-18T14:52:30.490Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明 dsh.bundle.patch，依赖 @deepseek-ai/cordis 和 @deepseek-ai/schemastery，README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@loongsuite/dsh-plugin",
+      "evidence": "dsh plugin --profile web add @loongsuite/dsh-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以让你把 DeepSeek Harness（DSH）的运行过程“看得清清楚楚”。它会自动记录 DSH 里智能体干活时的重要事件（比如思考步骤、调用工具、和大模型对话），整理成一份份“追踪记录”和“统计指标”，然后通过标准的 OTLP 协议发送到你指定的监控平台（比如 Jaeger、Langfuse 等）。这样你就能在网页上查看每次任务每一步花了多长时间、用了多少 token、哪里出错。默认只记录结构信息，不记录具体内容，保护隐私；你也可以手动打开内容记录，但需要自己注意安全。",
+      "level": "ok",
+      "risks": "它会监听 DSH 的会话、智能体、LLM 和工具调用事件，并把相关元数据（如步骤耗时、token 用量、资源属性）通过网络发送到你配置的 OTLP 后端。默认不发送提示词或回复内容，但如果你开启了内容捕获，那代码、密钥、个人信息等敏感内容就可能被发送到后端。另外，安装插件会修改 DSH 的配置文件（cordis.patch.yml），这是正常的。",
+      "postInstallNotes": "装完后，建议设置环境变量：`OTEL_SERVICE_NAME`（服务名）和 `OTEL_EXPORTER_OTLP_ENDPOINT`（接收端地址）；也可以直接编辑 `~/.dsh/profiles/<profile>/cordis.patch.yml` 来填写 endpoint、serviceName 等配置。然后正常启动 DSH 即可。可选：如果要记录提示词内容，先设置 `OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT=SPAN_ONLY`。",
+      "notes": "注意兼容性：需要 Node.js >=22.19.0，DSH 版本需在 `>=0.1.0-rc.6` 且 `<0.2.0`。该插件没有依赖外部服务器或可疑脚本，来源和发布渠道都正规。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 OpenTelemetry 可观测性，将 DSH 的会话、智能体、LLM 和工具调用导出为标准 OTLP 追踪与指标。",
+    "usage": {
+      "prompt_tokens": 4041,
+      "completion_tokens": 2360,
+      "total_tokens": 6401,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1752
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3401
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@dsh-ltctfer/dsh-web-search-brave",
+  "analyzedAt": "2026-08-16T13:35:09.560Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 配置，peerDependencies 含 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin add 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-ltctfer/dsh-web-search-brave",
+      "evidence": "```sh\ndsh plugin --profile web add @dsh-ltctfer/dsh-web-search-brave\n```"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的一个搜索工具。它让你在 DSH 里发起网页搜索时，走 Brave 搜索的官方接口来获取结果，而不是用 DSH 自带的那种每次搜索都要让 AI 模型跑一圈的慢办法。你只需要配一个 Brave API 密钥，模型就能通过普通搜索工具直接查到网页结果，速度更快、也更省资源。它还支持国家/语言/时效过滤、代理、取消请求等功能。",
+      "level": "ok",
+      "risks": "它会把你的搜索关键词发送到 Brave 的服务器（api.search.brave.com），Brave 那边能看到你的搜索内容；插件设置里如果直接填 API Key，这个 key 会保存在本地配置/凭据文件里，别把配置或凭据文件随意分享给别人。另外插件在本地开了一个只允许 127.0.0.1 访问的小接口用来读取设置，通常只有你自己电脑上的程序能碰到。",
+      "postInstallNotes": "装完后需要：1) 准备一个 Brave Search API 的 token（去 Brave 官网申请）；2) 在 DSH 设置页的「brave 搜索」卡片里填入 API Key，或提前设置好 BRAVE_API_KEY 环境变量，或写到凭据文件里；3) 修改 profile 的 cordis.patch.yml，把 web 接缝的 searchProvider 覆盖为 brave-official 并插入本插件条目（README 有示例）。",
+      "notes": "无"
+    },
+    "summaryZh": "一个让 DSH 用 Brave Search 接口做网页搜索的插件，一次搜索只发一个 HTTP 请求，比官方默认方案更轻更快，还支持自定义 API Key、代理和多种搜索参数。",
+    "usage": {
+      "prompt_tokens": 3599,
+      "completion_tokens": 765,
+      "total_tokens": 4364,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 222
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2959
+    }
+  }
+}

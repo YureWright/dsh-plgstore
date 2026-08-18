@@ -1,0 +1,37 @@
+{
+  "id": "alingalingling/ui-status-label",
+  "analyzedAt": "2026-08-17T11:15:14.567Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 并依赖 @deepseek-ai/cordis 及 dsh-client-* 系列，README 也给出了 dsh plugin add 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/alingalingling/ui-status-label.git",
+      "evidence": "README 安装步骤②：`dsh plugin --profile web add github:alingalingling/ui-status-label`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以让你把 dsh 网页聊天界面里 AI 思考时显示的状态文字（比如默认的 Deep diving...）改成你自己想要的话。装好后，去网页左下角齿轮进入设置，在 General（通用）分区找到「运行状态文案」一行，输入你想显示的文字（最长40个字符），马上就会生效；清空输入框会恢复默认文字。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改浏览器界面上的状态文字，不读取聊天内容，也不连接外部服务器；自定义的文字会保存在本机 $DSH_HOME/settings.yaml 配置中。",
+      "postInstallNotes": "安装后需要重启 dsh Web 进程（界面不会热加载新插件），重启后刷新页面，再进入设置 → General → 运行状态文案里修改文字。",
+      "notes": "当前 npm 尚未发布，请优先用 git 仓库直装或本地 tarball 安装；git 安装若遇到构建脚本拦截，按 README 把该包加入 allowBuilds（仓库已提交预构建 lib，通常可直接运行）。"
+    },
+    "summaryZh": "自定义 dsh Web 聊天界面中 AI 思考时状态文案的小插件。",
+    "usage": {
+      "prompt_tokens": 3137,
+      "completion_tokens": 3836,
+      "total_tokens": 6973,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3407
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2497
+    }
+  }
+}

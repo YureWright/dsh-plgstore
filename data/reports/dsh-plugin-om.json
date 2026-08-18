@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-om",
+  "analyzedAt": "2026-08-16T14:48:33.571Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 也给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-om",
+      "evidence": "dsh plugin --profile <profile> add dsh-plugin-om"
+    },
+    "evaluationReport": {
+      "intro": "这插件是给 DSH（DeepSeek Harness）用的“观察记忆”式上下文管理工具。简单说，当聊天记录越来越长时，它会自动把旧消息总结成摘要，保住重要信息免得被挤掉；同时提供 recall 和 recall-semantic 两个工具，让你随时按关键词或意思搜回被压缩过的旧内容，不怕丢细节。",
+      "level": "caution",
+      "risks": "默认会开启“语义召回”功能，第一次用到时可能会自动从 HuggingFace（国外网站）下载一个约 113MB 的模型文件存到插件目录里；如果网络不通会下载失败，但不会崩溃。另外它会改写 DSH 的对话历史（把部分原文替换成摘要），被压缩的原文在常规会话里看不到了，但可以用 recall 工具找回来。除此之外不会碰你电脑上其他文件。",
+      "postInstallNotes": "安装后需要重启 DSH 才能生效，可以用 `dsh --profile <profile> --dump-config` 检查配置。若要自定义参数（例如 thresholdRatio），编辑 `$DSH_HOME/profiles/<profile>/cordis.patch.yml` 并热更新。注意预设的 web-profile 自带 compaction-basic，可能与它冲突，建议把 thresholdRatio + historyMergeRatio 配到小于 0.8，或自定义不带 compaction-basic 的 preset-agent。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 中实现 Observational Memory 风格的上下文压缩与召回插件，对话过长时自动摘要旧内容，并支持关键词/语义搜索找回被压缩的历史消息。",
+    "usage": {
+      "prompt_tokens": 4620,
+      "completion_tokens": 1655,
+      "total_tokens": 6275,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1161
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3980
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@undeadsheep/dsh-client-ui-file-preview",
+  "analyzedAt": "2026-08-18T14:58:50.946Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 配置、依赖 @deepseek-ai/cordis 及多个 @deepseek-ai 核心包，是 DSH 插件的典型结构。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@undeadsheep/dsh-client-ui-file-preview",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页客户端用的插件，在聊天界面旁边加一个悬浮的小窗口，用来预览文件内容（比如代码、Markdown 文档等），还支持多种代码高亮和 Markdown 渲染，方便你边对话边查看文件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器界面里运行，没有看到访问隐私文件或连接外部服务器的行为。",
+      "postInstallNotes": "无",
+      "notes": "README 缺失，建议在 npm 页面确认功能与配置后再安装。"
+    },
+    "summaryZh": "为 DSH 网页客户端提供浮动文件预览窗口的插件，支持代码高亮和 Markdown 渲染。",
+    "usage": {
+      "prompt_tokens": 1861,
+      "completion_tokens": 1295,
+      "total_tokens": 3156,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1009
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1221
+    }
+  }
+}

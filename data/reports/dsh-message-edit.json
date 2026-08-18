@@ -1,0 +1,37 @@
+{
+  "id": "dsh-message-edit",
+  "analyzedAt": "2026-08-16T13:43:51.727Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin add 安装命令，且依赖了 @deepseek-ai/cordis 等核心包，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-message-edit",
+      "evidence": "dsh plugin --profile web add dsh-message-edit"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的对话里可以编辑已经发出的消息、重新生成回复、重试任意回合，而且每次改动都会生成一个新版本，像版本管理一样随时能切换回之前的对话状态。它还带一个 Timeline 标签页，能清楚看到分支历史和每个版本的内容。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只操作会话数据，不读写用户文件，不会连接外部服务器，也不修改 DSH 引擎内部。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供消息编辑、重新生成、重试和版本树切换的插件。",
+    "usage": {
+      "prompt_tokens": 3666,
+      "completion_tokens": 695,
+      "total_tokens": 4361,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 399
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3026
+    }
+  }
+}

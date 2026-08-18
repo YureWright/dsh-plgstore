@@ -1,0 +1,37 @@
+{
+  "id": "pengyue-polaron/deepseek-harness-genui",
+  "analyzedAt": "2026-08-17T11:26:05.090Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 @deepseek-ai/cordis 与多个 dsh-* 核心包为 peerDependencies，README 给出了 `dsh plugin --profile web add dsh-plugin-genui` 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-genui",
+      "evidence": "README 安装段：`dsh plugin --profile web add dsh-plugin-genui`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 AI 助手能为你当前的任务生成一个专用的小网页界面，用来处理那些用纯文字说不清楚的事，比如挑日历时段、探索科学模型、追踪代码路径。你可以在对话里直接操作，也可以把界面放到侧边栏，你的选择和输入会被记下来，AI 下一轮能接着用。",
+      "level": "ok",
+      "risks": "它会在你电脑上构建并运行临时生成的网页应用，可能打开本地端口（localhost）供你访问；安装后会下载 Playwright 的 Chromium 浏览器（占用几百 MB 磁盘）。你在界面里填写的选择和输入会保存在当前任务的本地状态中，7 天未更新会自动过期。除非你授权，它不会主动连接外部服务，声明的 API 请求也只允许无凭据的公共 HTTPS 路由。",
+      "postInstallNotes": "装完需要先运行 `dsh plugin --profile web exec playwright install chromium` 安装浏览器，然后正常启动 DSH（如 `dsh --profile web`）。另外可在 DSH 设置中的插件配置里选择或导入 DESIGN.md 来设定默认界面风格。",
+      "notes": "依赖的 dsh-* 核心包多为 rc 版本，功能可能随版本迭代有变化；如果在意稳定性可留意后续更新。"
+    },
+    "summaryZh": "为 DeepSeek Harness 生成可交互界面的插件，让 AI 能创建 React 网页应用来处理复杂任务。",
+    "usage": {
+      "prompt_tokens": 3830,
+      "completion_tokens": 1342,
+      "total_tokens": 5172,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 876
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3190
+    }
+  }
+}

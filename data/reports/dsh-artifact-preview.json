@@ -1,0 +1,37 @@
+{
+  "id": "dsh-artifact-preview",
+  "analyzedAt": "2026-08-18T14:52:34.587Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/dsh-client-ui-conversation，README 提供了 dsh plugin add 安装命令，确为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/nirvanaslash/dsh-artifact-preview.git",
+      "evidence": "dsh plugin --profile web add github:nirvanaslash/dsh-artifact-preview"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的聊天界面里能直接看到 AI 刚生成的文件。它会在对话里加一排“产物”按钮，列出生成的文件，图片会直接显示小缩略图；点一下文件，右侧会弹出一个可以拖宽窄的面板，用来查看 Markdown、代码、CSV、JSON、图片、HTML，甚至还能预览本地开发服务器的网页（比如 localhost 端口）。",
+      "level": "ok",
+      "risks": "它需要读取你电脑上生成文件的内容（通过本地 DSH 服务的 /dsh-files/static/ 路径）并在浏览器中显示。如果你连接的是远程 DSH 服务，文件内容会传到你的浏览器。HTML 和本地端口预览会以 iframe 形式加载页面，理论上加载的网页可能自带脚本，但只有你主动点开文件才会触发。没发现它会把文件偷偷上传到外部服务器，也没发现它碰聊天记录以外的隐私文件。",
+      "postInstallNotes": "在纯 dsh web 环境（非 DSH Desktop）下，需要先安装 dsh-file-changes 配套插件才能读取文件内容；装完后重启 dsh web 服务或 DSH Desktop，并刷新页面。建议确认 DSH 版本为 0.1.0-rc.7 / Desktop 2.0.1 附近，升级后检查“产物”行是否正常显示。",
+      "notes": "这是第三方社区插件，非 DSH 官方出品。它调用了 window.__ModuleLoader__、dsh.bundle patch、conversation.chat.turnTail 链槽等内部接口，升级 DSH 后可能失效或行为变化。README 也提到多类型预览按钮、消息中文件名点击预览等高级功能需要手动改核心文件，本包默认不包含。"
+    },
+    "summaryZh": "在 DSH 聊天界面中直接预览 AI 生成的文件（Markdown/代码/CSV/JSON/图片/HTML），支持侧边分栏和本地开发端口预览。",
+    "usage": {
+      "prompt_tokens": 2359,
+      "completion_tokens": 3073,
+      "total_tokens": 5432,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2478
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1719
+    }
+  }
+}

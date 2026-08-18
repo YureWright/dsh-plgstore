@@ -1,0 +1,37 @@
+{
+  "id": "dsh-graphlint",
+  "analyzedAt": "2026-08-16T13:28:12.469Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出了 dsh plugin 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-graphlint",
+      "evidence": "dsh plugin --profile web add dsh-graphlint"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的 AI 助手能检查你的代码，找出没用到的部分（死代码）、循环引用等问题。它提供了三个工具：查询依赖图、重建索引、配置规则，并附带一个使用说明。装好后，AI 助手就能在你写代码时帮你做静态分析。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在你的项目目录里运行 graphlint 扫描，默认不越界；不会连接外部服务器。",
+      "postInstallNotes": "需要先安装 graphlint CLI（`pip install graphlint`），然后重启 dsh 配置文件（`dsh plugin ...` 后重启服务）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 graphlint 死代码检测工具包，包含三个工具和一个技能，帮助 AI 助手分析代码库中的无用代码。",
+    "usage": {
+      "prompt_tokens": 2560,
+      "completion_tokens": 1785,
+      "total_tokens": 4345,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1449
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1920
+    }
+  }
+}

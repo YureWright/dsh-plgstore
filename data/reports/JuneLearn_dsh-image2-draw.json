@@ -1,0 +1,37 @@
+{
+  "id": "JuneLearn/dsh-image2-draw",
+  "analyzedAt": "2026-08-17T12:06:05.036Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 且依赖 @deepseek-ai/cordis 等核心包，符合真插件证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:JuneLearn/dsh-image2-draw",
+      "evidence": "npx --yes -p @deepseek-ai/dsh dsh plugin --profile web add github:JuneLearn/dsh-image2-draw"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上了图片生成功能（gpt-image-2）。你只要填一个中转服务的地址和 API 密钥，就能在聊天里让模型画图（文字生图）或改图（图片生图）。生成的图片会直接显示在对话中，也会自动存到 outputs/image2/ 文件夹里。",
+      "level": "ok",
+      "risks": "需要给第三方中转服务提供 API 密钥，密钥会存在 DSH 凭据里；图片内容会发送到你配置的中转服务器，所以要用可信的服务；生成的文件会保存在本地工作目录。",
+      "postInstallNotes": "装完后进入 设置 > 插件 > 可配置插件 > Image2 Draw，填入 API 密钥和 baseURL，保存后新建会话，让模型调用 image2-generate 或 image2-edit 即可。",
+      "notes": "README 里含作者推荐链接（可能产生返利），但插件本身不绑定任何特定中转服务，可自行选择。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供基于 gpt-image-2 的文生图和图生图能力的插件，配置第三方 OpenAI 兼容中转即可在聊天中生成与编辑图片。",
+    "usage": {
+      "prompt_tokens": 3406,
+      "completion_tokens": 1991,
+      "total_tokens": 5397,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1576
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2766
+    }
+  }
+}

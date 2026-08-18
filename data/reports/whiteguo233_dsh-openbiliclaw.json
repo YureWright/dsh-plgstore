@@ -1,0 +1,37 @@
+{
+  "id": "whiteguo233/dsh-openbiliclaw",
+  "analyzedAt": "2026-08-17T11:15:21.465Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 并依赖 @deepseek-ai/dsh-client-runtime、@deepseek-ai/cordis 等 DSH 核心包，README 也明确描述为 DSH 客户端插件并提供了 dsh plugin add 安装方式。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/whiteguo233/dsh-openbiliclaw.git",
+      "evidence": "本仓库声明了 dsh.bundle，因此可以作为完整插件包交给 `dsh plugin add` 或插件市场安装。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 OpenBiliClaw（一个本地运行、跨平台的个性化内容推荐 Agent）的界面搬进了 DeepSeek Harness 的网页版里。装上它之后，DSH 左侧栏会多一个 OpenBiliClaw 按钮，点开能从右侧滑出一个抽屉，里面有推荐流、内容库、苏格拉底式对话、用户画像和设置。同时它还给 DSH 里的 Agent 注册了 22 个工具，让 Agent 也能读取推荐、回答探测、保存内容，和用户对话，形成“推荐→反馈→画像→更准推荐”的闭环。简单说，就是在 DSH 里直接刷推荐、调教你的兴趣画像。",
+      "level": "ok",
+      "risks": "它会读取和修改你本地 OpenBiliClaw 项目的数据（比如配置文件和 SQLite 数据库），并通过本机 127.0.0.1:8420 连接你运行中的后端服务。插件还会用你配置的 Python 执行一些命令行工具，所以如果你安装的来源不可信，理论上可能对你的文件做操作。另外如果你在设置里开了局域网访问，你局域网里的其他人可能能访问到你的推荐数据和画像。",
+      "postInstallNotes": "安装后需要在插件配置中把 workdir 指向你的 OpenBiliClaw 主项目目录（默认必填），并确保后端已经开启 Agent Bridge v2（默认监听 127.0.0.1:8420）。面板内也可以在“设置 → 通用 → 连接”里修改后端地址。",
+      "notes": "需要注意：README 声称仓库声明了 dsh.bundle，但给出的 package.json 片段里只有 dsh.client，没看到 dsh.bundle；而且 package 标记为 private: true，说明没有发布到 npm，实际安装可能要走 git 或手动拷贝。另外它依赖的是 DSH 0.1.0-rc.6 或更高版本，旧版本 DSH 可能不兼容。"
+    },
+    "summaryZh": "把 OpenBiliClaw 个性化推荐 Agent 的消费侧界面（推荐、内容库、对话、画像、设置）以侧栏抽屉形式集成进 DeepSeek Harness，并给 DSH Agent 提供 22 个工具和技能，实现推荐、反馈、画像的闭环。",
+    "usage": {
+      "prompt_tokens": 5039,
+      "completion_tokens": 3083,
+      "total_tokens": 8122,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2410
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4399
+    }
+  }
+}

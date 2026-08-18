@@ -1,0 +1,37 @@
+{
+  "id": "dsh-replay-studio",
+  "analyzedAt": "2026-08-16T13:35:00.548Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.92,
+      "reason": "package.json 的 peerDependencies 声明了 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，且 README 描述为 DSH 插件并提供插件配置片段，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-replay-studio",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个“会话回放可视化工具”，装到 DSH 里之后，能把 Agent 跑过的历史会话（每一步操作、工具调用、报错）在浏览器里以时间线的方式展示出来。你可以按时间倒序看所有会话，点进去看到每一步的细节，比如运行了什么命令、读写了什么文件、助手回复了什么。还能看到统计数字，比如总共几轮、几次工具调用、几个错误。Agent 那边也会有一个“打开 replay studio”的能力，直接说“打开 replay studio 看看”就能唤起。",
+      "level": "ok",
+      "risks": "它会在本地起一个 Web 服务（默认端口 3090），并且读取会话存储目录（默认 ~/.dsh/sessions）。如果你本机能访问到这个端口的人看到你的会话记录，可能暴露你让 Agent 处理过的文件内容和命令。默认监听 localhost 的话风险不大，没发现恶意行为。",
+      "postInstallNotes": "建议按 README 配置 sessionsDir 和 port（不配也有默认值）。如果要用浏览器访问，保持端口可访问即可。",
+      "notes": "无"
+    },
+    "summaryZh": "用 Web UI 可视化浏览、调试和对比 DSH Agent 会话的回放工具。",
+    "usage": {
+      "prompt_tokens": 2227,
+      "completion_tokens": 1171,
+      "total_tokens": 3398,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 768
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1587
+    }
+  }
+}

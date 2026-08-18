@@ -1,0 +1,37 @@
+{
+  "id": "dsh-us-stocks",
+  "analyzedAt": "2026-08-16T13:46:56.721Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 与 dsh-client 核心包，README 给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-us-stocks",
+      "evidence": "README 原文：dsh plugin --profile web add dsh-us-stocks"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 装的美股数据工具包。装上之后，AI 助手就能直接查询美股股价、历史行情、公司财报、分析师评级和最新新闻，数据来自雅虎财经。不用再让 AI 自己上网搜网页、猜数字，又快又准。",
+      "level": "ok",
+      "risks": "插件会联网访问雅虎财经接口来获取美股数据；它还会向 DeepSeek Harness 的网页界面注入图表组件（用来画 K 线图），但这些都属于正常功能。没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 DeepSeek Harness 的 profile 才会生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供美股行情、历史数据、财报、分析师观点和新闻的插件，数据来自雅虎财经。",
+    "usage": {
+      "prompt_tokens": 4344,
+      "completion_tokens": 1496,
+      "total_tokens": 5840,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1166
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3704
+    }
+  }
+}

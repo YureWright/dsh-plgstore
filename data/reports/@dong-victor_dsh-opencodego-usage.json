@@ -1,0 +1,37 @@
+{
+  "id": "@dong-victor/dsh-opencodego-usage",
+  "analyzedAt": "2026-08-16T14:46:26.309Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dong-victor/dsh-opencodego-usage",
+      "evidence": "dsh plugin --profile web add @dong-victor/dsh-opencodego-usage"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH（DeepSeek Harness）用的插件，用来查看 opencode Go 套餐的余额。装上后，在 DSH 的网页界面左侧会多一个『Go 余额』入口，不用点击就能看到 5 小时、周、月三档用量进度条、百分比和重置时间，每 60 秒自动刷新；点开还能看倒计时和状态详情。另外它还给 AI 助手加了一个工具，让助手可以直接回答你『opencode Go 套餐还剩多少』。它复用 DSH 里已经配好的模型接口和密钥，不用你再折腾第二遍。",
+      "level": "ok",
+      "risks": "插件会把 DSH 里保存的 API 密钥发给 opencode.ai 的官方接口去查余额（只查询，不改动）；界面上不会显示完整密钥，只显示掩码；它还会在侧边栏显示用量数据。它只在你的浏览器和 DSH 服务之间通信，外部只连 opencode.ai。没发现其他明显风险。",
+      "postInstallNotes": "装完后需要重启 `dsh web` 让插件生效；另外需确认 DSH 的 web profile 已经配置好 `llm-deepseek`，baseURL 指向 opencode 网关，且 API Key 已通过 credentials 服务保存。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 网页侧边栏直接查看 opencode Go 套餐三档用量、进度条和重置倒计时的插件，AI 助手也能直接回答余额问题。",
+    "usage": {
+      "prompt_tokens": 4383,
+      "completion_tokens": 1880,
+      "total_tokens": 6263,
+      "prompt_tokens_details": {
+        "cached_tokens": 4352
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1396
+      },
+      "prompt_cache_hit_tokens": 4352,
+      "prompt_cache_miss_tokens": 31
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "STARDUSTLC666/dsh-docker",
+  "analyzedAt": "2026-08-17T13:19:21.593Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且 README 提供了 dsh plugin add 安装命令，是典型的 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@stardustlc/dsh-docker",
+      "evidence": "dsh plugin --profile web add @stardustlc/dsh-docker"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DSH（DeepSeek Harness）的 AI 助手直接管理你电脑上的 Docker 容器和镜像。它提供了六个小工具：查看容器列表、查看日志、查看镜像、查看容器详情、在容器里执行命令、控制容器启停删除。你只需要用大白话跟 AI 说，它就会帮你跑 docker 命令，省得自己敲命令行。",
+      "level": "ok",
+      "risks": "它会让你电脑上的 Docker 容器和镜像被 AI 操作，包括读取日志（可能有敏感信息）、在容器内执行命令（默认需要你批准）、停止或删除容器（会有明确提示）。所有操作都在本机 Docker 里发生，不会上传数据到外部。",
+      "postInstallNotes": "需要本机已安装 Docker 且 docker 命令在 PATH 中；如果不在，可在配置里设置 dockerPath 或环境变量 DSH_DOCKER_PATH。可按需调整 timeoutMs 和 execApproval。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 容器管理插件：让 AI 通过 Docker CLI 完成容器/镜像的查看、日志、执行与启停管理，内置防注入和审批机制。",
+    "usage": {
+      "prompt_tokens": 2115,
+      "completion_tokens": 1371,
+      "total_tokens": 3486,
+      "prompt_tokens_details": {
+        "cached_tokens": 2048
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 984
+      },
+      "prompt_cache_hit_tokens": 2048,
+      "prompt_cache_miss_tokens": 67
+    }
+  }
+}

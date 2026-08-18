@@ -1,0 +1,37 @@
+{
+  "id": "@hanxu131/dshacp",
+  "analyzedAt": "2026-08-18T14:59:02.622Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis，README 提供 dsh plugin add 安装命令，属真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@hanxu131/dshacp",
+      "evidence": "dsh plugin --profile acp add @hanxu131/dshacp"
+    },
+    "evaluationReport": {
+      "intro": "装上它，你就能在 Zed 编辑器里直接用 DeepSeek 对话、让它读文件、写代码、跑命令，每一步操作都会在界面上看到，有风险的操作会先问你要不要允许。它相当于 Zed 和 DeepSeek 之间的翻译官，通过 DSH 来调用 DeepSeek。",
+      "level": "ok",
+      "risks": "它会让你当前打开的项目里的文件被 DeepSeek 读取/修改，也能帮你跑终端命令（默认会先弹窗确认）。对话记录会存在当前项目目录下的 .sessions 文件夹里。如果你项目里有敏感文件，注意别让 AI 读走。没发现其他明显风险。",
+      "postInstallNotes": "1) 在 Zed 设置中添加外部代理（External Agents → Add Custom Agent），粘贴 README 中的 JSON 配置（command: dsh, args: ['--profile','acp']）；2) 可选：在 ~/.dsh/profiles/acp/pnpm-workspace.yaml 中加一行 minimumReleaseAge: 0，避免升级时被 pnpm 门控挡住；3) 设置环境变量 DSH_SESSIONS_ROOT 可改变会话保存位置。",
+      "notes": "无"
+    },
+    "summaryZh": "让 Zed 编辑器通过 DSH 接入 DeepSeek 的 ACP 桥接插件，支持流式回复、文件操作、命令执行和权限审批。",
+    "usage": {
+      "prompt_tokens": 5299,
+      "completion_tokens": 3241,
+      "total_tokens": 8540,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2799
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4659
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "badai147/dsh-global-rules",
+  "analyzedAt": "2026-08-17T11:41:16.478Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，依赖 @deepseek-ai/dsh-client-* 核心包，README 提供了 dsh plugin add 安装命令，确认为可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-global-rules",
+      "evidence": "dsh plugin --profile web add dsh-global-rules"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你直接在 DSH 的网页设置面板里编辑全局规则文件 ~/.dsh/AGENTS.md，不用去命令行手动改文件。装好后设置里会多出一个「全局规则」页面，打开就能看到当前内容，改完点保存，新会话立刻生效；当前会话也会在下一次操作文件后自动感知新规则。如果文件不存在，保存时会自动创建。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的 ~/.dsh/AGENTS.md（DSH 的全局规则文件），并在本地 web 服务上新增两个读写路由。虽然做了同源校验，但如果你的 dsh web 服务被其他人在同一网络下访问，理论上对方可能通过这个接口修改你的全局规则。整体风险低。",
+      "postInstallNotes": "重启 dsh web，然后打开「设置 → 全局规则」即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 网页设置面板中编辑全局规则 AGENTS.md 的插件，保存后即时生效。",
+    "usage": {
+      "prompt_tokens": 1771,
+      "completion_tokens": 821,
+      "total_tokens": 2592,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 447
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1131
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ysr666/dsh-vision-router",
+  "analyzedAt": "2026-08-16T11:46:16.862Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 和 dsh.bundle 配置，依赖 @deepseek-ai/dsh-llm-deepseek 等 DSH 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vision-router",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-vision-router"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（一个 AI 对话/代理平台）增加“看图片”能力的。原本 DeepSeek 只处理文字，装上它之后，你可以直接粘贴图片，AI 就能看图并回答问题、识别文字、裁剪、分析颜色、生成 SVG、抠图、截图等。它自带一个免费的视觉识别通道（不需要注册或 API key），也支持你用自己的视觉模型。安装简单，不需要 Python。",
+      "level": "caution",
+      "risks": "插件会把你要识别的图片发送到第三方免费视觉服务（OVHcloud 匿名端点）——图片内容会离开你的电脑，被那台服务器处理；虽然对方声称匿名，但不是在本地完成的。如果你配置了自己的视觉模型 key，图片也会发到你选择的模型服务商。安装时会安装 sharp 等原生图像处理库（可能有编译脚本）；使用截图功能需要本机装有 Chrome，可能会在本地启动浏览器进程。插件还会修改 DSH 的模型路由配置，以便在图片对话时自动切换视觉模型。",
+      "postInstallNotes": "安装后需要在 DSH 的模型设置里启用带“+ Auto Vision”后缀的模型组，并在聊天时手动选择它再发送图片；如果你已经有一个长期运行的 Web 进程，先让它重载一次。若不想用免费匿名服务，可在设置中填入自己的视觉模型 key。",
+      "notes": "默认免费视觉服务使用第三方匿名端点，介意隐私的话请用自有 key；该插件要求 Node.js >=22。"
+    },
+    "summaryZh": "给纯文本 DeepSeek Harness 智能体加“眼睛”的插件：内置免费视觉模型链路和多种像素级图像工具，粘贴图片即可让 AI 看图、识别、分析（无需 Python，一条命令安装）。",
+    "usage": {
+      "prompt_tokens": 3667,
+      "completion_tokens": 3939,
+      "total_tokens": 7606,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3412
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3027
+    }
+  }
+}

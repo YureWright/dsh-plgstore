@@ -1,0 +1,37 @@
+{
+  "id": "2672243194/dsh-read-url",
+  "analyzedAt": "2026-08-17T11:34:59.383Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle（cordis.patch.yml），README 给出了 @deepseek-ai/dsh plugin add 安装命令，并具体围绕 ctx.web/ctx.effect 等 DSH 能力接线，属于可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/2672243194/dsh-read-url.git",
+      "evidence": "README 中推荐安装命令：`npx @deepseek-ai/dsh plugin --profile web add github:2672243194/dsh-read-url`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个帮 DSH 智能体“读网页”的插件。你让 AI 打开某个网址时，它会自动识别网页编码（比如中文 GBK、UTF-8），把广告、导航等无关内容删掉，只留正文，再转成省字数的纯文本或 Markdown 给 AI，避免长网页把对话上下文撑爆。另外还能一次读多个网址、抓一个小网站的地图、或只列出页面里的链接。",
+      "level": "ok",
+      "risks": "没发现明显恶意风险：插件核心零依赖、没有安装脚本、没有自己的服务器，所有请求都来自你或 AI 明确给出的网址。唯一要注意的是，它会把网页内容交给当前 DSH 会话，如果你让它读内网地址或含隐私的页面，这些内容可能被模型服务商看到；缓存只在内存中且插件卸载时自动清理。",
+      "postInstallNotes": "重启 DSH（Web/TUI）后即可使用；超时、UA、SPA 渲染等均为可选配置，默认可直接用。",
+      "notes": "无"
+    },
+    "summaryZh": "零依赖的 DSH 网页阅读插件：自动识别编码、提取正文并以省 token 的文本/Markdown 返回，还支持批量读取、站点爬取和链接提取。",
+    "usage": {
+      "prompt_tokens": 3146,
+      "completion_tokens": 4115,
+      "total_tokens": 7261,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3654
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2506
+    }
+  }
+}

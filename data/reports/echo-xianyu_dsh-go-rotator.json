@@ -1,0 +1,37 @@
+{
+  "id": "echo-xianyu/dsh-go-rotator",
+  "analyzedAt": "2026-08-17T13:18:42.387Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.client 与 dsh.bundle，peerDependencies 包含 @deepseek-ai/cordis，README 提供 dsh plugin add 安装命令并说明与 llm-pi-ai 集成。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/echo-xianyu/dsh-go-rotator/releases/download/v0.2.0/dsh-go-rotator-0.2.0.tgz",
+      "evidence": "Release 资产（tgz / 源码 zip / 校验和）见页面右侧 Releases。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的一个“钥匙轮换器”。如果你有多个 OpenCode Go 订阅的 API key，它可以帮你自动分摊流量，某个 key 被限流或出错时自动切换到另一个，还会记录每个 key 用了多少、花了多少钱，并提供一个网页界面来管理。",
+      "level": "ok",
+      "risks": "插件会在安装目录的 data/ 文件夹里存状态（包括你的 key 和用量统计）。如果你开启配额看门狗，它需要你提供 OpenCode 账号的 cookie 和 workspace ID，并且会定时访问 OpenCode 网站获取配额信息。它还会在本机开一个 7777 端口的 HTTP 服务，同一台电脑上的其他程序可能能访问到这个服务。密钥默认不会打印到日志里。",
+      "postInstallNotes": "需要按 README 配置 profile 的 cordis.patch.yml（或 --patch）和 settings.yaml 里的 provider 路由，设置 apiKeyEnv 等参数，并在插件界面或状态文件中填入你的 OpenCode Go key；如果要使用配额看门狗，还需填写 workspaceId 和 authCookie。",
+      "notes": "该插件是标准的 DSH 插件（有 dsh 声明和依赖）。注意安装 URL 是根据 README 的 Release 说明推测的，建议从 GitHub Releases 页面获取实际 tgz 链接；插件较新（0.2.0）、stars 少，且 README 声明部分代码为 AI 生成，使用前建议自行审查。"
+    },
+    "summaryZh": "一个给 DeepSeek Harness 使用的 OpenCode Go API key 自动轮换与配额管理插件。",
+    "usage": {
+      "prompt_tokens": 3014,
+      "completion_tokens": 5004,
+      "total_tokens": 8018,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4461
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2374
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-marketplace",
+  "analyzedAt": "2026-08-16T13:25:01.640Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-marketplace",
+      "evidence": "dsh plugin --profile web add dsh-plugin-marketplace"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的网页设置页面多出一个“插件市场”标签。打开设置就能浏览 GitHub 上所有标着 dsh-plugin 的插件，可以搜索、按星标排序、点开看详情，还能让 AI 帮你总结这个插件是干嘛的，不用自己读英文文档。",
+      "level": "ok",
+      "risks": "它会把 GitHub 上的插件列表和说明拉下来显示在界面上；AI 解释功能会把插件描述发送给你已配置的大模型；除此之外不碰你电脑上的其他文件。",
+      "postInstallNotes": "装好后需要重启 dsh web（新客户端插件要重启才会生效）；如果之前手动挂载过旧版，先删掉 cordis.patch.yml 里的旧条目再安装；如果看到 settings-not-exposed 报错，重启一次即可。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 网页设置中内置一个插件市场，免命令行浏览和安装 GitHub 上的 dsh 插件。",
+    "usage": {
+      "prompt_tokens": 2719,
+      "completion_tokens": 2639,
+      "total_tokens": 5358,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2287
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2079
+    }
+  }
+}

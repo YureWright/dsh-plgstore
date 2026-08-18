@@ -1,0 +1,37 @@
+{
+  "id": "dsh-qq-bridge",
+  "analyzedAt": "2026-08-18T14:51:19.444Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 @deepseek-ai/cordis、@deepseek-ai/dsh-llm 等核心包的 peerDependencies，README 提供 dsh plugin add 安装命令，且功能描述明确为 DSH 桥接插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-qq-bridge",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个把 QQ 机器人接入 DeepSeek Harness 的插件。装好后，你可以在 QQ 里直接和 AI 助手对话，每个 QQ 好友或群都有自己独立的聊天记忆。它还支持发图片、语音、PDF/TXT 文件，AI 也能把生成的文件发回 QQ。需要你用 QQ 开放平台创建一个机器人应用，拿到密钥填进配置。",
+      "level": "ok",
+      "risks": "它会连接 QQ 官方服务器收发消息，需要用到你的 QQ 机器人密钥（勿泄露）。它会在 ~/.dsh 目录下读写配置和会话数据，这些是 AI 的记忆文件。另外，它可能下载 QQ 里发来的附件，虽然有安全防护，但下载的内容来源不可控。整体没发现恶意行为。",
+      "postInstallNotes": "需要把 config.example.json 复制为 ~/.dsh/qq-bridge/config.json，填入 appId 和 clientSecret。然后在 ~/.dsh/profiles/web/cordis.patch.yml 里加上 dsh-qq-bridge 插件配置，最后重启 dsh web 服务。",
+      "notes": "注意：这个插件依赖的 @deepseek-ai/dsh-* 包还是 rc 版本，可能有不稳定因素。群聊功能需要机器人通过平台上线后才能用，沙箱里没法测试。"
+    },
+    "summaryZh": "把 QQ 私聊和群聊接入 DeepSeek Harness 的双向桥插件，每个对话有独立记忆，支持多媒体和文件收发。",
+    "usage": {
+      "prompt_tokens": 4747,
+      "completion_tokens": 1812,
+      "total_tokens": 6559,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1348
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4107
+    }
+  }
+}

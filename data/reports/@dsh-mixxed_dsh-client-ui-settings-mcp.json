@@ -1,0 +1,37 @@
+{
+  "id": "@dsh-mixxed/dsh-client-ui-settings-mcp",
+  "analyzedAt": "2026-08-16T14:49:58.376Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-mixxed/dsh-client-ui-settings-mcp",
+      "evidence": "dsh plugin --profile web add @dsh-mixxed/dsh-client-ui-settings-mcp"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页设置页加了一个“MCP 服务器管理器”。装上之后，你可以在网页上添加、编辑、启用/禁用、重连和删除 MCP 服务器，还能实时看到每个服务器是否在线、上面有哪些工具。它有自动重连、配置文件热同步（改文件不用重启就生效），支持中英文界面。",
+      "level": "ok",
+      "risks": "它会读写一个配置文件（$DSH_HOME/ui-settings-mcp.json），并能按你的设置启动 stdio 类型的 MCP 服务器——也就是能在你电脑上执行相应的命令。管理接口默认只允许本机访问，如果 dsh web 监听非本机地址，它会拒绝所有相关请求。另外，你添加的 MCP 服务器本身如果不可信，也可能带来风险，但这取决于你选择连接谁。",
+      "postInstallNotes": "重启 dsh web，并在浏览器里硬刷新（Ctrl+Shift+R），然后到 设置 → MCP Server Manager 里添加第一个服务器。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH Web 设置页中管理 MCP 服务器的插件，支持增删改查、启停、自动重连与配置热同步。",
+    "usage": {
+      "prompt_tokens": 3751,
+      "completion_tokens": 2333,
+      "total_tokens": 6084,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1927
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3111
+    }
+  }
+}

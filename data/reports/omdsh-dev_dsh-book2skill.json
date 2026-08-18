@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-book2skill",
+  "analyzedAt": "2026-08-17T12:01:06.290Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 包含 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 也给出了 DSH 插件安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "file:/absolute/path/dsh-book2skill-0.1.2.tgz",
+      "evidence": "dsh plugin --profile web add file:/absolute/path/dsh-book2skill-0.1.2.tgz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把一本电子书（EPUB/PDF）变成一套可复用的“技能”。它分 5 步走：获取书、解析分章、让 AI 深度阅读、生成 SKILL.md、安装到技能目录。每一步可能需要你在网页面板上确认，一共要你点头 3 次。适合想把一本书的内容沉淀成 AI 可调用知识的场景。",
+      "level": "ok",
+      "risks": "它会按你的指示读取本机书籍文件，并可能用你已有的 book-downloader 登录信息（读取 ~/.claude/skills/book-downloader/auth/zlib-cookies.json）去 z-lib 下载书；它会在本地开一个网页面板显示进度、让你审批；最后会把生成的技能文件写入 ~/.claude/skills、~/.codex/skills、~/kk_skill/skills 等目录。OCR 功能可配置本地或远程服务，但默认只连本地地址。没发现偷偷上传数据或恶意行为。",
+      "postInstallNotes": "安装后需要重启 `dsh web` 才能生效；不要手工把 book2skill 行写进 profile（插件包已声明 Bundle）；如用到 z-lib 下载，确保已有 book-downloader 的 cookies；如用远程 OCR，可设置 BOOK2SKILL_OCR_ENDPOINT 环境变量。",
+      "notes": "README 给出的安装方式是先 npm pack 再用本地 tarball 安装，npm 包发布权限为 restricted（未公开），市场直接通过包名安装可能不可用；另外插件依赖 DSH rc.3 版本，需确认环境兼容。"
+    },
+    "summaryZh": "把电子书转化为可复用 AI 技能的 DSH 插件：5 阶段工作流、3 个人工确认点，支持 EPUB/PDF、OCR，可生成 SKILL.md 并安装到 Claude/Codex 等技能目录。",
+    "usage": {
+      "prompt_tokens": 3391,
+      "completion_tokens": 5263,
+      "total_tokens": 8654,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4672
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2751
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "UNLINEARITY/dsh-code",
+  "analyzedAt": "2026-08-17T11:19:43.757Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 字段并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-code",
+      "evidence": "dsh plugin --profile cli add dsh-code@0.7.0"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的终端编码界面，类似 Claude Code 或 Codex CLI。你可以在终端里和 DeepSeek 模型对话、写代码、管理多个会话、切换模型、引用文件等，所有操作都在命令行里完成。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "需要安装 @deepseek-ai/dsh 预览版 CLI（Node ^22.19 || >=24）；首次使用可在 /model 中按 a 添加 API key，或提前设置 DEEPSEEK_API_KEY。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供类似 Claude Code 的终端编码界面，支持会话管理、模型切换、文件引用等。",
+    "usage": {
+      "prompt_tokens": 5820,
+      "completion_tokens": 1020,
+      "total_tokens": 6840,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 712
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5180
+    }
+  }
+}

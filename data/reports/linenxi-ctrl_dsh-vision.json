@@ -1,0 +1,37 @@
+{
+  "id": "linenxi-ctrl/dsh-vision",
+  "analyzedAt": "2026-08-17T11:25:55.480Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linenxi-ctrl/dsh-vision",
+      "evidence": "dsh plugin --profile web add @linenxi-ctrl/dsh-vision"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 看懂图片和屏幕。它会在网页右下角加一个鲸鱼按钮，点击后可以配置一个外部识图模型（比如 OpenAI、Gemini 等）的地址和密钥。之后你可以手动发图片让它识别，识别结果会自动发回当前对话；或者模型自己可以截屏并调用识图工具，把屏幕内容看懂后继续回答。插件支持多种常见识图 API 协议，还能自定义适配。",
+      "level": "ok",
+      "risks": "插件会把图片（包括截屏）发送到你配置的外部识图 API 服务，所以图片内容会经过第三方服务器。另外你填写的 API 密钥会保存在本机的配置文件里。总体风险可控，但别把敏感图片发给不信任的服务。",
+      "postInstallNotes": "安装后需要配置外部识图模型的地址（apiBase）、密钥（apiKey）和模型名（model），可以通过网页右下角鲸鱼按钮或直接编辑 settings.yaml 的 vision 段。如果要让模型自动截图识图，还需要按 README 运行安装脚本（node install.mjs）来添加 agent 工具。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加外挂识图能力，支持发送图片识别、模型自动截图识图，并可配置多种外部视觉模型 API。",
+    "usage": {
+      "prompt_tokens": 4246,
+      "completion_tokens": 677,
+      "total_tokens": 4923,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 240
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3606
+    }
+  }
+}

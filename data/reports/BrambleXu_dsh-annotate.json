@@ -1,0 +1,37 @@
+{
+  "id": "BrambleXu/dsh-annotate",
+  "analyzedAt": "2026-08-17T11:39:37.555Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/BrambleXu/dsh-annotate.git",
+      "evidence": "Add the plugin project to a Harness profile: `dsh plugin --profile demo add ./dsh-annotate`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 Chrome 或 Chromium 浏览器里直接圈选网页元素，把元素的选择器、DOM 信息、样式、无障碍数据、你的评论和截图一起打包发给 DeepSeek Harness 的 AI 助手，方便 AI 精确定位你遇到的问题。比如你发现网页上有个按钮样式不对，可以直接圈出它并写一句备注，AI 就能看到具体是哪个元素和它的代码。",
+      "level": "ok",
+      "risks": "它会在你电脑上启动一个本地 WebSocket 服务，用来连接浏览器扩展和 DSH。默认只监听 127.0.0.1，不对外网开放，所以其他人一般连不上。但如果你电脑里有恶意程序，理论上可能通过本机端口访问。另外，被你圈选的页面内容（包括截图和 DOM 信息）会发送给 AI 助手，如果你在敏感页面上使用，请注意信息保密。",
+      "postInstallNotes": "装完后还需要：1) 在 Chrome/Chromium 中打开 chrome://extensions，开启开发者模式，加载本插件的 browser-extension 目录；2) 在扩展弹窗中保持默认的桥接地址；3) 可选：把扩展 ID 填到插件的 allowedExtensionId 配置里，提高安全性。",
+      "notes": "无"
+    },
+    "summaryZh": "在浏览器里圈选网页元素、附上注释和截图，让 AI 助手精准理解前端问题的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 2463,
+      "completion_tokens": 4625,
+      "total_tokens": 7088,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4142
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1823
+    }
+  }
+}

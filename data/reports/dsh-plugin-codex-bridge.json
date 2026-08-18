@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-codex-bridge",
+  "analyzedAt": "2026-08-16T13:40:21.182Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 中声明了 dsh.bundle 字段，且 README 给出了 dsh plugin 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-codex-bridge",
+      "evidence": "dsh plugin --profile your-profile add dsh-plugin-codex-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以把 OpenAI Codex 的技能文件和配置导入到 DeepSeek Harness 里，让你不用手动迁移就能直接在 DSH 中使用 Codex 的各种技能，开箱即用。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取本地 Codex 的技能文件，但只用于注入到系统提示中，不会上传或泄露。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "将 OpenAI Codex 的技能和配置桥接到 DeepSeek Harness，实现零迁移复用。",
+    "usage": {
+      "prompt_tokens": 1733,
+      "completion_tokens": 532,
+      "total_tokens": 2265,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 277
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1093
+    }
+  }
+}

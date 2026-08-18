@@ -1,0 +1,37 @@
+{
+  "id": "dsh-notifier",
+  "analyzedAt": "2026-08-16T13:43:46.280Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle.patch、peerDependencies 依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add dsh-notifier 安装命令，符合 DSH 插件的真实证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-notifier",
+      "evidence": "dsh plugin add dsh-notifier"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的“消息推送小助手”。它把各种通知（比如任务结束、需要审批、出错了）通过一个统一的 API 发送到你的手机或聊天软件，支持 Telegram、飞书、钉钉、微信、Bark 等 25 种以上渠道。你还能直接在手机里回复消息来审批或指挥 agent，长任务会发心跳提醒，卡住了会报警，甚至能从通知卡片上直接点按钮停止任务。它还带一个只能在本地访问的网页管理台，方便你配置各种渠道。",
+      "level": "ok",
+      "risks": "需要联网把消息发送到各聊天平台，所以会访问网络；会把各渠道的 token（比如 Telegram bot token）保存在本地配置文件里；本地管理台虽然只监听 127.0.0.1，但如果你在共享电脑上使用，其他人可能看到管理界面（有 Bearer token 保护，风险可控）。此外插件会读写 DSH 的配置文件（cordis.patch.yml）来插入自身配置。",
+      "postInstallNotes": "安装后需要在 DSH 的 profile patch（cordis.patch.yml）里至少配置一个通知渠道（比如 Telegram 的 botToken 和 chatId），否则插件不会真正推送消息。也可以使用本地 Web 管理台在网页上配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 统一通知推送插件，支持 25+ 渠道、远程审批和手机遥控，一个 notify() API 打天下。",
+    "usage": {
+      "prompt_tokens": 4190,
+      "completion_tokens": 897,
+      "total_tokens": 5087,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 434
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3550
+    }
+  }
+}

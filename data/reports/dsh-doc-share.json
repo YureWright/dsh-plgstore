@@ -1,0 +1,37 @@
+{
+  "id": "dsh-doc-share",
+  "analyzedAt": "2026-08-16T14:50:34.744Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/dsh-client-runtime 及官方 UI 包，README 提供了 dsh plugin add 安装命令，确认为可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/dawsondx/dsh-doc-share.git",
+      "evidence": "git clone https://github.com/dawsondx/dsh-doc-share.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness（DSH）里的聊天记录整理成一份像样的报告：自动加上封面、内容摘要、统计信息（对话轮数、字数等），并且按每一轮提问和回答分成章节。你可以选择要包含哪些轮次，调整页面宽度和字号，最后导出成 PNG 图片、单个 HTML 文件、PDF 或者 Markdown。适合把对话做成正式文档发给别人，或留档归档。",
+      "level": "ok",
+      "risks": "插件会读取当前会话的对话内容（包括代码块、工具调用等），以及从页面 DOM 中提取信息来生成报告，这些操作都在你本地浏览器里进行，不会上传到外部服务器。它会把你的导出偏好保存在 localStorage（浏览器本地存储）里。导出的 PDF/HTML/PNG 文件中会包含你勾选的对话内容，请注意不要把含敏感信息的文件随意分享出去。此外，插件通过官方插槽挂载，没有访问系统文件的权限。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。重启后进入任意会话，在右上角找到「报告化分享」按钮即可开始使用。",
+      "notes": "该插件针对 DSH 0.1.0-rc.6 版本开发，若 DSH 升级到更新版本，可能需要等待插件适配。"
+    },
+    "summaryZh": "把 DSH 对话重排成带封面、摘要统计和章节的报告，一键导出 PNG/HTML/PDF/Markdown。",
+    "usage": {
+      "prompt_tokens": 3829,
+      "completion_tokens": 4421,
+      "total_tokens": 8250,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3937
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3189
+    }
+  }
+}

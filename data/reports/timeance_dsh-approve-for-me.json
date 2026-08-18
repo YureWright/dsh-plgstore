@@ -1,0 +1,37 @@
+{
+  "id": "timeance/dsh-approve-for-me",
+  "analyzedAt": "2026-08-17T11:30:03.620Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 包含 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件的证据要求。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-approve-for-me@latest",
+      "evidence": "dsh plugin --profile web add dsh-approve-for-me@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是用来帮你在 DeepSeek Harness 里自动审批沙箱权限申请的。你设定好规则（比如允许哪些命令开头的东西），插件就会按规则自动放行；遇到拿不准的还可以让 AI 帮忙判断，或者转回给你人工审批。每次只给一次性权限，不会永久放开。",
+      "level": "caution",
+      "risks": "它会读取你的 DSH 配置文件（比如 $DSH_HOME\\settings.yaml），并参与沙箱升级的审批流程。如果你启用了 LLM 审核，它可能会把命令内容发给对应的模型服务商。如果规则配置太宽，可能自动批准一些你本不想批准的命令，存在误放行风险。另外它是第三方 beta 插件，未经独立安全审计。",
+      "postInstallNotes": "装完必须先在设置或 YAML 里配置 commandPrefixes（默认是空的，不会自动批准任何命令），然后为对应会话选择 Approve for me 这个访问预设。如果是 headless 环境，用 YAML 配置即可。",
+      "notes": "经评估为真正的 DSH 插件；当前为 beta 版本，且 README 注明未经独立安全审计，建议谨慎使用并保持规则收窄。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供基于规则（可选 LLM 审核与人工兜底）的沙箱升级自动审批插件。",
+    "usage": {
+      "prompt_tokens": 4032,
+      "completion_tokens": 1285,
+      "total_tokens": 5317,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 829
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3392
+    }
+  }
+}

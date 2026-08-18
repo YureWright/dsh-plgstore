@@ -1,0 +1,37 @@
+{
+  "id": "mnemon-dev/mnemon",
+  "analyzedAt": "2026-08-16T11:41:25.221Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle（指向 cordis.patch.yml）并依赖 dsh-mnemon，是 DSH 插件包装器。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@mnemon-dev/dsh-mnemon",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 Mnemon 的记忆功能装进 DSH。简单说，它能让你的 AI 助手记住跨会话的信息，比如之前聊过的内容，以后还能想起来。它用知识图谱的方式存储记忆，由你的 LLM 来当‘大脑’决定记什么、忘什么。",
+      "level": "ok",
+      "risks": "它会在你的项目或用户目录里添加一些配置和钩子文件，用来触发记忆功能。这些文件本身没有危险，但记忆的内容会通过你的 LLM 服务处理，所以别让它记住太敏感的东西。没发现其他明显风险。",
+      "postInstallNotes": "无",
+      "notes": "该插件是 Mnemon 的 DSH 集成包，版本 0.1.0，比较早期；README 主要介绍独立工具的使用，没提到 DSH 安装，具体集成方式可查看包内 cordis.patch.yml。"
+    },
+    "summaryZh": "为 AI 代理提供跨会话持久记忆的 DSH 插件，采用 LLM 监督与知识图谱技术。",
+    "usage": {
+      "prompt_tokens": 3103,
+      "completion_tokens": 2634,
+      "total_tokens": 5737,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2287
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2463
+    }
+  }
+}

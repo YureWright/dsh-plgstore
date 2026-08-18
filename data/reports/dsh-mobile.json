@@ -1,0 +1,37 @@
+{
+  "id": "dsh-mobile",
+  "analyzedAt": "2026-08-18T14:49:34.419Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-host-webserver，README 提供 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mobile@alpha",
+      "evidence": "dsh plugin --profile web add dsh-mobile@alpha"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你能用手机（Android 手机 App 或手机浏览器）远程连接电脑上运行的 DeepSeek Harness。你可以实时查看和操作电脑上的对话、工作区、设置，手机和电脑数据同步。它通过局域网 HTTPS 加密连接，能自动发现电脑，不用手动输入 IP，还支持自定义手机界面。",
+      "level": "ok",
+      "risks": "它会开启电脑的局域网访问功能，让同一网络下的手机可以连上。配对成功的手机会获得控制 DeepSeek Harness 的权限，相当于能控制电脑上的 AI。敏感数据（如证书、设备信息）保存在电脑的 $DSH_HOME/mobile-access/ 目录。请在可信网络下使用，并注意撤销丢失手机的权限。未发现窃取数据或外连风险。",
+      "postInstallNotes": "安装后先运行 `dsh plugin --profile web exec dsh-mobile setup` 设置局域网地址，然后启动 DSH，在左下角『移动访问』中开启功能并生成密钥，最后用 Android App 扫码或浏览器访问配对。",
+      "notes": "Alpha 版本，当前仅支持 Android 10+；手机浏览器需要信任自签名证书才能访问；升级 DSH 后可能需要同步升级此插件。"
+    },
+    "summaryZh": "在手机上安全、实时地使用电脑中的 DeepSeek Harness（支持 Android App 和手机浏览器）。",
+    "usage": {
+      "prompt_tokens": 3998,
+      "completion_tokens": 1952,
+      "total_tokens": 5950,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1513
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3358
+    }
+  }
+}

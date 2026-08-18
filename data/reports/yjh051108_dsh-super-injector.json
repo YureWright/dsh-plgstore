@@ -1,0 +1,37 @@
+{
+  "id": "yjh051108/dsh-super-injector",
+  "analyzedAt": "2026-08-16T11:56:07.001Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，README 提供了 dsh plugin add 安装命令，且 peerDependencies 依赖 @deepseek-ai/dsh-tools，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/yjh051108/dsh-super-injector.git",
+      "evidence": "dsh plugin --profile web add github:yjh051108/dsh-super-injector"
+    },
+    "evaluationReport": {
+      "intro": "这个插件相当于 DSH 生态的「游戏模组注入器」（类似 BepInEx）。它可以在不重启、不改官方配置的情况下，把本地开发好的插件包 '热插拔' 进正在运行的程序里，并支持热重载、一键卸载、路由自愈、插件管理界面等。简单说，就是给开发者和高级用户一个方便折腾插件的'手术台'，写代码、构建、注入、测试、卸载，一气呵成，不用每次改代码都重启整个程序。",
+      "level": "ok",
+      "risks": "它会修改 DSH 运行时的内部状态（注入插件、清理路由、重建任务等），操作不当可能影响程序稳定性；也会在本地创建符号链接（junction）和持久化清单文件（~/.dsh/super-injector/registry.json），如果注入来源不明的插件包，可能带来风险。作为开发者工具，这些风险在预期范围内，建议只注入可信的插件包。",
+      "postInstallNotes": "无",
+      "notes": "package.json 标记为 private:true，npm 上可能没有发布这个包，建议按 README 的方式 B 使用 git 命令安装；它依赖 DSH 0.1.0-rc.6 及以上版本，且自带 cordis.patch.yml 补丁，安装前最好备份配置。"
+    },
+    "summaryZh": "DSH 生态的超级模组注入器：免重启热插拔插件、热重载、一键卸载与路由自愈，打造插件开发闭环全家桶。",
+    "usage": {
+      "prompt_tokens": 5078,
+      "completion_tokens": 3269,
+      "total_tokens": 8347,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2775
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4438
+    }
+  }
+}

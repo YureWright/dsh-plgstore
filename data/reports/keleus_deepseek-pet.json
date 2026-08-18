@@ -1,0 +1,37 @@
+{
+  "id": "keleus/deepseek-pet",
+  "analyzedAt": "2026-08-17T11:16:03.017Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 与 dsh 客户端运行时，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/keleus/deepseek-pet.git",
+      "evidence": "dsh plugin --profile web add github:keleus/deepseek-pet"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会给 DeepSeek Harness 的网页界面加一只可爱的桌宠。它会根据你当前的任务状态（比如思考、写代码、搜索、完成等）自动换表情，还会显示文字气泡、晃动身体，并且你可以拖动它、缩放它、和它互动。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在网页前端运行，不访问你的个人文件，也没有向外部服务器发送数据的迹象。",
+      "postInstallNotes": "安装后需要重启网页服务或刷新页面才能看到桌宠。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 网页里添加一只会随任务状态变表情、可拖拽缩放的互动桌宠。",
+    "usage": {
+      "prompt_tokens": 2671,
+      "completion_tokens": 800,
+      "total_tokens": 3471,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 483
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2031
+    }
+  }
+}

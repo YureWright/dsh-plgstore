@@ -1,0 +1,37 @@
+{
+  "id": "SeverusZh/dsh-yolo-mode",
+  "analyzedAt": "2026-08-17T12:12:17.961Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.client 并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，属于标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-yolo-mode",
+      "evidence": "dsh plugin --profile web add dsh-yolo-mode"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的一个“自动审批”工具。平时 AI 助手在沙箱里想做一些要更高权限的操作（比如写文件、执行命令）时，会弹窗等人批准。装了它之后，它会用一个 AI 模型当裁判，根据你选的严格程度，自动判断“放行”、“拒绝”还是“转人工”。它还提供一套预设（从严格到完全放行）和你自己调权限等级的功能，所有决定都会记录到日志里。",
+      "level": "ok",
+      "risks": "它会代替你自动决定是否给 AI 助手更高权限，如果设置得太宽松（比如用 yolo 预设），AI 可能在不经过你确认的情况下执行危险操作。它会记录每次审批的日志到本地文件（默认在临时目录），如果你配置了外部裁判模型，审批请求和上下文可能发给对应的模型服务商。它本身是 fail-closed 的，没把握时不会放行。",
+      "postInstallNotes": "装完后需要设置裁判模型（provider 和 model），否则自动审批不会生效（不确定时按错误处理，转人工）。也可以按需在 DSH 设置页或 cordis.patch.yml 里调整预设和权限层级。",
+      "notes": "无"
+    },
+    "summaryZh": "用大模型自动审批沙箱升权申请的 DeepSeek Harness 插件，支持多档预设、自定义权限层和 Web 配置界面。",
+    "usage": {
+      "prompt_tokens": 3655,
+      "completion_tokens": 1739,
+      "total_tokens": 5394,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1290
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3015
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "lssyd20070106/dsh-ui-preset-enhance",
+  "analyzedAt": "2026-08-17T11:42:31.946Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/client 配置并注入 @deepseek-ai/dsh-client-* 核心包，README 给出 dsh plugin add 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/lssyd20070106/dsh-ui-preset-enhance.git",
+      "evidence": "npx --yes @deepseek-ai/dsh plugin --profile web add github:lssyd20070106/dsh-ui-preset-enhance"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness WebUI 用的界面增强插件。你可以换壁纸（本地或网络图片）、调透明度和模糊、改主题颜色、保存常用 Prompt 模板，还能直接看当前对话的 Token/上下文占用情况，并手动执行压缩上下文的操作。",
+      "level": "ok",
+      "risks": "插件会把壁纸、主题和 Prompt 预设保存在浏览器的 localStorage 里；如果你使用网络图片做壁纸，访问时图片服务器会收到正常的网络请求信息。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要完全关闭并重新启动 DSH Web，浏览器按 Ctrl+F5 刷新，然后打开 设置 → 界面增强 进行配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH WebUI 第三方界面增强插件，提供自定义壁纸、主题、Prompt 预设、Token/Context 查看和手动 Compact 功能。",
+    "usage": {
+      "prompt_tokens": 3102,
+      "completion_tokens": 833,
+      "total_tokens": 3935,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 458
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2462
+    }
+  }
+}

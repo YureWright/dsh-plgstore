@@ -1,0 +1,37 @@
+{
+  "id": "dsh-live2d-pets",
+  "analyzedAt": "2026-08-16T14:54:36.261Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 配置，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，且 README 给出 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-live2d-pets",
+      "evidence": "在终端执行（`web` profile 首次使用时自动初始化）：dsh plugin --profile web add dsh-live2d-pets"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的 Live2D 桌宠插件。装好之后，你的 DSH 网页界面右下角会冒出一只小宠物，它会根据 agent 的状态（思考、空闲、出错、完成等）做出不同表情和气泡，还会跟着你的鼠标转动、可以被抚摸和拖动。你可以给它切换人设（比如傲娇、元气、病娇），也可以自定义模型和台词，让它更有陪伴感。",
+      "level": "ok",
+      "risks": "它会往你电脑的用户目录写配置文件（比如 ~/.dsh/settings.yaml 和 $DSH_HOME/live2d-pet/ 下的 JSONC），用来保存设置和自定义模型。加载模型时可能会联网下载 Live2D 模型，如果你用了外网 URL，模型数据会经过第三方服务器。另外它会通过 SSE 收到 agent 的状态事件，但只用于宠物表现，不会主动外传。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 Live2D 桌宠插件，让 Agent 变成有性格的陪伴，支持状态镜像、人设切换、自定义模型与互动。",
+    "usage": {
+      "prompt_tokens": 4078,
+      "completion_tokens": 561,
+      "total_tokens": 4639,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 142
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3438
+    }
+  }
+}

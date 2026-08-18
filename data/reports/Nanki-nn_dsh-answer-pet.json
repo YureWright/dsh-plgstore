@@ -1,0 +1,37 @@
+{
+  "id": "Nanki-nn/dsh-answer-pet",
+  "analyzedAt": "2026-08-17T11:37:17.121Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，main 指向 .dsh-plugin/index.mjs，README 提供了 dsh plugin add 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Nanki-nn/dsh-answer-pet.git",
+      "evidence": "安装命令：`dsh plugin --profile web add github:Nanki-nn/dsh-answer-pet`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness Web 版加了一只桌面宠物（默认蓝鲸，还有橘猫和银渐层猫）。当 AI 回答问题时，宠物会实时显示进度：思考、打字、调用工具、完成等；还能看到模型执行轨迹、输出 token 数和速度。每个正在运行的会话都有一张独立的进度卡，可以拖拽宠物、点击眨眼、折叠卡片。状态卡和轨迹只显示简短摘要，不泄露完整命令或参数。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在浏览器页面显示宠物和状态卡，会把宠物位置等偏好存在浏览器本地存储（localStorage）里；不会读取敏感文件，也不加载外部图片资源。",
+      "postInstallNotes": "安装后需要重启 `dsh web`，再刷新浏览器页面；可在 `<dshHome>/settings.yaml` 的 `answer-pet` 配置项下调整主题、大小、位置、透明度等。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 添加可扩展的回答状态桌面宠物，支持多主题、会话进度和模型执行轨迹展示。",
+    "usage": {
+      "prompt_tokens": 3855,
+      "completion_tokens": 1307,
+      "total_tokens": 5162,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 898
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3215
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "jelly-000/dsh-balance-monitor",
+  "analyzedAt": "2026-08-17T11:33:01.260Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/jelly-000/dsh-balance-monitor.git",
+      "evidence": "dsh plugin --profile web add \"github:<you>/dsh-balance-monitor#main\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 dsh 的侧边栏底部（设置上方）显示你的 DeepSeek 账户余额、一条余额剩余比例条，以及当天已经花了多少钱。它会每 60 秒查询一次官方余额接口，并在切回标签页时刷新，样式简洁，用的是官方设计令牌。",
+      "level": "ok",
+      "risks": "它会读取你本地的 DeepSeek API Key（$DSH_HOME/.credentials.yaml 或环境变量 DEEPSEEK_API_KEY）来查询余额，但 key 只在服务端使用，不会发送到浏览器；网络请求只发给官方余额接口。状态文件保存在本地。没发现明显风险。",
+      "postInstallNotes": "确保 DeepSeek API Key 可用（环境变量 DEEPSEEK_API_KEY 或 $DSH_HOME/.credentials.yaml），然后重启 Web UI（dsh --profile web）。",
+      "notes": "注意：README 提到从 npm 安装要等“发布后”，目前建议用 git 方式安装；今日花费基于当日首次余额基线计算，充值等操作可能影响数值。"
+    },
+    "summaryZh": "在 dsh 侧边栏底部显示 DeepSeek 账户余额、剩余比例和今日花费的极简插件。",
+    "usage": {
+      "prompt_tokens": 1981,
+      "completion_tokens": 2719,
+      "total_tokens": 4700,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2304
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1341
+    }
+  }
+}

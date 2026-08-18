@@ -1,0 +1,37 @@
+{
+  "id": "dsh-messager",
+  "analyzedAt": "2026-08-16T13:26:37.165Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai 核心包，README 给出了 dsh plugin add 安装命令，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-messager",
+      "evidence": "README 中安装说明：dsh plugin --profile web add <插件路径>，但该路径用于本地安装；package.json 的 name 为 dsh-messager，可通过 npm 安装。"
+    },
+    "evaluationReport": {
+      "intro": "这是一款 DSH 通知插件：当你的任务需要你处理、任务完成或出错时，它会在电脑上弹出系统通知或浏览器通知；如果你配置了飞书、企业微信、Discord、钉钉或 Telegram 的机器人，它还能把这些提醒发到你的手机或聊天软件上，这样就不用一直盯着 DSH 界面了。",
+      "level": "ok",
+      "risks": "没发现明显风险。它可能会读取你的任务状态并在你配置的第三方聊天工具中发送消息，但这些都需要你主动填写 webhook 地址或机器人令牌。",
+      "postInstallNotes": "安装后需要在 DSH 设置页的「通知&信使」分区或直接编辑 settings.yaml 来启用和配置你想要的提醒渠道（如系统通知默认开启，第三方渠道需自行填写 webhook/token）。如需浏览器通知，还需在浏览器中授权通知权限。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 任务状态通知插件，支持系统通知、浏览器通知及飞书/企业微信/Discord/钉钉/Telegram 多渠道推送。",
+    "usage": {
+      "prompt_tokens": 5761,
+      "completion_tokens": 840,
+      "total_tokens": 6601,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 438
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5121
+    }
+  }
+}

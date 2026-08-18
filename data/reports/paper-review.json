@@ -1,0 +1,37 @@
+{
+  "id": "paper-review",
+  "analyzedAt": "2026-08-16T13:36:46.157Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/dsh-client-runtime，且 README 提供了 dsh plugin add 安装命令，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "paper-review",
+      "evidence": "dsh plugin --profile readPaper add paper-review"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个论文阅读面板。你可以上传 PDF 论文，它会用本地的 poppler 工具把 PDF 转成结构清晰的文字（保留双栏、标题、表格、上下标、目录），图片和公式会变成图片显示，还能选中一段文字直接问模型问题。另外可以把论文保存成项目，方便以后继续读。",
+      "level": "ok",
+      "risks": "它会在你电脑上运行 poppler 工具（pdftotext、pdftoppm、pdfimages）来解析 PDF，转换后的文档存放在 ~/.dsh/paper-review/ 目录。论文只在本地处理，不会发送到外部服务器，但需要你系统里安装 poppler 才能用。没发现明显风险。",
+      "postInstallNotes": "需要确保系统已安装 poppler 工具（macOS 用 brew install poppler，Debian/Ubuntu 用 sudo apt-get install poppler-utils），然后按 README 用对应的 profile 启动 harness。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 论文阅读插件：PDF 转结构化文本、公式图表渲染、选中提问、项目化保存论文。",
+    "usage": {
+      "prompt_tokens": 2574,
+      "completion_tokens": 1456,
+      "total_tokens": 4030,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1066
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1934
+    }
+  }
+}

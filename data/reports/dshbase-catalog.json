@@ -1,0 +1,37 @@
+{
+  "id": "dshbase-catalog",
+  "analyzedAt": "2026-08-18T14:52:38.782Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dshbase-catalog",
+      "evidence": "dsh plugin add dshbase-catalog"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 对话框里直接搜索和浏览插件市场。输入关键词就能搜插件、查某个插件的安装命令和状态、按分类列插件，还能看市场的统计数据。相当于内置了一个插件目录查询工具。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要使用内置的目录快照，不涉及隐私文件；安装命令提示可能会展示外部链接，但属于正常功能。",
+      "postInstallNotes": "无",
+      "notes": "README 提到数据快照每日刷新，但未说明是否运行时联网；另外 package.json 描述插件数为 1700+，README 写 1100+，可能存在偏差，以实际查询结果为准。"
+    },
+    "summaryZh": "在 DeepSeek Harness 里直接搜索、浏览并获取 1100+ 社区插件的安装命令的目录查询插件。",
+    "usage": {
+      "prompt_tokens": 1601,
+      "completion_tokens": 939,
+      "total_tokens": 2540,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 607
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 961
+    }
+  }
+}

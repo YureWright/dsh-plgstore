@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-liangshen",
+  "analyzedAt": "2026-08-17T11:08:27.886Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，依赖 @deepseek-ai/cordis，README 提供 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-liangshen",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-liangshen"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加一个叫“梁神模式”的 AI 预设。它会让 AI 在第一次请求时只使用两个基础工具（bash 和文件编辑器），等 AI 的思考方式稳定后，再切换成完整工具模式，从而提升任务成功率。它会在启动时自动把预设文件同步到你的用户目录下的 .dsh 配置文件夹里。",
+      "level": "ok",
+      "risks": "会往你的用户目录下的 ~/.dsh/.agent-presets 写入预设文件，并修改 DSH 的配置文件（cordis.patch.yml）。该预设会让 AI 使用 bash 工具执行命令，这是 DSH 本身就有的能力，但请注意你是在本机上运行的，AI 有权限执行命令。",
+      "postInstallNotes": "完全重启 dsh web，打开一个新会话，然后在预设选择器里选“梁神模式”。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 提供“梁神模式”AI 预设，通过两阶段工具控制提升任务成功率，一键安装。",
+    "usage": {
+      "prompt_tokens": 3264,
+      "completion_tokens": 2012,
+      "total_tokens": 5276,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1650
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2624
+    }
+  }
+}

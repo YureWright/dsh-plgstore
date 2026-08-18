@@ -1,0 +1,37 @@
+{
+  "id": "vlln/dsh-navbar",
+  "analyzedAt": "2026-08-17T11:15:54.282Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 含 @deepseek-ai/cordis，README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:vlln/dsh-navbar#main",
+      "evidence": "推荐：git 源一行安装（构建产物已入库，git 源不触发构建）：dsh plugin --profile web add \"github:vlln/dsh-navbar#main\""
+    },
+    "evaluationReport": {
+      "intro": "这是一个对话节点导航条插件，会在对话页面右侧显示一串小圆点，每个圆点对应一条用户消息。鼠标悬停时能预览消息内容，点击圆点就快速跳到对应的对话位置，不用自己滚动翻找。它还带一个'精选'功能，可以把某条助手回复标记为精选，导航条上会用金色圆盘显示。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器里读取和显示当前对话的内容，并把精选状态存在浏览器本地（localStorage），不会上传到别处。",
+      "postInstallNotes": "装完后需要重启 web 界面才能生效；可以在设置页的插件面板里停用/启用。",
+      "notes": "无"
+    },
+    "summaryZh": "对话节点导航条，在对话区右侧显示用户消息节点，支持悬停预览和点击跳转，还有消息精选功能。",
+    "usage": {
+      "prompt_tokens": 2075,
+      "completion_tokens": 1891,
+      "total_tokens": 3966,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1535
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1435
+    }
+  }
+}

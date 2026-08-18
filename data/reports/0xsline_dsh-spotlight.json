@@ -1,0 +1,37 @@
+{
+  "id": "0xsline/dsh-spotlight",
+  "analyzedAt": "2026-08-17T11:44:15.939Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 提供了 dsh plugin add 安装命令，且代码引用 DSH Web 的服务。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@0xsline/dsh-spotlight",
+      "evidence": "dsh plugin --profile web add \"@0xsline/dsh-spotlight\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页版加了一个快捷命令面板。你按一下键盘快捷键（Mac 上是 ⌘K，其他是 Ctrl+K），就能弹出一个搜索框，在里面快速找到并运行各种操作，比如斜杠命令、最近的会话、界面上的按钮、甚至其他插件的设置，全程不用动鼠标。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你浏览器的页面里加一个小界面，并读取当前页面的结构来识别可操作的元素；你的快捷键设置存在浏览器本地，不会发到服务器。",
+      "postInstallNotes": "启动 DSH Web 后按 ⌘K 或 Ctrl+K 即可打开命令面板；想改快捷键的话，在面板底部点击 Shortcut 重新录制。",
+      "notes": "无"
+    },
+    "summaryZh": "键盘优先的 DSH Web 命令面板，一键搜索并运行斜杠命令、会话和界面操作。",
+    "usage": {
+      "prompt_tokens": 2206,
+      "completion_tokens": 1452,
+      "total_tokens": 3658,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1112
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1566
+    }
+  }
+}

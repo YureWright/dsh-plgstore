@@ -1,0 +1,37 @@
+{
+  "id": "dsh-with-pencil",
+  "analyzedAt": "2026-08-16T13:24:30.295Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 配置，peerDependencies 依赖 @deepseek-ai/dsh-tools，且 README 提供了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-with-pencil@beta",
+      "evidence": "dsh plugin --profile web add dsh-with-pencil@beta"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能直接使用 Pencil（一个设计工具）的画布。装上之后，AI 助手可以打开、查看和编辑 .pen 设计文件，还能生成截图、导出 HTML 或节点，就像在对话里内置了一个设计编辑器。它不会在启动时自动打开画布，只有需要时才加载；切换对话时画布会隐藏，换回来还能恢复原样。需要手动下载官方 Pencil 编辑器并做一点配置才能用。",
+      "level": "ok",
+      "risks": "它会读取和修改你在工作区里指定的 .pen 设计文件，也可能在工作区内创建或导入文件（比如图片）。浏览器登录凭据会存到 ~/.dsh/dsh-with-pencil/state.json，但权限设置为 0600，只有你能读。除非你手动配置 DSH_PEN_MCP_APP，否则不会自动连外部应用。没有发现恶意行为。",
+      "postInstallNotes": "安装后需要：1) 从官方 pen.dev 发布源下载 editor-bundle-v0.1.94.zip，解压后把 DSH_PEN_EDITOR_DIR 环境变量指向包含 index.html 的 out 目录；2) 根据需要设置 DSH_PEN_FILE 等环境变量；3) 重启 DSH。",
+      "notes": "这是 beta 版本，且插件本身不包含官方编辑器资源，需要用户自行下载。如果不配置 DSH_PEN_EDITOR_DIR，画布无法正常打开。"
+    },
+    "summaryZh": "一个把 Pencil 设计画布集成进 DeepSeek Harness 的社区插件（beta），让 AI 能直接编辑 .pen 文件、截图并导出。",
+    "usage": {
+      "prompt_tokens": 3464,
+      "completion_tokens": 1329,
+      "total_tokens": 4793,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 817
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2824
+    }
+  }
+}

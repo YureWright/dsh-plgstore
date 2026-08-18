@@ -1,0 +1,37 @@
+{
+  "id": "@anysearch-ai/dsh",
+  "analyzedAt": "2026-08-16T13:41:00.025Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 补丁，依赖 @deepseek-ai/cordis 和 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@anysearch-ai/dsh",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add @anysearch/dsh"
+    },
+    "evaluationReport": {
+      "intro": "这是 AnySearch 官方为 DeepSeek Harness 开发的网页搜索插件。装上之后，Harness 自带的 web_search 功能会通过 AnySearch 来搜，还额外提供高级搜索工具，比如发现可用的搜索分类、垂直搜索、批量搜索（一次搜 1 到 5 个），也可以选择把网页正文清理后给模型看。不配 API key 也能用，用的是 AnySearch 的匿名额度。",
+      "level": "ok",
+      "risks": "它会向 AnySearch 的服务器（api.anysearch.com）发送搜索请求，所以你的搜索词可能会被 AnySearch 记录。如果配置了 API key，key 会存放在 ~/.dsh/.credentials.yaml 文件里（默认路径），注意别泄露。另外它需要访问网络，并且会修改 DSH 的 profile 配置，但这是正常行为。除此之外没发现明显风险。",
+      "postInstallNotes": "装完即可用。如果想用账号级配额，需要在 ~/.dsh/.credentials.yaml 里添加 ANYSEARCH_API_KEY 配置，或者设置 ANYSEARCH_API_KEY 环境变量（环境变量优先级更高）。",
+      "notes": "注意 README 中的安装命令写的是 @anysearch/dsh，但 package.json 里的包名是 @anysearch-ai/dsh，安装时请以 npm 实际包名为准。另外 DeepSeek Harness 还在预览阶段，可能有兼容性变化；本插件目前没有提供 anysearch_extract 工具。"
+    },
+    "summaryZh": "AnySearch 官方为 DeepSeek Harness 开发的网页搜索插件，提供原生 web_search 支持和高级搜索工具。",
+    "usage": {
+      "prompt_tokens": 3252,
+      "completion_tokens": 4434,
+      "total_tokens": 7686,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3926
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2612
+    }
+  }
+}

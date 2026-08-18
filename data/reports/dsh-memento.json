@@ -1,0 +1,37 @@
+{
+  "id": "dsh-memento",
+  "analyzedAt": "2026-08-18T14:51:01.194Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle/client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-memento",
+      "evidence": "dsh plugin --profile <name> add dsh-memento          # npm package (0.2.0+, published)"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个'记忆'功能。它能让 AI 记住你告诉它的偏好和习惯，下次新会话也能想起来。每次写入都要你确认，而且所有操作都有记录。数据只存在你自己电脑上，不上传任何地方。",
+      "level": "ok",
+      "risks": "它会在你的电脑上创建一个本地数据库文件（默认在 ~/.dsh 下）来存记忆内容。因为记忆可能涉及你的个人信息，所以用的时候注意别让它记太敏感的东西。但它不联网，也不会偷偷上传数据。",
+      "postInstallNotes": "装完后在 Web 界面让模型记住点东西，批准写入，然后开个新会话问问它记不记得。可选：在 cordis.patch.yml 里调整 writePolicy 和预算等配置。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-memento 是一个带审批门控、有审计记录的本地记忆插件，让 AI 在会话之间记住用户偏好和项目约定。",
+    "usage": {
+      "prompt_tokens": 4249,
+      "completion_tokens": 1349,
+      "total_tokens": 5598,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 993
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3609
+    }
+  }
+}

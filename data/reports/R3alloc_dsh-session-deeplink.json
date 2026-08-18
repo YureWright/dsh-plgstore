@@ -1,0 +1,37 @@
+{
+  "id": "R3alloc/dsh-session-deeplink",
+  "analyzedAt": "2026-08-17T11:40:58.208Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-session-deeplink",
+      "evidence": "dsh plugin --profile web add dsh-session-deeplink"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页版加了一个小功能：你可以在网址里带一个 ?session=xxx 参数，打开网页时就会直接跳到那个会话；你在网页里切换会话时，地址栏的链接也会自动跟着更新，方便你复制给别人分享。它完全在浏览器里运行，不给后台增加额外服务。",
+      "level": "ok",
+      "risks": "没发现明显风险。注意：如果你把带 session 参数的链接发给别人，只要对方能访问你本机的 DSH 服务，就能直接打开你分享的会话。",
+      "postInstallNotes": "装完后重启 dsh web 使插件生效。",
+      "notes": "基于 DeepSeek Harness 0.1.0-rc.6 开发，DeepSeek Harness 还在预览阶段，后续升级可能需要同步更新插件。"
+    },
+    "summaryZh": "让 DSH Web 客户端支持通过 URL 直接打开和分享指定会话的插件。",
+    "usage": {
+      "prompt_tokens": 2197,
+      "completion_tokens": 1624,
+      "total_tokens": 3821,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1281
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1557
+    }
+  }
+}

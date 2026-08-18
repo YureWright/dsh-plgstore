@@ -1,0 +1,37 @@
+{
+  "id": "@hemo94931/dsh-timeline",
+  "analyzedAt": "2026-08-16T14:47:09.213Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@hemo94931/dsh-timeline",
+      "evidence": "dsh plugin --profile web add @hemo94931/dsh-timeline"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 dsh 的网页聊天界面里，在消息列表右侧加一条竖直的时间轴。每条你发的消息都会有一个小刻度，鼠标悬停能看到消息摘要和序号，点击刻度能直接跳到那条消息，还能用上下箭头逐条翻看。当前浏览到哪条消息，刻度会高亮显示，看起来更直观。它用的是 dsh 自己的颜色主题，深色浅色模式都能自适应。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你的浏览器界面里加一些视觉元素和交互，但不会额外上传你的数据，也不碰系统文件。",
+      "postInstallNotes": "无。装好之后下次启动 dsh web 会自动加载。",
+      "notes": "无"
+    },
+    "summaryZh": "在 dsh 网页聊天界面中为会话消息添加可跳转、可导航的竖直时间轴刻度条。",
+    "usage": {
+      "prompt_tokens": 2383,
+      "completion_tokens": 791,
+      "total_tokens": 3174,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 467
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1743
+    }
+  }
+}

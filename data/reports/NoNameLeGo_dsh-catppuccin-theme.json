@@ -1,0 +1,37 @@
+{
+  "id": "NoNameLeGo/dsh-catppuccin-theme",
+  "analyzedAt": "2026-08-17T11:34:35.811Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@nonamelego/dsh-catppuccin",
+      "evidence": "dsh plugin --profile web add @nonamelego/dsh-catppuccin"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面换 Catppuccin 配色主题的插件，内置 Latte、Frappé、Macchiato、Mocha 四套主题，还带一个可以开关的毛玻璃效果，让顶栏、侧边栏、输入框等变成磨砂玻璃，设置会自动保存。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "装完重启 dsh web；进入设置 → 常规，在“外观”下方找到 Catppuccin 行选择主题；需要玻璃效果可打开“玻璃质感”开关。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面提供 Catppuccin 四套配色主题和可调节的毛玻璃皮肤。",
+    "usage": {
+      "prompt_tokens": 5105,
+      "completion_tokens": 1298,
+      "total_tokens": 6403,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 981
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4465
+    }
+  }
+}

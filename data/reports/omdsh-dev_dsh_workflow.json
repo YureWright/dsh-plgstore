@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh_workflow",
+  "analyzedAt": "2026-08-17T11:12:52.114Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:dsh-external/dsh_workflow#main",
+      "evidence": "dsh plugin --profile web add \"github:dsh-external/dsh_workflow#main\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你把一次性跑完的 AI 多智能体任务，变成可以保存、重复使用、随时查看进度和恢复运行的工作流。比如你可以把'并行调研一个问题'或'代码审查'保存成模板，下次直接叫名字运行。它还负责记录每次运行的步骤、结果和花费，方便事后查看。",
+      "level": "ok",
+      "risks": "它会在你的项目目录里创建一个 .dsh/workflow-runs 文件夹，保存每次工作流的运行记录、生成的文件和分析结果，这些内容可能包含你的代码、对话或敏感信息；如果项目被分享，这些记录也可能被看到。另外，运行工作流会按照你的指示调用 AI 并可能执行代码，请确保工作流来源可信。",
+      "postInstallNotes": "安装后需要重启对应的 DSH profile 才能生效；建议按需修改插件配置（如 approvalMode、AI 模型、并发数等），完整配置说明见 docs/CONFIGURATION.md。",
+      "notes": "注意：README 中的安装命令指向 github:dsh-external/dsh_workflow#main，而本资料提供的 GitHub 仓库是 omdsh-dev/dsh_workflow，两者不一致，安装前请确认你信任的来源。此外，该插件要求 Node.js >=22.19，且需要与兼容的 DSH 版本搭配。"
+    },
+    "summaryZh": "DSH Workflow 将 DeepSeek Harness 的一次性多智能体调度升级为可保存、可复用、可治理的工作流层，提供运行记录、断点续跑和安全审批等能力。",
+    "usage": {
+      "prompt_tokens": 5286,
+      "completion_tokens": 3558,
+      "total_tokens": 8844,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3073
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4646
+    }
+  }
+}

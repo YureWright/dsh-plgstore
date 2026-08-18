@@ -1,0 +1,37 @@
+{
+  "id": "zhuiyueya/dsh-im-gateway",
+  "analyzedAt": "2026-08-17T11:19:38.220Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 字段、依赖 @deepseek-ai/cordis 与多个 dsh-* 核心包，且 README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/zhuiyueya/dsh-im-gateway.git",
+      "evidence": "README 安装命令：dsh plugin --profile web add https://github.com/zhuiyueya/dsh-im-gateway.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件相当于给 DeepSeek Harness 装了一个'聊天窗口管家'，让你可以用微信、Telegram、QQ、飞书等聊天软件，像聊天一样指挥电脑上的 AI 助手干活。它支持 20 多种聊天平台，每个聊天窗口对应一个独立会话；AI 需要电脑上执行操作（比如改文件、跑命令）要你批准时，也会把请求推送到聊天里，你回一句'批准'就行。默认只有你白名单里的人才可以用，比较安全。",
+      "level": "ok",
+      "risks": "插件会把各个聊天平台的登录凭证（token、密码等）保存在你电脑的 dsh 配置目录里，别让别人碰到这些文件。微信/WhatsApp 需要扫码把机器人账号登录上去，聊天内容会经过对应平台的服务器传输，注意别在聊天里发太敏感的东西。另外它会在本机跑后台服务，需要一直开着 dsh 才能收到消息。没有发现偷偷上传数据或执行危险操作的行为。",
+      "postInstallNotes": "装完后重启 dsh web，打开 Web GUI 的设置面板，找到'IM 网关'入口，按提示连接你想要用的聊天软件（微信/WhatsApp扫码，其余填 token）。第一次有人发消息时，需要在面板里点'允许'授权该用户。",
+      "notes": "评估确认这是真正的 DSH 插件；依赖较多 @deepseek-ai 核心包，首次安装可能需要 1-2 分钟；微信渠道建议使用专用小号避免账号风险。"
+    },
+    "summaryZh": "把 DeepSeek Harness 的 AI 助手接入微信、Telegram、飞书等 20+ 聊天软件，让你在手机上就能指挥它干活并实时收到回复。",
+    "usage": {
+      "prompt_tokens": 4981,
+      "completion_tokens": 3338,
+      "total_tokens": 8319,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2797
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4341
+    }
+  }
+}

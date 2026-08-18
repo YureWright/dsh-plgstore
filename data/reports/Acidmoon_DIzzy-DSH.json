@@ -1,0 +1,37 @@
+{
+  "id": "Acidmoon/DIzzy-DSH",
+  "analyzedAt": "2026-08-17T11:39:58.041Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，README 给出了 dsh plugin add 安装命令，且作为 bundle 层安装多个子插件，是可安装的 DSH 插件合集。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Acidmoon/DIzzy-DSH.git",
+      "evidence": "git clone https://github.com/Acidmoon/DIzzy-DSH.git"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件合集，装一个就能一次性获得很多功能：查看 DeepSeek/Grok 余额和额度、统计每月 token 用量和花费、给 AI 注入自定义规则、控制真实浏览器（打开网页、点击、截图）、看图问答和 OCR、生成可交互界面、桌面通知、IDE 风格侧边栏、用订阅账号登录（如 ChatGPT/Claude）以及给 DSH 界面换皮肤等。",
+      "level": "caution",
+      "risks": "安装会改动 ~/.dsh 下的配置、凭据和插件目录，并可能运行 PowerShell 脚本向 ~/.dsh/.agent-presets/ 复制预设；订阅登录插件会通过 OAuth 登录你的订阅账号，令牌保存在本机凭据文件里；浏览器控制插件需要安装 Kimi WebBridge 守护进程和浏览器扩展，AI 可以控制你的真实浏览器（包括看到登录态网页内容、截图、抓包）；合集捆绑了多个第三方插件快照，部分带本地补丁，需自行信任来源。",
+      "postInstallNotes": "装完需重启 dsh web 并硬刷新浏览器；若遇 ERR_PNPM_IGNORED_BUILDS，需在 ~/.dsh/profiles/web/pnpm-workspace.yaml 的 allowBuilds 中允许 node-pty / protobufjs；浏览器控制功能还需额外安装 Kimi WebBridge daemon 和 Chrome/Edge 扩展；要使用 DIY 或 Anchored Standard 预设，需分别运行 scripts/install-diy-preset.ps1 和 install-anchored-standard.ps1。",
+      "notes": "这是插件合集而非单一插件，包含多个第三方插件快照，建议安装前查看 third-party/ 目录来源；更新需 git pull 后删除 profile 中的旧副本再重新 add，否则修改可能不生效；远程直接 add git URL 可能不如 README 的本地 file: 流程可靠。"
+    },
+    "summaryZh": "一个克隆即装的 DSH 插件合集，聚合余额/用量、Agent 规则、浏览器控制、视觉识别、生成式 UI、桌面通知、侧边栏、订阅登录与界面美化等能力。",
+    "usage": {
+      "prompt_tokens": 4887,
+      "completion_tokens": 3456,
+      "total_tokens": 8343,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2840
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4247
+    }
+  }
+}

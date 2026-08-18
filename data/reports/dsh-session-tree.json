@@ -1,0 +1,37 @@
+{
+  "id": "dsh-session-tree",
+  "analyzedAt": "2026-08-16T13:42:21.809Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 且依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-session-tree@0.1.0-beta.1",
+      "evidence": "固定本次发布版本：`dsh plugin --profile web add dsh-session-tree@0.1.0-beta.1`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）用的浏览器插件，能把你的对话历史变成一棵“版本树”，就像 Git 的分支一样。你可以在任何一个已经完成的对话回合上创建新分支，从那里继续聊，原来的对话不会被改动。它不会修改原始数据，卸载后创建的分支仍然是普通的 DSH 会话。",
+      "level": "caution",
+      "risks": "它会读取你 DSH 里的对话记录用于展示版本树，点击“创建分支”时会调用 DSH 接口生成新的子会话。它不会删除或重写原对话，但因为是社区开发的预发布版本，代码可能存在 bug，可能导致界面异常或数据读写错误。另外从 GitHub 安装时，安装脚本会以你电脑的用户权限运行，有一定供应链风险，建议安装前审阅代码并备份 DSH profile 和会话数据。",
+      "postInstallNotes": "重启 DSH（`dsh --profile web`）并重新加载浏览器页面，确认配置中包含 dsh-session-tree。若从 GitHub 安装且 pnpm 10+ 拦截构建脚本，需根据提示将精确包键加入 `pnpm-workspace.yaml` 的 `allowBuilds` 后重试同一条命令。",
+      "notes": "非官方社区插件，处于预发布阶段；peerDependencies 限制了 DSH 版本（0.1.0-rc.5/rc.6）和 Node.js 版本（^22.19.0 || >=24.0.0）。README 提示 npm 渠道可能未启用，但 package.json 显示已发布到 npm registry，若 npm 安装失败请改用 GitHub Release tarball。"
+    },
+    "summaryZh": "一个给 DeepSeek Harness 用的浏览器插件，把对话变成可分支的版本树，让你可以从历史任意已完成轮次分叉出新对话。",
+    "usage": {
+      "prompt_tokens": 4377,
+      "completion_tokens": 3834,
+      "total_tokens": 8211,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3281
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3737
+    }
+  }
+}

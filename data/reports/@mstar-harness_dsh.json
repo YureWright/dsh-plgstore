@@ -1,0 +1,37 @@
+{
+  "id": "@mstar-harness/dsh",
+  "analyzedAt": "2026-08-16T13:26:59.889Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 含 @deepseek-ai/cordis，且 README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@mstar-harness/dsh",
+      "evidence": "dsh plugin --profile web add @mstar-harness/dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 Morning Star（一个独立的代理框架）装进 DeepSeek Harness 里，让 Harness 能指挥 Morning Star 干活。它会看护状态文件、限制子代理乱跑、检查技能文件写入，保证代理按规矩办事。装好后，Harness 应用就能用上 Morning Star 的一套工作流。",
+      "level": "ok",
+      "risks": "它会读取并写入项目目录里的状态文件（比如 .mstar/status.json），还可能读取你配置的技能目录；另外它需要一个专门的加载器（dsh Loader app）配合，安装时可能要求额外装一个回退插件。没发现它会偷偷联网或碰隐私文件。",
+      "postInstallNotes": "装完建议检查配置文件，特别是 harnessDir（harness 根目录）和 enforcement（强制级别）等选项；如需 LLM 回退功能，还要执行第二条命令 `dsh plugin --profile web add dsh-llm-fallbacks`。",
+      "notes": "无"
+    },
+    "summaryZh": "让 Morning Star 引擎作为 DeepSeek Harness 的一等插件运行，提供状态门控与子代理分派限制等功能。",
+    "usage": {
+      "prompt_tokens": 4339,
+      "completion_tokens": 1445,
+      "total_tokens": 5784,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1055
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3699
+    }
+  }
+}

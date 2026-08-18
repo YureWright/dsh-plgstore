@@ -1,0 +1,37 @@
+{
+  "id": "maxiaovivi/dsh-cloak-browser",
+  "analyzedAt": "2026-08-17T12:11:59.249Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，peerDependencies 依赖 @deepseek-ai/dsh-llm 和 dsh-tools，README 给出 dsh plugin add 安装命令，符合真正的 DSH 插件标准。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:maxiaovivi/dsh-cloak-browser",
+      "evidence": "dsh plugin --profile web add -w github:maxiaovivi/dsh-cloak-browser"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的 AI 助手像真人一样操作浏览器。你可以让 AI 自动打开网页、点击按钮、填写搜索框、翻页面、截图等。它给每个 AI 任务分配一个独立的浏览器小房间，互不干扰，用完后自动关闭。它还带一些“伪装”功能，让 AI 的浏览器操作看起来更像真实用户，减少被网站识别为机器人的可能。",
+      "level": "caution",
+      "risks": "这插件会在你电脑的个人目录（~/.cloakbrowser）里缓存浏览器和IP数据库，首次使用会下载约200MB的Chromium浏览器和约70MB的GeoLite数据库，会占用不少硬盘空间。插件运行时，AI 会自动打开网页，网站可能看到你电脑的 IP 地址；如果你配置了代理，代理密码会作为环境变量传给插件，注意别让不该看的人看到。另外它带的反检测功能有可能被用来规避网站的风控，请只在合法场景使用。插件是个人开发、非官方，代码虽是开源的，但使用前最好自己看一下。",
+      "postInstallNotes": "装完后需要重启 DSH。可选：设置环境变量 CLOAKBROWSER_LICENSE_KEY（许可证密钥）和 CLOAKBROWSER_PROXY_URL（代理地址）；不设置许可证也能用免费版。在 Linux 上首次使用前可能需要运行 `npx playwright-core install-deps chromium` 安装系统依赖（可能要求 sudo）。浏览器二进制会自动下载，无需手动安装 Chromium。",
+      "notes": "经评估这是真正的 DSH 插件（package.json 含 dsh.bundle，依赖 @deepseek-ai/dsh-llm 与 dsh-tools，README 提供了 dsh plugin add 命令）。但它是社区维护、非官方项目，版本 0.3.0 还比较早期；要求 DSH 0.1.0-rc.6 环境。README 提到如果之前安装过 0.1.0 版需要先卸载再重装。反检测效果不保证能通过所有检测。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供的浏览器自动化工具，让 AI 能自动操作网页并带真人伪装能力。",
+    "usage": {
+      "prompt_tokens": 3449,
+      "completion_tokens": 4570,
+      "total_tokens": 8019,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3926
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2809
+    }
+  }
+}

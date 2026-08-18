@@ -1,0 +1,37 @@
+{
+  "id": "dsh-soul-md",
+  "analyzedAt": "2026-08-16T13:25:58.488Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 明确声明了 dsh.bundle 和 dsh.client 字段，且 peerDependencies 包含 @deepseek-ai/dsh-tools 等 DSH 核心包，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-soul-md",
+      "evidence": "after: pnpm add dsh-soul-md in the profile"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 加“人设”和“长期记忆”功能的。你可以在设置页里新建一张人设卡，填上名字和内容（比如“你是我的私人助手，回答问题要简洁”），AI 就会按照这个人设来聊天；它还能记住你以前告诉过它的偏好或事情，把重点存到硬盘上的文件里，下次对话能接着用。支持不同工作区、不同聊天窗口各配各的人设，AI 自己也能根据对话逐渐调整人设。",
+      "level": "ok",
+      "risks": "它会在你电脑的 DSH 数据目录（$DSH_HOME/soul-md/memory/）里存放记忆文件，里面相当于聊天摘要，别人拿到文件夹就能看到内容；人设卡内容也会作为提示词发给 AI，所以不要填密码、密钥等敏感信息。首次运行会自动修改设置命名空间的授权配置，属于插件正常行为。",
+      "postInstallNotes": "重启 dsh web；进入设置 → 人设卡，新建一张卡片并保存。如果设置页没出现，再重启一次（插件会自动补上配置）。另外人设卡内容里不要写 {{ 或 }}，否则会引发渲染错误。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 增加人设卡与长期记忆的插件：设置里填卡片即可让 AI 固定性格，并自动把跨会话记忆存成文件、随对话不断更新。",
+    "usage": {
+      "prompt_tokens": 2961,
+      "completion_tokens": 3100,
+      "total_tokens": 6061,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2639
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2321
+    }
+  }
+}

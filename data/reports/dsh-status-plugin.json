@@ -1,0 +1,37 @@
+{
+  "id": "dsh-status-plugin",
+  "analyzedAt": "2026-08-16T13:39:38.189Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-status-plugin",
+      "evidence": "dsh plugin --profile web add dsh-status-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 状态监控插件，在 DSH 网页界面的会话右上角添加一个状态徽标，实时显示服务器运行时长，并可展开查看详细健康信息（CPU、内存、磁盘、事件循环延迟、API 密钥是否配置等）。后端提供 HTTP 接口输出 JSON 格式的状态快照、Prometheus 指标和 SSE 实时报警，当 CPU、内存、磁盘或事件循环延迟超过阈值时，网页端会弹出提醒。你还可以在设置面板里实时调整报警阈值，或配置 webhook 把报警推送到其他服务。",
+      "level": "ok",
+      "risks": "这个插件会读取运行它的那台机器的系统状态信息（CPU 使用率、内存、磁盘、进程 ID、运行时长、局域网 IP（默认隐藏）等），并通过 DSH 的后台接口对外提供。如果 DSH 服务暴露在公网且没有设置访问权限，这些机器状态可能被网络上的其他人看到。它也会检查是否配置了 API 密钥，但只显示“有/没有”，不会泄露密钥内容。危险程度不高。",
+      "postInstallNotes": "安装后需要重启 DSH 服务（`dsh web` 或 `dsh --profile <name>`）插件才会加载。建议在配置中设置 `authToken` 和 `allowedOrigins` 以保护状态接口，并按需调整报警阈值。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 状态监控插件：在网页界面显示服务器健康徽章，提供 HTTP 状态接口和 SSE 实时告警，支持在设置页实时调整阈值。",
+    "usage": {
+      "prompt_tokens": 4383,
+      "completion_tokens": 3436,
+      "total_tokens": 7819,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2967
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3743
+    }
+  }
+}

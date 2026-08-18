@@ -1,0 +1,37 @@
+{
+  "id": "Toukaiteio/dsh-plugin-installer",
+  "analyzedAt": "2026-08-17T11:44:18.459Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件的真实证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Toukaiteio/dsh-plugin-installer.git",
+      "evidence": "dsh plugin --profile web add github:Toukaiteio/dsh-plugin-installer#<commit>"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的官方网页界面加了一个“插件市场”页面，你可以在里面浏览、安装和卸载来自 GitHub 的 DSH 插件，还能切换不同的配置文件（Profile），不用在终端里敲命令。",
+      "level": "ok",
+      "risks": "它会连接 GitHub 获取插件列表和安装包；你填的 GitHub 令牌会存到本地配置文件里（$DSH_HOME/config/dsh-plugin-installer.json），注意保护；安装插件时会下载并运行代码，建议只装来源可信的插件；Windows 版安装脚本会直接从网上下载并执行，建议先看一遍脚本内容。",
+      "postInstallNotes": "安装后打开 DSH Web 的“设置 → 插件 → 插件市场”，如果需要可填写 GitHub 令牌；安装其他插件后按提示重启 DSH Web 即可生效。",
+      "notes": "如果从源码安装，需要仓库里已有构建好的 lib 目录；推荐优先用 GitHub Release 里的 .tgz 包安装，避免执行源码的构建脚本。另外，它的 dsh 运行时依赖都列为 devDependencies，实际发布包里可能已经打包好了。"
+    },
+    "summaryZh": "一个给 DeepSeek Harness 官方 Web UI 增加插件市场和配置切换能力的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 3513,
+      "completion_tokens": 3240,
+      "total_tokens": 6753,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2808
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2873
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "STARDUSTLC666/dsh-email",
+  "analyzedAt": "2026-08-17T11:55:00.869Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-email",
+      "evidence": "dsh plugin --profile web add dsh-email"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 助手帮你处理邮箱。你可以让它查看收件箱、搜索邮件、下载附件，甚至代你发邮件（发之前会先征求你同意）。它内置了 QQ、163、Gmail 等常见邮箱的服务器设置，你只需要提供邮箱地址和授权码，就能让 AI 帮你管理邮件。",
+      "level": "ok",
+      "risks": "需要你的邮箱授权码（相当于邮箱密码），授权码会以明文形式保存在本机的 DSH 配置文件（settings.yaml）里，如果配置文件泄露或电脑被入侵，邮箱可能被盗用。另外，在完全访问模式下，发信确认会被禁用，插件会拒绝发信，除非你显式关闭安全确认。下载的附件会存到本地指定文件夹。",
+      "postInstallNotes": "装完后需要配置邮箱账号：重启 dsh web，在设置页的「邮件」部分填写邮箱地址和授权码（或编辑 cordis.patch.yml），并确保邮箱已开启 IMAP/SMTP 服务。强烈建议改用环境变量 DSH_EMAIL_PASSWORD 而不是明文写入配置。",
+      "notes": "社区插件，与 DeepSeek 官方无关；授权码属于敏感信息，注意保管，建议先在小范围试用。"
+    },
+    "summaryZh": "给 DeepSeek Harness 的邮件工具插件，支持查收、发送、搜索邮件和下载附件，内置主流邮箱预设，配置后即可让 AI 助手帮你处理邮箱。",
+    "usage": {
+      "prompt_tokens": 4192,
+      "completion_tokens": 2230,
+      "total_tokens": 6422,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1786
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3552
+    }
+  }
+}

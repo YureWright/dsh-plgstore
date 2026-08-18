@@ -1,0 +1,37 @@
+{
+  "id": "dsh-mcp-lens",
+  "analyzedAt": "2026-08-16T13:38:16.129Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明 dsh.bundle、peerDependencies 依赖 @deepseek-ai/cordis，README 给出 dsh plugin 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/labmimors/dsh-mcp-lens/releases/download/v0.1.0-rc.9/dsh-mcp-lens-0.1.0-rc.9.tgz",
+      "evidence": "dsh plugin --profile web add ./dsh-mcp-lens-0.1.0-rc.9.tgz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫 MCP Lens，作用是帮你把一大堆 MCP 工具（比如上千个远程工具）压缩成两个模型接口（mcp_search 和 mcp_call）。平时不把每个工具的完整 Schema 都发给模型，等需要时再搜索并只显示小部分精确 Schema，从而减少 token 消耗、降低 API 花费，同时还能保持任务完成率。",
+      "level": "ok",
+      "risks": "它会修改你的 DeepSeek Harness 配置文件（如 ~/.dsh/profiles/web/cordis.patch.yml），安装插件到你的 profile；当你配置了 MCP 服务器后，它会让模型通过 mcp_search 和 mcp_call 调用这些工具，因此如果服务器里有敏感操作，模型可能会触发。但默认不开启任何远程工具，没发现明显风险。",
+      "postInstallNotes": "安装后需要编辑 cordis.patch.yml 添加 MCP 服务器和允许的工具列表（allowTools），然后用 dsh --profile web --dump-config 验证配置，再启动 dsh --profile web。",
+      "notes": "当前为 0.1.0-rc.9 预发布版本，README 提示安装前需核对 Release 资产 SHA-256；若使用 git 方式安装需在 pnpm 配置中允许构建 dsh-mcp-lens。"
+    },
+    "summaryZh": "让 DeepSeek Harness 通过两个固定工具接口（搜索+调用）访问海量 MCP 工具，大幅减少上下文和 API 成本。",
+    "usage": {
+      "prompt_tokens": 4206,
+      "completion_tokens": 2120,
+      "total_tokens": 6326,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1605
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3566
+    }
+  }
+}

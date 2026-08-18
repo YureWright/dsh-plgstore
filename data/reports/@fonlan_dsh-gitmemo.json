@@ -1,0 +1,37 @@
+{
+  "id": "@fonlan/dsh-gitmemo",
+  "analyzedAt": "2026-08-18T14:56:43.662Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段并依赖 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@fonlan/dsh-gitmemo",
+      "evidence": "dsh plugin --profile web add @fonlan/dsh-gitmemo"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上了一个‘长期记忆’功能：它会把你完成过的任务结果用 Markdown 文件自动保存到项目里的一个本地 .mem 文件夹（其实是一个 Git 仓库），以后接到新任务时会先搜索这些记忆，避免重复劳动。全程自动，你不需要手动记笔记。",
+      "level": "ok",
+      "risks": "它会在你的项目目录下创建一个 .mem 文件夹，里面存放任务总结，内容可能包含敏感信息。这些数据只保存在本地，除非你自己把 .mem 提交到远程仓库（README 建议在 .gitignore 中忽略它）。另外它依赖电脑上已安装 git 命令。",
+      "postInstallNotes": "安装后需要重启 dsh profile（如 dsh web 进程）使插件生效；确保电脑上已安装 git CLI，并且 dsh 版本不低于 0.1.0-rc.6；可选：在项目 .gitignore 中添加 .mem/。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供基于 Git 的本地长期记忆，自动保存和检索任务经验。",
+    "usage": {
+      "prompt_tokens": 3127,
+      "completion_tokens": 1796,
+      "total_tokens": 4923,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1409
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2487
+    }
+  }
+}

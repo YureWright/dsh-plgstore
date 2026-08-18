@@ -1,0 +1,37 @@
+{
+  "id": "DEEP-IOS/dsh-humanizer",
+  "analyzedAt": "2026-08-17T13:17:06.863Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，peerDependencies 依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，README 提供 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-humanizer",
+      "evidence": "dsh plugin --profile web add dsh-humanizer"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是个写作助手，专门帮用户写中文内容时减少“AI 味”。它不是写完后改词、改句子，而是让 AI 在动笔前先把一套写作理论完整读一遍，在思考中把自己当成那个作者，然后一口气写出来。写完后也不会用检测器打分或列清单修改。它主要面向小说、文章这类中文写作，也能用来润色已有文本。",
+      "level": "ok",
+      "risks": "没发现明显风险。它不会把文本上传到外部服务，只作用于 DeepSeek Harness 内部的生成流程；插件需要重启 DSH web 端才能生效。",
+      "postInstallNotes": "安装后重启 web 服务（bundle 层栈在 boot 时合成，Node half 的改动需要重启才生效）。",
+      "notes": "当前版本为 0.3.0-rc.1（候选发布版）；插件自身声明不承诺绕过任何 AI 检测器，请理性看待“去 AI 味”效果。"
+    },
+    "summaryZh": "让 AI 在动笔前先读完整套写作理论、在思考中成为作者再动笔的中文写作与润色插件，主打去 AI 味而非后处理改写。",
+    "usage": {
+      "prompt_tokens": 5916,
+      "completion_tokens": 1632,
+      "total_tokens": 7548,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1225
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5276
+    }
+  }
+}

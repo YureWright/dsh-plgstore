@@ -1,0 +1,37 @@
+{
+  "id": "william-jin-cmu/dsh-evolve",
+  "analyzedAt": "2026-08-17T11:32:37.053Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dshx.contributes，并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/william-jin-cmu/dsh-evolve.git",
+      "evidence": "dsh plugin --profile web add ."
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 AI 助手在对话过程中自己给自己“长”出新能力（比如记家庭账本、查天气、生成周报），也能随时摘掉旧能力。它会把 AI 现场写的小插件保存到电脑上，下次打开还能接着用。",
+      "level": "caution",
+      "risks": "它会在你电脑的 ~/.dsh/evolve 文件夹里保存 AI 生成的代码和配置，并且这些代码会以和主程序相同的权限运行（无沙箱），意味着 AI 能读写你的文件、发起网络请求。如果 AI 被恶意提示词诱导，可能产生不可预期的操作。",
+      "postInstallNotes": "无",
+      "notes": "package.json 标记为 private，未发布到 npm；README 的安装命令是从本地 checkout 安装（需要先运行 scripts/build.sh），若远程安装可用 git+https://github.com/william-jin-cmu/dsh-evolve.git。另外该插件允许 agent 无沙箱执行自生成代码，请仅在可信的自用环境部署。"
+    },
+    "summaryZh": "让 AI 在对话中动态给自己添加或移除工具、规则和自动化行为的自进化 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 4852,
+      "completion_tokens": 4389,
+      "total_tokens": 9241,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3988
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4212
+    }
+  }
+}

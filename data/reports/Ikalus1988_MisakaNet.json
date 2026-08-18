@@ -1,0 +1,37 @@
+{
+  "id": "Ikalus1988/MisakaNet",
+  "analyzedAt": "2026-08-16T11:44:38.733Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle.patch，符合 DSH 插件证据"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Ikalus1988/MisakaNet.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 AI 编程助手用的“失败经验库”，把常见报错和解决办法存成文档，AI 出错时能快速搜索到修复方案。它不需要服务器和数据库，纯本地 git 仓库，也提供 MCP 接口和 DeepSeek Harness 适配器。",
+      "level": "ok",
+      "risks": "它会运行本地 Python 脚本搜索知识库；如果使用远程 MCP 服务，会把错误信息和配对代码发送到 misakanet.org；贡献知识时可能公开提交。没发现明显恶意风险。",
+      "postInstallNotes": "需要配置 MCP 客户端或运行 MCP 服务器脚本（如 python3 scripts/mcp_server.py），也可用 DeepSeek Harness 适配器；若用远程服务需获取配对码。",
+      "notes": "无"
+    },
+    "summaryZh": "为 AI 编程助手提供基于 Git 的失败经验库，可快速搜索报错修复方案。",
+    "usage": {
+      "prompt_tokens": 3316,
+      "completion_tokens": 1220,
+      "total_tokens": 4536,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 903
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2676
+    }
+  }
+}

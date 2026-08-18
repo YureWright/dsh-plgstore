@@ -1,0 +1,37 @@
+{
+  "id": "deepseek-harness-quota-monitor",
+  "analyzedAt": "2026-08-16T13:44:53.129Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/dsh-client-*，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-harness-quota-monitor",
+      "evidence": "dsh plugin --profile web add deepseek-harness-quota-monitor"
+    },
+    "evaluationReport": {
+      "intro": "这是一款 DeepSeek Harness 的额度监控插件。它能在侧边栏显示一个卡片，实时展示你各供应商的余额或用量情况（比如 DeepSeek 官方余额、OpenCode GO 等），并支持自定义配置。对于按量计费的供应商，它会主动查询余额 API；对于有限额的供应商，它会在本地记录 token 用量，用滑动窗口统计你用了多少、还剩多少。它还提供今日已用统计、小时折线图等。总之，就是帮你随时盯着自己的额度，避免超支。",
+      "level": "ok",
+      "risks": "它需要你提供供应商 API Key 来查询余额（密钥会由 DSH 凭据管理）；会在本地写入用量记录文件（存储在你的 DSH 数据目录下）。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需重启 dsh web 服务（按 README 提示）。后续可视需要到设置页配置各供应商额度。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供多供应商额度监控：侧边栏实时显示余额/用量，支持余额查询与本地窗口计量。",
+    "usage": {
+      "prompt_tokens": 4865,
+      "completion_tokens": 1346,
+      "total_tokens": 6211,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 959
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4225
+    }
+  }
+}

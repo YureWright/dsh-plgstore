@@ -1,0 +1,37 @@
+{
+  "id": "ayuanwong/deepseek-harness-ux",
+  "analyzedAt": "2026-08-17T11:24:22.739Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.95,
+      "reason": "README 明确声明这是完整源码版本，并非可安装的 DSH 插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "本仓库交付的是完整源码版本，不是能直接安装到干净上游仓库的补丁，也没有单独发布为 npm 插件。"
+    },
+    "evaluationReport": {
+      "intro": "这个项目是 DeepSeek Harness 的一个社区改良版，不改变 AI 干活的核心逻辑，只把网页界面做得更好用：跑长任务时过程不刷屏、完成了自动折叠；长日志单独滚动；回答更好读；历史会话和生成的文件更好找。它需要从源码自己构建运行，不是装个插件就能用。",
+      "level": "caution",
+      "risks": "需要自己从源码编译运行，会下载安装不少依赖；使用时要填一个兼容 DeepSeek 的 API Key，这个 Key 存在本地设置里，并且如果开启'展示辅助'功能，会把任务中的部分运行证据发送到你配置的模型服务商那儿。另外这是社区分支，可能没有官方最新的安全修复。",
+      "postInstallNotes": "按 README 从源码运行：克隆仓库、pnpm install、pnpm run build，然后用 `pnpm run dsh -- web --port 3081` 启动，打开网页后到'设置 → 模型'里配置 API Key。",
+      "notes": "经评估可能并非 DSH 插件（理由：README 声明它是完整源码版本，没有发布为 npm 插件），不能用 `dsh plugin add` 安装；它基于上游某个快照，可能与官方版本有功能差异。"
+    },
+    "summaryZh": "DeepSeek Harness 的社区 UX 改良版，让长任务过程更清晰、回答更好读、会话和文件更好找。",
+    "usage": {
+      "prompt_tokens": 3949,
+      "completion_tokens": 1861,
+      "total_tokens": 5810,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1427
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3309
+    }
+  }
+}

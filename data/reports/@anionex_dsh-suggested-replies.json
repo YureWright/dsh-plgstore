@@ -1,0 +1,37 @@
+{
+  "id": "@anionex/dsh-suggested-replies",
+  "analyzedAt": "2026-08-16T14:47:03.418Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了明确的 dsh plugin add 安装命令，是标准的 DSH Web 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@anionex/dsh-suggested-replies",
+      "evidence": "dsh plugin --profile web add @anionex/dsh-suggested-replies"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在你和 AI 聊完一轮后，自动在输入框上方冒出几个你可能接下来会说的话（比如追问、确认、决定），点一下就填进输入框，但不会自动发送，你可以改改再发。它能让你回复 AI 更快更顺手。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取会话消息来生成建议，不会乱碰个人文件。它会额外调用一次 AI 模型来生成候选，可能多花一点点 token/费用，但这是它说清楚的功能。",
+      "postInstallNotes": "安装或更新后，需要重启正在运行的 dsh web 服务，并在浏览器里硬刷新页面；然后在设置页确认“下一步建议”开关已开启（默认开）。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH Web 插件，在 AI 回复后自动生成几条候选回复，点击填入输入框但不自动发送。",
+    "usage": {
+      "prompt_tokens": 3801,
+      "completion_tokens": 492,
+      "total_tokens": 4293,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 136
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3161
+    }
+  }
+}

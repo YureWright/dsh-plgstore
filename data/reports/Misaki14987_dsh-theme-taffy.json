@@ -1,0 +1,37 @@
+{
+  "id": "Misaki14987/dsh-theme-taffy",
+  "analyzedAt": "2026-08-17T11:48:39.688Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 字段，且 peerDependencies 依赖 @deepseek-ai/dsh-client-ui-theme，确属 DSH 主题插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "dsh plugin --profile web add /path/to/dsh-theme-taffy"
+    },
+    "evaluationReport": {
+      "intro": "这是一款给 DeepSeek Harness 网页界面换皮肤的主题插件，把界面改成‘永雏塔菲’风格的粉色系，带背景图、表情包图标、浮动小星星等装饰。所有图片都打包在插件里，离线也能用，不会去外部网站加载。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在网页前端注入样式和元素，并在浏览器 localStorage 里存一个开关设置，不会碰电脑上其他文件。",
+      "postInstallNotes": "安装后需要手动编辑 ~/.dsh/profiles/web/cordis.patch.yml，在 insert 列表里加入对应 roster 行，然后重启 web 服务。",
+      "notes": "README 只给了本地路径安装方式，未提供 npm 或 git 安装地址；如需远程安装，请自行确认仓库或发布情况。"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页端提供永雏塔菲粉色主题的插件，含背景、图标和动效，可离线使用。",
+    "usage": {
+      "prompt_tokens": 2113,
+      "completion_tokens": 1281,
+      "total_tokens": 3394,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 927
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1473
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-tokenledger",
+  "analyzedAt": "2026-08-16T13:37:53.126Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/dsh-client-* 核心包，README 也给出了 dsh plugin 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:zh667/TokenLedger",
+      "evidence": "dsh plugin --profile web add \"github:zh667/TokenLedger\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 装的一个“账本”，它能自动记录 AI 请求消耗的 token（也就是费用），并按实际提供服务的“中转站”进行归属。无需配置、无需额外提供密钥，装上就能用。它带一个网页面板，可以看今日/本月/累计用量、余额、趋势热力图，还能导出 CSV/JSON，也可以用命令行查询和诊断数据。",
+      "level": "ok",
+      "risks": "它会读取本机 DeepSeek Harness 的配置文件（如 settings.yaml），识别你配置了哪些中转站，并用已存的 API key 查询余额——但这些 key 只在你本机使用，不会发送到浏览器或外部服务器。它明确不读取提示词、工具参数、响应内容，两个 HTTP 端点只允许本机回环访问。总体风险很小，没发现明显风险。",
+      "postInstallNotes": "装完后请重启正在运行的 dsh web，并在浏览器中硬刷新（Ctrl+Shift+R / Cmd+Shift+R）；之后侧边栏底部会出现「用量账本」入口。",
+      "notes": "第三方社区项目，与 DeepSeek 无隶属关系；需要 DeepSeek Harness web profile 且 @deepseek-ai/dsh 版本不低于 0.1.0-rc.6；同时要求 Node.js >= 22。"
+    },
+    "summaryZh": "TokenLedger 是一个为 DeepSeek Harness 记录每个中转站 Token 用量与余额的账本插件，零配置，带可视化面板和命令行工具。",
+    "usage": {
+      "prompt_tokens": 3822,
+      "completion_tokens": 3794,
+      "total_tokens": 7616,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3312
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3182
+    }
+  }
+}

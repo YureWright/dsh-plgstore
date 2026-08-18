@@ -1,0 +1,37 @@
+{
+  "id": "HuanLinOTO/dsh-plugin-better-sidebar-plugin-office",
+  "analyzedAt": "2026-08-17T11:23:47.271Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-better-sidebar-plugin-office",
+      "evidence": "dsh plugin --profile web add @huanlin/dsh-plugin-better-sidebar-plugin-office"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 侧边栏（better-sidebar）文件管理器用的插件，装上之后，你直接在侧边栏里点开 Word（.docx）、Excel（.xlsx）和 PowerPoint（.pptx）文件，就能在浏览器里预览内容，不用下载到本地再用 Office 打开。它把原本硬塞在 better-sidebar 里的三个预览功能拆出来单独安装，这样平时不用预览 Office 文件的人就不用白白加载那二十多兆的预览引擎了。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是在你打开 Office 文件时在浏览器里加载对应的预览渲染库，不会碰你电脑上的其他文件，也不会上传你的文件内容到任何服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web 进程，并在浏览器里硬刷新（Ctrl+Shift+R）才能生效；另外需要确保你用的 better-sidebar 版本不低于 0.6.0，否则会和内置的 Office 预览功能冲突。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 侧边栏提供 Word/Excel/PPT 文件预览能力的插件，按需加载渲染库，安装后即可在文件管理器中直接预览 Office 文档。",
+    "usage": {
+      "prompt_tokens": 2752,
+      "completion_tokens": 691,
+      "total_tokens": 3443,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 269
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2112
+    }
+  }
+}

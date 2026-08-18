@@ -1,0 +1,37 @@
+{
+  "id": "cot-lint",
+  "analyzedAt": "2026-08-16T13:39:13.992Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 给出了 dsh plugin add cot-lint 安装命令，符合 DSH 插件的关键证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "cot-lint",
+      "evidence": "dsh plugin add cot-lint"
+    },
+    "evaluationReport": {
+      "intro": "cot-lint 是一个帮你检查代码仓库里有没有“思维链泄漏”的小工具。AI 写代码时会在注释、文档里留下思考过程和对话残留，比如“这个改动是之前在评审时决定的”“这段代码以前怎样”之类的，对后来读代码的人没帮助还容易误导。cot-lint 能找出这些内容，并且作为 DSH 插件安装后，还能附带一个自动修复的技能，帮你清理这些残留。",
+      "level": "ok",
+      "risks": "它会在本地读取并扫描你项目中的文档和代码文件，以识别需要清理的内容；这些数据不会离开你的电脑。未发现它会上传或修改文件的行为。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "cot-lint 是一个检测代码仓库中 AI 思维链泄漏的 linter，作为 DSH 插件可一键安装并附带修复技能。",
+    "usage": {
+      "prompt_tokens": 2706,
+      "completion_tokens": 2970,
+      "total_tokens": 5676,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2653
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2066
+    }
+  }
+}

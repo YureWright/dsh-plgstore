@@ -1,0 +1,37 @@
+{
+  "id": "gameswu/dsh-notifacation-frame",
+  "analyzedAt": "2026-08-17T12:06:15.576Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/gameswu/dsh-notifacation-frame.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个通知框架插件。它能统一管理各种通知事件（比如任务完成、AI 提问、程序崩溃等），在设置页为每个通知项提供开关、通道（网页提示/系统通知/日志）和音效配置，还支持自定义音效。其他插件也能通过它提供的 API 快速注册自己的通知项。",
+      "level": "ok",
+      "risks": "没发现明显风险。它可能会定期联网检查 DSH 新版本（向 npm registry 发请求）、弹系统通知、播放声音；如果配置了日志文件，会在本地写入通知记录。这些都属于正常功能范围。",
+      "postInstallNotes": "安装后需重启 DSH 生效，到设置页的「通知」区域配置各通知项的开关、通道和音效。如需通知日志，可在组合配置里设置 logFile。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 通知框架：统一管理通知事件，内置多种通知项，支持 Web/系统/日志通道和自定义音效，并提供派生插件注册 API。",
+    "usage": {
+      "prompt_tokens": 4161,
+      "completion_tokens": 3032,
+      "total_tokens": 7193,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2667
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3521
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "LaplaceYoung/dsh-qq2006",
+  "analyzedAt": "2026-08-17T11:26:37.211Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/client，依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "https://github.com/LaplaceYoung/dsh-qq2006",
+      "evidence": "dsh plugin --profile web add https://github.com/LaplaceYoung/dsh-qq2006"
+    },
+    "evaluationReport": {
+      "intro": "这是一款怀旧皮肤插件，能把 DeepSeek Harness 的网页界面变成 2006 年 QQ 客户端的模样，包括登录窗口、主面板、聊天窗口、按钮样式等，还可以在几种经典配色之间切换，适合喜欢复古风格的用户。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是在浏览器内修改界面样式和加载本地素材，不会读取隐私文件或连接外部服务器。",
+      "postInstallNotes": "安装后，在 DSH 设置-外观中切换到 QQ2006 皮肤。注意：npm 发行版只提供主题换色和全局样式，组件级的完整效果需要按 README 方式二从源码构建。",
+      "notes": "QQ2006 素材来自腾讯原版，仅供学习交流，请勿商用；插件包标记为 private，无法从 npm 直接安装，只能通过 GitHub 地址安装。"
+    },
+    "summaryZh": "把 DeepSeek Harness 的 WebUI 一键变回 2006 年 QQ 客户端的复古皮肤插件。",
+    "usage": {
+      "prompt_tokens": 3366,
+      "completion_tokens": 1861,
+      "total_tokens": 5227,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1482
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2726
+    }
+  }
+}

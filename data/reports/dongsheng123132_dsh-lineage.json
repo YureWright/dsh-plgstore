@@ -1,0 +1,37 @@
+{
+  "id": "dongsheng123132/dsh-lineage",
+  "analyzedAt": "2026-08-17T12:00:39.749Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段并依赖 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/dongsheng123132/dsh-lineage.git",
+      "evidence": "dsh plugin --profile lineage add github:dongsheng123132/dsh-lineage"
+    },
+    "evaluationReport": {
+      "intro": "这个插件用来记录和验证文件、事实、操作和报告之间的来源关系（数据血缘）。它会给每个文件算一个哈希值，并保存成无法修改的记录，这样就能知道某个结果是从哪些文件来的，以及这些文件有没有被改动或丢失。它还提供查询和验证工具，帮你检查整个证据链是否完整。",
+      "level": "ok",
+      "risks": "它会在你指定的目录里写入记录文件，并对你指定的文件计算哈希（读文件内容，但不复制）。如果你把敏感文件指给它，哈希值可能会出现在报告中。它不会读取聊天记录或自动上传数据。",
+      "postInstallNotes": "无。使用时需要在命令中指定工作区根目录和账本目录等参数。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-lineage 是一个为 DeepSeek Harness 提供内容寻址数据血缘记录的插件，能验证工件、事实、操作和报告之间的来源关系，并生成不可篡改的审计证据。",
+    "usage": {
+      "prompt_tokens": 2660,
+      "completion_tokens": 2001,
+      "total_tokens": 4661,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1636
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2020
+    }
+  }
+}

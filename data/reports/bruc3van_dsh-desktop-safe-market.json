@@ -1,0 +1,37 @@
+{
+  "id": "bruc3van/dsh-desktop-safe-market",
+  "analyzedAt": "2026-08-17T12:13:42.276Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，依赖 @deepseek-ai/cordis 等 DSH 核心包，且 README 给出 dsh plugin add 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/bruc3van/dsh-desktop-safe-market/archive/refs/tags/v0.2.9.tar.gz",
+      "evidence": "dsh plugin --profile web add https://github.com/bruc3van/dsh-desktop-safe-market/archive/refs/tags/v0.2.9.tar.gz"
+    },
+    "evaluationReport": {
+      "intro": "这是一个带安全审查功能的 DSH 插件市场。它不像普通市场那样只列个清单、让你点一下就直接装，而是先给出一份人工筛选过的插件短名单，点“安全安装”时不会真的装东西，而是打开一个新会话、把一段安全审查提示词填进输入框，让 Agent 先去读仓库代码、确认没问题再执行官方安装命令。另外它还带一个“已安装面板”，可以查看、停用、卸载当前 profile 里已装的插件，以及查看当前会话能用的技能。",
+      "level": "ok",
+      "risks": "它会把插件市场列表缓存到 DSH 配置目录下的文件里，并在启用时联网访问 GitHub（连不上时会自动改用 Gitee 镜像）获取名单；停用/卸载插件时会修改你的 profile 配置文件和 package.json；安全安装功能会调用 Agent 去读 GitHub 仓库的代码来审查，但安装命令要你自己按回车确认才会发出去。整体不碰隐私文件，也没有安装脚本等危险行为。",
+      "postInstallNotes": "装完需要重启 dsh web 或桌面客户端才会生效；首次使用要去设置里的“插件市场”页面手动点“启用插件市场”按钮，否则不会联网加载市场列表。",
+      "notes": "无"
+    },
+    "summaryZh": "一个先审查再安装的 DSH 插件市场，提供人工精选的插件短名单、由 Agent 执行的安装前安全审查，以及已安装插件的管理面板。",
+    "usage": {
+      "prompt_tokens": 6132,
+      "completion_tokens": 889,
+      "total_tokens": 7021,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 373
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5492
+    }
+  }
+}

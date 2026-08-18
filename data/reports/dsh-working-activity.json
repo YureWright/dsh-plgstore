@@ -1,0 +1,37 @@
+{
+  "id": "dsh-working-activity",
+  "analyzedAt": "2026-08-18T14:58:27.213Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-working-activity",
+      "evidence": "dsh plugin --profile <profile> add dsh-working-activity"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在命令行界面（TUI）和网页界面上显示 AI 模型正在做什么：比如它在思考（显示一些俏皮话）、正在运行某个工具（显示命令和耗时）、以及完成后的总结。它不改变模型的行为，只是实时展示工作状态。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在界面上显示活动状态，不会上传数据到外部服务器，也不会访问私人文件。注意如果开启 publish 配置，会把状态事件写进会话日志，可能导致会话无法恢复，但默认关闭。",
+      "postInstallNotes": "安装后无需任何配置即可运行。但若想在 TUI 提示行中显示状态，需要在 profile 的 cordis.patch.yml 中给 tui 的 theme.leftPrompt 加上 ${activity} 占位符；若想在 Web 界面看到活动状态，需要把 publish 配置设为 true（注意这会带来会话无法恢复的风险，请谨慎）。",
+      "notes": "注意：publish 开启后会让会话日志无法恢复，建议仅用于可忽略额外事件的消费者；另外该包要求 Node.js ^22.19 或 >=24。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供实时活动状态行，展示模型思考、工具运行和耗时，支持 TUI 和 Web 界面。",
+    "usage": {
+      "prompt_tokens": 4158,
+      "completion_tokens": 1688,
+      "total_tokens": 5846,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1264
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3518
+    }
+  }
+}

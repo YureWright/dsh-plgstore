@@ -1,0 +1,37 @@
+{
+  "id": "bearllfleed/Dsh-FileExplorer",
+  "analyzedAt": "2026-08-17T13:14:54.116Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client.inject 和依赖 @deepseek-ai/dsh-client-* 核心包，README 给出了 dsh plugin 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-file-explorer",
+      "evidence": "dsh plugin --profile web add dsh-plugin-file-explorer"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给你的 DSH 网页界面加一个类似 VS Code 的文件浏览器：在右侧显示文件树，可以新建、重命名、删除、拖拽移动文件；支持多标签页编辑、Markdown 阅读/编辑/分屏、快捷搜索（Ctrl+P），还能从电脑里复制粘贴或拖入文件。写代码或整理文档时会方便很多。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要操作 DSH 工作区里的文件，通过你主动点击或拖拽才会读写文件，不会偷偷访问系统隐私。",
+      "postInstallNotes": "安装后需要手动编辑 $DSH_HOME/profiles/web/cordis.patch.yml，添加插件注册配置（见 README 的 'Then enable the plugin' 部分），然后完全重启 dsh web 进程并硬刷新页面（Ctrl+Shift+R）。",
+      "notes": "无"
+    },
+    "summaryZh": "一款给 DSH 网页界面提供 VS Code 风格文件浏览器、可编辑标签页和 Markdown 编辑功能的插件。",
+    "usage": {
+      "prompt_tokens": 2766,
+      "completion_tokens": 460,
+      "total_tokens": 3226,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 92
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2126
+    }
+  }
+}

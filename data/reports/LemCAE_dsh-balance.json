@@ -1,0 +1,37 @@
+{
+  "id": "LemCAE/dsh-balance",
+  "analyzedAt": "2026-08-17T11:49:42.547Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@lemcae/dsh-balance",
+      "evidence": "Installable via `dsh plugin add`."
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你随时看到 DeepSeek 账户余额，并估算当前对话的花费。它会在界面顶部显示一个小条，如“余额 ¥x | 会话 ≈¥y”，点击可刷新，悬停可看详情；还能在设置中调整自动刷新频率、界面语言和模型单价。",
+      "level": "ok",
+      "risks": "它需要用 DeepSeek 的 API 密钥查询官方余额接口，并读取本地会话日志计算花费；这些数据只在本地处理，密钥通过子进程 stdin 传递，不会出现在命令行、日志或界面中。没发现明显风险。",
+      "postInstallNotes": "安装后重启 `dsh web` 使补丁生效；之后可在设置页按需调整价格表和自动刷新。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-balance 是一个 DSH 插件，用于在界面上显示 DeepSeek 账户余额与当前会话的预估花费，支持自动刷新、价格表自定义和多种语言。",
+    "usage": {
+      "prompt_tokens": 3577,
+      "completion_tokens": 2615,
+      "total_tokens": 6192,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2267
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2937
+    }
+  }
+}

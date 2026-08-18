@@ -1,0 +1,37 @@
+{
+  "id": "dsh-feishu-bot",
+  "analyzedAt": "2026-08-16T13:22:33.867Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch、依赖 @deepseek-ai/cordis 和 dsh-sdk-client，README 提供了 dsh plugin add 安装方式，明确是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-feishu-bot",
+      "evidence": "一行命令把它装进一个 dsh profile，dsh 启动时以标准插件方式加载桥接引擎（`dsh.bundle.patch` 已声明，`dsh plugin add` 可直接安装）。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness（一个本地的 AI 编程助手）接到飞书（Lark）里。装好之后，你可以直接在飞书私聊、群聊或话题里给机器人发消息，让它帮你写代码、跑任务，还能看到实时的流式卡片和工具调用过程。支持多人协作、给 AI 分配不同角色（比如项目经理、程序员）、同时跑多个任务，还能保存工作区、归档旧会话，任务完成时主动通知你。简单说，就是把你的 AI 助手变成一个飞书联系人，随时随地指挥它干活。",
+      "level": "caution",
+      "risks": "它会读取和修改你电脑上 dsh 的配置和会话数据；还会在后台常驻一个守护进程，即使 dsh 停了它也会运行，用来接收飞书消息并在需要时重启 dsh；需要把飞书账号和本机绑定，飞书消息会传到你的电脑上执行；安装时会构建一些依赖（如 esbuild、protobufjs），可能执行代码；同时它要连接飞书服务器，属于外部网络连接。另外，它是 AGPL 协议，如果你要二次开发需要留意许可要求。",
+      "postInstallNotes": "装完后需要运行 `dsh --profile dsh-lark` 启动，首次启动用飞书扫码创建或选择 PersonalAgent 应用并绑定；也可以设置环境变量 `DSH_LARK_APP_ID`、`DSH_LARK_APP_SECRET`、`DSH_LARK_TENANT` 跳过扫码。另外需要 Node.js >= 22.19.0。",
+      "notes": "注意：README 中安装命令写的包名是 dsh-lark-bot，但 package.json 实际包名是 dsh-feishu-bot，安装时以 `dsh plugin add dsh-feishu-bot` 为准。"
+    },
+    "summaryZh": "把 DeepSeek Harness 接入飞书/Lark，让你在手机、群聊里指挥本机 AI 编程助手，支持流式卡片、项目工作区、并行任务、会话归档和主动通知。",
+    "usage": {
+      "prompt_tokens": 4632,
+      "completion_tokens": 3666,
+      "total_tokens": 8298,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3036
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3992
+    }
+  }
+}

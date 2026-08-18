@@ -1,0 +1,37 @@
+{
+  "id": "soyo-dsh-plugin",
+  "analyzedAt": "2026-08-16T13:36:00.612Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出了 dsh plugin 安装命令，确认为真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://registry.npmjs.org/soyo-dsh-plugin/-/soyo-dsh-plugin-0.1.1.tgz",
+      "evidence": "dsh plugin --profile headless add ./soyo-dsh-plugin-0.1.0.tgz"
+    },
+    "evaluationReport": {
+      "intro": "SOYO 是一个给 DeepSeek Harness 智能体用的视频理解插件。安装后，智能体会多出一个叫 analyze_video 的工具，你可以让它分析本地视频文件，比如问“这个人在做什么”，它会返回文字答案和视频元数据。它支持两种工作方式：一种是把视频画面发给云端或本地的视觉模型（vanilla），另一种是用 FlashVID 在本地压缩视频画面再分析（flashvid）。使用前需要自己准备 Python 环境和视觉模型（要么有 API 密钥，要么有本地模型文件）。",
+      "level": "ok",
+      "risks": "它会在你的电脑上启动一个本地服务（默认 127.0.0.1:8765），只监听本机。如果你用 API 模式，它会把你指定的视频画面发送到你配置的外部视觉 API，视频内容可能被第三方看到。API 密钥通过环境变量传入，不会写在返回结果里。它不会主动下载模型权重，也不会碰你指定以外的文件。",
+      "postInstallNotes": "需要创建 Python 3.11 虚拟环境并安装对应依赖（如 vanilla 或 flashvid），然后根据模式设置环境变量（如 SOYO_MODE、SOYO_PROVIDER、SOYO_ALLOWED_VIDEO_ROOT 等），手动启动 soyo-worker。另外还需要先配置好 DSH 主 Agent 的模型。",
+      "notes": "无"
+    },
+    "summaryZh": "SOYO 是一个 DSH 原生视频理解插件，为智能体提供 analyze_video 工具，支持本地或 API 视觉模型。",
+    "usage": {
+      "prompt_tokens": 3776,
+      "completion_tokens": 4669,
+      "total_tokens": 8445,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4159
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3136
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@brainpilot/dsh-neuro-previewer",
+  "analyzedAt": "2026-08-16T13:42:07.245Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 给出 dsh plugin add 安装命令，代码明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@brainpilot/dsh-neuro-previewer@0.1.0",
+      "evidence": "dsh plugin --profile web add @brainpilot/dsh-neuro-previewer@0.1.0"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 里的 AI 助手能直接预览神经科学数据文件（比如 NIfTI 格式的脑部 MRI/fMRI 图像）。它不会把整个大文件传到浏览器，而是只读取一小部分信息，生成一张灰度切片图和结构化的元数据（尺寸、数据类型、强度范围等），这样 AI 就能回答关于这个文件的基本问题，同时保护数据安全。目前支持查看单文件 NIfTI-1 格式，包括 3D 和 4D 数据，可以切换轴向、冠状面和矢状面切片。",
+      "level": "ok",
+      "risks": "插件通过 DSH 的文件系统接口读取用户指定的 .nii 文件（默认最大 256 MiB），并在浏览器中显示一张灰度切片和元数据。它只读文件，不会修改数据；数据也不会发送到外部服务器。除此之外，没发现明显风险。",
+      "postInstallNotes": "安装后需要确认 DSH 版本为 0.1.0-rc.6，并在配置中检查插件是否正确加载。默认的 maxFileBytes 和 maxSlicePixels 可以根据需要调整，也可以不调整直接使用。",
+      "notes": "无"
+    },
+    "summaryZh": "一个用于在 DeepSeek Harness 中直接预览神经科学数据（如 NIfTI 脑影像）的只读插件，支持切片查看和元数据提取。",
+    "usage": {
+      "prompt_tokens": 4060,
+      "completion_tokens": 1489,
+      "total_tokens": 5549,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1017
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3420
+    }
+  }
+}

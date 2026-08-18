@@ -1,0 +1,37 @@
+{
+  "id": "dsh-llm-newapi",
+  "analyzedAt": "2026-08-18T14:55:44.973Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis 等核心包，README 提供 dsh plugin add 安装命令，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-llm-newapi",
+      "evidence": "dsh plugin --profile web add dsh-llm-newapi"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness (DSH) 增加了一个叫 NewAPI 的智能模型服务。NewAPI 是一个兼容 OpenAI 的网关，你可以通过它接入各种 AI 模型。装上后，你可以在 DSH 的网页设置里填 API 地址和密钥，然后就能在聊天里选用 NewAPI 提供的模型了。简单说，就是把 DSH 能用的模型来源扩展到一个叫 NewAPI 的服务上。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件正常使用中会保存你填写的 API 密钥和网关地址，这些在你自己的 DSH 配置里，不会自动上传到别处。",
+      "postInstallNotes": "装完后需要编辑配置文件（比如 ~/.dsh/profiles/web/package.json），把 dsh-llm-newapi 加到 dsh.profile.bundles 里，然后重启 dsh web。之后在设置页出现 NewAPI 页面，填好 API 密钥和网关地址（记得带 /v1），点获取模型信息，保存后就可以用了。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加 NewAPI 兼容网关的模型提供插件，支持 Web 设置页配置模型列表。",
+    "usage": {
+      "prompt_tokens": 4239,
+      "completion_tokens": 540,
+      "total_tokens": 4779,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 123
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3599
+    }
+  }
+}

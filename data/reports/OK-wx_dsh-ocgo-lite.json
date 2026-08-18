@@ -1,0 +1,37 @@
+{
+  "id": "OK-wx/dsh-ocgo-lite",
+  "analyzedAt": "2026-08-17T11:55:26.991Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:OK-wx/dsh-ocgo-lite",
+      "evidence": "dsh plugin --profile web add github:OK-wx/dsh-ocgo-lite"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 聊天输入框下方显示一条常驻信息条，实时展示你的 OpenCode Go 套餐余量、已消耗的 token 数量和花费金额。你可以点击它查看账户详情、按会话/模型筛选统计，它每 30 秒自动刷新。数据来自官方接口和你本地的会话日志，不用额外装东西。",
+      "level": "ok",
+      "risks": "它会读取你电脑上 OpenCode Go 的登录文件（auth.json）和 DSH 的会话日志（含对话内容），但只在本地处理。它会连接 opencode.ai 官方接口查询配额和定价。另外它在本地开了一个小 HTTP 服务，其中有个接口会返回完整 API Key（仅限本机访问），如果你的电脑上有恶意软件，理论上可能获取到。建议只在自己可信的设备上使用。",
+      "postInstallNotes": "安装后需要重启 DSH（web profile）。确保本机已登录 OpenCode Go（~/.local/share/opencode/auth.json 包含 opencode-go key），并且 Node.js 版本不低于 22.5。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 聊天框下方常驻显示 OpenCode Go 套餐余量、token 消耗和费用的插件，支持按会话/模型筛选与实时刷新。",
+    "usage": {
+      "prompt_tokens": 2896,
+      "completion_tokens": 2840,
+      "total_tokens": 5736,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2416
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2256
+    }
+  }
+}

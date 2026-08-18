@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-code-reviewer",
+  "analyzedAt": "2026-08-16T13:38:43.667Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/dsh-tools，且 README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-code-reviewer",
+      "evidence": "dsh plugin --profile my-profile add dsh-plugin-code-reviewer"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的工具插件，装好后会多出三个纯本地小工具：1) code_review 帮你扫代码里的常见坑（比如硬编码密码、SQL 注入、残留调试输出），还特别懂工厂/工业系统里的 OPC UA、Modbus、MQTT 写法；2) mqtt_probe 能把 MQTT 十六进制报文解析成可读字段；3) opcua_validate 帮你批量检查 OPC UA 节点地址格式对不对。所有工具都在你自己的电脑上跑，不调用大模型，也不需要 API key。",
+      "level": "ok",
+      "risks": "它会按你的要求读取本地源码文件/目录做扫描，扫描结果会作为工具输出返回给聊天界面——所以别拿它扫含密码或隐私的文件，也别在对话里贴出去。除此之外没发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 提供三个纯本地的工业代码审查与协议解析工具（code_review、mqtt_probe、opcua_validate）的插件。",
+    "usage": {
+      "prompt_tokens": 4037,
+      "completion_tokens": 1866,
+      "total_tokens": 5903,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1488
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3397
+    }
+  }
+}

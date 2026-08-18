@@ -1,0 +1,37 @@
+{
+  "id": "bill9109/dsh-webbridge",
+  "analyzedAt": "2026-08-17T12:09:39.280Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明 dsh.bundle 并依赖 @deepseek-ai/dsh-* 核心包，README 给出 dsh plugin 安装命令，符合 DSH 插件证据。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/bill9109/dsh-webbridge.git",
+      "evidence": "README: dsh plugin --profile web add github:bill9109/dsh-webbridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是个“桥”，让跑在 DeepSeek Harness 里的大模型能直接操作用户自己电脑上打开的真实浏览器（不是那种看不见的无头浏览器）。它提供了十一个工具，比如打开网页、点击、填表、截图、看网络请求、管理标签页等。模型能像个“遥控器”一样控制你的浏览器，但需要你事先安装一个叫 Kimi WebBridge 的小程序（Moonshot AI 出的）和配套的浏览器插件。",
+      "level": "caution",
+      "risks": "使用它时，大模型可以读取你当前浏览器里打开的标签页和网页内容，能执行网页里的 JavaScript，还能模拟点击、填表、发消息——也就是说它能真实地操作你的账号去做事（比如发帖、付款）。所有操作都发生在你自己电脑上，数据不经过模型提供方（DSH 本地运行），但会经过你本地的 Kimi WebBridge 守护进程，该守护进程由 Moonshot AI 提供。另外，安装 Kimi WebBridge 用的是 `curl | bash`，脚本来自 Kimi 官方 CDN，装之前需要信任这个来源。它还会覆盖 DSH 内置的同名插件。",
+      "postInstallNotes": "1) 安装 Kimi WebBridge 守护进程（`curl -fsSL https://cdn.kimi.com/webbridge/install.sh | bash`）；2) 在 Chrome 应用商店安装“Kimi WebBridge”扩展并让扩展连上守护进程，用 `kimi-webbridge status` 确认；3) 安装完本插件后重启 DSH Web UI 并刷新页面。",
+      "notes": "这是 DSH 官方内置 webbridge 插件的独立开源版，装在 web profile 后会覆盖内置插件；若不想用，可用 `dsh plugin --profile web remove @bill9109/dsh-webbridge` 卸载恢复。"
+    },
+    "summaryZh": "让 DeepSeek Harness 模型通过本地 Kimi WebBridge 遥控你真实的 Chrome 浏览器，实现访问网页、点击填表、截图等操作。",
+    "usage": {
+      "prompt_tokens": 3532,
+      "completion_tokens": 2599,
+      "total_tokens": 6131,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1997
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2892
+    }
+  }
+}

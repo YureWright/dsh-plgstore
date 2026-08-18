@@ -1,0 +1,37 @@
+{
+  "id": "windows-bash",
+  "analyzedAt": "2026-08-16T13:39:14.252Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/bainianlaoyao/windows-bash.git",
+      "evidence": "dsh plugin --profile web add github:bainianlaoyao/windows-bash"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 Windows 电脑上的 DeepSeek Harness 只使用 Git Bash 作为终端工具，不用 PowerShell。它会自动修改配置，并安装几个 bash 专用的预设，让 AI 在 Windows 上也能顺畅地用 bash 命令。",
+      "level": "warning",
+      "risks": "它会修改你的 dsh 配置文件，还会在用户目录里创建预设链接。更重要的是，它把沙箱设为完全访问、审批设为从不，也就是说 AI 执行的命令不会经过你确认，有安全风险。安装时还要运行一个 PowerShell 脚本。",
+      "postInstallNotes": "安装后需要重启 dsh，新建会话时选择 standard-bash、code-bash 或 cordis-bash 预设；确保 git bash 在 PATH 中。",
+      "notes": "该插件针对 Windows 设计，在 macOS/Linux 上是空操作。它明确禁用了 PowerShell 和 pwsh，如果还需要其他终端，可以考虑 dsh-bash-terminal 插件。"
+    },
+    "summaryZh": "让 Windows 上 DeepSeek Harness 只用 Git Bash、禁用 PowerShell 的插件。",
+    "usage": {
+      "prompt_tokens": 2425,
+      "completion_tokens": 2289,
+      "total_tokens": 4714,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1913
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1785
+    }
+  }
+}

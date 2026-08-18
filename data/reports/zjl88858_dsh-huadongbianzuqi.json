@@ -1,0 +1,37 @@
+{
+  "id": "zjl88858/dsh-huadongbianzuqi",
+  "analyzedAt": "2026-08-17T11:34:36.651Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，且 README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/zjl88858/dsh-huadongbianzuqi/releases/download/v0.1.0/dsh-huadong-bianzuqi-0.1.0.tgz",
+      "evidence": "从 Releases 下载对应版本的预构建 tarball，然后直接安装到 Web profile："
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DeepSeek Harness 的前端小插件，作用是把输入框里的模型选择控件的 Effort 下拉菜单，换成一个带头像旋钮、导轨和刻度盘的三档滑块。它只是改界面显示，实际发送给模型的 Effort 仍然是原始值。",
+      "level": "ok",
+      "risks": "这个插件只改动 Harness 网页界面中的模型选择控件，不读取电脑上的文档或系统文件。三张头像以 base64 内嵌在代码里，别人可能会看到这些搞笑头像。如果通过 git 方式安装，会在你电脑上运行构建脚本，但 README 推荐用预构建 tarball，那个不执行额外脚本。",
+      "postInstallNotes": "无",
+      "notes": "这是一个玩笑项目，包含第三方人物的头像图片，未经授权，若公开传播或商业使用需自行确认授权；如果是相关权利人，可通过 GitHub Issues 联系移除。"
+    },
+    "summaryZh": "一个把 DeepSeek Harness 模型选项里的 Effort 下拉菜单换成三档滑块的前端娱乐插件。",
+    "usage": {
+      "prompt_tokens": 2479,
+      "completion_tokens": 1208,
+      "total_tokens": 3687,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 813
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1839
+    }
+  }
+}

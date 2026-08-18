@@ -1,0 +1,37 @@
+{
+  "id": "dingyi222666/dsh-focus-chat",
+  "analyzedAt": "2026-08-17T11:21:16.994Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 配置，并依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dingyi222666/dsh-focus-chat",
+      "evidence": "dsh plugin --profile web add @dingyi222666/dsh-focus-chat"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 dsh 的网页界面加一个“焦点聊天”（Focus chat）标签页，把一次对话压缩成类似 Claude Code 风格的摘要——例如“思考了 36 秒、加载了 3 条上下文、运行了 2 条 shell 命令、编辑了 8 个文件”，点击任一行可以展开看完整的工具调用、思考过程和产生文件等细节。它只是一个阅读视图，不会改变聊天本身，适合快速回顾“刚才发生了什么”。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取当前对话的本地快照并在浏览器里展示，不会上传数据或连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web（dsh web），然后在任意对话中打开 Focus chat 标签。若你的 dsh 构建较旧，可能需手动将包名加入 dsh.profile.bundles 列表。",
+      "notes": "需要 dsh >= 0.1.0-rc.6。"
+    },
+    "summaryZh": "为 dsh 网页界面添加类似 Claude Code 风格的焦点聊天标签页，将对话折叠为可展开的摘要视图。",
+    "usage": {
+      "prompt_tokens": 3006,
+      "completion_tokens": 2860,
+      "total_tokens": 5866,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2455
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2366
+    }
+  }
+}

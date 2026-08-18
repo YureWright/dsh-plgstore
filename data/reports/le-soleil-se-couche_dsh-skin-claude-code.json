@@ -1,0 +1,37 @@
+{
+  "id": "le-soleil-se-couche/dsh-skin-claude-code",
+  "analyzedAt": "2026-08-17T12:10:55.441Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/le-soleil-se-couche/dsh-skin-claude-code.git",
+      "evidence": "dsh plugin --profile web add https://github.com/le-soleil-se-couche/dsh-skin-claude-code"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页界面换肤的插件，能把界面改成类似 Claude Code 终端的样子：深色面板、橙色点缀、等宽字体，还带标题栏，支持亮色和暗色模式。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改界面样式，不碰用户数据，也不需要连外部服务器。",
+      "postInstallNotes": "安装后运行 dsh web，然后刷新页面即可生效。如果以后想切换或移除皮肤，可以编辑 ~/.dsh/cordis.patch.yml 或使用 dsh-web-ui 的皮肤管理脚本。",
+      "notes": "无"
+    },
+    "summaryZh": "一款给 DSH 网页界面换上 Claude Code 风格终端皮肤的插件，支持亮/暗双模式。",
+    "usage": {
+      "prompt_tokens": 1643,
+      "completion_tokens": 790,
+      "total_tokens": 2433,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 453
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1003
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@qing3a/dsh-event-auditor",
+  "analyzedAt": "2026-08-16T13:31:56.491Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle.patch，依赖 @deepseek-ai/cordis 且 peer 依赖 @deepseek-ai/dsh-host-webserver，README 给出了 dsh plugin add 命令，是正规的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@qing3a/dsh-event-auditor",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的“事件监控面板”。它能实时看到 Harness 内部的各种事件（例如智能体生命周期、会话、工具调用、子任务、配置变化等），统计每个事件出现的次数和分发模式，并保留最近 500 条事件记录。自带一个网页面板（/audit）和 JSON 接口（/api/audit/events），插件开发者可以用它调试插件、理解 Harness 的运行机制。",
+      "level": "ok",
+      "risks": "它会监听 Harness 的事件流并暂存在内存里，这些事件可能包含对话内容、工具参数调用等敏感信息；如果你开启 headless dump（设置 DSH_EVENT_AUDIT_DUMP 环境变量），会把数据写入文件。默认仅本机可访问面板，风险可控。除此之外没发现明显风险。",
+      "postInstallNotes": "需要安装并运行 @deepseek-ai/dsh-host-webserver 插件提供 web 服务，才能访问 /audit 面板；如需使用 headless dump，需要设置环境变量 DSH_EVENT_AUDIT_DUMP；分组开关等可通过 settings 面板热改，无需重启。",
+      "notes": "注意：package.json 版本号为 0.1.0，但 README 中自称 v0.3，可能存在版本不一致；README 给出的安装命令是本地开发模式（link:），但该插件已发布到 npm，直接使用 `dsh plugin add @qing3a/dsh-event-auditor` 安装即可。"
+    },
+    "summaryZh": "DeepSeek Harness 事件流审计面板，实时查看事件类型、分发模式与最近记录，帮助插件作者调试。",
+    "usage": {
+      "prompt_tokens": 2172,
+      "completion_tokens": 6061,
+      "total_tokens": 8233,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5553
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1532
+    }
+  }
+}

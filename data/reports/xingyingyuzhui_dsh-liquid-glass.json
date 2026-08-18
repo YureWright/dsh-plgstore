@@ -1,0 +1,37 @@
+{
+  "id": "xingyingyuzhui/dsh-liquid-glass",
+  "analyzedAt": "2026-08-17T11:35:10.293Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:xingyingyuzhui/dsh-liquid-glass",
+      "evidence": "dsh plugin --profile web add github:xingyingyuzhui/dsh-liquid-glass"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加壁纸和‘液态玻璃’效果。你可以选自带的冰原、深水壁纸，或者导入自己的图片，还能调节壁纸透明度和玻璃模糊程度，让界面更好看。它只是外观增强，不改变聊天功能。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改网页界面的样式和显示，不碰系统文件，也不会上传你的数据。",
+      "postInstallNotes": "装完后重启 dsh web，然后在设置里的‘通用’中找到‘Liquid Glass’选项并打开。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的液态玻璃皮肤：在官方界面上叠加壁纸和可选的玻璃模糊效果。",
+    "usage": {
+      "prompt_tokens": 1979,
+      "completion_tokens": 1062,
+      "total_tokens": 3041,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 757
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1339
+    }
+  }
+}

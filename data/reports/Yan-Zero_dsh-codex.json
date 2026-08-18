@@ -1,0 +1,37 @@
+{
+  "id": "Yan-Zero/dsh-codex",
+  "analyzedAt": "2026-08-17T11:24:43.003Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle / dsh.client 并依赖 @deepseek-ai/cordis 及大量 dsh-* 核心包，README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-codex",
+      "evidence": "Install the prebuilt bundle from npm into the selected dsh profile: dsh plugin --profile web add dsh-codex"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你用 ChatGPT 的订阅账号登录 DeepSeek Harness，从而使用 OpenAI 的 Codex 模型，还能生成图片、搜索网页等，不需要 OpenAI 的 API key，也不用改 DeepSeek Harness 的源码。",
+      "level": "ok",
+      "risks": "它会把你的登录凭据保存在本地的 ~/.dsh/.openai-codex-auth.json 文件里，并且会与 OpenAI 的服务器通信完成登录和请求。没有发现其他明显风险。",
+      "postInstallNotes": "安装后需要打开 dsh 的设置，找到 OpenAI Codex 并点击 Sign in with ChatGPT 完成登录；或者在终端运行 dsh plugin --profile web exec dsh-openai-codex login。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-codex 插件能让你用 ChatGPT 订阅账号在 DeepSeek Harness 中使用 Codex 模型，支持搜索、图片生成等增强功能。",
+    "usage": {
+      "prompt_tokens": 4190,
+      "completion_tokens": 1196,
+      "total_tokens": 5386,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 840
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3550
+    }
+  }
+}

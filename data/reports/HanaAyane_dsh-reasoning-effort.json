@@ -1,0 +1,37 @@
+{
+  "id": "HanaAyane/dsh-reasoning-effort",
+  "analyzedAt": "2026-08-17T11:13:27.598Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 并依赖 @deepseek-ai/cordis 及多个 dsh-client-* 核心包，README 也提供了 dsh plugin add 安装命令，属于标准 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:HanaAyane/dsh-reasoning-effort#main",
+      "evidence": "dsh plugin --profile web add github:HanaAyane/dsh-reasoning-effort#main"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个像 Codex 那样的“模型 + 推理强度”选择器。装了之后，聊天输入框下面会出现一个按钮，点开可以拖动滑块调整当前模型的推理强度（比如 off/high/max），还能正常挑选模型。滑块会自动适配当前模型支持的档位，并且和 DSH 自带的 /model 命令同步。另外它还提供了一些漂亮的主题特效，以及在模型没有档位时帮你写配置的小指引。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要读取模型配置并在本地界面展示，不修改配置文件，也不新增网络请求或遥测。它只会把开关状态保存在当前浏览器里。",
+      "postInstallNotes": "安装后需要手动重启 DSH Web Host；如果看不到滑块，检查设置→通用设置里的“推理强度滑块”开关是否打开。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Codex 风格的模型与推理强度滑块 UI 插件，支持多档位自动适配、主题特效和自定义模型档位声明。",
+    "usage": {
+      "prompt_tokens": 4523,
+      "completion_tokens": 1710,
+      "total_tokens": 6233,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1306
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3883
+    }
+  }
+}

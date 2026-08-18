@@ -1,0 +1,37 @@
+{
+  "id": "creght-dev/skills",
+  "analyzedAt": "2026-08-17T11:30:55.128Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle，而且描述明确是 DeepSeek Harness bundle，属于 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "creght-skills",
+      "evidence": "README未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一组“技能包”，让 AI 在网页制作、站点复制等场景下能调用更多现成的能力。不过目前没有附带使用说明，具体能干什么需要看代码才知道。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "README 为空，安装后建议查看 package.json 里 cordis.patch.yml 的具体作用。"
+    },
+    "summaryZh": "为 DeepSeek Harness 注册 Creght 技能包的插件。",
+    "usage": {
+      "prompt_tokens": 1059,
+      "completion_tokens": 1227,
+      "total_tokens": 2286,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 993
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 419
+    }
+  }
+}

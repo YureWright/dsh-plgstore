@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-gomoku",
+  "analyzedAt": "2026-08-17T11:23:15.904Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，README 给出 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@yejiming/dsh-gomoku",
+      "evidence": "dsh plugin --profile demo add @yejiming/dsh-gomoku"
+    },
+    "evaluationReport": {
+      "intro": "这是 DeepSeek Harness 的五子棋插件，能让你在 DSH 侧边栏里跟 AI 下五子棋。支持人机对战和双 AI 对战，黑白双方可以分别指定不同模型和思考档位，还能编辑双方的提示词来调教棋风。AI 每一步的思考过程都会展示出来，关掉棋盘窗口对局也不中断。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会调用你配置的大模型 API 来生成落子，因此下棋过程中会产生 token 费用；棋盘和提示词会发送给对应的模型服务商。除此之外不碰本地文件，也没有联网上传数据的行为。",
+      "postInstallNotes": "安装后建议运行 `dsh --profile demo --dump-config` 确认 gomoku 层已生效，再启动 `dsh --profile demo`。要求 dsh 版本不低于 0.1.0-rc.6，否则插件会一直 pending。",
+      "notes": "无"
+    },
+    "summaryZh": "一个在 DeepSeek Harness 里和 AI 下五子棋的插件，支持人机/双 AI 对战、分别配置黑白模型与提示词，并实时展示 AI 思考过程。",
+    "usage": {
+      "prompt_tokens": 5642,
+      "completion_tokens": 1340,
+      "total_tokens": 6982,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 921
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 5002
+    }
+  }
+}

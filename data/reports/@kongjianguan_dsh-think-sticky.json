@@ -1,0 +1,37 @@
+{
+  "id": "@kongjianguan/dsh-think-sticky",
+  "analyzedAt": "2026-08-18T14:56:41.611Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 字段，README 给出了 dsh plugin add 安装命令，且代码为 DSH Web 客户端插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@kongjianguan/dsh-think-sticky",
+      "evidence": "dsh plugin --profile web add @kongjianguan/dsh-think-sticky"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 网页版里“思考”块的标题行在滚动时固定在屏幕顶部，这样当思考内容很长时，展开/收起的按钮始终看得到，和官方 chat.deepseek.com 的体验一致。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在你本机 DSH 的 web 配置目录里安装一个前端插件，不碰系统文件，也不上传数据。",
+      "postInstallNotes": "需将仓库根目录的 cordis.patch.yml 内容追加到 ~/.dsh/profiles/web/cordis.patch.yml，然后重启 dsh web。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DSH 网页版思考块标题在滚动时固定在顶部，方便随时展开/收起。",
+    "usage": {
+      "prompt_tokens": 2357,
+      "completion_tokens": 1504,
+      "total_tokens": 3861,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1193
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1717
+    }
+  }
+}

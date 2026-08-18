@@ -1,0 +1,37 @@
+{
+  "id": "dsh-dead-links",
+  "analyzedAt": "2026-08-16T13:29:16.995Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis、@deepseek-ai/dsh-llm 等核心包，README 给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-dead-links",
+      "evidence": "或发布后：dsh plugin --profile <name> add dsh-dead-links"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 用的，用来检查 Markdown 文档里的死链（失效链接）。它会扫描你指定的目录里的 Markdown 文件，找出所有链接，逐个请求检查，然后告诉你哪些链接坏了、在哪个文件哪一行。它只读不改文件，相当安全。",
+      "level": "ok",
+      "risks": "它会读取你指定目录下的 Markdown 文件（默认 docs），并发起网络请求去访问这些链接。外部站点可能会看到你的服务器 IP，但不会读取或修改你的其他文件。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的死链检查插件，只读扫描 Markdown 文档中的链接并报告失效链接。",
+    "usage": {
+      "prompt_tokens": 2574,
+      "completion_tokens": 707,
+      "total_tokens": 3281,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 393
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1934
+    }
+  }
+}

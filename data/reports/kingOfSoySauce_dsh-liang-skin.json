@@ -1,0 +1,37 @@
+{
+  "id": "kingOfSoySauce/dsh-liang-skin",
+  "analyzedAt": "2026-08-17T11:13:09.247Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle / dsh.client 并依赖 @deepseek-ai/dsh-client-runtime 等核心包，README 给出了 dsh plugin 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:kingOfSoySauce/dsh-liang-skin#v0.1.4",
+      "evidence": "dsh plugin --profile web add 'github:kingOfSoySauce/dsh-liang-skin#v0.1.4'"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的一个皮肤，它把 AI 思考强度（推理等级）从默认的下拉菜单或按钮改成一根可拖动的滑块，拖到某个档位后松开才会生效。同时界面背景、人物形象和配色会跟着档位变化，看起来更直观、更有趣。安装后，你可以在设置里选择用这个皮肤还是用回原生界面。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会修改 DSH 的配置文件（例如 ~/.dsh/profiles/web/package.json）来注册自己，并在浏览器里加载包含的图片和视频素材；不会主动连外部服务器，也不会碰你的隐私文件。",
+      "postInstallNotes": "安装后需要重启 DSH Web（Ctrl+C 后重新运行 dsh web），然后打开「设置 → 通用设置 → 外观皮肤」，选择「滑动变祖」。如果当前模型不支持推理或只有一个档位，滑块不会显示。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 推理强度滑块皮肤，将思考档位变成 0–30 的滑动条并同步变换人物与背景。",
+    "usage": {
+      "prompt_tokens": 3258,
+      "completion_tokens": 2060,
+      "total_tokens": 5318,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1633
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2618
+    }
+  }
+}

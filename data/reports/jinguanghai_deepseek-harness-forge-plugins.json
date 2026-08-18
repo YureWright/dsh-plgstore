@@ -1,0 +1,37 @@
+{
+  "id": "jinguanghai/deepseek-harness-forge-plugins",
+  "analyzedAt": "2026-08-17T13:08:21.485Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，依赖 dsh-forge-* 本地插件，README 给出 dsh plugin add 命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:jinguanghai/deepseek-harness-forge-plugins",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件包给 DeepSeek Harness 智能体加了一堆“真算力”工具，包括符号数学、逻辑证明、正则校验、定理证明、模型检查、代码修复、中医诊断和记忆召回，一共 13 个工具、4 个插件。简单说就是让你的 AI 助手能做靠谱的计算和推理，而不是凭空瞎猜。",
+      "level": "caution",
+      "risks": "这个插件会运行自带的 Go 编译的二进制程序（Windows 预编译 exe 或本地编译），读取你指定的 memory.json 和 formula_db.json 文件（用于记忆和中医方剂），它通过 DeepSeek Harness 的文件接口访问，不会直接碰系统敏感文件。数据只在本机处理，没看到连接外部服务器。不过二进制来自作者发布，如果有安全担忧需要自行检查。",
+      "postInstallNotes": "需要设置环境变量 FORGE_GATE_BIN（指定 gate 二进制目录）、FORGE_HOME（记忆数据目录）、FORGE_DATA（中医方剂数据目录），并准备你自己的 formula_db.json 和 memory.json（或使用 data/ 下的空模板）。Linux/macOS 还需要先从 src/go 编译 7 个 gate 二进制。",
+      "notes": "根仓库的 package.json 用 file: 依赖指向本地插件目录，直接 `dsh plugin add` 远程仓库可能安装失败；作者在 README 里更推荐把仓库复制到本地再用相对路径添加插件。另外仓库标签带 dsh-plugin，但真正证据是 dsh.bundle 声明。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 13 个工具的插件集合，涵盖数学计算、逻辑证明、代码修复、中医诊断和记忆管理。",
+    "usage": {
+      "prompt_tokens": 3232,
+      "completion_tokens": 3086,
+      "total_tokens": 6318,
+      "prompt_tokens_details": {
+        "cached_tokens": 3200
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2577
+      },
+      "prompt_cache_hit_tokens": 3200,
+      "prompt_cache_miss_tokens": 32
+    }
+  }
+}

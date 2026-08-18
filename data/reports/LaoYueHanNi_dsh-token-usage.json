@@ -1,0 +1,37 @@
+{
+  "id": "LaoYueHanNi/dsh-token-usage",
+  "analyzedAt": "2026-08-17T11:47:04.146Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis 与多个 dsh-* 核心包；README 也提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/LaoYueHanNi/dsh-token-usage.git",
+      "evidence": "dsh plugin --profile web add github:LaoYueHanNi/dsh-token-usage"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DSH 的网页界面里显示模型的 token 用量：装好后打开“设置”就能看到“Token Usage”页面，里面有总花费、每日用量趋势图、按模型统计的明细，还能查看和修改每个模型的计费价格。",
+      "level": "ok",
+      "risks": "它会在你电脑的用户主目录下（~/.dsh/token-usage/）保存每天的 token 使用记录（包括模型、时间、会话 id 等），并在启动时自动从云端下载模型价格表。这些数据都存在本地，不会自动上传；但如果你的电脑被别人使用，这些记录可能被别人看到。没发现它会偷传数据或改动系统其他文件。",
+      "postInstallNotes": "无",
+      "notes": "首次启动会自动回填安装前的历史用量，之后实时记录；如需手动调整价格，可编辑 ~/.dsh/token-usage/pricing.json。"
+    },
+    "summaryZh": "在 DSH 网页设置中展示模型 Token 用量统计（含费用、趋势图、分模型明细与价格管理）的插件。",
+    "usage": {
+      "prompt_tokens": 3057,
+      "completion_tokens": 4826,
+      "total_tokens": 7883,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4431
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2417
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "HuanLinOTO/dsh-plugin-anti-ads",
+  "analyzedAt": "2026-08-17T11:35:38.843Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，README 给出了 dsh plugin add 安装命令，代码调用 DSH 客户端接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-anti-ads",
+      "evidence": "从 npm 安装（推荐）：`dsh plugin --profile web add @huanlin/dsh-plugin-anti-ads`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek 的 DSH 网页版用的广告拦截器，专门拦截另一个叫 dsh-ads 的广告插件。装好后，右下角会出现一个盾牌小徽章，显示已经拦截了几个广告弹窗。它用了四层办法：先偷偷把 dsh-ads 的广告开关全关掉；再用自动监控把漏网的弹窗移除；还能屏蔽 dsh-ads 的广告源；最后直接告诉 dsh-ads '广告已全部关闭'。所有操作都在你的浏览器里进行，不需要改服务器。",
+      "level": "ok",
+      "risks": "它会在你的浏览器里修改 dsh-ads 插件保存在 localStorage 的设置、监听页面变化、拦截一个 dsh-ads 的网络请求，这些都是为了屏蔽广告。它不会上传任何数据，也不触碰你的个人文件。唯一的副作用是 dsh-ads 的广告会消失，而且它的'一次性关闭'事件在刷新前可能无法撤销。",
+      "postInstallNotes": "需要先安装 dsh-ads 插件才有拦截对象。装好后重启 dsh web 并刷新页面，右下角会出现盾牌徽章，点击可查看/修改设置。",
+      "notes": "无"
+    },
+    "summaryZh": "专为 DSH Web UI 打造、只针对 dsh-ads 的四层广告拦截插件，带拦截数量统计徽章。",
+    "usage": {
+      "prompt_tokens": 3015,
+      "completion_tokens": 3632,
+      "total_tokens": 6647,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3187
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2375
+    }
+  }
+}

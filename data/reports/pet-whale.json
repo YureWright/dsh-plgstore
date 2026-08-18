@@ -1,0 +1,37 @@
+{
+  "id": "pet-whale",
+  "analyzedAt": "2026-08-16T13:27:05.931Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等 DSH 核心包，README 给出了 dsh plugin 安装命令，确为 DSH 插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/nzl153/dsh-pet-whale.git",
+      "evidence": "dsh plugin --profile web add \"github:<user>/pet-whale#main\""
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）聊天界面用的『桌宠小鲸鱼』插件。装好后网页右下角会出现一只小鲸鱼，它会根据 AI 助手干活的状态（思考、写代码、完成、出错）切换动画和表情，还能戳它、拖它、右键喂食，甚至通过 WebAudio 合成叫声。纯前端实现，不占额外资源。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在前端运行，会使用浏览器 localStorage 记住你的偏好（位置、皮肤等），剪贴板仅在你点『复制错误信息』时写入。不会上传数据，也没有外部请求。",
+      "postInstallNotes": "装完需要重启 dsh web（宿主在启动时合成插件）。如果只改客户端部分，硬刷新 Ctrl+F5 即可。另外要求 DSH ≥0.1.0-rc.6。",
+      "notes": "README 中的 git 简写安装命令（github:<user>/pet-whale#main）与实际仓库名（dsh-pet-whale）不一致，建议改用完整 git URL 或 npm 包名 pet-whale。"
+    },
+    "summaryZh": "DSH 桌宠小鲸鱼插件：随 agent 状态切换动画的可爱桌宠，支持戳戳、拖拽、换肤等多交互。",
+    "usage": {
+      "prompt_tokens": 4113,
+      "completion_tokens": 2386,
+      "total_tokens": 6499,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1934
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3473
+    }
+  }
+}

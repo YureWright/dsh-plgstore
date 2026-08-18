@@ -1,0 +1,37 @@
+{
+  "id": "dsh-tool-vision",
+  "analyzedAt": "2026-08-16T13:25:31.082Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch 与 dsh.client（web），peerDependencies 含 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tool-vision",
+      "evidence": "README 原文：'dsh plugin --profile web add dsh-tool-vision installs and mounts it in one step — no manual `cordis.patch.yml` edits needed.'"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上“看图片”的能力。DSH 自带的模型只认文字，装了这个插件后，你可以在对话里丢一张本地图片或图片链接，智能体会调用你配置的任意 OpenAI 兼容视觉模型（比如 GPT-4o、通义千问 VL、智谱 GLM-4V、本地 Ollama）来识别图片，并把看到的内容用文字带回来。它还提供了一个网页设置界面，不用改配置文件就能填 API 地址、密钥和模型名；粘贴的图片也会自动变成“请用 inspect_image 看一下”的提示。",
+      "level": "ok",
+      "risks": "它会把你指定的图片发送到你配置的视觉模型 API（可能是 OpenAI、阿里、智谱等第三方服务，也可能是本地 Ollama，取决于你的设置），所以图片内容会交给那个服务。API 密钥会保存在 DSH 的 settings.yaml 里，注意别泄露，也别给不该看的人看到。粘贴的图片会先被导出到系统临时目录（os.tmpdir()/dsh-vision-bridge），用完后可能残留本地。",
+      "postInstallNotes": "装完后需要配置：设置 baseURL、API 密钥（apiKey 或 apiKeyEnv）、模型名；首次启动后需重启一次 dsh web 才会出现设置栏；如果要用“粘贴图片到文字提示”的桥接功能，还需要在模型配置里声明 input: [text, image]。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 加视觉的插件：把图片发给任意 OpenAI 兼容的视觉模型并带回文字描述，附网页设置界面。",
+    "usage": {
+      "prompt_tokens": 3569,
+      "completion_tokens": 2891,
+      "total_tokens": 6460,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2361
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2929
+    }
+  }
+}

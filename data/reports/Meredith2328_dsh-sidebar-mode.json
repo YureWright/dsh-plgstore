@@ -1,0 +1,37 @@
+{
+  "id": "Meredith2328/dsh-sidebar-mode",
+  "analyzedAt": "2026-08-17T13:13:02.504Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 明确声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-* 核心包，README 也给出了安装到 DSH profiles/web 的说明。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Meredith2328/dsh-sidebar-mode.git",
+      "evidence": "pnpm add \"github:Meredith2328/dsh-sidebar-mode\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 DSH 聊天界面里切换模式（标准/PTC/创造/极简）的功能，直接集成到「新会话」按钮里。你点按钮左边的小字就会弹出预设菜单，选一个就自动切换，不用再进设置页。它和设置里的 Agent 预设是同步的，你自定义的预设也会自动出现在菜单里。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只操作 DSH 自己的界面和设置项，不碰个人文件，也不连外部服务器。",
+      "postInstallNotes": "需要手动把它加入 package.json 的 dsh.profile.bundles 列表，然后重启 DSH Desktop。",
+      "notes": "此插件的安装方式与标准的 dsh plugin add 不同，README 中使用 pnpm add 并手动配置 bundles；且 package.json 标记 private，可能未发布到 npm 仓库。"
+    },
+    "summaryZh": "把模式切换集成到「新会话」按钮并自动同步 Agent 预设的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 1700,
+      "completion_tokens": 2497,
+      "total_tokens": 4197,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2121
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1060
+    }
+  }
+}

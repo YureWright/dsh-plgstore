@@ -1,0 +1,37 @@
+{
+  "id": "@memtensor/memos-local-plugin",
+  "analyzedAt": "2026-08-16T13:22:31.782Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch 且 peerDependencies 包含 @deepseek-ai/cordis 和多个 dsh-* 包，README 提供了 DSH 安装说明。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@memtensor/memos-local-plugin",
+      "evidence": "README 原文：\"DSH installs the package into a profile with `dsh plugin`\""
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 AI 智能体用的记忆插件，让 AI 能记住跨任务的经历、提炼策略、形成技能，并在需要时自动调用相关记忆。它同时支持 DeepSeek Harness、OpenClaw 和 Hermes 三种智能体框架。",
+      "level": "caution",
+      "risks": "安装后会往你的用户目录（如 ~/.dsh/）下创建配置和数据文件夹，里面包含 API 密钥（config.yaml）、SQLite 数据库和日志。默认会启动一个本地 HTTP 服务（127.0.0.1:18801）供网页查看，只监听本机。安装过程会运行 postinstall 脚本并编译原生模块（better-sqlite3 等），需要你留意一下。",
+      "postInstallNotes": "无需额外配置，默认复用 DSH 已有的模型和凭据。如需关闭本地 HTTP 查看器，可在 DSH 配置中设置 viewerEnabled: false。",
+      "notes": "无"
+    },
+    "summaryZh": "一个本地优先的分层记忆与自我进化插件，为 DSH 等智能体提供长期记忆、策略归纳和技能结晶能力。",
+    "usage": {
+      "prompt_tokens": 4329,
+      "completion_tokens": 934,
+      "total_tokens": 5263,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 540
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3689
+    }
+  }
+}

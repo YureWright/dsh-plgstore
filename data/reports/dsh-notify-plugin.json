@@ -1,0 +1,37 @@
+{
+  "id": "dsh-notify-plugin",
+  "analyzedAt": "2026-08-18T14:55:20.990Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 包含 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-notify-plugin",
+      "evidence": "dsh plugin --profile web add dsh-notify-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在对话完成、暂停、失败、需要你回答或需要授权时，自动给你发通知。通知可以发到桌面、Webhook 地址、企业微信机器人或 Telegram 机器人，内容会带上对话摘要、用了什么工具、耗时等信息。",
+      "level": "ok",
+      "risks": "它会把对话内容的部分摘要发送到你配置的外部服务（如企业微信、Telegram、自定义 Webhook），所以如果你把这些服务交给别人，对话信息可能被第三方看到。另外，为了发桌面通知，它可能会调用 macOS 的系统命令播放声音或显示弹窗。",
+      "postInstallNotes": "装完需要去 DSH 的配置里启用想用的通知渠道，并填上对应的地址或令牌（比如企业微信 Webhook、Telegram Bot Token），然后重启 DSH Web 生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 通知插件，支持系统通知、Webhook、企业微信和 Telegram，在对话完成/暂停/失败/提问/授权时自动提醒。",
+    "usage": {
+      "prompt_tokens": 4976,
+      "completion_tokens": 1664,
+      "total_tokens": 6640,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1301
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4336
+    }
+  }
+}

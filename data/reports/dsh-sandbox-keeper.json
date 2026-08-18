@@ -1,0 +1,37 @@
+{
+  "id": "dsh-sandbox-keeper",
+  "analyzedAt": "2026-08-16T13:31:58.009Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 中声明了 peerDependencies 依赖 @deepseek-ai/cordis，且描述为 DeepSeek Harness 的远程沙箱管理器"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-sandbox-keeper",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness（DSH）的一个“远程沙箱管家”。它的作用是帮你管理在云上（E2B 服务）跑的隔离沙箱：创建、暂停、恢复沙箱，部署 sidecar 组件，通过心跳保持连接，如果沙箱意外崩溃会自动恢复，还能把你需要的数据用 tar 打包传进传出沙箱。简单说，就是帮你远程安全地运行代码，并且省去手工管理沙箱的麻烦。",
+      "level": "caution",
+      "risks": "安装后插件会连接远程的 E2B 服务器，也就是说你的代码和数据可能会被传到云端的沙箱里运行，因此敏感信息要当心；此外这个 npm 包依赖的 dsh-remote-sidecar 和 dsh-remote-protocol 可能没有发布到 npm，直接安装可能报错。",
+      "postInstallNotes": "需要配置 E2B 沙箱的 API 密钥（如 E2B_API_KEY）等环境变量；同时确保已安装 peer 依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-invariants。由于 README 缺失，具体配置请以实际使用为准。",
+      "notes": "README 缺失，文档不完整；package.json 中使用 workspace:* 协议引用 dsh-remote-sidecar 和 dsh-remote-protocol，这两个包若未在 npm 发布会导致安装失败；经评估可以确认这是 DSH 插件，但使用前建议先验证安装。"
+    },
+    "summaryZh": "DSH 的远程沙箱生命周期管理插件，负责 E2B 沙箱的创建/暂停/恢复、心跳保活、崩溃恢复和 tar 文件同步。",
+    "usage": {
+      "prompt_tokens": 1563,
+      "completion_tokens": 3237,
+      "total_tokens": 4800,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2749
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 923
+    }
+  }
+}

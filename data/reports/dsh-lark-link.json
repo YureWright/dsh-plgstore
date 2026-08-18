@@ -1,0 +1,29 @@
+{
+  "id": "dsh-lark-link",
+  "analyzedAt": "2026-08-18T14:50:48.608Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并 peerDependencies 依赖 @deepseek-ai/cordis 等多个核心包，README 提供 dsh plugin add 安装命令，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-lark-link@latest",
+      "evidence": "dsh plugin --profile web add dsh-lark-link@latest --ignore-scripts"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以把你的 DeepSeek Harness（DSH）智能体接到飞书/Lark 里，装好后在飞书里就能跟 AI 聊天、下任务，还支持发图片、文件、切换模型和模式等。它提供扫码自动创建飞书应用的功能，基本不用手动配置，30 秒就能上线。",
+      "level": "ok",
+      "risks": "它需要读取你在飞书里发给它的消息内容，并且默认给 AI 开的是完整权限，也就是说 AI 可以在这台电脑上执行命令、读写文件，请留意权限设置。另外它会把一些日志和配置打包成诊断包发回飞书。",
+      "postInstallNotes": "安装后需要启动 DSH Web GUI（运行 dsh web），然后在输入框执行 /lark setup 扫码创建飞书应用，再执行 /lark start 启动桥接。如果已有飞书应用，也可以设置 DSH_LARK_APP_ID 和 DSH_LARK_SECRET 环境变量。",
+      "notes": "需要 Node.js ≥ 24；当前是 beta 版；这是一个社区插件，与 DeepSeek、飞书/Lark 没有官方隶属关系。"
+    },
+    "summaryZh": "把 DeepSeek Harness 智能体接入飞书/Lark 的双向桥接插件，支持扫码快速上线、卡片式命令、文件收发和零丢失消息。",
+    "usage": {
+      "prompt_tokens": 11325,
+      "completion_tokens": 3298,
+      "total_tokens": 14623
+    }
+  }
+}

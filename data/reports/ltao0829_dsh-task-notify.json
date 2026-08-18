@@ -1,0 +1,37 @@
+{
+  "id": "ltao0829/dsh-task-notify",
+  "analyzedAt": "2026-08-17T11:47:39.389Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh 客户端包，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/ltao0829/dsh-task-notify.git",
+      "evidence": "dsh plugin --profile web add git+https://github.com/ltao0829/dsh-task-notify.git"
+    },
+    "evaluationReport": {
+      "intro": "这是给 DeepSeek Harness 网页版用的提醒小工具。当 AI 对话任务、后台任务完成、需要你审核或者出错了，它会在页面上弹通知，还能发系统通知和提示音，免得你一直盯着等。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在浏览器里申请通知权限，并把设置存在浏览器本地（localStorage），不会碰你电脑上其他文件。",
+      "postInstallNotes": "安装后重启 dsh web，刷新页面；第一次在页面上点击或按键盘时，浏览器会请求通知权限，点允许才能收到系统通知。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页版任务完成提醒插件：任务结束、待审核或失败时推送浏览器通知、页面 toast 和可选提示音。",
+    "usage": {
+      "prompt_tokens": 2307,
+      "completion_tokens": 610,
+      "total_tokens": 2917,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 261
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1667
+    }
+  }
+}

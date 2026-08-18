@@ -1,0 +1,37 @@
+{
+  "id": "dsh-mobile-hanui",
+  "analyzedAt": "2026-08-17T11:11:46.049Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，并依赖 @deepseek-ai/dsh-client-runtime 等核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mobile-hanui",
+      "evidence": "README 中写道：pnpm add dsh-mobile-hanui"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面用的，主要解决在手机浏览器上不好用的问题。它会自动检测窄屏（手机或小窗口），然后把侧边栏变成可以滑出的抽屉、让弹窗全屏显示、调整输入框大小，还加了悬浮按钮方便打开菜单。装上之后，手机上看 DSH 网页就跟原生 App 一样顺手，桌面端完全不受影响。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只改前端显示逻辑，不碰用户文件，也不连外部服务器。",
+      "postInstallNotes": "安装后需要手动在 ~/.dsh/profiles/web/package.json 的 dsh.profile.bundles 数组里加入 \"dsh-mobile-hanui\"，然后重启 dsh web 服务。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 网页界面在手机上自动变成适合触屏的移动端布局（抽屉侧边栏、全屏弹窗、悬浮按钮等）。",
+    "usage": {
+      "prompt_tokens": 1567,
+      "completion_tokens": 795,
+      "total_tokens": 2362,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 431
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 927
+    }
+  }
+}

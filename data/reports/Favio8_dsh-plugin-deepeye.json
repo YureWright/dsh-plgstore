@@ -1,0 +1,37 @@
+{
+  "id": "Favio8/dsh-plugin-deepeye",
+  "analyzedAt": "2026-08-17T13:14:33.864Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-deepeye",
+      "evidence": "dsh plugin --profile web add dsh-plugin-deepeye"
+    },
+    "evaluationReport": {
+      "intro": "这个插件像是给纯文本大模型装了“眼睛”。它可以把图片转成文字描述、提取截图里的文字、回答图片相关的问题、分析 APP 界面排版，还能读剪贴板里的截图。你在对话框里直接粘贴图片，它也会自动翻译成文字再发给模型。",
+      "level": "ok",
+      "risks": "它会读取剪贴板内容和本地图片文件（如果路径提供给它），并把图片发送到你配置的第三方 AI 服务（如 OpenAI、Gemini、智谱）进行分析。这些图片会被外部服务看到，请勿上传敏感内容。",
+      "postInstallNotes": "需要先设置至少一个视觉后端的 API Key（如 OPENAI_API_KEY / GEMINI_API_KEY / DEEPEYE_API_KEY），并视需要在 cordis.yml 的 profile 中覆盖 provider / model / baseUrl 等配置。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek 纯文本模型拥有视觉能力：图片描述、OCR、视觉问答、UI 分析、剪贴板截图，并能在聊天中粘贴图片自动转文字。",
+    "usage": {
+      "prompt_tokens": 4059,
+      "completion_tokens": 1836,
+      "total_tokens": 5895,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1466
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3419
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "IAMLieutenant/dsh-tool-user-memory",
+  "analyzedAt": "2026-08-17T12:11:20.936Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle.patch，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tool-user-memory",
+      "evidence": "dsh plugin --profile web add dsh-tool-user-memory"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的 AI 助手跨会话记住你的偏好，比如你喜欢简洁的回答、常用什么编程语言、你的项目背景等。你告诉它一次，以后每个新会话它都自动知道，不用重新介绍。它会把这些信息存在你电脑上的一个文件里，你随时可以查看、修改或删除。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下创建并读写一个记忆文件（$DSH_HOME/user-memory/user.md），内容只包含你让它记住的偏好，不涉及密钥密码。记忆文件仅你本人可读，没发现明显风险。",
+      "postInstallNotes": "安装后需要重启你的 dsh 会话（比如 web 模式重启 dsh web），插件才会生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 的用户偏好记忆插件，让 AI 跨会话自动记住你的习惯和背景。",
+    "usage": {
+      "prompt_tokens": 3602,
+      "completion_tokens": 504,
+      "total_tokens": 4106,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 160
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2962
+    }
+  }
+}

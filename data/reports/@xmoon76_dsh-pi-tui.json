@@ -1,0 +1,37 @@
+{
+  "id": "@xmoon76/dsh-pi-tui",
+  "analyzedAt": "2026-08-18T14:57:08.002Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle，并依赖 @deepseek-ai/cordis 与多个 dsh-* 核心包；README 给出了 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@xmoon76/dsh-pi-tui",
+      "evidence": "dsh plugin --profile pi-tui -- add @xmoon76/dsh-pi-tui"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能在终端里以界面方式使用，而不是浏览器或纯命令行。你可以用它来选择和搜索聊天会话、设置标题、管理模型、导出对话等。它还带一个修复会话文件的小工具，以防会话损坏。",
+      "level": "ok",
+      "risks": "它会读写 dsh 的会话文件（默认在 ~/.dsh 下），并写入日志文件。修复会话的脚本会修改会话文件，但修改前会备份。没有发现向外部服务器发送数据或访问隐私文件的行为。",
+      "postInstallNotes": "无",
+      "notes": "注意：README 警告同一个会话不能同时在两个界面（如 TUI 和 Web）打开，否则可能损坏会话。另外，依赖的 @deepseek-ai/dsh-* 为 rc 版本，可能尚未稳定。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供终端 UI 界面的第三方插件，支持会话管理、搜索和修复。",
+    "usage": {
+      "prompt_tokens": 4125,
+      "completion_tokens": 1661,
+      "total_tokens": 5786,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1303
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3485
+    }
+  }
+}

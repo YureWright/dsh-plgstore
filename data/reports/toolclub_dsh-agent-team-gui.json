@@ -1,0 +1,37 @@
+{
+  "id": "toolclub/dsh-agent-team-gui",
+  "analyzedAt": "2026-08-17T11:42:13.215Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等多款 DSH 核心包，README 提供了 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/toolclub/dsh-agent-team-gui.git",
+      "evidence": "dsh plugin --profile web add -w github:toolclub/dsh-agent-team-gui#v0.4.1"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以让你在 DeepSeek Harness 里创建和管理多个 AI 智能体组成的“团队”，每个智能体可以有自己的模型、工具权限和固定分工。在设置里保存好团队，然后在聊天时选一个团队并开启“团队模式”，普通发送消息就能让整个团队协作完成你的任务，比如一个规划、一个执行、一个审查。它还能记录每次团队运行的进度和消耗的 token。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你已有的模型路由配置，但不会存储 API 密钥；它的数据通过 DeepSeek Harness 的存储机制保存，相当于在本地保存你的团队设置和运行记录。运行时会调用你配置的模型服务（比如 DeepSeek API），这属于正常使用范围。",
+      "postInstallNotes": "安装后需要先确保 dsh 中已配置至少一个模型路由（provider/model route），然后打开设置里的 Teams 页面创建智能体和团队，在聊天界面选择团队并开启 Squad mode 即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "一个在 DeepSeek Harness 中让多个 AI 智能体以固定团队形式协作的插件，每个成员可独立配置模型和工具。",
+    "usage": {
+      "prompt_tokens": 4196,
+      "completion_tokens": 1275,
+      "total_tokens": 5471,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 839
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3556
+    }
+  }
+}

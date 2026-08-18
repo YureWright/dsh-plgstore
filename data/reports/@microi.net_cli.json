@@ -1,0 +1,37 @@
+{
+  "id": "@microi.net/cli",
+  "analyzedAt": "2026-08-16T13:22:29.676Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 并附带 cordis.patch.yml，README 说明通过 @deepseek-ai/dsh-mcp-client 接入官方 DSH，符合 DSH 插件特征"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@microi.net/cli",
+      "evidence": "默认幂等安装到 DSH 官方 `web` 与 `headless` profile"
+    },
+    "evaluationReport": {
+      "intro": "这个工具叫 @microi.net/cli，是 Microi吾码低代码平台的 AI 开发命令集。它能让 DeepSeek Harness、Codex、WorkBuddy 等 AI 编程助手连上 Microi 服务器，帮你拉代码、配置 MCP、安装技能库，还提供自动更新。简单说，它是连接 AI 编程工具和 Microi 低代码平台的桥梁。",
+      "level": "ok",
+      "risks": "它会在你电脑的用户目录下（比如 .codex、.workbuddy、.comate）以及项目目录里写一些配置文件，并需要登录 Microi 服务器，登录时可能输入账号密码（开发方说密码不会写进文件）。它还会通过 npm 官方源自动更新自己。没发现碰隐私文件或连不明外部服务器。",
+      "postInstallNotes": "装完先运行 `microi init --workspace <工作区> --pull` 初始化工作区并登录服务器；要用 DSH 插件就再运行 `microi dsh install`，之后新建 DSH 会话即可看到工具。",
+      "notes": "这个包不光是 DSH 插件，还是一个多宿主的 CLI 工具，官方推荐用 `microi dsh install` 来装 DSH 部分，而不是 `dsh plugin add`。源码仓库是自托管域名（git.itdos.net），可靠程度以 npm 官方发布为准。"
+    },
+    "summaryZh": "Microi吾码低代码平台的 AI 开发 CLI，让 DSH、Codex 等 AI 助手连接和操作 Microi 服务器。",
+    "usage": {
+      "prompt_tokens": 2762,
+      "completion_tokens": 6214,
+      "total_tokens": 8976,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5728
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2122
+    }
+  }
+}

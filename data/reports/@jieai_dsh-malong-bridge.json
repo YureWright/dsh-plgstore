@@ -1,0 +1,37 @@
+{
+  "id": "@jieai/dsh-malong-bridge",
+  "analyzedAt": "2026-08-18T14:52:18.848Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置，README 提供了 dsh plugin add 安装命令，是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@jieai/dsh-malong-bridge",
+      "evidence": "dsh plugin --profile web add @jieai/dsh-malong-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫「六合/马龙」工具集，是个代码分析工具包。装上它，AI 对话里就能直接用 44 种代码索引、搜索、分析工具，而且它会自动知道你现在在哪个文件夹干活，不用每次手动告诉它路径。它自带全部后端，装完基本就能用。",
+      "level": "ok",
+      "risks": "它会读取你当前工作区里的代码文件（默认忽略 node_modules、.git 等目录）来建索引，索引数据存在 ~/.local/state/malong-dsh 下。安装时可能要下载并编译一个数据库组件（better-sqlite3），如果电脑没有现成的预编译版本或缺少编译工具，可能需要额外折腾。它不会把你的数据传上网，但 AI 确实能通过工具读到工作区文件内容——这是它本来就要做的事。",
+      "postInstallNotes": "安装后需要重启 dsh web：执行 pkill -f \"dsh web\" 再重新运行 dsh web（比如 dsh web --port 3456 --host 0.0.0.0）。如果用 pnpm 且提示 \"Ignored build scripts: better-sqlite3\"，需要运行 pnpm approve-builds 并勾选 better-sqlite3，或手动改 ~/.dsh/profiles/web/pnpm-workspace.yaml 添加 better-sqlite3 到 onlyBuiltDependencies 再执行 pnpm rebuild better-sqlite3，否则工具调用会失败。",
+      "notes": "无"
+    },
+    "summaryZh": "把 LiuHe（六合）工具包的 44 个代码索引 MCP 工具集成到 DSH 网页版，并让工具自动跟随当前会话工作目录的插件。",
+    "usage": {
+      "prompt_tokens": 2791,
+      "completion_tokens": 2996,
+      "total_tokens": 5787,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2497
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2151
+    }
+  }
+}

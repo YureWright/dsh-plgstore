@@ -1,0 +1,37 @@
+{
+  "id": "Ghost011118/dsh-balance-meter",
+  "analyzedAt": "2026-08-17T11:21:40.170Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/client 配置，并依赖 @deepseek-ai/dsh-* 核心包，README 给出 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "https://github.com/Ghost011118/dsh-balance-meter",
+      "evidence": "From a git URL (no npm account needed): dsh plugin --profile web add https://github.com/Ghost011118/dsh-balance-meter"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面加小部件的小插件。装好后，对话框下方会显示一个余额条，实时展示你的 DeepSeek 账户还剩多少钱，以及当前这次对话大概花了多少钱。它还会自动区分对话用的是 Flash 还是 Pro 模型，按官方价格估算花费，并且每 6 小时自动同步一次官方价格，不用手动更新。",
+      "level": "ok",
+      "risks": "插件会读取 DSH 的凭据文件（默认 ~/.dsh/.credentials.yaml）里的 DeepSeek API 密钥，仅用于向 api.deepseek.com 官方接口查询余额；还会定时访问官方定价页面获取价格。除此之外未发现明显风险。",
+      "postInstallNotes": "安装后重启 `dsh web` 并刷新页面。确保已经配置好 DeepSeek API 密钥（可在 DSH Web 的 Models 页面写入，或设置环境变量 DEEPSEEK_API_KEY）。",
+      "notes": "注意：package.json 中仓库地址指向 zhu1090093659/dsh-web-ui，与 GitHub 主页不一致，建议留意；另外插件提到 2026-08-17 的峰值定价可能尚未生效，属于正常规划。"
+    },
+    "summaryZh": "在 DSH Web 界面显示 DeepSeek 账户余额和当前会话预计花费的插件。",
+    "usage": {
+      "prompt_tokens": 3700,
+      "completion_tokens": 2659,
+      "total_tokens": 6359,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2206
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3060
+    }
+  }
+}

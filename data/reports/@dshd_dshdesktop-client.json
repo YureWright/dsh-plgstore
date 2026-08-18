@@ -1,0 +1,37 @@
+{
+  "id": "@dshd/dshdesktop-client",
+  "analyzedAt": "2026-08-16T13:27:32.551Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client，peerDependencies 依赖 @deepseek-ai/dsh-client-runtime，README 提供 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dshd/dshdesktop-client",
+      "evidence": "dsh plugin --profile web add @dshd/dshdesktop-client"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH Desktop 的一个客户端插件，主要做两件事：一是在 dsh web 侧边栏加一个“插件市场”按钮，你可以在这里浏览、搜索、安装、更新和卸载 DSH 插件；二是在设置面板里加一个“DSH Desktop”区域，显示软件信息并允许你修改 dshd 配置（比如端口、数据目录、代理等）。它通过桌面端的桥接完成这些操作，浏览器侧只做展示和交互。",
+      "level": "ok",
+      "risks": "它需要联网访问 GitHub 搜索插件，并通过 dsh plugin 命令来安装/更新/卸载插件，这些操作会下载并运行第三方代码。它还会读取和修改 DSH 的配置文件（如 ~/.dsh 下的内容），如果你设置了 GitHub Token 或代理，它可能会用到。由于它管理与安装其他插件，安装来源不明的插件可能会有风险，但插件本身没有发现恶意行为。",
+      "postInstallNotes": "重启 dsh web 使插件生效；如果 GitHub 搜索受限可设置 githubToken 或 GH_TOKEN 环境变量；网络受限时可设置 proxyUrl 代理。",
+      "notes": "该插件自称“官方 client 插件”，但 npm 发布者为个人账号（ackow），请自行判断；README 提示安装功能尚不完善，部分插件可能无法顺利安装。"
+    },
+    "summaryZh": "DSH Desktop 客户端插件，为 dsh web 添加插件市场和 DSH Desktop 设置面板。",
+    "usage": {
+      "prompt_tokens": 2881,
+      "completion_tokens": 2923,
+      "total_tokens": 5804,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2469
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2241
+    }
+  }
+}

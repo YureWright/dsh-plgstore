@@ -1,0 +1,37 @@
+{
+  "id": "@kriskwok/dsh-feishu-gateway",
+  "analyzedAt": "2026-08-18T14:56:20.143Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 演示了作为 DSH 插件挂载到 profile 的安装方式。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@kriskwok/dsh-feishu-gateway",
+      "evidence": "Prerequisite: this package is published on npm and `dsh` is on your PATH."
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在飞书（Lark）里直接跟 DeepSeek Harness 的 AI 代理聊天。它会把飞书消息接进 DSH 的会话，支持多轮对话、发 Markdown 消息、实时显示处理进度卡片，还能用点击按钮的方式响应权限审批和提问。需要你有一个飞书自建应用并填上密钥。",
+      "level": "ok",
+      "risks": "它会把飞书里的消息发送给 DeepSeek 代理处理（可能用你的 API key 调用模型）；可选地会开一个本地 HTTP 端口（默认 3100）用于推送消息，如果暴露到公网可能被不认识的人调用；你需要把飞书应用的 appSecret 填进配置，保管好配置别泄露。除此之外没发现明显风险。",
+      "postInstallNotes": "装完后需要在 profile 的 cordis.patch.yml 里填写飞书应用的 appId、appSecret，并按需设置 http.port 和 http.token。",
+      "notes": "无"
+    },
+    "summaryZh": "在飞书上与 DeepSeek Harness 代理聊天的网关插件，支持持久会话、Markdown 回复、流式进度卡片和点击式审批。",
+    "usage": {
+      "prompt_tokens": 4351,
+      "completion_tokens": 1651,
+      "total_tokens": 6002,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1243
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3711
+    }
+  }
+}

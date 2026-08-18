@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-tool-calculator",
+  "analyzedAt": "2026-08-17T11:41:05.301Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供 dsh plugin add 安装命令，代码调用 DSH 工具注册接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:omdsh-dev/dsh-tool-calculator",
+      "evidence": "dsh plugin --profile web add github:omdsh-dev/dsh-tool-calculator"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 助手使用的计算器插件。它能让 AI 安全、快速地计算数学表达式，比如“15 + 27 * sqrt(9)”，支持加、减、乘、除、幂、三角函数等。它不需要启动外部程序，也不会执行危险代码，所以很安全。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件用纯函数解析表达式，不读取文件、不联网、不执行 shell 命令。",
+      "postInstallNotes": "无。安装后助手会自动获得 calculator 工具，无需额外配置。",
+      "notes": "无。该插件适配 DSH 0.1.0-rc.6（npm），安装时请使用 README 推荐的 profile bundle 方式。"
+    },
+    "summaryZh": "一个安全的 DSH 计算器插件，让助手能快速、无副作用地完成数学表达式求值。",
+    "usage": {
+      "prompt_tokens": 3895,
+      "completion_tokens": 3055,
+      "total_tokens": 6950,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2702
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3255
+    }
+  }
+}

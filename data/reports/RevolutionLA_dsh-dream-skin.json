@@ -1,0 +1,37 @@
+{
+  "id": "RevolutionLA/dsh-dream-skin",
+  "analyzedAt": "2026-08-17T11:15:38.594Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client、依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，是标准的 DSH 双面插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-dream-skin",
+      "evidence": "dsh plugin --profile web add dsh-dream-skin"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 换皮肤的插件。装上之后，你可以从 8 套原创主题里挑一套换掉默认外观，还能自己传图片当背景墙纸、调透明度和模糊程度、换一个喜欢的强调色，甚至把整套皮肤方案打包成链接分享给别人。所有设置都会存到浏览器里，下次打开还在。",
+      "level": "ok",
+      "risks": "会读取你本机选中的图片作为壁纸，并把这些设置存在浏览器 localStorage 里；如果使用图片 URL 作为壁纸，浏览器会直接访问该 URL 加载图片。它不会上传你的文件、代码或对话内容到任何外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web 服务（先停掉再运行 dsh web），然后打开 设置 → 外观（Theme），在这里选择皮肤、设置壁纸和调整强调色。",
+      "notes": "非 DSH 官方出品，属于第三方社区插件；目前兼容 dsh 0.1.0-rc.6，升级 DSH 时需关注兼容性。若安装时遇到 workspace 相关错误，可加 -w 参数重试。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 8 套原创主题、自定义壁纸/强调色及主题包分享功能的换肤插件。",
+    "usage": {
+      "prompt_tokens": 5003,
+      "completion_tokens": 1370,
+      "total_tokens": 6373,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 934
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4363
+    }
+  }
+}

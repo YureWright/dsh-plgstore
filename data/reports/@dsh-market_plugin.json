@@ -1,0 +1,37 @@
+{
+  "id": "@dsh-market/plugin",
+  "analyzedAt": "2026-08-16T13:43:53.214Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @dsh-market/core，结构符合 DSH 插件定义。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-market/plugin",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的插件，它会在 DSH 的侧边栏添加一个插件市场面板。通过它，你可以浏览、搜索、发现推荐插件、一键安装，还能管理已经装好的插件。核心逻辑来自 @dsh-market/core，这个插件是它的界面。",
+      "level": "ok",
+      "risks": "没发现明显风险。作为 DSH 插件，它会在 DSH 环境中运行，可能读写 DSH 的插件配置，但不会额外触碰系统文件或隐私数据。",
+      "postInstallNotes": "无。",
+      "notes": "README 缺失，具体使用方式不清晰；依赖 @dsh-market/core（未指定版本），请确认该依赖已发布且可用。"
+    },
+    "summaryZh": "DSH 侧边栏插件市场：浏览、搜索、一键安装和管理 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 1564,
+      "completion_tokens": 1910,
+      "total_tokens": 3474,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1607
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 924
+    }
+  }
+}

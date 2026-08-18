@@ -1,0 +1,37 @@
+{
+  "id": "zhujunpeng12/dsh-memory-system",
+  "analyzedAt": "2026-08-17T11:34:24.135Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 补丁、可选依赖 @deepseek-ai/dsh-tools，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@zhujunpeng12/dsh-memory-system",
+      "evidence": "dsh plugin add @zhujunpeng12/dsh-memory-system"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 的 AI 助手用的'记忆'插件。它让 AI 在多次对话之间能记住你的偏好、项目背景和过往事件，把记忆存在你自己电脑里的 Obsidian 笔记文件夹中，不需要联网数据库。新会话开始时会自动生成一小段'热记忆'让 AI 快速进入状态；需要细节时再按需查找；写入记忆前会先预览并征求确认，还有只读的体检和复盘功能。纯 Python 脚本加 Markdown 文件，不依赖外部服务。",
+      "level": "ok",
+      "risks": "需要读写你指定的 Obsidian 笔记目录（默认 ~/Documents/Obsidian Vault），并会在 DSH_HOME（默认 ~/.dsh）下存放会话和工具记录。这些数据都留在本机，但请确认环境变量指向的是你自己的笔记目录，避免指向敏感文件夹。",
+      "postInstallNotes": "设置环境变量 MEMORY_VAULT（默认 ~/Documents/Obsidian Vault）和 DSH_HOME（默认 ~/.dsh），并在记忆库目录下准备好 memory/（含 user_profile.md、rules.md、events/ 等）和 projects/ 结构；如需自动注入热记忆，可参照 hooks.example.json 配置 UserPromptSubmit hook。",
+      "notes": "package.json 的 dependencies 里包含自身包名，与 README 所称'零依赖'不符，可能为发布配置笔误；不影响其作为 DSH 插件的判断。"
+    },
+    "summaryZh": "为 DSH Agent 提供本地优先、零依赖的持久记忆系统，支持热记忆注入、冷召回、安全写入与轨迹复盘。",
+    "usage": {
+      "prompt_tokens": 5260,
+      "completion_tokens": 2647,
+      "total_tokens": 7907,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2141
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4620
+    }
+  }
+}

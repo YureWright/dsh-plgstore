@@ -1,0 +1,37 @@
+{
+  "id": "DViridescent/dafy-whale-theme",
+  "analyzedAt": "2026-08-17T11:49:02.521Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并注入 dsh-client-ui-theme，README 也给出了官方 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:DViridescent/dafy-whale-theme",
+      "evidence": "dsh plugin --profile web add github:DViridescent/dafy-whale-theme"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面换皮肤的主题插件，让整个界面变成蓝色海洋风，有游动的鱼群、上升的气泡，右下角还有一个可以互动的 DeepSeek 娘吉祥物，输入框上方会滚动显示“每日鱼语”，左上角品牌也会换成“蓝色大肥鱼”。",
+      "level": "ok",
+      "risks": "它只会改动网页界面的外观和配置，不碰个人文件。运行安装脚本时，会从外部仓库下载 DeepSeek 娘的动图素材，这些素材可能没有明确的许可声明，下载内容来自第三方仓库，有轻微不可控风险，但本质只是图片。",
+      "postInstallNotes": "重启 dsh web 并刷新浏览器（F5）才能生效；可选运行 node install.mjs 来补全吉祥物动图素材。",
+      "notes": "无"
+    },
+    "summaryZh": "蓝色大肥鱼主题，给 DeepSeek Harness 换上海洋风皮肤，带鱼群、气泡和 DeepSeek 娘吉祥物。",
+    "usage": {
+      "prompt_tokens": 1775,
+      "completion_tokens": 1579,
+      "total_tokens": 3354,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1207
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1135
+    }
+  }
+}

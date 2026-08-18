@@ -46080,7 +46080,7 @@
     {
       "id": "@yangzhe1991/dsh-web-enhance",
       "name": "dsh-web-enhance",
-      "summary": "DSH 网页界面增强插件，提供逐轮对话导航、思维链默认展开和官方 API 会话费用统计。",
+      "summary": "DSH 网页版增强小插件：对话逐轮跳转、思考链默认展开、官方 API 会话费用估算。",
       "sources": [
         "npm-registry"
       ],
@@ -46119,7 +46119,7 @@
     {
       "id": "dsh-novelweb",
       "name": "dsh-novelweb",
-      "summary": "NovelWeb 写作助手：在 DSH 聊天中提供小说写作与策划工具，支持 RAG 检索、伏笔管理，并带侧边栏写作台。",
+      "summary": "NovelWeb 写作助手：在 DSH 中提供小说写作/策划双模式、RAG 检索、伏笔与大纲管理的 Web 插件。",
       "sources": [
         "npm-registry"
       ],

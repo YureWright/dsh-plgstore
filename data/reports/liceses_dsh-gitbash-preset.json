@@ -1,0 +1,37 @@
+{
+  "id": "liceses/dsh-gitbash-preset",
+  "analyzedAt": "2026-08-16T11:51:02.556Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段指向 cordis.patch.yml，且 README 提供 dsh plugin 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@icelily/dsh-gitbash-preset",
+      "evidence": "dsh plugin --profile web add @icelily/dsh-gitbash-preset"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 Windows 用户用的，让 DeepSeek Harness 自带的“极简模式”在 Windows 上真正可用。原来的极简模式在 Windows 上因为缺少 PTY 支持和找不到 bash 而无法工作。这个插件会把极简模式里的 bash 命令改成通过 Git for Windows 自带的 Git Bash 来执行，并且会自动找出你电脑上装的 Git Bash 在哪里，还能根据你的沙箱权限决定能不能运行命令，安全上比较讲究。装好后，你在 Web 界面新建会话时就能选“极简模式 (Git Bash)”来用了。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下（~/.dsh/.agent-presets/）创建一个文件夹用来放预设文件；安装时会去检查环境变量和几个常见安装目录来寻找 Git Bash；使用时它会调用 Git Bash 来执行命令。不过它不会偷偷上传数据，也不连外部服务器，执行命令时也受沙箱限制，除非你主动给完全访问权限，否则不会越权操作。",
+      "postInstallNotes": "重启 DSH 后，新建会话时选择“极简模式 (Git Bash)”。如果要让 bash 命令直接可用，需要把会话沙箱切换到“完全访问”，或者在模型第一次调用失败后按提示单次升级权限。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 的极简模式在 Windows 上通过 Git Bash 真正可用的插件。",
+    "usage": {
+      "prompt_tokens": 2407,
+      "completion_tokens": 991,
+      "total_tokens": 3398,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 531
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1767
+    }
+  }
+}

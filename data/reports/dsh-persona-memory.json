@@ -1,0 +1,37 @@
+{
+  "id": "dsh-persona-memory",
+  "analyzedAt": "2026-08-18T14:53:51.814Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.99,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并 peer 依赖 @deepseek-ai/dsh-* 核心包，README 也给出了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-persona-memory",
+      "evidence": "dsh plugin --profile web add dsh-persona-memory"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness（DSH）助手添加“长期记忆”能力。它会把你在对话里透露的重要信息（比如偏好、项目背景、常说的规则）自动存成电脑上的文本文件（MEMORY.md 和 USER.md），以后每次对话都会自动带上相关记忆，让 AI 不用你重复介绍。它还能自动从聊天里学习新知识、记住上次犯过的错并避免再犯；提供搜索记忆的工具；并带一个网页管理页面，方便你查看/编辑记忆、设置“常驻指令”、备份和恢复。它也注意安全：写入记忆时会扫描，防止把密码、API 密钥等敏感信息存进去。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的记忆文件（默认在 ~/.pi/agent/pi-hermes-memory 或 DSH 数据目录），并在本地用 SQLite 建立搜索索引；这些文件是明文文本，任何能访问你电脑的人（或同步工具）都可能看到里面的内容。如果你开启“向量搜索”并把 embedding 服务设为远程，它会把记忆片段发送到你配置的第三方 API（默认关闭，不会自动外传）。若选用本地模型，则会自动从网上下载 AI 模型文件到本地缓存，占用一些磁盘空间。插件自带敏感信息扫描，会拦截密钥/令牌写入记忆，降低泄露风险。未发现窃取数据等恶意行为。",
+      "postInstallNotes": "安装后重启 dsh web（dsh --profile web）即可生效。通常无需额外配置；若想自定义记忆目录或使用向量搜索，可在 profile 的 cordis.patch.yml 中覆盖对应配置（如 dir、vectorEnabled、embeddingProvider）。",
+      "notes": "默认与 Pi（pi-hermes-memory）共享同一记忆目录，如果不需要与 Pi 互通，可通过 dir 配置隔离。安装时会引入 @xenova/transformers 依赖，包体积较大；仅在使用本地向量搜索时才需下载模型。"
+    },
+    "summaryZh": "为 DSH 助手提供跨会话长期记忆：自动存储用户偏好/项目事实，每轮注入上下文，支持记忆搜索、后台学习、失败纠错和网页管理界面。",
+    "usage": {
+      "prompt_tokens": 5349,
+      "completion_tokens": 5522,
+      "total_tokens": 10871,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4904
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4709
+    }
+  }
+}

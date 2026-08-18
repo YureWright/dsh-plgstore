@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugins-raincode",
+  "analyzedAt": "2026-08-16T13:31:32.357Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 的 peerDependencies 依赖 @deepseek-ai/cordis 与多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugins-raincode",
+      "evidence": "dsh plugin --profile web add dsh-plugins-raincode"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness (dsh) 能使用 raincode 提供的模型服务。raincode 是一个本地运行的程序，相当于一个“模型中转站”，提供便宜的模型池、提示缓存、自动重试等功能。装上这个插件后，你在 dsh 里就能直接选 raincode 池里的各种模型，还可以用 /skills 命令浏览和查看 raincode 的技能库。插件本身不包含模型逻辑，只是负责把 dsh 的请求翻译成 OpenAI 格式并转发给本地的 raincode 网关。",
+      "level": "ok",
+      "risks": "插件默认只连接你本地的 raincode 网关（127.0.0.1:8787），它会读取你电脑上 ~/.raincode 目录下的配置和技能文件。raincode 网关可能会读取 profiles.toml 里的上游 API 密钥，但这是 raincode 自己的行为。如果你把 baseURL 改成远程地址，你的模型请求和密钥就会发送到那台远程机器。除此之外，没发现插件本身有额外风险。",
+      "postInstallNotes": "装完后还需要：1) 先安装并启动 raincode 网关（raincode proxy --port 8787）；2) 在 dsh 的 profile patch 配置（如 ~/.dsh/profiles/web/cordis.patch.yml）中添加 raincode 插件的配置行；3) 如果连接远程网关，设置 RAINCODE_API_KEY 环境变量；4) 重启 dsh 让配置生效。",
+      "notes": "依赖的 @deepseek-ai/dsh-* 核心包为 rc 版本，安装时请确认与当前 dsh 版本兼容。"
+    },
+    "summaryZh": "让 dsh 通过本地 raincode 网关使用模型池、提示缓存与技能库的插件。",
+    "usage": {
+      "prompt_tokens": 2917,
+      "completion_tokens": 2800,
+      "total_tokens": 5717,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2260
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2277
+    }
+  }
+}

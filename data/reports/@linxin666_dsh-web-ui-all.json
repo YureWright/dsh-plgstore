@@ -1,0 +1,37 @@
+{
+  "id": "@linxin666/dsh-web-ui-all",
+  "analyzedAt": "2026-08-16T14:51:20.314Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/client 字段，README 提供了 dsh plugin 安装命令，且依赖均为 dsh-* 系列子插件，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-web-ui-all",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-web-ui-all"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 网页界面的“全家桶”聚合插件，装一个就能把任务面板、Git 图谱、宠物、远程网页 UI、实时统计、网页 UI 设置、皮肤中心、社区插件等一大堆功能插件全部安装好，还自带皮肤包。适合想一次性体验完整 DSH Web UI 功能的用户。",
+      "level": "ok",
+      "risks": "它会修改 DSH 的插件配置文件（profile），安装后所有子插件会一起生效，可能改变 Web UI 的外观和功能，并增加内存和网络资源占用。未发现读取隐私文件或连接外部服务器的行为。",
+      "postInstallNotes": "安装后需要重启 dsh web 服务才能生效。",
+      "notes": "这是全家桶聚合包，所有子插件会同时启用；如果只需要部分功能，建议直接安装对应子插件。另外，不要和同一个插件的独立版本同时安装（如 @linxin666/dsh-liangshen）。"
+    },
+    "summaryZh": "一键安装 DSH Web UI 全家桶的聚合插件，包含任务面板、Git 图谱、宠物、远程网页 UI、实时统计、皮肤中心等全部功能插件及皮肤。",
+    "usage": {
+      "prompt_tokens": 2192,
+      "completion_tokens": 1347,
+      "total_tokens": 3539,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 955
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1552
+    }
+  }
+}

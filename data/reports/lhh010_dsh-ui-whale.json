@@ -1,0 +1,37 @@
+{
+  "id": "lhh010/dsh-ui-whale",
+  "analyzedAt": "2026-08-17T11:15:25.317Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client 元数据、依赖 @deepseek-ai/cordis，且 exports 提供 ./client 入口，明确是 DSH Web 客户端插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/lhh010/dsh-ui-whale.git",
+      "evidence": "git 依赖方式固定 tag：`pnpm add '@dsh-external/dsh-ui-whale@github:lhh010/dsh-ui-whale#v0.3.3'`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 的网页界面加一只像素小鲸鱼宠物，它会一直待在会话标题栏里，平时眨眨眼、偶尔摆摆尾巴、动动胸鳍；你让 AI 思考的时候它会更活泼地动起来；回答完成时它会从头顶喷水庆祝；用鼠标点它还会冒爱心。纯前端展示，不会改动 DSH 的核心功能。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器里绘制像素动画，不读取文件、不连接外部服务器，也不碰个人隐私。",
+      "postInstallNotes": "需要根据 DSH 快照版本选择对应的插件版本（默认 v0.3.3 兼容 0807~0812 快照），若使用 git 安装需先执行 `pnpm install` 和 `pnpm build`；另外按 README 中的“安装”章节完成 profile 配置或 registry 启用。",
+      "notes": "经评估是标准 DSH 插件，但 package.json 标记为 private，未发布到 npm registry，需要通过 git 或本地路径安装。"
+    },
+    "summaryZh": "DSH Web UI 的像素鲸鱼伙伴插件，常驻标题栏，会眨眼、摆尾、思考时动起来、完成时喷水、点击冒爱心。",
+    "usage": {
+      "prompt_tokens": 5229,
+      "completion_tokens": 1511,
+      "total_tokens": 6740,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1053
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4589
+    }
+  }
+}

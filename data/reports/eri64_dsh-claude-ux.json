@@ -1,0 +1,37 @@
+{
+  "id": "eri64/dsh-claude-ux",
+  "analyzedAt": "2026-08-17T11:16:27.676Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，且 README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:eri64/dsh-claude-ux",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add github:eri64/dsh-claude-ux"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的网页版模仿 Claude 的两种行为：一是「区域风控」，可以通过时区、系统语言、中文字体、代理、公网 IP 等信号判断对方是不是中国用户（或反过来判断非中国用户），然后拒绝回复、逐步升级，甚至结束整个会话；二是「自主结束对话」，当用户持续辱骂或反复要求严重有害内容时，先警告再主动结束对话。它默认是关闭的，需要你自己在设置页里打开。",
+      "level": "caution",
+      "risks": "默认情况下不会联网，但如果你开了 IP 检测，它会把你公网 IP 发给 ipinfo.io 或 ip-api.com；开了 WebRTC 检测会向 Google STUN 服务器发请求。它还会在本地收集你的时区、系统语言、浏览器语言、字体、代理设置等信息来判断身份。如果你开启 LLM 分类，它会把你的一部分消息内容发给配置的模型做辱骂判断（它说不进会话日志，但消息内容会经过模型提供商）。另外它的风控可能误判，导致对话被拒或结束，尤其反向风控时小心把自己锁外面。",
+      "postInstallNotes": "装完后重启 web profile（dsh web），浏览器硬刷新；在设置页左侧找到「Claude 风控」标签，打开总开关并「保存并应用」；可用浏览器访问 http://127.0.0.1:3080/_dsh/claude/status 验证是否加载成功。",
+      "notes": "这是一个第三方插件，非官方出品；默认关闭是为了避免误伤，建议先在 observe 模式下观察；部分高级配置（如黑名单、词表）需要改包内 cordis.patch.yml 后重新安装，设置页能改的项优先用设置页。"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页版加入 Claude 风格的区域风控（可反向）和自动结束辱骂/有害对话的插件。",
+    "usage": {
+      "prompt_tokens": 3272,
+      "completion_tokens": 2283,
+      "total_tokens": 5555,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1709
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2632
+    }
+  }
+}

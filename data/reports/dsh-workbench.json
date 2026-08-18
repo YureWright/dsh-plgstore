@@ -1,0 +1,37 @@
+{
+  "id": "dsh-workbench",
+  "analyzedAt": "2026-08-16T13:44:31.410Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，peerDependencies 包含 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin --profile web add dsh-workbench 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-workbench",
+      "evidence": "dsh plugin --profile web add dsh-workbench"
+    },
+    "evaluationReport": {
+      "intro": "这是 DeepSeek Harness Web 的一个右侧文件工作区插件。在 DSH Web 会话中，点一下文件路径就能在对话旁边打开文件或查看改动对比。支持标签页、调整大小、复制路径，还能预览图片和 Markdown，查看写入/编辑的 diff，有文件树、快捷搜索等实用功能。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你项目里的文件并在浏览器中显示，也会监听 DSH 的读写操作来展示 diff；这些都在本地 DSH 环境里，普通使用不用担心。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效；如果从源码构建安装，改动后也要重新 build 并重启。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 增加一个右侧文件工作区，支持文件预览、diff 查看和快捷操作。",
+    "usage": {
+      "prompt_tokens": 2888,
+      "completion_tokens": 805,
+      "total_tokens": 3693,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 461
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2248
+    }
+  }
+}

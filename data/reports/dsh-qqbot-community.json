@@ -1,0 +1,37 @@
+{
+  "id": "dsh-qqbot-community",
+  "analyzedAt": "2026-08-16T13:44:42.259Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖/peer 依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，是标准的 DSH 插件 bundle。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-qqbot-community",
+      "evidence": "dsh plugin --profile web add dsh-qqbot-community"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness（DSH）能接入 QQ 官方机器人。装好之后，你的 QQ 机器人可以收发单聊、群聊和频道消息，每个 QQ 会话会有一个独立的 AI 对话（可以切换不同预设），支持发图片/语音/视频/文件、引用消息、图片识别、语音转文字、定时提醒、以及通过 QQ 消息里的按钮进行审批操作。相当于把 DSH 的 AI 能力搬进 QQ 里。",
+      "level": "ok",
+      "risks": "它会连接 QQ 官方开放平台服务器收发消息，需要你提供 AppID 和 AppSecret（相当于机器人凭证，别泄露）。聊天记录、媒体文件会存到电脑上的 ~/.dsh/storages/ 以及你配置的工作目录下的 .qq-media/ 文件夹。另外它会把收到的语音等数据发给配置的第三方 STT 服务（如果设置了 stt）。没发现恶意行为。",
+      "postInstallNotes": "需要编辑 profile 的 cordis.patch.yml（如 ~/.dsh/profiles/web/cordis.patch.yml），在已有内容的末尾追加 qqbot-community 的配置，至少填写 id（AppID）、secret（AppSecret）、cwd（工作目录），其他参数可按需调整。",
+      "notes": "README 自述“整体功能未严格测试，部分功能可能不稳定”；项目由 openclaw-qqbot 迁移而来。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 QQ 官方机器人接入的适配器插件，支持消息收发、会话管理、富媒体、审批等丰富功能。",
+    "usage": {
+      "prompt_tokens": 5212,
+      "completion_tokens": 1184,
+      "total_tokens": 6396,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 694
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4572
+    }
+  }
+}

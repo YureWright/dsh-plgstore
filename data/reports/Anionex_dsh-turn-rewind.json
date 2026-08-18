@@ -1,0 +1,37 @@
+{
+  "id": "Anionex/dsh-turn-rewind",
+  "analyzedAt": "2026-08-17T11:12:39.682Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，且 README 提供 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@anionex/dsh-turn-rewind",
+      "evidence": "dsh plugin --profile web add @anionex/dsh-turn-rewind"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 添一个‘后悔药’：它会自动记录每次对话前工作区的文件状态。当你发现 AI 把文件改乱了，可以一键把项目文件恢复到发那条消息之前的样子，还能选择是否从那条消息重新开始对话。它只在你明确点击按钮时才动手，不会偷偷改任何东西。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和恢复工作区文件，但所有恢复操作都需要用户在界面里手动确认，并且恢复前会自动备份当前文件。",
+      "postInstallNotes": "需要把插件加入每个要使用它的 DSH profile（web 和 headless 都要加），然后重启对应的 profile。",
+      "notes": "当前版本 0.1，README 提示仅支持常规 Git 工作区；不支持稀疏检出、子模块、被 .gitignore 忽略的文件等。安装需要 Node.js ^22.19.0 或 >=24.0.0。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供对话级文件回滚功能，基于持久化变更账本，可安全恢复到发送某条消息前的工作区状态。",
+    "usage": {
+      "prompt_tokens": 3294,
+      "completion_tokens": 1873,
+      "total_tokens": 5167,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1473
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2654
+    }
+  }
+}

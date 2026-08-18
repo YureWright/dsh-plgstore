@@ -1,0 +1,37 @@
+{
+  "id": "TheTianzz/dsh-billing",
+  "analyzedAt": "2026-08-17T11:34:23.614Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin add 安装命令，且功能是 DSH 的 UI 扩展和命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-billing",
+      "evidence": "dsh plugin --profile web add dsh-billing"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DeepSeek Harness 插件，能显示你的 DeepSeek 账户余额和当前会话花了多少钱（人民币），在聊天界面的会话标题旁边常驻显示两个小胶囊，鼠标悬停还能看明细。也支持用斜杠命令 /balance 和 /cost 查询，或者直接问 AI“余额多少”它就会调用工具去查。",
+      "level": "ok",
+      "risks": "它会读取你的 DeepSeek API 余额和会话用量，需要你配置 API key；每 12 小时会从 DeepSeek 官方价格页拉取一次最新价格，属于正常联网行为。不会动其他私人文件。",
+      "postInstallNotes": "安装后需要重启 dsh web 并刷新浏览器页面；请确保在 Web 模型设置页配置好 DEEPSEEK_API_KEY。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，在聊天界面显示余额和会话费用，带命令和工具，价格自动同步官方。",
+    "usage": {
+      "prompt_tokens": 2275,
+      "completion_tokens": 598,
+      "total_tokens": 2873,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 252
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1635
+    }
+  }
+}

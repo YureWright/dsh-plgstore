@@ -1,0 +1,37 @@
+{
+  "id": "dsh-whale-copilot",
+  "analyzedAt": "2026-08-16T14:48:03.558Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 提供 dsh plugin add 安装命令，且说明使用 @deepseek-ai/dsh-client-modules 注入，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-whale-copilot",
+      "evidence": "dsh plugin --profile web add dsh-whale-copilot"
+    },
+    "evaluationReport": {
+      "intro": "这是一只会在 DSH 网页界面底部游动的小鲸鱼宠物。它会根据 AI 助手的活动做出动作：思考时喷水、回复时摇尾巴、执行工具时冒泡，需要你审批时它会停下来抖动并亮灯提醒。点击鲸鱼还能打开面板，查看当前会话状态和一些外观设置。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在本地网页上运行，设置保存在浏览器本地，审批功能只是旁观提醒，不会干扰正常审批流程。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页界面上的小鲸鱼宠物，根据 AI 会话状态做出可爱动作，并带有审批提醒和会话状态面板。",
+    "usage": {
+      "prompt_tokens": 2963,
+      "completion_tokens": 510,
+      "total_tokens": 3473,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 200
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2323
+    }
+  }
+}

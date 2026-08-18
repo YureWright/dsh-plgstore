@@ -1,0 +1,37 @@
+{
+  "id": "Player-MINEPIG/dsh-llm-codex-oauth",
+  "analyzedAt": "2026-08-17T11:32:56.861Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-credentials、@deepseek-ai/dsh-llm、@deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Player-MINEPIG/dsh-llm-codex-oauth.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你在 DeepSeek Harness（dsh）里登录自己的 ChatGPT 付费账号，把 ChatGPT 的算力（比如 GPT-5 系列模型）接入进来当模型用。它走 OpenAI 的 Codex 登录流程，不需要额外 API key，但用的是非官方接口。",
+      "level": "caution",
+      "risks": "它会用你的 ChatGPT 账号做 OAuth 登录，并调用 OpenAI 未公开的网页后端接口。这违反 OpenAI 服务条款，可能导致账号被限制或封禁。登录凭据会存在你电脑上的 ~/.dsh/.credentials.yaml 文件里，不会上传到别处，但使用这个插件本身有账号风险。",
+      "postInstallNotes": "装好后重启 dsh，进设置页的「Codex 订阅 (ChatGPT)」区块登录 ChatGPT 账号，然后在 Models 设置里把模型切换到 codex-oauth 提供方。若用 pnpm 安装遇到 ignored-builds 报错，需手动修改 profile 目录下的 pnpm-workspace.yaml。",
+      "notes": "作者在 README 中声明该项目由 AI 生成、未完整 Code Review，且使用了非官方接口，存在账号受限风险，请自行评估后使用。"
+    },
+    "summaryZh": "在 DeepSeek Harness 里通过 OAuth 登录 ChatGPT/Codex 账号，把订阅算力变成可用模型的插件。",
+    "usage": {
+      "prompt_tokens": 3876,
+      "completion_tokens": 5388,
+      "total_tokens": 9264,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4920
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3236
+    }
+  }
+}

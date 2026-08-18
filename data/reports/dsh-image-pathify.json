@@ -1,0 +1,37 @@
+{
+  "id": "dsh-image-pathify",
+  "analyzedAt": "2026-08-18T14:52:26.090Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 给出明确的 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-image-pathify",
+      "evidence": "dsh plugin --profile web add dsh-image-pathify"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让不能看图片的 DeepSeek 模型（比如 deepseek-v4-flash）也能处理你贴进聊天里的图片。它不会改变聊天记录里的缩略图，只是在把消息发给模型前，把图片换成本地文件路径，然后让模型调用一个内置的识图工具，通过你配置的视觉 API 获得图片的文字描述。已经能看图的模型不会受影响。",
+      "level": "ok",
+      "risks": "插件会读取 DSH 自己保存的附件（位于 ~/.dsh/attachments/）。发送图片时会把本地文件路径暴露给模型，并调用外部视觉 API（默认阿里云）来分析图片，因此图片内容会发送到该 API 服务。API 密钥会存储在你的 ~/.dsh/.credentials.yaml 文件中。",
+      "postInstallNotes": "安装后需要打开设置 → 插件 → 识图，填写 API 密钥（或设置环境变量）、识图模型和 API 地址（默认阿里云 DashScope 兼容模式），保存后生效。",
+      "notes": "无"
+    },
+    "summaryZh": "让不能看图的 DeepSeek 模型也能通过内置视觉工具分析你贴的图片。",
+    "usage": {
+      "prompt_tokens": 3192,
+      "completion_tokens": 567,
+      "total_tokens": 3759,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 177
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2552
+    }
+  }
+}

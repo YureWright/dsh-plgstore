@@ -1,0 +1,37 @@
+{
+  "id": "xiake595/touhou-hakurei",
+  "analyzedAt": "2026-08-17T11:24:20.551Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 peerDependencies 依赖 @deepseek-ai/cordis，README 给出了 dsh plugin 安装命令，确属 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/xiake595/touhou-hakurei.git",
+      "evidence": "也可以直接对 DSH 说：\"安装一下这个皮肤包：<仓库 URL>\"。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面换皮肤的美化包，主题是东方Project里博丽神社的样子。装上后，聊天背景会变成神社白天/夜晚的景色，旁边有灵梦的立绘，窗口和输入框会变成半透明的神社风格，整体红白相间，看着很清爽。它只管外观，不碰你的聊天记录和设置。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改网页界面的样式和布局，所有图片都打包在插件里，不会访问其他网站或读取你的隐私文件。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "东方Project博丽神社主题的DSH Web GUI皮肤，提供昼夜背景、灵梦立绘和统一半透明面板，纯前端美化插件。",
+    "usage": {
+      "prompt_tokens": 2621,
+      "completion_tokens": 1228,
+      "total_tokens": 3849,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 885
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1981
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "tianji-qingtian/dsh-spec-loop",
+  "analyzedAt": "2026-08-17T11:23:39.773Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/client 并依赖多个 @deepseek-ai 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:tianji-qingtian/dsh-spec-loop#v0.1.2",
+      "evidence": "dsh plugin --profile web add \"github:tianji-qingtian/dsh-spec-loop#v0.1.2\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一组 /spec 指令，帮你按‘先写方案、再写代码、再验证’的流程干活。它会建立一个 openspec 文件夹，里面放项目说明、需求文档和变更记录；你按步骤用指令推进，插件会在输入框上方显示一张卡片，告诉你当前进度和下一步该做什么。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会动你工作区里 openspec 目录下的文件，验证时会调用模型做判断，但不会把文件发到外部。",
+      "postInstallNotes": "先确保 dsh 命令已全局安装（npm install -g @deepseek-ai/dsh）；安装插件后需要重启 harness（dsh --profile web）才能加载，然后可在 Web UI 的 Settings → Plugins 里确认 dsh-spec-loop 已列出。",
+      "notes": "该插件依赖多个 rc 版核心包，且 DeepSeek Harness 处于开发者预览阶段，核心升级可能带来不兼容变化，使用时留意插件是否有更新。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 /spec 命令系列，实现提议→批准→实现→验证→归档的规范驱动开发流程，并带有 OpenSpec 兼容的变更目录和界面卡片。",
+    "usage": {
+      "prompt_tokens": 3349,
+      "completion_tokens": 3554,
+      "total_tokens": 6903,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3107
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2709
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "lvyuchuiyi/dsh-funpack",
+  "analyzedAt": "2026-08-17T11:38:56.705Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin --profile web add 安装命令，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/lvyuchuiyi/dsh-funpack.git",
+      "evidence": "从 GitHub 安装：\n\ndsh plugin --profile web add github:lvyuchuiyi/dsh-funpack"
+    },
+    "evaluationReport": {
+      "intro": "这是一个把很多摸鱼小功能打包在一起的 DeepSeek Harness 插件，包括夸夸、运势、战报、番茄钟、桌宠、Live2D 娘化、Boss 隐身、代码花园等，还能自定义主题和氛围音效，适合在用它的时候增加一点乐趣和仪式感。",
+      "level": "ok",
+      "risks": "会把桌宠形象、好感度、美化配置等保存在浏览器本地存储中；如果填写了本地程序路径（如 Boss-Key、摸鱼目标），点击对应按钮时可能启动电脑上的程序；资产市场会联网扫描外部仓库，Live2D 模型需要联网加载。这些都需要你主动配置才会发生，目前没发现恶意行为。",
+      "postInstallNotes": "无",
+      "notes": "零依赖，单文件实现；部分功能（Live2D、资产市场）需要联网。"
+    },
+    "summaryZh": "一个集夸夸、运势、番茄钟、桌宠、Live2D、Boss 隐身等摸鱼功能于一体的 DeepSeek Harness 插件。",
+    "usage": {
+      "prompt_tokens": 3618,
+      "completion_tokens": 1237,
+      "total_tokens": 4855,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 852
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2978
+    }
+  }
+}

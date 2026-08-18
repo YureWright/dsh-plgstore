@@ -1,0 +1,37 @@
+{
+  "id": "Degurechaff57/dsh-openapi",
+  "analyzedAt": "2026-08-17T11:59:27.092Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 配置并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Degurechaff57/dsh-openapi.git",
+      "evidence": "dsh plugin --profile web add github:Degurechaff57/dsh-openapi"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness（DSH）安全地对接任何符合 OpenAPI 3.x 规范的接口（也就是常见的 Swagger 文档）。装好后，它会给你三个工具：一个用来搜索接口列表，一个查看接口参数和返回，一个按照规则实际发起调用。它自带不少安全措施，比如默认只允许 GET/HEAD 这类只读方法、阻止访问内网地址、限制响应大小、密钥从环境变量读取等。",
+      "level": "ok",
+      "risks": "它不会在安装时执行脚本，也没有主动连接额外服务器；唯一联网的是你配置的那些 OpenAPI 文档地址和调用请求。默认情况下它不允许访问本地网络（需要你显式打开）。密钥应该通过环境变量提供，如果你把密钥写进 YAML 配置文件，可能被这个插件读取到。此外，它可能访问你配置的第三方 API，所以请确认文档来源可信。",
+      "postInstallNotes": "安装后需要编辑 profile 对应的 cordis.patch.yml 文件，在 openapi 插件的 config.apis 里添加要接入的 API（填写 id、source、baseUrl 等），如有需要再配置 credentials 映射环境变量。然后在 Harness 中启动即可使用 openapi_list、openapi_describe、openapi_call 三个工具。",
+      "notes": "该插件由第三方开发者维护，代码开源且带测试。注意它要求 Node.js 版本为 ^22.19.0 或 >=24.0.0。目前不支持远程 $ref 文档，只支持本地引用。由于 DeepSeek Harness 还在开发者预览阶段，后续上游接口若有变动，该插件可能需要更新。"
+    },
+    "summaryZh": "dsh-openapi 是一个让 DeepSeek Harness 安全发现和调用任意 OpenAPI 3.x 接口的插件。",
+    "usage": {
+      "prompt_tokens": 2553,
+      "completion_tokens": 3475,
+      "total_tokens": 6028,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2928
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1913
+    }
+  }
+}

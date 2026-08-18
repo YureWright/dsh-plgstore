@@ -1,0 +1,37 @@
+{
+  "id": "@stuchenxj/dshcost",
+  "analyzedAt": "2026-08-18T14:54:54.225Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-* 核心包，README 提供了作为 bundle/插件行的安装方式，且代码明显调用 DSH 的会话投影接口，属于真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@stuchenxj/dshcost",
+      "evidence": "The package is published on npm as `@stuchenxj/dshcost`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DeepSeek Harness 网页界面的输入框下方实时显示当前会话已经消耗的 token 数量和估算费用（按 DeepSeek 官方峰谷价格计算），还会显示模型名、输入/缓存/输出 token 数、调用次数等。鼠标悬停还能看到每个模型的详细费用。它不联网，只是读取本地会话数据来算账。",
+      "level": "ok",
+      "risks": "它会读取本地 DSH 会话日志中的 token 用量和模型信息，并在界面上展示；这些数据不会发送到外部。插件本身是第三方发布，但代码逻辑简单（纯前端 + 会话投影），未发现明显风险。不过安装方式比较特殊，若操作不当有误删依赖的风险（见说明）。",
+      "postInstallNotes": "装完后需要手动配置：要么在 profile 的 package.json 的 dsh.profile.bundles 里加上 '@stuchenxj/dshcost'，要么在 cordis.patch.yml 里加一行 { id: dshcost, name: '@stuchenxj/dshcost' }。注意 id 必须是 dshcost（不带 @scope），否则前端加载会失败。改完重启或等热更新，再刷新页面。",
+      "notes": "安装时请务必遵循 README 中的警告：不要在 $DSH_HOME/profiles/node_modules 目录里直接 npm install，否则可能清空整个依赖树；应先在临时目录装好再复制过去。另外这是个人发布的三方插件，价格表为 2026 年版本，若官方价格调整可能需手动更新。"
+    },
+    "summaryZh": "在 DeepSeek Harness 网页聊天界面实时显示当前会话的 token 消耗和按官方峰谷价格估算的费用。",
+    "usage": {
+      "prompt_tokens": 2939,
+      "completion_tokens": 1512,
+      "total_tokens": 4451,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 978
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2299
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "x2802490130-prog/dsh-balance-float",
+  "analyzedAt": "2026-08-17T12:10:53.649Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合真正的 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-balance-float",
+      "evidence": "dsh plugin --profile web add dsh-balance-float"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 网页的右上角显示一个悬浮窗，每隔 60 秒自动刷新显示你的 DeepSeek 账户余额，也可以手动点击刷新。它还能让你在网页上一键退出 DSH 本地服务（按 Y 确认）。适合想随时看到余额、并方便关闭服务的用户。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你的 DeepSeek API Key 来查询余额，但只在本地服务端使用，不会把 Key 发送到网页或外部服务器，接口只挂在本地，不对外暴露。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页添加一个实时显示余额的悬浮窗，支持手动刷新和一键退出。",
+    "usage": {
+      "prompt_tokens": 2074,
+      "completion_tokens": 423,
+      "total_tokens": 2497,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 118
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1434
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "yangyongzhen/dsh-article-publish",
+  "analyzedAt": "2026-08-17T13:10:41.195Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，代码提供 dsh 工具，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://gitcode.com/qq8864/dsh-article-publish.git",
+      "evidence": "dsh plugin --profile <web|tui|headless> add https://gitcode.com/qq8864/dsh-article-publish.git"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的文章发布插件。AI 在会话里帮你写完文章后，它能直接调用工具把文章发布到 CSDN、掘金或博客园，还能拉一条科技资讯当写作素材。不需要额外搭服务，装好填上各平台的登录 Cookie 就能用。",
+      "level": "ok",
+      "risks": "需要你手动提供 CSDN、掘金、博客园的登录 Cookie，这些 Cookie 会保存在本机配置或环境变量里。如果你的配置文件泄露，别人就能用你的账号发文。插件会把文章内容发送到对应平台，这是正常功能。",
+      "postInstallNotes": "装完后需要设置各平台的登录凭据：在配置（cordis.patch.yml）或环境变量里填上 CSDN_COOKIE、JUEJIN_COOKIE、CNBLOG_COOKIE、CNBLOG_TOKEN、CNBLOG_USERNAME，否则调用发布工具时会报错。",
+      "notes": "README 中给出的 git 安装地址是 gitcode.com，与当前 GitHub 仓库地址不同，安装时请以 README 为准。另外作者说明 @deepseek-ai/dsh-tools 是 peer 依赖，安装时若提示 peer 缺失警告可忽略。"
+    },
+    "summaryZh": "把 DeepSeek Harness 里写好的文章一键发布到 CSDN/掘金/博客园，还能抓取科技资讯当素材的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 2085,
+      "completion_tokens": 5184,
+      "total_tokens": 7269,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4691
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1445
+    }
+  }
+}

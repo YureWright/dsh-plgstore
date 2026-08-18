@@ -1,0 +1,37 @@
+{
+  "id": "LJninse/dsh-open-in-ide",
+  "analyzedAt": "2026-08-17T11:53:45.347Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 中声明了 dsh.bundle 和 dsh.client，README 提供了 dsh plugin 安装命令，确认是 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/LJninse/dsh-open-in-ide.git",
+      "evidence": "git clone https://github.com/LJninse/dsh-open-in-ide.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 网页界面用的，装好之后，顶部会多一个「IDE」按钮。你正在处理项目时，点一下这个按钮，就能把你电脑上装的 VS Code、JetBrains 之类的编程软件自动打开当前项目文件夹，不用自己复制路径再去找文件夹。还可以设置默认用哪个软件打开，点按钮旁边的小箭头或右键可以选择其他软件。",
+      "level": "ok",
+      "risks": "这个插件只支持 Windows。它会读取你电脑的 Windows 注册表（App Paths、卸载项）来查找已安装的 IDE，也会扫描桌面、下载、文档等常见目录和 PATH 等环境变量，但主要是为了找到 IDE，不会改动系统。它会在当前工作区目录下生成两个配置文件（.dsh-open-in-ide-prefs.json 和 .dsh-open-in-ide-cache.json），记录你选择的默认 IDE、最近使用的 IDE 和检测到的 IDE 列表。如果这个工作区是共享的或会被提交到仓库，别人可能通过这些文件知道你装了什么软件。点击按钮时会真的启动所选程序，会占用一点电脑资源。没有发现会上传数据到外部服务器。",
+      "postInstallNotes": "安装后重启 dsh web 才会生效。重启后首次使用可以点 IDE 按钮展开菜单，把常用的 IDE 设为默认（点条目右侧的 ☆），也可以不设置直接用。",
+      "notes": "经评估确认是 DSH 插件，不是冒名。仅支持 Windows，macOS/Linux 用户装了也用不了。许可证是 CC BY-NC 4.0，禁止商业用途。"
+    },
+    "summaryZh": "在 DeepSeek Harness 网页顶部栏加一个「IDE」按钮，自动检测本机已安装的 IDE 并一键打开当前工作区目录。",
+    "usage": {
+      "prompt_tokens": 3617,
+      "completion_tokens": 3380,
+      "total_tokens": 6997,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2850
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2977
+    }
+  }
+}

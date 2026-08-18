@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/dsh-annotation",
+  "analyzedAt": "2026-08-17T11:13:03.141Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/dsh-annotation.git",
+      "evidence": "dsh plugin --profile web add git+https://github.com/omdsh-dev/dsh-annotation.git"
+    },
+    "evaluationReport": {
+      "intro": "这插件是给 DSH 网页版用的：你可以选中 AI 回复里的任意一段文字，加个批注（也可以只做个高亮标记），然后按回车，这段批注会和你的问题一起发给模型。模型会按编号逐条回复每一处批注，回复里还能悬停看到原文和批注。它让你在对话中方便地做阅读理解、标记重点。",
+      "level": "ok",
+      "risks": "插件运行在浏览器端，会读取 DSH 对话界面里的内容（包括助手回复和你输入的文字）以便实现选中和批注，并在浏览器本地保存这些批注数据；它不会访问你的本地文件或系统设置，也不会上传数据到第三方服务器（代码本身是可见的，安装时建议信任作者）。",
+      "postInstallNotes": "安装后需要重启 DSH Web 服务（README 建议在 macOS 上运行 launchctl kickstart -k \"gui/$(id -u)/com.dsh.web\"），并可用 README 中的自检命令确认生效。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-annotation 是一个 DSH Web 批注插件：选中助手回复中的文字添加批注或高亮，随消息一起发送，模型按编号逐一回复，回复中带可悬停的批注标签。",
+    "usage": {
+      "prompt_tokens": 2999,
+      "completion_tokens": 2937,
+      "total_tokens": 5936,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2503
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2359
+    }
+  }
+}

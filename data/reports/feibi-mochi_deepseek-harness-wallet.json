@@ -1,0 +1,37 @@
+{
+  "id": "feibi-mochi/deepseek-harness-wallet",
+  "analyzedAt": "2026-08-17T11:18:15.511Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，并注入 @deepseek-ai/dsh-client-* 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-harness-wallet",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件用来帮你盯着 DeepSeek 的余额和花费：能看余额还剩多少、每次对话花多少、token 统计，余额低的时候提醒你，还附一个官方充值快捷入口。",
+      "level": "ok",
+      "risks": "没发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "README 为空，具体配置和用法以代码或后续文档为准。"
+    },
+    "summaryZh": "DeepSeek Harness 的余额监控与花费统计插件，支持低余额提醒和充值入口。",
+    "usage": {
+      "prompt_tokens": 1272,
+      "completion_tokens": 1292,
+      "total_tokens": 2564,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1046
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 632
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "@js2hou/dsh-mcp-manager",
+  "analyzedAt": "2026-08-16T14:54:25.352Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 明确为 DSH 插件并给出 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@js2hou/dsh-mcp-manager",
+      "evidence": "dsh plugin --profile web add @js2hou/dsh-mcp-manager"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加一个 MCP 管理器：在设置里新增一个“MCP”页面，你可以在网页上看所有已经装上的 MCP 服务器的状态，也能直接添加、删除、启用/停用、测试连接，不用手改配置文件。改完立刻生效，支持中英文。",
+      "level": "ok",
+      "risks": "它会在本机的 DSH 配置文件（cordis.patch.yml）里写入你的 MCP 设置，改动保存在你自己电脑上；浏览器页面不直接碰文件系统。没发现其他明显风险。",
+      "postInstallNotes": "装完硬刷新浏览器（Cmd/Ctrl+Shift+R）；如果设置里没出现 MCP 页签，重启一次 DSH。",
+      "notes": "README 提供的一键安装脚本会远程执行代码（curl | bash），介意的话可以先审阅 GitHub 上的脚本再手动安装。"
+    },
+    "summaryZh": "DSH 的 MCP 可视化管理器：网页上一条龙管理 MCP 服务器的增删改查、启停和连接测试。",
+    "usage": {
+      "prompt_tokens": 4238,
+      "completion_tokens": 2057,
+      "total_tokens": 6295,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1691
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3598
+    }
+  }
+}

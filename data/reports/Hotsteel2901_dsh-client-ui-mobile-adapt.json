@@ -1,0 +1,37 @@
+{
+  "id": "Hotsteel2901/dsh-client-ui-mobile-adapt",
+  "analyzedAt": "2026-08-17T11:31:21.895Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 与 dsh.bundle，并依赖 @deepseek-ai/dsh-client-* 等核心包，README 也给出了 dsh plugin 安装命令，确认为 DSH 客户端插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/Hotsteel2901/dsh-client-ui-mobile-adapt/archive/refs/heads/main.tar.gz",
+      "evidence": "dsh plugin --profile web <profile 名> add https://github.com/Hotsteel2901/dsh-client-ui-mobile-adapt/archive/refs/heads/main.tar.gz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给在 Android 手机上用 Termux 跑 DeepSeek Harness 的开发者用的。它会把原本三栏的网页界面改成适合手机的单栏布局：侧边栏变成能滑动拉出的抽屉，设置面板和轨迹详情变成全屏显示，输入工具挤在一行，底部统计变成可点开的胶囊。桌面端的界面完全不变，只有手机宽度下才生效。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改浏览器里的界面布局，不读本地文件，也不连外部服务器。",
+      "postInstallNotes": "装完需重启 DSH（或对应 profile），让 client 插件生效；如果手动装进已有 profile，需确认 cordis.patch.yml 里已插入对应行。",
+      "notes": "CSS 类名基于 DSH 0.1.0-rc.6 前端构建产物，升级 DSH 后可能需要重新核对类名；建议使用 GitHub tarball 地址安装，避免 npm 12 对远程依赖的限制。"
+    },
+    "summaryZh": "DeepSeek Harness Web 界面的手机端适配插件，为 Termux/Android 用户提供单栏、抽屉式移动布局。",
+    "usage": {
+      "prompt_tokens": 2852,
+      "completion_tokens": 1919,
+      "total_tokens": 4771,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1460
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2212
+    }
+  }
+}

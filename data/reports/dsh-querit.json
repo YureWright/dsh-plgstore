@@ -1,0 +1,37 @@
+{
+  "id": "dsh-querit",
+  "analyzedAt": "2026-08-18T14:52:57.082Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-querit",
+      "evidence": "dsh plugin --profile web add dsh-querit"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 DeepSeek Harness 的网页搜索和网页抓取功能换成由 Querit 提供的服务。装上后，模型可以实时搜索网络并获取干净的网页内容，需要去 Querit 官网注册获得 API key（每月有 1000 次免费调用）。",
+      "level": "ok",
+      "risks": "它会把你的搜索词和抓取的网页内容发送到 Querit 的服务器（api.querit.ai）进行处理。需要你自己注册 Querit 账号并配置 API key，除此之外没发现明显风险。",
+      "postInstallNotes": "需要配置 Querit API key（环境变量 QUERIT_API_KEY 或设置页面），然后重启 profile 使插件生效。",
+      "notes": "无"
+    },
+    "summaryZh": "将 DeepSeek Harness 的网页搜索/抓取后端替换为 Querit 服务的 DSH 插件",
+    "usage": {
+      "prompt_tokens": 4331,
+      "completion_tokens": 1203,
+      "total_tokens": 5534,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 867
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3691
+    }
+  }
+}

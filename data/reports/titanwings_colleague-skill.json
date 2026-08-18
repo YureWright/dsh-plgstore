@@ -1,0 +1,37 @@
+{
+  "id": "titanwings/colleague-skill",
+  "analyzedAt": "2026-08-16T05:44:36.157Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.9,
+      "reason": "README 无 package.json、无 DSH 接口依赖，仅提供文件系统 skill 安装方式，实为跨平台的 skill 生成工具，并非 DSH 插件"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/titanwings/colleague-skill.git",
+      "evidence": "Install it globally at `~/.dsh/skills/dot-skill` or per project at `.dsh/skills/dot-skill`, then invoke `/dot-skill` directly."
+    },
+    "evaluationReport": {
+      "intro": "这个工具能把某个人的聊天记录、邮件、文档等资料，变成一个人工智能“替身”——它会模仿那个人的说话方式和思考逻辑。你可以把它用在离职同事、亲友、甚至偶像身上，生成一个专属的 AI 角色。它支持飞书、钉钉、微信、邮件等多种数据来源。",
+      "level": "caution",
+      "risks": "它会读取你的聊天记录、邮件、文件等私人数据（包括微信、飞书、钉钉、Slack、邮箱等），用来训练模仿；这些数据会发送给 AI 服务商处理。生成的模仿技能本身也可能被他人使用，要注意隐私授权。",
+      "postInstallNotes": "需要为要使用的数据源配置 API 密钥或权限（如飞书、钉钉、Slack）；若用微信，需先用第三方工具导出聊天记录；在 DeepSeek Harness 中装好后直接用 /dot-skill 启动。",
+      "notes": "经评估可能并非 DSH 插件，而是一个跨平台的 skill 工具，只是支持安装到 DSH 的 skills 目录；另外该项目 star 很高，但涉及大量隐私数据收集，使用时请谨慎授权。"
+    },
+    "summaryZh": "把同事、亲友或偶像的聊天和文字资料蒸馏成一个能模仿其思维和说话方式的 AI 技能，支持飞书、钉钉、微信等多种数据源。",
+    "usage": {
+      "prompt_tokens": 3212,
+      "completion_tokens": 2265,
+      "total_tokens": 5477,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1805
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2572
+    }
+  }
+}

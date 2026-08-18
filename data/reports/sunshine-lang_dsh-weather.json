@@ -1,0 +1,37 @@
+{
+  "id": "sunshine-lang/dsh-weather",
+  "analyzedAt": "2026-08-17T11:59:36.853Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，且 README 提供了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-weather",
+      "evidence": "dsh plugin --profile web add dsh-weather"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的天气工具插件。装上之后，你可以直接问模型“上海现在天气怎么样”或“查一下东京的天气，用华氏度，并给出 3 天预报”，模型就会帮你调这个插件去 Open-Meteo 网站拿实时天气和未来最多 7 天的天气预报。不需要注册或 API key，完全免费。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只会在你问天气时向 Open-Meteo 发送你查询的城市名称，不碰你的个人文件或隐私，也不会上传其他数据。",
+      "postInstallNotes": "无。安装后重启 dsh 即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-weather 是一个免费的天气查询插件，通过 Open-Meteo 获取实时天气和多日预报，无需 API key。",
+    "usage": {
+      "prompt_tokens": 1964,
+      "completion_tokens": 798,
+      "total_tokens": 2762,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 463
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1324
+    }
+  }
+}

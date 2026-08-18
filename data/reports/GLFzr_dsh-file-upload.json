@@ -1,0 +1,37 @@
+{
+  "id": "GLFzr/dsh-file-upload",
+  "analyzedAt": "2026-08-17T11:40:49.299Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client 字段，README 给出了 dsh plugin add 安装命令，并明确调用 DSH 的 webServer/inputTriggers 等接口，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/GLFzr/dsh-file-upload.git",
+      "evidence": "dsh plugin --profile web add <本仓库路径>"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 网页版加上了“拖拽上传任意文件”的能力。以前网页版只能传图片，现在你可以把 PDF、压缩包、表格、代码等任何文件直接拖进页面，文件会先存到电脑里的一个中转文件夹，然后聊天输入框会显示一个蓝色文件标签，AI 助手就能读取这个文件。它还会自动帮你清理中转目录，避免越积越多。",
+      "level": "ok",
+      "risks": "插件会在你的电脑上创建 ~/.dsh-dropbox 文件夹，拖入的文件会复制（或直接引用）到那里；如果你拖入的是隐私文件，AI 以及任何能访问你电脑的人都有可能看到。清理功能会删除该目录下的文件，可能让历史会话中引用的文件失效。在 Chrome/Edge 里拖拽本机文件时，插件能拿到文件的源路径，但这只发生在本机，不会发送到外部服务器。",
+      "postInstallNotes": "安装后重启 DSH，可运行 `dsh web --dump-config` 确认插件已加载；首次使用建议先拖一个小文件测试。若使用 Firefox 或从网页拖拽，文件会走上传中转，注意 ~/.dsh-dropbox 目录的磁盘占用。",
+      "notes": "该插件依赖 DSH 发行版内的 composer 扩展（occurrence 的 pad 扩展），若在未包含该扩展的公开版 DSH 上运行，会自动降级为固定宽度文件标签，不影响使用。插件通过 dsh.bundle 补丁层注入，无需修改 DSH 源码。"
+    },
+    "summaryZh": "让 DSH 网页版支持拖拽上传任意文件（而非仅图片），文件自动存到本机中转目录，AI 可直接读取。",
+    "usage": {
+      "prompt_tokens": 5309,
+      "completion_tokens": 3676,
+      "total_tokens": 8985,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3142
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4669
+    }
+  }
+}

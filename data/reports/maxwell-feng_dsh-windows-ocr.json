@@ -1,0 +1,37 @@
+{
+  "id": "maxwell-feng/dsh-windows-ocr",
+  "analyzedAt": "2026-08-17T11:42:20.648Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，且代码钩入 dsh 的 llm 服务接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@maxwell-feng/dsh-windows-ocr",
+      "evidence": "```bash\ndsh plugin --profile web add @maxwell-feng/dsh-windows-ocr\n```"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让只能用文字的大模型也能看懂你发的图片。它用 Windows 自带的 OCR 功能在你自己电脑上识别图片里的文字，然后把识别出的文字发给模型，图片本身不会发出去，保护隐私。默认不会把图片传给 AI 服务商，只有你手动开启 passthrough 才会原图直传。",
+      "level": "ok",
+      "risks": "插件会在你的 Windows 电脑上运行 PowerShell 脚本调用系统 OCR，会在临时目录创建临时文件并自动清理。它只读取你主动附加到会话里的图片，不碰其他文件。识别结果会缓存到内存中，进程结束后消失。没发现明显风险。",
+      "postInstallNotes": "如果你要识别中文等非英文文字，需要在 Windows 设置里安装对应语言的 OCR 语言包，并在插件配置里设置 language（如 zh-Hans）。其他情况一般无需额外配置。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 Windows 专用 DSH 插件，用本地 OCR 把图片转成文字再发给模型，默认不上传原图，保护隐私。",
+    "usage": {
+      "prompt_tokens": 3219,
+      "completion_tokens": 607,
+      "total_tokens": 3826,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 217
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2579
+    }
+  }
+}

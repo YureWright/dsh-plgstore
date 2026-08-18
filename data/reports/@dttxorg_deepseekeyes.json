@@ -1,0 +1,37 @@
+{
+  "id": "@dttxorg/deepseekeyes",
+  "analyzedAt": "2026-08-16T13:24:56.233Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 包含 dsh.bundle 与 dsh.client 配置，且 README 明确描述为 DeepSeek Harness 的视觉/计算机使用运行时。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dttxorg/deepseekeyes",
+      "evidence": "README 未说明 dsh plugin add 用法，仅提供 `npx -y @dttxorg/deepseekeyes@latest install`"
+    },
+    "evaluationReport": {
+      "intro": "DeepSeekEyes 是 DeepSeek Harness（DSH）的一个插件，让 DeepSeek 能“看”图片和控制电脑。它可以把图片转换成 DeepSeek 能理解的结构化证据，还能控制浏览器和桌面（比如打开网页、滚动、点击）。你可以在聊天里直接粘贴图片，让 DeepSeek 分析，或者让它自己操作浏览器。它还会记录所有操作步骤，方便检查。",
+      "level": "caution",
+      "risks": "它会读取你屏幕上的画面（截图）来让 DeepSeek 理解，这些截图会被发送给你配置的多模态模型（比如其他的 AI 服务）。它还能控制你的浏览器和桌面，进行点击、滚动等操作，这些操作可能由 DeepSeek 的指令触发。此外，安装过程中可能需要下载浏览器组件。请确保你信任所使用的 AI 服务和配置。",
+      "postInstallNotes": "安装后需要重启 `dsh web`，然后在 Harness 的“设置 → 插件 → DeepSeekEyes”中配置最终回答模型和视觉模型，并选择 DeepSeekEyes 作为对话模型。",
+      "notes": "README 未提供标准 `dsh plugin add` 命令，而是通过 npx 安装；安装后会修改 DSH 配置。包名为 @dttxorg/deepseekeyes，非官方 deepseek-ai 出品，但具有 npm 来源验证和签名。"
+    },
+    "summaryZh": "DeepSeekEyes 为 DeepSeek Harness 增加视觉能力：让 DeepSeek 能查看图片、理解屏幕，并控制浏览器和桌面来完成操作。",
+    "usage": {
+      "prompt_tokens": 4034,
+      "completion_tokens": 3428,
+      "total_tokens": 7462,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2929
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3394
+    }
+  }
+}

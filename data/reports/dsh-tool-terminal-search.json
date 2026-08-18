@@ -1,0 +1,37 @@
+{
+  "id": "dsh-tool-terminal-search",
+  "analyzedAt": "2026-08-16T14:46:56.685Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/schemastery，peerDependencies 为 @deepseek-ai/dsh-tools 和 @deepseek-ai/dsh-terminal，README 给出了 dsh plugin 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tool-terminal-search",
+      "evidence": "dsh plugin --profile web add dsh-tool-terminal-search"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（dsh）用的，作用是在终端的大量历史输出里快速查找某段文字或正则匹配的行，不用一页页往回翻。适合在日志很多时帮 AI 定位关键信息，比如报错或特定记录。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取终端滚动缓冲区的内容并向模型返回匹配结果，不额外碰文件、网络或隐私数据。",
+      "postInstallNotes": "安装后需要在 profile 的 package.json 里把 dsh-tool-terminal-search 加入 bundles 列表，同时确保官方 @deepseek-ai/dsh-tool-terminal 插件已安装，然后重启 dsh profile。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 dsh 终端搜索工具插件，支持按字面或正则在大容量终端回滚中快速定位行。",
+    "usage": {
+      "prompt_tokens": 2765,
+      "completion_tokens": 788,
+      "total_tokens": 3553,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 435
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2125
+    }
+  }
+}

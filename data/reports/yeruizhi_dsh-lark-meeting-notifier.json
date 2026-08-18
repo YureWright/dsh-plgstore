@@ -1,0 +1,37 @@
+{
+  "id": "yeruizhi/dsh-lark-meeting-notifier",
+  "analyzedAt": "2026-08-17T11:41:53.348Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 提供了 dsh plugin add 安装命令，且代码明显包含 DSH 插件架构（Client↔Host 通信）"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/yeruizhi/dsh-lark-meeting-notifier.git",
+      "evidence": "dsh plugin --profile web add github:yeruizhi/dsh-lark-meeting-notifier"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在你使用 DSH 网页版时，在页面右侧显示一个悬浮小窗，列出今天剩余的飞书会议。它会提前设置多个闹钟（比如提前 20/10/5 分钟）提醒你，还会用闪烁和颜色变化提醒你赶紧去开会。你可以点一下会议条目来关闭闹钟，也可以移除提醒。它只会读取飞书日历，不会修改你日历里的真实日程。",
+      "level": "ok",
+      "risks": "它会通过 lark-cli 读取你的飞书日历数据，所以你的会议标题、时间、参会人等信息会显示在 DSH 工作区里。授权时需要用你自己的飞书账号登录，授权 token 会存在本地配置文件中。另外它需要在 DSH 的沙箱里以较高权限运行 lark-cli 命令，但这是为了读取日历和联网，没有发现额外风险。",
+      "postInstallNotes": "需要先安装 lark-cli：npm install -g @larksuite/cli；然后运行 lark-cli config init 完成飞书应用配置；再运行 lark-cli auth login --scope \"calendar:calendar:readonly\" 授权日历读取权限；最后用 lark-cli auth status --json --verify 验证。完成这些后重启 dsh web。",
+      "notes": "无"
+    },
+    "summaryZh": "飞书会议提醒插件：在 DSH 页面右侧显示今日/明日会议，支持多闹钟闪烁提醒，防止你沉迷和 AI 聊天而错过开会。",
+    "usage": {
+      "prompt_tokens": 2292,
+      "completion_tokens": 1250,
+      "total_tokens": 3542,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 763
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1652
+    }
+  }
+}

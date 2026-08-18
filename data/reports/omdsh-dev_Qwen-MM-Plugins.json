@@ -1,0 +1,37 @@
+{
+  "id": "omdsh-dev/Qwen-MM-Plugins",
+  "analyzedAt": "2026-08-17T12:02:56.558Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖多个 @deepseek-ai/dsh-* 核心包，README 明确描述为可安装的 DSH profile bundle，代码使用 DSH 的 skill/MCP 服务接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/omdsh-dev/Qwen-MM-Plugins.git",
+      "evidence": "The package is intentionally private and can be installed from a Git checkout or linked into a profile."
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 增加 Qwen-MM 的多模态能力。安装后默认是关闭的，你需要在配置里打开它，并指定从哪个 Qwen-MM 代码仓库、哪个版本拉取能力，以及要启用哪些能力（比如核心、视频记忆、视频编辑、Blender、FreeCAD 等）。它会调用 DSH 已有的服务来启动这些 MCP 工具和 Agent 技能。",
+      "level": "ok",
+      "risks": "它需要联网从 GitHub 拉取 Qwen-MM 的能力代码，并在你电脑上启动外部 MCP 进程（需要 Python、uvx、git）。安装时会运行构建脚本（prepare），请使用可信的仓库地址和版本。能力相关的密钥需要你显式配置，不会自动转发。",
+      "postInstallNotes": "装完后需要在 DSH profile 配置里打开 qwen-mm 开关，设置 source（Qwen-MM 仓库地址）、ref（精确 commit 或 tag）、capabilities 列表，并确保系统装有 git、uvx 和对应 Python 环境。",
+      "notes": "此包未发布到 npm，需通过 Git 安装；它会从外部 Git 仓库获取能力代码，请确认使用可信的 ref。"
+    },
+    "summaryZh": "一个为 DSH 提供 Qwen-MM 多模态能力的插件，按需从远程仓库拉取 Agent Skills 并启动 MCP 工具服务。",
+    "usage": {
+      "prompt_tokens": 2121,
+      "completion_tokens": 2043,
+      "total_tokens": 4164,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1577
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1481
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "Gumiho12345/dsh-plugin-net-access",
+  "analyzedAt": "2026-08-17T11:51:20.885Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/dsh，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-net-access",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-plugin-net-access"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的 Windows 沙箱增加了一个叫“Net Access”的权限模式。原来沙箱里 HTTPS 访问会被拦（比如 curl 会报错），装上它之后 HTTPS 能正常用，同时仍然保持“工作区外文件不能写”的保护。它需要运行一个安装脚本来打补丁和下载工具。",
+      "level": "caution",
+      "risks": "安装时会运行 PowerShell 脚本，这个脚本会修改 DSH 引擎配置，并从 curl.se 下载一个 OpenSSL 版 curl 工具箱到你的用户目录（%USERPROFILE%\\.dsh\\netaccess-tools）。下载的文件以当前用户身份运行，如果下载源被劫持会有风险。它不会碰你的私人文件，主要影响沙箱的网络和文件权限行为。",
+      "postInstallNotes": "装完必须完全重启 DSH 才能生效：在终端按 Ctrl+C 停掉 3080 端口的进程，然后重新运行 npx @deepseek-ai/dsh web，刷新页面后在权限选择器里选 Net Access。另外，如果要用 git 走 HTTPS，需要先执行 git config --global http.sslBackend openssl。",
+      "notes": "该插件仅支持 Windows 和 DSH 0.1.0-rc.6，升级 DSH 后需要重装；系统自带的 curl 和 Invoke-WebRequest 仍不能用 HTTPS，请用插件自带的 curl.exe、python 或 node。"
+    },
+    "summaryZh": "为 DeepSeek Harness (Windows) 添加“Net Access”权限模式，让沙箱内 HTTPS 恢复可用，同时保持工作区外文件写入保护。",
+    "usage": {
+      "prompt_tokens": 1926,
+      "completion_tokens": 1978,
+      "total_tokens": 3904,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1475
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1286
+    }
+  }
+}

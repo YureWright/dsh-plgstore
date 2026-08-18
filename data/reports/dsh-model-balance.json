@@ -1,0 +1,37 @@
+{
+  "id": "dsh-model-balance",
+  "analyzedAt": "2026-08-16T13:39:13.808Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-* 包，README 提供了 dsh plugin add 安装命令，因此是标准 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-model-balance",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-model-balance"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 的网页界面上，在模型选择器旁边显示各家 AI 服务商（比如 DeepSeek、OpenRouter、MiniMax 等）的账户余额或剩余额度。你切换模型时它会自动刷新，也可以手动点击刷新，方便你随时知道每个服务商还剩多少钱/额度。",
+      "level": "ok",
+      "risks": "插件会使用你配置在各服务商的 API Key 去查询余额，查询由本地 DSH 宿主发起，API Key 不会直接暴露给浏览器，但余额信息会显示在界面上。它还会读取/修改配置文件（如 ~/.dsh/model-balance-providers.json）。没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 并刷新页面；若使用自定义服务商，可编辑 providers.json 或创建 ~/.dsh/model-balance-providers.json。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web GUI 显示多供应商真实账户余额与配额，支持 DeepSeek、OpenRouter 等主流服务商。",
+    "usage": {
+      "prompt_tokens": 3612,
+      "completion_tokens": 3071,
+      "total_tokens": 6683,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2685
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2972
+    }
+  }
+}

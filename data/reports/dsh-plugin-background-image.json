@@ -1,0 +1,37 @@
+{
+  "id": "dsh-plugin-background-image",
+  "analyzedAt": "2026-08-16T13:45:42.426Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 字段，且 README 给出 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-background-image",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile <profile名> add dsh-plugin-background-image"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的背景图片插件，可以让聊天界面显示网络图片、本地图片或预设的渐变背景，还能调节透明度和毛玻璃模糊，喜欢折腾界面的朋友可以试试。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会通过修改界面样式来呈现背景，同时提供了一个只读的本地图片服务，仅允许读取你在设置里指定的那个图片文件，不会乱碰其他文件。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 背景图片插件：支持网络/本地图片与渐变背景，可调透明度、模糊和显示范围。",
+    "usage": {
+      "prompt_tokens": 3581,
+      "completion_tokens": 498,
+      "total_tokens": 4079,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 213
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2941
+    }
+  }
+}

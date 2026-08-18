@@ -1,0 +1,37 @@
+{
+  "id": "dsh-market/dsh-market",
+  "analyzedAt": "2026-08-16T11:42:01.822Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.96,
+      "reason": "package.json 声明了 dsh.bundle / dsh.client、依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，是货真价实的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dshmarket",
+      "evidence": "dsh plugin --profile web add dshmarket"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是装在 DeepSeek Harness 里的可视化插件市场。打开设置里的“插件市场”，就能浏览、搜索社区里的 800 多个插件，看截图和介绍，点一下就能装好；还能一键换主题、备份恢复插件配置、批量更新或卸载插件，全程不用碰命令行。",
+      "level": "ok",
+      "risks": "它会读取你的插件配置和部分 profile 设置，备份功能可能包含密钥，但导出和上传前会明确提醒；它还能触发重启 DSH，重启时会脱离原终端（如果 DSH 由 systemd 等管理器托管，需要关掉自动重启按钮）。没有发现偷偷上传数据或乱碰隐私的情况。",
+      "postInstallNotes": "装完重启 dsh web，然后打开 设置 → 插件市场 即可使用；如果 DSH 由 systemd/launchd/pm2 等进程管理器托管，建议在插件设置里将 allowRestart 设为 false。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-market 是一个装在 DeepSeek Harness 里的可视化插件市场，让你像逛应用商店一样浏览、安装、更新社区插件，还带主题切换和备份恢复功能。",
+    "usage": {
+      "prompt_tokens": 2934,
+      "completion_tokens": 571,
+      "total_tokens": 3505,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 177
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2294
+    }
+  }
+}

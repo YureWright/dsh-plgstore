@@ -1,0 +1,37 @@
+{
+  "id": "wssfk12138/dsh-wechat-notify",
+  "analyzedAt": "2026-08-17T11:39:00.705Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 @deepseek-ai/cordis 与 @deepseek-ai/dsh-tools 依赖，README 说明它向 dsh 注册 wechat_notify 工具，属于真正 DSH 插件。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "把本插件放进 dsh 仓库内（这样 dsh 才能解析 `@deepseek-ai/*` 依赖）。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的 AI 助手（agent）能主动给你发微信通知。比如任务完成、需要你确认、或者跑完长任务时，agent 会通过你本机已经登录的微信机器人，把消息推送到你手机。首次使用还支持扫码登录微信，全程在 dsh 页面里完成。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会调用你本机的微信发送器（ClawBot），读取环境变量里的路径，并生成临时文件但用完即删；不会把隐私上传到别处。",
+      "postInstallNotes": "需要设置环境变量 WECHAT_NOTIFY_CLAWBOT_INDEX 指向本机 ClawBot 的入口文件；再复制 cordis.patch.example.yml 为真实 patch 文件并配置绝对路径（Windows 用 file:/// URL），然后带 --patch 启动 dsh。",
+      "notes": "README 没有提供 dsh plugin add 安装命令，需要手动把插件放进 dsh 仓库的 plugins 目录；另外插件依赖 dsh 自身解析 @deepseek-ai/* 包，所以不能单独安装。"
+    },
+    "summaryZh": "让 DeepSeek Harness 的 agent 通过本机微信机器人给你发微信通知的插件。",
+    "usage": {
+      "prompt_tokens": 2664,
+      "completion_tokens": 1961,
+      "total_tokens": 4625,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1525
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2024
+    }
+  }
+}

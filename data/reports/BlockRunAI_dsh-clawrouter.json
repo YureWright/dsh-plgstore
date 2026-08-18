@@ -1,0 +1,37 @@
+{
+  "id": "BlockRunAI/dsh-clawrouter",
+  "analyzedAt": "2026-08-17T11:30:04.395Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 配置，且依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，README 也给出了 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-clawrouter",
+      "evidence": "dsh plugin --profile web add dsh-clawrouter"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一道“安全审查门”：当 AI 助手要执行危险命令（比如 rm -rf ~、curl xxx | sh 等）时，它会先请一个更强的模型（默认 Claude Opus 5）看一眼，给出放行、拒绝或问你三种结果；普通读写和构建命令不会被审查。它还接入了 BlockRun 服务，声称用一个钱包就能调用 60 多种模型，不需要注册账号或 API key，按次用 USDC 付费。目的是防止 AI 手滑删库删家目录。",
+      "level": "caution",
+      "risks": "它会把 AI 助手准备执行的、被判定为危险的那条命令文本（可能包含路径、用户名等）发送到 BlockRun 的第三方服务器上做审查，等于这些命令内容会离开你的电脑。使用它需要配置 USDC 钱包并支付费用，涉及资金操作。另外 npm 安装时会自动跑 prepare 构建脚本（tsup），虽然一般是正常编译，但理论上安装过程会执行项目代码。",
+      "postInstallNotes": "装完后需要在你的 profile 的 cordis.patch.yml 里启用 blockrun-review 配置（把 enabled 设为 true），并按需设置 reviewerModel、extraRules；另外需要准备好支持 USDC 的钱包并确保余额，才能使用 BlockRun 的付费审查服务。",
+      "notes": "经评估确为 DSH 插件；注意它会把部分命令发送给第三方 BlockRun 服务并产生 USDC 费用，请确认自己接受这种隐私与付费模式后再启用。"
+    },
+    "summaryZh": "为 DeepSeek Harness 增加“危险命令先审查后执行”的安全门：用更强模型拦截危险操作，并通过 BlockRun 一个钱包按次调用多种模型，无需 API key。",
+    "usage": {
+      "prompt_tokens": 3987,
+      "completion_tokens": 3623,
+      "total_tokens": 7610,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3088
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3347
+    }
+  }
+}

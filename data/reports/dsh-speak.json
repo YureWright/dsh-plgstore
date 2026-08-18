@@ -1,0 +1,37 @@
+{
+  "id": "dsh-speak",
+  "analyzedAt": "2026-08-16T13:26:15.542Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，且 README 给出了 dsh plugin add 安装命令，目标明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-speak",
+      "evidence": "dsh plugin --profile web add dsh-speak"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 AI 编程助手在完成任务后，用语音把最终回复念出来，不用一直盯着屏幕。它支持 Windows 和 macOS，Windows 用系统自带语音（包括自然语音），macOS 用 say 命令。它还会在需要你审批或向你提问时提醒你。",
+      "level": "ok",
+      "risks": "它会修改你用户目录下的 ~/.dsh 配置文件（如 cordis.patch.yml），并调用系统语音合成功能；会在临时目录写日志文件。没有发现访问隐私文件或连接外部服务器的行为。",
+      "postInstallNotes": "如果使用 npm 安装，需要手动在 ~/.dsh/profiles/web/cordis.patch.yml 中添加注册条目（除非使用 bundle 自动注册）；或者直接运行 Option B 的安装脚本。安装后需重启 DSH web 应用。",
+      "notes": "项目 README 自述为'已验证方案'且不会继续更新，但功能完整可用；来源为 npm 官方包，代码量较小，风险低。"
+    },
+    "summaryZh": "让 DSH 助手在任务完成、需要审批或提问时用语音播报，支持 Windows 和 macOS 系统语音。",
+    "usage": {
+      "prompt_tokens": 3974,
+      "completion_tokens": 592,
+      "total_tokens": 4566,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 209
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3334
+    }
+  }
+}

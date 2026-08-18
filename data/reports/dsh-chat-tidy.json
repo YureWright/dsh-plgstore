@@ -1,0 +1,37 @@
+{
+  "id": "dsh-chat-tidy",
+  "analyzedAt": "2026-08-16T13:33:49.505Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 且依赖 @deepseek-ai/dsh-client-runtime，README 给出了 dsh plugin 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:ChuanTianML/dsh-chat-tidy",
+      "evidence": "dsh plugin --profile web add github:ChuanTianML/dsh-chat-tidy"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能调整 DeepSeek Harness 网页聊天界面的排版和字体大小，让对话看着更像专业的编程助手客户端（比如 Codex）。它只改样式，不改内容、不隐藏推理、不碰数据，装完重启就能生效，不想要就卸掉。",
+      "level": "ok",
+      "risks": "没发现明显风险：它不发网络请求、不存任何数据、只改界面样式。",
+      "postInstallNotes": "安装后需要重启 dsh web 使新布局生效。",
+      "notes": "无"
+    },
+    "summaryZh": "一个纯样式型的 DSH 插件，让网页对话排版更紧凑、更接近 Codex 的阅读节奏。",
+    "usage": {
+      "prompt_tokens": 3060,
+      "completion_tokens": 815,
+      "total_tokens": 3875,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 511
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2420
+    }
+  }
+}

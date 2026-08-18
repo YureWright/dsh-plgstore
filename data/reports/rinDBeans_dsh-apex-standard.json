@@ -1,0 +1,37 @@
+{
+  "id": "rinDBeans/dsh-apex-standard",
+  "analyzedAt": "2026-08-17T12:07:53.800Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.92,
+      "reason": "package.json 声明了 dsh.bundle 字段，且代码结构（cordis.patch.yml、preset 目录）明显是 DSH 插件形态。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "方式一（推荐，直接克隆本仓库）——README 未提供 dsh plugin add 安装命令，实际为手动复制 preset 目录。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个为 DeepSeek V4 Pro/Flash 模型设计的“智能体预设”插件，用来调整 DeepSeek Harness 里 AI 助手的行为方式，让 Pro 模型更稳定、Flash 模型更聪明，支持官方 API 和 opencode-go 两种连接渠道。安装后，AI 在首次对话时只使用少量核心工具，之后根据模型自动切换合适的工具组合，并在长对话中避免“走神”或越聊越乱。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件复制配置到你的用户目录（如 ~/.dsh 下的 .agent-presets），并可以修改 dsh 的 settings.yaml 配置，但这些都需要你主动操作或确认；插件本身零依赖、不联网、无遥测。",
+      "postInstallNotes": "1. 完全退出并重启 dsh；2. 在 ~/.dsh/settings.yaml 中设置默认模型和预设（如 agent-presets.default: apex-standard）；3. Windows 用户需要安装 Git for Windows，并确保配置好 bash 路径。",
+      "notes": "安装方式不是通过 dsh plugin add，而是手动克隆仓库并复制 preset 目录；项目为社区实验性质，与 DeepSeek 官方无关，且文中实测数据来自个人测量，不保证普适性。"
+    },
+    "summaryZh": "一个为 DeepSeek V4 Pro/Flash 优化行为轨迹和长对话稳定性的 DSH 智能体预设插件，兼容官方 API 与 opencode-go。",
+    "usage": {
+      "prompt_tokens": 4649,
+      "completion_tokens": 2572,
+      "total_tokens": 7221,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2100
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 4009
+    }
+  }
+}

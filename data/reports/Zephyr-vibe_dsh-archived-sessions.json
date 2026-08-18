@@ -1,0 +1,37 @@
+{
+  "id": "Zephyr-vibe/dsh-archived-sessions",
+  "analyzedAt": "2026-08-17T11:26:26.923Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等 DSH 核心包，README 提供了 dsh plugin 安装命令。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://codeload.github.com/Zephyr-vibe/dsh-archived-sessions/tar.gz/refs/heads/main",
+      "evidence": "dsh plugin --profile web add https://codeload.github.com/Zephyr-vibe/dsh-archived-sessions/tar.gz/refs/heads/main"
+    },
+    "evaluationReport": {
+      "intro": "这是一个管理 DSH 聊天记录的插件，装在设置里，能查看所有对话、归档、搜索、批量删除，还能看每个会话占多少空间、用了什么工具，子代理会话也会嵌套显示。",
+      "level": "ok",
+      "risks": "它会读取你本机的会话记录（存在 $DSH_HOME/sessions 下），可以打开系统文件管理器、也可以删除会话和会话产生的文件。所有操作只在本机进行，不会上传数据。删除前有确认弹窗，而且默认不会连坐删除子代理和文件。",
+      "postInstallNotes": "安装后重启 web 端，在设置里会出现「会话管理」入口，无需额外配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 会话管理插件，在设置中统一浏览、归档、搜索和删除本机所有对话。",
+    "usage": {
+      "prompt_tokens": 4028,
+      "completion_tokens": 910,
+      "total_tokens": 4938,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 542
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3388
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "Toukaiteio/dsh-effort-tweak",
+  "analyzedAt": "2026-08-17T12:11:13.266Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis、@deepseek-ai/dsh 等核心包，README 也描述了作为 DSH 插件的功能。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Toukaiteio/dsh-effort-tweak.git",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加了一个“推理强度”设置页，让你能单独给每个模型选择思考程度（从完全关闭到最高档），不用手动去改配置文件。它还能保留模型的其他设置，只调整推理强度这一项。",
+      "level": "ok",
+      "risks": "它会在你的电脑上安装插件文件到 DSH 的目录里，并修改 DSH 配置来保存你的设置。安装脚本会从 GitHub 下载并执行，这个过程中你的 IP 会暴露给 GitHub。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 DSH Web 界面，然后在设置里找到“Reasoning effort”页面。使用前还得先在自定义 provider 的配置里添加模型列表，否则页面上看不到模型。",
+      "notes": "README 提供了脚本安装和本地 tarball 安装，但没有直接给出 dsh plugin add 可用的 URL；这里推荐用 git 方式安装，或者参照 README 用官方脚本装。"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 自定义提供商按模型调整推理强度的小插件，免去手动改配置的麻烦。",
+    "usage": {
+      "prompt_tokens": 2442,
+      "completion_tokens": 2756,
+      "total_tokens": 5198,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2354
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1802
+    }
+  }
+}

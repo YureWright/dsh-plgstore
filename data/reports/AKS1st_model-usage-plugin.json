@@ -1,0 +1,37 @@
+{
+  "id": "AKS1st/model-usage-plugin",
+  "analyzedAt": "2026-08-17T11:56:17.196Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 包含 dsh.bundle 和 dsh.client 配置，且 README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/AKS1st/model-usage-plugin.git",
+      "evidence": "从 GitHub 仓库安装（纯 JS，零构建，即装即用）：`dsh plugin --profile web add github:AKS1st/model-usage-plugin`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的，能帮你统计每个模型用了多少 token、大概花了多少钱，还能直接看到 DeepSeek 账户余额。它会在设置里添加一个“模型消耗”页面，每个模型都有卡片显示用量和费用，你可以自己改价格，还能设置高峰时间段不同价格（比如白天贵、晚上便宜），也支持按汇率换算成人民币或美元。",
+      "level": "ok",
+      "risks": "会在 DSH 的配置目录里保存一份统计数据文件（$DSH_HOME/musage-stats.json），记录 token 用量、价格和汇率缓存；填写的余额 API Key 只放在内存，不写盘。整体没有明显风险，就是普通的数据统计。",
+      "postInstallNotes": "安装后需重启 web 服务（运行 `dsh web`）让 profile 生效；如果需要长期使用账户余额功能，建议设置 `DEEPSEEK_API_KEY` 环境变量（可选）。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness Web 插件，统计各模型 token 消耗、估算费用并显示 DeepSeek 账户余额。",
+    "usage": {
+      "prompt_tokens": 1664,
+      "completion_tokens": 3458,
+      "total_tokens": 5122,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3045
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1024
+    }
+  }
+}

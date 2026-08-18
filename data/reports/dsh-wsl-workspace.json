@@ -1,0 +1,37 @@
+{
+  "id": "dsh-wsl-workspace",
+  "analyzedAt": "2026-08-16T13:46:06.622Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 明确声明了 dsh.bundle 和 dsh.client 字段，并依赖 @deepseek-ai/cordis 等 DSH 核心包，符合真实插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-wsl-workspace",
+      "evidence": "dsh plugin --profile web add dsh-wsl-workspace"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你能在 DeepSeek Harness 网页界面里直接添加一个 WSL（Windows 上的 Linux 子系统）工作区。添加后，AI 会话的 bash 命令和文件读写都会在这个 WSL 发行版里进行，用 Linux 路径操作。WSL 里不用装任何东西，同时你还能通过 /mnt/c 之类的路径访问 Windows 文件。简单说，就是把 AI 的工作环境从 Windows 搬到 WSL 里，像 VS Code 的 Remote-WSL 一样。",
+      "level": "ok",
+      "risks": "这个插件会通过 wsl.exe 启动 WSL 发行版，并在里面执行命令。bash 工具在 WSL 里运行时不受 DSH 文件策略限制，可以读写 WSL 内部的任何位置，因此如果你让 AI 在 WSL 里运行危险命令，它可能改动整个 WSL 系统。另外，你填写过的 WSL 用户名会保存在 DSH 主目录的 wsl-workspaces.json 文件里，本地其他用户可能能看到。没有发现连接外部服务器或恶意行为。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后在侧边栏设置旁边会出现一个 W 按钮，点击它来添加 WSL 工作区。电脑上需要已经安装并配置好 WSL 发行版。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 WSL 工作区支持，让 AI 会话在 WSL 里运行 bash 和文件操作，无需在 WSL 内安装额外工具。",
+    "usage": {
+      "prompt_tokens": 2791,
+      "completion_tokens": 1006,
+      "total_tokens": 3797,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 527
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2151
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "dsh-skin-dark-gold",
+  "analyzedAt": "2026-08-18T14:58:00.177Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-skin-dark-gold",
+      "evidence": "dsh plugin --profile web add dsh-skin-dark-gold"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 网页界面换外观的皮肤。装上后，网页背景会变成暗金色渐变，屏幕上会漂浮着金色小粒子，粒子之间还有连线，鼠标移动时会有点小反应。文字颜色会变成暖白黄色，整体看上去就是一套暗金色的炫酷主题。",
+      "level": "ok",
+      "risks": "它会在你打开 DSH 网页时运行一段浏览器脚本，用来画粒子和改页面颜色，但只作用于 DSH 页面本身，不会读取聊天记录，也不会把数据上传到别的地方。它会强制页面使用深色主题，如果你不太喜欢暗色风格，可能会觉得不适应。除此之外没发现明显风险。",
+      "postInstallNotes": "装完后需要重启 dsh web（通过 bundle 安装的情况），手动安装则刷新浏览器页面就能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "暗金粒子皮肤插件，为 DSH Web 界面提供暗金渐变背景、漂浮金色粒子和暖白黄文字。",
+    "usage": {
+      "prompt_tokens": 4477,
+      "completion_tokens": 1785,
+      "total_tokens": 6262
+    }
+  }
+}

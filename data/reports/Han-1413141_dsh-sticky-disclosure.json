@@ -1,0 +1,37 @@
+{
+  "id": "Han-1413141/dsh-sticky-disclosure",
+  "analyzedAt": "2026-08-17T13:10:30.827Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 与 dsh.bundle，导出 ./client 入口，README 提供 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Han-1413141/dsh-sticky-disclosure.git",
+      "evidence": "dsh plugin --profile web add github:Han-1413141/dsh-sticky-disclosure"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 的网页版（Web 客户端）用的。它能在聊天界面右下角加一个按钮，点一下就能把所有展开的折叠内容（比如 AI 的思考过程、工具调用记录、命令卡片等）全部收起来，还会显示当前展开了几个。另外，当某个展开的内容滚出屏幕时，它的标题会自动钉在顶部，方便你随时点一下收起。也支持自定义快捷键，默认是 Ctrl+Alt+C（Mac 是 ⌘⌥C），可以改成你习惯的组合。",
+      "level": "ok",
+      "risks": "它在你的浏览器里运行，会改动页面上一些元素的样式和位置，但不会动应用本身的代码。你的快捷键设置会保存在浏览器本地（localStorage），不会上传到任何服务器。插件本身不读取文件、不联网，没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 服务（如果正在运行），然后刷新浏览器页面。确认聊天区右下角出现按钮即成功。默认快捷键可在设置面板中修改，改后会自动保存。",
+      "notes": "无"
+    },
+    "summaryZh": "一键收起 DSH 会话中所有展开的折叠区块，支持自定义快捷键和滑出自动钉住标题。",
+    "usage": {
+      "prompt_tokens": 4209,
+      "completion_tokens": 1766,
+      "total_tokens": 5975,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1345
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3569
+    }
+  }
+}

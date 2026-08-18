@@ -1,0 +1,37 @@
+{
+  "id": "dsh-approval-gate",
+  "analyzedAt": "2026-08-18T14:54:25.438Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，README 给出 dsh plugin add 安装命令，是标准 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-approval-gate",
+      "evidence": "dsh plugin --profile web add dsh-approval-gate"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的一个安全门卫。当 AI 想执行一些操作（比如写文件、删文件、跑命令）时，它会先用一个更快的模型（Flash）判断是不是安全。如果安全就自动放行，如果是危险的（比如删除、碰密码、远程操作、系统级操作）就转给人工确认。它还能记住你确认过的操作，以后类似的操作就自动放行了。另外有一个人工审查界面，可以看放行记录、对比文件改动，还能一键撤销。",
+      "level": "ok",
+      "risks": "它会读取和修改你 ~/.dsh 目录下的配置文件（比如 cordis.patch.yml、allowlist.json）；它会把你的操作内容（比如命令、文件路径）发送给 DeepSeek 的 Flash 模型做风险判断，所以这些信息会经过第三方服务器；自动放行机制依赖模型判断，如果判断失误可能放行本应人工确认的操作，但危险操作设计为永远转人工，风险可控；人工审查 UI 会展示操作记录，电脑若被他人看到可能泄露操作信息。",
+      "postInstallNotes": "需要手动在 ~/.dsh/profiles/web/cordis.patch.yml 中添加 auto-approve 权限预设，然后重启 dsh web，最后在会话权限下拉中选择「自动审批（Flash）」。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 自动审批门控插件：用 Flash 模型预判操作风险，安全操作自动放行、危险操作转人工，带有确认制学习和人工审查 UI。",
+    "usage": {
+      "prompt_tokens": 2178,
+      "completion_tokens": 1678,
+      "total_tokens": 3856,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1208
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1538
+    }
+  }
+}

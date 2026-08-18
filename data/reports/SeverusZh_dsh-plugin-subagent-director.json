@@ -1,0 +1,37 @@
+{
+  "id": "SeverusZh/dsh-plugin-subagent-director",
+  "analyzedAt": "2026-08-17T13:10:26.626Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出 dsh plugin add 安装命令，确认为 DSH 插件"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-subagent-director",
+      "evidence": "dsh plugin --profile <name> add dsh-plugin-subagent-director"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以让 DeepSeek Harness 里的子代理（subagent）分别指定用哪家 AI 供应商和模型，还能用“角色模板”（比如代码审查员、翻译员）帮主代理规划该把任务派给谁。它带一个设置界面，在 DSH 设置面板里就能改默认模型和角色列表。安装后即使没配置也不会影响原有行为；配置了默认模型后，没指定模型的子代理会自动用它。",
+      "level": "ok",
+      "risks": "它会在 DSH 里新增一个 subagent-director 配置项和设置面板，配置保存在你的 DSH settings 里，并通过自带的本地 HTTP 路由桥接设置界面，不会上传到外部服务器。没发现明显风险。",
+      "postInstallNotes": "无；若要用默认模型或角色模板，可在 DSH 设置面板或 settings.yaml 中配置 subagent-director 命名空间（defaultProvider/defaultModel/roles）。",
+      "notes": "README 注明“子代理会话下方显示实际供应商/模型”的可观测性功能仍在开发中；本地 link 开发时需先 npm install && npm run build，且仓库不包含 lib/。"
+    },
+    "summaryZh": "为 DeepSeek Harness 子代理指定 LLM 供应商/模型，并用角色模板规划主代理与子代理分工的插件，带设置界面。",
+    "usage": {
+      "prompt_tokens": 4475,
+      "completion_tokens": 2144,
+      "total_tokens": 6619,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1704
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3835
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-drop-in",
+  "analyzedAt": "2026-08-16T14:48:53.997Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 提供了 dsh plugin add 安装命令，且描述明确为 DeepSeek Harness 插件。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://github.com/lbl61/dsh-drop-in/archive/refs/tags/v1.1.1.tar.gz",
+      "evidence": "dsh plugin --profile web add https://github.com/lbl61/dsh-drop-in/archive/refs/tags/v1.1.1.tar.gz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你从电脑文件管理器直接拖拽文件到 DeepSeek Harness 的网页聊天界面。拖进去的文件会显示在输入框上方的“小卡片”栏里，发送消息时会自动带上文件的名字、大小和绝对路径，聊天框里会显示成漂亮的文件卡片。AI 可以直接读取这些文件的真实路径，不需要上传或复制内容。支持拖文件夹，也支持桌面版（Electron）获取绝对路径；普通浏览器里则会复制小文本文件到工作区，方便 AI 读取。",
+      "level": "ok",
+      "risks": "它会读取你主动拖入的文件路径（浏览器模式下小文本文件内容会被复制到工作区的 .dsh-drops/ 目录），这些路径和文件信息会随消息发送给 AI，因此 AI 服务端可能看到这些信息。所有操作都基于你手动拖拽的文件，不会主动扫描磁盘或偷碰其他文件。",
+      "postInstallNotes": "无（默认启用，可通过设置中的‘文件拖入’开关调整；桌面版如需使用绝对路径，请确认 preload bridge 已按文档配置）",
+      "notes": "经评估，这是真正的 DSH 插件，不是蹭标签。README 中有部分中文乱码，可能是编码问题，不影响使用。插件依赖 React 18，需要 DSH web 环境满足。"
+    },
+    "summaryZh": "拖拽文件到 DeepSeek Harness 网页界面，随消息发送文件路径并以卡片形式展示。",
+    "usage": {
+      "prompt_tokens": 2447,
+      "completion_tokens": 2569,
+      "total_tokens": 5016,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2078
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1807
+    }
+  }
+}

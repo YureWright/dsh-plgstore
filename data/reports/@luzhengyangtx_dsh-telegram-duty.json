@@ -1,0 +1,37 @@
+{
+  "id": "@luzhengyangtx/dsh-telegram-duty",
+  "analyzedAt": "2026-08-16T13:43:39.727Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client，依赖 @deepseek-ai/cordis 和 dsh-* 核心包，README 给出了 dsh plugin add 安装命令"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@luzhengyangtx/dsh-telegram-duty",
+      "evidence": "dsh plugin --profile web add @luzhengyangtx/dsh-telegram-duty"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DeepSeek Harness（DSH）通过 Telegram 远程遥控。你在手机上给机器人发消息，DSH 里的 agent 就会干活并把结果发回手机。它还支持全局审批转发（人不在电脑前也能批准/拒绝）、切换会话、接收通知，而且空闲时不消耗 token。",
+      "level": "ok",
+      "risks": "它会把你的 DSH 消息和审批请求通过 Telegram 发到手机上，Telegram 服务器会看到这些内容；请保管好 bot token，不要泄露。没发现其他明显风险。",
+      "postInstallNotes": "装完后需要在 DSH 配置（cordis.patch.yml）里填写 Telegram bot token 和你的 chatId，然后重启 dsh web。",
+      "notes": "无"
+    },
+    "summaryZh": "把 DeepSeek Harness 变成随身 Telegram 值班室：手机发消息即可驱动 agent 干活、全局审批一键处理，还支持会话切换和通知推送。",
+    "usage": {
+      "prompt_tokens": 4442,
+      "completion_tokens": 1368,
+      "total_tokens": 5810,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1011
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3802
+    }
+  }
+}

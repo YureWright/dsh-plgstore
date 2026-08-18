@@ -1,0 +1,37 @@
+{
+  "id": "yyyyukari/dsh-plugin-workshop",
+  "analyzedAt": "2026-08-17T11:16:37.747Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 并注入 @deepseek-ai/dsh-client-runtime，是标准的 DSH 插件。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:yyyyukari/dsh-plugin-workshop",
+      "evidence": "dsh plugin --profile web add \"github:yyyyukari/dsh-plugin-workshop\""
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness（DSH）用的插件管理工具。装上它之后，在 DSH 网页界面的侧边栏会多出一个「插件工坊」入口，你可以像逛 Steam 创意工坊一样浏览、搜索各种 DSH 插件，看它们的星标、热度、README，还能一键安装、更新、卸载。支持中文搜索，能自动把中文关键词翻译成英文；还能把插件描述和 README 翻译成中文方便阅读。",
+      "level": "ok",
+      "risks": "它会修改 DSH 的配置文件和插件目录（比如在 profile 里添加 bundle、把插件克隆到 .agent-presets）；浏览插件时会向 GitHub 发送搜索请求，翻译 README 时会向 Google 发送内容；如果你在设置里填了 GitHub Token，它会存在浏览器本地。除此之外没发现明显风险。",
+      "postInstallNotes": "重启 dsh web 并刷新浏览器；本机需要装好 git，否则安装/卸载功能不可用。",
+      "notes": "该插件 package.json 标记为 private，未发布到 npm 包，安装请用 README 中的 github: 命令；作者还提供了一个可选的统计服务，默认不部署，不影响使用。"
+    },
+    "summaryZh": "DSH 插件工坊：在 DeepSeek Harness 界面里浏览、搜索、安装和管理 DSH 插件的创意工坊风格工具。",
+    "usage": {
+      "prompt_tokens": 2719,
+      "completion_tokens": 3882,
+      "total_tokens": 6601,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3436
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2079
+    }
+  }
+}

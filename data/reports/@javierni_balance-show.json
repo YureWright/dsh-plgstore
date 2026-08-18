@@ -1,0 +1,37 @@
+{
+  "id": "@javierni/balance-show",
+  "analyzedAt": "2026-08-18T14:54:30.093Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle/dsh.client 字段，README 明确说明是 dsh 生态的 Cordis 插件，并给出 dsh plugin add 安装命令，符合真正的 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@javierni/balance-show",
+      "evidence": "dsh plugin --profile web add @javierni/balance-show（README 安装说明）"
+    },
+    "evaluationReport": {
+      "intro": "这是个给 DeepSeek Harness 网页界面用的余额和用量卡片插件。它会显示你 DeepSeek 账户的余额，余额不同颜色区分（钱多绿色、中等橙色、少红色），还会显示当前对话用了多少 token、缓存命中率和大概花了多少钱（分高峰和低谷时段计价）。装好后在网页右下角有个浮窗卡片，可以收起展开。",
+      "level": "ok",
+      "risks": "插件会读取当前 harness 配置里的 DEEPSEEK_API_KEY 来查询账户余额，也就是说它会访问你 DeepSeek 账户的余额信息。数据都是在本地处理和显示，没有提到会把数据传到外部服务器。更新功能需要在本机调用 pnpm 或 corepack 来执行安装命令，但更新需要你手动点击才会触发。整体看没有明显风险。",
+      "postInstallNotes": "需要确认 profile 的 pnpm-workspace.yaml 中包含 nodeLinker: hoisted 和 minimumReleaseAgeExclude 两项（README 有详细说明），然后重启 dsh web 并刷新浏览器页面。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面显示账户余额和对话 token 用量/费用的浮窗卡片插件。",
+    "usage": {
+      "prompt_tokens": 2915,
+      "completion_tokens": 430,
+      "total_tokens": 3345,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 16
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2275
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-themes",
+  "analyzedAt": "2026-08-18T14:55:46.093Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 与 dsh.client，并依赖 @deepseek-ai/dsh-client-runtime，README 也提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-themes",
+      "evidence": "`dsh plugin --profile web add dsh-themes`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH（DeepSeek Harness）网页版换主题用的。它自带几套配色方案，能去 Open VSX 搜索导入 VS Code 主题，也可以手动导入颜色配置。装好后可以精细调整界面各处的颜色（背景、文字、按钮等），明暗两种模式还能分开设置，改完马上生效。你的主题设置会存到电脑上的 ~/.dsh/dsh-themes.json 文件里。",
+      "level": "ok",
+      "risks": "它会在你电脑的用户目录下写入一个配置文件（~/.dsh/dsh-themes.json）来保存主题设置；如果你用 Open VSX 导入主题，会从外部下载主题扩展。除此之外没发现明显风险。",
+      "postInstallNotes": "装完后需要重启 dsh web，然后在“设置 → 主题”里使用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 外观与主题插件：内置多套配色，支持 Open VSX 导入 VS Code 主题，并提供颜色参数编辑器，明暗主题可独立配置。",
+    "usage": {
+      "prompt_tokens": 1686,
+      "completion_tokens": 1511,
+      "total_tokens": 3197,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1139
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1046
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "Starfie1d1272/dsh-builtin-toggles",
+  "analyzedAt": "2026-08-17T11:36:35.213Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 1,
+      "reason": "package.json 声明了 dsh.bundle/client，依赖 @deepseek-ai/cordis，且 README 提供 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-builtin-toggles",
+      "evidence": "dsh plugin --profile web add dsh-builtin-toggles"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness Web 用的内置能力检查器。它能在设置里列出当前系统所有能力（比如工具、界面控件），告诉你每项能力的运行状态、来源、是否被改过、是否经过审阅，还可以筛选和复制一份脱敏的诊断报告。它还提供了 9 个经过审核的界面开关，默认都是关的，只有明确允许的才能打开，属于 fail-closed 设计。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你 DSH 中的能力配置信息，但修改操作只允许本机回路，远程只能只读。",
+      "postInstallNotes": "装完后需要重启 DSH web/gateway，让启动时读取新加的 bundle。",
+      "notes": "README 自己声明是非官方社区插件，只保证在特定版本（@deepseek-ai/dsh-base 和 dsh-web-app 的 0.1.0-rc.6）下经过完整测试，其他版本可能能跑但不算官方支持。建议看下 COMPATIBILITY.md 和 SECURITY.md。"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 提供基于证据的内置能力检查器，以 fail-closed 方式展示和管理受审阅的 UI 开关。",
+    "usage": {
+      "prompt_tokens": 3786,
+      "completion_tokens": 1979,
+      "total_tokens": 5765,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1575
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3146
+    }
+  }
+}

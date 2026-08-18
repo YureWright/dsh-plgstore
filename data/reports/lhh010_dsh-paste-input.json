@@ -1,0 +1,37 @@
+{
+  "id": "lhh010/dsh-paste-input",
+  "analyzedAt": "2026-08-17T11:34:20.863Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 并依赖 @deepseek-ai/dsh-client-runtime 等 DSH 核心包，README 给出了 dsh plugin 安装命令并详细描述 DSH 快照兼容性。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-community/dsh-paste-input",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 聊天界面加文件输入功能的小工具。装上后，你可以直接按 Ctrl+V 粘贴截图或复制的图片，也可以把文件拖到页面任何地方，或者点输入框左边的回形针选文件/文件夹。发送消息时，文件会被自动复制到当前会话的工作区临时文件夹里，而对话气泡里原来又长又碍眼的文件路径会变成一个小文件图标（chip），鼠标悬停就能看到完整路径，点一下还能复制路径。设置面板里还能看附件占了多少空间，并按会话/工作区清理。",
+      "level": "ok",
+      "risks": "它会把你要粘贴或拖入的文件复制到 DSH 工作区的一个临时目录（.dsh/tmp/attachments/...），并把文件路径放在消息里发给模型——这是 DSH 本身的工作机制。另外，它对附件有清理能力（在设置面板中），操作时会有二次确认。它还用浏览器 localStorage 存一个“不再提示”的勾选，仅存你自己的浏览器里。没发现会上传数据到第三方服务器或碰隐私文件的风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。如果按 README 用本地 link 方式安装，还需要在 ~/.dsh/profiles/web/cordis.patch.yml 里手动追加一段插入配置（示例见 README）。如果通过 npm/git 正常安装，可能不需要手动改，但保险起见重启后检查插件是否出现在 boot 清单里。",
+      "notes": "README 的安装命令是本地路径 link:...，没有直接给出 npm 或 git 安装方式，所以这里推测包名为 @dsh-community/dsh-paste-input，但未从 README 得到确认。另外该插件需要匹配特定 DSH 快照（0808~0812）或 npm rc.5/rc.2，其他版本可能不兼容。它派生自 dsh-multimedia-webui-input，MIT 许可。"
+    },
+    "summaryZh": "DSH WebUI 文件输入增强：粘贴、拖拽、选择文件/文件夹，自动复制进工作区并把长路径折叠为文件 chip。",
+    "usage": {
+      "prompt_tokens": 4598,
+      "completion_tokens": 3948,
+      "total_tokens": 8546,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3345
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3958
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "dsh-phone-ui",
+  "analyzedAt": "2026-08-18T14:57:23.995Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并注入 @deepseek-ai/dsh-client-runtime 等 DSH 核心包，README 也给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-phone-ui",
+      "evidence": "dsh plugin --profile <name> add dsh-phone-ui   # 首次安装"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 在手机等窄屏上更好用：屏幕宽度小于 768px 时，左侧栏会变成可以滑进滑出的抽屉，聊天区占满整个屏幕；顶部栏也改成手机版样式。每个改动（侧边栏、顶栏）都能在 DSH 的设置页里单独开关，打开/关闭马上生效，不用刷新页面。桌面端大屏幕完全不受影响。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只改动 DSH 的界面样式和布局，并会在设置里添加一个配置项（保存到 settings.yaml），不访问个人文件或连接外部服务器。",
+      "postInstallNotes": "无。装好后默认即生效；如想调整，可到 DSH 设置页（设置 → 插件 → 插件配置 → dsh-phone-ui）单独开关。",
+      "notes": "README 提醒：DSH 升级后，界面类名哈希可能变化，届时需要同步更新 CSS 选择器；首次启用前建议先核对当前 DSH 版本的 slots/layout 等服务接口。"
+    },
+    "summaryZh": "让 DeepSeek Harness 在手机窄屏下更好用的界面适配插件：侧边栏变抽屉、顶栏复刻手机版，各区域可分开关闭、即时生效。",
+    "usage": {
+      "prompt_tokens": 4088,
+      "completion_tokens": 1641,
+      "total_tokens": 5729,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1207
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3448
+    }
+  }
+}
