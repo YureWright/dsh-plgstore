@@ -125,7 +125,39 @@ async function phaseDiscover() {
 
   const menu = JSON.parse(await readFile(MENU, "utf8"));
   const existingIds = new Set(menu.plugins.map((p) => p.id));
-  const existingUrls = new Map(menu.plugins.filter((p) => p.github?.url).map((p) => [p.github.url, p]));
+  const nowIso = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
+
+  // 更新已存在于菜单的 npm 记录（版本/下载/简介/时间戳）——不重跑 LLM
+  const refreshBatch = candidates.filter((c) => existingIds.has(c.name) && !c.name.startsWith("@deepseek-ai/"));
+  let updatedCount = 0;
+  if (refreshBatch.length) {
+    await mapLimit(refreshBatch, 8, async (c) => {
+      const rec = menu.plugins.find((p) => p.id === c.name);
+      if (!rec?.npm) return;
+      const oldVer = rec.npm.version;
+      rec.npm.version = c.version ?? oldVer;
+      if (c.downloadsMonthly != null) rec.npm.downloadsLastMonth = c.downloadsMonthly;
+      if (c.description) rec.summary = c.description;
+      rec.updatedAt = nowIso;
+      updatedCount++;
+      if (oldVer && c.version && oldVer !== c.version) console.log(`  🔄 ${c.name}：${oldVer} → ${c.version}`);
+    });
+    await writeFile(MENU, JSON.stringify(menu, null, 2) + "\n");
+    console.log(`🔄 已刷新 ${updatedCount} 个已有 npm 记录的元数据`);
+  }
+
+  // 归一化 URL 匹配（忽略大小写 / .git / 尾部斜杠），加仓库名匹配兜底（单一命中才合并）
+  const normUrl = (u) => (u ?? "").toLowerCase().replace(/\.git$/, "").replace(/\/$/, "");
+  const existingByNormUrl = new Map();
+  const existingByRepoName = new Map();
+  for (const p of menu.plugins) {
+    if (p.github?.url) existingByNormUrl.set(normUrl(p.github.url), p);
+    if (p.github?.repo) {
+      const key = p.github.repo.toLowerCase();
+      if (!existingByRepoName.has(key)) existingByRepoName.set(key, []);
+      existingByRepoName.get(key).push(p);
+    }
+  }
 
   const batchSize = 25;
   let idx = 0;
@@ -133,7 +165,21 @@ async function phaseDiscover() {
     const batch = todo.slice(idx, idx + batchSize);
     await mapLimit(batch, 8, async (c) => {
       doneSet.add(c.name);
-      if (existingIds.has(c.name)) return;
+      if (existingIds.has(c.name)) {
+        // 已在菜单 → 只刷新元数据（版本/下载/简介/时间戳），不重跑 LLM
+        const rec = menu.plugins.find((p) => p.id === c.name);
+        if (rec?.npm) {
+          const oldVer = rec.npm.version;
+          rec.npm.version = c.version ?? oldVer;
+          if (c.downloadsMonthly != null) rec.npm.downloadsLastMonth = c.downloadsMonthly;
+          if (c.description) rec.summary = c.description;
+          rec.updatedAt = nowIso;
+          updatedCount++;
+          if (oldVer && c.version && oldVer !== c.version) console.log(`  🔄 ${c.name}：${oldVer} → ${c.version}`);
+          else console.log(`  🔄 刷新元数据：${c.name}`);
+        }
+        return;
+      }
       const pkg = await fetchJson(`${REGISTRY}/${encodeURIComponent(c.name)}/latest`);
       if (!pkg) {
         state.skipped.push({ name: c.name, reason: "无法获取包清单" });
@@ -145,8 +191,13 @@ async function phaseDiscover() {
         return;
       }
       const gh = githubFromRepo(c.repositoryUrl);
-      if (gh && existingUrls.has(gh.url)) {
-        const target = existingUrls.get(gh.url);
+      let target = gh ? (existingByNormUrl.get(normUrl(gh.url)) ?? null) : null;
+      if (!target && gh) {
+        // 仓库名兜底：单一命中才合并（避免同名歧义）
+        const hits = existingByRepoName.get(gh.repo.toLowerCase()) ?? [];
+        if (hits.length === 1) target = hits[0];
+      }
+      if (target) {
         // 防误并：指向官方 monorepo 的 npm 包（非 @deepseek-ai scope）多是 fork/复制品，按新记录处理
         const isOfficialRepo = target.github?.owner === "deepseek-ai" && target.github?.repo === "deepseek-harness";
         if (isOfficialRepo && !c.name.startsWith("@deepseek-ai/")) {
@@ -187,7 +238,7 @@ async function phaseDiscover() {
   menu.stats = { total: menu.plugins.length, byTrustLayer };
   menu.generatedAt = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
   await writeFile(MENU, JSON.stringify(menu, null, 2) + "\n");
-  console.log(`\n✅ 阶段1完成：新插件 ${state.newEntries.length}，跳过 ${state.skipped.length}，合并 ${state.merges.length}，lastSeq=${changes?.last_seq}，菜单已更新（含合并）`);
+  console.log(`\n✅ 阶段1完成：新插件 ${state.newEntries.length}，刷新已有 ${updatedCount}，跳过 ${state.skipped.length}，合并 ${state.merges.length}，lastSeq=${changes?.last_seq}，菜单已更新（含合并）`);
 }
 
 /* ---------------- 阶段 2：LLM 评估 + 入库 ---------------- */

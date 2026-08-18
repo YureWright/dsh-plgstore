@@ -42,9 +42,22 @@ node scripts/npm-scan.mjs --phase discover
 node scripts/npm-scan.mjs --phase llm
 node scripts/process-github-candidates.mjs
 
-# 3. 生成审阅报告
+# 3. 生成审阅报告 + SQLite 查询库
 node scripts/report-html.mjs
+node scripts/build-sqlite.mjs
 ```
+
+## 🤖 每日自动更新（GitHub Actions，中央厨房）
+
+仓库已带 `.github/workflows/daily.yml`：每天自动跑完整流水线（发现新插件 → LLM 评估 → 刷新已有 → 更新报告）并提交回仓库。启用步骤：
+
+1. 仓库 **Settings → Secrets and variables → Actions → New repository secret**，添加两个：
+   - `DEEPSEEK_API_KEY`（DeepSeek API key）
+   - `GITHUB_TOKEN`（个人访问令牌，需 `repo` 权限——建议单独生成一个只给本仓库用的）
+2. 提交后 Actions 会按计划（每天 02:10 UTC）或手动（Actions → daily-market → Run workflow）执行。
+3. 首次执行前建议手动跑一次验证 Secrets 配置正确。
+
+> 提示：DeepSeek 2026-08 起采用**峰谷定价**（高峰 9:00-12:00、14:00-18:00 北京时间为 2 倍价），Actions 的 02:10 UTC = 北京 10:10 正处高峰——如想省钱可把 cron 改到 UTC 20:00（北京 4:00，低谷）。
 
 ## 🗺 路线图
 

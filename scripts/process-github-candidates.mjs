@@ -64,13 +64,33 @@ const cand = JSON.parse(await readFile(CAND, "utf8"));
 const menu = JSON.parse(await readFile(MENU, "utf8"));
 
 // 去重：菜单里已存在（按 id 或 github.url）
-const existingIds = new Set(menu.plugins.map((p) => p.id));
-const existingUrls = new Set(menu.plugins.filter((p) => p.github?.url).map((p) => p.github.url));
+const existingById = new Map(menu.plugins.map((p) => [p.id, p]));
+const existingByUrl = new Map(menu.plugins.filter((p) => p.github?.url).map((p) => [p.github.url, p]));
+
+// 已在菜单的 → 刷新星星/推送时间/标签（不重跑 LLM）
+const nowIso = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
+let refreshed = 0;
+for (const c of cand.candidates) {
+  const item = c.item;
+  let rec = existingById.get(item.full_name) ?? existingByUrl.get(item.html_url);
+  if (!rec) continue;
+  if (rec.github) {
+    if (item.stargazers_count != null) rec.github.stars = item.stargazers_count;
+    if (item.pushed_at) rec.github.pushedAt = item.pushed_at;
+    if (item.topics?.length) rec.github.topics = item.topics;
+    rec.updatedAt = nowIso;
+    refreshed++;
+  }
+}
+if (refreshed > 0) {
+  await writeFile(MENU, JSON.stringify(menu, null, 2) + "\n");
+  console.log(`🔄 已刷新 ${refreshed} 个已有记录的 GitHub 元数据`);
+}
 
 const todo = cand.candidates.filter((c) => {
   const item = c.item;
-  if (existingIds.has(item.full_name)) return false;
-  if (existingUrls.has(item.html_url)) return false;
+  if (existingById.has(item.full_name)) return false;
+  if (existingByUrl.has(item.html_url)) return false;
   return true;
 });
 const slice = limit ? todo.slice(0, limit) : todo;
