@@ -60,7 +60,13 @@ function qualityScore(stars, pushedAt) {
   return Math.round((starsScore * 0.5 + activityScore * 0.4) * 10);
 }
 
-const cand = JSON.parse(await readFile(CAND, "utf8"));
+let cand;
+try {
+  cand = JSON.parse(await readFile(CAND, "utf8"));
+} catch {
+  console.log("data/cache/github-candidates.json 不存在（尚未爬取 GitHub 候选；本地先用 build-index --discover-only 生成）→ 跳过 GitHub 处理");
+  process.exit(0);
+}
 const menu = JSON.parse(await readFile(MENU, "utf8"));
 
 // 去重：菜单里已存在（按 id 或 github.url）
