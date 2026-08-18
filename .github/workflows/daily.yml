@@ -1,9 +1,9 @@
 name: daily-market
 
 # 每日自动更新插件菜单（中央厨房）
-# 需要仓库 Secrets：
+# 需要仓库 Secrets（Settings → Secrets and variables → Actions）：
 #   DEEPSEEK_API_KEY  DeepSeek API（LLM 评估）
-#   GITHUB_TOKEN      个人访问令牌（GitHub API 配额 + 提交推送）
+#   A_GITHUB_TOKEN    个人访问令牌（GitHub API 配额；名字不能以 GITHUB_ 开头，故加前缀）
 on:
   schedule:
     - cron: "10 2 * * *"   # 每天 02:10 UTC（北京 10:10）
@@ -12,10 +12,10 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write      # 允许用内置 token 提交推送
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:
@@ -24,9 +24,9 @@ jobs:
       - name: 配置 .env（密钥来自 Secrets）
         run: |
           echo "DEEPSEEK_API_KEY=${{ secrets.DEEPSEEK_API_KEY }}" >> .env
-          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .env
+          echo "GITHUB_TOKEN=${{ secrets.A_GITHUB_TOKEN }}" >> .env
 
-      - name: 跑每日流水线（发现 → 评估 → GitHub 处理 → 报告）
+      - name: 跑每日流水线（发现 → 评估 → GitHub 处理 → 报告 → SQLite）
         run: |
           node scripts/npm-scan.mjs --phase discover
           node scripts/npm-scan.mjs --phase llm
