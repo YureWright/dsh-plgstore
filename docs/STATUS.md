@@ -31,4 +31,17 @@
 ## 提醒
 
 - git push 需走代理（.git/config 已配 127.0.0.1:7897）+ 凭据：`git push "https://x-access-token:<TOKEN>@github.com/YureWright/dsh-plgstore.git" main`
+
+## ⏰ 明天待办（用户要求：验证自动化是否成功新增）
+
+1. 打开 https://github.com/YureWright/dsh-plgstore/actions —— 看 `daily-market` 昨天的运行是否 ✅；
+2. 看 Commits 是否有 `dsh-plgstore-bot` 的 "chore: 每日插件菜单更新" 提交；
+3. `git pull` 拉到本地，对比菜单数量（当前 **1227**）和 `plugins.json` 的 `generatedAt`；
+4. 抽查新增插件：`node scripts/query-menu.mjs stats` + `node scripts/query-menu.mjs search <新插件名>`；
+5. 若 Actions 失败：读失败日志，排查 Secrets（DEEPSEEK_API_KEY / A_GITHUB_TOKEN）或网络；
+6. 验证完把结论写回本文件 + ROADMAP 变更记录。
+
+## 可选（用户可能想要）
+
+- 开 GitHub Pages 让 report.html 在线可访问（https://yurewright.github.io/dsh-plgstore/report.html）——用户提过，若要做：把 report.html 移 docs/ 或配 Pages 部署源。
 - Actions 的 cron 02:10 UTC = 北京 10:10（DeepSeek 高峰价），省钱可改 20:00 UTC
