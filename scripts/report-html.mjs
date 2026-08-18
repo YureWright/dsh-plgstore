@@ -312,4 +312,5 @@ render();
 </html>`;
 
 await writeFile(join(ROOT, "report.html"), html);
-console.log(`✅ 已生成 report.html（${plugins.length} 条，报告懒加载 + display 切换筛选）`);
+await writeFile(join(ROOT, "index.html"), html); // GitHub Pages 根入口（同一内容）
+console.log(`✅ 已生成 report.html + index.html（${plugins.length} 条，报告懒加载 + display 切换筛选）`);
