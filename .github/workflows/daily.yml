@@ -24,7 +24,7 @@ jobs:
       - name: 配置 .env（密钥来自 Secrets）
         run: |
           echo "DEEPSEEK_API_KEY=${{ secrets.DEEPSEEK_API_KEY }}" >> .env
-          echo "GITHUB_TOKEN=${{ secrets.A_GITHUB_TOKEN }}" >> .env
+          echo "A_GITHUB_TOKEN=${{ secrets.A_GITHUB_TOKEN }}" >> .env
 
       - name: 跑每日流水线（发现 → 评估 → GitHub 处理 → 报告 → SQLite）
         run: |

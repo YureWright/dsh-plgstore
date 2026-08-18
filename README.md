@@ -35,7 +35,7 @@
 ```powershell
 # 1. 配置（复制 .env.example 为 .env，填入 key）
 DEEPSEEK_API_KEY=sk-...      # LLM 评估（必填）
-GITHUB_TOKEN=ghp_...         # GitHub API（推荐，配额翻倍）
+A_GITHUB_TOKEN=ghp_...       # GitHub API（推荐，配额翻倍；GITHUB_ 前缀被保留，故用 A_）
 
 # 2. 重新生成菜单（三路进货）
 node scripts/npm-scan.mjs --phase discover
@@ -53,7 +53,7 @@ node scripts/build-sqlite.mjs
 
 1. 仓库 **Settings → Secrets and variables → Actions → New repository secret**，添加两个：
    - `DEEPSEEK_API_KEY`（DeepSeek API key）
-   - `GITHUB_TOKEN`（个人访问令牌，需 `repo` 权限——建议单独生成一个只给本仓库用的）
+   - `A_GITHUB_TOKEN`（个人访问令牌，需 `repo` 权限——GitHub 禁止 `GITHUB_` 前缀的 secret 名，故加 A_；建议单独生成一个只给本仓库用的）
 2. 提交后 Actions 会按计划（每天 02:10 UTC）或手动（Actions → daily-market → Run workflow）执行。
 3. 首次执行前建议手动跑一次验证 Secrets 配置正确。
 

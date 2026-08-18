@@ -36,7 +36,7 @@ const has = (name) => args.includes(`--${name}`);
 const env = await loadEnv();
 const source = flag("source", "official-local");
 const officialRoot = flag("root", process.env.DSH_OFFICIAL_ROOT ?? "");
-const token = flag("token", process.env.GITHUB_TOKEN ?? env.GITHUB_TOKEN ?? "");
+const token = flag("token", process.env.GITHUB_TOKEN ?? env.GITHUB_TOKEN ?? env.A_GITHUB_TOKEN ?? "");
 const since = flag("since", "");
 const limit = Number(flag("limit", "0")) || 0;
 const useLLM = has("llm");
