@@ -1,0 +1,34 @@
+{
+  "id": "dsh-access-gate",
+  "analyzedAt": "2026-08-19T05:36:17.612Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime 和 @deepseek-ai/dsh-client-ui-workspace，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-access-gate",
+      "evidence": "`dsh plugin --profile web add dsh-access-gate`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 加一道远程访问的密码门。平时你在自己电脑上访问没问题，但如果通过公网域名或局域网访问，它可以让所有接口（包括一些敏感设置）都能用，并且可以设置密码保护，防止陌生人访问。它还自带一个原生文件夹选择器，让你在本地选工作区时更方便。卸载后不留任何痕迹。",
+      "level": "ok",
+      "risks": "它会修改 DSH 的 webserver 绑定（从仅本机改为 0.0.0.0），让远程能访问，但默认无密码，如果直接暴露公网，别人可能完全控制你的 DSH。它还会在 ~/.dsh/.credentials.yaml 里存密码（如果设置的话），密码以明文存储。登录状态存在内存，重启后失效。",
+      "postInstallNotes": "重启 DSH 生效。默认无密码，建议在设置界面或环境变量 DSH_GATE_PASSWORD 设置强密码，并配合 HTTPS 使用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 远程访问认证门禁插件，解决公网访问 403 问题，支持密码保护、原生目录选择，零残留。",
+    "usage": {
+      "prompt_tokens": 4465,
+      "completion_tokens": 415,
+      "total_tokens": 4880,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3953
+    }
+  }
+}

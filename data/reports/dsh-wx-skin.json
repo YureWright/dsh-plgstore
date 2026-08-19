@@ -1,0 +1,34 @@
+{
+  "id": "dsh-wx-skin",
+  "analyzedAt": "2026-08-19T05:36:21.707Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口（如 webServer 服务注册）。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-wx-skin@0.1.2",
+      "evidence": "pnpm dsh plugin --profile web add dsh-wx-skin@0.1.2"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 的 Web 界面换肤的插件。装上之后，侧边栏会多一个“皮肤”面板，你可以选一张本地图片或者图片链接作为聊天背景，还能调暗化、模糊、透明度，有几种预设渐变，设置会自动保存，刷新页面也不丢。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会往你的浏览器 localStorage 和 DSH 的配置目录（~/.dsh）写一个设置文件，存的是你选的背景图片（以 data URL 形式）和效果参数，这些只有你自己能看到。",
+      "postInstallNotes": "装完后需要重启 dsh web，然后刷新浏览器页面，侧边栏才会出现“皮肤”入口。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Web GUI 皮肤插件，支持本地图片/URL 背景、预设、暗化模糊调节，跨刷新持久化。",
+    "usage": {
+      "prompt_tokens": 3832,
+      "completion_tokens": 352,
+      "total_tokens": 4184,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3320
+    }
+  }
+}

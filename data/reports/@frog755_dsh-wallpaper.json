@@ -1,0 +1,34 @@
+{
+  "id": "@frog755/dsh-wallpaper",
+  "analyzedAt": "2026-08-19T05:36:17.439Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-client 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@frog755/dsh-wallpaper",
+      "evidence": "Install the public npm package in one command: dsh plugin --profile web add -w @frog755/dsh-wallpaper"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以给 DeepSeek Harness 的网页界面设置自定义壁纸，支持图片和 MP4 视频。你可以调整壁纸的透明度和模糊度，随时移除。视频会被压缩以节省空间，所有数据都保存在本地，不会上传到服务器。",
+      "level": "ok",
+      "risks": "它会把壁纸文件保存在你电脑的 ~/.dsh/wallpapers 目录下，并在浏览器 localStorage 里存一些设置。视频压缩需要用到 ffmpeg 和 ffprobe，如果没装就用原视频。没有发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 命令，然后在设置里选择壁纸。如果端口 9191 被占用，需要改 cordis.patch.yml 里的端口。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面提供持久化壁纸（图片/视频），支持透明度、模糊调节，本地存储，无需上传服务器。",
+    "usage": {
+      "prompt_tokens": 2420,
+      "completion_tokens": 375,
+      "total_tokens": 2795,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1908
+    }
+  }
+}

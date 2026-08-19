@@ -1,0 +1,34 @@
+{
+  "id": "@roarpeng/graphflow",
+  "analyzedAt": "2026-08-19T05:36:18.686Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 keywords 包含 dsh-plugin 和 deepseek-harness，表明它是为 DSH 设计的插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@roarpeng/graphflow",
+      "evidence": "README 中提供了 npx @roarpeng/graphflow 命令，且 package.json 中 name 为 @roarpeng/graphflow。"
+    },
+    "evaluationReport": {
+      "intro": "GraphFlow 是一个为编程智能体提供记忆和上下文管理的工具。它能构建代码知识图谱，压缩上下文（节省约98%的token），并让智能体跨会话学习。它支持多种编程语言，可以离线运行，无需API密钥。你可以通过命令行或MCP接口使用它，比如在Cursor或Claude Code中集成。",
+      "level": "caution",
+      "risks": "它会在你的电脑上创建本地文件（如 ~/.graphflow 目录），存储索引和记忆数据。它可能自动下载一些可选依赖（如 @firecrawl/anydoc），这会访问网络。它默认开启自动捕获功能，可能会记录你的操作和代码信息。",
+      "postInstallNotes": "安装后，你可能需要配置MCP服务器（如Cursor或Claude Code）来连接它。如果你不想让它自动下载可选依赖，可以关闭相关设置。",
+      "notes": "该插件有 postinstall 脚本（scripts/postinstall），会执行 node scripts/safe-postinstall.cjs，虽然名字带 safe，但建议留意。另外，它声称是 DSH 插件，但主要功能是独立的 CLI 和 MCP 服务器，可能不完全依赖 DSH 核心。"
+    },
+    "summaryZh": "GraphFlow 是一个本地优先的代码知识图谱和上下文压缩工具，为编程智能体提供记忆和学习能力。",
+    "usage": {
+      "prompt_tokens": 4121,
+      "completion_tokens": 436,
+      "total_tokens": 4557,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3609
+    }
+  }
+}

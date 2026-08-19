@@ -1,0 +1,34 @@
+{
+  "id": "@myflv/dsh-web-search-tavily",
+  "analyzedAt": "2026-08-19T05:36:26.319Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-web 等核心包，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@myflv/dsh-web-search-tavily",
+      "evidence": "dsh plugin --profile web add @myflv/dsh-web-search-tavily"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个网页搜索功能，用的是 Tavily 的搜索服务。装上之后，你在聊天里问它需要查资料的问题，它就会自动去网上搜，然后把结果带回来给你看。它还能让你在设置里填自己的 Tavily 密钥，或者不填就用免费模式。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会调用 Tavily 的搜索 API，所以你的搜索关键词会发给 Tavily 服务器；如果你填了 API key，这个 key 会存在你的配置里。",
+      "postInstallNotes": "装完重启容器（docker compose up -d），然后在设置页的「插件」tab 找到「网页搜索」卡片，可以填 Tavily API key（不填也能用免费模式），也可以设置 baseURL 和 maxResults。",
+      "notes": "无"
+    },
+    "summaryZh": "Tavily 搜索 provider，为 DeepSeek Harness 提供网页搜索能力，可替代官方搜索插件，无需 DeepSeek key。",
+    "usage": {
+      "prompt_tokens": 2208,
+      "completion_tokens": 385,
+      "total_tokens": 2593,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1696
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-tool-describe-image",
+  "analyzedAt": "2026-08-19T05:36:30.431Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tool-describe-image",
+      "evidence": "dsh plugin --profile web add dsh-tool-describe-image"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek 看懂图片。它通过调用任何兼容 OpenAI 的视觉服务（比如阿里云百炼的 qwen-vl、智谱 GLM-4V 等），把图片变成文字描述或结构化 HTML，这样纯文本的 DeepSeek 也能理解图片内容。它还有一个可爱的鲸鱼娘桌宠，可以拖动、双击打开设置面板，还能在模型工作时显示专注表情。你可以直接粘贴图片让它识别，或者让模型按路径读取图片。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你指定的图片文件（通过 describe_image 工具），并把图片发送到你配置的视觉 API 服务（默认是阿里云百炼），所以如果你用第三方服务，图片会传到那个服务。API key 会存储在 DSH 的凭据库里，但如果你设置了环境变量，它优先用环境变量。",
+      "postInstallNotes": "安装后需要配置视觉 API 的 key。可以在鲸鱼娘设置面板里填，或者设置环境变量 DASHSCOPE_API_KEY（推荐写入 ~/.dsh/profiles/web/.env）。默认使用阿里云百炼的 qwen-vl-plus 模型，如果效果不好可以改成 qwen-vl-max。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek 看懂图片的 DSH 插件，支持粘贴识别、按路径描述，还带一个可爱的鲸鱼娘桌宠。",
+    "usage": {
+      "prompt_tokens": 3837,
+      "completion_tokens": 456,
+      "total_tokens": 4293,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3325
+    }
+  }
+}
