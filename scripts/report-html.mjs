@@ -116,7 +116,7 @@ const html = `<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DSH 插件市场 — 审阅报告</title>
+<title>DSH 插件市场</title>
 <style>
   :root { --bg:#0f1117; --card:#171a23; --card2:#1c2030; --fg:#e8eaf0; --dim:#9aa0b0; --line:#2a2f42;
     --green:#3ddc84; --orange:#ffb020; --red:#ff5c5c; --blue:#5aa2ff; --purple:#b48cff; --teal:#3ddcd0; --gray:#8a90a0; --pink:#ff8fb3; }
@@ -185,7 +185,7 @@ const html = `<!DOCTYPE html>
 </head>
 <body>
 <div class="wrap">
-  <h1>🛒 DSH 插件市场 — 审阅报告</h1>
+  <h1>🛒 DSH 插件市场</h1>
   <div class="sub">生成时间 ${esc(menu.generatedAt)} · 共 ${plugins.length} 条 · 报告 ${Object.keys(reportBlob).length} 份（点击展开，懒加载）</div>
 
   <div class="stats">
