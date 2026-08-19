@@ -30,6 +30,13 @@ function installBadge(m) {
   return badge(label, cls);
 }
 
+/** ISO UTC → 北京时间（UTC+8，无夏令时）显示。 */
+function beijingTime(iso) {
+  if (!iso) return "";
+  const bj = new Date(new Date(iso).getTime() + 8 * 3600 * 1000);
+  return bj.toISOString().replace("T", " ").slice(0, 19) + "（北京时间）";
+}
+
 const menu = JSON.parse(await readFile(join(DATA, "plugins.json"), "utf8"));
 const meta = JSON.parse(await readFile(join(DATA, "meta.json"), "utf8"));
 const reports = new Map();
@@ -186,7 +193,7 @@ const html = `<!DOCTYPE html>
 <body>
 <div class="wrap">
   <h1>🛒 DSH 插件市场</h1>
-  <div class="sub">生成时间 ${esc(menu.generatedAt)} · 共 ${plugins.length} 条 · 报告 ${Object.keys(reportBlob).length} 份（点击展开，懒加载）</div>
+  <div class="sub">生成时间 ${esc(beijingTime(menu.generatedAt))} · 共 ${plugins.length} 条 · 报告 ${Object.keys(reportBlob).length} 份（点击展开，懒加载）</div>
 
   <div class="stats">
     <div class="stat"><div class="n">${plugins.length}</div><div class="l">插件总数</div></div>
