@@ -6,7 +6,7 @@ name: daily-market
 #   A_GITHUB_TOKEN    个人访问令牌（GitHub API 配额；名字不能以 GITHUB_ 开头，故加前缀）
 on:
   schedule:
-    - cron: "10 2 * * *"   # 每天 02:10 UTC（北京 10:10）
+    - cron: "0 5 * * *"   # 每天 05:00 UTC = 北京时间 13:00（避开 DeepSeek 高峰价时段）
   workflow_dispatch:        # 也可手动触发
 
 jobs:
