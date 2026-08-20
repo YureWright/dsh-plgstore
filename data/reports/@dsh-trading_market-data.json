@@ -1,0 +1,34 @@
+{
+  "id": "@dsh-trading/market-data",
+  "analyzedAt": "2026-08-20T05:38:16.663Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 peerDependencies 依赖 @deepseek-ai/cordis，且 keywords 包含 dsh-plugin，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-trading/market-data",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个为 DeepSeek Harness 提供市场数据接口的插件，它统一了蜡烛图和交易符号的访问方式，你可以用它来获取股票或加密货币的历史价格数据，并支持技术分析。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供统一的市场数据接口，支持蜡烛图和交易符号，可接入任意数据提供商。",
+    "usage": {
+      "prompt_tokens": 1533,
+      "completion_tokens": 226,
+      "total_tokens": 1759,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1021
+    }
+  }
+}

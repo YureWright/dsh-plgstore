@@ -1,0 +1,34 @@
+{
+  "id": "@huanlin/dsh-plugin-interpreters",
+  "analyzedAt": "2026-08-20T05:39:42.267Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huanlin/dsh-plugin-interpreters",
+      "evidence": "dsh plugin --profile web add @huanlin/dsh-plugin-interpreters"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 增加了两个工具：run_python 和 run_node。它让模型可以运行 Python 和 Node.js 代码，通过标准输入传入代码，然后返回运行结果。你可以在设置页里配置 Python 和 Node.js 的路径，这样模型就知道用哪个解释器了。",
+      "level": "ok",
+      "risks": "它会执行你指定的 Python 和 Node.js 代码，所以如果你让模型运行不可信的代码，可能会有风险。配置信息会保存在你的 DSH 设置文件里。没有发现其他明显风险。",
+      "postInstallNotes": "安装后，你需要在设置页的「插件配置」分区设置 Python 和 Node.js 的可执行文件路径（默认是 'python' 和 'node'），也可以调整超时时间。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，提供 run_python 和 run_node 工具，让模型能执行 Python 和 Node.js 代码，并可在设置页配置解释器路径。",
+    "usage": {
+      "prompt_tokens": 3350,
+      "completion_tokens": 371,
+      "total_tokens": 3721,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2838
+    }
+  }
+}

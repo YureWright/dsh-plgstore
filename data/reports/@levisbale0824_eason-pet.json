@@ -1,0 +1,34 @@
+{
+  "id": "@levisbale0824/eason-pet",
+  "analyzedAt": "2026-08-20T05:37:42.989Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@levisbale0824/eason-pet",
+      "evidence": "dsh plugin --profile web add @levisbale0824/eason-pet"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的桌面宠物插件，主题是歌手陈奕迅（Eason）。它会在网页右下角显示一只小宠物，有 18 种 Eason 专属动画（唱歌、编程、睡觉等），还能根据 AI 助手的工作状态自动切换动画（比如思考时敲键盘、说话时唱歌）。你可以右键宠物切换模式、调整大小和位置，设置会保存在浏览器里。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器里运行，设置存在浏览器本地，不会碰电脑其他文件。动画素材来自另一个开源项目，但代码是 MIT 许可。",
+      "postInstallNotes": "安装后重启 dsh web，宠物会出现在右下角。如需调整设置，在 DSH 设置→插件里找到「神经研究所」标签页。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 Eason 主题的桌面宠物插件，为 DeepSeek Harness 网页界面添加可爱的浮动宠物，并能根据 AI 工作状态自动切换动画。",
+    "usage": {
+      "prompt_tokens": 2747,
+      "completion_tokens": 378,
+      "total_tokens": 3125,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2235
+    }
+  }
+}

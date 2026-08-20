@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-wallpaper-engine-mac",
+  "analyzedAt": "2026-08-20T05:38:32.905Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-wallpaper-engine-mac",
+      "evidence": "README 中安装命令为 'dsh plugin --profile web add dsh-plugin-wallpaper-engine'，但实际包名为 dsh-plugin-wallpaper-engine-mac，故使用实际包名。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把你的 Wallpaper Engine 壁纸（macOS 上是 WaifuX）变成 DSH 网页界面的背景。它会自动找到你电脑上的壁纸，让你在设置里选一个，然后壁纸就会显示在聊天界面后面，还带毛玻璃效果。你可以调整模糊、暗化、边框和玻璃效果，也可以设置轮播列表自动切换壁纸。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你的 Steam 库文件夹和壁纸文件，但只在本地使用，不会上传到外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后在设置里选择壁纸。如果壁纸不显示，可能需要重启 DSH 一次，并确保 WaifuX 使用默认下载位置。",
+      "notes": "无"
+    },
+    "summaryZh": "将 Wallpaper Engine 或 WaifuX 壁纸设为 DSH 网页界面背景的插件，支持视频和网页壁纸，带毛玻璃效果和轮播功能。",
+    "usage": {
+      "prompt_tokens": 3585,
+      "completion_tokens": 405,
+      "total_tokens": 3990,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3073
+    }
+  }
+}

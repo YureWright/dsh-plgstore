@@ -1,0 +1,34 @@
+{
+  "id": "dsh-balance-widget",
+  "analyzedAt": "2026-08-20T05:38:46.313Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin add 安装命令，且代码调用了 DSH 的 ctx.webServer 和 ctx.slots.inject 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-balance-widget",
+      "evidence": "dsh plugin --profile web add dsh-balance-widget"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页界面加了一个小卡片，显示你的 DeepSeek 账户余额、剩余比例和今天花了多少钱。点一下卡片还能看到更详细的费用明细，比如最近一次提问花了多少、这个会话花了多少。它还能提醒你余额不足，并直接跳转到充值页面。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取本地会话文件来计算成本，查询余额时通过宿主代理访问 DeepSeek 官方接口，不会把 API key 暴露给浏览器。",
+      "postInstallNotes": "装完需要重启 dsh web 生效。可选：在 ~/.dsh/profiles/web/cordis.patch.yml 中调整阈值或计价模型。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页界面的余额与成本小部件，显示余额、今日花费和详细费用明细。",
+    "usage": {
+      "prompt_tokens": 3864,
+      "completion_tokens": 334,
+      "total_tokens": 4198,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3352
+    }
+  }
+}

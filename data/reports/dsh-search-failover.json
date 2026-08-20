@@ -1,0 +1,34 @@
+{
+  "id": "dsh-search-failover",
+  "analyzedAt": "2026-08-20T05:37:53.161Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-search-failover",
+      "evidence": "README 中开发安装示例为 `dsh plugin --profile web add link:/Users/walve/Documents/Codex/dsh-search-failover`，但正式安装应使用 npm 包名，且 package.json 中 name 为 dsh-search-failover。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的搜索功能更稳定：它会在多个搜索服务（比如 Exa、Tavily、Serper 等）之间自动切换，如果一个服务出问题或额度用完，就换下一个，避免搜索失败。它还能记住哪些服务暂时不可用，过一会儿再试。你可以在设置页面里管理各个服务的 API 密钥，不用改代码。",
+      "level": "ok",
+      "risks": "它会把你的 API 密钥存在本机 `~/.dsh/settings.yaml` 文件里，不会上传到网上。插件会向各个搜索服务发送搜索请求，这些服务可能会记录你的搜索内容。另外，它使用 DuckDuckGo 的非官方接口，有被反爬的风险，但插件作者已经提醒了。",
+      "postInstallNotes": "安装后需要在 `cordis.patch.yml` 里配置后端列表，或者通过设置页面添加后端并填入 API 密钥。如果使用环境变量，需要设置对应的环境变量（如 EXA_API_KEY）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的搜索故障转移插件，自动在多个搜索后端间切换，带额度感知熔断，支持 GUI 配置。",
+    "usage": {
+      "prompt_tokens": 3843,
+      "completion_tokens": 450,
+      "total_tokens": 4293,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3331
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@starpivot/dsh-session-import",
+  "analyzedAt": "2026-08-20T05:37:12.092Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，依赖 @deepseek-ai/dsh-client-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@starpivot/dsh-session-import",
+      "evidence": "dsh plugin --profile web add @starpivot/dsh-session-import"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以把你在 Cursor、Codex、Claude Code 等工具里的聊天记录和技能导入到 DeepSeek Harness 里。装好后，在设置里会多一个“导入”页面，你可以选择要导入的会话、技能、记忆和自动化规则。它会把外部的对话转换成 DSH 的会话格式，方便你在一个地方管理。",
+      "level": "ok",
+      "risks": "它会读取你电脑上这些工具的本地数据（比如 ~/.claude、~/.codex、~/.cursor 等目录），并把内容复制到 ~/.dsh 下。这些数据可能包含你的对话内容，但只在你主动操作时才会导入。没有发现它会偷偷上传或连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。之后在设置里找到“导入”功能，按需选择要导入的内容。",
+      "notes": "无"
+    },
+    "summaryZh": "将 Cursor、Codex、Claude Code 等工具的会话和技能导入 DeepSeek Harness 的插件。",
+    "usage": {
+      "prompt_tokens": 2934,
+      "completion_tokens": 383,
+      "total_tokens": 3317,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2422
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-qingagent",
+  "analyzedAt": "2026-08-20T05:39:49.103Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出 dsh plugin add 安装命令，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-qingagent@latest",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-qingagent@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness（DSH）里多了一支笔：你只要在对话里说清楚要写什么，它就能调用青简引擎起草、修改、审阅，并在浏览器右侧显示一个像宣纸一样的编辑面板，支持公式、图表、表格等排版。它需要先安装青简桌面客户端才能工作，装好后 DSH 里写的稿子还能在青简客户端里继续改。",
+      "level": "caution",
+      "risks": "它会读取你电脑上的 ~/.qingagent/instance.json 文件（包含端口、token 等），并连接本机的青简引擎（默认端口 21823）。它默认开启匿名使用统计，会向 https://t.qingagent.com/api/send 发送事件（不含正文、标题等敏感内容，但服务器能看到你的 IP）。它可能启动青简客户端（如果配置了 autoLaunch）。",
+      "postInstallNotes": "需要先下载并启动一次青简桌面客户端（从 qingagent.com 或 GitHub Releases），启动后凭证会写入 ~/.qingagent/instance.json，插件自动连接。如果不想发送匿名统计，可以设置环境变量 DSH_QINGAGENT_TELEMETRY_DISABLED=1 或 QINGAGENT_TELEMETRY_DISABLED=1。",
+      "notes": "该插件依赖青简桌面客户端，且官方只支持 Windows 同机同用户，macOS 未完整验证，WSL/跨系统不支持。"
+    },
+    "summaryZh": "在 DeepSeek Harness 中使用青简撰写文档并校对审阅的插件，提供宣纸面板和多种编辑工具。",
+    "usage": {
+      "prompt_tokens": 6096,
+      "completion_tokens": 511,
+      "total_tokens": 6607,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5584
+    }
+  }
+}

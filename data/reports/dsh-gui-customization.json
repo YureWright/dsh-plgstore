@@ -1,0 +1,34 @@
+{
+  "id": "dsh-gui-customization",
+  "analyzedAt": "2026-08-20T05:37:38.940Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/LAN-TINA-WS/dsh-gui-customization.git",
+      "evidence": "README 中安装命令为 'node <harness>\\apps\\cli\\lib\\bin.js plugin --profile web add link:<repo>\\packages\\dsh-gui-customization'，但未提供 npm 包名安装方式，故采用 git 方式。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面换皮肤用的。你可以改配色（有预设和自定义）、加氛围光效、设置图片或视频背景，还能调整透明度。设置会保存在浏览器里，刷新或重启后还在。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改界面外观，数据存在浏览器本地（localStorage 和 IndexedDB），不会上传到外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 界面定制插件：提供配色、氛围光、动态背景等美化功能，支持中英双语。",
+    "usage": {
+      "prompt_tokens": 2172,
+      "completion_tokens": 341,
+      "total_tokens": 2513,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1660
+    }
+  }
+}

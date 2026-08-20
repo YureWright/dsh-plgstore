@@ -1,0 +1,34 @@
+{
+  "id": "@aident-ai/cli",
+  "analyzedAt": "2026-08-20T05:38:39.859Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 exports 中的 ./dsh，README 提供了 dsh plugin add 安装命令，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@aident-ai/cli",
+      "evidence": "dsh plugin --profile web add @aident-ai/cli"
+    },
+    "evaluationReport": {
+      "intro": "这是一个命令行工具，让你能通过终端或 AI 助手使用 Aident 平台的各种功能，比如搜索和调用集成（如 Gmail、GitHub）、管理技能、查看账单和审计日志等。它也可以作为 DSH 插件安装，让 AI 助手直接调用这些功能。",
+      "level": "ok",
+      "risks": "它会读取和修改你电脑上的配置文件（如 ~/.aident/config.json 和 ~/.aident/credentials.json），存储你的登录凭证。它可能会扫描本地 MCP/agent 配置文件（在运行 migrate-local 时），但不会自动修改，除非你明确使用 --apply。它还会连接 Aident 的服务器（默认 loadout.aident.ai）来执行命令，所以你的使用数据会发送到该服务器。",
+      "postInstallNotes": "安装后需要运行 `aident login` 进行身份验证，或者设置 AIDENT_TOKEN 环境变量。如果作为 DSH 插件使用，建议先登录再启动 DSH。",
+      "notes": "无"
+    },
+    "summaryZh": "Aident CLI 是一个命令行工具，提供对 Aident 平台集成、自动化剧本和技能的管理，也可作为 DSH 插件安装。",
+    "usage": {
+      "prompt_tokens": 3434,
+      "completion_tokens": 386,
+      "total_tokens": 3820,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2922
+    }
+  }
+}

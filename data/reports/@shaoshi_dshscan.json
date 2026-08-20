@@ -1,0 +1,34 @@
+{
+  "id": "@shaoshi/dshscan",
+  "analyzedAt": "2026-08-20T05:39:14.174Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@shaoshi/dshscan",
+      "evidence": "作为 DSH 插件安装：dsh plugin add @shaoshi/dshscan"
+    },
+    "evaluationReport": {
+      "intro": "DShScan 是一个 DSH 插件安全审查工具，可以扫描其他 DSH 插件或 GitHub 仓库，检查它们是否有恶意代码、危险操作或供应链风险，并给出风险评分和安装建议。它支持离线静态扫描和可选的 AI 语义分析，还能生成报告。",
+      "level": "ok",
+      "risks": "该工具会下载并扫描其他插件源码，可能消耗网络流量；如果启用 LLM 扫描，会将插件代码发送到外部 AI 服务（如 OpenAI），可能泄露代码内容。此外，它可能会读取本地索引文件（~/.dsh/dshbase-directory.json），但不会修改系统关键配置。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DShScan 是一个 DSH 插件安全扫描器，用于评估插件风险并生成报告。",
+    "usage": {
+      "prompt_tokens": 4561,
+      "completion_tokens": 314,
+      "total_tokens": 4875,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4049
+    }
+  }
+}

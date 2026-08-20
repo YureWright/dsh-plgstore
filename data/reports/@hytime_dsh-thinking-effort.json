@@ -1,0 +1,34 @@
+{
+  "id": "@hytime/dsh-thinking-effort",
+  "analyzedAt": "2026-08-20T05:38:59.670Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@hytime/dsh-thinking-effort",
+      "evidence": "dsh plugin --profile <profile> add @hytime/dsh-thinking-effort"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的第三方模型（llm-pi-ai）添加可调节的思考强度档位，比如 off、high、max，还能设置子 agent 的默认思考强度。你可以在 DSH 设置页面里给每个模型配置不同的思考强度，并映射到网关的具体值。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在 DSH 内部运行，不连接外部服务器，不碰隐私文件。",
+      "postInstallNotes": "安装后需要重启 DSH 使主机端生效，然后在设置页面配置思考强度。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 的第三方模型添加可配置的思考强度档位，并设置子 agent 默认思考强度。",
+    "usage": {
+      "prompt_tokens": 2887,
+      "completion_tokens": 311,
+      "total_tokens": 3198,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2375
+    }
+  }
+}

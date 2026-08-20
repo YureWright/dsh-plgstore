@@ -1,0 +1,34 @@
+{
+  "id": "dsh-crew",
+  "analyzedAt": "2026-08-20T05:37:15.491Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.desktop.presets，依赖 @deepseek-ai/dsh-tool-subagent，README 明确为 DeepSeek Harness 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-crew",
+      "evidence": "package.json 中 name 为 dsh-crew，且 README 未明确给出安装命令，但作为 npm 包可安装。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里像带一个小团队一样干活：你当产品经理，它帮你安排架构师、工程师、测试、代码审查等角色，他们通过文件协作，你只需要确认目标和里程碑。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读写你项目目录下的文件（比如创建 docs/crew 文件夹），但这是它工作的一部分。",
+      "postInstallNotes": "安装后需要启动 dsh 会话并选择 crew 预设，插件会自动写入预设文件。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-crew 是一个让 DeepSeek Harness 以多角色团队方式协作完成任务的插件。",
+    "usage": {
+      "prompt_tokens": 3758,
+      "completion_tokens": 307,
+      "total_tokens": 4065,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3246
+    }
+  }
+}

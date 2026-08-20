@@ -1,0 +1,34 @@
+{
+  "id": "@dopejs/dsh-tui",
+  "analyzedAt": "2026-08-20T05:39:46.259Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dopejs/dsh-tui",
+      "evidence": "npm install -g @deepseek-ai/dsh @dopejs/dsh-tui"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的终端界面（TUI），让你在命令行里跟 AI 助手聊天、管理会话、查看任务进度、操作文件等。它把 Harness 的功能都搬到了终端里，适合喜欢用键盘操作、不想开网页的用户。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你的终端输入，可能包含敏感信息，但这是终端工具的正常行为。它需要你配置 API 密钥才能工作，密钥会存在你的系统里。",
+      "postInstallNotes": "安装后需要设置 DEEPSEEK_API_KEY 环境变量，或者通过凭证服务存储。首次运行 dtui 会自动初始化 tui 配置文件。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-tui 是一个为 DeepSeek Harness 打造的终端用户界面，让你在命令行里完成 AI 对话、会话管理、任务监控等操作。",
+    "usage": {
+      "prompt_tokens": 4335,
+      "completion_tokens": 352,
+      "total_tokens": 4687,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3823
+    }
+  }
+}

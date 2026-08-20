@@ -1,0 +1,34 @@
+{
+  "id": "dsh-search-enhance",
+  "analyzedAt": "2026-08-20T05:39:55.762Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-search-enhance@latest",
+      "evidence": "dsh plugin --profile web add dsh-search-enhance@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的搜索增强工具。它能让 AI 助手在回答问题时搜索最新信息，并附上来源链接。它主要用 Grok 兼容的搜索 API 来获取答案，还可以选配 Context7、Exa、Tavily 和 Firecrawl 这些服务来查文档、找资料、抓取网页内容。它会分步骤处理搜索、保存来源和获取页面，让回答更可靠。",
+      "level": "ok",
+      "risks": "没发现明显风险。它需要你自己配置 API 密钥，这些密钥会通过 DSH 的凭据系统存储，不会直接暴露。它可能会访问你指定的网页内容，但这是搜索功能的一部分。",
+      "postInstallNotes": "安装后需要配置搜索后端：在 DSH 的设置里找到插件配置，填入 Grok 兼容的端点、协议、模型和 API 密钥（默认凭据引用是 SEARCH_API_KEY）。可选的服务（Context7、Exa、Tavily、Firecrawl）按需配置。配置完保存并重启 DSH。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-search-enhance 是一个为 DeepSeek Harness 设计的搜索增强插件，提供带来源的网页搜索、文档查询和页面提取功能。",
+    "usage": {
+      "prompt_tokens": 3318,
+      "completion_tokens": 428,
+      "total_tokens": 3746,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2806
+    }
+  }
+}

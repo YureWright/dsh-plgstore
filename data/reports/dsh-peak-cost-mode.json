@@ -1,0 +1,34 @@
+{
+  "id": "dsh-peak-cost-mode",
+  "analyzedAt": "2026-08-20T05:38:12.244Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-peak-cost-mode",
+      "evidence": "dsh plugin --profile web add dsh-peak-cost-mode"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DeepSeek 高峰时段（北京时间上午9点到12点、下午2点到6点，价格翻倍）自动让 AI 用极简的'穴居人风格'回复，帮你省 token 和钱。它会在界面上显示一个徽章，告诉你当前是高峰还是低谷，并在切换时弹出提醒。你还可以在低谷时手动开启省钱模式，它会统计你省了多少 token 和钱。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你的本地存储（~/.dsh）下保存统计数据，但不会上传到外部服务器。",
+      "postInstallNotes": "装完后需要重启 dsh web 并硬刷新浏览器页面。可选地，你可以在 ~/.dsh/dsh-peak-cost-mode/config.json 中调整配置，比如压缩比例、价格等。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，在 DeepSeek 高峰时段自动切换为省流模式，并统计节省的 token 和费用。",
+    "usage": {
+      "prompt_tokens": 3264,
+      "completion_tokens": 353,
+      "total_tokens": 3617,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2752
+    }
+  }
+}

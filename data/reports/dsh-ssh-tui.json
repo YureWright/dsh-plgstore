@@ -1,0 +1,34 @@
+{
+  "id": "dsh-ssh-tui",
+  "analyzedAt": "2026-08-20T05:38:58.108Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ssh-tui",
+      "evidence": "dsh plugin --profile tui add dsh-ssh-tui"
+    },
+    "evaluationReport": {
+      "intro": "这是一个让 DeepSeek Harness 在 SSH 终端里更好用的插件。它把聊天界面变成纯文字版，不用开浏览器，适合远程连接。能显示 AI 的思考过程、工具调用、代码改动对比，还能回看历史会话、切换模型等。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在本机读写配置文件（~/.dsh），不会上传数据。安装脚本会运行 npm install 和构建，但这是正常操作。",
+      "postInstallNotes": "需要先全局安装 @deepseek-ai/dsh 和 pnpm，然后按 README 的安装命令安装。装完后可能需要配置 settings.yaml 里的默认模型。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 SSH 友好的终端 TUI 界面，支持流式输出、工具卡片、历史会话等。",
+    "usage": {
+      "prompt_tokens": 4982,
+      "completion_tokens": 335,
+      "total_tokens": 5317,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4470
+    }
+  }
+}

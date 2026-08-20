@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-ascension",
+  "analyzedAt": "2026-08-20T05:38:12.325Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-ascension",
+      "evidence": "dsh plugin --profile web add dsh-plugin-ascension"
+    },
+    "evaluationReport": {
+      "intro": "这是一个修仙主题的桌面宠物插件，会显示一个王林小人，根据你使用 AI 对话的状态（思考、调用工具、回复等）做出不同动作，还会随着使用次数增加而升级，境界越高皮肤越华丽。可以点击、拖拽、隐藏，还能在聊天中询问当前境界。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和写入 ~/.dsh/ascension/ 目录下的配置文件，用于保存你的设置和修炼进度。",
+      "postInstallNotes": "安装后需要重启 web 服务（:3080）。",
+      "notes": "无"
+    },
+    "summaryZh": "修仙主题的 DSH 桌面宠物插件，根据会话状态驱动动画，随使用升级境界。",
+    "usage": {
+      "prompt_tokens": 3193,
+      "completion_tokens": 301,
+      "total_tokens": 3494,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2681
+    }
+  }
+}

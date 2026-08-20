@@ -1,0 +1,34 @@
+{
+  "id": "@wingsky-1/dsh-mcp-manager",
+  "analyzedAt": "2026-08-20T05:39:08.668Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/dsh-client-runtime 等，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wingsky-1/dsh-mcp-manager",
+      "evidence": "dsh plugin --profile web add @wingsky-1/dsh-mcp-manager"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的 MCP 服务器管理插件。它会在聊天界面右上角加一个小浮窗，显示 MCP 服务器的连接状态（比如运行中、连接中、失败等）。你可以通过它添加、删除、连接或断开 MCP 服务器，支持两种连接方式：本地程序（stdio）和远程地址（HTTP）。也可以直接粘贴 JSON 配置来批量导入服务器。连上之后，这些服务器的工具就能被 AI 模型直接调用，方便扩展功能。",
+      "level": "ok",
+      "risks": "它会读取和写入配置文件（比如 DSH 主目录下的 dsh-mcp.json 和项目目录下的 .dsh/mcp.json），但不会保存密钥本身，只存环境变量引用。它启动的本地 MCP 程序会继承你的电脑权限，所以只添加你信任的服务器。所有管理接口只允许本机访问，不会暴露到外网。",
+      "postInstallNotes": "安装后需要重启一次 dsh web，让浮窗和插件生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 MCP 服务器管理插件，提供浮窗面板、分级状态展示、快速接入和 JSON 导入，让模型能调用 MCP 工具。",
+    "usage": {
+      "prompt_tokens": 2576,
+      "completion_tokens": 424,
+      "total_tokens": 3000,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2064
+    }
+  }
+}

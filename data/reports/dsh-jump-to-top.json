@@ -1,0 +1,34 @@
+{
+  "id": "dsh-jump-to-top",
+  "analyzedAt": "2026-08-20T05:38:34.466Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-jump-to-top",
+      "evidence": "dsh plugin --profile web add dsh-jump-to-top"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 聊天界面加小按钮的插件。装上后，当你往上翻聊天记录时，右下角会出现两个悬浮按钮：一个带你回到聊天最顶部，另一个带你回到你上次发消息的位置。连续点第二个按钮还能一步步往上回溯你发过的消息。它完全在浏览器里运行，不碰你电脑上的文件或网络。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在网页里加按钮，不访问主机服务，不做文件或网络操作。",
+      "postInstallNotes": "装完需要重启 dsh web 或按 Ctrl+F5 强制刷新页面，然后打开任意聊天会话就能看到按钮。",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 聊天界面添加回到顶部和回到上次发消息位置按钮的轻量插件。",
+    "usage": {
+      "prompt_tokens": 2513,
+      "completion_tokens": 316,
+      "total_tokens": 2829,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2001
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@whatsmore-nf/dsh-context-steward",
+  "analyzedAt": "2026-08-20T05:39:19.481Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@whatsmore-nf/dsh-context-steward@latest",
+      "evidence": "Via Harness plugin CLI (same as other official plugins): dsh plugin --profile web add @whatsmore-nf/dsh-context-steward@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，它把上下文窗口当成稀缺资源来管理。它会在固定的 token 预算内，保护关键决策的注意力，按价值密度压缩信息，合并已完成阶段，并维护一个事实库，让被挤掉的原文还能被回忆起来。简单说，就是帮你更高效地利用有限的上下文空间，避免重要信息丢失。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要处理的是会话上下文数据，不会碰你电脑上的其他文件。",
+      "postInstallNotes": "需要在 cordis.yml 或 cordis.patch.yml 中添加配置行，例如：\n- id: dsh-context-steward\n  name: '@whatsmore-nf/dsh-context-steward'\n  config:\n    capacity: 8000\n    enabled: true\n    inject: true",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 上下文管家：智能调度和压缩上下文，保护关键决策，提升 token 利用率。",
+    "usage": {
+      "prompt_tokens": 3520,
+      "completion_tokens": 398,
+      "total_tokens": 3918,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3008
+    }
+  }
+}

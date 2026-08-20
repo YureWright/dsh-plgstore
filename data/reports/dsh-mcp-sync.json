@@ -1,0 +1,34 @@
+{
+  "id": "dsh-mcp-sync",
+  "analyzedAt": "2026-08-20T05:37:36.096Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/schemastery，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mcp-sync",
+      "evidence": "dsh plugin --profile web add dsh-mcp-sync"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DSH 助手连接各种 MCP 服务器（比如 Claude Code、Codex、Cursor 的工具），自动发现里面的工具并注册给模型直接调用。它还带一个管理面板，可以查看连接状态、工具列表和统计信息。",
+      "level": "ok",
+      "risks": "它会读取你电脑上的 Claude Code、Codex、Cursor 和 DSH 的配置文件（比如 ~/.dsh/mcp.json），里面可能包含 API 密钥等敏感信息。它还会连接到这些配置里指定的 MCP 服务器，可能会向这些服务器发送请求。不过它只在本机提供 API（loopback-only），不会主动上传数据到外部。",
+      "postInstallNotes": "装完后重启 dsh web 生效。默认零配置可用，如需调整可在 cordis.patch.yml 中按 id 覆盖配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，用于连接 MCP 服务器、发现并注册工具，让模型直接调用 MCP 工具。",
+    "usage": {
+      "prompt_tokens": 2895,
+      "completion_tokens": 361,
+      "total_tokens": 3256,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2383
+    }
+  }
+}

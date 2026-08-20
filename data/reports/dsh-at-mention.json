@@ -1,0 +1,34 @@
+{
+  "id": "dsh-at-mention",
+  "analyzedAt": "2026-08-20T05:39:55.970Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-at-mention",
+      "evidence": "dsh plugin --profile web add dsh-at-mention"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的网页输入框里用 @ 符号快速引用工作区里的文件或另一个会话。比如你输入 @ 加文件名，就能插入一个文件路径引用；输入 @ 加会话标题，就能引用另一个会话。发送前它会检查引用的文件或会话是否还有效，如果失效会报错提醒你。它还能把引用转换成可读的标签，或者给模型提供会话快照，让 AI 能读取相关上下文。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要在工作区里搜索文件，可能会读取你工作区里的文件内容来提供引用，但这些操作都在本地进行，不会上传到外部服务器。",
+      "postInstallNotes": "需要在 web 配置下安装并运行：先执行 `dsh plugin --profile web add dsh-at-mention`，然后用 `dsh --profile web` 启动。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页编辑器提供 @ 提及功能，可引用工作区文件和跨会话上下文。",
+    "usage": {
+      "prompt_tokens": 2443,
+      "completion_tokens": 375,
+      "total_tokens": 2818,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1931
+    }
+  }
+}

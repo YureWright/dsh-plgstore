@@ -1,0 +1,34 @@
+{
+  "id": "@cocofhu/skillhub",
+  "analyzedAt": "2026-08-20T05:37:16.329Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@cocofhu/skillhub",
+      "evidence": "从 npm 安装（预构建，不需要 allowBuilds）：dsh plugin --profile web add @cocofhu/skillhub"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的对话里直接搜索、查看和安装 SkillHub 上的技能（skills）。你可以让 AI 帮你找技能、看详情、安装或卸载，还能在侧边栏打开一个“插件广场”面板浏览技能和 DSH 插件。安装的技能会放到本机的 skills 目录，AI 就能用它们了。",
+      "level": "ok",
+      "risks": "它会向 SkillHub 的公开 API 发送请求（搜索、下载技能包等），并把下载的技能包解压到你的本机目录（默认 ~/.dsh/skills）。技能包是第三方提供的，插件不会执行其中的代码，但安装后这些文件可能被 AI 读取。另外，插件会读取和写入 Harness 用户目录下的配置文件（skillhub.json）。",
+      "postInstallNotes": "安装后重启 dsh web 并强制刷新浏览器。建议将 dsh web 绑定到 127.0.0.1，不要监听 0.0.0.0。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 对话中搜索、安装和管理 SkillHub 技能的插件。",
+    "usage": {
+      "prompt_tokens": 4297,
+      "completion_tokens": 411,
+      "total_tokens": 4708,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3785
+    }
+  }
+}

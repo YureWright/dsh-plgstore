@@ -1,0 +1,34 @@
+{
+  "id": "dsh-coding-subscription-oauth",
+  "analyzedAt": "2026-08-20T05:37:57.670Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-coding-subscription-oauth@0.5.6",
+      "evidence": "dsh plugin --profile web add dsh-coding-subscription-oauth@0.5.6"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里直接用你已有的订阅（比如 SuperGrok、ChatGPT Plus、Kimi Code、Claude Pro 等）来调用对应的编程助手，不用再单独买 API key，也不用把 token 粘贴到聊天里。它支持多个服务商，还能自动刷新登录状态，避免中途报错。",
+      "level": "ok",
+      "risks": "它会在本地保存你的登录凭证（存在 $DSH_HOME 下的文件里，权限设为仅你自己可读），并可能通过本地代理转发请求到这些服务的官方服务器。它不会把 token 发到聊天或日志里，但如果你在远程或共享电脑上使用，要注意凭证文件的安全。",
+      "postInstallNotes": "安装后需要重启 dsh web 服务（如 systemctl --user restart dsh-web.service），然后在设置里登录你想用的服务商。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，让你用已有的订阅账号（Grok、ChatGPT、Kimi、Claude 等）在 DeepSeek Harness 里使用对应编程助手，无需额外 API key。",
+    "usage": {
+      "prompt_tokens": 4408,
+      "completion_tokens": 403,
+      "total_tokens": 4811,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3896
+    }
+  }
+}

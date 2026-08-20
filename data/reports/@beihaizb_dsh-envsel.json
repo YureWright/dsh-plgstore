@@ -1,0 +1,34 @@
+{
+  "id": "@beihaizb/dsh-envsel",
+  "analyzedAt": "2026-08-20T05:39:29.220Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@beihaizb/dsh-envsel",
+      "evidence": "Installs with `dsh plugin add`."
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里给不同编程语言（Python、R、命令行工具）分别指定运行环境，比如用哪个 conda 环境、哪个 R 版本，或者通过 WSL 用 Linux 环境。你可以在聊天里用 /env 命令切换，也可以让 AI 自己选，还能在对话界面的顶部下拉菜单里快速切换。选择会记住，重启后还在。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会扫描你电脑上的 conda、R、WSL 等环境，并把你的选择保存在本地文件（$DSH_HOME/envsel-state.json）里，这些信息不会上传到外部服务器。",
+      "postInstallNotes": "装完后重启 dsh web，打开一个已有会话，顶部会出现 Env 下拉菜单。无需额外配置，但如果你想调整扫描行为，可以在 cordis.patch.yml 里加配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 环境选择器，为不同语言指定 conda/R/WSL 等运行环境，支持 /env 命令和界面下拉菜单。",
+    "usage": {
+      "prompt_tokens": 3945,
+      "completion_tokens": 391,
+      "total_tokens": 4336,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3433
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "whale-on-desk",
+  "analyzedAt": "2026-08-20T05:37:11.597Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "whale-on-desk",
+      "evidence": "dsh plugin --profile web add whale-on-desk"
+    },
+    "evaluationReport": {
+      "intro": "这是一只像素鲸鱼桌宠，住在 DeepSeek Harness 的网页界面里。当你的 AI 助手（Agent）在干活时，它会游泳、吐泡泡；当需要你批准操作时，它会贴屏幕敲玻璃提醒你。它还能显示任务进度、陪你成长、甚至让 Agent 通过它说话。你可以自定义它的外观，或者让 AI 帮你做新宠物。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取 Agent 的状态事件，不碰你的会话和文件。音效是实时合成的，不下载音频文件。",
+      "postInstallNotes": "无需配置，安装后打开或重启 DSH 网页界面即可。可选配置：睡眠超时、自定义宠物目录等，可在 cordis.patch.yml 中调整。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 设计的像素鲸鱼桌宠，实时反映 Agent 状态，支持自定义和 AI 宠物工坊。",
+    "usage": {
+      "prompt_tokens": 3258,
+      "completion_tokens": 353,
+      "total_tokens": 3611,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2746
+    }
+  }
+}

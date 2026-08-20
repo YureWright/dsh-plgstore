@@ -1,0 +1,34 @@
+{
+  "id": "@hy-sde-org/dsh-tool-edit",
+  "analyzedAt": "2026-08-20T05:38:07.464Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件的证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@hy-sde-org/dsh-tool-edit",
+      "evidence": "dsh plugin --profile web add @hy-sde-org/dsh-tool-edit"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 换了一个更强大的编辑工具。它支持多种编辑模式（replace、patch、apply_patch、hashline），还内置了 LSP 客户端，能在你写代码时自动格式化并检查错误。简单说，就是让 AI 改代码更聪明、更不容易出错。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要是在 AI 编辑文件时提供更精细的控制，不会偷偷连外部服务器或碰你的隐私文件。",
+      "postInstallNotes": "安装后，需要按照 README 中的说明，配置 agent 预设（见 examples/agent-preset/），以替换内置的编辑工具。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供增强的代码编辑工具，支持多种编辑模式和 LSP 格式化与诊断。",
+    "usage": {
+      "prompt_tokens": 2177,
+      "completion_tokens": 344,
+      "total_tokens": 2521,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1665
+    }
+  }
+}

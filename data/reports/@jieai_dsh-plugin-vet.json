@@ -1,0 +1,34 @@
+{
+  "id": "@jieai/dsh-plugin-vet",
+  "analyzedAt": "2026-08-20T05:38:48.633Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@jieai/dsh-plugin-vet",
+      "evidence": "dsh plugin --profile <profile> add @jieai/dsh-plugin-vet"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 装插件前做安全体检的。它会扫描要装的插件代码，找出可疑行为（比如偷偷删文件、连外部服务器），然后给个评分和警告。装好后它还能在后台盯着，如果插件运行时乱动关键文件，它会报警。它默认只报警不拦，除非你明确开启拦截模式。",
+      "level": "ok",
+      "risks": "它默认会向 Google OSV 查询已知漏洞，会把插件包名发出去（可关闭）。它可能读取插件代码和系统进程信息（如 /proc），但都在本地。它不会自动卸载或改配置，风险较低。",
+      "postInstallNotes": "装完后建议在 cordis.yml 里配置一下，比如设置 mode 为 report（默认）或 deny，按需开启 runtimeGuard 和 honeypot。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件信任管道：静态扫描、运行时守护、审计协议和 GUI 盾牌，默认只报警不拦截。",
+    "usage": {
+      "prompt_tokens": 4289,
+      "completion_tokens": 369,
+      "total_tokens": 4658,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3777
+    }
+  }
+}

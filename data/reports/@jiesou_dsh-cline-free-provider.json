@@ -1,0 +1,34 @@
+{
+  "id": "@jiesou/dsh-cline-free-provider",
+  "analyzedAt": "2026-08-20T05:38:07.483Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@jiesou/dsh-cline-free-provider",
+      "evidence": "dsh plugin --profile web add @jiesou/dsh-cline-free-provider"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以把 Cline 的免费模型（比如 OpenRouter 上的免费模型和 DeepSeek V4 Flash）接入到 dsh 里用。装好后，在 dsh 的 Web Models 页面选 Cline 作为 provider，再选个免费模型就能开始用，不用手动配置模型列表，插件会自动同步。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件需要你提供 Cline 的 API Key（存在 dsh 的 credentials 服务里），这个 Key 会用来访问 Cline 的官方接口。",
+      "postInstallNotes": "需要在 dsh 的 Web Models 页面填写 Cline 的 API Key（环境变量名 CLINE_API_KEY），然后选择 Cline provider 和模型即可。",
+      "notes": "无"
+    },
+    "summaryZh": "将 Cline 免费模型接入 dsh 的插件，自动同步模型列表，无需手动配置。",
+    "usage": {
+      "prompt_tokens": 2214,
+      "completion_tokens": 348,
+      "total_tokens": 2562,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1702
+    }
+  }
+}

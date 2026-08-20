@@ -1,0 +1,34 @@
+{
+  "id": "dsh-univer-office",
+  "analyzedAt": "2026-08-20T05:37:55.615Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-univer-office",
+      "evidence": "Install from npm: dsh plugin --profile web add dsh-univer-office"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能直接创建、编辑和查看办公文档，比如表格、文档、演示文稿、数据库和画布。你只要用大白话告诉它你想要什么，它就能帮你做出来，还能在对话里实时预览、修改或丢弃改动。支持导入和导出 Excel、Word、PowerPoint 等常见格式。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会在本地运行一个协作网关和查看器，可能启动浏览器组件（puppeteer-core）用于预览，但这是正常功能。",
+      "postInstallNotes": "安装后需要刷新 DeepSeek Harness（Cmd+R / Ctrl+R）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 Univer 办公插件，让 AI 能创建和编辑表格、文档、演示文稿等，并支持实时预览和审核。",
+    "usage": {
+      "prompt_tokens": 4098,
+      "completion_tokens": 331,
+      "total_tokens": 4429,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3586
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-ui-tweaks",
+  "analyzedAt": "2026-08-20T05:38:51.310Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，依赖了多个 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ui-tweaks",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add dsh-ui-tweaks"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的美化小工具。装上之后，你可以在设置里直接调整聊天界面的字体大小、表格样式、对话框宽度，还能开启一个对话时间线（方便快速跳转到之前的消息）、一个 Git 状态栏（在输入框里显示当前 git 分支和文件改动，可以直接提交代码），以及一个归档管理页面（查看、恢复或彻底删除已归档的会话）和一个 MCP 服务器管理页面（添加、编辑、启停 MCP 服务器）。所有改动即时生效，不用刷新页面。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你的电脑上运行 git 命令（比如查看分支、提交代码），但都是在你当前会话的工作目录里操作，而且没有用 shell，有超时保护。它还能删除已归档的会话（彻底删除，不可恢复），但需要你手动操作，而且有二次确认。MCP 管理功能会修改你的配置文件（cordis.patch.yml），但会保留原有注释和结构。",
+      "postInstallNotes": "安装后需要重启一次 dsh web（bundle 插件在进程启动时扫描）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页界面美化插件：可调字体、表格样式、对话框宽度，带对话时间线、Git 状态栏、归档管理和 MCP 管理功能。",
+    "usage": {
+      "prompt_tokens": 5914,
+      "completion_tokens": 453,
+      "total_tokens": 6367,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5402
+    }
+  }
+}

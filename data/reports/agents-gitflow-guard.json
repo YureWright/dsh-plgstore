@@ -1,0 +1,34 @@
+{
+  "id": "agents-gitflow-guard",
+  "analyzedAt": "2026-08-20T05:39:24.521Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "agents-gitflow-guard",
+      "evidence": "dsh plugin --profile web add agents-gitflow-guard"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个 Git 分支保护工具，专门给 AI 编程助手用的。它让你定义哪些分支是集成分支、预览分支、生产分支等，然后 AI 助手就不能直接往这些受保护的分支上推送代码或合并代码，必须通过 PR/MR 或者由你手动操作。这样能防止 AI 助手乱改代码，保证重要的合并都由你亲自确认。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在本地检查 git 操作，会读取你的 git 配置和仓库状态，但不会上传数据。",
+      "postInstallNotes": "需要在项目根目录创建 gitflow-guard.config.json 配置文件，至少配置一个 integration 分支，然后重启 DSH 让插件生效。",
+      "notes": "无"
+    },
+    "summaryZh": "一个可配置的分支角色守卫插件，防止 AI 助手绕过 GitFlow 流程直接操作受保护分支。",
+    "usage": {
+      "prompt_tokens": 3604,
+      "completion_tokens": 343,
+      "total_tokens": 3947,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3092
+    }
+  }
+}

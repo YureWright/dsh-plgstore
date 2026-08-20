@@ -1,0 +1,34 @@
+{
+  "id": "@nanpaidashi/dsh-honcho-sync",
+  "analyzedAt": "2026-08-20T05:39:32.716Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 和 peerDependencies 包含 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/nanpaidashi/dsh-honcho-sync.git",
+      "evidence": "dsh plugin --profile web add link:https://github.com/nanpaidashi/dsh-honcho-sync dsh web"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DeepSeek Harness AI 拥有长期记忆。它会自动把每次对话同步到你自己的 Honcho 记忆服务（需要自己部署），并给 AI 提供 25 个工具来搜索、回忆和管理这些记忆。",
+      "level": "caution",
+      "risks": "它会读取和写入你电脑上的 ~/.dsh/honcho-sync-state.json 文件来保存同步进度。它会把你的对话内容发送到你配置的 Honcho 服务器（通常是自建的，但如果你配置了外部服务器，对话内容就会传到那里）。",
+      "postInstallNotes": "需要配置 HONCHO_URL 和 HONCHO_WORKSPACE 环境变量，或在 cordis.patch.yml 中设置 honchoUrl 和 workspace。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，自动将对话同步到 Honcho 记忆服务，并提供 25 个记忆工具。",
+    "usage": {
+      "prompt_tokens": 4466,
+      "completion_tokens": 371,
+      "total_tokens": 4837,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3954
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@ztlovelsw/dsh-model-profile",
+  "analyzedAt": "2026-08-20T05:37:52.352Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@ztlovelsw/dsh-model-profile",
+      "evidence": "从 npm 安装：dsh plugin --profile web add @ztlovelsw/dsh-model-profile"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的 Web 界面加了个小工具：在「设置 → 模型」里，每个模型旁边能直接勾选是否支持图片、设置思考等级（比如低、中、高），还能自动从 models.dev 网站拉取模型信息填进去，省得手动改配置文件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器里改设置，不碰系统文件，也不连外部服务器（除了可选的 models.dev 查询）。",
+      "postInstallNotes": "装完需要重启 dsh web，然后打开「设置 → 模型」就能看到新控件。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Web 界面插件，在模型设置里直接配置图像支持和思考等级，并自动从 models.dev 获取预设。",
+    "usage": {
+      "prompt_tokens": 3942,
+      "completion_tokens": 341,
+      "total_tokens": 4283,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3430
+    }
+  }
+}

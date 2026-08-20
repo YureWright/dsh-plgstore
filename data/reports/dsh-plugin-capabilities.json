@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-capabilities",
+  "analyzedAt": "2026-08-20T05:37:12.103Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-skill-filesystem，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-capabilities",
+      "evidence": "dsh plugin --profile web add dsh-plugin-capabilities"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 dsh 的设置页面里直接管理技能（skills）和 MCP 服务器，不用手动编辑配置文件。你可以查看、新建、编辑、删除技能，添加技能仓库（本地目录或 GitHub 仓库），管理 MCP 服务器配置，还能从市场一键安装精选的技能和 MCP 服务器。它也支持从 Claude Code 和 Codex 导入配置。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读写你的 DSH_HOME 目录下的技能文件和配置文件，以及可能读取 Claude Code 和 Codex 的配置文件（如 ~/.claude.json、~/.codex/config.toml）用于导入，但不会上传到外部。市场列表数据从 GitHub 在线索引获取，离线时用本地快照。",
+      "postInstallNotes": "安装后打开 dsh 设置，在导航中会出现「技能与 MCP」分区。MCP 配置变更需要重启 dsh 生效，插件提供了重启按钮。",
+      "notes": "无"
+    },
+    "summaryZh": "在 dsh 设置页管理技能与 MCP 服务器的插件，支持可视化编辑、仓库导入和市场安装。",
+    "usage": {
+      "prompt_tokens": 3903,
+      "completion_tokens": 400,
+      "total_tokens": 4303,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3391
+    }
+  }
+}

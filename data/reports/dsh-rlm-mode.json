@@ -1,0 +1,34 @@
+{
+  "id": "dsh-rlm-mode",
+  "analyzedAt": "2026-08-20T05:39:03.671Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 描述了作为 DSH 插件的功能，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-rlm-mode",
+      "evidence": "npm install dsh-rlm-mode"
+    },
+    "evaluationReport": {
+      "intro": "这个插件为 DeepSeek Harness 提供 RLM 模式，每个 agent 会话维护一个持久的 Python 内核，让变量和导入在多次运行之间保留，支持快照和恢复，适合需要状态保持的复杂任务。",
+      "level": "ok",
+      "risks": "它会启动 Python 子进程，可能占用系统资源；如果配置了快照目录，会在磁盘上保存会话状态文件；需要 Python 环境，可能涉及执行代码。但未发现明显恶意行为。",
+      "postInstallNotes": "需要确保系统有 Python 3 并安装 ipykernel（和 dill 用于快照），可通过 npm run kernel:venv 创建专用虚拟环境；可选配置 snapshotDir 等参数。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供持久 Python 内核的 RLM 模式插件，支持状态保持、快照和恢复。",
+    "usage": {
+      "prompt_tokens": 4529,
+      "completion_tokens": 338,
+      "total_tokens": 4867,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4017
+    }
+  }
+}

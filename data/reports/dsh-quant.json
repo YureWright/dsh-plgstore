@@ -1,0 +1,34 @@
+{
+  "id": "dsh-quant",
+  "analyzedAt": "2026-08-20T05:37:11.040Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools 等核心包，README 提供了 cordis.yml 配置方式，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-quant",
+      "evidence": "npm i dsh-quant"
+    },
+    "evaluationReport": {
+      "intro": "这是一个量化交易工具包，为 AI 助手提供 46 个量化工具，涵盖数据获取、技术指标、回测、风险管理、模拟交易等，可以一键安装后直接在 DSH 环境中使用，帮助进行量化研究和策略开发。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件是纯函数，无运行时依赖，不执行外部脚本，不连接外部服务器（除用户主动调用数据接口外）。",
+      "postInstallNotes": "需要在 cordis.yml 中添加一行配置：- name: 'dsh-quant'",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DSH 环境设计的量化交易工具包，提供 46 个工具和完整的量化研究流程。",
+    "usage": {
+      "prompt_tokens": 3945,
+      "completion_tokens": 300,
+      "total_tokens": 4245,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3433
+    }
+  }
+}

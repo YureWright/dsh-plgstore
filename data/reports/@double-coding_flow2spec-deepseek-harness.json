@@ -1,0 +1,34 @@
+{
+  "id": "@double-coding/flow2spec-deepseek-harness",
+  "analyzedAt": "2026-08-20T05:39:09.026Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@double-coding/flow2spec-deepseek-harness",
+      "evidence": "dsh plugin --profile web add @double-coding/flow2spec-deepseek-harness"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 Flow2Spec 的规范驱动工作流和项目知识路由功能带进 DeepSeek Harness。它能让每个对话加载与当前请求相关的项目知识，而不是重新探索仓库，并且让 Cursor、Claude、Codex 和 DeepSeek Harness 共享同一个项目知识库。它提供了一些命令来查看状态、初始化项目、诊断集成、预览知识路由、检查知识库、重建知识路由和检查更新。它还提供了一个设置卡片，可以查看版本、检查更新、编辑每个工作区的 flow2spec.config.json 配置。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在项目目录中创建或修改 flow2spec.config.json 和 .Knowledge/ 目录，但会保留现有知识。它可能会读取项目文件来构建知识路由，但不会上传到外部服务器。",
+      "postInstallNotes": "安装后，打开一个项目并开始对话，插件会自动添加缺失的配置和知识目录。你也可以通过 /flow2spec 命令或设置卡片来管理集成。",
+      "notes": "无"
+    },
+    "summaryZh": "将 Flow2Spec 的规范驱动工作流和项目知识路由集成到 DeepSeek Harness 的原生插件。",
+    "usage": {
+      "prompt_tokens": 3863,
+      "completion_tokens": 419,
+      "total_tokens": 4282,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3351
+    }
+  }
+}

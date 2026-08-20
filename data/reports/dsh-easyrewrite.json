@@ -1,0 +1,34 @@
+{
+  "id": "dsh-easyrewrite",
+  "analyzedAt": "2026-08-20T05:38:49.996Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-easyrewrite",
+      "evidence": "dsh plugin --profile web add dsh-easyrewrite"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness Web 里直接编辑或撤回自己发过的消息，就像聊天软件里的气泡编辑和撤回一样。它不会立刻改动对话，等你确认后才生效，还能保留历史版本，随时切换回去。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读写本地文件（备份草稿和日志），但都在 DSH 的配置目录下，不会上传数据。",
+      "postInstallNotes": "安装后重启 dsh web，并硬刷新页面（Ctrl+Shift+R）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Web 的消息撤回与气泡编辑插件，支持版本切换、草稿备份，体验无痕。",
+    "usage": {
+      "prompt_tokens": 3931,
+      "completion_tokens": 285,
+      "total_tokens": 4216,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3419
+    }
+  }
+}

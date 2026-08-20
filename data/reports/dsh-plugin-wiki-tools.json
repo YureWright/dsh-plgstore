@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-wiki-tools",
+  "analyzedAt": "2026-08-20T05:37:22.434Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-wiki-tools",
+      "evidence": "```sh\ndsh plugin --profile web add dsh-plugin-wiki-tools\n```"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 Obsidian 知识库（vault）提供三个工具：wiki_query（搜索和读取笔记）、wiki_write（写入笔记并自动维护索引和日志）、wiki_lint（检查笔记库的健康状况，比如重复文件名、失效链接等）。它让 AI 助手能更高效地管理你的个人知识库，不用手动整理文件。",
+      "level": "ok",
+      "risks": "它会读写你指定的 Obsidian vault 目录（需要配置 vaultPath），可能修改其中的笔记文件。除此之外，没发现明显风险。",
+      "postInstallNotes": "需要在你的 profile 的 cordis.patch.yml 中配置 vaultPath（必填），指向你的 vault 根目录（包含 wiki/ 和 .raw/ 的目录）。可选配置 typeFolders 和 maxQueryResults。",
+      "notes": "无"
+    },
+    "summaryZh": "为 Obsidian 知识库提供原生 DSH 工具（查询、写入、检查），自动维护索引和日志，让 AI 高效管理个人笔记。",
+    "usage": {
+      "prompt_tokens": 2578,
+      "completion_tokens": 370,
+      "total_tokens": 2948,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2066
+    }
+  }
+}

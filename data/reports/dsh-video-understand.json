@@ -1,0 +1,34 @@
+{
+  "id": "dsh-video-understand",
+  "analyzedAt": "2026-08-20T05:39:13.078Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口（注册 video_understand 工具）。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-video-understand",
+      "evidence": "npm install dsh-video-understand 或 dsh plugin add dsh-video-understand"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 AI 助手看懂视频。你给它一个 B站链接、BV号或者本地视频文件，它就能自动提取视频里的语音、画面和动作信息，然后生成摘要，还能回答你关于视频内容的问题。它特别省钱，处理一个视频只要几分钱，而且大部分处理都在你自己的电脑上完成，不会把视频传出去。",
+      "level": "ok",
+      "risks": "默认情况下（L0级别）所有处理都在本地完成，不会上传你的视频数据。但如果你选择L1或L2级别，它会将视频的某些帧发送到小米的MiMo服务器进行分析，这些帧只用于单次分析，不会被存储。另外，安装时它会自动创建Python虚拟环境并安装依赖，可能会占用一些磁盘空间（约2GB，如果选择完整语义层）。",
+      "postInstallNotes": "需要安装 ffmpeg（macOS: brew install ffmpeg; Ubuntu: sudo apt install ffmpeg）。需要设置 LLM_API_KEY 环境变量，或者确保 ~/.dsh/.credentials.yaml 中有相应的密钥。",
+      "notes": "无"
+    },
+    "summaryZh": "低成本视频理解插件，支持B站链接/本地视频，生成摘要和问答，token压缩99.95%+。",
+    "usage": {
+      "prompt_tokens": 2935,
+      "completion_tokens": 408,
+      "total_tokens": 3343,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2423
+    }
+  }
+}

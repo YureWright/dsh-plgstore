@@ -1,0 +1,34 @@
+{
+  "id": "@dsh-plugin/dsh-thought-buddy",
+  "analyzedAt": "2026-08-20T05:39:24.663Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-plugin/dsh-thought-buddy",
+      "evidence": "Add the plugin dependency: `dsh plugin --profile <PROFILE> add @dsh-plugin/dsh-thought-buddy`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 网页界面中，当模型思考时，在“Deep diving...”状态指示器前显示一个动态的小机器人头像（GrokBot 风格），它会眨眼、变换表情、轻轻浮动，并同步显示打字机效果的状态文字。也可以切换为 emoji 轮播模式。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在浏览器端运行，不访问本地文件，不连接外部服务器，仅通过 localStorage 存储配置。",
+      "postInstallNotes": "安装后需要重启 dsh web，刷新页面，然后发送消息即可看到效果。可通过 localStorage 调整配置（如模式、大小、emoji 列表）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页插件，在“Deep diving...”状态前显示动态 GrokBot 风格动画头像，支持 emoji 模式，纯前端无依赖。",
+    "usage": {
+      "prompt_tokens": 3891,
+      "completion_tokens": 357,
+      "total_tokens": 4248,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3379
+    }
+  }
+}

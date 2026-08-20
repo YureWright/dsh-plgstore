@@ -1,0 +1,34 @@
+{
+  "id": "dsh-prompt",
+  "analyzedAt": "2026-08-20T05:37:53.544Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-prompt",
+      "evidence": "dsh plugin --profile web add dsh-prompt"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的 Prompt 工具箱，内置 24 条深度模板，也支持你自己添加和管理模板。装好后，你可以通过界面上的 Prompt 按钮、输入 /prompt 命令，或者一个智能悬浮卡片来快速把模板插入到当前对话里，省去手动打字的麻烦。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要是在 DSH 界面里增加一些按钮和面板，不会碰你电脑上的其他文件，也不会把数据发到外部服务器。",
+      "postInstallNotes": "装完后需要重启 DSH 或刷新页面才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 Prompt 工具箱，提供预制和自定义模板，一键插入对话。",
+    "usage": {
+      "prompt_tokens": 2399,
+      "completion_tokens": 293,
+      "total_tokens": 2692,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1887
+    }
+  }
+}

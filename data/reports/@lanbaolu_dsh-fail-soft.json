@@ -1,0 +1,34 @@
+{
+  "id": "@lanbaolu/dsh-fail-soft",
+  "analyzedAt": "2026-08-20T05:38:13.166Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-tools 和 @deepseek-ai/dsh-app-boot，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@lanbaolu/dsh-fail-soft",
+      "evidence": "dsh plugin --profile web add @lanbaolu/dsh-fail-soft"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的，主要作用是：当某个插件坏了（比如加载失败）时，不会让整个 DSH 服务崩溃，而是自动把坏插件隔离起来，让其他插件正常启动。它还提供了一个界面，可以查看被隔离的插件列表，并一键恢复。简单说，就是给 DSH 加了个'防崩溃保险'。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会修改 DSH 的配置文件（cordis.patch.yml）来隔离插件，但会先备份，并且只在插件加载失败时操作。它还会自动给 DSH 内核打补丁，但补丁是官方的，且会校验，不会破坏新版代码。",
+      "postInstallNotes": "安装后需要重启一次 dsh 让挂载兜底生效。另外，建议通过 fail_soft_status 工具的 patch 字段确认补丁健康状态，如果显示 needs-adaptation 需要更新 backup/ 模板。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件错误自动隔离工具，让服务在坏插件面前照常启动，提供隔离管理与一键恢复 UI。",
+    "usage": {
+      "prompt_tokens": 4232,
+      "completion_tokens": 415,
+      "total_tokens": 4647,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3720
+    }
+  }
+}

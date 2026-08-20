@@ -1,0 +1,34 @@
+{
+  "id": "dsh-tools",
+  "analyzedAt": "2026-08-20T05:37:48.436Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tools",
+      "evidence": "dsh plugin --profile web add dsh-tools"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 网页版的多功能工具箱插件，把很多小工具集中在一个设置页面里。你可以用它来：任务完成时在电脑右下角弹提示、一键重启 DSH 网页服务、管理聊天会话（查看和删除）、开关其他插件、检查插件更新、查看插件分类、增强界面显示（比如 Markdown 渲染）、统计应用用量（Token 和费用），还能扫码接入个人微信，让微信和 DSH 助手聊天。所有功能都可以在设置里单独开关，开关状态会保存。",
+      "level": "caution",
+      "risks": "它会读取和修改 DSH 的配置文件和会话数据（比如删除会话、查看磁盘占用）。微信接入功能会读取你的微信凭据（存在 ~/.openclaw 目录），并可能下载微信图片视频到本地，还会连接腾讯的微信服务。如果你配置了 AI 接口，它会把 API 密钥存在 ~/.openclaw/weixin-dsh/.env 文件里。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后到设置里的「dsh 工具箱」页面开启你需要的功能。微信接入功能需要额外配置（扫码登录、设置白名单等），AI 能力需要配置环境变量或 .env 文件。",
+      "notes": "README 明确提示这是纯 AI 制作，可能后续不维护，请谨慎使用。"
+    },
+    "summaryZh": "DSH 网页版个人工具箱，集成任务提示、会话管理、插件管理、用量统计、微信接入等多项功能，可单独开关。",
+    "usage": {
+      "prompt_tokens": 5468,
+      "completion_tokens": 466,
+      "total_tokens": 5934,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4956
+    }
+  }
+}

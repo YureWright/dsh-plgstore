@@ -1,0 +1,34 @@
+{
+  "id": "@dsh-trading/client-chart",
+  "analyzedAt": "2026-08-20T05:38:25.204Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.client 配置，依赖了 @deepseek-ai/cordis 和 dsh-client-runtime 等核心包，且描述明确为 dsh web 的交互式 K 线卡片插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-trading/client-chart",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DSH 网页界面用的图表插件，能把市场快照和 OHLCV 数据渲染成交互式 K 线图，还带均线、成交量和模型参考的指标状态，方便看行情和分析。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只负责在网页上画图，不碰你电脑上的文件或隐私。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页的 K 线图插件，把行情数据变成带均线和成交量的交互式图表。",
+    "usage": {
+      "prompt_tokens": 1724,
+      "completion_tokens": 266,
+      "total_tokens": 1990,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1212
+    }
+  }
+}

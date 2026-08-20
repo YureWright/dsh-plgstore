@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-memory",
+  "analyzedAt": "2026-08-20T05:39:31.998Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-memory",
+      "evidence": "dsh plugin --profile <profile> add dsh-plugin-memory"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的智能体加一个长期记忆库，用 markdown 文件存东西，每次对话开始自动把记忆注入，还能记、查、整理、忘，支持打包迁移，相当于给 AI 一个跨会话的记事本。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读写你电脑上的记忆目录（默认 ~/.memory），可能包含敏感信息，但不会上传到外部服务器。",
+      "postInstallNotes": "装完后建议先和 AI 对话完成'铸魂'，定义它的名字、性格等，也可以去设置面板调整记忆目录等选项。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 长期记忆插件：跨会话、可迁移的 markdown 记忆库，自动注入并支持记忆操作。",
+    "usage": {
+      "prompt_tokens": 4574,
+      "completion_tokens": 321,
+      "total_tokens": 4895,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4062
+    }
+  }
+}

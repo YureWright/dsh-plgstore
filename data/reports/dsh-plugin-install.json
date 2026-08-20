@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-install",
+  "analyzedAt": "2026-08-20T05:37:40.386Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-install",
+      "evidence": "dsh plugin --profile web add dsh-plugin-install"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DSH 的设置页面里直接安装其他插件，不用打开终端。你只需要输入包名（比如 npm 包名、GitHub 仓库地址或本地路径），就能安装、卸载或更新插件，即使插件不在官方市场里也能装。它还会检查更新，确保不会把插件降级。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只做安装管理，不碰个人文件，也不连外部服务器（除了检查更新时访问 npm registry 或 GitHub）。",
+      "postInstallNotes": "安装后打开 Web UI 的设置 → 插件，即可看到「安装」标签页。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 设置页里按包名安装任意插件的工具，无需终端，支持 npm、GitHub 和本地路径。",
+    "usage": {
+      "prompt_tokens": 2480,
+      "completion_tokens": 318,
+      "total_tokens": 2798,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1968
+    }
+  }
+}

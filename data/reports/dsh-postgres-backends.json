@@ -1,0 +1,34 @@
+{
+  "id": "dsh-postgres-backends",
+  "analyzedAt": "2026-08-20T05:38:43.551Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-postgres-backends",
+      "evidence": "dsh plugin --profile web add dsh-postgres-backends"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 把会话数据存到 PostgreSQL 数据库里，而不是默认的文件或 SQLite。它支持多台机器共享同一个会话库，数据更安全，还能自动处理崩溃恢复。安装后需要配置数据库连接。",
+      "level": "ok",
+      "risks": "它会连接你指定的 PostgreSQL 数据库，需要提供数据库地址和密码。如果数据库是远程的，数据会传到那台服务器上。它会在数据库里自动创建几张表。",
+      "postInstallNotes": "需要在 profile 的 cordis.patch.yml 里禁用默认的 JSONL 后端，并添加这个插件的配置，指定数据库连接字符串。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 PostgreSQL 会话持久化后端，支持多机共享和崩溃恢复。",
+    "usage": {
+      "prompt_tokens": 3360,
+      "completion_tokens": 321,
+      "total_tokens": 3681,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2848
+    }
+  }
+}

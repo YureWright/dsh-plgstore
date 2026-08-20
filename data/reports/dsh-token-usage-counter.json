@@ -1,0 +1,34 @@
+{
+  "id": "dsh-token-usage-counter",
+  "analyzedAt": "2026-08-20T05:38:13.603Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-token-usage-counter",
+      "evidence": "dsh plugin --profile web add -w --config.auto-install-peers=false dsh-token-usage-counter"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你统计在 DeepSeek Harness 里用了多少 Token（也就是 AI 对话的流量），还能按天、按模型、按会话查看，甚至画成热力图。它还能帮你给不同的模型设置推理强度（比如低、中、高）。数据会保存下来，重启也不会丢。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取和保存 Token 用量数据，不会碰你的隐私文件，也不会连外部服务器。",
+      "postInstallNotes": "安装后可能需要根据你的 Provider 在配置里补充推理强度设置，但插件不会覆盖你已有的配置。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供持久化的 Token 用量统计和模型推理强度配置的插件。",
+    "usage": {
+      "prompt_tokens": 3552,
+      "completion_tokens": 323,
+      "total_tokens": 3875,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3040
+    }
+  }
+}

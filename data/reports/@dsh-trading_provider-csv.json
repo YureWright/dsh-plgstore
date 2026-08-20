@@ -1,0 +1,34 @@
+{
+  "id": "@dsh-trading/provider-csv",
+  "analyzedAt": "2026-08-20T05:38:34.085Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/schemastery，且 keywords 包含 dsh-plugin，但主要证据是依赖了 @dsh-trading/market-data 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-trading/provider-csv",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个数据提供插件，用于从本地 CSV 文件读取蜡烛图数据，为交易分析提供市场数据。它实现了 @dsh-trading/market-data 接口，让用户可以方便地导入自己的 CSV 数据文件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取本地 CSV 文件，不连接外部服务器，不执行安装脚本。",
+      "postInstallNotes": "需要配置 CSV 文件路径和数据格式，具体配置方法请参考插件文档。",
+      "notes": "无"
+    },
+    "summaryZh": "一个从本地 CSV 文件提供蜡烛图数据的 DSH 插件，用于交易市场数据接入。",
+    "usage": {
+      "prompt_tokens": 1613,
+      "completion_tokens": 291,
+      "total_tokens": 1904,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1101
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-finance-data",
+  "analyzedAt": "2026-08-20T05:39:42.646Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-finance-data",
+      "evidence": "dsh plugin --profile <profile> add dsh-plugin-finance-data"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 智能体用的金融数据工具包，能帮它做数字格式化（比如中文的万/亿）、计算收益率、估值和盈利比率、现值和终值、风险指标（波动率、最大回撤、VaR）、定投和复利预测、投资组合权重和再平衡建议。简单说，就是让 AI 在聊投资理财时能算得准。",
+      "level": "ok",
+      "risks": "没发现明显风险。它明确说没有文件系统访问，是纯逻辑计算，不碰用户电脑上的文件，也不连外部服务器。",
+      "postInstallNotes": "装完后需要重启 DSH，工具会自动注册。可选配置：可以在组合行的 config 里设置 personaSection 和 sectionOrder，但默认就能用。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 智能体提供金融数据计算工具包，涵盖格式化、收益率、比率、风险指标、定投预测和组合再平衡等功能。",
+    "usage": {
+      "prompt_tokens": 1994,
+      "completion_tokens": 360,
+      "total_tokens": 2354,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1482
+    }
+  }
+}

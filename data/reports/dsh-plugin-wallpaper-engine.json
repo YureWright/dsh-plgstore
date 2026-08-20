@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-wallpaper-engine",
+  "analyzedAt": "2026-08-20T05:37:17.010Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-client-runtime，README 给出了 dsh plugin add 安装命令，符合 DSH 插件的核心特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-wallpaper-engine",
+      "evidence": "dsh plugin --profile web add dsh-plugin-wallpaper-engine"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把电脑上 Wallpaper Engine 的壁纸变成 DSH 网页界面的背景。它会自动找到你安装的 Wallpaper Engine，列出所有壁纸，支持视频、网页和部分场景壁纸，还能上传自己的图片或视频当壁纸。界面有 iOS 风格的毛玻璃效果，可以调整颜色和透明度，还能设置壁纸轮播、倍速、翻转等。",
+      "level": "ok",
+      "risks": "插件会读取你电脑上 Wallpaper Engine 的安装位置和壁纸文件（包括 Steam 的 libraryfolders.vdf 和壁纸目录），并在本地 HTTP 路由上提供这些文件。上传的自定义壁纸会存储在本地目录（默认 ~/.dsh-wallpaper-engine/uploads），这些数据不会上传到外部服务器，但如果你在局域网内使用 dsh web，其他能访问该服务的人可能看到你的壁纸列表和内容。",
+      "postInstallNotes": "安装后重启 dsh web，然后在设置里找到 Wallpaper Engine 页面进行配置。如果 Steam 装在非标准位置，插件会自动探测，无需额外设置。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，把 Wallpaper Engine 壁纸变成 DSH 网页界面的动态背景，支持视频、网页和场景静态帧，带 iOS 液态玻璃效果和自定义壁纸上传。",
+    "usage": {
+      "prompt_tokens": 5937,
+      "completion_tokens": 444,
+      "total_tokens": 6381,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5425
+    }
+  }
+}

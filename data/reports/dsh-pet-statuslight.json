@@ -1,0 +1,34 @@
+{
+  "id": "dsh-pet-statuslight",
+  "analyzedAt": "2026-08-20T05:37:29.525Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-pet-statuslight",
+      "evidence": "dsh plugin --profile web add dsh-pet-statuslight"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的桌面宠物插件。它会在你的桌面上显示一个角色形象，这个形象会根据模型的状态（思考中、出错、完成、空闲）自动变换表情。任务完成、出错或提问时，角色会弹出聊天气泡，点击可以跳转到对应的会话。在 Windows 上，它还能提供一个始终置顶的小窗口，即使浏览器最小化也能看到。你可以通过右键切换不同的角色，有 9 个角色可选。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和保存你的角色选择和窗口位置到工作区的 .statuslight.json 文件，但这是正常配置存储。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 设计的桌面宠物状态灯插件，用角色表情和聊天气泡实时反映模型状态，并支持 Windows 置顶小窗。",
+    "usage": {
+      "prompt_tokens": 2824,
+      "completion_tokens": 349,
+      "total_tokens": 3173,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2312
+    }
+  }
+}

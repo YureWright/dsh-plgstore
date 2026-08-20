@@ -1,0 +1,34 @@
+{
+  "id": "@dougen/dsh-deepseek-usage",
+  "analyzedAt": "2026-08-20T05:38:45.443Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 peerDependencies 依赖 @deepseek-ai/dsh-credentials 和 @deepseek-ai/dsh-host-webserver，README 给出了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dougen/dsh-deepseek-usage",
+      "evidence": "dsh plugin --profile web add @dougen/dsh-deepseek-usage"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 的网页界面侧边栏底部显示你的 DeepSeek 账号余额、当前模型档单价，以及高峰/空闲计费时段指示灯。余额每 5 分钟自动刷新，点击卡片可立即刷新。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取 DeepSeek 官方 API 的余额信息，使用 DSH 已配置的 API 密钥，不会额外上传数据。",
+      "postInstallNotes": "需要确保 DSH 已配置 DEEPSEEK_API_KEY，否则余额显示为 '-'。安装后重启网页应用（dsh web）。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 网页侧边栏显示 DeepSeek 余额、单价和峰谷时段的插件。",
+    "usage": {
+      "prompt_tokens": 2589,
+      "completion_tokens": 332,
+      "total_tokens": 2921,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2077
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@awiki/dsh-plugin",
+  "analyzedAt": "2026-08-20T05:37:35.102Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@awiki/dsh-plugin@latest",
+      "evidence": "dsh plugin --profile web add @awiki/dsh-plugin@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个 AWiki 身份和消息功能。你可以用它注册一个 AWiki 身份，然后跟别人直接发消息、建群聊、发图片，还能让 AI 帮你总结消息。它自带一个网页界面，可以拖拽一个圆形按钮来打开菜单。另外还有邮件工具，可以查收和发送纯文本邮件。",
+      "level": "caution",
+      "risks": "它会连接 awiki.ai 的服务器，你的身份信息、消息记录、图片缓存会存在本地（包括浏览器和磁盘）。它还会在设置里加一些选项，可以清除本地数据。邮件功能需要你批准才能发送，但邮件内容可能被外部看到。",
+      "postInstallNotes": "一般不需要额外配置，默认连 awiki.ai。如果想改服务器地址或存储位置，可以设置环境变量，比如 DSH_AWIKI_USER_SERVICE_URL、DSH_AWIKI_STATE_ROOT 等。",
+      "notes": "注意：这个插件会连接外部服务（awiki.ai），并且会存储身份和消息数据。另外，它依赖 Rust SDK，首次安装后可能需要重新创建身份（不会导入旧的身份文件）。"
+    },
+    "summaryZh": "AWiki 身份与消息插件，为 DeepSeek Harness 提供身份注册、即时通讯、群聊、AI 摘要和邮件工具。",
+    "usage": {
+      "prompt_tokens": 3965,
+      "completion_tokens": 433,
+      "total_tokens": 4398,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3453
+    }
+  }
+}

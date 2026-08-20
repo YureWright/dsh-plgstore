@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-omoslim",
+  "analyzedAt": "2026-08-20T05:37:28.441Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin add 安装命令，并详细描述了作为 DSH bundle 的工作原理。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-omoslim",
+      "evidence": "dsh plugin --profile web add dsh-plugin-omoslim"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 装一个叫 orchestrator 的智能体预设，让主智能体负责规划调度，再派给多个不同专长的小智能体干活，每个小智能体可以指定不同的模型。装完还能在网页界面里查看每个小智能体用的什么模型，也能切换不同的模型配置。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你的用户目录下创建 ~/.dsh/.agent-presets/orchestrator/ 文件夹存放配置，还会在 ~/.dsh/settings.yaml 里记录当前激活的配置名。",
+      "postInstallNotes": "装完需要重启 dsh web 服务（比如 systemctl --user restart dsh-web），然后在网页界面新建会话时选择 orchestrator 预设。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 orchestrator 智能体预设，包含多个模型固定的专业子智能体，并支持模型配置切换与查看。",
+    "usage": {
+      "prompt_tokens": 3640,
+      "completion_tokens": 347,
+      "total_tokens": 3987,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3128
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-diff-approval",
+  "analyzedAt": "2026-08-20T05:39:52.071Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了多个 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-diff-approval",
+      "evidence": "README 中写道：`dsh plugin --profile web add dsh-diff-approval`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，它会在你让 AI 助手修改文件时，自动记录每一次成功的修改（比如编辑、写入文件等），然后把所有还没处理的改动按文件整理好，在侧边栏显示每个文件的具体差异（哪些行加了、哪些行删了），你可以选择保留（Keep）或撤销（Revert）某个文件的改动。它不需要用 git，就能让你清楚地看到 AI 改了什么，并且可以一键恢复原样。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会把待处理的改动状态保存在你的电脑上（在 dsh 主目录下的 diff-approval 文件夹里），这些数据只在你本地，不会上传到外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。如果不想用默认的存储位置，可以在 cordis.patch.yml 里配置 storageDir 来改变保存路径。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，用于审查 AI 的待处理修改，提供文件级 diff 视图和保留/还原功能。",
+    "usage": {
+      "prompt_tokens": 3234,
+      "completion_tokens": 395,
+      "total_tokens": 3629,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2722
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-input-rewriter",
+  "analyzedAt": "2026-08-20T05:39:36.400Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码结构显示为完整的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-input-rewriter",
+      "evidence": "dsh plugin --profile web add dsh-input-rewriter"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能自动帮你把输入的问题改写得更好，让 AI 回答得更准确。你正常打字，停顿约 2 秒，它就会悄悄改写你的问题，显示在输入框上方。它会保留代码、网址等关键内容，只优化提问部分，还能识别问题类型并套用相应技巧。可选功能是采集你的对话数据，用于微调一个模仿你说话风格的模型。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你输入的内容（用于改写），但不会接触密钥或密码。可选的数据采集功能会将你的对话原文和改写后的内容保存到本地文件（data/finetune.jsonl），导出时由你控制，不会自动上传。",
+      "postInstallNotes": "安装后需要重启 dsh web 并刷新浏览器。如果没反应，需要在 dsh 设置中选择一个改写模型。可选：在设置中开启数据采集，并配置导出。",
+      "notes": "无"
+    },
+    "summaryZh": "一个自动优化提问的 DSH 插件，通过提示词工程改写用户输入，提升 AI 回答质量。",
+    "usage": {
+      "prompt_tokens": 3257,
+      "completion_tokens": 383,
+      "total_tokens": 3640,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2745
+    }
+  }
+}

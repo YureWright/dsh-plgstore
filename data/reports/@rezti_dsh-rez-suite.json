@@ -1,0 +1,34 @@
+{
+  "id": "@rezti/dsh-rez-suite",
+  "analyzedAt": "2026-08-20T05:39:18.161Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@rezti/dsh-rez-suite@0.1.50",
+      "evidence": "dsh plugin --profile web add @rezti/dsh-rez-suite@0.1.50"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件合集，把多个功能（如 Odoo、企业微信、Home Assistant、TAPD、企查查、天眼查等）打包成一个包，方便一次性安装。安装后，在设置里选择身份，左侧会自动出现对应的房间和工作区，无需手动添加。",
+      "level": "caution",
+      "risks": "该插件会访问多个外部服务（如 Odoo、企业微信、Home Assistant 等），可能涉及企业数据和隐私。安装后可能需要配置这些服务的凭据。此外，插件包含多个子包，可能增加系统复杂性和潜在的攻击面。",
+      "postInstallNotes": "安装后需要在设置中选择身份（如老板、工程师、运营等），并可能需要配置各个子服务的连接参数（如 Odoo、企业微信等）。建议钉死版本，避免使用 latest。",
+      "notes": "该插件是官方认可的 DSH 插件，但依赖较多，且涉及多个外部服务，建议在了解其功能后再安装。"
+    },
+    "summaryZh": "雷泽插件全家桶，一键安装 Odoo、企微、HA、TAPD 等众多功能。",
+    "usage": {
+      "prompt_tokens": 2645,
+      "completion_tokens": 407,
+      "total_tokens": 3052,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2133
+    }
+  }
+}

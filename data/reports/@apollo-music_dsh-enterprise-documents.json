@@ -1,0 +1,34 @@
+{
+  "id": "@apollo-music/dsh-enterprise-documents",
+  "analyzedAt": "2026-08-20T05:39:51.345Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@apollo-music/dsh-enterprise-documents@0.5.0",
+      "evidence": "dsh plugin --profile <profile> add @apollo-music/dsh-enterprise-documents@0.5.0"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给企业用的文档管理工具，可以上传、下载、回收站操作等，需要配合企业微信桥接插件使用，适合有企业文档库的用户。",
+      "level": "caution",
+      "risks": "它会连接企业文档服务器，上传文件时使用临时链接，可能涉及企业敏感数据；需要配置 API 密钥，密钥可能被插件使用；插件默认禁用，需要手动开启，开启后如果服务不可用会导致 DSH 启动失败。",
+      "postInstallNotes": "需要安装并配置 @apollo-music/dsh-wecom-bridge，设置 APOLLO_ENTERPRISE_DOCUMENTS_ENABLED=1，配置 apiBaseUrl 和 apiKeyCredentialRef，可选启用批量上传功能。",
+      "notes": "无"
+    },
+    "summaryZh": "企业文档管理工具，支持上传、下载、回收站操作，需配合企业微信桥接使用。",
+    "usage": {
+      "prompt_tokens": 3072,
+      "completion_tokens": 361,
+      "total_tokens": 3433,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2560
+    }
+  }
+}

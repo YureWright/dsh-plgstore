@@ -1,0 +1,34 @@
+{
+  "id": "dsh-skin-manager",
+  "analyzedAt": "2026-08-20T05:37:56.511Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/xiaoyangcheng84-svg/dsh-skin-manager.git",
+      "evidence": "dsh plugin --profile web add github:xiaoyangcheng84-svg/dsh-skin-manager"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面换皮肤的小工具。它能自动发现你装的所有皮肤，在设置页面里列出来，你点一下就能切换，不用重启服务，而且同时只能用一个皮肤，想恢复默认也方便。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会修改配置文件（cordis.patch.yml）来切换皮肤，但只动自己管理的部分，不会碰其他设置。",
+      "postInstallNotes": "装完后需要重启 dsh web（或依赖热安装），然后打开设置页面的 Skins 选项就能用了。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页界面的皮肤管理器，可一键切换皮肤并热重载。",
+    "usage": {
+      "prompt_tokens": 2724,
+      "completion_tokens": 328,
+      "total_tokens": 3052,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2212
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-vision-recognizer",
+  "analyzedAt": "2026-08-20T05:37:51.613Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/dsh-client-* 核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vision-recognizer",
+      "evidence": "One-click install: `dsh plugin --profile web add dsh-vision-recognizer`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek 能看懂图片。它把图片转成文字描述，再交给 DeepSeek 回答，这样你可以在对话中直接粘贴图片，DeepSeek 就能理解图片内容并回答。支持很多家视觉模型服务，比如 OpenAI、谷歌、阿里等，也可以用自己的本地模型。",
+      "level": "ok",
+      "risks": "图片内容会发送到你配置的视觉模型服务（比如 OpenAI、阿里云等），除非你用的是本地模型（如 Ollama），否则图片数据会离开你的电脑。插件会保存配置到 $DSH_HOME/vision-recognizer.json，包含 API 密钥，注意保护这个文件。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后在模型选择器中选择 'DeepSeek + 识图'，再进入设置 → 插件 → Vision，选择提供商并输入 API 密钥。",
+      "notes": "无"
+    },
+    "summaryZh": "一个让 DeepSeek 能识别图片的插件，通过调用其他视觉模型把图片转成文字，再让 DeepSeek 回答。",
+    "usage": {
+      "prompt_tokens": 3688,
+      "completion_tokens": 387,
+      "total_tokens": 4075,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3176
+    }
+  }
+}

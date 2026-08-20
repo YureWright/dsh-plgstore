@@ -1,0 +1,34 @@
+{
+  "id": "dsh-gateway",
+  "analyzedAt": "2026-08-20T05:37:24.221Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-gateway",
+      "evidence": "dsh plugin --profile web add dsh-gateway"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了个远程访问网关，相当于内置了一个 Caddy 服务器，提供 HTTPS 加密、登录认证和反向代理功能。装上后，你可以通过浏览器安全地远程访问你的 DSH 服务，不用再单独装 Caddy。它支持多域名证书、自动生成自签证书、Cookie 登录、IP 限速等，还能在设置页面里管理。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你电脑上监听一个端口（默认 3443），需要你配置账号密码和主机名。它会把密码明文存在 settings.yaml 里，所以要注意文件权限。它支持远程访问，如果配置不当可能暴露服务，但默认有登录认证和主机白名单。",
+      "postInstallNotes": "安装后需要修改默认密码（admin/change-me），并在 settings.yaml 的 gateway 段配置你的主机名和证书。建议把 DSH 本体绑定到回环地址，只让网关对外。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供自包含的 HTTPS 远程访问网关，集成 TLS 终止、Cookie 登录和反向代理。",
+    "usage": {
+      "prompt_tokens": 3400,
+      "completion_tokens": 395,
+      "total_tokens": 3795,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2888
+    }
+  }
+}

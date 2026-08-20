@@ -1,0 +1,34 @@
+{
+  "id": "@chenkai114/dsh-daemon",
+  "analyzedAt": "2026-08-20T05:38:45.720Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@chenkai114/dsh-daemon",
+      "evidence": "dsh plugin --profile web add @chenkai114/dsh-daemon"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness 的网页服务（dsh web）变成开机自动启动、崩溃自动恢复的后台服务。它会生成一个看门狗脚本，每 30 秒检查一次服务是否健康，如果挂了就自动重启。支持 macOS、Linux 和 Windows，还能自动更新。",
+      "level": "caution",
+      "risks": "它会修改系统级服务配置（如 macOS 的 LaunchAgent、Linux 的 systemd 或 cron、Windows 的计划任务），并在你的用户目录下创建状态文件和日志。它会自动检查并下载更新，可能从 npm registry 拉取新版本。它需要较高的权限（danger-full-access），可能会影响你正在运行的会话。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。如果从旧版本升级，需要手动删除 cordis.patch.yml 中手动添加的 dsh-daemon 行，否则会启动失败。",
+      "notes": "该插件请求 danger-full-access 权限，且会自动更新，建议留意其行为。"
+    },
+    "summaryZh": "将 dsh web 注册为自启动、自愈的后台服务，支持多平台，带看门狗和自动更新。",
+    "usage": {
+      "prompt_tokens": 5126,
+      "completion_tokens": 409,
+      "total_tokens": 5535,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4614
+    }
+  }
+}

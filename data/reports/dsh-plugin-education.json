@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-education",
+  "analyzedAt": "2026-08-20T05:39:36.644Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-education",
+      "evidence": "```bash\ndsh plugin --profile <profile> add dsh-plugin-education\n```"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 智能体用的教育工具包，能帮老师或学习者生成教案框架、出题并检查题目质量、制作评分表、生成闪卡、评估文本难度、制定学习计划等。它本身不写内容，而是提供结构和检查规则，让 AI 来创作内容。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件设计为纯逻辑，不访问文件系统，无副作用，不会碰你的个人文件或连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 DSH，插件会自动注册一个叫 edu_kit 的工具。所有配置都是可选的，默认就能用，不需要额外设置。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 智能体提供教育工具包，包括教案、测验、评分表、闪卡、可读性评估和学习计划等功能。",
+    "usage": {
+      "prompt_tokens": 1937,
+      "completion_tokens": 339,
+      "total_tokens": 2276,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1425
+    }
+  }
+}

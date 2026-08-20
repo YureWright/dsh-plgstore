@@ -1,0 +1,34 @@
+{
+  "id": "coral-memory",
+  "analyzedAt": "2026-08-20T05:39:04.730Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/dsh-client-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "coral-memory",
+      "evidence": "dsh plugin --profile web add coral-memory"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的记忆增强工具，让 AI 助手能记住你的习惯和说过的话，并在需要时自动提取最相关的记忆。它提供 16 个记忆管理工具（比如搜索、插入、删除记忆）和一个图形设置面板，你可以查看记忆统计、调整容量和检索参数。安装后 AI 就能跨对话保持记忆，不占上下文窗口。",
+      "level": "ok",
+      "risks": "插件会读取和写入你的记忆数据文件（默认在 DSH 主目录下的 coral 文件夹），并可能自动安装 Python 依赖（如果开启自动安装）。它通过本地 Python 脚本运行，但不会连接外部服务器。你的记忆数据只保存在本地，但如果你共享了 DSH 配置或数据目录，其他人可能看到这些记忆内容。",
+      "postInstallNotes": "安装后需要运行一次 setup 命令来注册 MCP 记忆工具：node node_modules/coral-memory/lib/setup.mjs（在 DSH profile 目录下）。之后重启 dsh web 并刷新页面，设置里会出现「脑珊瑚 Coral」面板。",
+      "notes": "无"
+    },
+    "summaryZh": "脑珊瑚 Coral Memory 是一个 DeepSeek Harness 插件，为 LLM Agent 提供热度感知的记忆层，包含 16 个 MCP 记忆工具和 GUI 设置面板。",
+    "usage": {
+      "prompt_tokens": 3539,
+      "completion_tokens": 431,
+      "total_tokens": 3970,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3027
+    }
+  }
+}

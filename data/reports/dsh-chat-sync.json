@@ -1,0 +1,34 @@
+{
+  "id": "dsh-chat-sync",
+  "analyzedAt": "2026-08-20T05:37:18.525Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/schemastery，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-chat-sync",
+      "evidence": "dsh plugin --profile web add dsh-chat-sync"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能自动把你电脑上 Claude Code、Codex CLI 和 Cursor Agent 这些 AI 编程工具的聊天记录导入到 DSH 里，在侧边栏统一查看和管理。它会自动扫描这些工具的本地对话文件，按项目匹配工作区，并创建对应的 DSH 会话，方便你集中回顾。",
+      "level": "ok",
+      "risks": "它会读取你本地这些 AI 工具的对话记录（比如 ~/.claude、~/.codex、~/.cursor 目录下的文件），这些内容可能包含你的代码和敏感信息。不过它只在本机运行，API 只接受本地请求，不会上传到外部服务器。",
+      "postInstallNotes": "安装后需要在 profile 的 cordis.patch.yml 文件中按需配置插件参数，比如是否启用自动导入、扫描间隔等。默认配置可能已经可用，但建议检查一下。",
+      "notes": "无"
+    },
+    "summaryZh": "自动导入本地 AI 编程工具（Claude Code、Codex CLI、Cursor Agent）的对话记录为 DSH 会话，方便统一查看。",
+    "usage": {
+      "prompt_tokens": 2477,
+      "completion_tokens": 374,
+      "total_tokens": 2851,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1965
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@wingsky-1/dsh-lan-proxy",
+  "analyzedAt": "2026-08-20T05:39:11.074Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/dsh-client-runtime 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wingsky-1/dsh-lan-proxy",
+      "evidence": "dsh plugin --profile web add @wingsky-1/dsh-lan-proxy"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的局域网内其他设备（比如手机、平板）访问你电脑上运行的 dsh 网页界面。它会在你的电脑上开两个端口（3081 和 3443），把局域网里的请求转发到 dsh 的本地服务上，还支持 HTTPS 加密和 WebSocket 压缩，让远程访问更快更安全。",
+      "level": "caution",
+      "risks": "它会开放你电脑的 3081 和 3443 端口，局域网内所有设备都能访问你的 dsh 界面，包括可能看到你的会话数据。它还允许远程设备读写 dsh 的设置（包括凭据类数据），所以如果你在公共 Wi-Fi 上，别人可能看到你的信息。另外，它会自动生成自签名证书，首次访问会有安全警告。",
+      "postInstallNotes": "安装后需要重启一次 dsh web。默认会监听 0.0.0.0:3081 和 3443，如果不需要局域网访问，记得卸载或关闭。",
+      "notes": "无"
+    },
+    "summaryZh": "局域网访问 dsh 网页界面的代理插件，支持 HTTPS 和 WebSocket 压缩，但会开放端口，需注意安全。",
+    "usage": {
+      "prompt_tokens": 2883,
+      "completion_tokens": 414,
+      "total_tokens": 3297,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2371
+    }
+  }
+}

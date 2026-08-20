@@ -1,0 +1,34 @@
+{
+  "id": "@a9i5k4/dsh-anchored-monitor",
+  "analyzedAt": "2026-08-20T05:38:50.827Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@a9i5k4/dsh-anchored-monitor",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 字段为 @a9i5k4/dsh-anchored-monitor，且存在 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek 模型加的一个监控和干预工具。它能实时监测模型思考时的用词模式（比如用'we'还是'let me'），判断模型是处于专注高效状态还是发散低效状态。如果模型跑偏了，它可以自动提醒或重置，让它回到正轨。它还带一个漂亮的悬浮面板，显示思考强度，像仪表盘一样。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取 DSH 的会话日志（~/.dsh/sessions/*/events.jsonl）来监测，但这是本地文件，不会上传。它可能会自动注入提示或重置会话，但默认是只监控不干预，需要手动开启干预功能。",
+      "postInstallNotes": "无。插件会自动启动监控进程，无需额外配置。但建议根据模型类型调整干预开关：如果是 DeepSeek V4 Pro 0813 可以开启干预，其他模型建议保持监控模式。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 实时思维链锚定监控插件，通过检测模型用词指纹来监控思考状态，并可选自动干预。",
+    "usage": {
+      "prompt_tokens": 3881,
+      "completion_tokens": 405,
+      "total_tokens": 4286,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3369
+    }
+  }
+}

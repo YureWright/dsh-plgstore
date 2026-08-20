@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-translation",
+  "analyzedAt": "2026-08-20T05:39:35.726Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-translation",
+      "evidence": "dsh plugin --profile <profile> add dsh-plugin-translation"
+    },
+    "evaluationReport": {
+      "intro": "这是一个翻译工具包，帮助 DeepSeek Harness 智能体进行文本分段、术语提取、翻译质量检查、语气控制，并维护一个持久的翻译记忆库和术语表。它让模型专注于翻译，而插件负责分块、检查和记忆。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在会话工作区内创建 .dsh/translation-memo.md 和 .dsh/translation-glossary.md 文件，但路径被限制在工作区内，不能逃逸。",
+      "postInstallNotes": "安装后重启 DSH，工具会自动注册。所有配置都是可选的，默认即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 智能体提供翻译辅助工具，包括分块、术语提取、质量检查和持久化翻译记忆。",
+    "usage": {
+      "prompt_tokens": 2128,
+      "completion_tokens": 321,
+      "total_tokens": 2449,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1616
+    }
+  }
+}

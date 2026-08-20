@@ -1,0 +1,34 @@
+{
+  "id": "@wingsky-1/dsh-opencode-usage",
+  "analyzedAt": "2026-08-20T05:38:59.788Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wingsky-1/dsh-opencode-usage",
+      "evidence": "dsh plugin --profile web add @wingsky-1/dsh-opencode-usage"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 网页界面的小插件，会在聊天界面右上角显示一个悬浮框，实时显示你的 OpenCode Go 套餐用量（比如还剩多少百分比）。点击它可以展开三张迷你图表，分别展示最近5小时、本周和本月的用量变化。数据来自 OpenCode 官方接口，所以很准确。",
+      "level": "ok",
+      "risks": "它会读取你的 OpenCode Go API 密钥（从配置、环境变量或本地文件），但只在内存中使用，不会保存到磁盘或发送到浏览器。它会把用量数据保存到本地文件（默认在 ~/.dsh 下），但权限设置较严格。它还会向官方接口发送请求，但频率有限。",
+      "postInstallNotes": "安装后需要重启一次 dsh web。如果默认配置无法获取 API 密钥，可能需要设置环境变量 OPENCODE_GO_API_KEY 或在插件配置中指定。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页插件，显示 OpenCode Go 套餐用量悬浮框和三窗口迷你图。",
+    "usage": {
+      "prompt_tokens": 2539,
+      "completion_tokens": 366,
+      "total_tokens": 2905,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2027
+    }
+  }
+}

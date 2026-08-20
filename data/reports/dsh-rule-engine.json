@@ -1,0 +1,34 @@
+{
+  "id": "dsh-rule-engine",
+  "analyzedAt": "2026-08-20T05:38:30.184Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且依赖了 @deepseek-ai/dsh-* 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-rule-engine",
+      "evidence": "推荐安装方式：dsh plugin --profile web add dsh-rule-engine"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个规则执行引擎，它读取你电脑上的 AGENTS.md 文件（通常位于 ~/.dsh/ 目录），把里面写的规则自动解析出来，然后在你使用 DeepSeek Harness 时强制执行这些规则。比如，如果你在 AGENTS.md 里写了“删除文件前必须备份”，这个插件就会在模型尝试删除文件时检查是否有备份，没有就拦截。它还能记录审计日志、提供 /guard 命令让你查看和管理规则执行情况。简单说，它让你的规则不只是文字，而是真正被机器执行。",
+      "level": "ok",
+      "risks": "它会读取你电脑上的 ~/.dsh/AGENTS.md 文件，并可能修改它（比如写入理解产物）。它还会在 ~/.dsh/ 目录下创建审计日志文件（rule-engine.log.jsonl），记录规则执行情况。这些日志可能包含你操作的文件路径等信息，但只保存在本地。它可能会拦截一些操作，需要你通过 /guard 命令解锁。",
+      "postInstallNotes": "安装后需要确保 ~/.dsh/AGENTS.md 存在，否则插件可能无法正常工作。另外，默认情况下任务契约功能是关闭的，如果需要使用，需要在设置页开启。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 规则执行引擎，从 AGENTS.md 动态解析规则并强制执行的插件。",
+    "usage": {
+      "prompt_tokens": 3768,
+      "completion_tokens": 436,
+      "total_tokens": 4204,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3256
+    }
+  }
+}

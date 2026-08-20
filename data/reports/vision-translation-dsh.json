@@ -1,0 +1,34 @@
+{
+  "id": "vision-translation-dsh",
+  "analyzedAt": "2026-08-20T05:37:57.120Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和依赖 @deepseek-ai/dsh-tools、@deepseek-ai/dsh-attachment，README 明确说明是 dsh 插件并给出安装方式。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "vision-translation-dsh",
+      "evidence": "npm add vision-translation-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的智能体看懂图片。它把图片转换成一种特殊的文本格式（vision-context），这样主模型就能根据图片内容来回答问题。比如你可以问它'图里有什么'，它会调用一个 Python 程序来分析图片，然后返回结果。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件本身不记录日志，但图片会发送到 OpenRouter 的第三方 AI 服务（默认是 xiaomi/mimo-v2.5）进行分析，所以图片内容会经过外部服务器。API 密钥由 Python 核心自行读取，插件不接触。",
+      "postInstallNotes": "需要将 cordis.patch.yml 中的配置块添加到你的 dsh 配置文件中（例如 ~/.dsh/profiles/web/cordis.patch.yml），并确保 Python 环境可用（默认 python3）。",
+      "notes": "无"
+    },
+    "summaryZh": "一个让 DeepSeek Harness 智能体通过 Python CLI 理解图片的插件，支持本地文件或 dsh 附件引用。",
+    "usage": {
+      "prompt_tokens": 3136,
+      "completion_tokens": 363,
+      "total_tokens": 3499,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2624
+    }
+  }
+}

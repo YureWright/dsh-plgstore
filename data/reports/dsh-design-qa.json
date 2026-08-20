@@ -1,0 +1,34 @@
+{
+  "id": "dsh-design-qa",
+  "analyzedAt": "2026-08-20T05:38:07.704Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-design-qa",
+      "evidence": "dsh plugin --profile web add dsh-design-qa"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 里的纯文本模型（比如 DeepSeek）也能看懂图片。它把识图功能做成一个工具，模型需要时自己调用，图片不会进入主模型上下文，不看就不花钱。它附带了评测集，可以测试不同模型的识图能力。安装后，你可以在对话框里粘贴图片，直接问模型'这是啥'。",
+      "level": "caution",
+      "risks": "安装脚本会修改 DSH 本体的三个文件（api-proxy、llm-deepseek、llm-pi-ai），但会备份原文件，可以用命令还原。需要配置阿里云百炼的 API Key，图片会发送到阿里云服务器进行识别。",
+      "postInstallNotes": "需要设置环境变量 BAILIAN_API_KEY，并运行 node install.mjs --route-only 和 node install.mjs --restart 来完成安装。",
+      "notes": "安装脚本会修改 DSH 本体，虽然提供还原命令，但建议谨慎操作。README 中部分评测数据标注了'数字请打折扣'，可能不完全准确。"
+    },
+    "summaryZh": "让 DeepSeek Harness 里的纯文本模型能看图，通过工具调用实现按需识图，附评测集。",
+    "usage": {
+      "prompt_tokens": 5500,
+      "completion_tokens": 408,
+      "total_tokens": 5908,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4988
+    }
+  }
+}

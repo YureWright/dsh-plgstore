@@ -1,0 +1,34 @@
+{
+  "id": "wallpaper-engine-dsh",
+  "analyzedAt": "2026-08-20T05:37:14.746Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "wallpaper-engine-dsh",
+      "evidence": "dsh plugin --profile web add wallpaper-engine-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把你的 Wallpaper Engine 壁纸库变成 DSH 网页界面的动态背景。它支持视频和网页壁纸，可以轮播、搜索、调整模糊和透明度，还有资源监控和双语界面。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取本地壁纸库并通过本地服务器提供，不连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后在设置里找到 Wallpaper Engine 选项进行配置。",
+      "notes": "无"
+    },
+    "summaryZh": "将本地 Wallpaper Engine 壁纸库作为 DSH 网页界面的动态背景，支持视频/网页壁纸、轮播、搜索和资源监控。",
+    "usage": {
+      "prompt_tokens": 3638,
+      "completion_tokens": 300,
+      "total_tokens": 3938,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3126
+    }
+  }
+}

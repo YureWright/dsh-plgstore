@@ -1,0 +1,34 @@
+{
+  "id": "dsh-all-search",
+  "analyzedAt": "2026-08-20T05:38:28.490Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-web，README 给出了 dsh plugin add 安装命令，代码注册到 ctx.web，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-all-search",
+      "evidence": "dsh plugin --profile web add dsh-all-search"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个叫 AnySearch 的联网搜索功能。它把好几个搜索服务（比如 exa、tavily、firecrawl 等）整合到一个网关里，你只需要一个 API 密钥就能用，不用分别去申请各个服务的密钥。装好后，它会在系统里注册成一个搜索提供者，让自带的搜索工具也能用它。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在配置文件里存你的 API 密钥，不会乱碰其他东西。搜索时会把你的查询词和结果数量发给 AnySearch 网关，这是正常搜索功能需要的。",
+      "postInstallNotes": "装完后需要去 AnySearch 官网申请一个 API 密钥，然后在配置文件里填上 api_key（必填）。如果不填，这个插件会自动禁用，不影响其他搜索功能。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加 AnySearch 联网搜索，一个密钥聚合多个搜索服务。",
+    "usage": {
+      "prompt_tokens": 1960,
+      "completion_tokens": 364,
+      "total_tokens": 2324,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1448
+    }
+  }
+}

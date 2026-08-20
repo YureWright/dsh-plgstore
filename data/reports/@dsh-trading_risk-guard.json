@@ -1,0 +1,34 @@
+{
+  "id": "@dsh-trading/risk-guard",
+  "analyzedAt": "2026-08-20T05:38:31.933Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，且描述提到在 dsh tools/pre-execute gate 工作，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-trading/risk-guard",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫 risk-guard，是给 DSH 用的安全防护工具。它会在交易或资金操作执行前检查风险，如果发现风险就拒绝执行，防止乱操作。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "risk-guard 是一个 DSH 插件，用于在交易和资金操作前进行风险检查并拒绝高风险请求。",
+    "usage": {
+      "prompt_tokens": 1611,
+      "completion_tokens": 241,
+      "total_tokens": 1852,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1099
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@try-works/dsh-restart",
+  "analyzedAt": "2026-08-20T05:38:36.145Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了多个 @deepseek-ai/dsh-* 核心包，README 提供了安装到 profile 的说明，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@try-works/dsh-restart",
+      "evidence": "Add this package to the profile and its `bundles` list, e.g. in `~/.dsh/profiles/<name>/package.json`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 主机自我重启。当主机需要重启时（比如应用了插件更改），它会记录重启原因，生成一个 PowerShell 脚本，然后执行重启。重启完成后，它会自动向所有活跃的会话发送继续消息，让它们恢复工作。",
+      "level": "caution",
+      "risks": "它会执行 PowerShell 脚本，该脚本会杀死当前主机进程并启动新进程，可能影响正在运行的任务。它会读取环境变量（如 DSH_WEB_URL、DSH_HOME）和会话信息，但不会上传到外部服务器。它会在日志目录写入脚本和日志文件。",
+      "postInstallNotes": "需要在 profile 的 package.json 中添加依赖和 bundles 配置，然后运行 pnpm install 并重启 DSH 进程。",
+      "notes": "该插件仅支持 Windows 主机（因为唤醒脚本是 PowerShell），且需要 dsh 在 PATH 中。"
+    },
+    "summaryZh": "一个让 DSH 主机自我重启并在重启后自动恢复所有会话的插件。",
+    "usage": {
+      "prompt_tokens": 3340,
+      "completion_tokens": 383,
+      "total_tokens": 3723,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2828
+    }
+  }
+}

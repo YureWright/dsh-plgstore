@@ -1,0 +1,34 @@
+{
+  "id": "dsh-loom",
+  "analyzedAt": "2026-08-20T05:38:53.781Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-loom",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 dsh-loom，且存在 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件像是给你的 AI 助手配了一个'外部教练团队'。它能观察你的使用习惯和失败情况，然后自动提出改进方案（比如调整配置、添加新技能），但不会直接改动，而是先让你确认，再在隔离环境里测试，最后才应用，如果出错还能自动回滚。简单说，就是让 AI 助手越用越懂你，但每一步都经过验证和你的同意。",
+      "level": "caution",
+      "risks": "它会修改你的 agent 配置和技能文件，可能影响 agent 的行为。它会在你的用户状态目录安装一个 mini-SWE runtime，并生成受控 patch。它可能记录你的使用模式和失败记录，这些数据会落盘。不过它声称不会直接改配置，需要用户确认。",
+      "postInstallNotes": "需要运行一次 `dsh-loom setup` 来安装固定 mini-SWE runtime 并生成受控 patch。",
+      "notes": "该插件功能复杂，涉及自动修改配置和技能，建议仔细阅读文档后再使用。"
+    },
+    "summaryZh": "dsh-loom 是一个为 DeepSeek Harness 设计的插件，通过外部验证和用户确认，让 AI 助手从使用历史中自动演进配置和技能。",
+    "usage": {
+      "prompt_tokens": 6270,
+      "completion_tokens": 416,
+      "total_tokens": 6686,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5758
+    }
+  }
+}

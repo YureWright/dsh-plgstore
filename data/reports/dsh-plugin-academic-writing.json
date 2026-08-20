@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-academic-writing",
+  "analyzedAt": "2026-08-20T05:39:32.493Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-academic-writing",
+      "evidence": "dsh plugin --profile <profile> add dsh-plugin-academic-writing"
+    },
+    "evaluationReport": {
+      "intro": "这是一个学术写作工具包，帮助 AI 助手生成论文大纲、标题、摘要骨架，格式化参考文献（支持 GB/T 7714、APA、MLA），检查措辞，提供 LaTeX 片段和投稿前检查清单。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件不访问文件系统，无副作用，纯逻辑操作。",
+      "postInstallNotes": "重启 DSH 后，academic_writing 工具会全局注册。可选配置：在 composition 行的 config 中设置 personaSection 和 sectionOrder。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 智能体提供学术写作辅助工具，包括大纲、标题、摘要、引用格式化、措辞检查、LaTeX 片段和投稿清单。",
+    "usage": {
+      "prompt_tokens": 1989,
+      "completion_tokens": 313,
+      "total_tokens": 2302,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1477
+    }
+  }
+}

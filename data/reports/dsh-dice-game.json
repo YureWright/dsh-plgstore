@@ -1,0 +1,34 @@
+{
+  "id": "dsh-dice-game",
+  "analyzedAt": "2026-08-20T05:38:30.917Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，代码结构符合 DSH 插件规范。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-dice-game",
+      "evidence": "dsh plugin --profile web add dsh-dice-game"
+    },
+    "evaluationReport": {
+      "intro": "这是一个骰子游戏合集插件，包含六种源自中国山西晋城的传统骰子玩法，如吹牛、猜红点、猜大小等。安装后，你可以在 DSH 的侧边栏找到「骰子大作战」入口，点击后会在主区域打开游戏面板，与 AI 进行单人游戏。目前联机功能暂未开放，但游戏本身是纯休闲娱乐，不涉及真实货币。",
+      "level": "ok",
+      "risks": "游戏在 iframe 中运行，且使用了不透明源沙箱，与 DSH 主界面隔离，无法读取你的 DOM、Cookie 或 localStorage。游戏可能通过 PeerJS 连接外部服务器进行联机，但当前联机已禁用，因此不会主动连接外部。未发现其他明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后在侧边栏点击「骰子大作战」即可开始游戏。",
+      "notes": "无"
+    },
+    "summaryZh": "晋城骰子大作战：一个 DSH 插件，提供六种山西晋城传统骰子游戏，支持单人 vs AI，界面中英双语。",
+    "usage": {
+      "prompt_tokens": 3165,
+      "completion_tokens": 402,
+      "total_tokens": 3567,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2653
+    }
+  }
+}

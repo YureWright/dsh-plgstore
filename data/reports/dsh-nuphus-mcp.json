@@ -1,0 +1,34 @@
+{
+  "id": "dsh-nuphus-mcp",
+  "analyzedAt": "2026-08-20T05:38:25.985Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/dsh-mcp-client，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:mrpulor-gh/dsh-nuphus-mcp",
+      "evidence": "npx -p @deepseek-ai/dsh dsh plugin --profile web add github:mrpulor-gh/dsh-nuphus-mcp"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 AI 助手直接控制电脑，比如点击、输入文字、截图等，就像给它装了一双手。它通过一个叫 nuphus-mcp 的工具来实现，安装后会自动注册 38 个操作工具。",
+      "level": "caution",
+      "risks": "它会运行一个能控制鼠标键盘的程序，可能在你不知情的情况下操作电脑。另外，它会在首次使用时自动下载安装 nuphus-mcp，这个程序来自外部，需要留意来源。",
+      "postInstallNotes": "需要确保 DSH 运行在受控电脑的桌面会话中，并且 Node.js 版本符合要求（^22.19 或 >=24）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，将 nuphus-mcp 桌面自动化工具集成到 DSH，让 AI 能操作电脑。",
+    "usage": {
+      "prompt_tokens": 1943,
+      "completion_tokens": 351,
+      "total_tokens": 2294,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1431
+    }
+  }
+}

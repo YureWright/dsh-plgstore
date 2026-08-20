@@ -1,0 +1,34 @@
+{
+  "id": "picturereader",
+  "analyzedAt": "2026-08-20T05:37:29.587Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-llm 等核心包，README 给出 dsh plugin add 安装命令，确为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "picturereader",
+      "evidence": "dsh plugin --profile web add picturereader"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek 这类纯文本模型也能'看图'和'读文档'。它能把图片转换成文字描述、识别图片里的文字（OCR）、分析颜色和结构，还能把 PDF、Word 等文档转成图片再分析。你可以粘贴图片后直接问模型图片内容，模型会像看文字一样理解。它还提供三种模式：隐私模式（图片绝不外传）、智能模式（默认，先本地分析，必要时才调用外部视觉服务）、严谨模式（更仔细地交叉验证）。",
+      "level": "ok",
+      "risks": "它会把图片导出到 ~/.dsh/picturereader-vision/images/ 目录，可能占用磁盘空间。在智能或严谨模式下，如果配置了外部视觉 API，图片可能会发送到外部服务器（但隐私模式不会）。API Key 以 secret 方式保存，只写不读。",
+      "postInstallNotes": "安装后建议复制 skills/image-reading.md 到 ~/.dsh/skills/ 目录（可选）。如需增强 OCR 或文档转换功能，可运行 scripts/setup-ocr.mjs 等脚本。启用视觉孪生后需重启 DSH 并在设置中勾选模型。",
+      "notes": "无"
+    },
+    "summaryZh": "为纯文本模型提供看图、OCR、文档转图片等能力的 DSH 插件，支持隐私/智能/严谨三种模式。",
+    "usage": {
+      "prompt_tokens": 5511,
+      "completion_tokens": 441,
+      "total_tokens": 5952,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4999
+    }
+  }
+}

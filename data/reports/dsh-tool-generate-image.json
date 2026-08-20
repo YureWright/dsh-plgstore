@@ -1,0 +1,34 @@
+{
+  "id": "dsh-tool-generate-image",
+  "analyzedAt": "2026-08-20T05:39:37.663Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 提供了 dsh plugin add 安装命令，且描述为 DSH 的模型侧工具，符合插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tool-generate-image",
+      "evidence": "dsh plugin --profile web add dsh-tool-generate-image"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的模型加了一个'画图'工具。你只要用大白话描述想要的图片，模型就会调用它，通过本机的 Antigravity CLI 让 Google Gemini 生成图片，保存到你的电脑上，并把图片直接显示在对话里。生成的图片会永久保存在磁盘上，重启后还能用。",
+      "level": "caution",
+      "risks": "它会调用本机的 agy 命令行工具，并且以'跳过权限确认'的方式运行，这意味着 agy 可能会以你登录的账号权限执行操作。它还会读取和写入你用户目录下的文件（比如 ~/.gemini 和 ~/.dsh），生成的图片会保存在你的磁盘上。另外，它会在本地开一个回环地址的网页服务来显示图片，但只监听本机。",
+      "postInstallNotes": "需要先安装并登录 Antigravity CLI（agy），然后重启 DSH 的 web 应用。",
+      "notes": "该插件依赖外部服务（Google Gemini），免费档可能遇到限流。另外，它使用了 --dangerously-skip-permissions 参数，有一定安全风险，但作者说明提示词不经过 shell，无注入面。"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加 generate_image 工具，让模型能通过 Antigravity CLI 调用 Google Gemini 生成图片并保存到本地。",
+    "usage": {
+      "prompt_tokens": 2920,
+      "completion_tokens": 433,
+      "total_tokens": 3353,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2408
+    }
+  }
+}

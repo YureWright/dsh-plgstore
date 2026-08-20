@@ -1,0 +1,34 @@
+{
+  "id": "dsh-auto-continue-429",
+  "analyzedAt": "2026-08-20T05:38:07.487Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-llm，README 提供了 dsh plugin add 安装命令，符合 DSH 插件标准。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/haochi72/dsh-auto-continue-429.git",
+      "evidence": "dsh plugin --profile web add github:haochi72/dsh-auto-continue-429"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，当你在网页聊天时遇到 429 限流或配额用尽的错误，它会自动帮你发送“continue”来继续对话，不用你手动操作。它会在对话框底部加一个开关，你可以随时打开或关闭这个自动功能。它还会记录连续失败的次数，如果连续失败 20 次就停下来，等你手动发消息才重新开始。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在你的电脑上保存一个很小的设置文件（~/.dsh/auto-continue-429.json），不会读取你的 API 密钥，也不会向外部服务器发送任何请求。",
+      "postInstallNotes": "安装后需要重启 DSH Desktop 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，自动处理 429 限流和配额耗尽错误，通过自动发送 continue 恢复对话，并带有可配置的开关和失败计数。",
+    "usage": {
+      "prompt_tokens": 3293,
+      "completion_tokens": 383,
+      "total_tokens": 3676,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2781
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@kubor/dsh-bloom-theme",
+  "analyzedAt": "2026-08-20T05:38:20.729Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@kubor/dsh-bloom-theme",
+      "evidence": "dsh plugin --profile web add @kubor/dsh-bloom-theme"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 换肤的主题插件，提供 4 套莫兰迪配色（雾蓝、朱砂、花瓣、涟漪），每套都有浅色和深色模式，可以在顶栏一键切换。它不只是换颜色，还调整了界面质感，比如渐变、光影和排版细节，让界面更好看。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器端注入 CSS，不碰系统文件，也不连外部服务器。",
+      "postInstallNotes": "安装后需要把包名加进 ~/.dsh/profiles/web/package.json 的 bundles 列表，然后重启 DSH 服务。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的莫兰迪主题插件，4 套配色、明暗双主题，顶栏一键切换。",
+    "usage": {
+      "prompt_tokens": 5051,
+      "completion_tokens": 323,
+      "total_tokens": 5374,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4539
+    }
+  }
+}

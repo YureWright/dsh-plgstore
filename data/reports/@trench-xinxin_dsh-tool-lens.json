@@ -1,0 +1,34 @@
+{
+  "id": "@trench-xinxin/dsh-tool-lens",
+  "analyzedAt": "2026-08-20T05:39:46.318Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，且 README 明确为 DeepSeek Harness 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@trench-xinxin/dsh-tool-lens",
+      "evidence": "README 提供了 npx 命令，但未直接给出 dsh plugin add 命令；根据 package.json 的 name 字段，npm 包名为 @trench-xinxin/dsh-tool-lens。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的代码分析工具插件，能帮你分析代码结构、找循环依赖、查死代码、评估改动影响等，支持多种编程语言。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要分析本地代码，不会上传数据到外部服务器。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Lens 是一个用于 DeepSeek Harness 的代码分析插件，提供依赖图、调用链、循环依赖审计等功能。",
+    "usage": {
+      "prompt_tokens": 3238,
+      "completion_tokens": 300,
+      "total_tokens": 3538,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2726
+    }
+  }
+}

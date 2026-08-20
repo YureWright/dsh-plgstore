@@ -1,0 +1,34 @@
+{
+  "id": "@wingsky-1/dsh-idle-archive",
+  "analyzedAt": "2026-08-20T05:38:55.208Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-* 核心包，README 给出 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wingsky-1/dsh-idle-archive",
+      "evidence": "dsh plugin --profile web add @wingsky-1/dsh-idle-archive"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是帮你管理会话的。如果你的会话列表里有些对话很久没聊了（默认超过72小时），它会弹窗提醒你，问你要不要归档。你可以选择归档（把会话从列表隐藏，但记录还在），或者暂时不归档（接下来24小时不再提醒）。它不会自动归档，也不会删除任何东西，只是提醒你。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器端弹窗，会读取你的会话列表和闲置时间，但不会上传到外部服务器。配置文件存在本地 ~/.dsh/ 目录。",
+      "postInstallNotes": "安装后需要重启一次 dsh web。",
+      "notes": "无"
+    },
+    "summaryZh": "会话闲置自动提醒插件：超过设定小时未对话的会话弹窗询问是否归档，拒绝后一段时间内不再打扰。",
+    "usage": {
+      "prompt_tokens": 2278,
+      "completion_tokens": 336,
+      "total_tokens": 2614,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1766
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-msg-hub",
+  "analyzedAt": "2026-08-20T05:39:17.113Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/dsh-llm 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-msg-hub",
+      "evidence": "dsh plugin --profile web add dsh-msg-hub"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把微信、QQ、飞书的消息接到 DeepSeek Harness 的 AI 会话里，还能主动推送消息到手机，比如定时任务完成后提醒你。也支持远程监控，离开电脑也能批准或拒绝 AI 的请求。",
+      "level": "caution",
+      "risks": "微信登录用的是模拟协议，有账号风控风险，频繁发消息可能被封号。QQ 主动推送需要申请权限，否则会失败。凭证存在本地 state 目录，注意别泄露。",
+      "postInstallNotes": "需要按 README 分别配置微信（扫码登录）、QQ（AppID/Secret）、飞书（AppID/Secret），并重启 dsh 生效。",
+      "notes": "微信渠道使用非官方模拟协议，存在风控风险，建议低频使用。"
+    },
+    "summaryZh": "dsh-msg-hub 是一个把微信、QQ、飞书接入 DeepSeek Harness 的消息桥插件，支持主动推送和远程监控。",
+    "usage": {
+      "prompt_tokens": 3997,
+      "completion_tokens": 354,
+      "total_tokens": 4351,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3485
+    }
+  }
+}

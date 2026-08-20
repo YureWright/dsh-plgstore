@@ -1,0 +1,34 @@
+{
+  "id": "@vanducng/oh-my-dsh",
+  "analyzedAt": "2026-08-20T05:39:47.475Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 依赖大量 @deepseek-ai/dsh-* 核心包，README 描述为基于 DeepSeek Harness 的 TUI 编码代理，且支持挂载 DSH 插件，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@vanducng/oh-my-dsh",
+      "evidence": "npm install --global @vanducng/oh-my-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这是一个在终端里运行的 AI 编程助手，基于 DeepSeek Harness 构建。你可以通过它用自然语言让 AI 帮你操作文件、运行命令、管理代码项目。它提供了图形化的终端界面，支持登录 DeepSeek API、自定义主题、管理技能和 MCP 服务器等。",
+      "level": "ok",
+      "risks": "它会读取你的项目文件和用户目录下的配置文件（如 .dsh/skills、.dsh/mcp.json），并可能执行 AI 生成的命令（默认权限为 trusted-local，即完全访问）。你的 API 密钥会存储在本地凭据文件中，但不会在命令行中明文显示。",
+      "postInstallNotes": "安装后需要运行 /login 登录 DeepSeek API 密钥，或者设置 DEEPSEEK_API_KEY 环境变量。也可以根据需要设置 OMDSH_MODEL、OMDSH_PROVIDER 等环境变量来指定模型和提供商。",
+      "notes": "无"
+    },
+    "summaryZh": "一个基于 DeepSeek Harness 的终端 AI 编程助手，提供交互式界面和丰富的自定义功能。",
+    "usage": {
+      "prompt_tokens": 3266,
+      "completion_tokens": 387,
+      "total_tokens": 3653,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2754
+    }
+  }
+}

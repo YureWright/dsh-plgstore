@@ -1,0 +1,34 @@
+{
+  "id": "dsh-shareone-plugin",
+  "analyzedAt": "2026-08-20T05:38:28.676Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-shareone-plugin",
+      "evidence": "dsh plugin --profile web add dsh-shareone-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 AI 助手把生成的网页、文档或文字一键发布成 ShareOne 分享链接，还能设置密码、水印、自定义短链接，甚至管理评论。适合需要快速分享 AI 生成内容的用户。",
+      "level": "ok",
+      "risks": "插件会读取你指定的本地文件并上传到 ShareOne 服务器（默认 https://shareone.vip），所以不要发布敏感信息。它还会在 DSH 密钥管理中保存你的 ShareOne API Key，但这是正常操作。",
+      "postInstallNotes": "首次使用需要配置 ShareOne API Key：登录 shareone.vip，在设置页复制 API Key，然后在 DSH 密钥管理中新增或更新密钥，名称设为 SHAREONE_API_KEY。",
+      "notes": "无"
+    },
+    "summaryZh": "ShareOne 插件，让 AI 助手把内容一键发布成可分享的链接，支持密码、水印和评论管理。",
+    "usage": {
+      "prompt_tokens": 3307,
+      "completion_tokens": 348,
+      "total_tokens": 3655,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2795
+    }
+  }
+}
