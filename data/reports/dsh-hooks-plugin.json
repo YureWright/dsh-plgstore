@@ -1,0 +1,34 @@
+{
+  "id": "dsh-hooks-plugin",
+  "analyzedAt": "2026-08-21T05:39:20.246Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-hooks-plugin",
+      "evidence": "dsh plugin --profile web add dsh-hooks-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上了类似 Claude Code 的 hooks 功能：你可以在智能体或工具运行的不同阶段（比如用工具前、用工具后、会话开始等）自动执行一些 shell 命令。配置写在 .dsh/hooks.json 文件里，支持全局、预设、项目等多层配置，还能热重载，改完配置不用重启。它还能在界面上显示一个浮动控制台，查看 hooks 的运行记录。",
+      "level": "ok",
+      "risks": "它会读取和写入你用户目录下的 .dsh 文件夹（比如日志和配置），还会执行你在 hooks 配置里写的 shell 命令——这些命令是你自己配置的，但要注意别把敏感信息写进配置。另外，它可能会向你在配置里指定的 HTTP 地址发送数据（如果你用了 http 类型的 hook）。",
+      "postInstallNotes": "安装后，你需要在项目根目录或全局创建 .dsh/hooks.json 配置文件，按 README 里的格式写 hook 规则。装完可以先用 skill dsh-hooks-authoring 查看作者指南。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Claude Code 风格的 hooks，可在智能体/工具生命周期事件上运行 shell 命令。",
+    "usage": {
+      "prompt_tokens": 4572,
+      "completion_tokens": 417,
+      "total_tokens": 4989,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4060
+    }
+  }
+}

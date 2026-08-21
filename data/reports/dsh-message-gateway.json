@@ -1,0 +1,34 @@
+{
+  "id": "dsh-message-gateway",
+  "analyzedAt": "2026-08-21T05:39:42.103Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-message-gateway",
+      "evidence": "从 npm 安装（通用插件，任何 DSH 用户可直接使用）dsh plugin --profile web add dsh-message-gateway"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 网页版加一个“消息平台”入口，让你能在一个页面里管理 QQ、微信、企业微信、Telegram、Discord、WhatsApp、邮件、Webhook 等各种聊天工具的连接。你可以填上各平台的密钥或 Token，保存后就能测试连接，还能让机器人常驻在线，别人在微信或 Telegram 上给你的机器人发消息，它就能自动回复，回复内容还能流式输出。",
+      "level": "ok",
+      "risks": "它会把你填的各平台凭据（比如机器人 Token、密码）明文保存在你电脑的 ~/.dsh/gateway.json 文件里（权限 600，只有你能读）。它会连接外部服务器（比如 Telegram、Discord 的 API），所以这些平台可能会看到你发的消息。它还会在本地开一些网络端口接收回调，但只监听本地。没发现其他明显风险。",
+      "postInstallNotes": "装完后需要重启 dsh web，然后在侧边栏点“消息平台”按钮，按提示填各平台的凭据并保存。企业微信智能机器人需要填 botId 和 secret，其他平台按各自要求配置回调 URL。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页版的消息平台网关插件，让你在一个界面里管理 QQ、微信、Telegram、Discord 等聊天工具的连接，并支持机器人自动回复。",
+    "usage": {
+      "prompt_tokens": 3843,
+      "completion_tokens": 460,
+      "total_tokens": 4303,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3331
+    }
+  }
+}

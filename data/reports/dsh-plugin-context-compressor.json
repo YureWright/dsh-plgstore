@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-context-compressor",
+  "analyzedAt": "2026-08-21T05:40:19.033Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-context-compressor",
+      "evidence": "dsh plugin --profile your-profile add dsh-plugin-context-compressor"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 学会压缩长对话，自动保留重要信息（比如决定、错误、文件路径、用户偏好），去掉重复内容和啰嗦的输出，并生成结构化的摘要，方便以后回顾。简单说，就是帮你把超长的聊天记录变短，但关键信息不丢。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是教模型怎么总结对话，不会碰你电脑上的文件，也不会把数据发给别人。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个用于 DeepSeek Harness 的上下文压缩插件，能智能总结长对话，保留关键信息。",
+    "usage": {
+      "prompt_tokens": 1525,
+      "completion_tokens": 279,
+      "total_tokens": 1804,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1013
+    }
+  }
+}

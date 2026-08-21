@@ -1,0 +1,34 @@
+{
+  "id": "dsh-blueprint",
+  "analyzedAt": "2026-08-21T05:38:50.154Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-blueprint",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-blueprint"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页客户端加了一个“蓝图”标签页。它能显示你的 Harness 实际启动时用的配置（不是文件里写的，而是真正运行时的），告诉你哪里有问题，比如某个插件配置了但没运行、在等一个不存在的服务、依赖被禁用等。它还能在应用一个覆盖配置之前先检查一下，避免把 Harness 搞坏。它会把修改前的文件备份起来，方便回滚。",
+      "level": "ok",
+      "risks": "它会在你的 Harness 配置目录下创建 .dsh-blueprint/backups/ 文件夹来存备份。它只读取本机回环地址的 GET 请求，不会把数据发给外部服务器。它会在浏览器里显示配置信息，但会隐藏像 API 密钥这样的敏感值。",
+      "postInstallNotes": "安装后需要启动 web profile（运行 npx @deepseek-ai/dsh web），然后在对话中打开 Blueprint 标签页。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页客户端添加一个蓝图标签页，用于查看实际启动配置、检查错误并在应用前验证覆盖配置。",
+    "usage": {
+      "prompt_tokens": 3337,
+      "completion_tokens": 402,
+      "total_tokens": 3739,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2825
+    }
+  }
+}

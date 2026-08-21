@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-quote-reply",
+  "analyzedAt": "2026-08-21T05:40:11.470Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 及多个 @deepseek-ai/dsh-client-* 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-quote-reply",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在对话中选中文字（划词），然后可以引用到输入框，或者在新窗口里回复。简单说就是方便你引用之前说的话。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要操作对话界面，不碰系统文件或隐私。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件：在对话中划词并引用到输入框或新窗口回复。",
+    "usage": {
+      "prompt_tokens": 1661,
+      "completion_tokens": 242,
+      "total_tokens": 1903,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1149
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-atuin",
+  "analyzedAt": "2026-08-21T05:39:03.872Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-atuin",
+      "evidence": "dsh plugin --profile web add dsh-atuin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把你在 DeepSeek Harness 网页界面里输入的每个提示词自动记录到 atuin 的 shell 历史里，这样你就可以用 atuin 搜索或 Ctrl-R 快速找回之前输入过的内容。它只记录你自己输入的提示词，不会记录回复、工具调用或文件内容。",
+      "level": "ok",
+      "risks": "它会把你的提示词写入本地的 atuin 数据库（~/.local/share/atuin/history.db），这些数据只存在你电脑上，不会上传到外部服务器。如果你输入了敏感信息（比如密码），可能会被记录，但你可以用 deny 配置来过滤。",
+      "postInstallNotes": "需要确保 atuin 守护进程正在运行（标准 atuin 安装即可）。如果 atuin 未安装或守护进程未运行，插件会静默跳过，不影响正常使用。",
+      "notes": "无"
+    },
+    "summaryZh": "将 DeepSeek Harness 的提示词记录到 atuin shell 历史的插件。",
+    "usage": {
+      "prompt_tokens": 2113,
+      "completion_tokens": 348,
+      "total_tokens": 2461,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1601
+    }
+  }
+}

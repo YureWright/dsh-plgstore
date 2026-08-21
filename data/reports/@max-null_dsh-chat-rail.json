@@ -1,0 +1,34 @@
+{
+  "id": "@max-null/dsh-chat-rail",
+  "analyzedAt": "2026-08-21T05:39:20.084Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@max-null/dsh-chat-rail",
+      "evidence": "dsh plugin --profile <name> add @max-null/dsh-chat-rail"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的聊天界面加了一条右侧竖排的导航条。每条用户消息对应一个小圆点，你滚动聊天记录时，高亮点会跟着走并保持在中间。鼠标悬停时，导航条会像画卷一样展开，显示消息的编号、时间和预览，点击就能跳到那条消息。它还能和另一个叫 better-sidebar 的插件配合，自动避让不遮挡。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取聊天记录和界面状态，不碰其他文件，也不连外部服务器。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "画卷式消息导航栏，右侧竖条悬停展开，scroll-spy 高亮居中，点击跳转历史消息，与 better-sidebar 深度兼容。",
+    "usage": {
+      "prompt_tokens": 3127,
+      "completion_tokens": 334,
+      "total_tokens": 3461,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2615
+    }
+  }
+}

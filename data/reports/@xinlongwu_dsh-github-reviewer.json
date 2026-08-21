@@ -1,0 +1,34 @@
+{
+  "id": "@xinlongwu/dsh-github-reviewer",
+  "analyzedAt": "2026-08-21T05:40:27.496Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 明确说明是 DeepSeek Harness 插件，且提供了通过 cordis.patch.yml 挂载的安装方式。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@xinlongwu/dsh-github-reviewer",
+      "evidence": "npm install @xinlongwu/dsh-github-reviewer"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 自动帮你审查 GitHub 上的 Pull Request。它会盯着你指定的仓库，一旦有新的 PR 或者 PR 有更新，就自动用 AI 生成评审意见，发到 PR 的评论区。你还可以在 PR 下面发 /bot 命令跟它对话，它会记住之前的讨论，继续回答。",
+      "level": "ok",
+      "risks": "它需要访问你的 GitHub 仓库，需要你配置 GitHub App 或个人访问令牌，这意味着它有权读取和评论你的 PR。它还会在本地启动一个 GitHub MCP 服务器，但不会上传你的代码到外部服务器（除了 GitHub 本身）。",
+      "postInstallNotes": "需要在 DeepSeek Harness 的 profile 配置文件中（cordis.patch.yml）挂载这个插件，并配置 GitHub 认证信息（GitHub App 或 PAT）、要监控的仓库等。具体步骤见文档 docs/deploy.md。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DeepSeek Harness 插件，自动对 GitHub 仓库的 Pull Request 进行 AI 评审，并支持通过 /bot 命令对话。",
+    "usage": {
+      "prompt_tokens": 3211,
+      "completion_tokens": 399,
+      "total_tokens": 3610,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2699
+    }
+  }
+}

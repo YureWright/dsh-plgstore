@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-pi-bridge",
+  "analyzedAt": "2026-08-21T05:40:18.301Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-pi-bridge",
+      "evidence": "dsh plugin --profile your-profile add dsh-plugin-pi-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 Pi Agent 的技能和配置直接搬到 DeepSeek Harness 里，不用手动迁移。它会读取 Pi 的技能文件，然后自动注入到 DSH 的系统提示词中，让 DSH 能用上这些技能。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要读取 Pi 的技能文件，但具体路径和权限未说明，可能涉及读取本地文件。",
+      "postInstallNotes": "无。默认开箱即用，可选配置 enableSkills 和 maxSkills 来调整技能启用数量和上限。",
+      "notes": "无"
+    },
+    "summaryZh": "将 Pi Agent 的技能和配置桥接到 DeepSeek Harness，实现零迁移集成。",
+    "usage": {
+      "prompt_tokens": 1634,
+      "completion_tokens": 285,
+      "total_tokens": 1919,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1122
+    }
+  }
+}

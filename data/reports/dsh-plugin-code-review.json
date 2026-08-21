@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-code-review",
+  "analyzedAt": "2026-08-21T05:40:13.695Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-code-review",
+      "evidence": "dsh plugin --profile your-profile add dsh-plugin-code-review"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加了一个代码审查技能，让 AI 能系统地检查代码中的错误、安全问题、性能问题、代码风格和测试覆盖。你只要让它审查代码或 diff，它就会按格式输出问题列表。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是教 AI 如何审查代码，不会主动访问你的文件或连接外部服务器。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供结构化代码审查技能，覆盖正确性、安全、性能、风格和测试。",
+    "usage": {
+      "prompt_tokens": 1593,
+      "completion_tokens": 261,
+      "total_tokens": 1854,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1081
+    }
+  }
+}

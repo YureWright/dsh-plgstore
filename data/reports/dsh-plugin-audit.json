@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-audit",
+  "analyzedAt": "2026-08-21T05:40:01.182Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，依赖 cordis 和 schemastery，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-audit",
+      "evidence": "dsh plugin --profile web add dsh-plugin-audit"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的安全审计工具。它能在你安装第三方插件之前，先扫描插件的代码，告诉你这个插件会碰你电脑上的哪些文件、运行哪些程序、连接哪些网络地址、读取哪些环境变量，并给出风险提示。它还会在运行时监控，当插件要访问敏感信息或向未知服务器发送数据时，会弹出确认提示，让你决定是否允许。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件本身是只读扫描，不联网，不收集数据，只在本地做分析。",
+      "postInstallNotes": "安装后需要重启对应的 profile 才能生效。默认配置下，静态审计功能可用，但运行时哨兵（sentinel）默认启用，可能需要根据你的需求调整 allowedHosts 列表，或者设置 sentinelEnabled 为 false 来关闭运行时监控。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 安全审计插件：静态分析第三方插件的权限和风险，并提供运行时监控，防止敏感数据泄露。",
+    "usage": {
+      "prompt_tokens": 3533,
+      "completion_tokens": 360,
+      "total_tokens": 3893,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3021
+    }
+  }
+}

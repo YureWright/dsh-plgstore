@@ -1,0 +1,34 @@
+{
+  "id": "dsh-delegate-router",
+  "analyzedAt": "2026-08-21T05:38:31.579Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-delegate-router",
+      "evidence": "dsh plugin --profile web add dsh-delegate-router"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能自动帮你省钱：当 DeepSeek Harness 的主模型（比如 Pro）派发子任务时，它会自动判断任务轻重，把简单的任务（比如搜索、总结）交给便宜的 Flash 模型，复杂的任务（比如重构、调试）继续用 Pro。所有决定都会记录在侧边栏的“分派记录”面板里，你可以随时查看。你还可以自己设置规则，比如哪些关键词算简单任务、预算上限等。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你的配置文件（~/.dsh/dsh-delegate-router.json）和会话记录（~/.dsh/sessions）来计算节省，但这些都是本地文件，不会上传。",
+      "postInstallNotes": "装完后需要编辑 ~/.dsh/dsh-delegate-router.json 配置文件（可选），然后重启 DSH。",
+      "notes": "无"
+    },
+    "summaryZh": "自动将子任务路由到更便宜的模型（Flash/Pro），节省成本，支持自定义规则和手动覆盖。",
+    "usage": {
+      "prompt_tokens": 3041,
+      "completion_tokens": 355,
+      "total_tokens": 3396,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2529
+    }
+  }
+}

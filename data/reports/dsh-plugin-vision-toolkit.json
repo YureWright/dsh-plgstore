@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-vision-toolkit",
+  "analyzedAt": "2026-08-21T05:40:23.224Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-vision-toolkit",
+      "evidence": "dsh plugin --profile your-profile add dsh-plugin-vision-toolkit"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让只能处理文字的 AI 助手也能“看懂”图片。它提供几个命令行小工具：glance 可以描述图片、做 OCR 或回答关于图片的问题；ground 可以定位图片中某个元素的位置；detect 可以找出图片中所有同类元素；crop 可以裁剪图片的某个区域。AI 助手遇到图片时，会调用这些工具，把图片发给视觉 API（比如 DeepSeek VL 或 GPT-4V），然后得到文字描述，这样它就能理解图片内容了。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你指定的图片文件，并把图片内容发送到你配置的视觉 API 服务（默认可能是 DeepSeek 或 OpenAI 的服务器），所以如果你处理的是敏感图片，要注意这些图片会被发送到外部服务。另外，它需要你设置 API 密钥，密钥会以环境变量的形式存在你的电脑上。",
+      "postInstallNotes": "需要设置环境变量：VISION_API_KEY（或使用 DEEPSEEK_API_KEY 作为后备）、VISION_BASE_URL（可选，默认用 DeepSeek 的）、VISION_MODEL（可选，默认 deepseek-vl2）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供视觉能力的插件，让纯文本 AI 能通过命令行工具描述、定位、检测和裁剪图片。",
+    "usage": {
+      "prompt_tokens": 1996,
+      "completion_tokens": 441,
+      "total_tokens": 2437,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1484
+    }
+  }
+}

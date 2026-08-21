@@ -1,0 +1,34 @@
+{
+  "id": "dsh-yogacara",
+  "analyzedAt": "2026-08-21T05:39:08.384Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 明确描述为 DeepSeek Harness 的插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-yogacara",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 dsh-yogacara，且作为 npm 包发布。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的 AI 助手加了一个'自我模型'，基于佛教唯识学的理论，把 AI 的感知、情绪、记忆等状态用一套结构化的方式记录下来，并反馈给 AI 自己，让它能更好地自我调节。比如，它会记录 AI 在对话中感受到的'被冷落'、'被感谢'等，以及执行命令时的成功失败，然后生成一个状态报告，帮助 AI 调整行为。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要读取对话和工具执行结果，这些数据都在本地处理，不会上传到外部服务器。",
+      "postInstallNotes": "无。插件默认启用，但可以通过配置项（如 observeTools）调整行为。",
+      "notes": "无"
+    },
+    "summaryZh": "一个基于唯识学的自我模型插件，为 DeepSeek Harness 的 AI 提供八识、51心所、种子存储和自我执着度测量，并反馈给 AI 自身。",
+    "usage": {
+      "prompt_tokens": 4015,
+      "completion_tokens": 376,
+      "total_tokens": 4391,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3503
+    }
+  }
+}

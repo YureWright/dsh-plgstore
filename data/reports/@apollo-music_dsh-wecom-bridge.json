@@ -1,0 +1,34 @@
+{
+  "id": "@apollo-music/dsh-wecom-bridge",
+  "analyzedAt": "2026-08-21T05:39:26.892Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 依赖并 peerDependencies 声明了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，且代码明显调用 DSH 接口，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@apollo-music/dsh-wecom-bridge",
+      "evidence": "README 中给出安装命令：dsh plugin --profile <profile> add @apollo-music/dsh-file-reader@0.2.1（虽为 file-reader，但同仓库包，且 package.json 名称明确）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给企业微信用的智能机器人桥接器，它能让 DeepSeek Harness 的 AI 助手接入企业微信，处理消息收发、文件下载、群成员匿名化、长消息分段等，还支持多轮对话和后台子任务。业务开发者可以基于它快速搭建企业微信 AI 机器人。",
+      "level": "caution",
+      "risks": "它会下载并解密企业微信回调中的附件，以 0600 权限保存到工作区目录，可能涉及用户上传的文件；会读取环境变量中的企业微信凭据（Bot ID 和 Secret），这些凭据可能被插件访问；会保存包含会话路由和用户可见答案的状态文件，需妥善保护。",
+      "postInstallNotes": "需要在 Cordis 配置中设置 workspace、agentPreset 等，并配置环境变量如 WECOM_AIBOT_BOT_ID、WECOM_AIBOT_SECRET 等；生产环境需设置 APOLLO_WECOM_REPLICA_COUNT=1。",
+      "notes": "该插件依赖 @deepseek-ai/cordis 等核心包，且构建过程会修补 SDK，但发布产物不包含裸导入，消费方无需运行 patch-package。注意当前版本 0.5.2 兼容 DSH 0.1.0-rc.8，与旧版 file-reader 不兼容。"
+    },
+    "summaryZh": "企业微信 AI 机器人桥接插件，让 DeepSeek Harness 接入企业微信，处理消息、附件和会话。",
+    "usage": {
+      "prompt_tokens": 4586,
+      "completion_tokens": 524,
+      "total_tokens": 5110,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4074
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "capto-dsh-plugin",
+  "analyzedAt": "2026-08-21T05:39:46.418Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 且依赖 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "capto-dsh-plugin",
+      "evidence": "dsh plugin --profile web add capto-dsh-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的 AI 助手能直接控制你电脑上的 Capto 屏幕录制软件。它提供了一组工具，比如查看录制状态、开始/停止录制、截图、调整设置等，全程在本地运行，不会上传数据到云端。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只与本地 Capto 程序通信，不会上传数据，但会调用系统命令来操作屏幕录制，可能录制到屏幕上的敏感信息，请确保在合适的环境下使用。",
+      "postInstallNotes": "需要先安装 Capto 桌面软件（Windows 10+），并确保其 CLI 在 PATH 中。安装插件后，需要在配置文件中启用它（如 cordis.patch.yml），然后重启 dsh 服务。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Capto 屏幕录制控制工具，支持录制、截图、配置管理，纯本地运行。",
+    "usage": {
+      "prompt_tokens": 3381,
+      "completion_tokens": 346,
+      "total_tokens": 3727,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2869
+    }
+  }
+}

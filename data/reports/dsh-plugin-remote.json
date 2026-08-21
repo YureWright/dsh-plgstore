@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-remote",
+  "analyzedAt": "2026-08-21T05:39:41.190Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 给出了 dsh plugin add 安装命令，且描述为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-remote",
+      "evidence": "dsh plugin --profile web add dsh-plugin-remote && dsh web"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你能从外网安全地访问家里的 DeepSeek Harness 网页界面。它自带登录验证和反向代理，还支持把 Windows 桌面投射到网页上，方便远程操作。",
+      "level": "caution",
+      "risks": "它会启动一个本地网关服务，监听网络端口，可能暴露给外部网络。它会保存登录凭据和访问日志到本地文件。远程桌面功能会捕获你的 Windows 屏幕内容，并可能通过网络传输，需要确保只有授权用户能访问。",
+      "postInstallNotes": "安装后，首次访问 http://<服务器IP>:4080 创建管理员账号。可能需要配置 TURN 服务器以应对复杂网络环境。",
+      "notes": "该插件包含原生二进制文件（Windows 可执行程序），来源需注意。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供远程访问网关和零安装的 Windows 桌面投射功能。",
+    "usage": {
+      "prompt_tokens": 2662,
+      "completion_tokens": 327,
+      "total_tokens": 2989,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2150
+    }
+  }
+}

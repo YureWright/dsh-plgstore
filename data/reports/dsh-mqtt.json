@@ -1,0 +1,34 @@
+{
+  "id": "dsh-mqtt",
+  "analyzedAt": "2026-08-21T05:40:29.364Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mqtt@0.1.3",
+      "evidence": "From npm: npx @deepseek-ai/dsh plugin --profile web add dsh-mqtt@0.1.3"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness（DSH）变成一个可以通过 MQTT 协议远程控制的智能体工作节点。你可以通过 MQTT 消息提交任务、查看执行进度、中途调整或取消任务，并获取最终结果。它适合在 CI、云服务或不同网络之间异步调用 DSH，即使工作节点在防火墙后面也能工作。它还提供了一个管理界面，可以在 DSH 设置中查看。",
+      "level": "ok",
+      "risks": "插件需要连接你配置的 MQTT 代理服务器，并可能将任务执行的事件和结果发送到该代理。它默认只暴露安全事件，但你可以选择暴露完整事件。它还会在本地存储状态文件（如 dsh-mqtt-state.json），并可能访问你配置的工作区路径。需要确保 MQTT 代理的访问控制，避免敏感信息泄露。",
+      "postInstallNotes": "需要编辑 ~/.dsh/profiles/web/cordis.patch.yml 配置文件，设置 MQTT 代理地址、工作区路径等。还需要设置 DEEPSEEK_API_KEY 环境变量。如果从 Git 安装，可能需要处理 pnpm 的 allowBuilds 设置。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-mqtt 是一个 DSH 插件，通过 MQTT 协议将 DSH 变成可远程控制的智能体工作节点，支持任务提交、事件监控、控制操作，并带有管理界面。",
+    "usage": {
+      "prompt_tokens": 4037,
+      "completion_tokens": 473,
+      "total_tokens": 4510,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3525
+    }
+  }
+}

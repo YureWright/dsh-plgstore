@@ -1,0 +1,34 @@
+{
+  "id": "dsh-live-wallpaper",
+  "analyzedAt": "2026-08-21T05:39:00.632Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-live-wallpaper",
+      "evidence": "dsh plugin --profile web add dsh-live-wallpaper"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 网页界面添加动态壁纸和主题中心。它自带四款离线动态壁纸（极光、星云等），也可以把视频、图片、网页甚至 ShaderToy 标签页变成壁纸。还能调整壁纸的暗度、模糊、透明度，以及换主题颜色、按钮样式、字体等。所有设置都保存在浏览器本地，不依赖外部服务。",
+      "level": "ok",
+      "risks": "插件会请求浏览器屏幕录制权限（用于捕获 ShaderToy 标签页），但需要你手动确认。它会把配置存在浏览器 localStorage 里，不会上传到服务器。远程网页壁纸在沙箱 iframe 中运行，不会访问你的其他数据。没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 DSH 或刷新页面，然后点击右下角的圆形壁纸按钮打开面板。首次使用 ShaderToy 捕获时，浏览器会询问屏幕录制权限，需要允许。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面提供动态壁纸和主题定制功能的插件，完全在浏览器端运行。",
+    "usage": {
+      "prompt_tokens": 3421,
+      "completion_tokens": 378,
+      "total_tokens": 3799,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2909
+    }
+  }
+}

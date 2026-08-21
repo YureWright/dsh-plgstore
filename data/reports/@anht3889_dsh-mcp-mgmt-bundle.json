@@ -1,0 +1,34 @@
+{
+  "id": "@anht3889/dsh-mcp-mgmt-bundle",
+  "analyzedAt": "2026-08-21T05:39:29.422Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@anht3889/dsh-mcp-mgmt-bundle@0.0.5",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add @anht3889/dsh-mcp-mgmt-bundle@0.0.5"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的网页设置界面里管理 MCP（模型上下文协议）服务器连接。你可以添加、编辑、启用或禁用 MCP 服务器，配置它们的传输方式（stdio 或 HTTP）、认证信息，还能查看连接日志和工具列表。它也支持 OAuth 认证，方便连接需要登录的服务。",
+      "level": "ok",
+      "risks": "它会读取和修改你电脑上 `~/.dsh/mcp/` 目录下的配置文件，包括服务器记录和密钥（如令牌、客户端密钥）。这些密钥以明文存储在 `secrets.yaml` 中，所以任何能访问你电脑的人都能看到。另外，如果你启用了 `trustSystemCertificates`，它会信任系统证书，可能扩大 TLS 信任范围。",
+      "postInstallNotes": "安装后需要重启 Web profile。如果使用 OAuth，可能需要设置 `publicOrigin` 配置。",
+      "notes": "无"
+    },
+    "summaryZh": "一个用于管理 DeepSeek Harness 中 MCP 服务器连接的插件，提供图形化设置界面和 OAuth 支持。",
+    "usage": {
+      "prompt_tokens": 3073,
+      "completion_tokens": 412,
+      "total_tokens": 3485,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2561
+    }
+  }
+}

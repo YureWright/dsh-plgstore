@@ -1,0 +1,34 @@
+{
+  "id": "dsh-milestone",
+  "analyzedAt": "2026-08-21T05:38:27.548Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及 dsh-client-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-milestone",
+      "evidence": "dsh plugin --profile demo add dsh-milestone"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的聊天界面加一条像 Git 提交图一样的圆点时间线，每个圆点代表你的一次提问。鼠标悬停能看这条提问的摘要、时间、用了哪个模型、花了多少 token，点击圆点就能瞬间跳回那条消息。还支持搜索、收藏书签、键盘导航、跨会话搜索等，长对话找东西不用再疯狂滚轮了。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取会话数据并在界面上显示，书签存在浏览器本地存储，不会上传到外部服务器。",
+      "postInstallNotes": "无。装完启动 Web UI 打开多轮对话即可看到效果。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 的会话里程碑导航条，像 Git 提交图一样用圆点时间线定位和跳转到任意提问。",
+    "usage": {
+      "prompt_tokens": 3905,
+      "completion_tokens": 343,
+      "total_tokens": 4248,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3393
+    }
+  }
+}

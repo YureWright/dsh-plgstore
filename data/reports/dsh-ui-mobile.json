@@ -1,0 +1,34 @@
+{
+  "id": "dsh-ui-mobile",
+  "analyzedAt": "2026-08-21T05:40:37.797Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ui-mobile",
+      "evidence": "dsh plugin --profile <profile> add dsh-ui-mobile"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 在手机上更好用：侧边栏可以滑出来，输入框固定在底部不被键盘挡住，还能把网页添加到主屏幕变成像 App 一样，任务完成时会发通知提醒你。桌面和平板上的样子不变。",
+      "level": "ok",
+      "risks": "没发现明显风险。它需要配置 Web Push 的密钥和存储路径，这些是标准配置，不会乱碰你的文件。",
+      "postInstallNotes": "需要设置环境变量 DSH_WEB_PUSH_VAPID_SUBJECT、DSH_WEB_PUSH_VAPID_PUBLIC_KEY、DSH_WEB_PUSH_VAPID_PRIVATE_KEY，以及可选的 DSH_WEB_PUSH_VAPID_PATH 和 DSH_WEB_PUSH_STORE_PATH，用于任务完成通知功能。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供移动端优化界面、PWA 安装和任务完成通知的插件。",
+    "usage": {
+      "prompt_tokens": 3475,
+      "completion_tokens": 359,
+      "total_tokens": 3834,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2963
+    }
+  }
+}

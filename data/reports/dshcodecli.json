@@ -1,0 +1,34 @@
+{
+  "id": "dshcodecli",
+  "analyzedAt": "2026-08-21T05:40:27.696Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了多个 @deepseek-ai/dsh-* 核心包，且 README 描述了作为 DSH 插件（profile）的安装与使用方式。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dshcodecli",
+      "evidence": "README 未明确给出 dsh plugin add 命令，但 package.json 提供了 npm 包名，且描述为 DeepSeek Harness 的终端 UI profile。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的终端界面插件，让你在命令行里用键盘操作 AI 助手，可以查看对话、审批操作、切换模型、恢复会话等，适合喜欢终端操作的用户。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要在你当前目录下工作，会读取和写入文件（比如保存会话记录），但不会偷偷上传数据。",
+      "postInstallNotes": "需要先安装 DeepSeek Harness 核心，并可能需要配置模型 API 密钥（环境变量或 .env 文件）。",
+      "notes": "无"
+    },
+    "summaryZh": "一个键盘优先的终端界面插件，为 DeepSeek Harness 提供交互式 TUI 体验。",
+    "usage": {
+      "prompt_tokens": 3192,
+      "completion_tokens": 320,
+      "total_tokens": 3512,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2680
+    }
+  }
+}

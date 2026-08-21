@@ -1,0 +1,34 @@
+{
+  "id": "dsh-layered-memory",
+  "analyzedAt": "2026-08-21T05:39:25.653Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出 dsh plugin add 安装命令，确认为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-layered-memory",
+      "evidence": "dsh plugin --profile web add dsh-layered-memory"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的记忆增强工具。它会在后台自动把对话内容分层整理成记忆：先保存原始对话，再提炼出关键事实，然后整合成场景，最后蒸馏出你的核心偏好和工作方法。以后每次对话前，它会自动把相关的记忆找出来，提前塞给 AI 模型，让 AI 能记住你们聊过的内容，不用每次重复解释。它还提供了记忆搜索工具，AI 可以主动查询。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和写入你的对话数据，存储在 ~/.dsh/memory/ 目录下，这些数据只保存在本地。如果开启本地嵌入模型，会下载模型文件到本地，但数据不会上传。如果配置远程嵌入服务，可能会把对话内容发送到你指定的服务，但这是你主动配置的。",
+      "postInstallNotes": "安装后需要重启 DeepSeek Harness。重启后检查 ~/.dsh/memory/ 下是否出现 conversations/ records/ scenes/ 目录和 memory.db，出现即表示插件生效。设置页会出现'记忆'页面，输入栏会出现档位 pill。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 分层蒸馏记忆插件，自动捕获对话并分层提炼记忆，在模型步骤前自动召回注入，提升 AI 的长期记忆能力。",
+    "usage": {
+      "prompt_tokens": 5781,
+      "completion_tokens": 441,
+      "total_tokens": 6222,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5269
+    }
+  }
+}

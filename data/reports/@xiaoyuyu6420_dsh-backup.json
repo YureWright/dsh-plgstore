@@ -1,0 +1,34 @@
+{
+  "id": "@xiaoyuyu6420/dsh-backup",
+  "analyzedAt": "2026-08-21T05:38:52.168Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@xiaoyuyu6420/dsh-backup",
+      "evidence": "dsh plugin --profile web add @xiaoyuyu6420/dsh-backup"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness (DSH) 用的备份工具。它能把你的 DSH 数据（比如会话、设置、技能、插件配置）打包备份，也能恢复。你可以手动备份，也可以设置定时自动备份。备份文件会带校验和，能检查有没有损坏。它还会把密码、令牌之类的敏感信息从备份里去掉，单独存在本地一个保险箱文件夹里。你还可以把备份同步到自己的 GitHub 私有仓库，换新电脑时就能拉下来恢复。它还有个网页面板，可以点鼠标操作。",
+      "level": "ok",
+      "risks": "它会读写你电脑上的 ~/.dsh 文件夹（你的 DSH 数据），备份文件默认放在桌面上的 dsh-backups 文件夹。如果你配置了 GitHub 同步，备份会传到你的 GitHub 仓库（建议用私有仓库，因为备份里包含你的会话内容）。它处理凭据时会在本地创建 vault 文件夹，权限设为 700/600，明文不会离开电脑。恢复时会动你的 ~/.dsh，但会先做快照，留个后路。整体看风险不大。",
+      "postInstallNotes": "装完重启 dsh web。日常用直接运行 /backup 就行。想定时备份就运行 /backup auto 12（每12小时）。想同步到 GitHub 需要在插件配置里设置 githubRepo，并设置 DSH_BACKUP_GITHUB_TOKEN 或 GITHUB_TOKEN 环境变量。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 备份插件：一键备份/恢复 ~/.dsh，支持定时自动备份、校验、凭据脱敏和 GitHub 云同步。",
+    "usage": {
+      "prompt_tokens": 3708,
+      "completion_tokens": 512,
+      "total_tokens": 4220,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3196
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-minecraft",
+  "analyzedAt": "2026-08-21T05:39:11.882Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-minecraft",
+      "evidence": "dsh plugin --profile <name> add dsh-minecraft"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的 AI 代理能玩 Minecraft。它通过一个叫 Mineflayer 的机器人连接到真实的 Minecraft 服务器，然后提供一系列工具（比如观察、移动、挖矿、合成等），让 AI 能像玩家一样在游戏里行动。它还能实时显示游戏画面，并录制视频供评估。",
+      "level": "ok",
+      "risks": "插件会连接到你指定的 Minecraft 服务器（默认本地），并可能启动一个本地网页服务（端口 3017）供你观看游戏画面。它可能会在本地构建原生模块（canvas），需要运行 npm rebuild，但这是自动的。它不会访问你的个人文件，但会读取游戏世界数据。",
+      "postInstallNotes": "需要准备一个 Minecraft Java 1.20.4 服务器（离线模式），并确保 Java 17-21 可用。可选设置环境变量如 MC_RECORD_DIR、MC_VIEW 等来控制录制和显示。",
+      "notes": "无"
+    },
+    "summaryZh": "让 AI 代理通过 Mineflayer 机器人玩 Minecraft，提供观察、移动、挖矿、合成等工具，并支持实时观看和录制视频。",
+    "usage": {
+      "prompt_tokens": 3492,
+      "completion_tokens": 400,
+      "total_tokens": 3892,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2980
+    }
+  }
+}

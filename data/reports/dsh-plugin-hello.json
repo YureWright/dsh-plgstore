@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-hello",
+  "analyzedAt": "2026-08-21T05:40:03.684Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/you/dsh-plugin-hello.git",
+      "evidence": "README 中安装命令为 `dsh plugin --profile demo add github:you/dsh-plugin-hello`，但未提供完整 git URL，故使用占位符。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DeepSeek Harness 的示例插件，它给模型增加了一个叫 hello 的工具，模型可以调用它来向指定的人打招呼。你可以配置打招呼的用语，默认是 Hello。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只注册一个工具，不碰用户文件或连外部服务器。",
+      "postInstallNotes": "安装后需要运行 `dsh --profile demo --dump-config` 验证配置，然后启动 `dsh --profile demo`。如果使用 pnpm 10+，可能需要允许构建脚本。",
+      "notes": "无"
+    },
+    "summaryZh": "一个最小的 DeepSeek Harness 社区插件，注册一个可调用的 hello 工具，用于向指定的人打招呼。",
+    "usage": {
+      "prompt_tokens": 2026,
+      "completion_tokens": 339,
+      "total_tokens": 2365,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1514
+    }
+  }
+}

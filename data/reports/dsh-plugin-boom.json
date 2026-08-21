@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-boom",
+  "analyzedAt": "2026-08-21T05:39:54.749Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-boom",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 dsh-plugin-boom，且存在 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫 dsh-plugin-boom，看名字像是要'炸掉'你的 DeepSeek Harness，但实际是一个工具模板，可能提供一些有趣或恶搞的功能。具体能做什么，README 里没细说，只提到参考了 koishi-plugin-boom。",
+      "level": "caution",
+      "risks": "因为 README 信息很少，不清楚它会碰哪些文件或连哪些服务器。但作为插件，它可能会修改你的 DSH 配置（比如 cordis.patch.yml），建议安装前多了解。",
+      "postInstallNotes": "无",
+      "notes": "README 过于简短，功能不明确，建议谨慎安装。"
+    },
+    "summaryZh": "一个功能不明确的 DSH 插件模板，可能带有恶搞性质。",
+    "usage": {
+      "prompt_tokens": 1276,
+      "completion_tokens": 302,
+      "total_tokens": 1578,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 764
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-dracula-theme",
+  "analyzedAt": "2026-08-21T05:38:53.396Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-dracula-theme",
+      "evidence": "dsh plugin --profile web add dsh-dracula-theme"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的 Dracula 主题插件，安装后可以在设置里一键切换成 Dracula 或 Dracula Soft 皮肤，让界面变成经典的暗色紫调风格。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是改变界面外观，不碰用户数据，也不连外部服务器。",
+      "postInstallNotes": "安装后需要重启对应的 profile，然后在设置 → 通用 → Dracula theme 里选择皮肤。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Dracula 暗色主题（含 Soft 变体），安装后可在设置中一键切换。",
+    "usage": {
+      "prompt_tokens": 2769,
+      "completion_tokens": 285,
+      "total_tokens": 3054,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2257
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@fslong/dsh-yishi",
+  "analyzedAt": "2026-08-21T05:39:45.109Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@fslong/dsh-yishi",
+      "evidence": "dsh plugin --profile web add @fslong/dsh-yishi"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 AI 助手装上类似人的记忆系统，能记住对话内容，按重要性和时间遗忘，还能自动联想相关记忆，生成记忆全景图。",
+      "level": "ok",
+      "risks": "它会往你电脑的 ~/.local/share/忆时 目录写入数据，并下载一个约 400MB 的模型文件。这些数据只存在本地，不会上传到外部服务器。",
+      "postInstallNotes": "安装后需重启 DSH 生效。首次使用会自动下载嵌入模型，若未成功需手动运行 python3 ~/.local/share/忆时/scripts/models-install.py。",
+      "notes": "无"
+    },
+    "summaryZh": "为 AI Agent 提供类人记忆系统的 DSH 插件，支持混合检索、遗忘曲线、情绪锚定等功能。",
+    "usage": {
+      "prompt_tokens": 2024,
+      "completion_tokens": 308,
+      "total_tokens": 2332,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1512
+    }
+  }
+}

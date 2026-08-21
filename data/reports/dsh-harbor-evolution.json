@@ -1,0 +1,34 @@
+{
+  "id": "dsh-harbor-evolution",
+  "analyzedAt": "2026-08-21T05:38:43.207Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-skill 等核心包，README 提供了安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-harbor-evolution",
+      "evidence": "npx --yes dsh-harbor-evolution@latest setup --project-root \"$PWD\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件帮你用 Harbor 工具安全地评估和进化 AI 智能体。它提供八个严格的 Harbor 工具、一个网页控制台（可以查看评估任务、对比结果等），还有一个叫 evolve-agent-with-harbor 的技能，能自动帮你初始化评估环境、验证数据、运行评估、控制每次只改一个候选体，最后决定是否升级。安装时需要 Docker、Node.js 22+、pnpm 和 uv。",
+      "level": "ok",
+      "risks": "安装时会运行 setup 命令，需要 Docker 和 Python 环境，可能会在你的电脑上安装 Python 包和修改 DSH 配置文件。它会把项目根目录和 Harbor 可执行文件路径存到配置里，但不会部署或修改你的正式智能体。网页界面是只读的，不会自动启动评估。",
+      "postInstallNotes": "安装后需要重启 DSH 进程，然后调用 /evolve-agent-with-harbor 技能来初始化评估循环。",
+      "notes": "无"
+    },
+    "summaryZh": "一个用于安全评估和进化 AI 智能体的 DSH 插件，提供 Harbor 工具和网页控制台。",
+    "usage": {
+      "prompt_tokens": 2647,
+      "completion_tokens": 402,
+      "total_tokens": 3049,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2135
+    }
+  }
+}

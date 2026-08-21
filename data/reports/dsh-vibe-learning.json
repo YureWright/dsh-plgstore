@@ -1,0 +1,34 @@
+{
+  "id": "dsh-vibe-learning",
+  "analyzedAt": "2026-08-21T05:39:44.898Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vibe-learning",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 dsh-vibe-learning，且存在 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个用于 DeepSeek Harness 的插件，目前还在开发中（WIP）。它的功能是支持'Vibe Learning'，但具体能做什么还不清楚，因为代码里还没有实际的业务逻辑。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件目前没有实际功能，不会碰用户电脑上的敏感文件。",
+      "postInstallNotes": "无",
+      "notes": "该插件目前是 WIP，可能功能不完整。"
+    },
+    "summaryZh": "一个用于 DeepSeek Harness 的 Vibe Learning 插件，目前处于开发阶段。",
+    "usage": {
+      "prompt_tokens": 1578,
+      "completion_tokens": 278,
+      "total_tokens": 1856,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1066
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@goodandready/dsh-fal-image-gen",
+  "analyzedAt": "2026-08-21T05:39:05.006Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@goodandready/dsh-fal-image-gen",
+      "evidence": "dsh plugin --profile web add @goodandready/dsh-fal-image-gen"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能生成图片。你只要在对话里让模型画个图，它就会调用 FAL 或 OpenAI 兼容的图片生成服务，把生成的图片显示在对话里，并保存到工作目录。你可以选择让模型收到图片链接还是图片本身，还能配置各种参数，比如图片大小、格式、API 密钥等。",
+      "level": "ok",
+      "risks": "没发现明显风险。它需要你提供 API 密钥（比如 FAL 或 OpenAI 的），这些密钥会存在你的配置里。生成的图片会保存在你的电脑上（工作目录下的 generated/images 文件夹）。",
+      "postInstallNotes": "安装后需要重启 Web UI。然后需要配置 API 密钥：在设置里或 $DSH_HOME/.credentials.yaml 中设置 FAL_API_KEY（或自定义 provider 的密钥）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供图片生成功能，支持 FAL 和 OpenAI 兼容 API，图片内联显示并保存到本地。",
+    "usage": {
+      "prompt_tokens": 3409,
+      "completion_tokens": 381,
+      "total_tokens": 3790,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2897
+    }
+  }
+}

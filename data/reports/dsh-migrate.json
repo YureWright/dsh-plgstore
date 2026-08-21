@@ -1,0 +1,34 @@
+{
+  "id": "dsh-migrate",
+  "analyzedAt": "2026-08-21T05:38:38.665Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-tools 和 @deepseek-ai/dsh-home-paths，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-migrate",
+      "evidence": "dsh plugin --profile web add dsh-migrate"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 的配置迁移工具，可以把你的 DSH 配置（包括设置、预设、插件等）打包成一个文件，然后在新电脑上还原成新的 profile，全程有校验和自动回滚，防止出错。它不会覆盖你现有的配置，只会新建一个带 '-migrated' 后缀的 profile。",
+      "level": "caution",
+      "risks": "它会读取和写入你的 DSH 配置目录（~/.dsh），包括设置、预设和插件链接。导出时会扫描并脱敏凭据，但可能不完整，传输前需要检查 secretReport。导入时会执行归档中的代码（pnpm install 和插件），所以只能导入你信任的来源。如果 DSH web 暴露到局域网，可能被他人导入恶意归档。",
+      "postInstallNotes": "安装后，在设置页的「迁移」入口使用导出/导入向导，或通过 host 工具调用。导入后需要手动切换 profile 或重命名目录才能使用迁移后的环境。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 配置迁移工具，支持导出、打包、导入和回滚，用于在新电脑上还原 DSH 配置。",
+    "usage": {
+      "prompt_tokens": 5564,
+      "completion_tokens": 404,
+      "total_tokens": 5968,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5052
+    }
+  }
+}

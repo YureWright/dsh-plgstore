@@ -1,0 +1,34 @@
+{
+  "id": "@jiyr0119/dsh-service-console",
+  "analyzedAt": "2026-08-21T05:38:43.912Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@jiyr0119/dsh-service-console@latest",
+      "evidence": "dsh plugin --profile web add -w @jiyr0119/dsh-service-console@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 网页界面用的一个控制台，能帮你发现电脑上正在监听的端口，识别这些服务是不是当前对话或工作区启动的，还能安全地查看、停止或重启它们。比如你让模型启动了一个开发服务器，它就能在界面上显示出来，告诉你它占用了哪些端口、用什么命令启动的，以及是否安全操作。",
+      "level": "ok",
+      "risks": "它会扫描你电脑上所有监听的端口和进程信息，包括命令和目录，这些信息会显示在 DSH 界面上。但插件有保护机制：未知或系统关键进程是只读的，强制终止默认关闭，命令中的敏感信息会被打码。它不会自动清理或后台轮询，只在打开控制台时扫描一次。",
+      "postInstallNotes": "安装后需要刷新 DSH 网页界面，然后在对话头部会出现一个 🖥 SC 入口，点击即可打开控制台。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 本地开发服务控制台：发现监听端口，识别服务归属，安全查看/停止/重启。",
+    "usage": {
+      "prompt_tokens": 3162,
+      "completion_tokens": 402,
+      "total_tokens": 3564,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2650
+    }
+  }
+}

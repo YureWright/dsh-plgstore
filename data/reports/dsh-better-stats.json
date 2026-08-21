@@ -1,0 +1,34 @@
+{
+  "id": "dsh-better-stats",
+  "analyzedAt": "2026-08-21T05:39:40.701Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-better-stats",
+      "evidence": "cd ~/.dsh/profiles/web && pnpm add dsh-better-stats"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 网页版输入框下面加一条增强统计条，能显示你的 DeepSeek 余额、本次和会话花了多少钱（按官方价目算，还分高峰低谷时段）、每个模型各花了多少、实时计时、子代理合并统计、缓存命中率等，还能设置预算和余额告警，防止超支。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你的 DeepSeek API 余额（通过 host 端，key 不进入浏览器），并抓取官方价目表，但这些都是正常功能。",
+      "postInstallNotes": "安装后需在 profile 的 package.json 的 dsh.profile.bundles 数组里加一行 \"dsh-better-stats\"，然后重启 dsh web 并硬刷新浏览器。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 增强统计条：显示余额、成本、计时、子代理合并等，支持预算告警。",
+    "usage": {
+      "prompt_tokens": 4245,
+      "completion_tokens": 350,
+      "total_tokens": 4595,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3733
+    }
+  }
+}

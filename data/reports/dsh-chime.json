@@ -1,0 +1,34 @@
+{
+  "id": "dsh-chime",
+  "analyzedAt": "2026-08-21T05:39:11.915Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-chime",
+      "evidence": "dsh plugin --profile web add dsh-chime"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上提示音：当一轮对话完成、向你提问、计划提交待审或出错时，会播放清脆的音效。音效来自 opencode 官方，内置在插件里，不需要联网。装好后自动生效，不用额外设置。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在浏览器里播放声音，不碰系统文件，也不上传数据。",
+      "postInstallNotes": "装完需要重启 web 界面，让插件生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加任务完成提示音，零外部依赖，自动播放。",
+    "usage": {
+      "prompt_tokens": 2168,
+      "completion_tokens": 272,
+      "total_tokens": 2440,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1656
+    }
+  }
+}

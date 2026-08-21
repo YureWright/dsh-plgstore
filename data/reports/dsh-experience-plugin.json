@@ -1,0 +1,34 @@
+{
+  "id": "dsh-experience-plugin",
+  "analyzedAt": "2026-08-21T05:39:50.810Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-experience-plugin",
+      "evidence": "dsh plugin --profile web add dsh-experience-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加两个功能：一是自动给不同模型（比如 deepseek、gpt-5 这些）设置思考等级，不用你一个个手动配；二是能模拟 Codex、Claude Code 这些命令行工具的请求，方便测试。装好后在官方插件配置页里会有两个可折叠的卡片，一个管思考等级，一个管 CLI 模拟。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在本地起一个 HTTP 代理（默认 127.0.0.1:4123），只监听本机，不会暴露到外网。配置里有个 API 密钥环境变量（默认 EDENAIOS_API_KEY），如果你设置了，它可能会用这个密钥去请求上游服务，但这是你自己配置的。",
+      "postInstallNotes": "装完后需要到插件配置页或配置文件里设置一下：比如开启 modelReasoning 功能、配置 CLI 模拟的端口和 API 密钥等。具体看 README 里的配置示例。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 功能插件：自动注入模型思考等级 + 模拟 CLI 请求，配置界面友好。",
+    "usage": {
+      "prompt_tokens": 2721,
+      "completion_tokens": 401,
+      "total_tokens": 3122,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2209
+    }
+  }
+}

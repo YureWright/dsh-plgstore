@@ -1,0 +1,34 @@
+{
+  "id": "@openma/deepseek-harness-tui",
+  "analyzedAt": "2026-08-21T05:40:38.382Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "martty@latest",
+      "evidence": "dsh plugin --profile tui add martty@latest"
+    },
+    "evaluationReport": {
+      "intro": "这是一个在终端里运行的 DeepSeek 助手界面，让你不用打开浏览器就能和 AI 对话、看它思考过程、用工具、管理会话。它还能装各种小插件来扩展功能，比如换主题、加命令。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你电脑上安装一个命令行程序，可能会读取你的终端配置和会话数据，但这些都是本地操作。",
+      "postInstallNotes": "装完后需要运行 dsh --profile tui 来启动，或者直接运行 dsh-tui 命令。首次使用可能需要配置 API 密钥或 agent。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness TUI 是一个终端原生的 ACP 客户端界面，提供流式推理、工具活动、会话管理等丰富功能，并支持通过 Cordis 插件扩展。",
+    "usage": {
+      "prompt_tokens": 3837,
+      "completion_tokens": 318,
+      "total_tokens": 4155,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3325
+    }
+  }
+}

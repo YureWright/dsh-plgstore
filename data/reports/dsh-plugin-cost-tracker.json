@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-cost-tracker",
+  "analyzedAt": "2026-08-21T05:40:04.198Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且描述为 DeepSeek Harness 的 token 成本追踪插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-cost-tracker",
+      "evidence": "dsh plugin --profile your-profile add dsh-plugin-cost-tracker"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你追踪在 DeepSeek Harness 里使用 AI 模型的花费。它会记录每次会话用了多少 token（相当于字数），根据模型价格算出费用，还能在系统提示里加入成本提醒，让你心里有数。另外它自带一个命令行工具，可以提前估算一次调用大概要花多少钱。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要读取和记录 token 使用数据，不会碰你的隐私文件，也不会连接外部服务器（除了正常的模型 API 调用）。",
+      "postInstallNotes": "装完后需要在 DSH 配置里添加插件配置，比如设置默认模型、预算警告阈值等，具体可参考 README 里的配置示例。",
+      "notes": "无"
+    },
+    "summaryZh": "一个用于 DeepSeek Harness 的 token 成本追踪插件，可统计用量、计算费用并设置预算提醒。",
+    "usage": {
+      "prompt_tokens": 1706,
+      "completion_tokens": 327,
+      "total_tokens": 2033,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1194
+    }
+  }
+}

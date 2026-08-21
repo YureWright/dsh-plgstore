@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-auto-docs",
+  "analyzedAt": "2026-08-21T05:40:22.034Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-auto-docs",
+      "evidence": "dsh plugin --profile your-profile add dsh-plugin-auto-docs"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 自动帮你写文档，比如根据项目结构生成 README、根据代码签名生成 API 文档、根据 git 历史生成更新日志，还能给函数加注释。你只需要用自然语言说一句，它就能干活。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要读取项目文件和 git 历史来生成文档，不会上传数据到外部服务器。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "自动生成项目文档（README、API 文档、更新日志、代码注释）的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 1530,
+      "completion_tokens": 265,
+      "total_tokens": 1795,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1018
+    }
+  }
+}

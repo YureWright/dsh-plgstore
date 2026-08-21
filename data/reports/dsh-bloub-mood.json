@@ -1,0 +1,34 @@
+{
+  "id": "dsh-bloub-mood",
+  "analyzedAt": "2026-08-21T05:38:28.867Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime 和 @deepseek-ai/dsh-client-ui-slots，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-bloub-mood",
+      "evidence": "dsh plugin --profile web add dsh-bloub-mood"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DeepSeek Harness 界面变得更有趣：把网页的图标、侧边栏名字、首页标题换成会动的小表情（bloub），表情会随着 AI 的工作状态自动变化（比如思考、等你输入、完成等），你还可以点击表情随机切换，自定义形状、颜色和文字。另外它还附带一个桌面启动功能，可以把 DSH 变成一个独立的桌面应用，像普通软件一样从 Dock 或开始菜单打开。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要修改前端界面，配置存在浏览器本地和 DSH 的配置目录，不会访问敏感文件或连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后刷新页面，在设置里找到“心情图标”进行配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 心情图标插件：把 web 端 logo/状态点换成 bloub 心情形象，随会话状态自动切换，并内置桌面启动子功能。",
+    "usage": {
+      "prompt_tokens": 3639,
+      "completion_tokens": 374,
+      "total_tokens": 4013,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3127
+    }
+  }
+}

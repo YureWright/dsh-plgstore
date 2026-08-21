@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-radar",
+  "analyzedAt": "2026-08-21T05:39:56.508Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 配置，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-llm，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-radar",
+      "evidence": "dsh plugin --profile web add dsh-plugin-radar"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫“插件雷达”，它能在 DeepSeek Harness 的网页界面左下角显示一个可拖动的胶囊按钮，点开后是一个面板，帮你浏览和搜索 GitHub 上所有标记为 dsh-plugin 的插件（目前有 4700 多个）。你可以按最近更新、星标数筛选，还能直接一键安装、更新或卸载插件。它还会定时自动扫描新插件，并给你推荐一些精选的靠谱插件。翻译和 AI 摘要功能用的是你自己 DSH 配置的模型，不会额外花钱。",
+      "level": "ok",
+      "risks": "它会访问 GitHub 的公开数据，需要联网。它会在你的电脑上写入缓存文件（~/.dsh/plugin-radar-cache.json），并可能修改 DSH 的配置文件（cordis.patch.yml）来安装插件。它安装插件时会执行 pnpm add 命令，相当于自动安装第三方代码，存在一定风险，但插件本身有安全防护（拒绝非 JS 包）。另外，它可能会读取你本机的 git 凭据来获取 GitHub Token，但不会上传。",
+      "postInstallNotes": "安装后刷新页面即可看到左下角的“插件雷达”胶囊。可选配置：在 cordis.patch.yml 中设置 refreshIntervalHours 等参数，或设置 GITHUB_TOKEN 环境变量以提升 GitHub API 限额。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件雷达：在 DeepSeek Harness 界面中浏览、搜索、一键安装 GitHub 上的 dsh 插件，支持定时扫描和 AI 摘要。",
+    "usage": {
+      "prompt_tokens": 3242,
+      "completion_tokens": 483,
+      "total_tokens": 3725,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2730
+    }
+  }
+}

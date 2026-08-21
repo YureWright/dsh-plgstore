@@ -1,0 +1,34 @@
+{
+  "id": "@aiwayds/dsh-subagent-registry",
+  "analyzedAt": "2026-08-21T05:39:50.225Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/fan56/dsh-subagent-registry.git",
+      "evidence": "Option A — add this checkout as a dsh plugin (tui profile): dsh plugin --profile tui add ~/github/dsh-subagent-registry"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你把自己电脑上 `~/.dsh/agents/` 文件夹里定义的 agent（每个 agent 是一个 markdown 文件，包含名字、描述、模型等元数据和一段提示词）注册成 dsh 可以按名字调用的子代理。主对话通过 `use_agent` 工具点名调用这些 agent，每个 agent 会以独立的子代理运行，有自己的系统提示词。如果运行中断（比如出错、取消、崩溃、超 token 限制），下次调用同一个 agent 时会从上次保存的部分工作继续，而不是从头开始。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取 `~/.dsh/agents/` 下的文件，并可能写入会话数据到 `~/.dsh/sessions/`，但这些都在 dsh 的正常工作范围内。",
+      "postInstallNotes": "需要确保 `~/.dsh/agents/` 目录存在，并在其中放置你的 agent 定义文件（格式为 frontmatter + markdown 正文）。默认配置即可使用，也可以根据需要修改 `agentsDir`、`provider`、`toolName` 等配置项。",
+      "notes": "无"
+    },
+    "summaryZh": "把本地自定义 agent 注册为 dsh 可调用的子代理，并支持中断后从上次进度恢复。",
+    "usage": {
+      "prompt_tokens": 3707,
+      "completion_tokens": 454,
+      "total_tokens": 4161,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3195
+    }
+  }
+}

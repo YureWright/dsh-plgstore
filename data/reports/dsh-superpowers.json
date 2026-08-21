@@ -1,0 +1,34 @@
+{
+  "id": "dsh-superpowers",
+  "analyzedAt": "2026-08-21T05:39:50.728Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且描述为 dsh 插件，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-superpowers",
+      "evidence": "dsh plugin --profile web add dsh-superpowers"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把一套叫 Superpowers 的软件开发方法论装进 DeepSeek Harness。它让 AI 助手在写代码前先问清楚你要做什么，然后设计、规划、用测试驱动的方式一步步实现，并在任务之间做代码审查。它注册了 14 个技能和一个引导提示，让 AI 自动按这套流程工作。",
+      "level": "ok",
+      "risks": "没发现明显风险。它不会复制文件到你的技能目录，只是注册技能。唯一可能的是它会在系统提示里加约 1.1k tokens 的内容，但这是静态的，不会每次重新发送。另外，它可能加载一个上游托管的 logo 图片，但不会发送项目或提示内容。",
+      "postInstallNotes": "无。安装后重启对应 profile 即可。可选配置：可以在 cordis.patch.yml 中覆盖配置，比如关闭 bootstrap 或调整顺序。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Superpowers 软件开发方法论技能和引导提示的插件。",
+    "usage": {
+      "prompt_tokens": 2457,
+      "completion_tokens": 358,
+      "total_tokens": 2815,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1945
+    }
+  }
+}

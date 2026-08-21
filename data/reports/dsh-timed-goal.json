@@ -1,0 +1,34 @@
+{
+  "id": "dsh-timed-goal",
+  "analyzedAt": "2026-08-21T05:39:29.244Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖了多个 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-timed-goal",
+      "evidence": "dsh plugin --profile web add dsh-timed-goal"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DSH 对话里设置定时任务，到点后自动执行你预设的提示词，就像闹钟一样。你可以通过斜杠命令或网页界面来配置，支持一次性或每天重复，还能限制执行轮数。",
+      "level": "ok",
+      "risks": "插件会读取和修改你的 DSH 配置文件，并把任务数据保存在 ~/.dsh/plugins/dsh-timed-goal/jobs.json。默认以 full access 权限执行任务，意味着它可以在你的 DSH 实例中自主操作，但这是你主动安排的。",
+      "postInstallNotes": "安装后需要重启 dsh web 进程，并验证配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 定时任务插件，支持在对话中配置定时执行 /goal 提示词，带 Web 界面。",
+    "usage": {
+      "prompt_tokens": 3820,
+      "completion_tokens": 327,
+      "total_tokens": 4147,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3308
+    }
+  }
+}

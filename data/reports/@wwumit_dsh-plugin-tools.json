@@ -1,0 +1,34 @@
+{
+  "id": "@wwumit/dsh-plugin-tools",
+  "analyzedAt": "2026-08-21T05:38:56.342Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.plugin 和 dsh.bundle，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-skill，README 提供了安装和用法，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wwumit/dsh-plugin-tools",
+      "evidence": "npm install @wwumit/dsh-plugin-tools"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的工具包，它提供了一些开发插件和技能时用的小工具，比如把专家经验变成技能、检查发布合规、扫描依赖安全、检测恶意代码、检查插件结构、测试插件运行等。装好之后，你可以在 DSH 里通过 ctx.skills 来调用这些工具。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要是本地工具，不连接外部服务器（除了可能从 catalog 拉取配置），也不碰隐私文件。",
+      "postInstallNotes": "需要安装 peer 依赖：@deepseek-ai/cordis 和 @deepseek-ai/dsh-skill。另外，使用时要配置 catalogUrl，默认指向作者的 GitHub 页面。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件工具包，提供专家技能沉淀、合规检查、依赖扫描、恶意代码检测等开发辅助工具。",
+    "usage": {
+      "prompt_tokens": 2303,
+      "completion_tokens": 350,
+      "total_tokens": 2653,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1791
+    }
+  }
+}

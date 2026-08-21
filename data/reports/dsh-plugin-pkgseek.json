@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-pkgseek",
+  "analyzedAt": "2026-08-21T05:40:07.561Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.engines，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-pkgseek",
+      "evidence": "The package is published on npm as `dsh-plugin-pkgseek`; `dsh plugin add` resolves it from the registry."
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加了一组 Linux 相关的工具，能帮你查软件包、命令、CVE 漏洞、系统迁移建议等。它通过调用 PkgSeek 的在线 API 来获取信息，所有工具都是只读的，不需要 API 密钥。",
+      "level": "ok",
+      "risks": "插件会向 PkgSeek 的公共 API 发送请求（默认 https://api.pkgseek.com），因此你查询的内容（比如软件包名、命令）会发送到外部服务器。但工具是只读的，不会修改系统。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Linux 软件包、命令和 CVE 情报的只读工具集。",
+    "usage": {
+      "prompt_tokens": 2777,
+      "completion_tokens": 341,
+      "total_tokens": 3118,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2265
+    }
+  }
+}

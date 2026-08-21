@@ -1,0 +1,34 @@
+{
+  "id": "@creative-dswork/dsh-expmem",
+  "analyzedAt": "2026-08-21T05:40:24.440Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@creative-dswork/dsh-expmem",
+      "evidence": "dsh plugin --profile web add @creative-dswork/dsh-expmem"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加长期记忆功能。它会把你和 AI 对话中的习惯、经验、心得保存到本地文件里，下次对话时能自动想起这些内容，让 AI 更懂你。它还能导入 Claude Code 和 Codex 生成的记忆文件，并且所有记忆都有来源记录，可以追溯。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读写本地文件，不连接外部服务器，也不执行额外脚本。",
+      "postInstallNotes": "安装后正常启动 DSH 即可，默认配置即可使用。如需导入 Claude Code 或 Codex 的记忆，需要运行额外的导入命令。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH ExpMem 是一个为 DeepSeek Harness 提供长期个人记忆的社区插件，通过本地 JSON 文件保存习惯、经验和洞察，并支持从 Claude Code 和 Codex 导入记忆。",
+    "usage": {
+      "prompt_tokens": 4026,
+      "completion_tokens": 352,
+      "total_tokens": 4378,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3514
+    }
+  }
+}

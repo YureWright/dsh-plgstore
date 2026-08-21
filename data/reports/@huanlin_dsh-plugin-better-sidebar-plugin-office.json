@@ -1,0 +1,34 @@
+{
+  "id": "@huanlin/dsh-plugin-better-sidebar-plugin-office",
+  "analyzedAt": "2026-08-21T05:38:28.697Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime，README 给出 dsh plugin add 安装命令，代码调用 ctx.betterSidebar.registerFileViewer，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:huanlinoto/dsh-plugin-better-sidebar-plugin-office",
+      "evidence": "或 github: 引用（预构建 lib/ 入库，开箱即用）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的 better-sidebar 编辑器增加了 Office 文件预览功能，可以打开 .docx、.xlsx、.pptx 文件，不用下载就能看内容。它把原本内置的预览功能拆出来，让主程序更轻量，需要时再装这个插件。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只在浏览器端运行，不碰系统文件，也不连接外部服务器。",
+      "postInstallNotes": "需要 better-sidebar 版本 >= 0.6.0，安装后重启 dsh web 进程并硬刷新浏览器。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH better-sidebar 提供 Office 三件套（docx/xlsx/pptx）文件预览的插件。",
+    "usage": {
+      "prompt_tokens": 2780,
+      "completion_tokens": 338,
+      "total_tokens": 3118,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2268
+    }
+  }
+}

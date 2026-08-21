@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-console",
+  "analyzedAt": "2026-08-21T05:39:45.815Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-console",
+      "evidence": "在 README 的安装部分，有命令 `dsh plugin --profile web add dsh-plugin-console`。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的插件管理器。它能在设置里加一个“插件管理”页面，让你浏览社区插件目录、查看已装的插件、一键更新或删除插件，还能更新 DeepSeek Harness 本体。它很小心，不会自动装东西，所有操作都要你确认，而且会在隔离环境里先试运行，确保不会搞坏现有配置。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你电脑上运行 npm 和 dsh 命令来安装/更新插件，但都加了保护措施，比如不执行安装脚本、固定版本、隔离试运行。它会读取你的 profile 配置和插件清单，但不会乱删数据。",
+      "postInstallNotes": "安装或更新插件后需要重启 `dsh web`，因为 Web client 模块列表在启动时扫描。另外，可能需要根据你的环境配置 `dshBin` 和 `npmBin`（如果 dsh 或 npm 不在 PATH 里）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件控制台：一个安全的插件管理器，提供社区目录、已装插件管理、一键更新 Harness 等功能，强调隔离试运行和用户确认。",
+    "usage": {
+      "prompt_tokens": 5374,
+      "completion_tokens": 420,
+      "total_tokens": 5794,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4862
+    }
+  }
+}

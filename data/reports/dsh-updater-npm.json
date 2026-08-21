@@ -1,0 +1,34 @@
+{
+  "id": "dsh-updater-npm",
+  "analyzedAt": "2026-08-21T05:38:26.903Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，依赖 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-updater-npm",
+      "evidence": "dsh plugin --profile web add dsh-updater-npm"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness (DSH) 用的，主要做两件事：一是帮你一键更新 DSH 到最新版本（通过 npm），带实时进度显示；二是把 DSH 的官方文档同步到本地，方便你在对话中直接搜索和阅读文档。它还会自动检测你的 DSH 是全局安装还是源码运行，用合适的方式更新。",
+      "level": "ok",
+      "risks": "它会执行 npm install -g 命令来更新 DSH，这可能会修改你电脑上的全局 Node 包；还会从 GitHub 下载官方文档到本地（默认关闭，需手动开启）。它不会上传你的数据，但会读取 DSH 的版本信息。",
+      "postInstallNotes": "安装后重启 dsh web，在设置页会出现两个卡片。文档同步功能默认关闭，需要手动开启开关才会自动同步并加载文档工具。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 更新器 + 官方文档同步插件，支持一键 npm 更新和本地文档搜索。",
+    "usage": {
+      "prompt_tokens": 3373,
+      "completion_tokens": 368,
+      "total_tokens": 3741,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2861
+    }
+  }
+}

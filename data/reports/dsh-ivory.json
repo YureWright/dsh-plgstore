@@ -1,0 +1,34 @@
+{
+  "id": "dsh-ivory",
+  "analyzedAt": "2026-08-21T05:38:46.213Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，并依赖 @deepseek-ai/dsh-client-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ivory",
+      "evidence": "dsh plugin --profile web add dsh-ivory"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面换肤的主题插件，提供暖色调的浅色和深色模式，让界面看起来更柔和、更安静。它支持手机和电脑屏幕，中英文界面，并且承诺不收集任何数据。安装后可以在设置里切换主题，还有一个可选的专注模式。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器里运行，不碰文件系统，不联网，不收集数据，只在本地存储两个偏好设置。",
+      "postInstallNotes": "安装后需要硬刷新页面（Cmd/Ctrl+Shift+R），然后到设置里找到 Ivory Theme 开启主题。",
+      "notes": "无"
+    },
+    "summaryZh": "Ivory 是一款为 DeepSeek Harness 设计的暖色调主题插件，提供浅色/深色模式、响应式布局和零遥测。",
+    "usage": {
+      "prompt_tokens": 3978,
+      "completion_tokens": 332,
+      "total_tokens": 4310,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3466
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-strata",
+  "analyzedAt": "2026-08-21T05:38:22.272Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-strata",
+      "evidence": "dsh plugin --profile web add dsh-strata"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页聊天界面加了一个迷你地图，把聊天记录的滚动条变成一张彩色地图，能一眼看到整个对话的概况，比如你发过哪些消息、模型回复了多少、哪里出错了。点击地图上的标记可以快速跳转，还能预览每条消息的内容。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器里运行，不发送数据到外部服务器，也不碰隐私文件。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-strata 是一个为 DeepSeek Harness 网页界面设计的迷你地图插件，将聊天记录滚动条变成彩色导航地图，支持快速跳转和预览。",
+    "usage": {
+      "prompt_tokens": 3228,
+      "completion_tokens": 305,
+      "total_tokens": 3533,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2716
+    }
+  }
+}

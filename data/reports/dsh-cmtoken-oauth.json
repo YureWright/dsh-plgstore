@@ -1,0 +1,34 @@
+{
+  "id": "dsh-cmtoken-oauth",
+  "analyzedAt": "2026-08-21T05:39:30.045Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-cmtoken-oauth",
+      "evidence": "dsh plugin --profile web add dsh-cmtoken-oauth"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你在 DeepSeek Harness 里一键登录广东移动的 MaaS 平台（cmtoken），不用手动填 API Key 或模型列表。它会自动发现模型、配置好上下文，还能让纯文本模型直接识别粘贴的图片（通过视觉模型回退）。另外，它把登录凭证安全地存在系统钥匙串里，不会明文落盘。",
+      "level": "ok",
+      "risks": "它会往你的用户目录（~/.dsh/）写一些配置文件（比如粘贴的图片和设置），还会连接广东移动的授权服务器和模型接口。你的登录令牌会存在系统钥匙串里，只有你自己能看到。没有发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。然后在 DSH 设置页找到「cmtoken 认证」，点击开始认证，用手机扫码或输入用户码完成授权。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件：一键认证广东移动 MaaS，自动配置模型，支持图片识别和视觉回退。",
+    "usage": {
+      "prompt_tokens": 3224,
+      "completion_tokens": 360,
+      "total_tokens": 3584,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2712
+    }
+  }
+}

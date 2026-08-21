@@ -1,0 +1,34 @@
+{
+  "id": "@xiaosenho/dsh-plugin-remote-access",
+  "analyzedAt": "2026-08-21T05:40:08.117Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@xiaosenho/dsh-plugin-remote-access",
+      "evidence": "Install from npm: `dsh plugin --profile web add @xiaosenho/dsh-plugin-remote-access`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你能从其他电脑、平板或手机远程访问 DeepSeek Harness 的网页界面。它提供了两种方式：局域网访问（在同一网络内）和通过 frpc 隧道访问（可跨网络）。它会生成带令牌的链接，只有拿到链接的人才能访问，并且会设置安全 cookie 来保护会话。",
+      "level": "caution",
+      "risks": "它会启动一个监听网络接口的代理服务，可能暴露你的 Harness 界面到局域网或公网（取决于配置）。它需要运行 frpc 可执行文件，该文件可能来自第三方，有潜在风险。它会在本地写入包含服务器令牌的配置文件（权限为 0600），但令牌可能被有权限的用户读取。",
+      "postInstallNotes": "安装后，需要在 Harness 的 Web 配置文件中添加 remote-access 配置段（如 listenPort、frpcPath 等），然后在设置界面启用远程访问并配置相关参数（如 frpc 路径、服务器地址等）。",
+      "notes": "该插件需要执行构建脚本（prepare），安装时需在 pnpm-workspace.yaml 中允许构建，这可能带来供应链风险。建议只从可信来源安装并固定提交版本。"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 界面提供带认证的局域网和 frpc 隧道远程访问功能。",
+    "usage": {
+      "prompt_tokens": 3380,
+      "completion_tokens": 443,
+      "total_tokens": 3823,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2868
+    }
+  }
+}

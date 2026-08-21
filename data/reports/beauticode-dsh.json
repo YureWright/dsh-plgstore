@@ -1,0 +1,34 @@
+{
+  "id": "beauticode-dsh",
+  "analyzedAt": "2026-08-21T05:38:59.123Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且描述为 Cordis plugin for DeepSeek Harness，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "beauticode-dsh",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能给 DeepSeek Harness 网页版换上图片或视频背景，让界面更好看。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页提供图片/视频背景的美化插件。",
+    "usage": {
+      "prompt_tokens": 1358,
+      "completion_tokens": 194,
+      "total_tokens": 1552,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 846
+    }
+  }
+}

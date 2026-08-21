@@ -1,0 +1,34 @@
+{
+  "id": "dsh-quota",
+  "analyzedAt": "2026-08-21T05:38:32.756Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-quota",
+      "evidence": "dsh plugin --profile web add dsh-quota"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在你的 DSH 界面右下角显示一个悬浮球，点击可以展开面板，展示你各个 AI 平台（比如 Kimi、DeepSeek、智谱等）的套餐额度和余额。它会自动读取你在 DSH 里配置的 API 密钥，定时刷新数据，并用彩色进度条显示用量占比，让你一眼看清还剩多少额度。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你配置的 API 密钥（用于查询额度），但不会上传到外部服务器，数据只在你本地显示。",
+      "postInstallNotes": "无。安装后即可使用，默认会自动同步 DSH 凭证域中的 API 密钥。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件：右下角悬浮球显示各 AI 平台套餐额度与余额，自动同步 API 密钥，支持自定义平台。",
+    "usage": {
+      "prompt_tokens": 3074,
+      "completion_tokens": 318,
+      "total_tokens": 3392,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2562
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@kiwifruit/dsh-context-pro",
+  "analyzedAt": "2026-08-21T05:39:34.872Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@kiwifruit/dsh-context-pro",
+      "evidence": "pnpm exec dsh plugin --profile web add @kiwifruit/dsh-context-pro"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的 AI 助手用的，它能让 AI 在回答问题时更有条理、更懂你。它会在 AI 的思考过程中悄悄加入一套'认知框架'，让 AI 从因果、逻辑、操作、叙事、时间五个角度来组织回答，并在每次回答后记录一些内部笔记，用来分析你的偏好，从而推荐更贴心的话题。整个过程你基本感觉不到，只会觉得 AI 更聪明了。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要是在 AI 的对话流程里做处理，会读取和修改会话内容（比如在回复末尾加一段隐藏的 JSON），但不会碰你电脑上的其他文件，也不会把数据发到外部服务器。",
+      "postInstallNotes": "安装后需要在配置里开启链感知功能（设置 chains.enabled 为 true），否则插件只会做简单的上下文整理。具体配置方法见 README 的配置参考。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 上下文增强插件，通过注入五维认知框架和洞察引擎，让 AI 更懂用户并推荐相关话题。",
+    "usage": {
+      "prompt_tokens": 5183,
+      "completion_tokens": 403,
+      "total_tokens": 5586,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4671
+    }
+  }
+}

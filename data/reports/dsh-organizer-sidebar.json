@@ -1,0 +1,34 @@
+{
+  "id": "dsh-organizer-sidebar",
+  "analyzedAt": "2026-08-21T05:40:11.038Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-organizer-sidebar",
+      "evidence": "dsh plugin --profile <name> add dsh-organizer-sidebar"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的侧边栏整理工具。它能让你把会话拖来拖去排序、分组，还能把不用的会话归档或删除（删除会进回收站，可以恢复）。装好后它会自动加载，不用每次手动批准。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会把你的会话分组和排序信息保存到电脑上的一个文件里（$DSH_HOME/session-organizer/.dsh-session-organizer.json），但这是正常功能。",
+      "postInstallNotes": "装完后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 会话侧边栏组织器，支持拖拽排序、分组、归档/删除双 tab 和回收站还原。",
+    "usage": {
+      "prompt_tokens": 2172,
+      "completion_tokens": 318,
+      "total_tokens": 2490,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1660
+    }
+  }
+}

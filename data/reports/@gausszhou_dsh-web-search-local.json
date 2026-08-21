@@ -1,0 +1,34 @@
+{
+  "id": "@gausszhou/dsh-web-search-local",
+  "analyzedAt": "2026-08-21T05:39:36.474Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 补丁，依赖 @deepseek-ai/dsh-web 和 @deepseek-ai/dsh-settings，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 的 ctx.web 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@gausszhou/dsh-web-search-local",
+      "evidence": "dsh plugin add @gausszhou/dsh-web-search-local"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加了一个不依赖 DeepSeek 服务器的网页搜索和网页抓取功能。它内置了多个搜索引擎（如 Google、百度、必应等），可以自动选择可用的引擎，还支持通过代理访问被墙的网站。装了这个插件，即使你用的是本地模型，也能正常搜索网页。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会访问你配置的搜索引擎和代理，但不会上传你的数据到第三方服务器。它可能会读取你的代理环境变量（如 HTTPS_PROXY），但这是正常行为。",
+      "postInstallNotes": "装完后可能需要根据你的网络环境调整配置，比如设置代理地址或选择要用的搜索引擎。默认配置会自动探测代理，但如果你在特殊网络环境下，可能需要手动设置 proxyUrl。",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 提供多引擎网页搜索和抓取功能的插件，无需 API 密钥，支持本地模型。",
+    "usage": {
+      "prompt_tokens": 4000,
+      "completion_tokens": 371,
+      "total_tokens": 4371,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3488
+    }
+  }
+}

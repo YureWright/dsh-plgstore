@@ -1,0 +1,34 @@
+{
+  "id": "dsh-meme",
+  "analyzedAt": "2026-08-21T05:38:22.493Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-meme",
+      "evidence": "dsh plugin --profile web add dsh-meme"
+    },
+    "evaluationReport": {
+      "intro": "这是一个表情包插件，让 AI 在聊天时能发表情包。它内置了两套表情包（官方和大肥鱼），AI 会根据情绪自动挑选合适的表情包发出来。你也可以自己上传图片教它学新表情，或者把表情包打包分享给别人。安装后无需配置即可使用。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和写入用户目录下的配置文件（~/.dsh/dsh-expression.json）和扫描目录（~/.dsh/meme-packs），但这是正常功能。内置的官方表情包来自上游项目，上游未提供许可证，但作为个人使用没问题。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-meme 是一个表情包插件，让 AI 能根据情绪自动发图，支持自定义图库和分享。",
+    "usage": {
+      "prompt_tokens": 4578,
+      "completion_tokens": 323,
+      "total_tokens": 4901,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4066
+    }
+  }
+}

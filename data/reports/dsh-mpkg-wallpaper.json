@@ -1,0 +1,34 @@
+{
+  "id": "dsh-mpkg-wallpaper",
+  "analyzedAt": "2026-08-21T05:39:10.100Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mpkg-wallpaper",
+      "evidence": "dsh plugin --profile web add dsh-mpkg-wallpaper"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面添加动态壁纸的。它能解析 Wallpaper Engine 的 .mpkg 文件，支持视频、图片、网页壁纸，还能自动发现 Steam 创意工坊的壁纸目录。你可以调整壁纸的模糊程度、镜头缩放、主题颜色等，让界面更好看。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件声称不访问外部网络，只与本机 DSH 宿主通信；所有解析都在本地完成，不读取敏感文件。",
+      "postInstallNotes": "安装后需要重启 dsh web，并在浏览器中按 Ctrl+F5 强制刷新才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 壁纸引擎插件，支持解析 Wallpaper Engine 的 .mpkg 文件、视频和网页壁纸，提供丰富的界面美化选项。",
+    "usage": {
+      "prompt_tokens": 5196,
+      "completion_tokens": 338,
+      "total_tokens": 5534,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4684
+    }
+  }
+}

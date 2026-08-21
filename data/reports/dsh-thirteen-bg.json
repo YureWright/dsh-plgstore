@@ -1,0 +1,34 @@
+{
+  "id": "dsh-thirteen-bg",
+  "analyzedAt": "2026-08-21T05:38:32.901Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 和 dsh-client-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-thirteen-bg",
+      "evidence": "dsh plugin --profile web add dsh-thirteen-bg"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的网页界面换上动态壁纸，支持 GIF、动图 WebP、APNG、静态图片，还有 MP4、WebM 视频。你可以上传本地文件（不限大小）或者填一个网络链接，它会自动识别格式，视频会静音循环播放，图片就作为背景。还带一个压暗滑块，让背景不会太抢眼。设置存在浏览器里，上传的文件也存浏览器本地，不会上传到服务器。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只动浏览器里的东西：设置存 localStorage，上传的文件存 IndexedDB，都是本地数据，不会上传到任何服务器。",
+      "postInstallNotes": "装完后重启 dsh web（或刷新浏览器），然后硬刷新（Ctrl+F5），在设置里找到「动态背景」卡片，上传或填 URL 即可。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面添加动态壁纸的插件，支持多种图片和视频格式，纯客户端运行。",
+    "usage": {
+      "prompt_tokens": 2493,
+      "completion_tokens": 382,
+      "total_tokens": 2875,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1981
+    }
+  }
+}

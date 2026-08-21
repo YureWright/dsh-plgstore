@@ -1,0 +1,34 @@
+{
+  "id": "dsh-mmx-bridge",
+  "analyzedAt": "2026-08-21T05:39:24.491Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai 生态包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mmx-bridge",
+      "evidence": "dsh plugin --profile web add dsh-mmx-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness（DSH）的纯文本模型能看图、画图、生成视频、语音、音乐、翻唱、搜索和查额度，通过一个工具接入 MiniMax 的多模态能力。安装后，你可以直接拖图片进对话，AI 就能识别；还能让 AI 生成图片、视频、语音等。",
+      "level": "ok",
+      "risks": "插件会调用外部 MiniMax API，需要你提供 API Key（通过 mmx-cli 登录），但 Key 不落盘、不写日志。生成的文件保存在临时目录（默认 /tmp/mmx-out/），图片识别缓存会以明文写入图片副本，可能被懂技术的人读取，但不会修改原始附件。",
+      "postInstallNotes": "需要先安装并登录 mmx-cli（npm i -g mmx-cli && mmx auth login），然后重启 dsh 并刷新 Web GUI。",
+      "notes": "无"
+    },
+    "summaryZh": "一个工具接入 MiniMax 全栈多模态能力，让 DSH 纯文本模型支持看图、画图、视频、语音、音乐、搜索等。",
+    "usage": {
+      "prompt_tokens": 5077,
+      "completion_tokens": 384,
+      "total_tokens": 5461,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4565
+    }
+  }
+}

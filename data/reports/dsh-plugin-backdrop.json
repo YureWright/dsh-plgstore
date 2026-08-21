@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-backdrop",
+  "analyzedAt": "2026-08-21T05:40:17.916Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，peerDependencies 依赖 @deepseek-ai/dsh，README 提供了 dsh 安装和配置方法，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-backdrop",
+      "evidence": "pnpm add dsh-plugin-backdrop"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加一个动态背景，包括流动的流体、游动的鲸鱼、发光的鱼群和点线网格，让界面更好看。它不会影响聊天功能，只是背景装饰。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改网页背景和主题，不碰系统文件，也不上传数据。",
+      "postInstallNotes": "安装后需要编辑 ~/.dsh/profiles/web/cordis.patch.yml 添加配置片段，然后重启 dsh web。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面添加动态背景（流体、鲸鱼、鱼群、网格）的装饰插件。",
+    "usage": {
+      "prompt_tokens": 5581,
+      "completion_tokens": 296,
+      "total_tokens": 5877,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5069
+    }
+  }
+}

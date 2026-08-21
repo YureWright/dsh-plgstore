@@ -1,0 +1,34 @@
+{
+  "id": "dsh-springbrand-marketplace",
+  "analyzedAt": "2026-08-21T05:40:23.877Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 提供了 dsh plugin add 安装命令，并注册了原生 Harness 工具。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-springbrand-marketplace",
+      "evidence": "npx --yes @deepseek-ai/dsh@0.1.0-rc.6 plugin --profile web add dsh-springbrand-marketplace"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 连接到 Springbrand 平台，帮你搜索和调用 Springbrand 上的各种能力（比如外部服务或数据操作）。你只需要在 DSH 里登录 Springbrand 账号，然后用自然语言提问，比如“搜索 Springbrand 市场资源”，它就会帮你找到并执行相应的操作。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只存储 Springbrand 的授权信息，不会直接接触你的其他隐私文件。",
+      "postInstallNotes": "安装后需要在 DSH 中运行 /springbrand_login 命令，并打开返回的授权链接完成登录。",
+      "notes": "无"
+    },
+    "summaryZh": "将 DeepSeek Harness 连接到 Springbrand 市场，提供搜索和执行能力的原生工具。",
+    "usage": {
+      "prompt_tokens": 1690,
+      "completion_tokens": 319,
+      "total_tokens": 2009,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1178
+    }
+  }
+}

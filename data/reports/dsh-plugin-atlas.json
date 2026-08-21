@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-atlas",
+  "analyzedAt": "2026-08-21T05:39:59.785Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-atlas",
+      "evidence": "dsh plugin --profile web add dsh-plugin-atlas"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 增加了三个实用功能：一是管理会话归档，可以浏览、取消归档，还能设置自动归档规则；二是在对话区左侧加一条刻度尺，方便快速跳转到某轮对话；三是输入框里可以用上下箭头翻找本会话发过的消息，就像终端里翻历史命令一样。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只调用 dsh 公开接口，不删除文件，写操作需要同源 POST，有 CSRF 防护。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 提供会话归档管理、对话刻度尺和输入历史翻找功能的插件。",
+    "usage": {
+      "prompt_tokens": 2736,
+      "completion_tokens": 290,
+      "total_tokens": 3026,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2224
+    }
+  }
+}

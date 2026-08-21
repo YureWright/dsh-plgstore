@@ -1,0 +1,34 @@
+{
+  "id": "@aiorouter/dsh-shield",
+  "analyzedAt": "2026-08-21T05:40:06.392Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@aiorouter/dsh-shield",
+      "evidence": "dsh plugin add @aiorouter/dsh-shield"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫 AIOrouter Shield，是给 DeepSeek Harness 用的一个隐私保护工具。它能帮你查看和管理 AI 对话中的隐私策略，比如哪些信息被替换或隐藏了。它会在界面上显示一个盾牌图标，点击可以看到当前会话中检测到的隐私替换情况，比如原始值是什么、模型看到的是什么。它还会自动发现可用的模型列表。它只读取公开的接口，不存 API 密钥，也不写文件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取公开的 /v1/me/* 接口，不存密钥，不写文件，不连外部服务器（除了你配置的 AIOrouter 网关）。",
+      "postInstallNotes": "需要在设置里配置 AIOrouter API 密钥（Settings → Models → AIOROUTER_API_KEY）。如果从旧版本升级，需要手动删除 provider 配置中过时的两个 header 行。",
+      "notes": "无"
+    },
+    "summaryZh": "AIOrouter Shield 是一个 DSH 插件，用于查看和控制 AI 对话中的隐私保护策略，显示会话中的替换/隐藏记录，并自动发现模型列表。",
+    "usage": {
+      "prompt_tokens": 3785,
+      "completion_tokens": 395,
+      "total_tokens": 4180,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3273
+    }
+  }
+}

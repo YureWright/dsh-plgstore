@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-codegraph",
+  "analyzedAt": "2026-08-21T05:38:50.230Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且依赖了 dsh-plugin-codegraph-* 系列包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-codegraph",
+      "evidence": "dsh plugin --profile <name> add dsh-plugin-codegraph"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的 AI 助手增加了两个工具：codegraph 和 codegraph_index。它能让助手在改代码之前，快速查清楚某个符号在哪里定义、谁调用了它、改动会影响哪些地方，以及两个符号之间怎么关联。它自己会建立一个代码索引，不用依赖外部服务，支持多种编程语言。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会在项目目录下创建 .codegraph 文件夹存放索引数据，但这是正常操作。",
+      "postInstallNotes": "安装后可能需要根据项目情况调整配置，比如在 cordis.patch.yml 中设置要索引的语言和排除目录。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供代码结构智能查询工具，帮助 AI 助手理解代码调用关系。",
+    "usage": {
+      "prompt_tokens": 3469,
+      "completion_tokens": 321,
+      "total_tokens": 3790,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2957
+    }
+  }
+}
