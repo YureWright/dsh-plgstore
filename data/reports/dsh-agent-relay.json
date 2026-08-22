@@ -1,0 +1,34 @@
+{
+  "id": "dsh-agent-relay",
+  "analyzedAt": "2026-08-22T05:34:11.039Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-agent-relay",
+      "evidence": "dsh plugin --profile web add dsh-agent-relay"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个本地多 Agent 通信中继，让 DeepSeek Harness 和其他本地 AI 工具（如 Codex、Claude Code）之间可以互相发消息、协作，比如代码评审或任务分发。它自带一个小型消息服务器（Broker），默认只在本机运行，用密码签名保证安全，消息会暂存在本地数据库里。",
+      "level": "ok",
+      "risks": "它会在你的电脑上运行一个本地服务（监听 127.0.0.1:19121），并生成配置文件（如 ~/.dsh/relay.json）和密钥。消息会保存在本地数据库（SQLite 或 JSONL）中，默认不会上传到外部服务器。但如果你把它暴露到公网，别人可能看到你的消息，所以别那么做。",
+      "postInstallNotes": "安装后需要让 DSH 读取 docs/AGENT-DEPLOY.md 来自动配置，或者手动运行 node setup/setup.js init 和 start 来启动 Broker 并生成密钥。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-agent-relay 是一个本地多 Agent 通信中继插件，让 DeepSeek Harness 与其他 AI 工具安全地互发消息、协作。",
+    "usage": {
+      "prompt_tokens": 4688,
+      "completion_tokens": 417,
+      "total_tokens": 5105,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4176
+    }
+  }
+}

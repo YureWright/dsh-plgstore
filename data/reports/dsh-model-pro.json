@@ -1,0 +1,34 @@
+{
+  "id": "dsh-model-pro",
+  "analyzedAt": "2026-08-22T05:34:03.854Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai 核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "npm:dsh-model-pro",
+      "evidence": "dsh plugin --profile web add npm:dsh-model-pro"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的设置页加了一个「模型 Pro」入口，让你能更方便地管理 AI 模型提供商。你可以用它来新建、编辑、删除提供商，启用或禁用它们，还能一键拉取远端模型、测试模型能不能用、设置智能路由（比如按优先级或权重分配请求）、把多个提供商组合成一个虚拟提供商，以及查看请求日志和统计。它还会把 API 密钥加密保存，卸载时保证你的模型配置不丢失。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读写 DSH 的配置文件（比如 ~/.dsh 下的 profile），但这是插件正常功能。API 密钥会加密存储，主密钥存在 DSH 凭据服务里，卸载重装后还能解密。",
+      "postInstallNotes": "安装后重新打开或刷新 DSH Web GUI，在左侧「设置」中会出现「模型 Pro」入口。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的模型提供商管理插件，提供全生命周期 UI、加密密钥、智能路由、组合提供商、连通性测试和观测统计。",
+    "usage": {
+      "prompt_tokens": 5218,
+      "completion_tokens": 375,
+      "total_tokens": 5593,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4706
+    }
+  }
+}

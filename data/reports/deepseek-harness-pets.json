@@ -1,0 +1,34 @@
+{
+  "id": "deepseek-harness-pets",
+  "analyzedAt": "2026-08-22T05:33:15.611Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-harness-pets",
+      "evidence": "dsh plugin --profile web add deepseek-harness-pets"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的桌宠插件，会在网页界面的右下角显示一只小鲸鱼，它会根据你的智能体运行状态做出各种动作，比如思考时游动、完成时挥手、出错时翻肚皮。你还可以换皮肤，支持社区标准格式。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在网页界面显示动画，不碰你的聊天内容，也不会上传数据。",
+      "postInstallNotes": "安装后运行 dsh web 启动界面，默认就有鲸鱼了。如果想换皮肤，可以编辑 ~/.dsh/settings.yaml 配置文件。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 桌宠插件，在网页界面显示一只随智能体状态变化的小鲸鱼，支持自定义皮肤。",
+    "usage": {
+      "prompt_tokens": 2890,
+      "completion_tokens": 323,
+      "total_tokens": 3213,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2378
+    }
+  }
+}

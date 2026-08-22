@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-audiolib",
+  "analyzedAt": "2026-08-22T05:34:20.530Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-audiolib",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-plugin-audiolib"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DeepSeek Harness 在干活时播放背景音乐，音乐根据 AI 的工作状态自动切换，比如开始工作时放专注音乐，空闲时放轻松音乐。音乐来自 AudioLib.ai 的曲库，需要申请 API 密钥。",
+      "level": "ok",
+      "risks": "需要联网访问 AudioLib.ai 获取音乐，会下载临时文件（如果播放器不支持流式播放），但会清理。API 密钥存储在 ~/.dsh/.credentials.yaml（权限 600），不会写入配置文件。",
+      "postInstallNotes": "需要安装流媒体播放器（如 mpv 或 ffplay），并在 DSH 设置中填入 AudioLib API 密钥，或设置环境变量 AUDIOLIB_API_KEY。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供基于 AI 工作状态的背景音乐播放插件。",
+    "usage": {
+      "prompt_tokens": 3498,
+      "completion_tokens": 345,
+      "total_tokens": 3843,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2986
+    }
+  }
+}

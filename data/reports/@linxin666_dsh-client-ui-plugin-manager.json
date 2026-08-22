@@ -1,0 +1,34 @@
+{
+  "id": "@linxin666/dsh-client-ui-plugin-manager",
+  "analyzedAt": "2026-08-22T05:34:25.034Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-client-ui-plugin-manager",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-client-ui-plugin-manager"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页管理界面加了一个“插件管理器”标签页，让你能直接在网页上安装、卸载、更新插件，还能开关插件（下次启动生效）。它支持从 npm 或 git 安装，会显示安装进度，如果安装出问题还能一键让 AI 助手帮忙修复。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要在本地回环地址上工作，远程访问时功能受限。安装插件时会调用官方 CLI 来操作，但不会碰你的个人文件。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能看到新标签页。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页界面添加插件管理器标签页，支持安装、卸载、更新和启用/禁用插件。",
+    "usage": {
+      "prompt_tokens": 3412,
+      "completion_tokens": 326,
+      "total_tokens": 3738,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2900
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-ears",
+  "analyzedAt": "2026-08-22T05:34:43.296Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ears",
+      "evidence": "**从 npm 安装：**\n\n```sh\ndsh plugin --profile web add dsh-ears\n```"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上语音输入功能，相当于给纯文本的 AI 一对耳朵。你可以用麦克风说话，它会转成文字，还能选择用 AI 润色一下，然后手动发送。支持多种语音识别后端，比如浏览器自带的、本地 Whisper、Groq、阿里云百炼等，也支持自定义 OpenAI 兼容接口。默认快捷键是 Ctrl+Shift+Space。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会使用你的麦克风进行录音，录音内容会发送到你选择的语音识别服务（比如 Groq 或阿里云），这些服务可能会看到你的语音内容。如果使用本地 Whisper，则不会上传。",
+      "postInstallNotes": "安装后需要刷新 Web UI，输入框右侧会出现麦克风图标。如果使用本地 Whisper，需要在插件设置页下载模型；如果使用 Groq 或阿里云百炼，需要配置 API key。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-ears 是 DeepSeek Harness 的语音输入插件，支持多种识别后端，可润色转写文本。",
+    "usage": {
+      "prompt_tokens": 3729,
+      "completion_tokens": 400,
+      "total_tokens": 4129,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3217
+    }
+  }
+}

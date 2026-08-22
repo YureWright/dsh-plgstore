@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-repo",
+  "analyzedAt": "2026-08-22T05:33:26.296Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-repo",
+      "evidence": "dsh plugin --profile web add dsh-plugin-repo"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你自己搭建一个插件仓库，用来管理 DSH 的非官方插件。每台设备都能通过 HTTP 提供插件列表、上传和下载 .tgz 文件，还能跨设备同步插件（拉取或推送），并且有图形界面（设置里的“插件仓库”），方便你查看和管理。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和写入你配置的仓库目录（默认 ~/.dsh/plugin-repo），并通过 HTTP 提供接口，如果你开放了端口，其他人可能访问你的插件列表或下载插件，但不会直接碰你的隐私文件。",
+      "postInstallNotes": "重启 DSH，然后打开设置里的“插件仓库”页面。如果需要，可以配置 repoDir 和 logLevel。",
+      "notes": "无"
+    },
+    "summaryZh": "自托管的 DSH 插件仓库，支持跨设备同步和图形化管理。",
+    "usage": {
+      "prompt_tokens": 2451,
+      "completion_tokens": 336,
+      "total_tokens": 2787,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1939
+    }
+  }
+}

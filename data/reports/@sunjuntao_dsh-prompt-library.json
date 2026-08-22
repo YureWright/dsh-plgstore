@@ -1,0 +1,34 @@
+{
+  "id": "@sunjuntao/dsh-prompt-library",
+  "analyzedAt": "2026-08-22T05:33:37.762Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@sunjuntao/dsh-prompt-library",
+      "evidence": "dsh plugin --profile web add @sunjuntao/dsh-prompt-library"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在聊天栏加一个「提示词库」按钮，帮你管理常用提示词，支持搜索、标签分组、一键插入或替换输入框内容。还有 AI 润色功能，能优化你的文字，并且会学习你的输入，把经验存到本地文件里，形成长期记忆。",
+      "level": "ok",
+      "risks": "它会把数据存到你的用户目录下的 ~/.dsh/prompt-library/ 文件夹里，包括提示词库、设置和日志。AI 润色和自学习功能会调用 AI 服务，可能会把你的输入内容发送给 AI 提供商。另外，它会在首次启动时把旧的 JSON 词库迁移到 SQLite，并删除旧文件。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。可以在 DSH 设置里调整自动学习、手动确认、AI 润色等选项。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 提示词库插件：管理、复用和优化提示词，支持 AI 润色和自学习，数据本地存储。",
+    "usage": {
+      "prompt_tokens": 2713,
+      "completion_tokens": 379,
+      "total_tokens": 3092,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2201
+    }
+  }
+}

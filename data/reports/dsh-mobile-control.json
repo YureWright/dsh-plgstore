@@ -1,0 +1,34 @@
+{
+  "id": "dsh-mobile-control",
+  "analyzedAt": "2026-08-22T05:33:59.340Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，peerDependencies 依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，并描述了 DSH 工具注册。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mobile-control",
+      "evidence": "dsh plugin --profile demo add dsh-mobile-control"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你通过自然语言控制 iOS 模拟器，比如截图、点击、查找界面元素、打开链接等。它利用 WebDriverAgent 在模拟器内部运行，不需要额外的系统权限，可以操作任何应用，包括系统弹窗。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会运行脚本编译 WebDriverAgent，首次使用需要下载和编译，会占用一些磁盘空间和网络流量。它会在本地启动 HTTP 服务（默认 localhost:8100），但只监听本机，不会暴露到外网。",
+      "postInstallNotes": "需要安装完整版 Xcode，并确保模拟器已启动。首次运行 mobile_wda_up 工具时会自动编译 WDA，可能需要几分钟。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，通过 WebDriverAgent 驱动 iOS 模拟器，提供截图、点击、元素查找等自动化操作。",
+    "usage": {
+      "prompt_tokens": 2339,
+      "completion_tokens": 350,
+      "total_tokens": 2689,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1827
+    }
+  }
+}

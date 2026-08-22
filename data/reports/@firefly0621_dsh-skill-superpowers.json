@@ -1,0 +1,34 @@
+{
+  "id": "@firefly0621/dsh-skill-superpowers",
+  "analyzedAt": "2026-08-22T05:34:36.185Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@firefly0621/dsh-skill-superpowers",
+      "evidence": "dsh plugin --profile web add @firefly0621/dsh-skill-superpowers"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把一套叫 superpowers 的技能库装进 DeepSeek Harness，让 AI 助手在对话里能调用各种工作流程（比如头脑风暴、写计划、调试、代码审查等），还自动在每次对话开头注入一段系统提示，让 AI 更专业地使用这些技能。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是往系统提示里加内容，不碰用户文件，也不连外部服务器。",
+      "postInstallNotes": "装完后用 dsh --profile web 启动（或对应 profile），如果之前已经装过同名的 base 行，要先禁用那个。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 superpowers 技能库和系统提示引导的插件。",
+    "usage": {
+      "prompt_tokens": 3802,
+      "completion_tokens": 328,
+      "total_tokens": 4130,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3290
+    }
+  }
+}

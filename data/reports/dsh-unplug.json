@@ -1,0 +1,34 @@
+{
+  "id": "dsh-unplug",
+  "analyzedAt": "2026-08-22T05:32:58.435Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-unplug",
+      "evidence": "dsh plugin add dsh-unplug"
+    },
+    "evaluationReport": {
+      "intro": "这个插件帮你彻底卸载或禁用 DeepSeek Harness 里的其他插件。官方卸载可能留残留，它能清理干净，还能禁用但保留配置，随时恢复。",
+      "level": "ok",
+      "risks": "默认只读，但 remove 和 reconcile 命令需要你确认才会执行，会修改配置文件（如 cordis.patch.yml）和卸载依赖。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-unplug 是一个 DSH 插件管理工具，能干净地卸载、禁用、启用和审计其他插件。",
+    "usage": {
+      "prompt_tokens": 2696,
+      "completion_tokens": 267,
+      "total_tokens": 2963,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2184
+    }
+  }
+}

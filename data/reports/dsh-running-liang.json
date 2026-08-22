@@ -1,0 +1,34 @@
+{
+  "id": "dsh-running-liang",
+  "analyzedAt": "2026-08-22T05:33:05.566Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-running-liang",
+      "evidence": "dsh plugin --profile web add dsh-running-liang"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页版用的迷你游戏插件。当 AI 助手正在回复时，输入框上方会出现一个进度条，上面有个播放按钮，点一下就能玩一个类似 Chrome 恐龙快跑的小游戏。你可以用空格或上箭头跳跃，下箭头下蹲，躲避仙人掌和飞鸟，得分从「梁子」升到「梁圣」。游戏会在 AI 回复期间陪伴你，回复结束后自动暂停并收起。",
+      "level": "ok",
+      "risks": "没发现明显风险。游戏会读取和写入浏览器本地存储（localStorage）来保存游戏状态，还会在磁盘上创建 ~/.dsh/plugins/dsh-running-liang/avatars/ 目录来存放自定义头像图片，这些都在本地，不会上传到外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后发送一条消息，在输入框上方的进度条上点击播放键即可开始游戏。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness Web 打造的等待小游戏：agent 回复时玩一把恐龙快跑，得分从「梁子」冲向「梁圣」。",
+    "usage": {
+      "prompt_tokens": 2923,
+      "completion_tokens": 395,
+      "total_tokens": 3318,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2411
+    }
+  }
+}

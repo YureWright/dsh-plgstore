@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-image-input",
+  "analyzedAt": "2026-08-22T05:34:20.484Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-image-input",
+      "evidence": "dsh plugin --profile web add dsh-plugin-image-input"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让没有视觉能力的纯文本大模型（比如 DeepSeek）看懂图片。你像平常一样在聊天框粘贴或拖拽图片，按回车发送，插件会自动把图片转成文字描述（比如画面内容、坐标等），和你的文字一起发给模型。如果你用的模型本身支持图片（比如 qwen-vl、gpt-4o），插件就不插手，直接用原生图片功能。你还可以先点输入框旁边的按钮，只把图片描述插入输入框，自己改改再发。",
+      "level": "ok",
+      "risks": "插件会把图片发送到你配置的视觉 API 服务（比如阿里云、OpenAI 等），所以图片内容会经过第三方服务器。配置信息（API Key）存在你电脑的配置文件里（~/.config/mm-vision/config.json），只有你能看到。插件会运行一个 node 子进程来调用视觉 API，但只处理你主动粘贴的图片，不会乱碰其他文件。",
+      "postInstallNotes": "装完重启 DSH web，然后打开设置页，填写视觉 API 的地址、模型名和 API Key（也可以不填，插件会读取环境变量）。",
+      "notes": "无"
+    },
+    "summaryZh": "给纯文本大模型提供图片输入接管，粘贴/拖拽图片自动转文字描述，支持任意 OpenAI 兼容视觉模型。",
+    "usage": {
+      "prompt_tokens": 2254,
+      "completion_tokens": 417,
+      "total_tokens": 2671,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1742
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@ifrankwang/openspec-agents",
+  "analyzedAt": "2026-08-22T05:34:43.465Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置，README 提供了 dsh plugin add 安装命令，且代码明显调用了 DSH 的接口（./dsh 导出）。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@ifrankwang/openspec-agents",
+      "evidence": "dsh plugin --profile web add @ifrankwang/openspec-agents"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让多个 AI 智能体按规范流程协作，把 OpenSpec 的变更规范自动推进到实现、验证、质量审查和收尾合并。它支持多种 AI 编码工具，包括 DeepSeek Harness。简单说，就是帮你把 AI 写代码的过程变得更规范、更可控，每一步都有检查，结果更可靠。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要在你的项目目录中工作，会读取 OpenSpec 规范文件、执行 git 操作（如分支合并），但这些都是开发流程的正常部分。它不会连接外部服务器或上传你的代码。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "一个让多个 AI 智能体按 OpenSpec 规范协作完成代码变更编排的插件，支持 DeepSeek Harness 等多种工具。",
+    "usage": {
+      "prompt_tokens": 3114,
+      "completion_tokens": 335,
+      "total_tokens": 3449,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2602
+    }
+  }
+}

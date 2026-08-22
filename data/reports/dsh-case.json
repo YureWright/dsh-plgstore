@@ -1,0 +1,34 @@
+{
+  "id": "dsh-case",
+  "analyzedAt": "2026-08-22T05:33:48.409Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-case",
+      "evidence": "dsh plugin --profile <name> add dsh-case"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件，用来转换文本的命名风格，比如把 snake_case 转成 camelCase、PascalCase 等。它注册了一个叫 case_convert 的工具，你可以在 DSH 里调用它来转换字符串。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是一个纯函数工具，不访问网络，不读写文件，不碰隐私。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 命名风格转换工具，支持多种大小写格式转换。",
+    "usage": {
+      "prompt_tokens": 1834,
+      "completion_tokens": 258,
+      "total_tokens": 2092,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1322
+    }
+  }
+}

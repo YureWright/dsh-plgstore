@@ -1,0 +1,34 @@
+{
+  "id": "openharness-reply-in-cn",
+  "analyzedAt": "2026-08-22T05:34:00.725Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-client-runtime，README 给出了 dsh plugin add 安装命令，代码调用了 DSH 的 systemPrompt.section 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "openharness-reply-in-cn",
+      "evidence": "dsh plugin --profile web add openharness-reply-in-cn"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 在对话时强制模型用简体中文回复，并在设置页侧边栏显示一个「中文回复」的开关。它通过往系统提示词里加一条高优先级指令来实现，适合希望模型始终用中文交流的用户。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改系统提示词和侧边栏显示，不碰隐私文件，也不连接外部服务器。",
+      "postInstallNotes": "装完后需要彻底退出应用（⌘Q）再重开，否则侧边栏可能不显示新项。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，强制模型用简体中文回复，并在侧边栏显示「中文回复」选项。",
+    "usage": {
+      "prompt_tokens": 2546,
+      "completion_tokens": 327,
+      "total_tokens": 2873,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2034
+    }
+  }
+}

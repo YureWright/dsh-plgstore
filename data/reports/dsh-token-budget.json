@@ -1,0 +1,34 @@
+{
+  "id": "dsh-token-budget",
+  "analyzedAt": "2026-08-22T05:34:07.919Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-token-budget",
+      "evidence": "dsh plugin --profile web add dsh-token-budget"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你统计在 DeepSeek Harness 里每个会话用了多少 token（输入、输出、缓存等），算缓存命中率，还按模型和时段估算花了多少钱。它会在聊天界面头部显示一个徽标，比如 '19.2M tokens · 缓存命中 98% · ≈0.91 CNY'，让你随时看到用量和费用。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取会话日志和配置，不碰其他文件，也不连外部服务器。",
+      "postInstallNotes": "装完重启 dsh web 生效。如果想自定义价格或时段，可以在自己的 profile 的 cordis.patch.yml 里覆盖配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，实时统计会话 token 用量、缓存命中率和按模型/时段估算的费用，并在界面显示徽标。",
+    "usage": {
+      "prompt_tokens": 3831,
+      "completion_tokens": 337,
+      "total_tokens": 4168,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3319
+    }
+  }
+}

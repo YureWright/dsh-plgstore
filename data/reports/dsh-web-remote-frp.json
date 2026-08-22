@@ -1,0 +1,34 @@
+{
+  "id": "dsh-web-remote-frp",
+  "analyzedAt": "2026-08-22T05:33:00.736Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-web-remote-frp",
+      "evidence": "在 DSH profile 目录执行 cd $DSH_HOME/profiles/web && pnpm add dsh-web-remote-frp"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你能从手机或外网远程访问你的 DSH 服务。它用 frp 内网穿透技术，把家里的 DSH 服务暴露到公网，这样你在外面也能用手机访问。它还支持局域网直连、安全令牌认证、数据压缩加速，以及通过微信、QQ、Telegram 等机器人远程控制。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会下载 frpc 程序并运行，需要你提供 frps 服务器地址和令牌，这些信息会存储在配置中。公网访问需要令牌，但局域网默认免令牌，注意局域网内其他设备也能访问。",
+      "postInstallNotes": "需要在配置中设置 frpServerAddr（frps 服务器地址），否则公网功能不可用。其他配置项可选，但建议设置强密码的 frpAuthToken。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 手机/外网远程访问插件（frp 版），通过 frp 内网穿透实现公网访问，支持局域网直连、token 鉴权、gzip 压缩和六大机器人通道。",
+    "usage": {
+      "prompt_tokens": 5090,
+      "completion_tokens": 386,
+      "total_tokens": 5476,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4578
+    }
+  }
+}

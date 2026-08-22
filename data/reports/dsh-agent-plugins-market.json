@@ -1,0 +1,34 @@
+{
+  "id": "dsh-agent-plugins-market",
+  "analyzedAt": "2026-08-22T05:33:21.419Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-agent-plugins-market",
+      "evidence": "dsh plugin --profile <name> add dsh-agent-plugins-market"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里直接安装和使用 Claude Code、Codex、Cursor 等平台的插件市场。它能把 GitHub 上的插件仓库添加为来源，然后一键安装里面的技能、MCP 服务器、钩子和斜杠命令，不用手动复制文件或转换格式。安装后，这些技能会出现在斜杠菜单里，MCP 工具也会自动挂载。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取和写入 ~/.dsh/agent-plugins 目录下的文件，用于管理插件来源和状态。安装的插件可能来自第三方仓库，但这是用户主动添加的。",
+      "postInstallNotes": "安装后需要重启 dsh，然后在设置里打开 Agent Plugins Market 页面，添加一个插件市场仓库作为来源（比如 https://github.com/anthropics/claude-plugins-official），再安装你想要的套件。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 中安装和管理 Claude Code 等插件市场的插件，支持技能、MCP、钩子和命令的运行时注入。",
+    "usage": {
+      "prompt_tokens": 4020,
+      "completion_tokens": 389,
+      "total_tokens": 4409,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3508
+    }
+  }
+}

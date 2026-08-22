@@ -1,0 +1,34 @@
+{
+  "id": "dsh-tool-market-data",
+  "analyzedAt": "2026-08-22T05:34:14.910Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tool-market-data",
+      "evidence": "dsh plugin add dsh-tool-market-data"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 助手添加了金融数据查询能力，可以获取 A 股、美股和加密货币的实时行情、历史 K 线、条件选股和基本面数据。比如你可以问它“茅台现在多少钱”或“帮我筛选今天涨幅超过5%的股票”，它会自动识别市场并返回数据。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会从新浪、Yahoo、东方财富、Binance 等公开 API 获取数据，不会访问你的本地文件或发送隐私信息。",
+      "postInstallNotes": "安装后需要在 DSH 配置中插入插件配置，例如设置默认市场（defaultMarket）和 Binance API 地址（binanceBaseUrl），否则使用默认值。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 金融数据插件，支持 A 股、美股、加密货币的行情、K线、选股和基本面查询。",
+    "usage": {
+      "prompt_tokens": 2452,
+      "completion_tokens": 343,
+      "total_tokens": 2795,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1940
+    }
+  }
+}

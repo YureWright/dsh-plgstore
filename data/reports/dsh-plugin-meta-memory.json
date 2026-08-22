@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-meta-memory",
+  "analyzedAt": "2026-08-22T05:34:28.465Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-meta-memory",
+      "evidence": "dsh plugin --profile your-profile add dsh-plugin-meta-memory"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个长期记忆系统。它把记忆分成不同的单元，每个记忆有简短版和详细版，还能自动把相关的简短记忆塞进对话上下文里，让 AI 记住之前的工作。还带一个命令行工具，可以初始化、查看、搜索记忆。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读写你指定的记忆目录（默认是 ~/.dsh/meta-memory），但这是它该干的事。",
+      "postInstallNotes": "装完后需要配置一下，比如设置记忆目录路径（memoryPath），以及决定要不要开启自动注入（enableInjection）和技能（enableSkill）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供结构化长期记忆系统，支持单元化记忆、自动注入和命令行管理。",
+    "usage": {
+      "prompt_tokens": 1901,
+      "completion_tokens": 313,
+      "total_tokens": 2214,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1389
+    }
+  }
+}

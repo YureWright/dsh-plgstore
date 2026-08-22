@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-table-zoom",
+  "analyzedAt": "2026-08-22T05:34:14.958Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了安装到 dsh profile 的步骤，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-table-zoom",
+      "evidence": "npm install dsh-plugin-table-zoom"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页聊天界面用的。当聊天里的 Markdown 表格太长或太宽，看不全的时候，它会在表格上方自动出现一个“浮窗查看”按钮。点击后，会弹出一个独立的小窗口，可以滚动查看完整表格，还能一键复制成 Markdown 格式。它还能拖拽调整大小、移动位置、用 Ctrl+滚轮缩放字体，方便你仔细看表格内容。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器里操作 DOM，不碰系统文件，也不连接外部服务器。",
+      "postInstallNotes": "需要在 dsh 的 Web profile 目录（如 ~/.dsh/profiles/web）里安装，并在 profile 的 package.json 的 dsh.profile.bundles 中加入该插件，然后重启 dsh web。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 聊天表格浮窗插件，长表格自动出现浮窗查看按钮，支持滚动、复制、缩放和拖拽。",
+    "usage": {
+      "prompt_tokens": 3454,
+      "completion_tokens": 361,
+      "total_tokens": 3815,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2942
+    }
+  }
+}

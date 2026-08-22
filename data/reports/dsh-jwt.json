@@ -1,0 +1,34 @@
+{
+  "id": "dsh-jwt",
+  "analyzedAt": "2026-08-22T05:33:52.134Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-jwt",
+      "evidence": "（发布到 npm 后可用 `dsh plugin --profile <profile> add dsh-jwt`）"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件，用来把 JWT 令牌拆开看里面的内容。它能把 JWT 的头部、载荷和签名分开，解码出里面的信息，并告诉你过期时间、签发时间等。注意它不验证签名，所以不能用来做安全判断。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只处理你给它的 JWT 字符串，不碰其他文件或网络。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，用于解码和查看 JWT 令牌内容（仅调试用，不验证签名）。",
+    "usage": {
+      "prompt_tokens": 1898,
+      "completion_tokens": 283,
+      "total_tokens": 2181,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1386
+    }
+  }
+}

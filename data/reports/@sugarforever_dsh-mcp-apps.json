@@ -1,0 +1,34 @@
+{
+  "id": "@sugarforever/dsh-mcp-apps",
+  "analyzedAt": "2026-08-22T05:34:37.058Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 配置，依赖了多个 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@sugarforever/dsh-mcp-apps",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add @sugarforever/dsh-mcp-apps"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 变成一个 MCP Apps 的宿主。简单说，它可以连接一个 MCP 服务器，把服务器提供的工具注册到 Harness 里，并且如果工具带有界面资源，还能在对话中显示成可交互的小应用。支持多种连接方式，比如本地进程或远程 HTTP。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会连接你配置的 MCP 服务器，可能会访问外部网络，但这是你主动配置的。浏览器不会直接接触到服务器的 URL、命令或密钥，这些信息通过本地回环通道传递。",
+      "postInstallNotes": "安装后需要编辑 ~/.dsh/profiles/web/cordis.patch.yml 文件，添加一个插件实例的配置，指定要连接的 MCP 服务器信息（比如服务器名称、传输方式、URL 或命令等），然后重启 DSH。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 成为 MCP Apps 宿主，支持连接 MCP 服务器并在对话中显示交互式应用。",
+    "usage": {
+      "prompt_tokens": 3761,
+      "completion_tokens": 389,
+      "total_tokens": 4150,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3249
+    }
+  }
+}

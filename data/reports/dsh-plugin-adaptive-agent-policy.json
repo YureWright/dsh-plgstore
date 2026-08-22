@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-adaptive-agent-policy",
+  "analyzedAt": "2026-08-22T05:33:11.563Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了多个 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-adaptive-agent-policy@next",
+      "evidence": "dsh plugin --profile web add dsh-plugin-adaptive-agent-policy@next"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能根据任务类型自动调整 AI 的思考方式，比如读文档、写代码、做前端等不同任务，它会设置不同的输出长度和步骤限制，还能在任务太长时自动精简工具结果，避免 AI 陷入无效循环，从而节省时间和 token。它不会改变你选择的模型或工具，只是优化运行策略。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取任务上下文和工具结果，不访问个人文件或连接外部服务器。",
+      "postInstallNotes": "安装后无需额外配置，默认参数即可使用。若需调整风险路由的保守程度，可在 cordis.patch.yml 中覆盖配置。",
+      "notes": "无"
+    },
+    "summaryZh": "一个非官方的 DeepSeek Harness 插件，根据任务类型动态调整提示词、输出上限和工具结果裁剪，以减少大型任务中的无效循环。",
+    "usage": {
+      "prompt_tokens": 4923,
+      "completion_tokens": 342,
+      "total_tokens": 5265,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4411
+    }
+  }
+}

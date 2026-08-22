@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-browser-notify",
+  "analyzedAt": "2026-08-22T05:34:06.839Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-browser-notify",
+      "evidence": "dsh plugin --profile web add dsh-plugin-browser-notify"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在浏览器里给你发通知。当后台任务完成、需要你审批、或者子任务结束的时候，它会弹系统通知，同时页面里也会出现小提示，这样你就不会错过重要事情。你还可以在设置里手动发个测试通知试试效果。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在浏览器里弹通知，需要你授权浏览器通知权限，不会碰其他文件。",
+      "postInstallNotes": "装完需要重启 dsh web，然后到设置里开启浏览器通知权限。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 浏览器通知插件，任务完成或需要审批时通过系统通知和页内 toast 提醒用户。",
+    "usage": {
+      "prompt_tokens": 2116,
+      "completion_tokens": 289,
+      "total_tokens": 2405,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1604
+    }
+  }
+}

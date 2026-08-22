@@ -1,0 +1,34 @@
+{
+  "id": "dsh-ess-proposal",
+  "analyzedAt": "2026-08-22T05:33:42.774Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 bundle.patch 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ess-proposal",
+      "evidence": "从插件市场安装：dsh plugin --profile web add dsh-ess-proposal"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你把电费单照片变成一份光伏+储能方案。你上传一张马来西亚电费单图片，它会自动读出用电数据，然后推荐装多少光伏、多少储能，算出要花多少钱、几年回本、能减多少碳，最后给你一份结构化的报告。",
+      "level": "ok",
+      "risks": "它会读取你指定的本地图片文件（电费单、现场照片），并把图片内容发送给阿里云百炼（Qwen-VL）或 DeepSeek 的 API 进行识别。如果你配置了 API Key，这些 Key 会存在你的环境变量或 .env 文件里。它不会主动上传其他文件，也不会访问你的隐私目录。",
+      "postInstallNotes": "需要配置环境变量：DASHSCOPE_API_KEY（强烈建议，用于 Qwen-VL 看图）和 DEEPSEEK_API_KEY（可选，用于 OCR 回退）。配置后需重启 dsh 并开新会话。",
+      "notes": "无"
+    },
+    "summaryZh": "根据电费单一键生成光伏+储能方案的 DSH 插件（马来西亚市场）。",
+    "usage": {
+      "prompt_tokens": 4748,
+      "completion_tokens": 388,
+      "total_tokens": 5136,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4236
+    }
+  }
+}

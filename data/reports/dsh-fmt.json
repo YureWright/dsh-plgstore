@@ -1,0 +1,34 @@
+{
+  "id": "dsh-fmt",
+  "analyzedAt": "2026-08-22T05:33:47.260Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，peerDependencies 依赖 @deepseek-ai/cordis 和 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-fmt",
+      "evidence": "（发布到 npm 后：`dsh plugin --profile <name> add dsh-fmt`）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你把乱七八糟的文本整理成整齐的格式，支持 JSON、YAML、TOML 和 SQL 四种常见格式。比如你有一段没排版的 JSON，它能自动缩进、换行，让结构一目了然；如果文本有语法错误，它也会告诉你哪里错了。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只处理你给它的文本，不会碰你电脑上的其他文件，也不会联网。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-fmt 是一个 DSH 插件，用于格式化与校验 JSON、YAML、TOML 和 SQL 文本。",
+    "usage": {
+      "prompt_tokens": 2251,
+      "completion_tokens": 305,
+      "total_tokens": 2556,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1739
+    }
+  }
+}

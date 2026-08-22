@@ -1,0 +1,34 @@
+{
+  "id": "@ag-dsh/dsh-gen-commit-msg-zh",
+  "analyzedAt": "2026-08-22T05:33:50.282Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@ag-dsh/dsh-gen-commit-msg-zh",
+      "evidence": "dsh plugin --profile web add @ag-dsh/dsh-gen-commit-msg-zh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你自动生成中文的 git 提交信息，并支持交互式确认提交。你只需要输入 /gen-commit-msg-zh 命令，它就会分析你的代码改动，生成一条规范的提交信息，然后让你选择提交、修改或放弃。它还有一个非交互模式，可以在无人值守时自动提交。",
+      "level": "ok",
+      "risks": "它会运行 git 命令来查看和提交你的代码改动，包括 git add -A 和 git commit，这意味着它可能会修改你的 git 仓库。它不会上传你的代码到外部服务器，所有操作都在本地进行。",
+      "postInstallNotes": "安装后需要重启 dsh 才能生效。如果使用非交互技能，需要确保部署允许模型调用 bash 工具并具备 git 写权限。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件：生成中文 git 提交信息并支持交互式提交，包含命令和技能两种方式。",
+    "usage": {
+      "prompt_tokens": 4948,
+      "completion_tokens": 363,
+      "total_tokens": 5311,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4436
+    }
+  }
+}

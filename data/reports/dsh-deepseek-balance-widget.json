@@ -1,0 +1,34 @@
+{
+  "id": "dsh-deepseek-balance-widget",
+  "analyzedAt": "2026-08-22T05:33:09.270Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及 dsh-* 核心包，README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-deepseek-balance-widget",
+      "evidence": "dsh plugin --profile web add dsh-deepseek-balance-widget"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 dsh 的网页侧边栏显示你的 AI 账户余额和用量，比如 DeepSeek 和小米 MiMo。它会每 30 秒自动刷新，显示余额、今日消费、今日 Token 等信息，还支持添加多个平台、切换查看，甚至可以让 AI 帮你配置。",
+      "level": "ok",
+      "risks": "它会把你的 API 密钥和平台 Cookie 保存在本机 ~/.dsh/ai-balances.json 文件里，这些信息不会上传，但如果你把电脑给别人用，他们可能看到这些文件。另外，插件会读取本机的 DEEPSEEK_API_KEY 环境变量。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。首次使用会自动读取 DEEPSEEK_API_KEY，如果要添加 MiMo 或其他平台，需要按照提示配置 Cookie 或 Token。",
+      "notes": "无"
+    },
+    "summaryZh": "在 dsh 侧边栏显示 DeepSeek 和 MiMo 等 AI 平台余额与用量的插件，支持多平台切换和自动刷新。",
+    "usage": {
+      "prompt_tokens": 2161,
+      "completion_tokens": 386,
+      "total_tokens": 2547,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1649
+    }
+  }
+}

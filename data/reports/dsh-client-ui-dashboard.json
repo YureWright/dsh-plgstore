@@ -1,0 +1,34 @@
+{
+  "id": "dsh-client-ui-dashboard",
+  "analyzedAt": "2026-08-22T05:33:37.422Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 配置并依赖 @deepseek-ai/dsh-tools 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-client-ui-dashboard",
+      "evidence": "dsh plugin --profile web add dsh-client-ui-dashboard"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的实时仪表盘插件。它会在对话界面旁边增加一个“看板”标签页，让你在对话进行时实时看到各种数据，比如用了多少 token、缓存命中率、消息类型分布、耗时统计、工具调用情况、模型用量、压缩效果、错误和重试、健康诊断，还有各种趋势图表。所有数据都来自框架的标准接口，会随着对话事件实时更新。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取会话数据并在界面上展示，不会修改你的文件或连接外部服务器。",
+      "postInstallNotes": "安装后需要编辑 ~/.dsh/profiles/web/cordis.patch.yml 文件，添加一行配置来注册这个插件（具体内容见 README）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面添加实时仪表盘标签页，可视化 token 用量、缓存命中率、耗时、工具调用等会话指标。",
+    "usage": {
+      "prompt_tokens": 3804,
+      "completion_tokens": 357,
+      "total_tokens": 4161,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3292
+    }
+  }
+}

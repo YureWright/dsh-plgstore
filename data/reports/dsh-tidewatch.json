@@ -1,0 +1,34 @@
+{
+  "id": "dsh-tidewatch",
+  "analyzedAt": "2026-08-22T05:33:05.890Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tidewatch",
+      "evidence": "dsh plugin --profile web add dsh-tidewatch"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的悬浮小卡片，显示当前是高峰还是低谷时段、距离下一阶段还有多久，以及本次会话花了多少钱。它会根据官方峰谷定价计算费用，支持人民币和美元显示。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取会话的 token 使用数据来计算费用，不访问个人文件或连接外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。另外，如果官方调整价格，需要手动更新插件里的价格表。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek 峰谷时刻悬浮卡片，显示当前档位、倒计时和本次会话费用。",
+    "usage": {
+      "prompt_tokens": 2866,
+      "completion_tokens": 283,
+      "total_tokens": 3149,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2354
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@abruzz1/dsh-plugin-test",
+  "analyzedAt": "2026-08-22T05:34:01.689Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，peerDependencies 包含 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@memorylake/dsh-plugin",
+      "evidence": "dsh plugin --profile <name> add @memorylake/dsh-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上长期记忆功能，让 AI 能跨会话、跨项目记住事情。它提供三个工具（搜索、记住、忘记），还有两个命令（初始化向导和状态检查）。它需要配合 Memory Lake 的 CLI 工具使用，配置存在你电脑的 ~/.memorylake 文件夹里。",
+      "level": "ok",
+      "risks": "它会读取和写入你电脑上的 ~/.memorylake 配置文件，包括登录凭证。它还会调用 memorylake 命令行工具，这个工具需要你登录。插件本身不会主动联网，只有你调用记忆工具时才会运行 CLI。",
+      "postInstallNotes": "需要先安装并登录 Memory Lake CLI（可以用 /memorylake-init 向导），并确保 ~/.memorylake 下有配置文件（credentials.toml 和 harness/config.md）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供持久化记忆功能的插件，支持跨会话、跨项目、跨设备记忆。",
+    "usage": {
+      "prompt_tokens": 3085,
+      "completion_tokens": 360,
+      "total_tokens": 3445,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2573
+    }
+  }
+}

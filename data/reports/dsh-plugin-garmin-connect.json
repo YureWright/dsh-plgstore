@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-garmin-connect",
+  "analyzedAt": "2026-08-22T05:33:21.442Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和 @deepseek-ai/schemastery，README 明确描述为 DeepSeek Harness 插件，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-garmin-connect",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 dsh-plugin-garmin-connect，且存在 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把你的 Garmin 手表/手环上的运动健康数据（活动、睡眠、步数、心率、体重等）接入 DeepSeek 的 AI 助手，让 AI 能直接查询这些数据，帮你分析运动表现、制定训练计划。它还提供下载原始 FIT 文件、创建训练计划等功能。",
+      "level": "caution",
+      "risks": "它会读取你的 Garmin 账号数据（需要你登录 Garmin），这些数据会发送给 AI 处理。下载 FIT 文件功能会在电脑上写文件。创建训练计划会修改你的 Garmin 训练库。另外，它包含浏览器自动化（playwright）用于登录，可能打开浏览器窗口。",
+      "postInstallNotes": "需要配置 Garmin 账号凭据（用户名/密码或 token），可能需要运行 `garmin-connect-auth` 命令进行登录授权。",
+      "notes": "README 警告 0.1.5 版本的两步验证功能未完成，浏览器认证命令仅用于本地测试，生产环境不要依赖。"
+    },
+    "summaryZh": "将 Garmin 运动健康数据接入 DeepSeek AI 的插件，提供查询活动、睡眠、心率等工具，并支持个性化跑步指导。",
+    "usage": {
+      "prompt_tokens": 4033,
+      "completion_tokens": 434,
+      "total_tokens": 4467,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3521
+    }
+  }
+}

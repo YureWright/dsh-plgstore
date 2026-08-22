@@ -1,0 +1,34 @@
+{
+  "id": "@dshthemes/core",
+  "analyzedAt": "2026-08-22T05:34:40.124Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dshthemes/core",
+      "evidence": "dsh plugin --profile web add @dshthemes/core"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 deepseek-harness 用的主题包，它提供了 11 套主题定义（比如颜色方案和样式变量），安装后可以切换这些主题，让界面看起来不一样。它本身不带界面，只是注册主题，你可以通过命令或代码来使用。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只注册主题定义，不碰你的文件，也不连外部服务器。",
+      "postInstallNotes": "安装后，你需要通过 ctx.theme.setTheme('主题名') 来切换主题，或者配合 @dshthemes/ui 插件来提供选择界面。",
+      "notes": "无"
+    },
+    "summaryZh": "为 deepseek-harness 提供 11 套主题定义和注册工具，安装后即可切换界面主题。",
+    "usage": {
+      "prompt_tokens": 2181,
+      "completion_tokens": 309,
+      "total_tokens": 2490,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1669
+    }
+  }
+}

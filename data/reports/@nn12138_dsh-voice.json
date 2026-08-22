@@ -1,0 +1,34 @@
+{
+  "id": "@nn12138/dsh-voice",
+  "analyzedAt": "2026-08-22T05:33:32.029Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@nn12138/dsh-voice",
+      "evidence": "dsh plugin --profile web add @nn12138/dsh-voice"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的语音输入插件。装上之后，网页界面上会出现一个麦克风按钮，或者按快捷键（默认 Ctrl+Space），你就可以说话，它会把你说的话转成文字，然后像打字一样发送到聊天里。它不会改动你的 AI 角色设定，所以任何模式下都能用。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在本地处理语音，不会上传到外部服务器（除非你选择用浏览器自带的语音识别，那可能会把音频发给浏览器厂商）。",
+      "postInstallNotes": "装完后重启 dsh web。可选：运行 dsh-voice-models 下载离线识别模型（约100MB），否则会自动用浏览器语音识别。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-voice 是一个语音输入插件，让你在 DeepSeek Harness 里用麦克风说话，自动转成文字发送，支持离线识别和浏览器识别。",
+    "usage": {
+      "prompt_tokens": 2758,
+      "completion_tokens": 348,
+      "total_tokens": 3106,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2246
+    }
+  }
+}

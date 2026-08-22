@@ -1,0 +1,34 @@
+{
+  "id": "dsh-session-cost",
+  "analyzedAt": "2026-08-22T05:33:52.137Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及 dsh-client-* 核心包，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-session-cost",
+      "evidence": "dsh plugin add dsh-session-cost"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DeepSeek Harness 的网页界面的底部统计条里，显示当前会话大概花了多少钱。它会根据你用的 token 数量和官方价格，估算出费用，并且会自动区分高峰和空闲时段的价格。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取会话的 token 用量数据，在网页上显示估算费用，不会上传数据到外部服务器，也不碰个人文件。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 网页界面显示当前会话的 DeepSeek API 费用估算，支持峰谷计价。",
+    "usage": {
+      "prompt_tokens": 2182,
+      "completion_tokens": 292,
+      "total_tokens": 2474,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1670
+    }
+  }
+}

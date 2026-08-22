@@ -1,0 +1,34 @@
+{
+  "id": "dsh-skill-evolve",
+  "analyzedAt": "2026-08-22T05:34:15.799Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，且 README 给出了 DSH 插件的配置方式（insert 配置），符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-skill-evolve",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 dsh-skill-evolve，且为 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 AI 助手从过去的成功经验中学习。它会分析 AI 完成任务的记录，自动提炼出可复用的步骤模板（叫 skill），以后遇到类似任务时，AI 就能直接按照模板执行，更快更准。简单说，就是让 AI 越用越聪明。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取你指定的 session 文件（比如 ~/.dsh/sessions/ 下的记录），并在你配置的目录下生成 skill 文件。不会上传数据到外部服务器。",
+      "postInstallNotes": "需要在 DSH 配置文件中添加插件配置，指定生成的 skill 存放目录（skillsDir）和最小步骤数（minSteps）等参数。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件：从成功会话中自动提炼可复用 skill，让 Agent 自我进化。",
+    "usage": {
+      "prompt_tokens": 2043,
+      "completion_tokens": 359,
+      "total_tokens": 2402,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1531
+    }
+  }
+}

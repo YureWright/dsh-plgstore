@@ -1,0 +1,34 @@
+{
+  "id": "dsh-clipboard",
+  "analyzedAt": "2026-08-22T05:33:47.610Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-llm 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-clipboard",
+      "evidence": "dsh plugin --profile <profile-name> add dsh-clipboard"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 AI 助手把生成的文字（比如命令、代码、链接）直接复制到你的系统剪贴板，你只需要粘贴就能用，不用手动选中复制。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只调用系统自带的剪贴板命令（macOS 的 pbcopy、Windows 的 clip、Linux 的 xclip/xsel），不会上传数据到外部服务器。",
+      "postInstallNotes": "Linux 用户需要确保安装了 xclip 或 xsel，并且有图形会话（X11/Wayland）；否则写入会失败。",
+      "notes": "无"
+    },
+    "summaryZh": "一个把文本写入系统剪贴板的 DSH 插件，支持 macOS、Windows 和 Linux。",
+    "usage": {
+      "prompt_tokens": 1759,
+      "completion_tokens": 315,
+      "total_tokens": 2074,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1247
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-balance",
+  "analyzedAt": "2026-08-22T05:33:01.704Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-balance",
+      "evidence": "dsh plugin add dsh-plugin-balance"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness Web 用的悬浮窗插件，能显示你的 LLM 账户余额和用量，比如 DeepSeek 官方、OpenCode Go、OpenAI 的额度。它还能统计你在 DSH 对话中消耗的 token 数量，按天、月、模型分类，并估算费用。悬浮窗可以拖动，自动适配主题。",
+      "level": "ok",
+      "risks": "它会读取你的 DSH 凭据（如 DEEPSEEK_API_KEY、OPENCODE_GO_API_KEY）来查询余额和用量，这些密钥由宿主解析，不会发给浏览器。它会把 token 用量数据保存到本地文件（~/.dsh/storages/dsh-plugin-balance-usage.json），只存本地，不会上传。没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web（或热重载），然后刷新浏览器页面。如果使用默认 profile，直接 dsh plugin add 即可；如果手动管理 profile，需要按 README 手动配置依赖和 cordis.patch.yml。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH Web 的 LLM 额度/用量悬浮窗，附带 token 用量统计与费用估算。",
+    "usage": {
+      "prompt_tokens": 2975,
+      "completion_tokens": 399,
+      "total_tokens": 3374,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2463
+    }
+  }
+}

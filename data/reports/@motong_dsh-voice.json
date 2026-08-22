@@ -1,0 +1,34 @@
+{
+  "id": "@motong/dsh-voice",
+  "analyzedAt": "2026-08-22T05:33:16.615Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了多个 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@motong/dsh-voice",
+      "evidence": "dsh plugin --profile web add @motong/dsh-voice"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加语音功能：可以用麦克风说话输入文字，也可以让 AI 的回答朗读出来，用的是微软 Edge 的神经网络音色，比系统自带的好听。不需要 API Key，装完就能用。",
+      "level": "ok",
+      "risks": "朗读时会把回答内容发送给微软 Edge 语音服务，语音识别由浏览器处理。插件本身不接触密钥，不存储数据。需要联网才能朗读。",
+      "postInstallNotes": "安装后需要重启 DSH 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加语音输入和朗读功能的社区插件，无需 API Key。",
+    "usage": {
+      "prompt_tokens": 3374,
+      "completion_tokens": 295,
+      "total_tokens": 3669,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2862
+    }
+  }
+}

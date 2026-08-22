@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-market",
+  "analyzedAt": "2026-08-22T05:34:15.804Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/veloce-ailab/dsh-plugin-market.git",
+      "evidence": "Install this repository into a Web profile: pnpm dsh plugin --profile web add D:\\dev\\dsh\\plugins\\market"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个图形化的配置编辑器和插件市场。你可以在网页界面里直接改插件配置、搜索和安装 npm 上的 dsh-* 插件，还能浏览 GitHub 上的精选插件。它只允许本机访问配置界面，比较安全。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在本机回环地址提供配置界面，不会主动连外部服务器，除非你手动安装插件。",
+      "postInstallNotes": "安装后需要运行 pnpm dsh web 启动 Web 界面，然后在浏览器中打开配置页面。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供网页版配置编辑器和 npm 插件市场，支持搜索、安装和配置 dsh-* 插件。",
+    "usage": {
+      "prompt_tokens": 1950,
+      "completion_tokens": 338,
+      "total_tokens": 2288,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1438
+    }
+  }
+}

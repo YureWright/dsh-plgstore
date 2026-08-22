@@ -1,0 +1,34 @@
+{
+  "id": "@zhijianren/dsh-skills-manager",
+  "analyzedAt": "2026-08-22T05:32:57.807Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 明确提供 dsh 插件入口，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@zhijianren/dsh-skills-manager",
+      "evidence": "npm install @zhijianren/dsh-skills-manager   # 作为依赖安装"
+    },
+    "evaluationReport": {
+      "intro": "这是一个技能管理器，帮你管理各种 AI 编程助手（如 Cursor、Claude Code 等）的技能文件（SKILL.md）。你可以用它来查看、启用、停用、删除或导入技能，还能在浏览器里打开一个管理面板，方便地操作。它也能作为 DeepSeek Harness 的插件使用，让 AI 助手直接发现和调用这些技能。",
+      "level": "ok",
+      "risks": "它会读取和修改你电脑上多个 AI 工具的技能目录（如 ~/.cursor/skills、~/.claude/skills 等），以及当前项目目录下的技能文件夹。删除和导入操作会修改这些文件，但都有确认和备份机制。它启动的本地管理面板只绑定 127.0.0.1，并带有防跨站请求的标记头，风险较低。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "跨工具 SKILL.md 技能管理器，支持多种 AI 编码助手，提供 CLI 和 Web 面板，也可作为 DSH 插件使用。",
+    "usage": {
+      "prompt_tokens": 5086,
+      "completion_tokens": 380,
+      "total_tokens": 5466,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4574
+    }
+  }
+}

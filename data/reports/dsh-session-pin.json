@@ -1,0 +1,34 @@
+{
+  "id": "dsh-session-pin",
+  "analyzedAt": "2026-08-22T05:33:05.742Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-session-pin",
+      "evidence": "dsh plugin --profile web add dsh-session-pin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以把重要的会话和工作区固定在 DeepSeek Harness 侧边栏的顶部，并用不同颜色标记，方便快速找到。它还提供了一些整理功能，比如分组、标签、保存视图、健康摘要和 /goto 命令。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器本地存储数据，不会上传，也不影响模型请求。",
+      "postInstallNotes": "安装后需要重启 DSH 并验证插件是否生效。如果 DSH 内置了同名服务，可能需要配置不同的 entry id。",
+      "notes": "无"
+    },
+    "summaryZh": "将会话和工作区固定到侧边栏顶部并着色，提供分组、标签、视图等整理功能，纯 UI 插件，不影响模型。",
+    "usage": {
+      "prompt_tokens": 4206,
+      "completion_tokens": 306,
+      "total_tokens": 4512,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3694
+    }
+  }
+}

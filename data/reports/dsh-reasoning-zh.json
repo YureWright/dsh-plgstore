@@ -1,0 +1,34 @@
+{
+  "id": "dsh-reasoning-zh",
+  "analyzedAt": "2026-08-22T05:33:05.412Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 字段，且 README 提供了 DSH 插件安装命令（cli.mjs add），代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-reasoning-zh",
+      "evidence": "npm install dsh-reasoning-zh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面用的，它能把模型选择器里的「推理等级」选项（比如 Off、Low、High 这些）翻译成中文，还能让那些没有自带推理等级显示的第三方模型也能显示并设置推理等级，选好的等级会跟着请求发给模型。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改 DSH 的界面和请求数据，不碰其他文件，也不会上传数据到外部服务器。",
+      "postInstallNotes": "安装后需要运行 cli.mjs add 命令来注册插件，然后重启 DSH 服务让宿主代码生效，刷新页面加载客户端部分。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 中文推理等级翻译与第三方模型注入插件。",
+    "usage": {
+      "prompt_tokens": 2563,
+      "completion_tokens": 302,
+      "total_tokens": 2865,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2051
+    }
+  }
+}

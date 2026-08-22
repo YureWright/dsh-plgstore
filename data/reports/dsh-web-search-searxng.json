@@ -1,0 +1,34 @@
+{
+  "id": "dsh-web-search-searxng",
+  "analyzedAt": "2026-08-22T05:33:02.764Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-web-search-searxng",
+      "evidence": "dsh plugin --profile web add dsh-web-search-searxng"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 的网页搜索功能使用你自己搭建的 SearXNG 搜索引擎，不需要 API 密钥，每次搜索也不消耗模型 token。你可以自己控制搜索的类别、语言、时间范围等，适合注重隐私或想省钱的用户。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只会在你配置的 SearXNG 实例上发起搜索请求，不会碰其他文件或数据。",
+      "postInstallNotes": "需要设置环境变量 SEARXNG_URL 指向你的 SearXNG 实例地址，并确保实例的 settings.yml 中启用了 JSON 格式（search.formats 包含 json）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供基于自建 SearXNG 的网页搜索能力，无需 API 密钥，不消耗模型 token。",
+    "usage": {
+      "prompt_tokens": 4041,
+      "completion_tokens": 336,
+      "total_tokens": 4377,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3529
+    }
+  }
+}

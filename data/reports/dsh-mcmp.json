@@ -1,0 +1,34 @@
+{
+  "id": "dsh-mcmp",
+  "analyzedAt": "2026-08-22T05:33:25.938Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mcmp",
+      "evidence": "pnpm dsh plugin --profile web add dsh-mcmp"
+    },
+    "evaluationReport": {
+      "intro": "这是一个数学建模论文自动写作插件。你只要把赛题粘贴进去，发一条以 /loopbegin 开头的消息，它就会自动按 8 个步骤、每步多次迭代帮你写完整篇论文，包括建模、求解、代码、图表、论文撰写和评审修复。全程有专家子智能体先质疑再改进，最后生成一份完整的 Markdown 论文文件。它还会在右下角显示进度面板，支持中断、续跑和重置。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会在你的工作目录下创建'数学建模流水线'文件夹，保存赛题、论文、代码和图表等文件。它可能会读取你指定的本地文件（如 --from 参数），但需要你主动指定。",
+      "postInstallNotes": "安装后重启 pnpm dsh web，然后刷新网页。验证方法：浏览器访问 /mcmp-api/state，返回 JSON 即成功。",
+      "notes": "无"
+    },
+    "summaryZh": "数学建模论文自动化流水线插件，粘贴赛题后自动完成建模、求解、图表、论文撰写与评审修复，生成完整论文。",
+    "usage": {
+      "prompt_tokens": 4144,
+      "completion_tokens": 385,
+      "total_tokens": 4529,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3632
+    }
+  }
+}

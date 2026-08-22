@@ -1,0 +1,34 @@
+{
+  "id": "superpowers-dsh",
+  "analyzedAt": "2026-08-22T05:33:36.205Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且代码调用 ctx.skills 接口，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "superpowers-dsh",
+      "evidence": "dsh plugin --profile web add superpowers-dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 装上一套'超能力'技能包，包含 14 个开发技能，比如测试驱动开发、调试、写计划、代码评审等。装好后，你在和 AI 对话时就能用这些技能，让 AI 更专业地帮你写代码、找 bug、做规划。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取自己的技能文件，不碰你电脑上的其他文件，也不会上传数据。",
+      "postInstallNotes": "装完后需要重启 profile（比如重启 dsh web 并刷新浏览器），然后可以用 dsh --profile web --dump-config 确认插件已加载。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 14 个开发技能（TDD、调试、规划等）的插件包，安装后 AI 助手即可使用这些技能。",
+    "usage": {
+      "prompt_tokens": 3187,
+      "completion_tokens": 329,
+      "total_tokens": 3516,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2675
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-thread",
+  "analyzedAt": "2026-08-22T05:33:43.832Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-thread",
+      "evidence": "dsh plugin add dsh-thread"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加会话记忆功能，能完整记录对话事件，并在需要时把关键信息（如项目身份、行为契约、状态卡片）注入给模型，还提供查询工具和命令来管理决策、偏好、目标等，帮助编程助手记住上下文。",
+      "level": "ok",
+      "risks": "它会在本地创建 SQLite 数据库来存储会话数据，这些数据可能包含你的对话内容。另外它依赖 better-sqlite3 原生模块，安装时可能需要编译，但这是常见情况。没有发现它连接外部服务器或上传数据。",
+      "postInstallNotes": "需要在你的 profile 的 package.json 的 bundles 数组里加上 \"dsh-thread\"，然后重启 dsh。如果遇到 better-sqlite3 绑定错误，在 profile 目录运行 pnpm rebuild better-sqlite3。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-thread 是 DeepSeek Harness 的会话记忆插件，提供无损事件捕获、状态卡片注入和查询工具，帮助编程助手记住上下文。",
+    "usage": {
+      "prompt_tokens": 3810,
+      "completion_tokens": 373,
+      "total_tokens": 4183,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3298
+    }
+  }
+}

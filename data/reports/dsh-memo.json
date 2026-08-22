@@ -1,0 +1,34 @@
+{
+  "id": "dsh-memo",
+  "analyzedAt": "2026-08-22T05:32:56.702Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且描述为 DSH 代理提供工具，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-memo@latest",
+      "evidence": "dsh plugin --profile web add dsh-memo@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 AI 助手记住你们之前聊过的所有内容。你可以让它搜索过去的对话（比如“我们之前讨论过 Dieter Rams 吗？”），它还能帮你把重要的决定或偏好记下来，以后随时能查到。所有数据都保存在你自己的电脑上，不需要额外安装数据库或申请 API 密钥。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你的 DSH 数据目录下创建一个 memo 文件夹，用来存放搜索索引和笔记文件，但不会上传到任何外部服务器。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后三个新工具（memo_search、memo_remember、memo_stats）就会出现在你的代理工具列表中。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-memo 是一个 DSH 插件，为代理提供跨会话的会话记忆搜索、笔记记录和语料统计功能，全部本地运行。",
+    "usage": {
+      "prompt_tokens": 3297,
+      "completion_tokens": 337,
+      "total_tokens": 3634,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2785
+    }
+  }
+}

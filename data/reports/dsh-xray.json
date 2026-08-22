@@ -1,0 +1,34 @@
+{
+  "id": "dsh-xray",
+  "analyzedAt": "2026-08-22T05:33:02.105Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 作为 peerDependency，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-xray",
+      "evidence": "dsh plugin --profile web add dsh-xray"
+    },
+    "evaluationReport": {
+      "intro": "dsh-xray 是一个诊断工具，可以让你看清 DeepSeek Harness 中实际加载了哪些插件、为什么加载、以及它们消耗了多少上下文成本。它能显示插件依赖关系、健康状态、冲突检测、安全审计等，还提供一个 Web 面板和代理自省工具。",
+      "level": "ok",
+      "risks": "该插件只读取数据，不执行插件代码，写入仅限 $DSH_HOME/xray/ 目录。未发现明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-xray 是一个 DSH 诊断插件，提供插件归属、依赖图、健康检查、成本估算和安全审计等功能。",
+    "usage": {
+      "prompt_tokens": 3281,
+      "completion_tokens": 290,
+      "total_tokens": 3571,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2769
+    }
+  }
+}

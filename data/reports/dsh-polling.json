@@ -1,0 +1,34 @@
+{
+  "id": "dsh-polling",
+  "analyzedAt": "2026-08-22T05:34:24.561Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了多个 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件的明确证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-polling",
+      "evidence": "dsh plugin --profile web add dsh-polling"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 添加定时任务功能。你可以用自然语言告诉它'每天上午9点检查文件夹'，它就会按时自动执行，比如检查文件、生成报告、发送消息等。任务在独立会话中运行，不会打扰你当前的对话，你可以随时查看和指挥。",
+      "level": "ok",
+      "risks": "没发现明显风险。任务数据存储在本机 $DSH_HOME 下，插件不向外部服务上报数据。每次触发任务会消耗模型调用，可能产生费用。",
+      "postInstallNotes": "安装后需要重启 dsh web，侧边栏会出现「轮询」工作区。首次使用可能需要配置任务。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-polling 是一个为 DeepSeek Harness 提供定时/轮询任务的插件，支持自然语言创建任务、模型工具和 Web UI。",
+    "usage": {
+      "prompt_tokens": 3070,
+      "completion_tokens": 336,
+      "total_tokens": 3406,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2558
+    }
+  }
+}

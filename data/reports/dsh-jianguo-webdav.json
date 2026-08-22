@@ -1,0 +1,34 @@
+{
+  "id": "dsh-jianguo-webdav",
+  "analyzedAt": "2026-08-22T05:32:58.646Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-jianguo-webdav",
+      "evidence": "dsh plugin --profile web add dsh-jianguo-webdav"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness 的配置和聊天记录自动备份到坚果云（或其他支持 WebDAV 的云盘），这样换电脑或重装系统时数据不会丢。它同步的内容包括会话历史、设置、附件、个人资料等，但不会同步密码等敏感文件。",
+      "level": "ok",
+      "risks": "需要你把坚果云的账号密码写进配置文件（~/.dsh/jianguo-webdav.yaml），这些信息会存在你电脑上。插件会读取和上传你的 DSH 数据到云端，但不会同步凭证文件，风险可控。",
+      "postInstallNotes": "需要手动创建配置文件 ~/.dsh/jianguo-webdav.yaml，填入坚果云的 WebDAV 地址、用户名和密码，并根据需要开启自动同步。",
+      "notes": "无"
+    },
+    "summaryZh": "通过 WebDAV 将 DSH 配置和会话同步到坚果云，实现数据备份和跨设备同步。",
+    "usage": {
+      "prompt_tokens": 2100,
+      "completion_tokens": 357,
+      "total_tokens": 2457,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1588
+    }
+  }
+}
