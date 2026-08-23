@@ -1,0 +1,34 @@
+{
+  "id": "dsh-lan-gate",
+  "analyzedAt": "2026-08-23T05:36:39.391Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-client-runtime 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-lan-gate",
+      "evidence": "dsh plugin --profile web add dsh-lan-gate"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加了一道门禁：它让服务监听所有网络接口，然后要求局域网里的设备输入密码才能访问界面和 API。你可以设置允许访问的 IP 范围（CIDR），还能拒绝代理转发头，防止绕过。密码是加密存储的，不会明文保存。",
+      "level": "ok",
+      "risks": "它会修改 DeepSeek Harness 的配置，让服务暴露在局域网中。密码和会话令牌在传输时如果没启用 HTTPS，可能被局域网内的人嗅探到。它还会在本地存储一个配置文件（lan-gate.json），包含密码的加密验证信息。",
+      "postInstallNotes": "安装后，需要先在本地（127.0.0.1）打开登录页面设置密码，然后局域网用户才能访问。之后可以在设置里调整允许的 IP 范围和代理头策略。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面提供局域网密码门禁和 IP 白名单控制。",
+    "usage": {
+      "prompt_tokens": 1928,
+      "completion_tokens": 368,
+      "total_tokens": 2296,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1416
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-installer",
+  "analyzedAt": "2026-08-23T05:35:59.480Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-skill，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-installer",
+      "evidence": "dsh plugin --profile web add dsh-plugin-installer"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个「插件商店」页面，你可以在网页界面上浏览、搜索插件，点一下就能让 AI 助手帮你安装。它还自带一个安装助手技能，能自动完成安装并检查结果。",
+      "level": "ok",
+      "risks": "安装时 AI 助手会执行安装命令，可能会读写你的 dsh 配置和插件目录，并访问 npm 或 GitHub，但每一步都可见可停止。没有遥测、分析或凭据访问。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后在会话中打开插件商店页签使用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件商店 + 安装助手，让你在网页界面一键浏览和安装插件。",
+    "usage": {
+      "prompt_tokens": 3199,
+      "completion_tokens": 316,
+      "total_tokens": 3515,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2687
+    }
+  }
+}

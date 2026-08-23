@@ -1,0 +1,34 @@
+{
+  "id": "deepseek-idesign",
+  "analyzedAt": "2026-08-23T05:35:04.167Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-idesign",
+      "evidence": "dsh plugin --profile web add deepseek-idesign"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个设计工作室，让 AI 能直接生成和修改网页、海报、卡片等设计文件，你也能在同一个界面里手动调整文字、颜色、大小等。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只访问 Harness 工作区里的 design/ 目录，不会安装桌面应用，也不会自动发送消息。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供原生可视化设计工作室，支持 AI 生成与手动编辑设计文件。",
+    "usage": {
+      "prompt_tokens": 3365,
+      "completion_tokens": 272,
+      "total_tokens": 3637,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2853
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-patchouli",
+  "analyzedAt": "2026-08-23T05:36:44.872Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.harmony 配置，依赖了 @deepseek-ai/schemastery 等 DSH 核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-patchouli",
+      "evidence": "dsh plugin --profile web add dsh-patchouli"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫 Patchouli，是给 DeepSeek Harness 用的本地记忆和知识中心。它能把各种 AI 插件的记忆和知识数据统一管理起来，支持更新、查询和订阅，还带一个独立的 Rust 后端做数据存储，让数据更可靠。简单说，就是给 AI 助手装一个'大脑'，让它能记住和调用长期记忆。",
+      "level": "caution",
+      "risks": "安装时会运行一个安装脚本（curl 下载并执行），会下载一个二进制守护进程到你的电脑上。这个守护进程会连接本地数据库，可能存储你的对话和知识数据。另外，它需要 Node.js 22.19 以上和 Rust 环境，可能会影响系统性能。",
+      "postInstallNotes": "需要先安装数据库守护进程（运行安装脚本），然后添加插件，最后配置至少一个兼容的记忆或知识插件来处理路由请求。",
+      "notes": "安装脚本通过 curl 从 GitHub 下载并执行，存在供应链风险，建议检查脚本内容。另外，该插件依赖多个未发布的子包（如 dsh-patchouli-protocol），可能影响安装稳定性。"
+    },
+    "summaryZh": "Patchouli 是一个为 DeepSeek Harness 设计的本地记忆与知识中心插件，通过统一接口管理多个 AI 插件的记忆数据，并提供可靠的存储后端。",
+    "usage": {
+      "prompt_tokens": 3764,
+      "completion_tokens": 441,
+      "total_tokens": 4205,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3252
+    }
+  }
+}

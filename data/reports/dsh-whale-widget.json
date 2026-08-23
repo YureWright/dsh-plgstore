@@ -1,0 +1,34 @@
+{
+  "id": "dsh-whale-widget",
+  "analyzedAt": "2026-08-23T05:35:17.835Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-whale-widget",
+      "evidence": "dsh plugin --profile web add dsh-whale-widget"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的余额小挂件，显示成一只小鲸鱼，放在右下角。它能显示你的 DeepSeek API 余额、今天用了多少钱、每轮对话花了多少钱，还能随机说点台词、有音效，可以拖拽位置。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你的 DeepSeek API 余额，需要配置 API 密钥；如果你选择用令牌模式，需要自己从网页复制会话令牌，这个令牌只在你登录平台时有效。它会在本地存一个记账文件（.dshw-usage.json），记录你的用量，但不会上传到别处。",
+      "postInstallNotes": "安装后需要配置 DEEPSEEK_API_KEY 才能显示余额；如果要用实时令牌模式，还需要配置 DEEPSEEK_PLATFORM_TOKEN（可选）。配置后重启 dsh web 并刷新浏览器。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页界面右下角的小鲸鱼余额挂件，显示余额、今日用量和每轮消耗，带音效和随机台词。",
+    "usage": {
+      "prompt_tokens": 4641,
+      "completion_tokens": 379,
+      "total_tokens": 5020,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4129
+    }
+  }
+}

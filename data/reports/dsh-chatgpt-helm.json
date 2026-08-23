@@ -1,0 +1,34 @@
+{
+  "id": "dsh-chatgpt-helm",
+  "analyzedAt": "2026-08-23T05:36:11.035Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且依赖了 @beforewave/dsh-chatgpt-helm 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-chatgpt-helm",
+      "evidence": "```bash\ndsh plugin --profile web add dsh-chatgpt-helm\n```"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件的兼容别名包，它本身不包含实际功能，而是指向真正的插件 @beforewave/dsh-chatgpt-helm。安装这个别名包后，DSH 会自动加载真正的插件，让你能使用 ChatGPT 相关的功能（比如通过 MCP 集成）。简单说，它是个‘引路牌’，帮你安装真正的插件。",
+      "level": "ok",
+      "risks": "没发现明显风险。这个包只是转发，不直接操作你的电脑，但安装后它会拉取并加载真正的插件，那个插件的行为需要关注。",
+      "postInstallNotes": "无。安装后 DSH 会自动处理，无需额外配置。",
+      "notes": "注意：这个包是别名，实际功能由 @beforewave/dsh-chatgpt-helm 提供，建议查看那个包的文档了解具体功能和潜在风险。"
+    },
+    "summaryZh": "dsh-chatgpt-helm 是 DSH 插件的兼容别名，用于安装并加载真正的 ChatGPT 集成插件。",
+    "usage": {
+      "prompt_tokens": 1501,
+      "completion_tokens": 371,
+      "total_tokens": 1872,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 989
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@huiliyi37/dsh-office",
+  "analyzedAt": "2026-08-23T05:35:04.752Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huiliyi37/dsh-office",
+      "evidence": "dsh plugin --profile <name> add @huiliyi37/dsh-office"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加了办公文档处理能力，可以生成、读取和编辑 Excel、PDF、PPT 和 Word 文件。比如，你可以让它创建一份带格式的 Excel 表格、生成一份 PDF 报告、制作 PPT 演示文稿，或者读取 Word 文档的内容。它包含 14 个工具，覆盖了常见的办公文档操作。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只处理用户指定的文件，不会主动访问网络或隐私数据。",
+      "postInstallNotes": "需要确保 dsh 版本不低于 0.1.0-rc.5，否则可能崩溃。另外，如果只想加载部分工具，可以在 cordis.patch.yml 中配置 enable 选项。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供办公文档（Excel/PDF/PPT/Word）的生成、读取和编辑工具。",
+    "usage": {
+      "prompt_tokens": 3150,
+      "completion_tokens": 354,
+      "total_tokens": 3504,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2638
+    }
+  }
+}

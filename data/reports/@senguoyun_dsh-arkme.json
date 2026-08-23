@@ -1,0 +1,34 @@
+{
+  "id": "@senguoyun/dsh-arkme",
+  "analyzedAt": "2026-08-23T05:36:45.797Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@senguoyun/dsh-arkme",
+      "evidence": "DSH_HOME=<dsh-home> dsh plugin --profile web add @senguoyun/dsh-arkme"
+    },
+    "evaluationReport": {
+      "intro": "这个插件为 DeepSeek Harness 添加了 Arkme 账号、记录、聊天、Bot、社区、通话和市集等功能，内置搜索页支持快记搜索、搜索历史、图片库和 AI 视频快速入口。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会访问 Arkme 账号相关数据，但凭据和 Token 只保留在 Host 端，不暴露给外部。",
+      "postInstallNotes": "安装后需要运行 dsh web 启动 Web Profile，并可能需要配置 Arkme 账号。",
+      "notes": "无"
+    },
+    "summaryZh": "Arkme 的 DSH 集成插件，提供账号、记录、聊天、社区、通话和市集等能力。",
+    "usage": {
+      "prompt_tokens": 3304,
+      "completion_tokens": 329,
+      "total_tokens": 3633,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2792
+    }
+  }
+}

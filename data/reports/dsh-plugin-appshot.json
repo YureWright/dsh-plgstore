@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-appshot",
+  "analyzedAt": "2026-08-23T05:35:49.998Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-appshot",
+      "evidence": "dsh plugin --profile web add dsh-plugin-appshot"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的插件，让你在 macOS 或 Windows 上按一下快捷键（macOS 是同时按左右 Command，Windows 是同时按左右 Ctrl），就能把当前正在看的那个窗口截图，自动放进 DSH 的对话输入框里，方便你直接问 AI 关于这个窗口的问题。不用手动截图、切换窗口、粘贴上传了。",
+      "level": "ok",
+      "risks": "这个插件会截取你当前窗口的屏幕内容，截图会保存在本地临时文件，然后传给 DSH 客户端。它需要 macOS 的屏幕录制和辅助功能权限，Windows 上不需要额外权限。截图内容可能会被发送给 AI 服务，所以注意不要在敏感信息窗口使用。",
+      "postInstallNotes": "安装后需要重启 dsh。macOS 首次触发截图时会弹出授权引导，需要授予屏幕录制和辅助功能权限。Windows 上默认快捷键是双 Ctrl，可以在 DSH 设置面板自定义。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件：一键截取当前窗口并自动挂入对话，支持 macOS 和 Windows。",
+    "usage": {
+      "prompt_tokens": 5012,
+      "completion_tokens": 381,
+      "total_tokens": 5393,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4500
+    }
+  }
+}

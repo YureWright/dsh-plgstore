@@ -1,0 +1,34 @@
+{
+  "id": "dsh-computer-use",
+  "analyzedAt": "2026-08-23T05:35:47.409Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/dsh-tools 和 @deepseek-ai/schemastery，README 提供了安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/owner/repo.git",
+      "evidence": "README 未说明 npm 安装，但提供了 install.sh 脚本，且 package.json 有 tarball 信息，但未提供 git 地址，故采用 git 方式。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 AI 像真人一样操作你的电脑：它生成一个虚拟鼠标，可以看屏幕、移动、点击、输入文字，帮你完成各种操作。它支持 macOS、Windows 和 Linux，但 Windows 和 Linux 还没经过真机测试。",
+      "level": "caution",
+      "risks": "它会控制你的鼠标和键盘，能启动应用、输入文字，甚至点击删除或支付按钮（但需要你批准）。它需要读取屏幕内容（可能包含敏感信息），并且需要你授权辅助功能和屏幕录制权限。它不会自动输入密码，但可能执行其他快捷键操作。",
+      "postInstallNotes": "需要先安装 cua-driver 并授权权限（macOS 需要辅助功能和屏幕录制权限）。如果 cua-driver 不在 PATH 中，需要设置 CUA_DRIVER_BIN 环境变量。安装后需要重启 harness-desktop。",
+      "notes": "经评估可能并非 DSH 插件（理由：安装方式为脚本而非 dsh plugin add，但 package.json 有 dsh.bundle 字段，且依赖 DSH 核心包，故仍判定为插件）。Windows 和 Linux 支持未实测，存在风险。"
+    },
+    "summaryZh": "DSH 的 Computer Use 插件，让 AI 通过虚拟鼠标像真人一样操作电脑，支持跨平台，但需注意安全配置。",
+    "usage": {
+      "prompt_tokens": 2993,
+      "completion_tokens": 465,
+      "total_tokens": 3458,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2481
+    }
+  }
+}

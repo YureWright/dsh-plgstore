@@ -1,0 +1,34 @@
+{
+  "id": "@beforewave/dsh-chatgpt-helm",
+  "analyzedAt": "2026-08-23T05:36:09.853Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了多个 @deepseek-ai/* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@beforewave/dsh-chatgpt-helm",
+      "evidence": "Install the plugin into your DSH Web profile: dsh plugin --profile web add @beforewave/dsh-chatgpt-helm"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你能用 ChatGPT 来当 DeepSeek Harness 的'大脑'，负责读代码、做架构分析、出计划，然后让 DSH 去执行。它把 ChatGPT 和你的本地代码库连起来，省得你手动复制上下文，还能在 DSH 里创建会话，方便你随时接管。",
+      "level": "caution",
+      "risks": "需要配置 OpenAI 的 Tunnel 和 API key，这些凭据会存在环境变量里，可能被本机其他用户看到。插件会连接外部服务器（OpenAI），你的代码信息可能会发送给 ChatGPT。另外，它依赖 serena 和 tunnel-client 等外部工具，需要额外安装。",
+      "postInstallNotes": "需要设置环境变量 CONTROL_PLANE_TUNNEL_ID 和 CONTROL_PLANE_API_KEY，并在 ChatGPT 里配置对应的连接器。",
+      "notes": "源码仓库目前是私有的，npm 包是公开的，但代码不可见，存在一定风险。"
+    },
+    "summaryZh": "DSH ChatGPT Helm 是一个将 ChatGPT 作为远程推理大脑、与 DeepSeek Harness 结合的 DSH 插件，用于代码审查和任务规划。",
+    "usage": {
+      "prompt_tokens": 3203,
+      "completion_tokens": 413,
+      "total_tokens": 3616,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2691
+    }
+  }
+}

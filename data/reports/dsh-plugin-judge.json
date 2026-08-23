@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-judge",
+  "analyzedAt": "2026-08-23T05:36:20.446Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件标准。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-judge",
+      "evidence": "dsh plugin --profile web add dsh-plugin-judge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 的'插件价值裁判'。它能在你安装插件前帮你判断这个插件值不值得装，安装后还能审计已装的插件是否还该留着。它把插件分成'能力型'（给模型加新功能）和'约束型'（给模型加规则），并评估约束型插件对当前模型的影响。当模型切换时，它还会提醒你重新评估相关插件。",
+      "level": "ok",
+      "risks": "它会读取你本地的插件配置和源码（在 ~/.dsh 目录下），并把插件信息发送给 LLM 进行判断。它会在 ~/.dsh/plugin-judge/ 下保存审计历史。没有发现执行安装脚本或连接外部服务器的风险。",
+      "postInstallNotes": "安装后需要重启 harness，然后在聊天中输入 /plugin-audit 命令或使用 judge_plugin 工具，也可以在设置面板的 Plugin Judge 页面使用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件价值裁判：装前评估、装后审计，模型切换时提醒复核。",
+    "usage": {
+      "prompt_tokens": 2824,
+      "completion_tokens": 374,
+      "total_tokens": 3198,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2312
+    }
+  }
+}

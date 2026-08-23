@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-uisfx",
+  "analyzedAt": "2026-08-23T05:35:44.380Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/dsh-settings 和 cordis，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-uisfx",
+      "evidence": "dsh plugin --profile web add dsh-plugin-uisfx"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上各种 UI 音效，比如任务开始、成功、失败、按钮点击等，都可以在设置里选不同的音效风格，还能试听。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器里播放声音，不碰系统文件，也不连外部服务器。",
+      "postInstallNotes": "安装后重启 dsh web，然后打开设置 → 音效，按需调整音效开关和音量。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加语义化 UI 音效的插件，支持任务反馈、按钮音效和多种音色包。",
+    "usage": {
+      "prompt_tokens": 3874,
+      "completion_tokens": 296,
+      "total_tokens": 4170,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3362
+    }
+  }
+}

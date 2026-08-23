@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-dynamic-assembler",
+  "analyzedAt": "2026-08-23T05:36:30.331Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-dynamic-assembler",
+      "evidence": "pnpm dsh plugin --profile web add dsh-plugin-dynamic-assembler"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 dsh 助手听懂大白话，自动帮你找需要的插件、组装起来干活。比如你说'我要一个能搜网页并生成 Markdown 的机器人'，它会自动规划、问你确认，然后加载插件。它还会对非官方插件做安全检查，评分低的默认不加载。",
+      "level": "ok",
+      "risks": "它会动态加载插件，这些插件有完整权限，可能访问文件、网络等。但它内置了静态安全检查，且需要你确认。不过静态检查不是万能的，恶意代码可能绕过。",
+      "postInstallNotes": "可选配置：在 cordis.patch.yml 中添加插件配置，如 denyList、unofficialPolicy、pluginSources 等。",
+      "notes": "无"
+    },
+    "summaryZh": "一个用自然语言驱动、带安全审计的动态插件组装器，让 dsh 助手能按需自动发现和加载插件。",
+    "usage": {
+      "prompt_tokens": 3796,
+      "completion_tokens": 340,
+      "total_tokens": 4136,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3284
+    }
+  }
+}

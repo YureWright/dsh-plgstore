@@ -1,0 +1,34 @@
+{
+  "id": "@dsh-mixxed/dsh-client-ui-filesystem",
+  "analyzedAt": "2026-08-23T05:35:52.421Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-mixxed/dsh-client-ui-filesystem",
+      "evidence": "Install the plugin from npm (published as `@dsh-mixxed/dsh-client-ui-filesystem`): `dsh plugin --profile web add @dsh-mixxed/dsh-client-ui-filesystem`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 聊天输入框加了个 '@' 功能：你输入 @ 就能浏览当前项目的文件和文件夹，选一个，输入框里就会出现 @路径 这样的文字，然后发给模型，模型就能自己读那个文件。它不修改 DSH 本体，是独立安装的。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你当前项目的文件列表（跳过 node_modules、.git 等），但不会上传文件内容，只把路径发给模型。",
+      "postInstallNotes": "装完后重启 DSH 配置文件（新插件启动时加载），然后打开会话输入 @ 就能用。如果之前装过旧版，需要手动删除 cordis.patch.yml 里的旧 ui-filesystem 行。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 聊天输入框添加 '@' 项目文件/目录建议功能，输入 @ 可浏览并引用项目文件路径。",
+    "usage": {
+      "prompt_tokens": 2992,
+      "completion_tokens": 393,
+      "total_tokens": 3385,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2480
+    }
+  }
+}

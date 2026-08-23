@@ -1,0 +1,34 @@
+{
+  "id": "dsh-vision-local",
+  "analyzedAt": "2026-08-23T05:35:19.179Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-vision-local",
+      "evidence": "dsh plugin --profile web add dsh-vision-local"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让纯文本的 DeepSeek Harness 智能体拥有'视觉'。它把图片发送到你本地的视觉模型（比如 LM Studio、Ollama），然后返回结构化的文字描述（摘要、OCR文字、版面布局、语义、视觉风格等），这样不支持图片的模型也能'看懂'图片。图片数据完全不出你的电脑，不需要云端API，也没有额外费用。",
+      "level": "ok",
+      "risks": "插件会读取你指定的图片文件（通过沙箱文件系统），并把图片发送到你配置的本地视觉模型端点（默认是 http://127.0.0.1:1234/v1）。如果你把端点配置成远程服务器，图片就会发送到那里。除此之外，没有发现明显风险。",
+      "postInstallNotes": "你需要有一个运行中的本地视觉模型，提供 OpenAI 兼容的 /chat/completions 端点（例如 LM Studio、Ollama、vLLM）。默认配置指向 LM Studio 的默认端口，如果你用其他端点，需要修改 baseURL 和 model 配置。",
+      "notes": "无"
+    },
+    "summaryZh": "为纯文本 DeepSeek Harness 智能体提供本地优先的视觉能力，通过本地 VLM 将图片转为结构化 JSON 证据，保护隐私且零 API 成本。",
+    "usage": {
+      "prompt_tokens": 3363,
+      "completion_tokens": 421,
+      "total_tokens": 3784,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2851
+    }
+  }
+}

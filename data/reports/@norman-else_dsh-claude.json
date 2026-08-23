@@ -1,0 +1,34 @@
+{
+  "id": "@norman-else/dsh-claude",
+  "analyzedAt": "2026-08-23T05:36:44.074Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@norman-else/dsh-claude",
+      "evidence": "Install the published package into the DSH Web profile: dsh plugin --profile web add @norman-else/dsh-claude"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里直接使用本地的 Claude Code 命令行工具，就像用 Claude 一样对话，但底层还是你电脑上装好的 Claude。它会把 Claude 的权限请求、提问等转换成 DSH 的界面，还能查看 Claude 的执行记录。",
+      "level": "caution",
+      "risks": "它会读取和写入你电脑上的 ~/.claude 目录（包括认证信息、设置等），并且会启动和管理 Claude 进程。它不会直接管理你的 Claude 凭证，但会读取认证状态。它可能会在 DSH 的沙箱外运行 Claude，因此理论上可能访问工作区外的文件。",
+      "postInstallNotes": "需要确保本地已安装并认证了 Claude Code，可能需要配置可执行文件路径（在 DSH 的插件配置中设置 executablePath）。",
+      "notes": "该插件会运行本地 Claude 可执行文件，并可能访问 ~/.claude 目录，建议留意其权限边界。"
+    },
+    "summaryZh": "在 DeepSeek Harness 中集成本地 Claude Code CLI，作为一等公民对话。",
+    "usage": {
+      "prompt_tokens": 4194,
+      "completion_tokens": 403,
+      "total_tokens": 4597,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3682
+    }
+  }
+}

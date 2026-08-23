@@ -1,0 +1,34 @@
+{
+  "id": "@hytime/dsh-client-ui-shortcuts",
+  "analyzedAt": "2026-08-23T05:35:05.607Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@hytime/dsh-client-ui-shortcuts@0.1.11",
+      "evidence": "dsh plugin --profile web add @hytime/dsh-client-ui-shortcuts@0.1.11"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页版加键盘快捷键，让你用键盘就能快速回答问题、批准操作、切换会话和工作区，还能自定义快捷键方案，不用鼠标点来点去。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在 DSH 网页里运行，不碰系统文件，也不连外部服务器。",
+      "postInstallNotes": "安装后需要重启或重新加载 DSH Web 界面，然后可以在设置里选择或自定义快捷键方案。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页客户端提供可配置的键盘快捷键和交互卡片，提升操作效率。",
+    "usage": {
+      "prompt_tokens": 3961,
+      "completion_tokens": 310,
+      "total_tokens": 4271,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3449
+    }
+  }
+}

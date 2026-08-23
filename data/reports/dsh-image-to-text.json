@@ -1,0 +1,34 @@
+{
+  "id": "dsh-image-to-text",
+  "analyzedAt": "2026-08-23T05:36:04.084Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出了 dsh plugin add 安装命令，且描述为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-image-to-text",
+      "evidence": "dsh plugin --profile web add dsh-image-to-text"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让不支持图片的文本模型（比如 DeepSeek）也能接收和读取图片。它会绕过 DSH 的图片准入检查，把图片转换成本地路径，然后通过一个叫 image_to_text 的工具调用视觉 API 来识别图片内容，再把文字结果返回给模型。这样你在对话中上传图片，模型也能理解图片内容了。",
+      "level": "ok",
+      "risks": "插件会把上传的图片临时保存到电脑的临时文件夹（%TEMP%），并可能将图片发送到你配置的第三方视觉 API 服务（如智谱、Gemini 等），这些服务会看到图片内容。插件配置中可能包含 API 密钥，但不会写入磁盘，环境变量方式更安全。",
+      "postInstallNotes": "安装后需要在 cordis.patch.yml 中注册插件行，并配置至少一个视觉 API 的密钥（通过插件配置或环境变量）。",
+      "notes": "无"
+    },
+    "summaryZh": "让纯文本模型也能看图：绕过图片限制，自动调用视觉 API 识别图片内容。",
+    "usage": {
+      "prompt_tokens": 2945,
+      "completion_tokens": 370,
+      "total_tokens": 3315,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2433
+    }
+  }
+}

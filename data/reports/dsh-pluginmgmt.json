@@ -1,0 +1,34 @@
+{
+  "id": "dsh-pluginmgmt",
+  "analyzedAt": "2026-08-23T05:35:32.235Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-pluginmgmt",
+      "evidence": "dsh plugin --profile web add dsh-pluginmgmt"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页界面加了一个「插件管理」页面。你可以粘贴一个 GitHub 仓库链接，它会自动检查这个仓库是不是一个合格的 DSH 插件，然后一键安装。装好之后，你还能在这个页面里对已安装的插件进行更新、删除、启用或禁用，甚至设置后台自动更新，省去记命令行和手动改配置的麻烦。",
+      "level": "ok",
+      "risks": "它会读写你电脑上 DSH 的配置文件（比如 ~/.dsh 下的文件），安装插件时会调用 pnpm 来下载和安装，需要联网访问 GitHub 和 npm。它不会收集或上传你的个人数据，也不存储任何密码或令牌。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页插件管理器：粘贴 GitHub 链接即可校验并安装插件，支持更新、删除、启停和后台自动更新。",
+    "usage": {
+      "prompt_tokens": 3877,
+      "completion_tokens": 351,
+      "total_tokens": 4228,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3365
+    }
+  }
+}

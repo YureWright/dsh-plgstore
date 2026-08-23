@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-image-tools",
+  "analyzedAt": "2026-08-23T05:36:30.276Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-image-tools",
+      "evidence": "dsh plugin --profile web add dsh-plugin-image-tools"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面增加了图片功能，包括：让模型在选项里展示图片供你挑选（图片选择卡）、在回复正文中直接显示图片（图文混排）、以及当你给没有视觉能力的模型发图片时，自动把图片保存成文件供模型分析。图片可以来自本地文件、网址或 base64 数据。安装后无需配置即可使用。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你指定的本地图片文件（比如 ComfyUI 生成的图片），并通过本地 HTTP 路由在浏览器中显示，图片数据仅保存在内存中，有 30 分钟清理机制。图片路由未加额外鉴权，但同源，与 GUI 信任级别相同。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 图片工具插件，提供图片选择卡、回复内嵌图片和盲模型收图保存功能，支持本地路径、URL 和 base64 图片源，零配置安装即用。",
+    "usage": {
+      "prompt_tokens": 4555,
+      "completion_tokens": 368,
+      "total_tokens": 4923,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4043
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-deep-sleep",
+  "analyzedAt": "2026-08-23T05:36:05.601Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-deep-sleep",
+      "evidence": "从 npm 安装（首选）dsh plugin --profile web add dsh-deep-sleep"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是个小玩具，它把 DeepSeek 官方网页界面里任务进行中的提示文字从“Deep diving...”改成“Deep sleep...”，纯属好玩，不影响功能。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器里改文字，不碰系统文件，也不连外部服务器。",
+      "postInstallNotes": "安装后重启 dsh web，然后浏览器硬刷新（Ctrl+Shift+R）才能看到效果。",
+      "notes": "无"
+    },
+    "summaryZh": "一个把 DeepSeek 网页界面“Deep diving...”提示改成“Deep sleep...”的趣味插件。",
+    "usage": {
+      "prompt_tokens": 2396,
+      "completion_tokens": 274,
+      "total_tokens": 2670,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1884
+    }
+  }
+}

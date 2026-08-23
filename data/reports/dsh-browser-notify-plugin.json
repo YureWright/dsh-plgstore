@@ -1,0 +1,34 @@
+{
+  "id": "dsh-browser-notify-plugin",
+  "analyzedAt": "2026-08-23T05:36:23.677Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-client-runtime，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-browser-notify-plugin",
+      "evidence": "dsh plugin --profile web add dsh-browser-notify-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页界面加了个功能：每轮对话结束后，在浏览器里弹一条系统级桌面通知，即使浏览器窗口不在前台也能看到。通知会显示标题和回复摘要，点击通知还能把 DSH 窗口拉到前台。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在浏览器里请求通知权限，并在你允许后弹通知，不会碰你电脑上的其他文件或数据。",
+      "postInstallNotes": "安装后需要刷新 DSH 网页，然后发一条消息，浏览器会请求通知权限，点允许即可。卸载或重装后建议重启 dsh web 并刷新页面。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 浏览器桌面通知插件，每轮对话完成后弹系统级通知。",
+    "usage": {
+      "prompt_tokens": 1976,
+      "completion_tokens": 327,
+      "total_tokens": 2303,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1464
+    }
+  }
+}

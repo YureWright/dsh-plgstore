@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-prune",
+  "analyzedAt": "2026-08-23T05:36:12.423Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-typert-protocol，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-prune",
+      "evidence": "dsh plugin --profile web add dsh-plugin-prune"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你找出哪些插件是没用的。它会偷偷记录每个插件里工具和技能的使用情况，比如被调用了多少次、出错多不多、响应快不快、在多少个会话里用过，再结合你自己的评分，最后在设置里给你一个'插件体检'页面，告诉你哪些插件可以放心删掉。",
+      "level": "ok",
+      "risks": "它会在你的电脑上存一个统计文件（在 $DSH_HOME 或 ~/.dsh 下），里面记录了工具名、计数、时间戳和你的评分。这些数据不会上传到任何地方，只留在你自己机器上。",
+      "postInstallNotes": "装完后重启 dsh web，然后打开设置里的'插件体检'页面就能看到统计了。如果想调整统计的保存频率、保留天数或数据文件位置，可以在配置里改。",
+      "notes": "无"
+    },
+    "summaryZh": "一个纯观察型插件，统计每个插件的真实使用情况，帮你找出可以安全删除的死插件。",
+    "usage": {
+      "prompt_tokens": 2849,
+      "completion_tokens": 365,
+      "total_tokens": 3214,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2337
+    }
+  }
+}

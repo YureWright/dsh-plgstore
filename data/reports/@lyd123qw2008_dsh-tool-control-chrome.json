@@ -1,0 +1,34 @@
+{
+  "id": "@lyd123qw2008/dsh-tool-control-chrome",
+  "analyzedAt": "2026-08-23T05:35:36.036Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了安装命令，且描述为 DSH browser-control tools。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@lyd123qw2008/dsh-tool-control-chrome@0.3.6",
+      "evidence": "Install the DSH package in the active Profile: corepack pnpm --dir <DSH_HOME>/profiles/web add @lyd123qw2008/dsh-tool-control-chrome@0.3.6"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能控制你电脑上的 Chrome 或 Edge 浏览器，比如打开标签页、点击、填表、截图、读取网页内容等。它通过一个本地桥接程序（pi-control-chrome）和浏览器扩展来工作，不会直接读取你的浏览器配置文件或 cookies。",
+      "level": "caution",
+      "risks": "它会控制你的浏览器，能执行网页上的操作（如点击、填表、上传下载文件、读取剪贴板等），因此可能访问你在浏览器中打开的网页内容。它需要你手动安装一个浏览器扩展，并连接本地桥接服务。插件本身声明不会读取浏览器配置文件或 cookies，但浏览器操作可能涉及敏感信息。",
+      "postInstallNotes": "需要手动安装 pi-control-chrome 扩展，并在浏览器中加载 extension/ 目录；还需要在 settings.yaml 中配置 control-chrome 部分，并合并 cordis.patch.yml 配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 浏览器控制插件，通过本地桥接和浏览器扩展控制 Chrome/Edge，提供丰富的浏览器操作工具。",
+    "usage": {
+      "prompt_tokens": 3636,
+      "completion_tokens": 423,
+      "total_tokens": 4059,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3124
+    }
+  }
+}

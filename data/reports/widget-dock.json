@@ -1,0 +1,34 @@
+{
+  "id": "widget-dock",
+  "analyzedAt": "2026-08-23T05:36:05.264Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 明确为 DSH 客户端插件，符合插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/MorGogh/widget-dock.git",
+      "evidence": "README 未说明 npm 安装，但提供了手动链接和 patch 配置，且 GitHub 仓库存在。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 聊天界面添加侧边小组件面板的插件。你可以在对话旁边放一些可拖动的小卡片，比如显示 API 余额、Token 用量、会话统计、成本估算等，方便随时查看。卡片可以自由拖动、调整大小，布局会自动保存。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会把你的布局和配置（包括你填写的 API Key）保存在浏览器本地存储中，只有你自己能看到。",
+      "postInstallNotes": "需要手动将插件目录链接到 ~/.dsh/profiles/web/node_modules，并在 cordis.patch.yml 中添加配置，然后重启 dsh web。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 对话界面添加可拖动的侧边小组件面板，显示余额、用量、成本等状态。",
+    "usage": {
+      "prompt_tokens": 3148,
+      "completion_tokens": 330,
+      "total_tokens": 3478,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2636
+    }
+  }
+}

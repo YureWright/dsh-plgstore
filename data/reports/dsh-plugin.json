@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin",
+  "analyzedAt": "2026-08-23T05:35:43.945Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin",
+      "evidence": "从 npm 安装（推荐）：dsh plugin --profile web add dsh-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DeepSeek Harness 的社区插件市场，装进应用后，你可以在设置里浏览、搜索和安装其他社区插件，不用离开应用。它收录了 4000 多个插件，大部分经过人工验证，支持一键安装、升级和卸载，还有通知中心记录操作历史。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在浏览器端运行，不碰系统文件，也不收集隐私数据。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后在设置 → 插件中心里使用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH-Plugin Hub 是一个 DeepSeek Harness 社区插件市场，收录 4000+ 人工精选插件，支持一键安装、升级和卸载。",
+    "usage": {
+      "prompt_tokens": 3833,
+      "completion_tokens": 309,
+      "total_tokens": 4142,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 3193
+    }
+  }
+}

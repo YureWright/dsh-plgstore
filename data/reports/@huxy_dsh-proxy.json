@@ -1,0 +1,34 @@
+{
+  "id": "@huxy/dsh-proxy",
+  "analyzedAt": "2026-08-23T05:35:17.249Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 提供了 dsh plugin add 安装命令，且代码明显调用了 DSH 的 ctx.effect 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huxy/dsh-proxy",
+      "evidence": "dsh plugin --profile web add @huxy/dsh-proxy"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你在局域网或通过 Cloudflared Tunnel、Tailscale 等工具从外网访问你的内部系统或管理后台。它会在你的电脑上启动一个代理服务，并添加邮箱验证码登录，只有你允许的邮箱才能访问，保护你的服务不被外人看到。",
+      "level": "ok",
+      "risks": "它会启动一个本地代理服务，监听指定端口（默认8030），并可能通过邮件发送验证码，需要配置邮件服务（如Gmail）。它不会碰你的隐私文件，但会占用一个端口，且如果配置不当，可能暴露你的内部服务。",
+      "postInstallNotes": "需要编辑 ~/.dsh/profiles/web/cordis.patch.yml 配置文件，设置端口、邮件服务、允许的邮箱等。开发环境可设置 isDev: true 禁用鉴权。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，提供带邮箱验证码鉴权的代理服务，方便局域网或外网安全访问内部系统。",
+    "usage": {
+      "prompt_tokens": 2101,
+      "completion_tokens": 354,
+      "total_tokens": 2455,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1589
+    }
+  }
+}

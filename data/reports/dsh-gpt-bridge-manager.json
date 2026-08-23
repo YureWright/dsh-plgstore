@@ -1,0 +1,34 @@
+{
+  "id": "dsh-gpt-bridge-manager",
+  "analyzedAt": "2026-08-23T05:35:55.025Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-gpt-bridge-manager",
+      "evidence": "dsh plugin --profile web add dsh-gpt-bridge-manager"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是用来管理一个叫 GPT Bridge 的独立程序和 cloudflared 隧道的小工具。它不复制 Bridge 的代码，只是负责启动、监控和显示当前 URL，方便你把 GPT 和外部服务连接起来。它不会自动修改你的 DSH 配置，需要你手动指定 Bridge 的路径和 cloudflared 的路径。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取你配置的路径，不会自动修改你的 DSH 配置或运行中的进程。它可能会启动 cloudflared 隧道，但只指向本地 127.0.0.1:8933，不会连接外部服务器。",
+      "postInstallNotes": "需要在 profile 的 cordis.patch.yml 中配置 bridgeRoot 和 cloudflaredPath（可选），并确保 credentials 中有 dsh_gpt_bridge_actions_token。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，用于管理独立的 GPT Bridge 和 cloudflared 隧道，显示当前 URL，不修改 DSH 配置。",
+    "usage": {
+      "prompt_tokens": 2334,
+      "completion_tokens": 377,
+      "total_tokens": 2711,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1822
+    }
+  }
+}

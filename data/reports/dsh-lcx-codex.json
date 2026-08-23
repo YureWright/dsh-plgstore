@@ -1,0 +1,34 @@
+{
+  "id": "dsh-lcx-codex",
+  "analyzedAt": "2026-08-23T05:35:27.974Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-lcx-codex",
+      "evidence": "推荐从 npm 安装：dsh plugin --profile web add dsh-lcx-codex"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DSH 助手用上 GPT 的联网搜索和高级压缩功能。它可以把搜索请求转发到 OpenAI 的 Responses 接口，支持两种搜索方式（Hosted 和 Alpha），还能把长对话压缩成更小的格式，节省资源。适合已经配置了 GPT 模型（比如通过 Sub2API 或 NewAPI 中转）的用户。",
+      "level": "ok",
+      "risks": "插件会读取和写入你电脑上 DSH 的配置目录（比如 .dsh 文件夹），保存一些搜索记录和压缩数据。它不会自己保存你的 API 密钥，而是用 DSH 的凭据系统。但要注意，它会把你的搜索请求发送到你配置的 GPT 服务商那里，所以这些服务商能看到你的搜索内容。",
+      "postInstallNotes": "安装后需要到 DSH 的设置里找到 LCX / Codex 能力，按需启用 Hosted、Alpha 或 Native Compact。插件默认是关闭的。另外，你需要已经配置好一个可用的 GPT openai-responses provider。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，为 GPT 模型提供联网搜索和原生 V2 远程压缩功能。",
+    "usage": {
+      "prompt_tokens": 4058,
+      "completion_tokens": 411,
+      "total_tokens": 4469,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3546
+    }
+  }
+}

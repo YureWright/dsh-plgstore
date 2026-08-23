@@ -1,0 +1,34 @@
+{
+  "id": "dsh-lan-bridge",
+  "analyzedAt": "2026-08-23T05:36:18.395Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且代码通过 webServer.tapIndex 注入 polyfill，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-lan-bridge",
+      "evidence": "dsh plugin --profile web add dsh-lan-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件解决手机访问 DeepSeek Harness 网页界面时的一个问题：某些浏览器（特别是老 iOS）不支持 crypto.randomUUID 函数，导致界面报错。它会在网页里自动注入一段小代码，让这个函数在普通 HTTP 下也能用，这样你用手机在同一 WiFi 下就能直接打开 dsh 界面，不用配置 HTTPS 证书或公网隧道。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是往网页里注入一段 polyfill，不碰你电脑上的文件，也不连外部服务器。不过要注意，dsh 网页本身没有登录认证，所以只建议在可信的局域网内使用，别把端口暴露到公网。",
+      "postInstallNotes": "安装后需要重启 dsh 才能生效。然后手机连同一 WiFi，打开 http://<电脑局域网IP>:3080 即可。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页注入 crypto.randomUUID polyfill，让手机在纯 HTTP 下也能正常使用 dsh 界面。",
+    "usage": {
+      "prompt_tokens": 3040,
+      "completion_tokens": 369,
+      "total_tokens": 3409,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2528
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-browser-use",
+  "analyzedAt": "2026-08-23T05:35:23.478Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-browser-use",
+      "evidence": "dsh plugin --profile web add dsh-plugin-browser-use"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个真正的浏览器，让 AI 能打开网页、点击、填表、截图、下载文件等。它特别注重安全，每次操作都会检查网址是否允许访问，默认禁止访问内网，而且不会让 AI 随便读写你电脑上的文件。",
+      "level": "ok",
+      "risks": "插件会启动一个 Chromium 浏览器，可能会访问你配置的网站。它默认禁止访问内网，但如果你开了 allowPrivateNetwork 或设置了 allowedHosts，可能会访问到你的本地服务。另外，如果你设置了 storageStatePath，它会保存浏览器的 cookies 和登录信息，这些文件可能包含敏感数据，需要保护好。",
+      "postInstallNotes": "需要安装 Chromium 浏览器，可以通过 npx playwright install chromium 安装，或者配置 executablePath 指向已有的浏览器。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供真实浏览器操作能力的插件，带安全策略，可导航、点击、填表、截图、下载等。",
+    "usage": {
+      "prompt_tokens": 3984,
+      "completion_tokens": 370,
+      "total_tokens": 4354,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3472
+    }
+  }
+}

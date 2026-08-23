@@ -1,0 +1,34 @@
+{
+  "id": "dsh-session-browser",
+  "analyzedAt": "2026-08-23T05:36:07.330Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，README 提供了 dsh plugin add 安装命令，且功能明显调用 DSH 的 sessionQuery 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-session-browser",
+      "evidence": "dsh plugin --profile web add dsh-session-browser"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让同一个工作区里的不同会话之间可以互相查看对话记录，但只能看不能改。它提供了三个工具：列出其他会话、读取某个会话的对话内容、以及全文搜索。所有操作都限制在同一个工作区内，不会越界。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取同工作区内的会话数据，不会修改或删除任何东西。",
+      "postInstallNotes": "无。安装后下次启动 dsh 时自动生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件：同一工作区内跨会话只读浏览，提供列出、读取和全文搜索会话的工具。",
+    "usage": {
+      "prompt_tokens": 2415,
+      "completion_tokens": 278,
+      "total_tokens": 2693,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1903
+    }
+  }
+}

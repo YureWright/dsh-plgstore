@@ -1,0 +1,34 @@
+{
+  "id": "@dsh-mixxed/dsh-client-ui-settings-skills",
+  "analyzedAt": "2026-08-23T05:36:01.015Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-mixxed/dsh-client-ui-settings-skills",
+      "evidence": "dsh plugin --profile web add @dsh-mixxed/dsh-client-ui-settings-skills"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的 Web 设置页面加了一个“技能管理”页面，按工作区分类，可以查看和开关用户级和项目级技能，搜索技能，显示作用范围标签。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只管理用户级技能（~/.agents/skills）和项目技能，不会碰预设或内置技能。",
+      "postInstallNotes": "安装后需要重启配置文件（profile），然后打开设置里的“技能/Skills”页面。如果之前装过旧版，需要手动删除 cordis.patch.yml 里的旧行。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH Web 设置添加技能管理页面，支持按工作区查看和开关技能。",
+    "usage": {
+      "prompt_tokens": 2832,
+      "completion_tokens": 327,
+      "total_tokens": 3159,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2320
+    }
+  }
+}

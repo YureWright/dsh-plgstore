@@ -1,0 +1,34 @@
+{
+  "id": "dsh-mcp-connector",
+  "analyzedAt": "2026-08-23T05:35:23.526Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mcp-connector",
+      "evidence": "dsh plugin --profile web add dsh-mcp-connector"
+    },
+    "evaluationReport": {
+      "intro": "这是一个为 DeepSeek Harness 桌面版设计的 MCP 连接器管理插件。它让你在 DSH 里浏览和安装各种厂商的 MCP 连接器，通过 OAuth、API Key 或 JSON 配置来连接外部服务，然后发现和使用这些服务提供的工具和提示词，从而扩展 AI 的能力。它还带有一个图形化的市场界面，方便你搜索、筛选和管理已安装的连接。",
+      "level": "ok",
+      "risks": "插件会保存你的连接凭证（如 API Key、OAuth 令牌），但只存储在 DSH 的存储域中，不会上传到目录或 Git 仓库。它会访问外部服务器（如远程目录和 MCP 服务器），但只允许 HTTPS 连接，且对响应大小有限制。它可能会读取和复制旧版企查查插件的授权数据，但需要你明确确认，且不会删除原数据。",
+      "postInstallNotes": "安装或升级后需要完全退出并重启 DeepSeek Harness Desktop。默认配置指向公共远程目录，如需离线或私有模式，可在 cordis.patch.yml 中将 catalogUrl 设为空字符串。",
+      "notes": "无"
+    },
+    "summaryZh": "一个用于 DeepSeek Harness 的 MCP 连接器管理插件，提供图形化市场、多种接入方式（OAuth、API Key、JSON）和连接生命周期管理。",
+    "usage": {
+      "prompt_tokens": 4116,
+      "completion_tokens": 436,
+      "total_tokens": 4552,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3604
+    }
+  }
+}

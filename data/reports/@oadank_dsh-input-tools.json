@@ -1,0 +1,34 @@
+{
+  "id": "@oadank/dsh-input-tools",
+  "analyzedAt": "2026-08-23T05:36:14.543Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@oadank/dsh-input-tools",
+      "evidence": "dsh plugin --profile web add @oadank/dsh-input-tools"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 网页版加了一堆实用功能：能发图片（文本模型也能看图）、能录音输入、能语音合成（多种引擎）、能克隆音色、能显示余额。它分两部分：服务端负责语音和图片处理，浏览器端在输入框加按钮和设置页面。大部分功能是本地部署的，免费。",
+      "level": "caution",
+      "risks": "它会修改 DSH 的源码（需要打补丁），可能影响升级。会下载和运行本地语音识别服务（sherpa-onnx），占用磁盘和端口。需要配置 ffmpeg 和视觉 MCP 服务。配置信息（如 API Key）存在 ~/.dsh/voice-config.json 里。",
+      "postInstallNotes": "需要安装 ffmpeg；配置视觉 MCP 服务；可选安装本地 ASR；如果使用完整语音功能，需要打源码补丁或使用整合版 fork。",
+      "notes": "该插件需要修改 DSH 源码才能完整体验，且依赖未发布的 @deepseek-ai/dsh-tools 包（rc 版本），存在兼容性风险。"
+    },
+    "summaryZh": "DSH 语音与图片增强插件，提供录音、多引擎 TTS、音色克隆、离线 ASR、图片识别和余额显示，但需修改源码才能完整体验。",
+    "usage": {
+      "prompt_tokens": 3582,
+      "completion_tokens": 433,
+      "total_tokens": 4015,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3070
+    }
+  }
+}

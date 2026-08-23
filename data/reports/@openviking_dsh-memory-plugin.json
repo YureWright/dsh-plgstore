@@ -1,0 +1,34 @@
+{
+  "id": "@openviking/dsh-memory-plugin",
+  "analyzedAt": "2026-08-23T05:35:32.336Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@openviking/dsh-memory-plugin",
+      "evidence": "dsh plugin --profile web add @openviking/dsh-memory-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上了记忆功能。它能自动记住你和 AI 的对话内容，下次聊天时自动回忆相关上下文，还能把对话保存到 OpenViking 服务器上。它还提供了一些工具，让 AI 能搜索、读取、写入记忆，就像给 AI 装了一个长期记忆库。",
+      "level": "ok",
+      "risks": "它需要连接一个 OpenViking 服务器，你的对话内容会发送到那个服务器上保存。如果你自己控制服务器，风险不大；如果用别人的服务器，要注意对话内容可能被服务器管理员看到。另外，它会在你的电脑上读取配置文件（如 ~/.openviking/ovcli.conf），但不会乱动其他文件。",
+      "postInstallNotes": "需要配置 OpenViking 服务器地址和认证信息，可以通过环境变量（如 OPENVIKING_URL、OPENVIKING_API_KEY）或配置文件（~/.openviking/ovcli.conf）设置。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加自动记忆和上下文回忆功能的插件，需要连接 OpenViking 服务器。",
+    "usage": {
+      "prompt_tokens": 4224,
+      "completion_tokens": 384,
+      "total_tokens": 4608,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3712
+    }
+  }
+}

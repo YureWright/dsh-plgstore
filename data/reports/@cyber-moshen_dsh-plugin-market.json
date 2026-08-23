@@ -1,0 +1,34 @@
+{
+  "id": "@cyber-moshen/dsh-plugin-market",
+  "analyzedAt": "2026-08-23T05:36:25.132Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@cyber-moshen/dsh-plugin-market",
+      "evidence": "dsh plugin --profile web add @cyber-moshen/dsh-plugin-market"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的插件市场。它会在设置里加一个“插件工坊”页面，用卡片展示各种社区插件，显示星标数、最近提交时间等，还能一键安装、更新、卸载插件。它自己维护一个插件列表，任何人都可以通过提交 PR 来添加自己的插件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在安装插件时执行 dsh plugin 命令，但这是正常操作。它可能会读取 GitHub API 获取插件信息，但这是公开数据。它有一个可选的 GitHub Token 设置，用于提高 API 限制，但这是用户主动提供的。",
+      "postInstallNotes": "安装后需要重启 web 服务器，然后打开设置里的“插件工坊”页面。如果需要使用 GitHub Token 提高 API 限制，可以在设置里填写。",
+      "notes": "无"
+    },
+    "summaryZh": "一个开源的 DSH 插件市场，提供卡片式浏览、一键安装/更新/卸载，并支持通过 PR 添加插件。",
+    "usage": {
+      "prompt_tokens": 3201,
+      "completion_tokens": 374,
+      "total_tokens": 3575,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2689
+    }
+  }
+}

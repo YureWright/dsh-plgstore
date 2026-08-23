@@ -1,0 +1,34 @@
+{
+  "id": "dsh-xmemo",
+  "analyzedAt": "2026-08-23T05:36:01.036Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/yonro/xmemo-deepseek-plugin.git",
+      "evidence": "Not yet published to npm (see Known Limitations), so install from GitHub or a local checkout: dsh plugin --profile <name> add github:yonro/xmemo-deepseek-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个记忆功能，可以记住你的偏好、决定、待办事项等，并且支持本地和云端同步。它还能在断网时先把内容存本地，等联网了再自动同步到云端。需要登录 XMemo 账号才能用云端功能。",
+      "level": "caution",
+      "risks": "它会连接 xmemo.dev 服务器，你的记忆数据会同步到云端。安装时可能会运行构建脚本（prepare），需要你手动允许。它会在本地存储数据，并可能打开浏览器进行 OAuth 登录。",
+      "postInstallNotes": "需要配置 XMemo 账号（OAuth 登录）或设置 API 密钥（环境变量 XMEMO_KEY 或凭证文件）。另外，由于从 git 安装，需要手动允许构建脚本（在 pnpm-workspace.yaml 中设置 allowBuilds）。",
+      "notes": "该插件尚未发布到 npm，需从 GitHub 安装。安装时会运行构建脚本，需注意。"
+    },
+    "summaryZh": "dsh-xmemo 是一个为 DeepSeek Harness 提供本地+云端混合记忆功能的插件，支持离线队列和 OAuth 登录。",
+    "usage": {
+      "prompt_tokens": 3995,
+      "completion_tokens": 436,
+      "total_tokens": 4431,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3483
+    }
+  }
+}

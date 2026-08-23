@@ -1,0 +1,34 @@
+{
+  "id": "@k8e-sandbox/dsh-k8e-sandbox-subprocess",
+  "analyzedAt": "2026-08-23T05:36:47.524Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-subprocess，且描述明确为 DeepSeek Harness 的 subprocess seam provider，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@k8e-sandbox/dsh-k8e-sandbox-subprocess",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，它提供了一个子进程（subprocess）的接口，让 Harness 能在沙箱环境里运行外部命令。简单说，就是让 Harness 能安全地调用系统命令，适合需要执行外部程序的场景。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是提供子进程功能，不涉及敏感文件或外部服务器连接。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供子进程接口的插件，用于在沙箱中执行外部命令。",
+    "usage": {
+      "prompt_tokens": 1360,
+      "completion_tokens": 285,
+      "total_tokens": 1645,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 848
+    }
+  }
+}

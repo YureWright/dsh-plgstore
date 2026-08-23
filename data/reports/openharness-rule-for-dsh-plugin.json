@@ -1,0 +1,34 @@
+{
+  "id": "openharness-rule-for-dsh-plugin",
+  "analyzedAt": "2026-08-23T05:35:51.578Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-client-runtime，README 给出 dsh plugin add 安装命令，代码调用 ctx.systemPrompt.section 等 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "openharness-rule-for-dsh-plugin",
+      "evidence": "dsh plugin --profile web add openharness-rule-for-dsh-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在 DeepSeek Harness 的对话系统提示词里加一段「插件开发规范」，告诉 AI 助手在开发 DSH 插件时能做什么、应该做什么、不能做什么、不应该做什么。同时会在设置页的侧边栏加一个「插件开发规范」的入口，方便你查看。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只往系统提示词里注入文本，并在设置页加一个侧边栏项，不碰你的文件、不上传数据。",
+      "postInstallNotes": "装完后需要彻底退出 OpenHarness（比如按 Cmd+Q）再重新打开，否则侧边栏可能不显示新项（这是缓存问题，不是插件问题）。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，往系统提示词注入插件开发规范（CAN/SHOULD/MUST NOT/SHOULD NOT），并在设置页侧边栏显示「插件开发规范」入口。",
+    "usage": {
+      "prompt_tokens": 3799,
+      "completion_tokens": 376,
+      "total_tokens": 4175,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3287
+    }
+  }
+}

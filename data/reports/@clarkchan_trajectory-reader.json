@@ -1,0 +1,34 @@
+{
+  "id": "@clarkchan/trajectory-reader",
+  "analyzedAt": "2026-08-23T05:35:41.307Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/dsh-client-runtime 和 @deepseek-ai/dsh-client-ui-model-selection，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@clarkchan/trajectory-reader",
+      "evidence": "dsh plugin --profile web add @clarkchan/trajectory-reader"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加了一个叫「轨迹解读」的新标签页，就在对话和轨迹旁边。它会把一次会话按用户提问分成一段一段，每段都总结出用户想要什么、助手是怎么一步步完成的（比如规划、调研、实现、验证等），还会标出错误和注意事项。另外，它还能用 AI 生成一段更详细的过程叙述，讲清楚助手当时的思路和操作。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你的浏览器里显示会话内容，但不会把数据发到外部服务器，AI 总结也是通过你自己的 DeepSeek Harness 服务来做的。",
+      "postInstallNotes": "装完后需要重启 dsh web 才能看到新标签页。",
+      "notes": "无"
+    },
+    "summaryZh": "轨迹解读插件：在 DSH 网页界面新增标签页，按用户轮次总结会话，并用 AI 生成过程叙述。",
+    "usage": {
+      "prompt_tokens": 3276,
+      "completion_tokens": 370,
+      "total_tokens": 3646,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2764
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "naked-fetch-dsh",
+  "analyzedAt": "2026-08-23T05:35:40.881Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 明确说明是 DSH 适配插件，注册工具到 DSH agent。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "naked-fetch-dsh",
+      "evidence": "npm i -g naked-fetch-dsh        # 或装到 DSH profile 的 node_modules"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的 AI 助手加上了两个新能力：一个是抓取网页并提取主要内容（naked_fetch），另一个是直接搜索网页（naked_search，支持必应、百度等）。它自带一个叫 naked-fetch 的浏览器引擎，不需要额外装别的东西。装上之后，AI 就能自己去网上找信息了。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你的电脑上运行一个命令行工具来抓网页，但这是它该干的活。它不会偷偷上传你的私人文件。",
+      "postInstallNotes": "需要把 'naked-fetch-dsh' 加到 DSH profile 的 bundles 里（编辑 ~/.dsh/profiles/<profile>/package.json），然后重启 dsh。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供网页抓取和搜索工具的插件，自带引擎，零外部依赖。",
+    "usage": {
+      "prompt_tokens": 1952,
+      "completion_tokens": 354,
+      "total_tokens": 2306,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1440
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@borisshaw6/dsh-cyber-pet",
+  "analyzedAt": "2026-08-23T05:36:09.860Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@borisshaw6/dsh-cyber-pet",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add @borisshaw6/dsh-cyber-pet"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的电子宠物插件，会在网页界面上显示一只可以喂食、换颜色的小鲸鱼，还能显示你的 token 用量、配额、上下文占用、交互次数和对话数等信息。它支持三种聊天后端，有成长等级、心情、里程碑庆祝，还能一键生成 PNG 报告卡。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会在浏览器本地存储（localStorage）中保存一些偏好设置和计数器，但不会上传到外部服务器。",
+      "postInstallNotes": "安装后需要重启 web profile（运行 npx @deepseek-ai/dsh web），然后打开 http://127.0.0.1:3080 查看。如果使用宿主宝贝聊天后端，需要配置 provider 凭证（如 DEEPSEEK_API_KEY），其他后端不需要。",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 设计的电子宠物插件，在网页界面显示可喂食、可换色的小鲸鱼，并报告 token 用量等数据。",
+    "usage": {
+      "prompt_tokens": 2774,
+      "completion_tokens": 391,
+      "total_tokens": 3165,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2262
+    }
+  }
+}

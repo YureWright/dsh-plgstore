@@ -1,0 +1,34 @@
+{
+  "id": "dsh-obsidian",
+  "analyzedAt": "2026-08-23T05:35:26.951Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-obsidian",
+      "evidence": "dsh plugin --profile web add dsh-obsidian"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 dsh 助手直接读写本地 Obsidian 笔记库。装上后，助手可以搜索、查看、新建、修改、移动和删除笔记，还能管理笔记的标签和属性。不需要额外安装其他软件，直接操作文件。",
+      "level": "ok",
+      "risks": "插件会访问你指定的 Obsidian 笔记文件夹，读取和修改里面的 Markdown 文件。删除操作只是移到回收站，不会永久删除。默认不会碰 .obsidian 配置文件夹。没有发现其他明显风险。",
+      "postInstallNotes": "安装后可能需要配置 vaultPath（笔记库路径），如果不配置会自动探测当前打开的笔记库。如果使用 CLI 功能，需要确保 obsidian CLI 可用。",
+      "notes": "无"
+    },
+    "summaryZh": "将 DeepSeek Harness 连接到本地 Obsidian 笔记库，实现搜索、读写、移动、删除等操作。",
+    "usage": {
+      "prompt_tokens": 2983,
+      "completion_tokens": 341,
+      "total_tokens": 3324,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2471
+    }
+  }
+}

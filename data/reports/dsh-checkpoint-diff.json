@@ -1,0 +1,34 @@
+{
+  "id": "dsh-checkpoint-diff",
+  "analyzedAt": "2026-08-23T05:35:05.016Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-checkpoint-diff",
+      "evidence": "README 未明确给出安装命令，但 package.json 中 name 为 dsh-checkpoint-diff，且可从 npm 安装。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你看到 AI 代理（比如 DeepSeek Harness）在帮你改代码时，具体改了哪些文件、怎么改的。它把每次修改都记录成一个时间点，你可以对比任意两个时间点之间的差异，还能把工作区恢复到某个时间点的状态。它只负责查看和恢复，不会自己创建快照，需要配合另一个插件（dsh-checkpoint-rewind）使用。",
+      "level": "ok",
+      "risks": "它会读取你的工作区文件（用于对比和恢复），但只读，除非你主动执行回滚。回滚时会覆盖文件，但不会删除文件（除了撤销操作）。它不会访问网络，也不会碰 .git 或 .dsh 目录。",
+      "postInstallNotes": "需要先安装上游插件 dsh-checkpoint-rewind，否则检查点时间线为空。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，用于可视化检查点之间的文件差异，并支持预览式回滚。",
+    "usage": {
+      "prompt_tokens": 6097,
+      "completion_tokens": 370,
+      "total_tokens": 6467,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5585
+    }
+  }
+}

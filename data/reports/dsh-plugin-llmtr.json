@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-llmtr",
+  "analyzedAt": "2026-08-23T05:36:22.077Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 补丁，依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-llmtr",
+      "evidence": "dsh plugin add dsh-plugin-llmtr"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能使用 LLMTR 这个 AI 网关提供的 170 多种聊天模型，包括在土耳其托管的模型。安装后，你可以在设置里粘贴 LLMTR 的 API 密钥，然后在模型选择器里选用这些模型。它支持流式输出、推理过程显示，还可以限制只使用土耳其托管的模型以符合数据驻留要求。",
+      "level": "ok",
+      "risks": "插件会把你的 API 密钥发送到 LLMTR 的服务器，并可能将你的对话内容发送给所选模型的上游提供商（除非你只选土耳其托管的模型）。密钥存储在本地配置文件中，但请注意不要泄露。",
+      "postInstallNotes": "安装后，需要打开设置 → 模型，找到 LLMTR 卡片，粘贴从 llmtr.com 获取的 API 密钥并保存。也可以设置环境变量 LLMTR_API_KEY。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 LLMTR AI 网关的模型路由，支持 170+ 模型和土耳其托管模型。",
+    "usage": {
+      "prompt_tokens": 3354,
+      "completion_tokens": 383,
+      "total_tokens": 3737,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2842
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-check",
+  "analyzedAt": "2026-08-23T05:36:24.499Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.plugin，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-check",
+      "evidence": "dsh plugin --profile web add dsh-plugin-check"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫“插件体检”，它能检查你已经安装的 DSH 插件是否还能正常工作。它会对比公开的插件注册表，告诉你哪些插件坏了、哪些版本过期了、哪些有风险，还能帮你生成修复建议的报告。它只读不写，不会自动安装或删除任何东西。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取 DSH 的配置目录（$DSH_HOME）下的插件信息，并访问公开的 dshplugins.co 网站来获取数据，不会修改你的插件或系统。",
+      "postInstallNotes": "无。安装后直接使用即可，默认配置即可工作。",
+      "notes": "无"
+    },
+    "summaryZh": "插件体检：检查已安装的 DSH 插件，报告损坏、过期或有风险的项，并生成修复建议。",
+    "usage": {
+      "prompt_tokens": 2313,
+      "completion_tokens": 326,
+      "total_tokens": 2639,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1801
+    }
+  }
+}

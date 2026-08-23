@@ -1,0 +1,34 @@
+{
+  "id": "@jinplu/dsh-plugin-discussion-intent",
+  "analyzedAt": "2026-08-23T05:35:10.441Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@jinplu/dsh-plugin-discussion-intent",
+      "evidence": "dsh plugin --profile web add @jinplu/dsh-plugin-discussion-intent"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 加了一个“讨论模式”，专门对付复杂话题聊着聊着就跑偏的问题。它能帮你守住目标、边界和评价标准，把探索变成有依据的下一步行动。你可以用 /discussion 命令开始讨论，设置深度，选择子代理模型，还能把讨论进度保存下来，下次接着聊。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在工作区写一些检查点文件（.dsh/discussions/ 下的 .json 和 .md），用来保存讨论状态，这些文件只在你自己的电脑上。",
+      "postInstallNotes": "装完后需要重启 DSH 或重新加载插件。首次使用 /discussion 命令时，可能需要选择子代理模型。",
+      "notes": "无"
+    },
+    "summaryZh": "一个防止复杂讨论跑偏的 DSH 插件，帮你守住目标、把探索变成有依据的下一步。",
+    "usage": {
+      "prompt_tokens": 4028,
+      "completion_tokens": 357,
+      "total_tokens": 4385,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3516
+    }
+  }
+}

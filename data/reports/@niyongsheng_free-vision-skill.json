@@ -1,0 +1,34 @@
+{
+  "id": "@niyongsheng/free-vision-skill",
+  "analyzedAt": "2026-08-23T05:35:52.855Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@niyongsheng/free-vision-skill",
+      "evidence": "dsh plugin add @niyongsheng/free-vision-skill"
+    },
+    "evaluationReport": {
+      "intro": "这是一个让 DeepSeek-Harness 能看懂图片的插件。它完全在本地运行，用 macOS 自带的视觉技术来识别图片里的文字、表格，还能描述图片内容。图片不会上传到任何服务器，隐私安全。装好后，你可以让 AI 帮你读图、提取文字或描述场景。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只在本地处理图片，不会上传，也不碰隐私文件。",
+      "postInstallNotes": "需要在 cordis.patch.yml 中添加插件配置，例如设置 timeout 为 120000。",
+      "notes": "无"
+    },
+    "summaryZh": "一个完全本地运行的 DSH 插件，利用 macOS Vision 框架实现图片理解、OCR 和表格提取，图片不出本机。",
+    "usage": {
+      "prompt_tokens": 2024,
+      "completion_tokens": 317,
+      "total_tokens": 2341,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1512
+    }
+  }
+}

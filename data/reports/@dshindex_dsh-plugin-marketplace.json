@@ -1,0 +1,34 @@
+{
+  "id": "@dshindex/dsh-plugin-marketplace",
+  "analyzedAt": "2026-08-23T05:36:25.998Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dshindex/dsh-plugin-marketplace",
+      "evidence": "dsh plugin --profile web add @dshindex/dsh-plugin-marketplace"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 DSH 插件市场带进 DeepSeek Harness，让你能搜索、查看插件，确认后安装，还能反馈问题、打分、写 FAQ 和避坑指南。它也提供一个命令行工具 dsh-index，方便在终端操作。",
+      "level": "ok",
+      "risks": "没发现明显风险。它不会偷偷安装东西，所有安装都要你确认；提交 issue 时会自动抹掉敏感信息；你的评分和反馈默认不公开，除非你主动分享。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件市场：在 DeepSeek Harness 中浏览、安装插件，并分享使用反馈。",
+    "usage": {
+      "prompt_tokens": 2429,
+      "completion_tokens": 297,
+      "total_tokens": 2726,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1917
+    }
+  }
+}
