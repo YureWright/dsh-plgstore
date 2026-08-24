@@ -1,0 +1,34 @@
+{
+  "id": "dsh-daily-local-memory",
+  "analyzedAt": "2026-08-24T05:44:26.404Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis，README 自称 dsh 插件并给出配置示例，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-daily-local-memory",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 dsh-daily-local-memory，且为 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你把电脑上指定的文件夹做成一个本地资料库。它会自动扫描这些文件夹，把里面的文字内容整理成索引，之后你可以用关键词搜索，它会告诉你哪个文件、哪一行有你要的内容。整个过程都在你自己的电脑上完成，不会上传到任何地方。",
+      "level": "ok",
+      "risks": "它会读取你指定的文件夹内容（只读），并在你的用户目录下创建一个索引文件夹（默认 ~/.dsh/local-memory）来存放索引数据。它不会修改你的原始文件，也不会联网。敏感目录（如 .ssh、.aws）默认被排除，不会索引。",
+      "postInstallNotes": "需要在 dsh 配置中启用该插件，并可选配置索引目录、排除项等。",
+      "notes": "该插件标注为 developer preview，尚未在真实 dsh 运行时中验证，建议安装后手动测试。"
+    },
+    "summaryZh": "本地文件索引与关键词搜索插件，支持增量更新，全程本地运行。",
+    "usage": {
+      "prompt_tokens": 2869,
+      "completion_tokens": 363,
+      "total_tokens": 3232,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2357
+    }
+  }
+}

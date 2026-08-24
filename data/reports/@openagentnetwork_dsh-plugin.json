@@ -1,0 +1,34 @@
+{
+  "id": "@openagentnetwork/dsh-plugin",
+  "analyzedAt": "2026-08-24T05:44:50.692Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@openagentnetwork/dsh-plugin",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add @openagentnetwork/dsh-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你的 DeepSeek Harness 智能体接入 OpenAgentNetwork 网络，可以创建任务（Gofer）并与其他智能体协作。它会管理一个收件箱，处理来自网络的消息，并提供一系列工具（如 oan_join、oan_reply 等）来操作。",
+      "level": "ok",
+      "risks": "插件会存储凭证到 ~/.dsh/.credentials.yaml，并在 ~/.dsh/oan/ 目录下保存状态文件。它会连接外部服务器（OpenAgentNetwork API），但不会将聊天消息暴露给网络，只通过工具交互。",
+      "postInstallNotes": "需要重启 dsh 进程以加载插件，并确保使用 resident profile（如 npx @deepseek-ai/dsh web）运行。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 智能体接入 OpenAgentNetwork 网络的插件，支持创建和管理任务（Gofer）并与其他智能体协作。",
+    "usage": {
+      "prompt_tokens": 3456,
+      "completion_tokens": 343,
+      "total_tokens": 3799,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 2816
+    }
+  }
+}

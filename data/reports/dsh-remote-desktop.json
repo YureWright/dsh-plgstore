@@ -1,0 +1,34 @@
+{
+  "id": "dsh-remote-desktop",
+  "analyzedAt": "2026-08-24T05:43:30.481Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-remote-desktop",
+      "evidence": "dsh plugin --profile web add dsh-remote-desktop"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你能用手机远程控制电脑上的 DeepSeek Harness，包括查看和操作屏幕、鼠标键盘、传输文件，还能防止电脑锁屏。需要配合内网穿透工具（如 cpolar）使用，把公网地址转发到本机 8090 端口。",
+      "level": "caution",
+      "risks": "插件会修改系统电源设置（如关闭锁屏、唤醒不需要密码），并安装一个 Windows 服务（DSHRemoteUnlock）用于锁屏检测和防锁屏。远程控制功能若未设置强密码，可能导致电脑被他人控制。",
+      "postInstallNotes": "需要手动运行安装解锁服务的批处理文件（install-unlock-service.bat），并配置内网穿透工具，将公网 URL 转发到 127.0.0.1:8090。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 手机远程访问与远程桌面插件，支持远程屏幕控制、文件传输和防锁屏。",
+    "usage": {
+      "prompt_tokens": 4890,
+      "completion_tokens": 343,
+      "total_tokens": 5233,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4378
+    }
+  }
+}

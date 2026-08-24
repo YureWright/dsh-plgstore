@@ -1,0 +1,34 @@
+{
+  "id": "dsh-need-finder",
+  "analyzedAt": "2026-08-24T05:45:03.827Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，peerDependencies 依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-need-finder",
+      "evidence": "dsh plugin --profile <profile> add dsh-need-finder"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是个'插件导购'，它能让 DSH 助手听懂你的需求（比如'任务完成通知我'），然后从内置的 84 个精选插件里帮你挑出最合适的，并给出安装命令。它还能按'套装'一次装好一整套环境，比如通知全家桶、安全审计套装等。整个过程不需要联网，也不调用 AI，纯本地匹配。",
+      "level": "ok",
+      "risks": "没发现明显风险。它不联网、不写文件、不碰隐私，只是读取内置数据做匹配。",
+      "postInstallNotes": "无。装完即可用，模型侧会自动调用 plugin_guide 工具。",
+      "notes": "无"
+    },
+    "summaryZh": "需求驱动的 DSH 插件导购，能根据自然语言需求推荐插件并生成安装命令，还支持一键安装整套环境配方。",
+    "usage": {
+      "prompt_tokens": 2296,
+      "completion_tokens": 333,
+      "total_tokens": 2629,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1784
+    }
+  }
+}

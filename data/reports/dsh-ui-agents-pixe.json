@@ -1,0 +1,34 @@
+{
+  "id": "dsh-ui-agents-pixe",
+  "analyzedAt": "2026-08-24T05:44:08.297Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-llm 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ui-agents-pixe",
+      "evidence": "官方 DSH CLI 一条命令安装：dsh plugin --profile web add dsh-ui-agents-pixe"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页版主窗口加了一个「工作角色」页签和一个「像素办公室」浮层。里面有 508 个专家角色卡，可以选人、搜索、切换中英文。选中的角色会变成像素小人，在对话区走来走去、聊天。还能让这些像素小人接入 AI 聊天，用你配置好的模型生成台词。另外还有团队编排功能，可以让多个角色分工合作完成任务。安装很简单，一条命令搞定，不用改 dsh 源码。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和写入本机的一些文件，比如自定义角色会存在 ~/.dsh/agents-pixe/custom-roles.json，但这是正常功能。AI 聊天会消耗 token，但插件有预算控制，默认关闭，开启前会提醒。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。之后可以在设置里配置像素办公室的选项，比如是否开启角色工具、AI 闲聊等。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 网页版添加工作角色页签和像素办公室浮层，内置 508 个专家角色，支持 AI 闲聊和团队编排。",
+    "usage": {
+      "prompt_tokens": 5708,
+      "completion_tokens": 434,
+      "total_tokens": 6142,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5196
+    }
+  }
+}

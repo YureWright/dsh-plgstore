@@ -1,0 +1,34 @@
+{
+  "id": "dsh-dual-plugin-guide",
+  "analyzedAt": "2026-08-24T05:45:08.289Z",
+  "result": {
+    "classification": {
+      "type": "tutorial",
+      "confidence": 0.9,
+      "reason": "README 明确说明这是一个开发指南插件，教 agent 构建双格式插件，且 package.json 的 dsh.bundle 字段表明它是作为 DSH 插件打包的，但核心内容是教程性质。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/Fectivnfy112357/dsh-dual-plugin-guide.git",
+      "evidence": "README 中给出安装命令：dsh plugin --profile web add github:Fectivnfy112357/dsh-dual-plugin-guide"
+    },
+    "evaluationReport": {
+      "intro": "这是一个教 AI 助手（agent）怎么开发插件的教程包。它本身也是一个插件，装好后会给 AI 一份说明书，让 AI 学会如何创建同时兼容 DSH 和 Agent Plugins 两种格式的插件。里面还带了一个自动生成插件骨架的小工具，方便你快速开始。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是读取和注册一个技能文件，不会碰你的个人文件或连接外部服务器。",
+      "postInstallNotes": "装完后需要重启 DSH 配置文件（profile），然后这个技能才会出现在 AI 的技能列表里。",
+      "notes": "无"
+    },
+    "summaryZh": "一个教 AI 开发双格式插件的教程型 DSH 插件，附带自动生成插件骨架的工具。",
+    "usage": {
+      "prompt_tokens": 2053,
+      "completion_tokens": 338,
+      "total_tokens": 2391,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1541
+    }
+  }
+}

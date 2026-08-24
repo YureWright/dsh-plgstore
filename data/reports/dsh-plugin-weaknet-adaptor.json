@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-weaknet-adaptor",
+  "analyzedAt": "2026-08-24T05:43:59.392Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供了 cordis.yml 静态加载方式，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-weaknet-adaptor",
+      "evidence": "npm install dsh-plugin-weaknet-adaptor"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，专门解决网络不稳定时模型回复中断的问题。它会在网络差的时候自动重试（最长等10分钟），把成功的回复缓存下来，下次同样的问题直接秒回不花 token，还能自动检测网络恢复。设置页面可以调整各种参数，中英文都有。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会向配置的探测地址（默认是 Google 的 gstatic.com）发请求来检测网络，这个地址可以改。参数设置会保存到工作目录下的 .dsh/weaknet-params.json 文件。",
+      "postInstallNotes": "需要在 cordis.yml 里添加插件配置，例如 plugins: - name: dsh-plugin-weaknet-adaptor。",
+      "notes": "无"
+    },
+    "summaryZh": "弱网适配插件：自动重试、本地缓存、心跳重连，让模型回复在弱网下不中断。",
+    "usage": {
+      "prompt_tokens": 4561,
+      "completion_tokens": 355,
+      "total_tokens": 4916,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4049
+    }
+  }
+}

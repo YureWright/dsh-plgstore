@@ -1,0 +1,34 @@
+{
+  "id": "@ai-thinker/deepseek-harness-cli",
+  "analyzedAt": "2026-08-24T05:45:12.774Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.7,
+      "reason": "package.json 声明了 dsh.bundle 字段，但无 README 和明确的 DSH 插件接口调用，且依赖仅为 UI 库，更像是一个 CLI 工具而非 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@ai-thinker/deepseek-harness-cli",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个名为 deepseek-harness-cli 的命令行工具，提供了终端界面（基于 OpenTUI），可能用于与 DeepSeek Harness 交互，但具体功能不明确。",
+      "level": "caution",
+      "risks": "安装后会自动运行 postinstall 脚本（node scripts/ensure-runtime.mjs），可能下载或修改系统文件；作为 CLI 工具，可能访问用户终端和文件系统。",
+      "postInstallNotes": "无",
+      "notes": "经评估可能并非 DSH 插件（理由：缺少 README 和明确的 DSH 接口调用，仅依赖 UI 库，且 package.json 中 dsh.bundle 字段指向一个补丁文件，但无更多上下文）。"
+    },
+    "summaryZh": "一个基于 OpenTUI 的终端界面 CLI 工具，可能用于 DeepSeek Harness，但功能不明确。",
+    "usage": {
+      "prompt_tokens": 1551,
+      "completion_tokens": 324,
+      "total_tokens": 1875,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1039
+    }
+  }
+}

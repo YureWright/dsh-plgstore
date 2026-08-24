@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-playwright",
+  "analyzedAt": "2026-08-24T05:44:55.843Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-playwright",
+      "evidence": "dsh plugin --profile web add dsh-plugin-playwright"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 AI 助手能控制你的浏览器，比如打开网页、点击按钮、填写表单、截图、下载文件等。它通过一系列工具（如 browser_navigate、browser_click）让 AI 像人一样操作浏览器，适合自动化测试或网页操作。",
+      "level": "ok",
+      "risks": "插件会启动一个真实的浏览器（默认无头模式），可能会访问你指定的网页，并可能保存截图或 PDF 到本地目录（默认 .dsh/playwright）。它默认不启用执行任意 JavaScript 的功能（browser_evaluate 默认关闭），但如果你开启，AI 就能在网页上执行代码。此外，它可能读取浏览器的 cookie 和本地存储（如果配置了持久化目录）。",
+      "postInstallNotes": "需要安装浏览器引擎，运行 `npx playwright install chromium`（或根据配置安装其他浏览器）。也可以设置 executablePath 指向已安装的浏览器。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Playwright 浏览器自动化工具，让 AI 能控制真实浏览器执行网页操作。",
+    "usage": {
+      "prompt_tokens": 3512,
+      "completion_tokens": 381,
+      "total_tokens": 3893,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3000
+    }
+  }
+}

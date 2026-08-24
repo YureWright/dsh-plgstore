@@ -1,0 +1,34 @@
+{
+  "id": "@dhicoc/dsh-codex-web-search-mcp",
+  "analyzedAt": "2026-08-24T05:44:42.084Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/dsh-mcp-client，README 提供了 dsh plugin add 安装命令，且代码为 Cordis bundle 配置型插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dhicoc/dsh-codex-web-search-mcp",
+      "evidence": "dsh plugin --profile web add @dhicoc/dsh-codex-web-search-mcp"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 codex-web-search-mcp（一个独立的联网搜索和深度研究工具）接入 DeepSeek Harness，安装后你就能在 dsh 里直接使用搜索、深度研究和抓取网页内容这三个功能，而且不依赖特定模型厂商。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你电脑上运行一个搜索服务，需要登录凭证（codex login 或环境变量），但不会额外碰你的隐私文件。",
+      "postInstallNotes": "需要配置凭证：要么先运行 codex login（会写入 ~/.codex/auth.json），要么设置环境变量 CODEX_ACCESS_TOKEN（可选 CODEX_ACCOUNT_ID）。",
+      "notes": "无"
+    },
+    "summaryZh": "将 codex-web-search-mcp 接入 dsh 的一键插件，提供联网搜索、深度研究和网页抓取功能。",
+    "usage": {
+      "prompt_tokens": 3080,
+      "completion_tokens": 340,
+      "total_tokens": 3420,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2568
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-jenkins",
+  "analyzedAt": "2026-08-24T05:43:44.134Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 清单，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-jenkins",
+      "evidence": "dsh plugin --profile web add dsh-jenkins"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 Jenkins 管理插件，可以让你在 DSH 里集中管理多个 Jenkins 服务器和任务，一键触发构建、查看日志、停止构建，还支持中英文界面。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取工作区里的 dsh-jenkins 配置文件，并在浏览器本地存储记住上次提交的参数，但不会上传到外部服务器。",
+      "postInstallNotes": "装完后需要重启 DSH 才能生效。如果要用工作区入口，需要在工作区根目录放一个 dsh-jenkins.json 配置文件。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 Jenkins 管理插件，支持多服务器多任务管理、一键构建发布、日志查看和双语界面。",
+    "usage": {
+      "prompt_tokens": 4423,
+      "completion_tokens": 308,
+      "total_tokens": 4731,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3911
+    }
+  }
+}

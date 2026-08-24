@@ -1,0 +1,34 @@
+{
+  "id": "dsh-iris",
+  "analyzedAt": "2026-08-24T05:45:26.993Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-iris",
+      "evidence": "dsh plugin --profile web add dsh-iris"
+    },
+    "evaluationReport": {
+      "intro": "这个插件叫 dsh-iris，它能让 DeepSeek Harness 的 AI 助手在对话时更聪明地展示自己的能力。默认只显示最常用的工具和功能，当需要时再逐步加载更多，这样既节省资源又让 AI 更专注。它支持多种模式，并且有图形界面可以调整设置。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在你主动激活时加载本地工具，不会偷偷执行或连接外部服务器。",
+      "postInstallNotes": "安装后需要运行 dsh --profile web 启动，然后在界面中启用 Iris，并根据需要调整设置。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-iris 是一个渐进式能力展示插件，让 DeepSeek Harness 按需加载工具和技能，提升效率。",
+    "usage": {
+      "prompt_tokens": 3864,
+      "completion_tokens": 325,
+      "total_tokens": 4189,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3352
+    }
+  }
+}

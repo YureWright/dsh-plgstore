@@ -1,0 +1,34 @@
+{
+  "id": "dsh-browser-fs",
+  "analyzedAt": "2026-08-24T05:44:47.370Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-browser-fs",
+      "evidence": "dsh plugin --profile web add dsh-browser-fs"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 AI 助手能读写你浏览器所在电脑上的文件。比如你远程连接服务器时，AI 在服务器上，但你想让它操作你本地电脑的文件，这个插件就能做到。你需要在网页上授权一个文件夹，之后 AI 就能列出、读取和写入这个文件夹里的文件。",
+      "level": "ok",
+      "risks": "插件会请求你授权一个本地文件夹，之后 AI 可以读写该文件夹内的文件。授权信息存储在浏览器本地（IndexedDB），不会上传到服务器。插件通过 WebSocket 与浏览器通信，但仅限本地连接。未发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh，然后在 dsh 网页右下角找到插件卡片，点击授权目录，选择你要允许 AI 访问的文件夹。",
+      "notes": "无"
+    },
+    "summaryZh": "让 AI 助手通过浏览器授权读写本地文件夹的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 4888,
+      "completion_tokens": 337,
+      "total_tokens": 5225,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4376
+    }
+  }
+}

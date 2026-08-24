@@ -1,0 +1,34 @@
+{
+  "id": "@zhengcankai/deepseek-harness",
+  "analyzedAt": "2026-08-24T05:45:13.086Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.9,
+      "reason": "该包是 DeepSeek Harness CLI 的补丁版本，通过 npx 运行，不是 DSH 插件，而是对核心 CLI 的包装和补丁。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@zhengcankai/deepseek-harness",
+      "evidence": "README 中提供了 npx 命令：npx --yes @zhengcankai/deepseek-harness web --port 8080"
+    },
+    "evaluationReport": {
+      "intro": "这是一个对 DeepSeek Harness 命令行工具进行补丁的版本，修复了五个已知问题，比如工具名被清空、某些接口在域名访问时返回 403、模型返回的 tool_call 缺少 name 字段导致报错、长会话导致浏览器卡顿、以及内容过滤被当作错误处理等。你可以通过 npx 直接运行它，无需安装。",
+      "level": "caution",
+      "risks": "该包在安装时会执行 postinstall 脚本（node scripts/patch-dsh.mjs），会修改依赖的源码文件。此外，它依赖了多个 @deepseek-ai 核心包，可能会访问你的网络和本地文件系统。由于是第三方补丁，可能存在未公开的修改。",
+      "postInstallNotes": "无",
+      "notes": "经评估可能并非 DSH 插件，而是对 DSH CLI 的补丁包装。安装时会执行 postinstall 脚本，建议检查其内容。"
+    },
+    "summaryZh": "这是一个对 DeepSeek Harness CLI 进行补丁的第三方包装，修复了多个已知问题，可通过 npx 直接运行。",
+    "usage": {
+      "prompt_tokens": 2396,
+      "completion_tokens": 396,
+      "total_tokens": 2792,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1884
+    }
+  }
+}

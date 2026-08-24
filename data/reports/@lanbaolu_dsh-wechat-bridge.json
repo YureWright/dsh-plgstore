@@ -1,0 +1,34 @@
+{
+  "id": "@lanbaolu/dsh-wechat-bridge",
+  "analyzedAt": "2026-08-24T05:43:58.631Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@lanbaolu/dsh-wechat-bridge",
+      "evidence": "npm install @lanbaolu/dsh-wechat-bridge"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的微信和本机的 DeepSeek Harness 智能助手连接起来。装好后，你可以用微信扫码绑定，然后在微信里直接和助手聊天，发文字、图片、语音都能处理，助手也能主动给你发通知。它支持多个微信用户同时使用，每个人有独立的会话和权限，还能在微信里批准或拒绝助手的一些操作请求。",
+      "level": "caution",
+      "risks": "它会读取和存储你的微信账号凭证（在 ~/.dsh/wechat-bridge/accounts/ 下，权限 0600），并可能下载微信发来的图片和文件到本地。它会在本机启动一个守护进程，监听 127.0.0.1 并用 token 鉴权。使用非官方微信协议有账号被限制的风险，README 也提到了这一点。",
+      "postInstallNotes": "安装后需要在 DSH Web 设置页的「微信桥接」面板中填写 DSH 工作目录，然后扫码绑定微信账号，再点击启动。或者也可以在终端运行 node lib/bridge/main.js setup 进行设置。",
+      "notes": "README 明确声明使用非官方微信协议存在账号风险，请自行评估。多用户路径（bootstrap 入集、双用户隔离并发）真机验证待补，建议在受控环境使用。"
+    },
+    "summaryZh": "基于 wechat-claude-code 的 DSH 微信桥接插件，支持三端，提供微信内对话、文件收发、多用户隔离和审批功能。",
+    "usage": {
+      "prompt_tokens": 4716,
+      "completion_tokens": 469,
+      "total_tokens": 5185,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4204
+    }
+  }
+}

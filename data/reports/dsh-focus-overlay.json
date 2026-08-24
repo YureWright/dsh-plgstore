@@ -1,0 +1,34 @@
+{
+  "id": "dsh-focus-overlay",
+  "analyzedAt": "2026-08-24T05:44:09.284Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-focus-overlay",
+      "evidence": "dsh plugin --profile web add dsh-focus-overlay"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的专注模式插件。装上之后，你可以一键进入全屏阅读模式，把标题栏、输入框和工具调用步骤都藏起来，只留下你和 AI 的对话，看起来更清爽。它还能把 AI 的工具调用过程折叠成一句话摘要，右侧有导航点可以快速跳转，按 F 键就能进入专注模式，AI 回复完还会提醒你。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要操作界面显示，设置保存在浏览器 localStorage，不会碰其他文件。",
+      "postInstallNotes": "安装后重启 dsh web 生效。首次启动会弹出引导，可在设置中调整各项开关。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH Web GUI 提供专注模式，一键全屏阅读，隐藏界面元素并折叠工具调用，提升小屏幕阅读体验。",
+    "usage": {
+      "prompt_tokens": 3614,
+      "completion_tokens": 334,
+      "total_tokens": 3948,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3102
+    }
+  }
+}

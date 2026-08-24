@@ -1,0 +1,34 @@
+{
+  "id": "@memtensor/memos-cloud-dsh-plugin",
+  "analyzedAt": "2026-08-24T05:45:27.121Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@memtensor/memos-cloud-dsh-plugin@latest",
+      "evidence": "dsh plugin --profile web add @memtensor/memos-cloud-dsh-plugin@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 在对话时自动从 MemOS 云端记忆服务中回忆相关记忆，并在对话结束后把新的对话内容保存到云端，实现长期记忆功能。",
+      "level": "ok",
+      "risks": "它会读取和写入你的 MemOS 云端账户数据，需要你提供 API 密钥。它不会访问本地文件，但会向 MemOS 服务器发送对话内容。",
+      "postInstallNotes": "需要在 ~/.dsh/.credentials.yaml 中配置 MEMOS_API_KEY，并在 ~/.dsh/settings.yaml 中设置 memos-cloud 配置（至少 apiKeyEnv）。",
+      "notes": "无"
+    },
+    "summaryZh": "MemOS 云记忆插件，为 DeepSeek Harness 提供自动回忆和保存对话记忆的功能。",
+    "usage": {
+      "prompt_tokens": 4147,
+      "completion_tokens": 328,
+      "total_tokens": 4475,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3635
+    }
+  }
+}

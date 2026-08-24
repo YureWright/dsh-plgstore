@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-focus",
+  "analyzedAt": "2026-08-24T05:45:07.908Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-focus",
+      "evidence": "dsh plugin --profile <profile> add dsh-plugin-focus"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的 AI 助手加了一个'焦点板'，就像一张便利贴，把当前目标、限制和重要决定记下来，这样即使对话很长或者换新会话，AI 也不会忘记重点。它还能自动把这张便利贴的内容塞回给 AI 看，清空时会自动备份。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在你的工作目录里读写一个文本文件（默认 .dsh/focus.md），并且有安全检查防止路径越界。",
+      "postInstallNotes": "装完后重启 DSH 即可。如果想在某个 agent 预设上单独启用，需要手动编辑 agent.cordis.yml 添加配置。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供持久化焦点板，帮助 AI 跨会话记住目标和约束。",
+    "usage": {
+      "prompt_tokens": 3525,
+      "completion_tokens": 332,
+      "total_tokens": 3857,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3013
+    }
+  }
+}

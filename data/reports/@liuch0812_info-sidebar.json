@@ -1,0 +1,34 @@
+{
+  "id": "@liuch0812/info-sidebar",
+  "analyzedAt": "2026-08-24T05:44:48.450Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，是真正的 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@liuch0812/info-sidebar",
+      "evidence": "dsh plugin --profile web add @liuch0812/info-sidebar"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加一个右侧信息栏，显示会话信息（模型、工作区路径、Git 分支）、Token 用量和预估花费，以及实时活动状态（Agent 是否在跑、后台任务数等）。面板每 3 秒刷新，可以收起成小按钮，不遮挡主内容。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读取运行时已有的数据，不存储任何东西。",
+      "postInstallNotes": "装完需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加一个 opencode 风格的右侧信息栏，展示会话、Token 花费和实时活动状态。",
+    "usage": {
+      "prompt_tokens": 2795,
+      "completion_tokens": 305,
+      "total_tokens": 3100,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2283
+    }
+  }
+}

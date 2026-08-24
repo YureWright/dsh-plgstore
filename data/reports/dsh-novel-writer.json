@@ -1,0 +1,34 @@
+{
+  "id": "dsh-novel-writer",
+  "analyzedAt": "2026-08-24T05:43:31.645Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，依赖 @deepseek-ai/dsh-client-* 核心包，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-novel-writer",
+      "evidence": "dsh plugin --profile web add dsh-novel-writer"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的中文小说写作助手插件。它能帮你管理小说章节库，分析句式和情感，生成风格报告，检查剧情连贯性、角色是否走样（OOC）、大纲是否跑偏，还能做本地语义搜索（不花 token）。适合写中文网文的作者用来辅助创作和保持文风一致。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会在你指定的书库根目录下创建 .novel-writer 文件夹存放分析数据，所有处理都在本地进行，不会上传到外部服务器。",
+      "postInstallNotes": "安装后需要重启 web 应用生效。建议在配置中设置书库根目录（root），否则可能使用默认路径。",
+      "notes": "无"
+    },
+    "summaryZh": "面向 DeepSeek Harness 的中文小说写作助手，提供章节管理、风格分析、连贯性检查、本地语义搜索等 16 个工具。",
+    "usage": {
+      "prompt_tokens": 3431,
+      "completion_tokens": 351,
+      "total_tokens": 3782,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2919
+    }
+  }
+}

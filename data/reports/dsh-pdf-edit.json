@@ -1,0 +1,34 @@
+{
+  "id": "dsh-pdf-edit",
+  "analyzedAt": "2026-08-24T05:44:05.368Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-pdf-edit@latest",
+      "evidence": "dsh plugin --profile web add dsh-pdf-edit@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 AI 帮你修改 PDF 文件里的文字，而且保持原来的排版不变。比如你可以让它把全文的错别字改掉、统一术语，或者往 PDF 里插入新内容，它都会自动处理格式，不会弄乱版面。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你指定的 PDF 文件，并可能调用 AI 服务（需要配置 API Key），但不会主动访问其他隐私文件。",
+      "postInstallNotes": "需要确保 dsh 版本 >= 0.1.1-rc.2，Node >= 22。如果使用 AI 功能，需要配置 DEEPSEEK_API_KEY 或确保 dsh 的 LLM 服务可用。",
+      "notes": "无"
+    },
+    "summaryZh": "一个让 AI 编辑 PDF 文字并保持原版式的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 5317,
+      "completion_tokens": 332,
+      "total_tokens": 5649,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4805
+    }
+  }
+}

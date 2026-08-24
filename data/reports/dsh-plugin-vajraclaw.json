@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-vajraclaw",
+  "analyzedAt": "2026-08-24T05:43:30.579Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.id，并依赖 @deepseek-ai/cordis，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-vajraclaw",
+      "evidence": "README 未明确给出安装命令，但 package.json 的 name 字段为 dsh-plugin-vajraclaw，且作为 DSH 插件分发。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个安全防护工具，叫 DROS VajraClaw。它主要给 AI 智能体（比如 DSH、AGY、Codex 等）加一道安全锁，防止它们乱执行危险操作、偷数据或者被恶意指令攻击。它有两种模式：一种内置在本地，不需要额外安装；另一种通过 Docker 网关统一管理多个智能体。免费版个人可以用，但公司或商业用途需要买许可证。",
+      "level": "caution",
+      "risks": "它会监控和拦截智能体的工具调用，可能会记录执行日志（本地 JSON 审计链）。它可能连接外部网关（默认 localhost:8080），如果配置了远程网关，数据可能发送到外部。另外，它需要生成和管理加密密钥，如果丢失密钥可能影响使用。",
+      "postInstallNotes": "需要配置网关地址（默认 localhost:8080）和许可证密钥（可选）。如果使用 Docker 网关，需要确保 Docker 环境运行。建议备份生成的密钥种子。",
+      "notes": "该插件声称有专利和商业许可限制，个人免费但商业使用需购买许可证。依赖 @deepseek-ai/cordis 核心包，但未明确说明安装命令。"
+    },
+    "summaryZh": "DROS VajraClaw 是一个为 DSH 和多智能体环境提供确定性执行治理与安全熔断的插件，支持本地和 Docker 网关双模式。",
+    "usage": {
+      "prompt_tokens": 3833,
+      "completion_tokens": 452,
+      "total_tokens": 4285,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3321
+    }
+  }
+}

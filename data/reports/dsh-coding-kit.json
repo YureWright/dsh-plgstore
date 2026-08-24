@@ -1,0 +1,34 @@
+{
+  "id": "dsh-coding-kit",
+  "analyzedAt": "2026-08-24T05:44:26.347Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-coding-kit",
+      "evidence": "dsh plugin --profile web add dsh-coding-kit"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的插件，主要帮你按一套叫 ICVO 的编码规范来写代码。它不会自动改你的系统提示，需要你或模型主动调用一个叫 apply_coding_standards 的工具，之后才会在对话里加入编码规范。它还带一个命令行工具，可以在 Cursor 或 CI 里做代码检查、任务验证等。",
+      "level": "ok",
+      "risks": "没发现明显风险。它不会自动改你的系统提示，需要你主动调用。它可能会在你的项目里创建 .coding-kit 文件夹，但不会覆盖已有文件。",
+      "postInstallNotes": "安装后需要你在对话中主动说'请应用 coding standards'，让模型调用 apply_coding_standards 工具。如果要用 CLI 功能，直接运行 npx dsh-coding-kit 即可。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 编码规范插件，提供 ICVO 规范注入和 CLI 检查工具，需主动调用才生效。",
+    "usage": {
+      "prompt_tokens": 4003,
+      "completion_tokens": 366,
+      "total_tokens": 4369,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3491
+    }
+  }
+}

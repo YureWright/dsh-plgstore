@@ -1,0 +1,34 @@
+{
+  "id": "@omicverse/dsh-omicos",
+  "analyzedAt": "2026-08-24T05:44:26.492Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@omicverse/dsh-omicos",
+      "evidence": "dsh plugin --profile web add @omicverse/dsh-omicos"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 OmicOS 生物信息学分析工具集成到 DeepSeek Harness 中。它让 AI 助手能直接运行单细胞和空间转录组分析，提供持久化的 Python 内核，可以累积分析状态，还带有账号管理和实时进度可视化界面。",
+      "level": "ok",
+      "risks": "插件会启动本地 Python 内核并运行分析代码，可能消耗计算资源；登录 OmicOS 账号时通过浏览器授权，但插件本身不保存令牌；HTTP 路由限制在本地回环，相对安全。",
+      "postInstallNotes": "需要配置工作目录（workspace）和自动启动选项（autoStart），可选设置上游服务器地址和 npm 镜像；需要 OmicOS 账号以使用云模型和高级功能。",
+      "notes": "无"
+    },
+    "summaryZh": "将 OmicOS 生物信息学分析能力接入 DeepSeek Harness，提供持久 Python 内核和多种分析工具。",
+    "usage": {
+      "prompt_tokens": 3618,
+      "completion_tokens": 353,
+      "total_tokens": 3971,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3106
+    }
+  }
+}

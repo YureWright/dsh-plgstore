@@ -1,0 +1,34 @@
+{
+  "id": "dsh-tool-web-enhanced",
+  "analyzedAt": "2026-08-24T05:43:39.827Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，依赖 @deepseek-ai/cordis 等核心包，README 明确为 DSH bundle，且提供安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tool-web-enhanced",
+      "evidence": "npm install dsh-tool-web-enhanced"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 的一个增强版网络搜索工具。它替换了自带的 web_search 功能，让你可以额外接入自己的搜索源，比如本地 SearXNG 实例或本地文档的 RAG 数据库。默认行为和原版一样，只有你配置了额外模块才会增加内容。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会访问你配置的 SearXNG 实例（默认本地 127.0.0.1:8080）和本地文档目录，但都是你主动配置的。",
+      "postInstallNotes": "安装后需要配置 sections.searxng.url 指向你的 SearXNG 实例，以及配置 RAG 数据库路径和嵌入模型（如果需要）。",
+      "notes": "无"
+    },
+    "summaryZh": "增强版网络搜索工具，可附加 SearXNG 和 RAG 搜索模块，替换默认 web_search。",
+    "usage": {
+      "prompt_tokens": 3647,
+      "completion_tokens": 327,
+      "total_tokens": 3974,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3135
+    }
+  }
+}

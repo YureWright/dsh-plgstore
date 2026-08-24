@@ -1,0 +1,34 @@
+{
+  "id": "@dsh-mixxed/dsh-client-ui-git-branch",
+  "analyzedAt": "2026-08-24T05:44:42.737Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-mixxed/dsh-client-ui-git-branch",
+      "evidence": "dsh plugin --profile web add @dsh-mixxed/dsh-client-ui-git-branch"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的聊天输入框加了一个 Git 分支选择器，就在模型选择按钮左边。如果你正在一个 Git 仓库里工作，它会显示当前分支，你可以搜索、切换分支，还能看到每个分支和远程的同步情况（领先/落后几个提交），也可以直接新建分支。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在你主动操作时执行 git 命令（切换分支、新建分支），不会偷偷改你的代码或上传数据。",
+      "postInstallNotes": "装完后需要重启 DSH 配置文件（profile）并刷新浏览器页面。如果之前装过旧版，需要手动从 cordis.patch.yml 里删掉旧的 ui-git-branch 行，避免重复加载。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 聊天输入框添加 Git 分支选择器，支持搜索、切换、新建分支，并显示与远程的同步状态。",
+    "usage": {
+      "prompt_tokens": 2917,
+      "completion_tokens": 372,
+      "total_tokens": 3289,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2405
+    }
+  }
+}

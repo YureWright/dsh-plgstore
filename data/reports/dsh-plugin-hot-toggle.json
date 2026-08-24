@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-hot-toggle",
+  "analyzedAt": "2026-08-24T05:44:56.397Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，代码调用 Cordis Loader 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-hot-toggle",
+      "evidence": "From npm (after publish): dsh plugin --profile web add dsh-plugin-hot-toggle"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的网页设置里直接启用或停用已安装的插件，不用重启 DSH，改完立刻生效，而且状态会保存下来。它还带筛选和搜索功能，方便管理很多插件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读写 DSH 自己的配置文件和插件状态，不碰其他个人文件。",
+      "postInstallNotes": "安装后启动 DSH，打开设置 → 插件 → 启停管理 即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DSH 网页设置中一键热启用/停用任意插件，无需重启，状态持久化。",
+    "usage": {
+      "prompt_tokens": 3444,
+      "completion_tokens": 295,
+      "total_tokens": 3739,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2932
+    }
+  }
+}

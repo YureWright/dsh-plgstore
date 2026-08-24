@@ -1,0 +1,34 @@
+{
+  "id": "@tindalosko/dsh-cheatengine",
+  "analyzedAt": "2026-08-24T05:44:36.268Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@tindalosko/dsh-cheatengine",
+      "evidence": "推荐从 npm 安装：dsh plugin add @tindalosko/dsh-cheatengine"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DSH 助手能直接操作 Cheat Engine，用来调试单机游戏：比如查找和修改内存数值、找游戏基址、锁定资源（比如无限金币）、分析是谁在修改某个数值等。它自带一个悬浮面板，可以显示调试状态。",
+      "level": "caution",
+      "risks": "它会连接你电脑上的 Cheat Engine（默认连本机 127.0.0.1:17171），可能修改游戏内存或执行脚本，只应在你有权限的单机调试环境中使用。插件会注册很多工具，增加每次请求的 token 消耗。",
+      "postInstallNotes": "需要在 Windows 上先安装 Cheat Engine 并配置桥接（获取 ce_mcp_bridge.lua 和 DLL 文件），然后附加目标进程并运行桥接脚本。默认连接 127.0.0.1:17171，可用 ce_connect 修改。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DSH 助手直接操作 Cheat Engine 进行单机游戏动态调试的插件，支持内存扫描、基址查找、资源锁定等。",
+    "usage": {
+      "prompt_tokens": 2680,
+      "completion_tokens": 396,
+      "total_tokens": 3076,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2168
+    }
+  }
+}

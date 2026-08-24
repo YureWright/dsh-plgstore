@@ -1,0 +1,34 @@
+{
+  "id": "dshhub-market",
+  "analyzedAt": "2026-08-24T05:43:35.708Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dshhub-market",
+      "evidence": "From npm: dsh plugin --profile web add dshhub-market"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件市场客户端，让你在 DSH 里通过输入六位代码来解锁并安装插件。创作者可以分发代码，买家输入代码即可安装插件，无需注册登录。它还提供主题皮肤、插件管理、备份恢复、诊断等功能。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件安装来源被限制在 DSHHub.co 注册表，构建脚本默认阻止，安装端点仅接受同源请求，本地桥接仅接受回环和 dshhub.co 来源。",
+      "postInstallNotes": "安装后重启 dsh web，然后打开设置中的插件市场。如果从网站 URL 安装，每次发布后需要在配置文件目录运行 pnpm install --update-checksums。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件市场客户端，通过输入代码解锁并安装插件，连接创作者与买家。",
+    "usage": {
+      "prompt_tokens": 3597,
+      "completion_tokens": 333,
+      "total_tokens": 3930,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3085
+    }
+  }
+}

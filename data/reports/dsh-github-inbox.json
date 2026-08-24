@@ -1,0 +1,34 @@
+{
+  "id": "dsh-github-inbox",
+  "analyzedAt": "2026-08-24T05:44:36.309Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 dsh-better-sidebar，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-github-inbox",
+      "evidence": "dsh plugin --profile <name> add dsh-github-inbox@<version>"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DSH 的侧边栏里加一个 GitHub 收件箱标签页，让你不用离开 DSH 就能看到 GitHub 的通知、按类别筛选（比如默认隐藏 CI 通知）、标记已读或完成，还能直接对 PR 进行 Approve、Request changes 或评论，并且可以控制是否允许合并（默认关闭）。",
+      "level": "ok",
+      "risks": "没发现明显风险。它需要访问你的 GitHub 数据，会读取 GitHub 通知和 PR 信息，但不会碰你电脑上的其他文件。",
+      "postInstallNotes": "需要在 profile 的 cordis.patch.yml 中配置插件，可选设置 githubAllowMerge 开启合并功能，也可以设置 githubToken 或使用默认的 gh auth token。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 侧边栏 GitHub 收件箱插件，集成通知、PR 审查和合并操作。",
+    "usage": {
+      "prompt_tokens": 2085,
+      "completion_tokens": 352,
+      "total_tokens": 2437,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1573
+    }
+  }
+}

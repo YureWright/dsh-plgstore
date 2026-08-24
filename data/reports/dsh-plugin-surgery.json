@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-surgery",
+  "analyzedAt": "2026-08-24T05:44:46.026Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 peerDependencies 依赖 @deepseek-ai/dsh-tools 和 @deepseek-ai/dsh-typert-protocol，README 提供了 dsh plugin add 安装命令。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-surgery",
+      "evidence": "dsh plugin --profile web add dsh-plugin-surgery"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 插件管理用的'手术刀'，主要帮你安全地卸载插件、回滚到之前的版本、检查插件健康状况。它会在卸载前预览影响，自动备份，卸载后核对文件，还能一键回滚。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只操作当前 profile 目录和 ~/.dsh/surgery/ 状态目录，不碰其他 profile、会话或凭据。",
+      "postInstallNotes": "无。安装后重启 dsh 生效，工具会自动出现在 agent 工具集里。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件手术刀：安全卸载、快照回滚、插件体检，让插件管理更安心。",
+    "usage": {
+      "prompt_tokens": 3955,
+      "completion_tokens": 311,
+      "total_tokens": 4266,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3443
+    }
+  }
+}

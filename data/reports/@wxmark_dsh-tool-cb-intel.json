@@ -1,0 +1,34 @@
+{
+  "id": "@wxmark/dsh-tool-cb-intel",
+  "analyzedAt": "2026-08-24T05:44:59.048Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，且 README 明确说明是 DSH 插件并提供安装方法。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wxmark/dsh-tool-cb-intel",
+      "evidence": "pnpm add @wxmark/dsh-tool-cb-intel"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的可转债插件，能帮你查看可转债的每日行情、强赎提醒、配债测算和条款科普。比如你可以问它某只可转债的强赎最后交易日，或者配债需要多少股。它自带一份离线数据，也可以联网更新。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和更新本地数据文件，但都是公开的可转债信息。",
+      "postInstallNotes": "需要确保系统装有 Python 3.7+，并在 cordis.yml 中配置插件。",
+      "notes": "无"
+    },
+    "summaryZh": "可转债情报局：为 DeepSeek Harness 提供可转债行情早报、强赎监控、配债测算和条款科普的插件。",
+    "usage": {
+      "prompt_tokens": 1925,
+      "completion_tokens": 315,
+      "total_tokens": 2240,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1413
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "local-ocr-cli",
+  "analyzedAt": "2026-08-24T05:44:13.320Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且 README 提供了 dsh plugin add 安装命令，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "local-ocr-cli",
+      "evidence": "dsh plugin --profile web add local-ocr-cli"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你的文本型大模型（比如 DeepSeek）能看懂图片里的文字。它完全在你自己的电脑上运行，图片不会上传到任何服务器。它用 PaddleOCR-VL 引擎识别图片中的文字、表格、公式等，如果电脑配置不够，还可以用更轻量的 tesseract 引擎。安装后，模型就能直接调用一个叫 ocr 的工具来读取图片。",
+      "level": "ok",
+      "risks": "没发现明显风险。所有处理都在本地进行，不会上传图片或连接外部服务器。",
+      "postInstallNotes": "需要安装 Python 环境和 llama.cpp 才能使用默认的 PaddleOCR 引擎，或者安装 tesseract 作为备选。安装后可能需要重启 dsh 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "本地 OCR 插件，让文本型大模型能识别图片中的文字，完全离线运行。",
+    "usage": {
+      "prompt_tokens": 2848,
+      "completion_tokens": 326,
+      "total_tokens": 3174,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2336
+    }
+  }
+}

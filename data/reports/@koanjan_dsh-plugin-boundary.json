@@ -1,0 +1,34 @@
+{
+  "id": "@koanjan/dsh-plugin-boundary",
+  "analyzedAt": "2026-08-24T05:44:32.215Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@koanjan/dsh-plugin-boundary",
+      "evidence": "dsh plugin --profile web add @koanjan/dsh-plugin-boundary"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个技能包，它把 DSH 平台的能力边界规则打包成一个可加载的技能。安装后，它会注册一个名为 dsh-plugin-boundary 的技能，这个技能会告诉你：哪些通道是官方支持的，哪些是未文档化的变通方法，哪些是物理上不可能的。它主要用于在开发插件之前做权衡决策，比如了解客户端和主机之间的数据通道、文件系统限制、动态插件和 bundle 插件的生命周期，以及安装、调试的硬性规则。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是提供技能内容（markdown 文件），不执行外部操作，也不碰隐私文件。",
+      "postInstallNotes": "安装后需要重启 DSH，然后新会话的技能目录中应该会出现 dsh-plugin-boundary 技能。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件开发边界技能包，提供平台能力边界规则，帮助开发者做插件开发前的权衡决策。",
+    "usage": {
+      "prompt_tokens": 1772,
+      "completion_tokens": 341,
+      "total_tokens": 2113,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1260
+    }
+  }
+}

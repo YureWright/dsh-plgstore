@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-mgr",
+  "analyzedAt": "2026-08-24T05:44:20.476Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-mgr",
+      "evidence": "dsh plugin --profile web add dsh-plugin-mgr"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 增加了一个「插件管理」页面，让你在设置里就能看到所有已安装的插件，可以一键启动/停止、查看详情、卸载、检查更新并更新，还有搜索功能。界面是卡片式的，支持中英文，会自动适配明暗主题。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读写 DSH 的配置文件（cordis.patch.yml）来启停插件，会调用 npm registry 检查更新（可能发送包名到 npm 服务器），但这些都是正常操作。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件管理器：在设置中添加插件管理页面，支持启停、卸载、更新检查和搜索。",
+    "usage": {
+      "prompt_tokens": 3123,
+      "completion_tokens": 303,
+      "total_tokens": 3426,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2611
+    }
+  }
+}

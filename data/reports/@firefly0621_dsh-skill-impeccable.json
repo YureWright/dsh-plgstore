@@ -1,0 +1,34 @@
+{
+  "id": "@firefly0621/dsh-skill-impeccable",
+  "analyzedAt": "2026-08-24T05:45:26.417Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-skill，README 明确说明通过 dsh plugin add 安装，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@firefly0621/dsh-skill-impeccable",
+      "evidence": "README 中写道：'install it explicitly with `dsh plugin add`'"
+    },
+    "evaluationReport": {
+      "intro": "这是一个为 DeepSeek Harness 提供的技能包，它把前端设计技能（impeccable）集成到系统中，让 AI 助手能调用这个技能来辅助前端设计。安装后无需配置，直接可用。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是提供技能内容，不会主动执行外部操作，但运行相关脚本时可能会在项目目录下生成文件。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供前端设计技能（impeccable）的插件，安装即用，无需配置。",
+    "usage": {
+      "prompt_tokens": 1978,
+      "completion_tokens": 296,
+      "total_tokens": 2274,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1466
+    }
+  }
+}

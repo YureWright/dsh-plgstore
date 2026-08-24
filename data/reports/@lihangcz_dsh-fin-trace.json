@@ -1,0 +1,34 @@
+{
+  "id": "@lihangcz/dsh-fin-trace",
+  "analyzedAt": "2026-08-24T05:44:36.966Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@lihangcz/dsh-fin-trace",
+      "evidence": "dsh plugin --profile web add @lihangcz/dsh-fin-trace"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness (dsh) 用的插件，它把 fin-trace 的金融知识图谱分析能力搬进 dsh。你可以让它去探索金融实体之间的关系，比如查某个公司或人物的关联、风险信号等。它提供三个工具：开始探索、查看进度、取消任务。探索在后台跑，完成后会通知你，不用一直盯着。",
+      "level": "caution",
+      "risks": "它会连接两个外部服务器：一个是大模型 API（默认 deepseek.com），会消耗你自己的 token；另一个是知识图谱服务（默认 kg.yiyiyiwufeng.cn），需要填 API key。另外，在 web 模式下它会在本机开一个只读端口，如果服务器没绑 localhost，同网段的人可能看到探索进度。它不读写你的文件系统。",
+      "postInstallNotes": "需要在插件配置里填 LLM 的 API key（或设置环境变量 OPENAI_API_KEY / DEEPSEEK_API_KEY）和知识图谱的 API key，否则任务会失败。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-fin-trace 是一个将金融知识图谱多跳推理能力嵌入 DeepSeek Harness 的插件，提供异步探索工具和实时进度面板。",
+    "usage": {
+      "prompt_tokens": 3955,
+      "completion_tokens": 418,
+      "total_tokens": 4373,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3443
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@cromus-ai/dsh-plugin",
+  "analyzedAt": "2026-08-24T05:44:21.022Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugins add 安装命令，并引用了 @deepseek-ai/dsh-mcp-client 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@cromus-ai/dsh-plugin",
+      "evidence": "dsh plugins add @cromus-ai/dsh-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，装上之后能让 AI 助手直接调用 Cromus 平台的服务，用来给 AI 技能打分、估算成本、检查技能文件是否符合规范等。简单说，就是帮你管理和优化 AI 技能的工具包。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件需要设置 CROMUS_API_KEY 环境变量，这个 key 会发送到 Cromus 的服务器（mcp.cromus.ai），用于身份验证。除此之外，插件主要读取技能文件进行分析，不会修改系统文件。",
+      "postInstallNotes": "需要设置环境变量 CROMUS_API_KEY，可以从 cromus.ai/connect 获取。",
+      "notes": "无"
+    },
+    "summaryZh": "Cromus 的 DSH 插件，为 DeepSeek Harness 提供 AI 技能评分、验证和成本估算功能。",
+    "usage": {
+      "prompt_tokens": 2069,
+      "completion_tokens": 336,
+      "total_tokens": 2405,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 1429
+    }
+  }
+}

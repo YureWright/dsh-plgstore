@@ -1,0 +1,34 @@
+{
+  "id": "@oh-story/dsh",
+  "analyzedAt": "2026-08-24T05:44:14.028Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@oh-story/dsh@0.1.4",
+      "evidence": "npx -y @deepseek-ai/dsh@0.1.1-rc.1 plugin --profile web add @oh-story/dsh@0.1.4"
+    },
+    "evaluationReport": {
+      "intro": "这是一个用于 DeepSeek Harness 的插件，帮助写小说和短剧。它提供了很多创作技巧（Skills）和角色设定（Roles），可以管理你的故事文件，有专门的文件编辑器和聊天界面，还能预览 Markdown 和 JSONL 格式的内容。简单说，就是给喜欢写作的人一个更顺手的创作工具。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会访问你指定的作品目录（workspace），用于读写你的故事文件。它需要你配置 API Key 才能使用，这个 Key 会用于调用 AI 服务。",
+      "postInstallNotes": "需要在 DSH 的设置中添加 Provider 并填入 API Key，或者设置环境变量 DEEPSEEK_API_KEY。然后把你的作品目录添加为 DSH workspace，之后在会话中使用 /story 或 /short-drama 命令。",
+      "notes": "无"
+    },
+    "summaryZh": "基于 DeepSeek Harness 的小说与短剧创作插件，提供丰富的创作技能和角色，以及三栏式工作台。",
+    "usage": {
+      "prompt_tokens": 3025,
+      "completion_tokens": 402,
+      "total_tokens": 3427,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2513
+    }
+  }
+}
