@@ -1,0 +1,34 @@
+{
+  "id": "dsh-think-summary",
+  "analyzedAt": "2026-08-25T05:37:56.694Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-think-summary",
+      "evidence": "dsh plugin --profile web add dsh-think-summary"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你把 AI 模型的长篇思考过程自动分段，并实时显示每段的摘要，让你不用盯着大段文字，一眼看到思考重点。它还能用更小的模型把每段总结得更精炼，并且有设置页可以调整各种参数。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只处理模型思考流，不碰你的个人文件，也不连接外部服务器。",
+      "postInstallNotes": "安装后需要在 DSH 设置里找到 think-summary 卡片，按需调整阈值和精炼选项，默认设置即可用。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件：实时分段总结模型长思考，带设置页和精炼功能。",
+    "usage": {
+      "prompt_tokens": 3672,
+      "completion_tokens": 304,
+      "total_tokens": 3976,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3160
+    }
+  }
+}

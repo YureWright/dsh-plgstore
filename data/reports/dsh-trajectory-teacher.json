@@ -1,0 +1,34 @@
+{
+  "id": "dsh-trajectory-teacher",
+  "analyzedAt": "2026-08-25T05:37:43.512Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-trajectory-teacher",
+      "evidence": "```bash\ndsh plugin add dsh-trajectory-teacher\n```"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 AI 助手（Agent）在 DeepSeek Harness 里干活的过程，自动整理成一份好读的复盘报告。它会分析 Agent 执行任务时的每一步，找出关键决策、踩过的坑和可以复用的好做法，最后生成一份 markdown 文档。你只要在对话里输入 /trajectory-teacher 就能触发。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取当前会话的轨迹数据，并调用 LLM 分析，但会做脱敏处理（比如 API key 打码），且只在手动触发时运行。",
+      "postInstallNotes": "安装后重启 DSH 即可。可选：在 cordis.patch.yml 中配置 provider 和 model 来指定复盘用的模型。",
+      "notes": "无"
+    },
+    "summaryZh": "把 Agent 执行轨迹自动转成可读复盘报告的 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 2438,
+      "completion_tokens": 342,
+      "total_tokens": 2780,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1926
+    }
+  }
+}

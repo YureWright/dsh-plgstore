@@ -1,0 +1,34 @@
+{
+  "id": "@yinging/dsh-plugin-pub-review",
+  "analyzedAt": "2026-08-25T05:37:42.549Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和多个 dsh-* 核心包，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@yinging/dsh-plugin-pub-review",
+      "evidence": "正式使用：`dsh plugin --profile <name> add @yinging/dsh-plugin-pub-review`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 插件做“发布前体检”的。它会先检查官方文档有没有更新，然后对你的插件代码做 30 多项静态检查（比如 package.json 配置、TypeScript 设置、构建脚本等），最后给出一个“能不能发布”的结论，并生成发布命令（但不会自动执行 npm publish，需要你手动确认）。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只做静态检查和只读预检，不会修改你的文件，也不会连接外部服务器（除了检查官方文档更新时会访问 GitHub API）。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件发布就绪审查工具：检查官方文档更新、执行 30+ 项静态体检、生成发布命令引导。",
+    "usage": {
+      "prompt_tokens": 4024,
+      "completion_tokens": 332,
+      "total_tokens": 4356,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3512
+    }
+  }
+}

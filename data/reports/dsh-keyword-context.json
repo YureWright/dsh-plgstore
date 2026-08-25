@@ -1,0 +1,34 @@
+{
+  "id": "dsh-keyword-context",
+  "analyzedAt": "2026-08-25T05:38:19.445Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.client 配置并依赖 @deepseek-ai/dsh-client-runtime 和 @deepseek-ai/dsh-client-ui-settings，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-keyword-context",
+      "evidence": "dsh plugin --profile web add dsh-keyword-context"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你在聊天时，当输入或回复里出现你设定的关键词（比如“记忆”），自动给模型加上一段你提前写好的提示，让模型更懂你的意思。你还可以存一些记忆条目，模型能读写这些记忆，让对话更连贯。所有规则和记忆都能在设置页面里开关和修改。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读写配置文件（config.json）和通过 HTTP 接口与设置页交互，但都在本地。",
+      "postInstallNotes": "安装后需要确认 ~/.dsh/profiles/web/cordis.patch.yml 里挂载了 host 半区（如 README 所示），然后重启 dsh web 并强制刷新浏览器。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 关键词上下文注入插件，命中关键词时自动注入预设上下文，支持可配置规则和模型读写记忆。",
+    "usage": {
+      "prompt_tokens": 1979,
+      "completion_tokens": 351,
+      "total_tokens": 2330,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1467
+    }
+  }
+}

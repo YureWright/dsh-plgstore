@@ -1,0 +1,34 @@
+{
+  "id": "dsh-stockmcp",
+  "analyzedAt": "2026-08-25T05:38:06.445Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-stockmcp",
+      "evidence": "dsh plugin --profile web add dsh-stockmcp"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上了股票市场数据功能，能查实时股价、财务报表、SEC 文件、财报、经济数据等，数据来自 stockmcp.net 的远程 MCP 服务器，会自动同步成模型工具。还带一个设置页面，可以填 API key。",
+      "level": "ok",
+      "risks": "没发现明显风险。它需要你提供 stockmcp.net 的 API key，这个 key 会存在你电脑的 ~/.dsh/settings.yaml 里，只有你自己能看到。插件会连接 stockmcp.net 的服务器来获取数据。",
+      "postInstallNotes": "需要去 stockmcp.net 申请 API key，然后在 DSH 的设置页面或 settings.yaml 里配置，或者设置环境变量 STOCKMCP_API_KEY。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供股票市场数据（行情、财报、SEC 文件等）的 DSH 插件，数据来自 stockmcp.net 远程 MCP 服务器。",
+    "usage": {
+      "prompt_tokens": 2220,
+      "completion_tokens": 366,
+      "total_tokens": 2586,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1708
+    }
+  }
+}

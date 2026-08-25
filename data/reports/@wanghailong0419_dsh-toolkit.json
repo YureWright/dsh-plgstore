@@ -1,0 +1,34 @@
+{
+  "id": "@wanghailong0419/dsh-toolkit",
+  "analyzedAt": "2026-08-25T05:37:52.842Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wanghailong0419/dsh-toolkit",
+      "evidence": "dsh plugin --profile web add @wanghailong0419/dsh-toolkit"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件工具包，一条命令就能装上三个实用小工具：MCP 管理器（管理外部工具连接）、技能管理器（管理 AI 技能）和 Git 分支徽章（在对话界面显示当前 Git 分支，还能切换分支）。装完就能用，设置页面会自动多出两个管理面板，对话界面也会显示分支信息。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读写 DSH 的配置文件（$DSH_HOME/profiles/web/cordis.patch.yml）和技能目录（$DSH_HOME/skills），还会读取当前工作目录的 Git 信息，但这些都在 DSH 的正常使用范围内。",
+      "postInstallNotes": "装完后需要重启 DSH Web 界面（运行 dsh web）才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件工具包，一条命令安装 MCP 管理器、技能管理器和 Git 分支徽章三个实用插件。",
+    "usage": {
+      "prompt_tokens": 2701,
+      "completion_tokens": 369,
+      "total_tokens": 3070,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2189
+    }
+  }
+}

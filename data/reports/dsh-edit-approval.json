@@ -1,0 +1,34 @@
+{
+  "id": "dsh-edit-approval",
+  "analyzedAt": "2026-08-25T05:37:11.404Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-edit-approval",
+      "evidence": "dsh plugin --profile web add dsh-edit-approval"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一道保险：每次 AI 要写文件、改文件或替换文件之前，都会先弹出一个红绿对比的差异预览，让你看清楚它要改哪些行，然后你可以选择批准一次或拒绝。它还能在设置里一键开关，也可以设置最小改动行数等细节。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只拦截文件写入操作，不会主动连接外部服务器，也不会碰隐私文件。",
+      "postInstallNotes": "安装后需要重启 dsh web（--profile web）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供每次文件编辑前的红绿差异审批，支持批准一次或拒绝。",
+    "usage": {
+      "prompt_tokens": 4447,
+      "completion_tokens": 307,
+      "total_tokens": 4754,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3935
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@dsh-plugin/dsh-code-review",
+  "analyzedAt": "2026-08-25T05:38:21.132Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，依赖了 @dsh-plugin/dsh-loader 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:dsh-plugins/dsh-code-review#main",
+      "evidence": "dsh plugin --profile web add github:dsh-plugins/dsh-code-review#main"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 网页版用的，它能在你每次对话后，把代码改动整理成清晰的摘要，并提供一个可调整大小的侧边栏，让你查看文件树、对比代码差异，还能安全地撤销改动。它支持语法高亮、深浅色主题，并且能处理子代理的改动汇总。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你的工作区文件来生成差异，但不会上传到外部服务器。撤销功能会修改文件，但设计得很保守，会避免覆盖新改动。",
+      "postInstallNotes": "安装后需要重启 DSH Web 配置文件，以便重建插件图。之后在对话中完成回合后，可以通过会话头部的“变更”工具来使用。",
+      "notes": "无"
+    },
+    "summaryZh": "一个用于 DeepSeek Harness 的社区插件，提供逐轮代码审查、差异侧边栏、文件树和安全的撤销功能。",
+    "usage": {
+      "prompt_tokens": 3242,
+      "completion_tokens": 366,
+      "total_tokens": 3608,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2730
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@steven-wu/dsh-linked-folders",
+  "analyzedAt": "2026-08-25T05:37:52.807Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@steven-wu/dsh-linked-folders",
+      "evidence": "dsh plugin --profile web add @steven-wu/dsh-linked-folders"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 会话增加多文件夹工作区功能，类似 Codex 的 linked folders。它维护一个全局的文件夹列表（跨会话持久保存）和每个会话的临时链接，模型可以通过 link_folder / unlink_folder 工具动态添加或移除文件夹。这些列表会注入到系统提示中，让模型知道可以进入哪些额外目录工作。你可以在侧边栏的“Linked folders”区域管理全局列表，添加或删除文件夹。",
+      "level": "ok",
+      "risks": "它会在你的用户目录下创建一个配置文件（默认 ~/.dsh/linked-folders.json），里面保存你链接的文件夹路径。这些路径会出现在系统提示中，可能被模型看到。插件本身不改变沙箱权限，但如果你在 danger-full-access 模式下，模型本来就能读写任何地方。",
+      "postInstallNotes": "安装后需要重启 web profile 并刷新页面。可选：通过环境变量 DSH_LINKED_FOLDERS 或 bundle 配置覆盖配置文件路径。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 多文件夹工作区插件，支持全局和会话级文件夹链接，模型可动态管理。",
+    "usage": {
+      "prompt_tokens": 2124,
+      "completion_tokens": 400,
+      "total_tokens": 2524,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1612
+    }
+  }
+}

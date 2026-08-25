@@ -1,0 +1,34 @@
+{
+  "id": "oh-my-knowledge",
+  "analyzedAt": "2026-08-25T05:37:06.199Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 明确说明可作为 DSH 原生 bundle 安装，符合 DSH 插件证据。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "oh-my-knowledge",
+      "evidence": "README 中未直接给出 dsh plugin add 命令，但 package.json 有 dsh.bundle 字段，且 npm 包名明确。"
+    },
+    "evaluationReport": {
+      "intro": "OMK 是一个帮助 AI 应用开发者评估和验证知识变更（如提示词、RAG、技能等）效果的工具。它能对比不同版本，告诉你哪个更好、是否值得发布，并提供详细的报告和可视化界面。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取本地配置文件（如 ~/.codex/config.toml）来获取模型设置，但不会上传数据。",
+      "postInstallNotes": "需要配置一个模型运行时（如 Codex CLI、Claude Code 或 API），并可能需要设置环境变量 OMK_EXECUTOR 等。",
+      "notes": "无"
+    },
+    "summaryZh": "OMK 是一个用于 AI 应用知识变更评估与验证的 CLI 工具，支持 A/B 测试、报告生成和证据驱动的发布决策。",
+    "usage": {
+      "prompt_tokens": 4139,
+      "completion_tokens": 321,
+      "total_tokens": 4460,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3627
+    }
+  }
+}

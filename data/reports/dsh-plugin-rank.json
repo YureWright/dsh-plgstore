@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-rank",
+  "analyzedAt": "2026-08-25T05:37:32.551Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-rank",
+      "evidence": "dsh plugin add dsh-plugin-rank"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个 DSH 插件排名和推荐中心。它会把 GitHub 和 npm 上所有的 DSH 插件都抓取过来，按照真实的 GitHub 星标数排名，并给出排名的理由。它还会根据维护活跃度、问题处理情况和增长势头，给每个插件打一个 0 到 100 的智能推荐分，并说明理由。你可以在一个网页上看到整个 DSH 插件生态，一眼看出哪些插件值得用，哪些已经过时或没人维护。它还支持在网页上一键安装或卸载插件，不用手动敲命令。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你的电脑上读取 DSH 的配置和插件数据，并写入安装/卸载信息。如果你设置了百度翻译的密钥或 GitHub Token，这些会通过环境变量注入，不会写进代码里。",
+      "postInstallNotes": "装完后需要重启 DSH，然后打开 dsh web 访问 http://127.0.0.1:3080/plugin-rank/ 使用。可选：设置 BAIDU_APPID 和 BAIDU_SECRET_KEY 环境变量来启用中文翻译，设置 GITHUB_TOKEN 来提高 GitHub API 调用限额。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件排名与推荐中心，聚合所有插件，按星标排名并智能推荐，支持一键安装卸载。",
+    "usage": {
+      "prompt_tokens": 2397,
+      "completion_tokens": 435,
+      "total_tokens": 2832,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1885
+    }
+  }
+}

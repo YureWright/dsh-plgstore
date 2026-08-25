@@ -1,0 +1,34 @@
+{
+  "id": "dsh-chatvoice",
+  "analyzedAt": "2026-08-25T05:37:36.577Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/schemastery，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-chatvoice",
+      "evidence": "dsh plugin --profile web add dsh-chatvoice"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加上语音输入和朗读功能。你可以用麦克风说话，语音会实时变成文字进入输入框；AI 回复也可以一键朗读出来，还能设置自动朗读。它完全免费，不需要 API key，用的是浏览器自带的语音功能。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只使用浏览器的麦克风权限和语音合成功能，没有网络请求、没有子进程，配置保存在 ~/.dsh/chatvoice.json。",
+      "postInstallNotes": "安装后需要重启 dsh web，并且必须用 127.0.0.1 访问（不能用局域网 IP），否则麦克风不可用。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供免费、免 API key 的语音输入和 AI 回复朗读功能，基于浏览器原生 Web Speech API，零配置。",
+    "usage": {
+      "prompt_tokens": 3209,
+      "completion_tokens": 333,
+      "total_tokens": 3542,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2697
+    }
+  }
+}

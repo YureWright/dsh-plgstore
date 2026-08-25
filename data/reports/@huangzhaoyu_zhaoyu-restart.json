@@ -1,0 +1,34 @@
+{
+  "id": "@huangzhaoyu/zhaoyu-restart",
+  "analyzedAt": "2026-08-25T05:37:57.279Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码调用了 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@huangzhaoyu/zhaoyu-restart",
+      "evidence": "dsh plugin --profile web add @huangzhaoyu/zhaoyu-restart"
+    },
+    "evaluationReport": {
+      "intro": "这个插件在 DeepSeek Harness 的聊天输入框左下角加一个'重启'按钮，点击后可以静默重启 DSH，不会弹出窗口，旧标签页会自动重连。适合需要频繁重启服务的用户。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会执行一个重启脚本（默认是 restart-dsh.bat），路径可配置，但需要确保该脚本是可信的。",
+      "postInstallNotes": "可能需要配置重启脚本路径（默认 restart-dsh.bat），如果默认路径不对，需要在 settings.yaml 中设置 zhaoyu-restart.scriptPath。",
+      "notes": "无"
+    },
+    "summaryZh": "一键静默重启 DeepSeek Harness 的插件，在输入框添加重启按钮。",
+    "usage": {
+      "prompt_tokens": 1922,
+      "completion_tokens": 325,
+      "total_tokens": 2247,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1410
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-rss-daily",
+  "analyzedAt": "2026-08-25T05:38:14.625Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/schemastery，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-rss-daily",
+      "evidence": "dsh plugin --profile web add dsh-rss-daily"
+    },
+    "evaluationReport": {
+      "intro": "这个插件每天早8点自动给你生成一份要闻日报，用你已配置的AI模型编辑，然后通过微信、Telegram等工具推送给你，还会直接显示在对话里，不占上下文。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你配置的RSS源，并可能将日报内容发送到你配置的webhook（如微信、Telegram），这些内容可能包含公开新闻，但如果你自定义了源，可能会发送非公开信息。插件会存储状态在 ~/.dsh/rss-daily 目录，包括去重历史。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后点击会话头部的📰按钮进入设置，配置投递目标（如Server酱、Telegram等）和时间。",
+      "notes": "无"
+    },
+    "summaryZh": "每天自动生成并推送AI编辑的RSS要闻日报，直接显示在对话中，零上下文消耗。",
+    "usage": {
+      "prompt_tokens": 2998,
+      "completion_tokens": 349,
+      "total_tokens": 3347,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2486
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-ptc-cordis-preset",
+  "analyzedAt": "2026-08-25T05:38:19.853Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ptc-cordis-preset",
+      "evidence": "dsh plugin --profile web add dsh-ptc-cordis-preset   # npm 公开包"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加了一种新的'创造模式'，叫做 PTC 创造模式。它结合了两种已有模式的能力：一种是 Code Mode（可以把工具当成程序来用），另一种是创造模式（可以检查和创建新的插件）。装了这个插件，你就能在会话里一边用代码模式操作，一边让 AI 帮你开发新的插件或预设。",
+      "level": "caution",
+      "risks": "这个插件会在你的用户目录下创建和修改文件（比如 ~/.dsh/.agent-presets/），并且它允许 AI 在运行时执行 JavaScript 代码（通过 cordis_define 和 cordis_run 工具），这相当于给了 AI 执行代码的能力，需要谨慎使用。",
+      "postInstallNotes": "装完后需要重启 DSH，然后在新建会话时选择'PTC 创造模式'。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 添加 PTC 创造模式，结合 Code Mode 与创造能力，支持动态插件开发。",
+    "usage": {
+      "prompt_tokens": 3875,
+      "completion_tokens": 371,
+      "total_tokens": 4246,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3363
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@mkaliezz/dsh-error-explainer",
+  "analyzedAt": "2026-08-25T05:37:47.767Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 keywords 包含 dsh-plugin，但主要依据是 dsh.bundle 配置，表明是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@mkaliezz/dsh-error-explainer",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 字段为 @mkaliezz/dsh-error-explainer，且发布在 npm 上。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你把程序报错信息整理成更清晰的结构，方便 AI 模型理解。它支持 Python、Node.js、Rust 和 Java 的报错格式，提取关键信息，但不做根本原因分析。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只处理报错信息，不碰其他文件或连接外部服务器。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，用于结构化解析多种编程语言的堆栈跟踪错误信息。",
+    "usage": {
+      "prompt_tokens": 1443,
+      "completion_tokens": 279,
+      "total_tokens": 1722,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 931
+    }
+  }
+}

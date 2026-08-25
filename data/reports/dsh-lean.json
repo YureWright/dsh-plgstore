@@ -1,0 +1,34 @@
+{
+  "id": "dsh-lean",
+  "analyzedAt": "2026-08-25T05:37:12.776Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-lean",
+      "evidence": "dsh plugin --profile web add dsh-lean"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你省钱。DeepSeek 在高峰时段（比如北京时间上午9点到12点、下午2点到6点）收费是平时的两倍，而且每次会话开始时会发送一大段工具描述，这部分按缓存未命中价格收费，很贵。dsh-lean 会自动关闭一些用不到的工具，减少发送的提示词，从而降低费用，平均能省 2% 到 41% 的会话成本。它还能告诉你上次会话实际花了多少钱，以及如果避开高峰能省多少。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取你的会话账单信息，不会上传数据，也不会修改系统文件。",
+      "postInstallNotes": "安装后，在 DSH 的 Web 界面或命令行中选择 'Lean' 模式即可生效。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-lean 是一个 DSH 插件，通过精简工具提示词和避开高峰计费来降低 DeepSeek API 使用成本，平均节省 2% 到 41%。",
+    "usage": {
+      "prompt_tokens": 3694,
+      "completion_tokens": 359,
+      "total_tokens": 4053,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3182
+    }
+  }
+}

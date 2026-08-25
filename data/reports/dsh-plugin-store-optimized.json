@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-store-optimized",
+  "analyzedAt": "2026-08-25T05:38:14.608Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-store-optimized",
+      "evidence": "dsh plugin --profile web add dsh-plugin-store-optimized"
+    },
+    "evaluationReport": {
+      "intro": "这是一个增强版的插件商店，让你在 DSH 的网页界面里浏览、搜索、一键安装插件，还能看评分评论、依赖关系、操作记录等。它改进了原版，比如可以自定义插件下载目录、安装前检查冲突、自动找 pnpm 等。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读写你的 DSH 配置目录（默认 <DSH_HOME>/plugins），安装和卸载插件时会修改配置文件，但这是正常功能。",
+      "postInstallNotes": "安装后需要重启 dsh web 并刷新浏览器（Ctrl+F5）才能生效。如果之前装过原版 dsh-plugin-hub，要先卸载它，避免冲突。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件商店的优化版，提供图形化插件管理、可配置下载目录、冲突检测和 pnpm 自动寻路等功能。",
+    "usage": {
+      "prompt_tokens": 3829,
+      "completion_tokens": 342,
+      "total_tokens": 4171,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3317
+    }
+  }
+}

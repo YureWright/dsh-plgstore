@@ -1,0 +1,34 @@
+{
+  "id": "@tecfancy/dsh-mobile",
+  "analyzedAt": "2026-08-25T05:37:21.380Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@tecfancy/dsh-mobile",
+      "evidence": "dsh plugin --profile web add @tecfancy/dsh-mobile"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面做手机适配的。它让手机上的界面更好用：侧边栏变成浮层，不会把聊天内容挤得很窄；工具详情面板也变成浮层；输入框的按钮不会重叠；设置页面在手机上会竖着排列。桌面电脑上完全不受影响。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改网页界面的样式和布局，不碰系统文件，也不上传数据。",
+      "postInstallNotes": "安装后需要重启 dsh web 服务。如果 npm 用的是镜像源，可能需要加 --registry=https://registry.npmjs.org/ 参数。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页界面手机适配插件，让手机上的侧边栏、输入框和设置页更好用，桌面不受影响。",
+    "usage": {
+      "prompt_tokens": 2770,
+      "completion_tokens": 342,
+      "total_tokens": 3112,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2258
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@mkaliezz/dsh-repo-map",
+  "analyzedAt": "2026-08-25T05:37:47.698Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且描述为 DSH plugin，代码结构符合 DSH 插件规范。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@mkaliezz/dsh-repo-map",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 @mkaliezz/dsh-repo-map，且为 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 用的，它能把你的代码仓库的结构和符号（比如函数、类等）整理成一个地图，方便 DSH 理解你的项目。它只读取仓库结构，不会把整个源码都塞进去，而且会跳过生成的和第三方目录。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取仓库结构，不修改文件，也不连接外部服务器。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个轻量级的 DSH 插件，用于生成仓库结构和符号地图，帮助 DSH 理解项目。",
+    "usage": {
+      "prompt_tokens": 1451,
+      "completion_tokens": 280,
+      "total_tokens": 1731,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 939
+    }
+  }
+}

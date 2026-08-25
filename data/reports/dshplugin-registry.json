@@ -1,0 +1,34 @@
+{
+  "id": "dshplugin-registry",
+  "analyzedAt": "2026-08-25T05:37:53.065Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dshplugin-registry",
+      "evidence": "Install the plugin into the DSH Web profile: dsh plugin --profile web add dshplugin-registry"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的设置界面里直接搜索、浏览和比较各种 DSH 插件，不用一个个去 GitHub 翻仓库。你可以按类别、热度、更新时间等排序，查看插件的星标、安全信号和兼容性信息，还能一键复制安装命令。它不会自动安装任何东西，只是帮你找到合适的插件。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只向官方 Registry 服务发送搜索词、筛选条件等公开请求，不会发送你的提示词、工作区文件或已安装插件列表。",
+      "postInstallNotes": "安装后需要重启 DSH Web（运行 dsh web），然后在设置里打开 Plugin Registry。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 内搜索、比较和发现插件的官方注册表工具。",
+    "usage": {
+      "prompt_tokens": 2706,
+      "completion_tokens": 331,
+      "total_tokens": 3037,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2194
+    }
+  }
+}

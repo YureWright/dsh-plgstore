@@ -1,0 +1,34 @@
+{
+  "id": "@p-dsh-market/conversation-knowledge-map",
+  "analyzedAt": "2026-08-25T05:37:06.206Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 DSH 核心接口，README 描述为 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@p-dsh-market/conversation-knowledge-map",
+      "evidence": "README 未说明安装命令，但 package.json 提供了 npm 包名。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把你在 DSH 里同一个工作目录下的多个历史对话，整理成一张思维导图和一张知识图谱。思维导图分阶段展示对话内容，知识图谱是只读的，可以筛选和回溯到原始对话。它不会复制完整聊天记录，只保存图数据和来源信息。生成过程需要你确认，而且会校验各种设置，失败也不会覆盖旧结果。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取你明确选择的会话，不扫描整个会话目录；结果保存在当前工作路径下的 .g-dsh-market-knowledge/ 文件夹，不复制聊天正文。日志可能包含模型整理出的对话信息，但需要你手动清理。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 知识视图插件，将多个历史对话整理成思维导图和知识图谱，支持筛选和回溯来源。",
+    "usage": {
+      "prompt_tokens": 2878,
+      "completion_tokens": 332,
+      "total_tokens": 3210,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2366
+    }
+  }
+}

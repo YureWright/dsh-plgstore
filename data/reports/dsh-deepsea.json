@@ -1,0 +1,34 @@
+{
+  "id": "dsh-deepsea",
+  "analyzedAt": "2026-08-25T05:38:14.723Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-deepsea",
+      "evidence": "dsh plugin --profile web add npm:dsh-deepsea          # npm（推荐）"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把聊天窗口变成一个小游戏：你聊得越多，画面里的潜水员就沉得越深，每回答完一轮，就能抓到一条深海鱼，变成一张漂亮的卡片收藏。适合上班摸鱼时玩，还能养鱼、收集卡片。",
+      "level": "ok",
+      "risks": "它会读取你的会话上下文长度（contextPressure），但不会上传内容。可选功能会上传战绩到云端，默认关闭，需要你自己绑定 GitHub 才会开启。它需要你配置自己的 MiniMax API Key，这个 Key 会存在本地配置里。",
+      "postInstallNotes": "需要配置 MiniMax API Key（环境变量 MINIMAX_API_KEY 或 ~/.mmx/config.json），可选配置 Python 环境用于生成卡片特效，可选部署 Cloudflare Worker 开启排行榜功能。",
+      "notes": "无"
+    },
+    "summaryZh": "深海摸鱼：把聊天上下文变成潜水小游戏，聊得越深抓鱼越多，收集镭射卡片。",
+    "usage": {
+      "prompt_tokens": 3231,
+      "completion_tokens": 353,
+      "total_tokens": 3584,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2719
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-bill",
+  "analyzedAt": "2026-08-25T05:37:32.655Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-tools 等核心包，README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-bill",
+      "evidence": "dsh plugin --profile web add dsh-bill"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的费用统计工具。它能在每次对话后显示这次花了多少钱，还有一个专门的“费用”标签页，告诉你钱都花在哪些地方，比如模型输出、工具调用、系统提示等。它还能设置预算，超过一定比例会变色提醒，支持多种货币，甚至能让 AI 直接回答关于花费的问题。",
+      "level": "ok",
+      "risks": "它会读取你的会话记录来计算费用，但不会存储对话内容。它会将使用数据（如模型、token 数、费用）保存在本地文件中，并可能联网获取价格目录和汇率。它还会读取 API 密钥用于查询账户余额，但密钥不会发送到浏览器。没有发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。可以在设置页面的“费用”标签页配置预算、货币和显示选项。如果需要覆盖特定模型的价格，可以编辑 ~/.dsh/profiles/web/cordis.patch.yml 文件。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 费用统计插件，提供每次对话的费用明细、成本归因报告和预算管理，基于 llm-pricing 动态定价。",
+    "usage": {
+      "prompt_tokens": 3730,
+      "completion_tokens": 397,
+      "total_tokens": 4127,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3218
+    }
+  }
+}

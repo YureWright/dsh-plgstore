@@ -1,0 +1,34 @@
+{
+  "id": "@alatastudio/dsh-session",
+  "analyzedAt": "2026-08-25T05:38:29.109Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和多个 @alatastudio/dsh-* 核心包，且 README 描述为 DeepSeek Harness 的会话存储服务，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@alatastudio/dsh-session",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 @alatastudio/dsh-session，且发布在 npm 上。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 的会话存储模块，负责记录和管理 AI 助手的整个交互历史。它把每次对话都保存成事件日志，并从中生成消息记录，方便后续回放和检查。它还提供了一些高级功能，比如分叉会话、快照和校验，确保数据一致性和完整性。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要处理会话数据，不涉及敏感文件或外部服务器连接。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-session 是 DeepSeek Harness 的会话存储插件，提供事件溯源和内存存储，管理 AI 交互历史。",
+    "usage": {
+      "prompt_tokens": 3466,
+      "completion_tokens": 325,
+      "total_tokens": 3791,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2954
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-tray-launcher",
+  "analyzedAt": "2026-08-25T05:37:05.989Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 和 main 指向 src/plugin.js，README 提供了 dsh plugin add 安装命令，且依赖 dsh-plugin-usage-meter，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tray-launcher",
+      "evidence": "dsh plugin --profile web add dsh-tray-launcher"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 Windows 桌面托盘启动器，让 DeepSeek Harness 在后台无窗口运行，托盘图标常驻，方便启动、停止、查看日志、切换图标、开机自启，还自带用量仪表插件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会创建桌面快捷方式、写入配置和日志到本地目录，可能注册开机自启（可选），但都在用户可控范围内。",
+      "postInstallNotes": "安装后可能需要配置 dsh 路径（如果自动检测失败），或通过托盘菜单调整设置。",
+      "notes": "无"
+    },
+    "summaryZh": "Windows 托盘启动器，让 DeepSeek Harness 无窗口后台运行，支持托盘菜单、图标切换、开机自启和用量仪表。",
+    "usage": {
+      "prompt_tokens": 5114,
+      "completion_tokens": 307,
+      "total_tokens": 5421,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4602
+    }
+  }
+}

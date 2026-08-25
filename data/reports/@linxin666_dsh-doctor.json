@@ -1,0 +1,34 @@
+{
+  "id": "@linxin666/dsh-doctor",
+  "analyzedAt": "2026-08-25T05:38:42.070Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-doctor",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-doctor@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的一个'救援模式'工具。它会在你的电脑上装一个后台服务，时刻盯着 DSH 有没有启动失败、崩溃、卡死等问题。一旦出问题，它能自动用快照恢复、修复配置，或者让你在网页界面上手动诊断和修复。它还带一个网页控制台，可以查看状态、一键修复、回滚等。简单说，就是给 DSH 加了个'安全气囊'，防止配置改坏或崩溃后没法用。",
+      "level": "caution",
+      "risks": "它会安装一个用户级后台服务（开机自启），并修改 DSH 的配置文件和包管理。它会在本地保存快照和诊断信息，可能包含你的配置和凭据（但权限设为 0600）。它还会自动迁移一个旧包到新包，可能影响现有安装。",
+      "postInstallNotes": "装完后需要重启 dsh web，然后在设置里确认 Doctor 卡片已启用（默认启用）。如果更新了插件，需要手动点击'Restart and upgrade'来更新后台服务。",
+      "notes": "该插件功能复杂，涉及后台服务、自动迁移、快照等，建议仔细阅读文档后再安装。"
+    },
+    "summaryZh": "DSH 的救援模式插件，提供崩溃检测、自动修复、快照回滚和网页控制台。",
+    "usage": {
+      "prompt_tokens": 3678,
+      "completion_tokens": 446,
+      "total_tokens": 4124,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3166
+    }
+  }
+}

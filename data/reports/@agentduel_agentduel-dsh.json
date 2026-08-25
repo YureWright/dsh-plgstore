@@ -1,0 +1,34 @@
+{
+  "id": "@agentduel/agentduel-dsh",
+  "analyzedAt": "2026-08-25T05:38:34.841Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 及多个 dsh-client-* 包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@agentduel/agentduel-dsh",
+      "evidence": "从 npm registry 安装\n\n```bash\ndsh plugin --profile web install @agentduel/agentduel-dsh@0.1.2\n```"
+    },
+    "evaluationReport": {
+      "intro": "AgentDuel 是一个代码对战游戏，你可以编写或让 AI 编写 Agent 代码，提交后与其他玩家对战，观看回放并优化代码。这个插件把 AgentDuel 的功能集成到 DeepSeek Harness 中，让你可以在 DSH 界面里管理角色、提交代码、发起对战、查看回放，并让 AI 根据对局结果改进代码。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件需要登录 AgentDuel 并配置 App Key，会与 AgentDuel 服务器通信，但这是游戏功能所必需的。",
+      "postInstallNotes": "需要登录 AgentDuel 网站创建 App Key，并在插件中完成配置。",
+      "notes": "无"
+    },
+    "summaryZh": "AgentDuel DSH 插件将代码对战游戏 AgentDuel 集成到 DeepSeek Harness，让你在 DSH 中管理角色、提交代码、发起对战并观看回放。",
+    "usage": {
+      "prompt_tokens": 3058,
+      "completion_tokens": 381,
+      "total_tokens": 3439,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2546
+    }
+  }
+}

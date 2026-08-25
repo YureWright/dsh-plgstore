@@ -1,0 +1,34 @@
+{
+  "id": "dsh-harness-audit",
+  "analyzedAt": "2026-08-25T05:38:34.858Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了多个 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-harness-audit",
+      "evidence": "dsh plugin --profile web add dsh-harness-audit"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能自动检查你的 AI 智能体（agent）程序，找出可能导致它出错的 15 种常见问题，比如工具调用没结果、超时重试导致重复扣费、用户取消后子进程还在跑、模型无限循环调用工具等。它会用多个子智能体分别检查，并严格验证每个问题是否真的有代码证据，最后生成一份报告。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会在工作目录下创建 .harness-audit 文件夹存放报告，报告内容可能包含代码片段，但只保存在本地。",
+      "postInstallNotes": "无。安装后即可使用 /harness-audit 命令，默认配置即可运行。",
+      "notes": "无"
+    },
+    "summaryZh": "一个用于审计智能体程序失败模式的 DSH 插件，自动检查 15 种常见问题并严格验证证据。",
+    "usage": {
+      "prompt_tokens": 3757,
+      "completion_tokens": 339,
+      "total_tokens": 4096,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3245
+    }
+  }
+}

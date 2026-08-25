@@ -1,0 +1,34 @@
+{
+  "id": "@mkaliezz/dsh-test-runner",
+  "analyzedAt": "2026-08-25T05:37:59.321Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且描述明确为 DSH 插件，代码结构符合 DSH 插件规范。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@mkaliezz/dsh-test-runner",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 @mkaliezz/dsh-test-runner，且为 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把不同测试工具（pytest、Vitest、Jest、Cargo）的输出结果整理成统一的格式，方便 DSH 统一处理。它本身不会绕过 DSH 的执行策略，只是接收宿主提供的运行器。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只处理测试结果数据，不涉及敏感文件或外部连接。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 测试结果标准化插件，支持多种测试框架输出统一格式。",
+    "usage": {
+      "prompt_tokens": 1460,
+      "completion_tokens": 267,
+      "total_tokens": 1727,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 948
+    }
+  }
+}

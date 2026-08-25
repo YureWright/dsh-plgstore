@@ -1,0 +1,34 @@
+{
+  "id": "dsh-native-session-delete",
+  "analyzedAt": "2026-08-25T05:37:18.812Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-native-session-delete@1.1.2",
+      "evidence": "dsh plugin --profile web add dsh-native-session-delete@1.1.2"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的侧边栏里管理聊天历史：可以搜索和恢复已归档的会话，也能安全地永久删除某个会话。它提供了原生界面，操作起来比较方便。",
+      "level": "caution",
+      "risks": "它会修改 DSH 的会话存储，永久删除会话时无法撤销，可能误删重要聊天记录。安装时通过 PowerShell 脚本执行，会检查多个目录，但不会扫描整个磁盘。",
+      "postInstallNotes": "安装后需要重启 DSH 一次，让新配置生效。",
+      "notes": "README 明确说明这是非官方社区插件，与 DeepSeek 无关。永久删除操作有风险，建议备份。"
+    },
+    "summaryZh": "DSH 原生会话管理器：在侧边栏搜索、恢复和永久删除聊天会话。",
+    "usage": {
+      "prompt_tokens": 4160,
+      "completion_tokens": 337,
+      "total_tokens": 4497,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3648
+    }
+  }
+}

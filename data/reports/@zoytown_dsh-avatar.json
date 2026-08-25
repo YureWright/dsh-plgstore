@@ -1,0 +1,34 @@
+{
+  "id": "@zoytown/dsh-avatar",
+  "analyzedAt": "2026-08-25T05:38:14.703Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@zoytown/dsh-avatar",
+      "evidence": "dsh plugin --profile web add @zoytown/dsh-avatar"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DeepSeek Harness 网页界面换个壁纸背景。你可以在设置页上传图片，选一张作为背景，整个界面会显示在图片上，还能调节透明度、模糊程度和填充方式，让文字更清晰。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件不会把数据发到外部，图片只存在你电脑的 ~/.dsh/avatar/ 目录下。",
+      "postInstallNotes": "装完后打开 dsh 网页界面的设置，找到“Background”选项，上传图片并选择即可。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面添加壁纸背景，支持上传图片、调节可读性遮罩和模糊效果。",
+    "usage": {
+      "prompt_tokens": 2506,
+      "completion_tokens": 312,
+      "total_tokens": 2818,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1994
+    }
+  }
+}

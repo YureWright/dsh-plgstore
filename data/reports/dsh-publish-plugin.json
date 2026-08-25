@@ -1,0 +1,34 @@
+{
+  "id": "dsh-publish-plugin",
+  "analyzedAt": "2026-08-25T05:38:01.547Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置，README 提供了 dsh plugin add 安装命令，且功能是 DSH 插件的发布工具，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-publish-plugin",
+      "evidence": "dsh plugin --profile web add dsh-publish-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你把 DSH 插件一键发布到 npm 和 GitHub 两个平台。你可以在网页界面或终端里用命令 /publish-dsh-plugin 操作，也可以让 AI 模型通过工具自动发布。它会检查插件配置、处理冲突，并在执行前让你确认，避免误操作。",
+      "level": "ok",
+      "risks": "它会在你的电脑上运行 npm publish 和 gh 命令，需要你有 npm 和 GitHub 的登录权限。它会读取你当前目录下的插件文件，但不会修改你的代码，也不会自动提交。发布过程中可能会等待较长时间，Windows 下取消可能留下残留进程。",
+      "postInstallNotes": "需要确保 Node.js 和 npm 已安装，并且 gh 命令行工具已安装并登录（gh auth login）。npm 发布需要配置 2FA 或使用带 Bypass 2FA 的访问令牌。",
+      "notes": "无"
+    },
+    "summaryZh": "一键将 DSH 插件发布到 npm 和 GitHub 的插件，支持命令和 AI 工具两种方式，安全可靠。",
+    "usage": {
+      "prompt_tokens": 2491,
+      "completion_tokens": 369,
+      "total_tokens": 2860,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1979
+    }
+  }
+}

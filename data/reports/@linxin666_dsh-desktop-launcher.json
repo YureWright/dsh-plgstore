@@ -1,0 +1,34 @@
+{
+  "id": "@linxin666/dsh-desktop-launcher",
+  "analyzedAt": "2026-08-25T05:38:39.483Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linxin666/dsh-desktop-launcher",
+      "evidence": "dsh plugin --profile web add @linxin666/dsh-desktop-launcher"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在电脑桌面上创建一个图标，双击它就能启动 dsh 并自动打开网页界面。它还会在网页里加一个悬浮的电源按钮，点一下就能优雅地关闭 dsh。支持 Windows、macOS 和 Linux。",
+      "level": "ok",
+      "risks": "插件会在你的用户目录下创建 ~/.dsh/desktop-launcher/ 文件夹，并在桌面放置图标。浏览器端每天会向 dsh-market.com 发送一次匿名安装心跳（包含随机 ID 和插件名），服务器只存哈希，不存 IP。除此之外没发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后在设置 → 插件配置 → Web UI 插件中启用该插件（默认关闭），再点击“创建桌面图标”按钮。",
+      "notes": "无"
+    },
+    "summaryZh": "为 dsh 创建桌面快捷方式，双击启动并打开网页界面，附带一键关闭按钮。",
+    "usage": {
+      "prompt_tokens": 2999,
+      "completion_tokens": 356,
+      "total_tokens": 3355,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2487
+    }
+  }
+}

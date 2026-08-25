@@ -1,0 +1,34 @@
+{
+  "id": "dsh-ai-solution-council",
+  "analyzedAt": "2026-08-25T05:37:37.855Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ai-solution-council",
+      "evidence": "使用 npm 安装：\n\n```powershell\ndsh plugin --profile web add dsh-ai-solution-council\n```"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让多个 AI 助手同时独立地调查同一个问题，然后互相检查、核实证据，最后给出一个综合结论。它特别适合用来做架构设计、代码库调查、方案比较等需要谨慎判断的任务，可以减少单个 AI 被自己思路带偏的风险。它还带一个网页界面，可以直观地看到每个助手的进展和结果。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取当前会话的上下文，并在独立的存储域中保存运行记录，但不会修改原始会话数据。",
+      "postInstallNotes": "安装后可能需要根据你的需求调整配置，比如并行探索的 Agent 数量（explorerCount）和子 Agent 提供者名称（providerName），默认配置在 cordis.patch.yml 中。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，通过并行多个隔离的 AI 助手调查问题，再串行交叉评审和证据核验，最终给出更可靠的解决方案。",
+    "usage": {
+      "prompt_tokens": 3461,
+      "completion_tokens": 380,
+      "total_tokens": 3841,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2949
+    }
+  }
+}

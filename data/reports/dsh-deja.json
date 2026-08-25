@@ -1,0 +1,34 @@
+{
+  "id": "dsh-deja",
+  "analyzedAt": "2026-08-25T05:37:32.191Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-deja",
+      "evidence": "dsh plugin --profile web add dsh-deja"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你在 DeepSeek Harness 里搜索和回忆你在其他编程工具（比如 Claude Code、Codex、Cursor 等）里做过的事情。它会索引这些工具已经保存在你电脑上的会话记录，这样你就能在 DSH 里直接查询过去的操作，比如某个错误怎么解决的、某个文件改过哪些内容。它还提供了一些工具让模型自动调用，甚至可以在每次操作前自动回忆相关历史。",
+      "level": "ok",
+      "risks": "它会读取你电脑上其他编程工具的会话文件（这些文件本来就在你电脑上），并在本地建立索引。索引会保存在本地，不会上传到网络。它会在索引时对敏感信息（如密钥）进行脱敏处理。没有发现明显风险。",
+      "postInstallNotes": "无。插件会自动安装依赖的 deja 二进制文件。如果你已经安装了 deja CLI，也可以运行 `deja install --auto` 来配置 DSH 集成。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-deja 是一个 DSH 插件，让你在 DeepSeek Harness 中搜索和回忆其他编程工具的会话历史，提供本地索引和自动回忆功能。",
+    "usage": {
+      "prompt_tokens": 2105,
+      "completion_tokens": 384,
+      "total_tokens": 2489,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1593
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "deepseek-harness-compaction-ui",
+  "analyzedAt": "2026-08-25T05:38:25.955Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/dsh-settings 等核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-harness-compaction-ui",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add deepseek-harness-compaction-ui"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，它让你在网页设置里用图形界面调整上下文压缩的触发阈值和保留多少最近的对话。你可以用百分比或具体的 Token 数来设置，切换单位时它会自动换算。保存后立即生效，不用重新开对话。它还在输入框旁边显示一个圆环，告诉你当前上下文用了多少，快满时会变红。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只负责设置界面和换算，真正的压缩逻辑还是官方组件在做。它不会碰你电脑上的其他文件，也不会连外部服务器。",
+      "postInstallNotes": "安装后需要重启 DSH 服务才能生效。然后打开设置 → 插件 → 插件配置 → 上下文压缩 进行配置。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供可视化上下文压缩配置界面，支持百分比和 Token 两种模式。",
+    "usage": {
+      "prompt_tokens": 3600,
+      "completion_tokens": 358,
+      "total_tokens": 3958,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3088
+    }
+  }
+}

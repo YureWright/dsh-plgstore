@@ -1,0 +1,34 @@
+{
+  "id": "dsh-usage-stats-alhabor",
+  "analyzedAt": "2026-08-25T05:37:11.953Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-usage-stats-alhabor",
+      "evidence": "npm channel (published versions): `dsh plugin --profile web add dsh-usage-stats-alhabor`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，用来监控你的 API 花费和 token 用量。它能显示今天、本周、本月等时间段的费用和 token 数，还能看每个请求的详细记录、按模型拆分、高峰时段价格、历史图表等。你可以在对话里输入 /usage 命令，或者在设置里打开 Usage 面板查看。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件声明不联网、不执行原生代码，只读取会话事件做统计，数据存在本地。",
+      "postInstallNotes": "安装后需要重启 DSH（dsh web --restart），然后在对话中输入 /usage 或打开设置里的 Usage 面板。可选配置：可以在 cordis.patch.yml 中调整价格、高峰时段、货币等设置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 用量统计插件：监控 token 和费用，支持按天/周/月/自定义范围查看，含模型细分、高峰定价和历史图表。",
+    "usage": {
+      "prompt_tokens": 4365,
+      "completion_tokens": 377,
+      "total_tokens": 4742,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3853
+    }
+  }
+}

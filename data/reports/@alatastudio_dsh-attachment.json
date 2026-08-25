@@ -1,0 +1,34 @@
+{
+  "id": "@alatastudio/dsh-attachment",
+  "analyzedAt": "2026-08-25T05:38:35.125Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis，且 README 描述为 DeepSeek Harness 的附件存储 seam，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@alatastudio/dsh-attachment",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 @alatastudio/dsh-attachment，且为 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 的附件存储模块，负责处理图片等附件的验证、保存和读取。它能把图片标准化并安全存储，避免在会话中直接保存浏览器路径或 base64 数据。支持 PNG、JPEG、WebP 和 GIF 格式，有大小和数量限制，确保批量保存时要么全部成功要么全部失败。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只处理附件存储，不涉及敏感文件或外部连接。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 的附件存储插件，负责图片等附件的验证、保存和读取。",
+    "usage": {
+      "prompt_tokens": 2220,
+      "completion_tokens": 310,
+      "total_tokens": 2530,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1708
+    }
+  }
+}

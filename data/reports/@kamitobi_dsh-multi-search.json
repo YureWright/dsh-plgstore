@@ -1,0 +1,34 @@
+{
+  "id": "@kamitobi/dsh-multi-search",
+  "analyzedAt": "2026-08-25T05:37:11.115Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-web，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@kamitobi/dsh-multi-search",
+      "evidence": "dsh plugin --profile web add @kamitobi/dsh-multi-search"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 用上第三方搜索 API（比如阿里云百炼、小米 MiMo、MiniMax、智谱 GLM 等），替换掉内置的只能连 DeepSeek 官方搜索的 web_search 工具。装好后你可以用自己已有的 API 密钥来联网搜索，不用非得用 DeepSeek 的付费服务。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会修改你的 DSH 配置文件（cordis.patch.yml），并可能要求你提供第三方搜索 API 的密钥（建议用环境变量方式，避免明文写在配置里）。",
+      "postInstallNotes": "运行 npx -p @kamitobi/dsh-multi-search dsh-multi-search-setup 进行交互式配置，选择搜索提供商并输入 API 密钥（或指定环境变量名）。如果用了环境变量，记得在 shell 配置文件（如 ~/.bashrc）里导出，然后重启 DSH（dsh web）。",
+      "notes": "无"
+    },
+    "summaryZh": "一个社区插件，让 DeepSeek Harness 支持多种第三方搜索 API（如阿里云百炼、小米 MiMo 等），替代内置的 DeepSeek 官方搜索。",
+    "usage": {
+      "prompt_tokens": 3991,
+      "completion_tokens": 414,
+      "total_tokens": 4405,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3479
+    }
+  }
+}

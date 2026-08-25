@@ -1,0 +1,34 @@
+{
+  "id": "@ace-zone/dsh-market",
+  "analyzedAt": "2026-08-25T05:37:16.045Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/dsh-client-runtime 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@ace-zone/dsh-market",
+      "evidence": "dsh plugin --profile web add @ace-zone/dsh-market"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 社区插件市场，它像一个应用商店，让你在 DSH 的网页界面里浏览、搜索和安装其他插件。它每天自动更新，收录了 2800 多个插件，按功能分类（比如界面主题、会话记忆、工具集成等），你可以一键安装或卸载插件，不用手动敲命令。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要读取插件列表数据，安装插件时会执行 dsh plugin add 命令，但这是正常操作。",
+      "postInstallNotes": "安装后需要重启 DSH 网页（运行 dsh web），然后在侧边栏 Settings 旁边会出现「插件市场」按钮。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 社区插件市场，提供 2800+ 插件的浏览、搜索和一键安装管理。",
+    "usage": {
+      "prompt_tokens": 4593,
+      "completion_tokens": 329,
+      "total_tokens": 4922,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4081
+    }
+  }
+}

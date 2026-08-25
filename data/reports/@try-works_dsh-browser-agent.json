@@ -1,0 +1,34 @@
+{
+  "id": "@try-works/dsh-browser-agent",
+  "analyzedAt": "2026-08-25T05:37:06.079Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@try-works/dsh-browser-agent",
+      "evidence": "dsh plugin --profile web add @try-works/dsh-browser-agent"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 AI 助手一个真正的 Chrome 浏览器，让它可以打开网页、读取内容、点击按钮、输入文字、截图，还能在 DSH 的网页界面上实时看到浏览器画面，甚至自己手动操作。它自带一些技能教 AI 怎么用，还支持连接你自己开的 Chrome 来绕过一些反爬验证。",
+      "level": "ok",
+      "risks": "插件会启动一个 Chrome 浏览器进程，可能会访问你指定的网页，并读取页面内容。如果配置了 userDataDir，会保存浏览器的 cookie 和登录信息。默认使用临时配置，不保存数据。没有发现明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 并硬刷新 GUI 页面（Ctrl+F5）才能看到浏览器面板。可选配置 chromePath、viewport 等，在 cordis.patch.yml 中设置。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DSH 的 AI 助手一个真实 Chrome 浏览器，提供网页导航、读取、截图等工具，并在 GUI 中显示实时浏览器面板。",
+    "usage": {
+      "prompt_tokens": 4234,
+      "completion_tokens": 386,
+      "total_tokens": 4620,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3722
+    }
+  }
+}

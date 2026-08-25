@@ -1,0 +1,34 @@
+{
+  "id": "dsh-cerrda-theme",
+  "analyzedAt": "2026-08-25T05:38:06.896Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 提供了 dsh plugin add 安装命令，并详细说明了 DSH 插件机制。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-cerrda-theme",
+      "evidence": "在 DSH 环境里执行（需要 `pnpm` 在 PATH 上）：```bash dsh plugin --profile web add dsh-cerrda-theme```"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面换肤的主题插件，安装后会把界面变成暗色系，配色是玫瑰紫，字体用 Sora、Fraunces 和 JetBrains Mono，还带一些动态背景和玻璃质感效果。装完重启一下 DSH 就能自动生效，不用额外设置。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是改界面外观，不碰你的数据，也不连外部服务器。",
+      "postInstallNotes": "安装后需要重启 DSH 进程（web profile 的 HMR 已禁用，bundle 层只在启动时应用）。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页界面的暗色主题插件，提供玫瑰紫配色、玻璃质感和动态背景。",
+    "usage": {
+      "prompt_tokens": 2518,
+      "completion_tokens": 327,
+      "total_tokens": 2845,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2006
+    }
+  }
+}

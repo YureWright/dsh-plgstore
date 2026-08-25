@@ -1,0 +1,34 @@
+{
+  "id": "weread-export",
+  "analyzedAt": "2026-08-25T05:37:16.109Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/zhengjy01/weread-export.git",
+      "evidence": "dsh plugin --profile web add github:zhengjy01/weread-export"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你把微信读书里的书架、划线、想法、阅读统计等数据同步到 DeepSeek Harness，还能一键把划线导出到 flomo 或本地 Markdown。它用的是官方 API Key，不是抓取 Cookie，所以比较稳定安全。",
+      "level": "ok",
+      "risks": "它会把你的微信读书 API Key 和缓存数据存到电脑上的 ~/.dsh/ 目录（权限 0600），只有你自己能读。导出到 flomo 或 Notion 时，你的划线内容会发送到那些服务。除此之外没发现明显风险。",
+      "postInstallNotes": "需要去微信读书官网创建 API Key（wrk- 开头），然后在设置页或对话中配置。如果要导出到 flomo，还需要配置 flomo 的 API URL 和 Key。",
+      "notes": "无"
+    },
+    "summaryZh": "微信读书集成插件，可同步书架、划线、阅读统计并导出到 flomo 或本地。",
+    "usage": {
+      "prompt_tokens": 2796,
+      "completion_tokens": 368,
+      "total_tokens": 3164,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2284
+    }
+  }
+}
