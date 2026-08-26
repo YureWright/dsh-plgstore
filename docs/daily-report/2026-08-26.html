@@ -19,9 +19,15 @@ h2{font-size:18px;margin:32px 0 6px;border-left:3px solid var(--blue);padding-le
 .nav-card{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1c2030,#17203a);border:1px solid #3a4a7a;border-radius:14px;padding:12px 18px;margin-bottom:20px;text-decoration:none;color:var(--fg);transition:transform .15s}
 .nav-card:hover{transform:translateY(-2px)}
 .nav-icon{font-size:26px}.nav-body{flex:1}.nav-title{font-size:15px;font-weight:700}.nav-stats{font-size:12px;color:var(--dim);margin-top:2px}.nav-go{background:var(--blue);color:#0b1220;font-size:13px;font-weight:600;padding:7px 14px;border-radius:9px;white-space:nowrap}
-.sec-card{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:10px 16px;margin:26px 0 10px;text-decoration:none;color:var(--fg);transition:transform .15s}
-.sec-card:hover{transform:translateY(-2px);border-color:var(--blue)}
-.sec-icon{font-size:22px}.sec-body{flex:1}.sec-title{font-size:16px;font-weight:700}.sec-note{font-size:12px;color:var(--dim);margin-top:1px}.sec-go{color:var(--blue);font-size:12px;font-weight:600;white-space:nowrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:18px 0 14px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.tab{background:var(--card);border:1px solid var(--line);color:var(--dim);padding:8px 16px;border-radius:10px;font-size:14px;cursor:pointer}
+.tab:hover{border-color:var(--blue);color:var(--fg)}
+.tab.active{background:var(--blue);border-color:var(--blue);color:#0b1220;font-weight:600}
+.tab.his{margin-left:auto;text-decoration:none;color:var(--blue);border-color:#3a4a7a}
+.tabpane{min-height:300px}
+.his{display:flex;flex-wrap:wrap;gap:10px}
+.his-item{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;color:var(--fg);font-size:14px}
+.his-item:hover{border-color:var(--blue)}
 </style></head><body><div class="wrap">
 <a class="nav-card" href="index.html">
   <div class="nav-icon">🛒</div>
@@ -33,11 +39,13 @@ h2{font-size:18px;margin:32px 0 6px;border-left:3px solid var(--blue);padding-le
 </a>
 <h1>📰 每日日报</h1>
 <div class="sub">2026-08-26 · 数据每天 13:00 自动更新</div>
-<a class="sec-card" href="index.html?sort=newest">
-  <div class="sec-icon">🆕</div>
-  <div class="sec-body"><div class="sec-title">新推出的插件</div><div class="sec-note">最近 48 小时首次收录 · 点卡看全部新货</div></div>
-  <div class="sec-go">去市场 →</div>
-</a><div class="card">
+<div class="tabs">
+  <button class="tab active" data-tab="tab-new">🆕 新推出的插件</button>
+  <button class="tab" data-tab="tab-hot">🔥 涨星最快</button>
+  <button class="tab" data-tab="tab-upd">✨ 热门更新</button>
+  <a class="tab his" href="docs/daily-report/index.html">📜 历史日报 →</a>
+</div>
+<div class="tabpane" id="tab-new"><h2>🆕 新推出的插件</h2><p class="muted">最近 48 小时首次收录</p><div class="card">
   <div class="hd"><a href="https://github.com/DomenCai/dsh-harness-call" target="_blank">dsh-harness-call</a><span class="dim">质量分 5</span></div>
   <div class="sum">Delegate work to external coding agents (Claude Code / Codex CLI / Grok CLI) from DeepSeek Harness: a model-facing harness_call tool, @claude/@codex/@grok mentions, live progress cards with a thinking/tool timeline, and a details side panel.</div>
   
@@ -77,12 +85,8 @@ h2{font-size:18px;margin:32px 0 6px;border-left:3px solid var(--blue);padding-le
   <div class="hd"><a href="https://github.com/fengshenx/dsh-remind" target="_blank">dsh-remind</a><span class="dim">质量分 5</span></div>
   <div class="sum">DSH plugin: `remind` — search and read the calling agent's own session log, including events shadowed by compaction</div>
   
-</div>
-<a class="sec-card" href="index.html?sort=stars-desc">
-  <div class="sec-icon">🔥</div>
-  <div class="sec-body"><div class="sec-title">涨星最快的插件</div><div class="sec-note">（首次运行暂无历史快照，先展示近期活跃热门；从今日起积累星数变化）</div></div>
-  <div class="sec-go">去市场 →</div>
-</a><div class="card">
+</div></div>
+<div class="tabpane" id="tab-hot" hidden><h2>🔥 涨星最快的插件</h2><p class="muted">（首次运行暂无历史快照，先展示近期活跃热门；从今日起积累星数变化）</p><div class="card">
   <div class="hd"><a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank">deepseek-harness</a><span class="b ok">😊 放心用</span><span class="dim">质量分 0 · ⭐126999</span></div>
   <div class="sum">DeepSeek Harness 是 DeepSeek 开源的智能体运行框架，采用“一切都是插件”的架构，可通过 Web 界面启动和管理 AI 代理。</div>
   <div class="intro">📋 DeepSeek Harness（简称 dsh）是 DeepSeek 官方开源的智能体运行框架。它采用“一切都是插件”的设计，你可以把它理解成一个能让 AI 代理跑起来的工作台：通过一条命令启动网页界面，然后在里面配置和运行各种 AI 任务。目前还是开发者预览版，功能在快速迭代中。</div>
@@ -122,12 +126,8 @@ h2{font-size:18px;margin:32px 0 6px;border-left:3px solid var(--blue);padding-le
   <div class="hd"><a href="https://github.com/mnemon-dev/mnemon" target="_blank">mnemon</a><span class="b ok">😊 放心用</span><span class="dim">质量分 5 · ⭐457</span></div>
   <div class="sum">为 AI 代理提供跨会话持久记忆的 DSH 插件，采用 LLM 监督与知识图谱技术。</div>
   <div class="intro">📋 这个插件把 Mnemon 的记忆功能装进 DSH。简单说，它能让你的 AI 助手记住跨会话的信息，比如之前聊过的内容，以后还能想起来。它用知识图谱的方式存储记忆，由你的 LLM 来当‘大脑’决定记什么、忘什么。</div>
-</div>
-<a class="sec-card" href="index.html?sort=stars-desc">
-  <div class="sec-icon">✨</div>
-  <div class="sec-body"><div class="sec-title">热门插件的更新</div><div class="sec-note">近 48 小时有代码推送的高星插件 · 点卡按星数排行</div></div>
-  <div class="sec-go">去市场 →</div>
-</a><div class="card">
+</div></div>
+<div class="tabpane" id="tab-upd" hidden><h2>✨ 热门插件的更新</h2><p class="muted">近 48 小时有代码推送的高星插件</p><div class="card">
   <div class="hd"><a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank">deepseek-harness</a><span class="b ok">😊 放心用</span><span class="dim">质量分 0 · ⭐126999</span></div>
   <div class="sum">DeepSeek Harness 是 DeepSeek 开源的智能体运行框架，采用“一切都是插件”的架构，可通过 Web 界面启动和管理 AI 代理。</div>
   <div class="intro">📋 DeepSeek Harness（简称 dsh）是 DeepSeek 官方开源的智能体运行框架。它采用“一切都是插件”的设计，你可以把它理解成一个能让 AI 代理跑起来的工作台：通过一条命令启动网页界面，然后在里面配置和运行各种 AI 任务。目前还是开发者预览版，功能在快速迭代中。</div>
@@ -167,6 +167,17 @@ h2{font-size:18px;margin:32px 0 6px;border-left:3px solid var(--blue);padding-le
   <div class="hd"><a href="https://github.com/mnemon-dev/mnemon" target="_blank">mnemon</a><span class="b ok">😊 放心用</span><span class="dim">质量分 5 · ⭐457</span></div>
   <div class="sum">为 AI 代理提供跨会话持久记忆的 DSH 插件，采用 LLM 监督与知识图谱技术。</div>
   <div class="intro">📋 这个插件把 Mnemon 的记忆功能装进 DSH。简单说，它能让你的 AI 助手记住跨会话的信息，比如之前聊过的内容，以后还能想起来。它用知识图谱的方式存储记忆，由你的 LLM 来当‘大脑’决定记什么、忘什么。</div>
-</div>
+</div></div>
 <div class="foot">评估报告由 AI 生成，仅供参考，非安全认证。历史快照：data/history/（每日一份，用于涨星统计）。</div>
+<script>
+var tabs = document.querySelectorAll(".tab[data-tab]");
+var panes = {};
+tabs.forEach(function (b) {
+  panes[b.dataset.tab] = document.getElementById(b.dataset.tab);
+  b.onclick = function () {
+    tabs.forEach(function (x) { x.classList.toggle("active", x === b); });
+    Object.keys(panes).forEach(function (k) { panes[k].hidden = (k !== b.dataset.tab); });
+  };
+});
+</script>
 </div></body></html>

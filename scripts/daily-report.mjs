@@ -18,6 +18,7 @@ const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const DATA = join(ROOT, "data");
 const REPORTS = join(DATA, "reports");
 const HISTORY = join(DATA, "history");
+const ARCHIVE_DIR = join(ROOT, "docs", "daily-report");
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const now = new Date();
@@ -104,13 +105,8 @@ function itemCard(p, extra) {
   ${intro ? `<div class="intro">📋 ${intro}</div>` : ""}
 </div>`;
 }
-function section(icon, title, note, href, list, extraFn) {
-  // 板块导航卡：点卡片跳市场页对应视图
-  const head = `<a class="sec-card" href="${href}">
-  <div class="sec-icon">${icon}</div>
-  <div class="sec-body"><div class="sec-title">${title}</div><div class="sec-note">${note ?? ""}</div></div>
-  <div class="sec-go">去市场 →</div>
-</a>`;
+function pane(title, note, list, extraFn) {
+  const head = `<h2>${title}</h2><p class="muted">${note ?? ""}</p>`;
   if (!list.length) return head + `<p class="muted">今日暂无</p>`;
   return head + list.map((x) => (x.p ? itemCard(x.p, extraFn ? extraFn(x) : "") : itemCard(x, extraFn ? extraFn(x) : ""))).join("");
 }
@@ -136,9 +132,15 @@ h2{font-size:18px;margin:32px 0 6px;border-left:3px solid var(--blue);padding-le
 .nav-card{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1c2030,#17203a);border:1px solid #3a4a7a;border-radius:14px;padding:12px 18px;margin-bottom:20px;text-decoration:none;color:var(--fg);transition:transform .15s}
 .nav-card:hover{transform:translateY(-2px)}
 .nav-icon{font-size:26px}.nav-body{flex:1}.nav-title{font-size:15px;font-weight:700}.nav-stats{font-size:12px;color:var(--dim);margin-top:2px}.nav-go{background:var(--blue);color:#0b1220;font-size:13px;font-weight:600;padding:7px 14px;border-radius:9px;white-space:nowrap}
-.sec-card{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:10px 16px;margin:26px 0 10px;text-decoration:none;color:var(--fg);transition:transform .15s}
-.sec-card:hover{transform:translateY(-2px);border-color:var(--blue)}
-.sec-icon{font-size:22px}.sec-body{flex:1}.sec-title{font-size:16px;font-weight:700}.sec-note{font-size:12px;color:var(--dim);margin-top:1px}.sec-go{color:var(--blue);font-size:12px;font-weight:600;white-space:nowrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:18px 0 14px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.tab{background:var(--card);border:1px solid var(--line);color:var(--dim);padding:8px 16px;border-radius:10px;font-size:14px;cursor:pointer}
+.tab:hover{border-color:var(--blue);color:var(--fg)}
+.tab.active{background:var(--blue);border-color:var(--blue);color:#0b1220;font-weight:600}
+.tab.his{margin-left:auto;text-decoration:none;color:var(--blue);border-color:#3a4a7a}
+.tabpane{min-height:300px}
+.his{display:flex;flex-wrap:wrap;gap:10px}
+.his-item{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;color:var(--fg);font-size:14px}
+.his-item:hover{border-color:var(--blue)}
 </style></head><body><div class="wrap">
 <a class="nav-card" href="index.html">
   <div class="nav-icon">🛒</div>
@@ -150,10 +152,27 @@ h2{font-size:18px;margin:32px 0 6px;border-left:3px solid var(--blue);padding-le
 </a>
 <h1>📰 每日日报</h1>
 <div class="sub">${today} · 数据每天 13:00 自动更新</div>
-${section("🆕", "新推出的插件", "最近 48 小时首次收录 · 点卡看全部新货", "index.html?sort=newest", fresh)}
-${section("🔥", "涨星最快的插件", trendingNote, "index.html?sort=stars-desc", trending.map((x) => ({ p: x.p, delta: x.prev != null ? `+${x.now - x.prev}` : null })), (x) => (x.delta ? badge("grow", `📈 ${x.delta}⭐`) : ""))}
-${section("✨", "热门插件的更新", "近 48 小时有代码推送的高星插件 · 点卡按星数排行", "index.html?sort=stars-desc", updated)}
+<div class="tabs">
+  <button class="tab active" data-tab="tab-new">🆕 新推出的插件</button>
+  <button class="tab" data-tab="tab-hot">🔥 涨星最快</button>
+  <button class="tab" data-tab="tab-upd">✨ 热门更新</button>
+  <a class="tab his" href="docs/daily-report/index.html">📜 历史日报 →</a>
+</div>
+<div class="tabpane" id="tab-new">${pane("🆕 新推出的插件", "最近 48 小时首次收录", fresh)}</div>
+<div class="tabpane" id="tab-hot" hidden>${pane("🔥 涨星最快的插件", trendingNote, trending.map((x) => ({ p: x.p, delta: x.prev != null ? `+${x.now - x.prev}` : null })), (x) => (x.delta ? badge("grow", `📈 ${x.delta}⭐`) : ""))}</div>
+<div class="tabpane" id="tab-upd" hidden>${pane("✨ 热门插件的更新", "近 48 小时有代码推送的高星插件", updated)}</div>
 <div class="foot">评估报告由 AI 生成，仅供参考，非安全认证。历史快照：data/history/（每日一份，用于涨星统计）。</div>
+<script>
+var tabs = document.querySelectorAll(".tab[data-tab]");
+var panes = {};
+tabs.forEach(function (b) {
+  panes[b.dataset.tab] = document.getElementById(b.dataset.tab);
+  b.onclick = function () {
+    tabs.forEach(function (x) { x.classList.toggle("active", x === b); });
+    Object.keys(panes).forEach(function (k) { panes[k].hidden = (k !== b.dataset.tab); });
+  };
+});
+</script>
 </div></body></html>`;
 
 const md = `# 🛒 DSH 插件市场 · 每日日报（${today}）
@@ -176,8 +195,36 @@ await writeFile(join(ROOT, "daily.html"), html);
 await writeFile(join(ROOT, "daily.md"), md);
 // 供市场页导航卡展示今日摘要
 await writeFile(join(DATA, "latest-report.json"), JSON.stringify({ date: today, fresh: fresh.length, trending: trending.length, updated: updated.length }));
-// 存档：docs/daily-report/<日期>.html（供 daily.html 历史列表链接）
-const ARCHIVE_DIR = join(ROOT, "docs", "daily-report");
+// 存档：docs/daily-report/<日期>.html（供历史日报索引链接）
 await mkdir(ARCHIVE_DIR, { recursive: true });
 await writeFile(join(ARCHIVE_DIR, `${today}.html`), html);
-console.log(`✅ 每日日报已生成（${today}）：新 ${fresh.length} / 涨星 ${trending.length} / 更新 ${updated.length}；历史快照 data/history/${today}.json；存档 docs/daily-report/${today}.html`);
+// 历史日报索引页（列出所有存档日期）
+const archiveFiles = (await readdir(ARCHIVE_DIR)).filter((f) => /^\d{4}-\d{2}-\d{2}\.html$/.test(f)).sort().reverse();
+const hisItems = archiveFiles
+  .map((f) => `<a class="his-item" href="${f}">📅 ${f.replace(".html", "")}</a>`)
+  .join("\n");
+const hisHtml = `<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DSH 插件市场 · 历史日报</title>
+<style>
+:root{--bg:#0f1117;--card:#171a23;--fg:#e8eaf0;--dim:#9aa0b0;--line:#2a2f42;--blue:#5aa2ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:32px 20px 80px}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.nav-card{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid #3a4a7a;border-radius:14px;padding:12px 18px;margin-bottom:24px}
+.nav-title{font-size:15px;font-weight:700}.nav-stats{font-size:12px;color:var(--dim);margin-top:2px}.nav-go{background:var(--blue);color:#0b1220;font-size:13px;font-weight:600;padding:7px 14px;border-radius:9px;margin-left:auto;white-space:nowrap}
+h1{font-size:24px;margin:0 0 18px}
+.his{display:flex;flex-wrap:wrap;gap:10px}
+.his-item{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 16px;color:var(--fg);font-size:15px}
+.his-item:hover{border-color:var(--blue)}
+</style></head><body><div class="wrap">
+<a class="nav-card" href="../index.html">
+  <div class="nav-title">🛒 DSH 插件市场</div>
+  <div class="nav-stats">返回市场</div>
+  <div class="nav-go">逛市场 →</div>
+</a>
+<h1>📜 历史日报（${archiveFiles.length} 期）</h1>
+<div class="his">${hisItems}</div>
+</div></body></html>`;
+await writeFile(join(ARCHIVE_DIR, "index.html"), hisHtml);
+console.log(`✅ 每日日报已生成（${today}）：新 ${fresh.length} / 涨星 ${trending.length} / 更新 ${updated.length}；历史快照 data/history/${today}.json；存档+索引 docs/daily-report/`);
