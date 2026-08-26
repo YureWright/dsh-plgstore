@@ -79,14 +79,20 @@ for (const p of plugins) {
   }
 }
 
-// 卡片（瘦身版：报告点击展开）
-const cards = plugins
-  .map((p) => {
-    const cat = categorize(p);
-    const stars = p.github?.stars;
-    const dl = p.npm?.downloadsLastMonth;
-    const hasReport = reportBlob[p.id] ? 1 : 0;
-    return `<div class="card" data-cat="${cat}" data-trust="${p.trustLayer}" data-install="${p.install.method}" data-source="${(p.sources ?? []).join(",")}" data-score="${p.score}" data-stars="${stars ?? ""}" data-dl="${dl ?? ""}" data-first="${p.firstSeen ?? ""}" data-name="${esc((p.id + " " + p.name + " " + (p.summary ?? "")).toLowerCase())}" data-id="${esc(p.id)}">
+// 卡片（虚拟化：HTML 字符串数组 + 元数据数组并行；DOM 只挂当前可见页）
+const cardHtml = [];
+const cardMeta = [];
+for (const p of plugins) {
+  const cat = categorize(p);
+  const stars = p.github?.stars;
+  const dl = p.npm?.downloadsLastMonth;
+  const hasReport = reportBlob[p.id] ? 1 : 0;
+  cardMeta.push({
+    cat, trust: p.trustLayer, install: p.install.method, sources: p.sources ?? [],
+    score: Number(p.score) || 0, stars: stars ?? -1, dl: dl ?? -1,
+    first: p.firstSeen ?? "", name: (p.id + " " + p.name + " " + (p.summary ?? "")).toLowerCase(),
+  });
+  cardHtml.push(`<div class="card" data-id="${esc(p.id)}">
   <div class="card-head">
     <div class="card-title">
       <a href="${esc(p.github?.url ?? "#")}" target="_blank">${esc(p.name)}</a>
@@ -101,10 +107,9 @@ const cards = plugins
     ${p.github ? `<div class="field"><span class="k">GitHub</span> ⭐${stars ?? "?"} · 推送 ${esc((p.github.pushedAt ?? "").slice(0, 10)) || "-"}</div>` : ""}
     ${p.npm ? `<div class="field"><span class="k">npm</span> ${esc(p.npm.name)}@${esc(p.npm.version ?? "?")} · 月下载 ${dl ?? "?"}</div>` : ""}
   </div>
-  ${hasReport ? `<button class="rep-btn" data-rep="${esc(p.id)}">📋 查看评估报告</button><div class="report" id="rep-${esc(p.id)}" hidden></div>` : `<div class="report dim">（无评估报告）</div>`}
-</div>`;
-  })
-  .join("\n");
+  ${hasReport ? `<button class="rep-btn" data-rep="${esc(p.id)}">📋 查看评估报告</button><div class="report" hidden></div>` : `<div class="report dim">（无评估报告）</div>`}
+</div>`);
+}
 
 const suspiciousRows = (meta.community?.suspicious ?? [])
   .map((s) => `<tr><td>${esc(s.id)}</td><td>${esc(s.type)}</td><td>${s.confidence}</td><td>${esc(s.reason ?? "")}</td></tr>`)
@@ -193,7 +198,7 @@ const html = `<!DOCTYPE html>
 <body>
 <div class="wrap">
   <h1>🛒 DSH 插件市场</h1>
-  <div class="sub">生成时间 ${esc(beijingTime(menu.generatedAt))} · 共 ${plugins.length} 条 · 报告 ${Object.keys(reportBlob).length} 份（点击展开，懒加载）</div>
+  <div class="sub">生成时间 ${esc(beijingTime(menu.generatedAt))} · 共 ${plugins.length} 条 · 报告 ${Object.keys(reportBlob).length} 份（点击展开，懒加载） · <a href="daily.html" style="color:var(--blue)">📰 每日日报</a></div>
 
   <div class="stats">
     <div class="stat"><div class="n">${plugins.length}</div><div class="l">插件总数</div></div>
@@ -219,7 +224,8 @@ const html = `<!DOCTYPE html>
     <div class="row"><button class="chip" id="reset" style="border-color:var(--red);color:var(--red)">✕ 重置全部</button><span id="count" class="result-bar" style="margin:0 0 0 8px"></span></div>
   </div>
 
-  <div class="cards" id="cards">${cards}</div>
+  <div class="cards" id="cards"></div>
+  <div class="more-bar" id="morebar" style="display:none"><button class="chip" id="morebtn">⬇ 加载更多</button></div>
   <div class="empty" id="empty" style="display:none">没有匹配的插件，试试放宽筛选条件</div>
 
   <h2>存疑清单（${meta.community?.suspicious?.length ?? 0}）</h2>
@@ -234,13 +240,19 @@ const html = `<!DOCTYPE html>
 </div>
 <script>
 window.__REPORTS__ = ${JSON.stringify(reportBlob)};
-const cards = Array.from(document.querySelectorAll(".card"));
+// 虚拟化渲染：DOM 只挂当前可见的一页（cardMeta/cardHtml 并行数组）
+const CARD_HTML = ${JSON.stringify(cardHtml)};
+const CARD_META = ${JSON.stringify(cardMeta)};
 const grid = document.getElementById("cards");
 const q = document.getElementById("q");
 const sortSel = document.getElementById("sort");
 const countEl = document.getElementById("count");
 const emptyEl = document.getElementById("empty");
+const moreBtn = document.getElementById("morebtn");
+const moreBar = document.getElementById("morebar");
 const state = { cat: null, trust: null, install: null, source: null };
+let page = 1;
+const PAGE = 100;
 
 function setChip(sel, key, val) {
   document.querySelectorAll(sel).forEach((c) => { c.dataset.active = c.dataset[key] === val && val ? "true" : "false"; });
@@ -249,6 +261,7 @@ function bindChips(sel, key, prop) {
   document.querySelectorAll(sel).forEach((c) => c.onclick = () => {
     state[prop] = state[prop] === c.dataset[key] ? null : c.dataset[key];
     setChip(sel, key, state[prop]);
+    page = 1;
     render();
   });
 }
@@ -256,50 +269,52 @@ bindChips("[data-cat-chip]", "catChip", "cat");
 bindChips("[data-trust-chip]", "trustChip", "trust");
 bindChips("[data-install-chip]", "installChip", "install");
 bindChips("[data-source-chip]", "sourceChip", "source");
-document.getElementById("reset").onclick = () => { state.cat = state.trust = state.install = state.source = null; q.value = ""; document.querySelectorAll(".chip").forEach((c) => c.dataset.active = "false"); render(); };
-q.addEventListener("input", render);
-sortSel.addEventListener("change", render);
+document.getElementById("reset").onclick = () => { state.cat = state.trust = state.install = state.source = null; q.value = ""; document.querySelectorAll(".chip").forEach((c) => c.dataset.active = "false"); page = 1; render(); };
+q.addEventListener("input", () => { page = 1; render(); });
+sortSel.addEventListener("change", () => { page = 1; render(); });
+moreBtn.onclick = () => { page++; render(); };
 
-let lastSort = "";
+let visibleIds = [];
 function render() {
   const kw = q.value.trim().toLowerCase();
-  let visible = [];
-  // 筛选：display 切换（快，不重建 DOM）
-  for (const c of cards) {
-    let ok = true;
-    if (state.cat && c.dataset.cat !== state.cat) ok = false;
-    else if (state.trust && c.dataset.trust !== state.trust) ok = false;
-    else if (state.install && c.dataset.install !== state.install) ok = false;
-    else if (state.source && !c.dataset.source.split(",").includes(state.source)) ok = false;
-    else if (kw && !c.dataset.name.includes(kw)) ok = false;
-    c.classList.toggle("hidden", !ok);
-    if (ok) visible.push(c);
-  }
-  // 排序：仅在排序值变化时重排
   const sort = sortSel.value;
-  if (sort !== lastSort) {
-    lastSort = sort;
-    visible.sort((a, b) => {
-      const n = (v, d) => { const x = parseFloat(v); return isNaN(x) ? d : x; };
-      if (sort === "score-desc") return n(b.dataset.score, -1) - n(a.dataset.score, -1);
-      if (sort === "score-asc") return n(a.dataset.score, 1e9) - n(b.dataset.score, 1e9);
-      if (sort === "stars-desc") return n(b.dataset.stars, -1) - n(a.dataset.stars, -1);
-      if (sort === "dl-desc") return n(b.dataset.dl, -1) - n(a.dataset.dl, -1);
-      if (sort === "newest") return b.dataset.first.localeCompare(a.dataset.first);
-      return a.dataset.name.localeCompare(b.dataset.name);
-    });
-    visible.forEach((c) => grid.appendChild(c));
+  // 筛选（元数据数组，零 DOM 操作）
+  visibleIds = [];
+  for (let i = 0; i < CARD_META.length; i++) {
+    const m = CARD_META[i];
+    if (state.cat && m.cat !== state.cat) continue;
+    if (state.trust && m.trust !== state.trust) continue;
+    if (state.install && m.install !== state.install) continue;
+    if (state.source && !m.sources.includes(state.source)) continue;
+    if (kw && !m.name.includes(kw)) continue;
+    visibleIds.push(i);
   }
-  emptyEl.style.display = visible.length ? "none" : "";
-  countEl.textContent = "显示 " + visible.length + " / " + cards.length + " 条";
+  // 排序（数值直接比较）
+  const n = (v) => (isFinite(v) ? v : -1);
+  visibleIds.sort((a, b) => {
+    const A = CARD_META[a], B = CARD_META[b];
+    if (sort === "score-desc") return B.score - A.score;
+    if (sort === "score-asc") return A.score - B.score;
+    if (sort === "stars-desc") return n(B.stars) - n(A.stars);
+    if (sort === "dl-desc") return n(B.dl) - n(A.dl);
+    if (sort === "newest") return (B.first || "").localeCompare(A.first || "");
+    return A.name.localeCompare(B.name);
+  });
+  // 只把当前页的 HTML 字符串挂进 DOM（≤ PAGE 张，重排成本极低）
+  const slice = visibleIds.slice(0, page * PAGE);
+  grid.innerHTML = slice.map((i) => CARD_HTML[i]).join("");
+  moreBar.style.display = visibleIds.length > slice.length ? "" : "none";
+  moreBtn.textContent = "⬇ 加载更多（还剩 " + (visibleIds.length - slice.length) + " 条）";
+  emptyEl.style.display = visibleIds.length ? "none" : "";
+  countEl.textContent = "显示 " + slice.length + " / " + visibleIds.length + " 条（共 " + CARD_HTML.length + "）";
 }
 
-// 评估报告懒加载（点击展开）——注意：此处禁用模板字符串，避免与外层模板冲突
+// 评估报告懒加载（点击展开）——按钮后面的 .report 就是内容容器
 document.addEventListener("click", function (e) {
   var btn = e.target.closest(".rep-btn");
   if (!btn) return;
   var id = btn.dataset.rep;
-  var box = document.getElementById("rep-" + id);
+  var box = btn.nextElementSibling;
   if (!box || box.innerHTML) return;
   var r = window.__REPORTS__[id];
   if (!r) return;

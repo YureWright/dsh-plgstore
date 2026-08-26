@@ -11,5 +11,4 @@ node_modules/
 # 本地缓存与中间产物（可重新生成）
 data/cache/
 data/llm-cache.json
-data/history/
 data/*.backup.json
