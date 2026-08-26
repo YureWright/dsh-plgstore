@@ -39,6 +39,11 @@ function beijingTime(iso) {
 
 const menu = JSON.parse(await readFile(join(DATA, "plugins.json"), "utf8"));
 const meta = JSON.parse(await readFile(join(DATA, "meta.json"), "utf8"));
+// 日报导航卡摘要（无则显示普通链接）
+let latestReport = null;
+try {
+  latestReport = JSON.parse(await readFile(join(DATA, "latest-report.json"), "utf8"));
+} catch {}
 const reports = new Map();
 try {
   for (const f of await readdir(CACHE)) {
@@ -141,6 +146,13 @@ const html = `<!DOCTYPE html>
   .stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
   .stat .n { font-size: 24px; font-weight: 700; }
   .stat .l { color:var(--dim); font-size: 12px; }
+  .daily-card { display:flex; align-items:center; gap:14px; background:linear-gradient(135deg,#17203a,#1c2a1f); border:1px solid #3a4a7a; border-radius:14px; padding:14px 18px; margin-bottom:16px; text-decoration:none; color:var(--fg); transition:transform .15s, box-shadow .15s; }
+  .daily-card:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(90,162,255,.18); }
+  .daily-icon { font-size:30px; }
+  .daily-body { flex:1; }
+  .daily-title { font-size:16px; font-weight:700; }
+  .daily-stats { font-size:13px; color:var(--dim); margin-top:2px; }
+  .daily-go { background:var(--blue); color:#0b1220; font-size:13px; font-weight:600; padding:7px 14px; border-radius:9px; white-space:nowrap; }
   .toolbar { position:sticky; top:0; z-index:10; background:rgba(15,17,23,.96); border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin-bottom:16px; }
   .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:4px 0; }
   .row .lab { color:var(--dim); font-size:12px; min-width:44px; }
@@ -209,6 +221,19 @@ const html = `<!DOCTYPE html>
     <div class="stat"><div class="n">${installCount.tarball ?? 0}</div><div class="l">tarball</div></div>
     <div class="stat"><div class="n">${installCount.none ?? 0}</div><div class="l">不可安装</div></div>
   </div>
+
+  <a class="daily-card" href="daily.html">
+    <div class="daily-icon">📰</div>
+    <div class="daily-body">
+      <div class="daily-title">每日日报${latestReport ? ` <span class="dim">${esc(latestReport.date)}</span>` : ""}</div>
+      <div class="daily-stats">${
+        latestReport
+          ? `🆕 新增 ${latestReport.fresh} · 🔥 涨星 ${latestReport.trending} · ✨ 更新 ${latestReport.updated}`
+          : "每天 13:00 自动更新 · 新插件 / 涨星榜 / 热门更新一网打尽"
+      }</div>
+    </div>
+    <div class="daily-go">查看 →</div>
+  </a>
 
   <div class="toolbar">
     <div class="row"><input class="search" id="q" placeholder="🔍 检索名称 / 简介 / 评估报告…"><select id="sort">

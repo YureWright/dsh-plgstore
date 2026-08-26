@@ -26,12 +26,17 @@ const today = now.toISOString().slice(0, 10);
 const menu = JSON.parse(await readFile(join(DATA, "plugins.json"), "utf8"));
 const plugins = menu.plugins;
 
-// 首次运行（无历史快照）放宽窗口到 7 天，避免首份日报为空；之后每日 48 小时
-let hasHistory = false;
+// 窗口判定：存在"前一天"的历史快照 → 每日 48h；否则视为首次（14 天窗口覆盖存量数据）
+let prevStars = null;
+let hasPriorSnapshot = false;
 try {
-  hasHistory = (await readdir(HISTORY)).length > 0;
+  const files = (await readdir(HISTORY)).filter((f) => f.endsWith(".json") && !f.startsWith(today)).sort();
+  if (files.length) {
+    hasPriorSnapshot = true;
+    prevStars = new Map(JSON.parse(await readFile(join(HISTORY, files[files.length - 1]), "utf8")).map((r) => [r.id, r.stars ?? 0]));
+  }
 } catch {}
-const WINDOW_MS = (hasHistory ? 48 : 24 * 14) * 3600 * 1000; // 首次 14 天（覆盖存量数据），之后每日 48h
+const WINDOW_MS = (hasPriorSnapshot ? 48 : 24 * 14) * 3600 * 1000;
 
 // 载入评估报告（intro 功能介绍 + level）
 const reports = new Map();
@@ -60,15 +65,7 @@ const updated = plugins
   .sort((a, b) => (b.github?.stars ?? 0) - (a.github?.stars ?? 0))
   .slice(0, 10);
 
-// ---- 板块 2：涨星最快（历史快照对比）----
-let prevStars = null;
-try {
-  const files = (await readdir(HISTORY)).filter((f) => f.endsWith(".json")).sort();
-  const prevFile = files[files.length - 1]; // 最近一份历史
-  if (prevFile && !prevFile.startsWith(today)) {
-    prevStars = new Map(JSON.parse(await readFile(join(HISTORY, prevFile), "utf8")).map((r) => [r.id, r.stars ?? 0]));
-  }
-} catch {}
+// ---- 板块 2：涨星最快（历史快照对比，prevStars 已在顶部加载）----
 let trending;
 let trendingNote;
 if (prevStars) {
@@ -157,4 +154,6 @@ ${updated.map((p) => `- **${p.name}** ⭐${p.github?.stars ?? "?"} — ${p.summa
 
 await writeFile(join(ROOT, "daily.html"), html);
 await writeFile(join(ROOT, "daily.md"), md);
+// 供市场页导航卡展示今日摘要
+await writeFile(join(DATA, "latest-report.json"), JSON.stringify({ date: today, fresh: fresh.length, trending: trending.length, updated: updated.length }));
 console.log(`✅ 每日日报已生成（${today}）：新 ${fresh.length} / 涨星 ${trending.length} / 更新 ${updated.length}；历史快照 data/history/${today}.json`);
