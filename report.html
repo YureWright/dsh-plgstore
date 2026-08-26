@@ -219,6 +219,16 @@ document.addEventListener("click", function (e) {
   box.innerHTML = html;
   box.hidden = false;
 });
+// URL 参数直达（日报导航卡用：?sort=stars-desc / ?sort=newest / ?q=关键词）
+(function () {
+  try {
+    var p = new URLSearchParams(location.search);
+    var s = p.get("sort");
+    if (s && ["score-desc", "score-asc", "stars-desc", "dl-desc", "newest", "name"].indexOf(s) >= 0) sortSel.value = s;
+    var kv = p.get("q");
+    if (kv) q.value = kv;
+  } catch (e) {}
+})();
 render();
 </script>
 </body>
