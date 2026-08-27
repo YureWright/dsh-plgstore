@@ -1,0 +1,34 @@
+{
+  "id": "@syncended/dsh-messenger",
+  "analyzedAt": "2026-08-27T16:20:19.815Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@syncended/dsh-messenger",
+      "evidence": "Install the published package into a DSH Web profile: dsh plugin --profile web add -w --config.auto-install-peers=false @syncended/dsh-messenger"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能通过 Telegram 聊天来控制。你可以用手机上的 Telegram 给机器人发消息，就能创建新会话、继续之前的对话、切换模型、调整推理强度、查看上下文用量，还能取消正在进行的任务。它把 DSH 的复杂操作变成了简单的聊天命令，方便你随时随地远程使用。",
+      "level": "ok",
+      "risks": "插件需要你提供 Telegram 机器人令牌，这个令牌会安全地存储在 DSH 的凭据存储中，不会明文保存。它允许你通过 Telegram 远程控制 DSH，所以任何被授权的操作者都能查看和操作你的会话，包括发送提示、切换模型、更改权限等。在群聊中，输出会显示给所有群成员，所以要注意不要在不信任的群里使用。插件默认禁用，需要你手动配置并添加允许的聊天 ID，否则不会响应任何消息。",
+      "postInstallNotes": "安装后需要重启 DSH Web 配置文件，然后在设置中打开 Messengers → Telegram，输入 BotFather 提供的机器人令牌，并添加至少一个允许的 Telegram 聊天 ID。也可以设置环境变量 TELEGRAM_BOT_TOKEN 来提供令牌。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 Telegram 桥接插件，让你通过聊天控制 DeepSeek Harness。",
+    "usage": {
+      "prompt_tokens": 4018,
+      "completion_tokens": 452,
+      "total_tokens": 4470,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3506
+    }
+  }
+}

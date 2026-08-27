@@ -1,0 +1,34 @@
+{
+  "id": "@mutocenew/dsh-plugin-catalog",
+  "analyzedAt": "2026-08-27T16:20:04.513Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-tools，README 描述为 DSH 插件工具，提供 agent 工具和 GUI 面板。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@mutocenew/dsh-plugin-catalog",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 @mutocenew/dsh-plugin-catalog，且发布在 npm 上。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你快速查找和管理 DSH 插件。它会定期从 GitHub 上抓取所有标记为 dsh-plugin 的插件仓库，自动分类并配上中文简介，然后存到你的电脑上。你可以通过聊天工具（agent）或网页面板来搜索、筛选和刷新插件列表，方便发现新插件。",
+      "level": "ok",
+      "risks": "它会向 GitHub 的公共 API 发送请求（未认证，有频率限制），并把抓取到的数据保存到你的用户目录下的 ~/.dsh/dsh-plugin-catalog.json 文件。除此之外，没有发现其他明显风险。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件目录速查工具，定期从 GitHub 抓取 dsh-plugin 仓库，分类并提供中文简介，支持 agent 查询和 Web 面板。",
+    "usage": {
+      "prompt_tokens": 1994,
+      "completion_tokens": 354,
+      "total_tokens": 2348,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1482
+    }
+  }
+}

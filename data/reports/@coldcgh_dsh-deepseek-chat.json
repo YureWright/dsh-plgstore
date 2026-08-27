@@ -1,0 +1,34 @@
+{
+  "id": "@coldcgh/dsh-deepseek-chat",
+  "analyzedAt": "2026-08-27T16:19:59.888Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@coldcgh/dsh-deepseek-chat",
+      "evidence": "dsh plugin --profile web add @coldcgh/dsh-deepseek-chat"
+    },
+    "evaluationReport": {
+      "intro": "这个插件在 DeepSeek Harness 的侧边栏加一个'网页对话'按钮，点一下就能打开 chat.deepseek.com 的网页版。在桌面版里会开独立窗口，在浏览器里就直接跳转，挺方便的。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在侧边栏加个按钮，点击后打开网页或独立窗口，不碰其他文件。",
+      "postInstallNotes": "装完重启 harness 就能看到按钮。如果想关掉，去设置里关掉'网页对话'开关。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 侧边栏添加'网页对话'按钮，一键打开 chat.deepseek.com 网页版。",
+    "usage": {
+      "prompt_tokens": 2303,
+      "completion_tokens": 314,
+      "total_tokens": 2617,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1791
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-diepi",
+  "analyzedAt": "2026-08-27T16:19:45.387Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且依赖 DSH 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-diepi@0.1.0-alpha.1",
+      "evidence": "dsh plugin --profile web add dsh-plugin-diepi@0.1.0-alpha.1"
+    },
+    "evaluationReport": {
+      "intro": "这是一个用于量化研究的 DSH 插件，它连接到一个独立的 MCP 服务器，支持每日股票/ETF 的回测研究。它本身不包含市场数据或交易功能，只是作为 DSH 和 diePi 研究引擎之间的桥梁。",
+      "level": "caution",
+      "risks": "该插件会启动一个 MCP 服务器，该服务器在 Agent 沙箱之外运行，可能访问主机上的文件系统。它要求设置环境变量指向主机上的路径，并且需要安装 Python 适配器。插件本身不处理凭证，但用户需要确保 MCP 配置和数据集不被 Agent 写入。",
+      "postInstallNotes": "需要安装 Python 适配器 diepi-mcp，并设置环境变量 DIEPI_MCP_COMMAND 和 DIEPI_MCP_CONFIG，同时确保 Node.js 和 pnpm 版本符合要求。",
+      "notes": "该插件是社区项目，与 DeepSeek 无关，但兼容 DSH。它明确声明不包含市场数据或交易功能，仅用于研究回测。"
+    },
+    "summaryZh": "一个用于量化研究回测的 DSH 插件，通过 MCP 连接独立的 diePi 引擎，支持每日股票/ETF 回测，但需额外安装 Python 适配器并配置环境。",
+    "usage": {
+      "prompt_tokens": 2914,
+      "completion_tokens": 425,
+      "total_tokens": 3339,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2402
+    }
+  }
+}

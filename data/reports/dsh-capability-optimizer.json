@@ -1,0 +1,34 @@
+{
+  "id": "dsh-capability-optimizer",
+  "analyzedAt": "2026-08-27T16:19:29.042Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-capability-optimizer",
+      "evidence": "dsh plugin --profile web add dsh-capability-optimizer"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能调用 Claude Code 作为外部专家，提供顾问、审查者、设计师等角色，在重要决策或代码审查时给出参考意见。它通过工具调用实现，而不是复制粘贴，并且有角色合约、模型回退、自动咨询等功能。",
+      "level": "ok",
+      "risks": "需要安装并登录 Claude Code CLI，会消耗你的 Claude 订阅额度。插件会读取你的工作区内容（如代码、上下文）发送给 Claude，但这是你主动触发的。插件本身是只读的，不会修改你的文件。",
+      "postInstallNotes": "需要确保 claude CLI 已安装并登录（npm i -g @anthropic-ai/claude-code），然后重启 dsh web 或对应 profile。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 外部专家咨询插件：通过调用 Claude Code 提供顾问、审查者、设计师等角色，为代理决策提供参考意见。",
+    "usage": {
+      "prompt_tokens": 3496,
+      "completion_tokens": 362,
+      "total_tokens": 3858,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2984
+    }
+  }
+}

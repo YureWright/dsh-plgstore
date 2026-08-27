@@ -1,41 +1,23 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-08-26）
+# 🛒 DSH 插件市场 · 每日日报（2026-08-27）
 
 ## 🆕 新推出的插件
-- **dsh-harness-call** [链接](https://github.com/DomenCai/dsh-harness-call) — Delegate work to external coding agents (Claude Code / Codex CLI / Grok CLI) from DeepSeek Harness: a model-facing harness_call tool, @claude/@codex/@grok mentions, live progress cards with a thinking/tool timeline, and a details side panel.
-- **dsh-session-kit**  — DeepSeek Harness sessions kit.
-- **dsh-deepseek-session-cost**  — DSH harness plugin: shows live DeepSeek session cost in USD, priced per model (v4-flash / v4-pro), with peak/off-peak and weekend off-peak rules.
-- **deepseek-harness-background** [链接](https://github.com/HaoyueQin/deepseek-harness-background) — Custom background image plugin for the DeepSeek Harness web GUI: upload a local picture or paste an image URL, and render it behind the whole app surface with adjustable opacity, scrim, panel transparency and frosted-glass blur.
-- **dsh-imessage** [链接](https://github.com/photon-hq/dsh-imessage) — Photon-hosted iMessage transport and configuration UI for DeepSeek Harness
-- **dsh-skin-market** [链接](https://github.com/kingOfSoySauce/dsh-skin-market) — Native skin marketplace and lifecycle manager for DeepSeek Harness
-- **dsh-factory** [链接](https://github.com/monotykamary/dsh-factory) — Durable dependency-graph task factory for DeepSeek Harness
-- **dsh-waifu**  — Waifu desktop companion and replaceable WebUI skins for DeepSeek Harness
-- **deepseek-harness-agentchat**  — AgentChat-web channel bridge for DeepSeek Harness
-- **dsh-remind** [链接](https://github.com/fengshenx/dsh-remind) — DSH plugin: `remind` — search and read the calling agent's own session log, including events shadowed by compaction
+- **dshline** [链接](https://github.com/riesbri/dshline) — dshline 是 DeepSeek Harness 的终端原生界面插件，让 Harness 能力在终端里以原生 UI 呈现。
+- **dsh-evolution-host** [链接](https://github.com/lmzhen/dsh-evolution) — 为 DeepSeek Harness 提供自进化基础设施的插件包，本身不直接暴露模型接口，而是作为底层服务被其他插件消费。
+- **dsh-agent-team** [链接](https://github.com/limuyang2/agent-team) — 在 DeepSeek Harness 中创建和管理多智能体团队，每个成员可独立配置模型、工具和权限，共享工作区协作。
+- **dsh-messenger** [链接](https://github.com/syncended/deepseek-harness-messenger) — DSH 的 Telegram 桥接插件，让你通过聊天控制 DeepSeek Harness。
+- **rundao-brand**  — 润道星算品牌插件，替换 DSH 界面品牌并重定向 API 到润道云。
+- **dsh-agent-sidecar** [链接](https://github.com/shendeguize/agent_sidecar) — DSH 原生插件，用于跨 agent 监控本机 AI 助手会话，提供看板、详情、注入和旁路分析等功能。
+- **ccs-balance** [链接](https://github.com/kikomaotu/ccs-balance) — 同步 cc-switch 余额并统计 DSH 会话 token 用量与花费的插件。
+- **dsh-plugin-shop** [链接](https://github.com/LivXue/dsh-plugin-shop) — DSH 插件商店，让你在设置界面里浏览、安装和管理 DSH 插件。
+- **dsh-plugin-wallpaper** [链接](https://github.com/JerryPhoenixCKY/dsh-plugin-wallpaper) — 为 DeepSeek Harness 网页工作区设置自定义壁纸的插件，支持上传、裁剪、调整显示效果。
+- **skill-scan**  — skill-scan 是一个可配置的 DSH 技能发现插件，支持多层级扫描和优先级调整。
 
 ## 🔥 涨星最快的插件
-（首次运行暂无历史快照，先展示近期活跃热门；从今日起积累星数变化）
-- **deepseek-harness** ⭐126999 — DeepSeek Harness 是 DeepSeek 开源的智能体运行框架，采用“一切都是插件”的架构，可通过 Web 界面启动和管理 AI 代理。
-- **modlens** ⭐2185 — 给 DeepSeek 等纯文字大模型加视觉能力的 DSH 插件，直接粘贴图片即可让模型读图并回答。
-- **DSH-better-sidebar** ⭐1538 — 为 DSH 网页端提供 VSCode 风格的右侧边栏（资源管理器/编辑器/终端/Git/浏览器），并支持其他插件扩展边栏标签页。
-- **dsh-TUI** ⭐1478 — 一个 Claude Code 风格的终端 TUI 插件，为 DeepSeek Harness 提供流式聊天界面、实时状态、会话管理和丰富快捷键操作。
-- **Aegis** ⭐1023 — Aegis 是一个让 AI 编码代理更可靠的方法包，通过强制执行“先对齐项目基线、完成时提供证据”的纪律，减少返工和代码改动风险。
-- **sandbase-harness** ⭐598 — 本地优先、自托管的 AI 智能体运行时，带沙箱、记忆、凭据管理和审计控制台，可作为 DSH 插件经 MCP 桥接使用。
-- **graph-memory** ⭐523 — Graph Memory 是一款为 DeepSeek Harness 设计的本地优先知识图谱记忆插件，能把跨会话的对话知识自动整理成可检索的图谱，显著减少上下文 token 占用。
-- **dsh-market** ⭐501 — dsh-market 是一个装在 DeepSeek Harness 里的可视化插件市场，让你像逛应用商店一样浏览、安装、更新社区插件，还带主题切换和备份恢复功能。
-- **dsh-vision-toolkit** ⭐497 — 为 DeepSeek Harness 纯文本模型提供图像问答、OCR、像素级定位、UI 还原与截图对比等视觉能力的原生插件。
-- **mnemon** ⭐457 — 为 AI 代理提供跨会话持久记忆的 DSH 插件，采用 LLM 监督与知识图谱技术。
+按「今日星数 − 昨日星数」排序（历史快照积累中）
+暂无
 
 ## ✨ 热门插件的更新
-- **deepseek-harness** ⭐126999 — DeepSeek Harness 是 DeepSeek 开源的智能体运行框架，采用“一切都是插件”的架构，可通过 Web 界面启动和管理 AI 代理。 [链接](https://github.com/deepseek-ai/deepseek-harness)
-- **modlens** ⭐2185 — 给 DeepSeek 等纯文字大模型加视觉能力的 DSH 插件，直接粘贴图片即可让模型读图并回答。 [链接](https://github.com/liustack/modlens)
-- **DSH-better-sidebar** ⭐1538 — 为 DSH 网页端提供 VSCode 风格的右侧边栏（资源管理器/编辑器/终端/Git/浏览器），并支持其他插件扩展边栏标签页。 [链接](https://github.com/omdsh-dev/DSH-better-sidebar)
-- **dsh-TUI** ⭐1478 — 一个 Claude Code 风格的终端 TUI 插件，为 DeepSeek Harness 提供流式聊天界面、实时状态、会话管理和丰富快捷键操作。 [链接](https://github.com/ccch1mneyyy/dsh-TUI)
-- **Aegis** ⭐1023 — Aegis 是一个让 AI 编码代理更可靠的方法包，通过强制执行“先对齐项目基线、完成时提供证据”的纪律，减少返工和代码改动风险。 [链接](https://github.com/GanyuanRan/Aegis)
-- **sandbase-harness** ⭐598 — 本地优先、自托管的 AI 智能体运行时，带沙箱、记忆、凭据管理和审计控制台，可作为 DSH 插件经 MCP 桥接使用。 [链接](https://github.com/sandbaseai/sandbase-harness)
-- **graph-memory** ⭐523 — Graph Memory 是一款为 DeepSeek Harness 设计的本地优先知识图谱记忆插件，能把跨会话的对话知识自动整理成可检索的图谱，显著减少上下文 token 占用。 [链接](https://github.com/adoresever/graph-memory)
-- **dsh-market** ⭐501 — dsh-market 是一个装在 DeepSeek Harness 里的可视化插件市场，让你像逛应用商店一样浏览、安装、更新社区插件，还带主题切换和备份恢复功能。 [链接](https://github.com/dsh-market/dsh-market)
-- **dsh-vision-toolkit** ⭐497 — 为 DeepSeek Harness 纯文本模型提供图像问答、OCR、像素级定位、UI 还原与截图对比等视觉能力的原生插件。 [链接](https://github.com/Anionex/dsh-vision-toolkit)
-- **mnemon** ⭐457 — 为 AI 代理提供跨会话持久记忆的 DSH 插件，采用 LLM 监督与知识图谱技术。 [链接](https://github.com/mnemon-dev/mnemon)
+今日暂无
 
 ---
 > 评估报告由 AI 生成，仅供参考，非安全认证。历史快照见 data/history/。

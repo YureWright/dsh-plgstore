@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-shop",
+  "analyzedAt": "2026-08-27T16:20:11.114Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-shop@0.4.6",
+      "evidence": "dsh plugin --profile web add dsh-plugin-shop@0.4.6"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 的插件商店，让你在 DSH 设置界面里浏览、搜索、安装、启用、禁用和更新其他 DSH 插件。它从 npm 上收集了 1800 多个插件，并显示作者写的简介。安装未审核的插件时需要你明确确认，安装后插件拥有和内置插件一样的权限。",
+      "level": "ok",
+      "risks": "它会访问网络来获取插件目录，并在本地缓存数据。安装插件时会调用 dsh plugin add 命令，这可能会修改你的 DSH 配置文件。它还会检查自身更新。没有发现明显的恶意行为。",
+      "postInstallNotes": "安装后需要重启 DSH 才能生效，然后进入设置里的插件商店标签页。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件商店，让你在设置界面里浏览、安装和管理 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 4359,
+      "completion_tokens": 343,
+      "total_tokens": 4702,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3847
+    }
+  }
+}

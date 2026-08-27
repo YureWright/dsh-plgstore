@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-usage-meter",
+  "analyzedAt": "2026-08-27T16:19:25.168Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，README 提供了 dsh plugin add 安装命令，且代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-usage-meter",
+      "evidence": "dsh plugin --profile web add dsh-plugin-usage-meter"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页版用的仪表盘插件，能实时显示你聊天时用了多少 token、花了多少钱、账户还剩多少余额。它还会画柱状图展示每天/每个模型的用量和费用，提醒你上下文快满了，帮你一键压缩，甚至能生成一张'梁祖'段位的分享卡片。它还会记录历史用量，按官方调价自动计算费用。",
+      "level": "ok",
+      "risks": "它会读取你本机浏览器里 platform.deepseek.com 的登录 token（用于显示官方账单），但只发往 DeepSeek 官方，不存到本地账本。它还会把用量数据存到本地文件（$DSH_HOME/usage-meter/ledger.json），但只存 token 数和模型名，不含对话内容。它会连接 DeepSeek 官方 API 查余额，连接 npm 检查更新，但都是正常操作。",
+      "postInstallNotes": "装完需要重启 dsh web 并刷新页面。可选：在 settings.yaml 里设置币种和每日预算；想显示官方账单的话，保持浏览器登录 platform.deepseek.com 或手动配置 DEEPSEEK_PLATFORM_TOKEN。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 网页插件，实时显示 API 用量、费用和余额，带图表、预算提醒和分享卡片。",
+    "usage": {
+      "prompt_tokens": 5514,
+      "completion_tokens": 426,
+      "total_tokens": 5940,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5002
+    }
+  }
+}

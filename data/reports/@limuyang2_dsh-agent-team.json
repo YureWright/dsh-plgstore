@@ -1,0 +1,34 @@
+{
+  "id": "@limuyang2/dsh-agent-team",
+  "analyzedAt": "2026-08-27T16:20:16.564Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了多个 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@limuyang2/dsh-agent-team",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add @limuyang2/dsh-agent-team"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里组建一个 AI 特工团队。你可以给每个成员分配不同的模型、工具和权限，让它们各自独立工作，但共享同一个工作区。比如一个负责规划的领导，一个负责写代码的，一个负责写提交信息的，它们各司其职，互不干扰。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和修改你的工作区文件（比如代码），但这是它功能的一部分。它不会偷偷上传你的数据到外部服务器。",
+      "postInstallNotes": "安装后需要重启 Harness。另外，你需要先在 Harness 里配置好模型和凭证，插件才能使用。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 中创建和管理多智能体团队，每个成员可独立配置模型、工具和权限，共享工作区协作。",
+    "usage": {
+      "prompt_tokens": 4123,
+      "completion_tokens": 350,
+      "total_tokens": 4473,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3611
+    }
+  }
+}

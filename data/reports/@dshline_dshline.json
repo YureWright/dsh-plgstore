@@ -1,0 +1,34 @@
+{
+  "id": "@dshline/dshline",
+  "analyzedAt": "2026-08-27T16:20:20.305Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dshline/dshline",
+      "evidence": "dsh plugin --profile dshline add @dshline/dshline"
+    },
+    "evaluationReport": {
+      "intro": "dshline 是一个终端界面插件，让 DeepSeek Harness 在终端里显示原生界面。它不自己运行 AI，而是把 Harness 的能力用终端界面展示出来，比如显示对话、工具调用等。装好后，你可以在终端里用 dsh 命令启动它。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是终端界面，不碰隐私文件，也不连外部服务器。",
+      "postInstallNotes": "装完后需要运行 dsh --profile dshline 来启动终端界面。",
+      "notes": "无"
+    },
+    "summaryZh": "dshline 是 DeepSeek Harness 的终端原生界面插件，让 Harness 能力在终端里以原生 UI 呈现。",
+    "usage": {
+      "prompt_tokens": 2722,
+      "completion_tokens": 314,
+      "total_tokens": 3036,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2210
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@goodandready/dsh-tts",
+  "analyzedAt": "2026-08-27T16:19:20.190Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@goodandready/dsh-tts",
+      "evidence": "dsh plugin --profile web add @goodandready/dsh-tts"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的网页界面把 AI 的回答朗读出来。你可以选择不同的语音服务（比如 OpenAI、谷歌、微软等），也可以使用免费的本地工具（比如 eSpeak）。它不会把你的 API 密钥传到浏览器，而是安全地保存在主机上。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会把 API 密钥保存在主机的凭证文件里，但不会发送到浏览器。它可能会调用外部语音服务（如 OpenAI、ElevenLabs 等），这些服务会收到你朗读的文本内容。",
+      "postInstallNotes": "安装后需要在设置里开启'朗读回复'功能，并选择语音服务提供商，填入相应的 API 密钥（如果使用云端服务）。如果使用本地免费服务，需要额外安装 edge-tts、piper 或 espeak-ng 等工具。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面提供文本转语音功能，支持多种云端和本地语音服务。",
+    "usage": {
+      "prompt_tokens": 2635,
+      "completion_tokens": 368,
+      "total_tokens": 3003,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2123
+    }
+  }
+}

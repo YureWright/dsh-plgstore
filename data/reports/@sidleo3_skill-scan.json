@@ -1,0 +1,34 @@
+{
+  "id": "@sidleo3/skill-scan",
+  "analyzedAt": "2026-08-27T16:20:04.142Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@sidleo3/skill-scan",
+      "evidence": "dsh plugin --profile <profile> add @sidleo3/skill-scan"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness (DSH) 用的，用来增强技能发现功能。它让你可以自定义扫描哪些文件夹来查找技能，比如当前目录、项目目录、上级目录或全局目录，还可以调整优先级。安装后，你可以在设置里配置这些扫描层和父目录，甚至可以选择替换或共存原有的技能发现方式。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只读取和扫描你指定的目录来查找技能，不会上传数据到外部服务器。",
+      "postInstallNotes": "安装后需要刷新 Web GUI，并在插件配置中设置扫描层和父目录。首次打开插件卡片时，需要选择替换还是共存模式。",
+      "notes": "无"
+    },
+    "summaryZh": "skill-scan 是一个可配置的 DSH 技能发现插件，支持多层级扫描和优先级调整。",
+    "usage": {
+      "prompt_tokens": 2766,
+      "completion_tokens": 334,
+      "total_tokens": 3100,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2254
+    }
+  }
+}

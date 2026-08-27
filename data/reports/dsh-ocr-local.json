@@ -1,0 +1,34 @@
+{
+  "id": "dsh-ocr-local",
+  "analyzedAt": "2026-08-27T16:19:24.917Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-ocr-local",
+      "evidence": "npx -y @deepseek-ai/dsh plugin --profile web add dsh-ocr-local"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加一个本地文字识别功能：你把截图、报错弹窗、聊天记录或文档照片粘贴进去，它就能把图片里的文字提取出来。完全离线、免费，图片不会上传到任何服务器，也不需要视觉大模型。支持终端和网页两种界面。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会创建虚拟环境、下载约20MB的识别模型到本地，并修改终端配置文件（如 Windows Terminal 键绑定，但会备份）。所有操作都在本地，图片不会离开你的电脑。",
+      "postInstallNotes": "安装后需要重启 dsh 才能生效。首次使用时，需要让 agent 运行 ocr_setup 工具来安装 OCR 环境（自动创建虚拟环境、下载模型）。TUI 端还需要运行一次安装脚本（install.ps1 或 install.sh）来配置粘贴键。",
+      "notes": "无"
+    },
+    "summaryZh": "本地 OCR 插件，支持 TUI 和 Web，完全离线识别图片文字。",
+    "usage": {
+      "prompt_tokens": 3680,
+      "completion_tokens": 382,
+      "total_tokens": 4062,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3168
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-gap-feed",
+  "analyzedAt": "2026-08-27T16:19:45.647Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-gap-feed",
+      "evidence": "dsh plugin --profile web add dsh-gap-feed"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 AI 思考很久的时候，往对话里插一条热点新闻或提醒卡片，让你等待时不无聊。它支持今日头条、GitHub 热门仓库和 B站热榜，还能在对话里说'提醒我 18:00 开会'来设置提醒。所有功能都可以在设置页面调整，不会打扰你。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取网络上的公开新闻源，并把提醒数据保存在你的用户目录下（~/.dsh），但不会上传你的私人数据。",
+      "postInstallNotes": "装完后重启 dsh web 或刷新页面即可生效。默认配置可能不需要改，但如果你想调整触发频率或黑名单，可以在设置页面改。",
+      "notes": "无"
+    },
+    "summaryZh": "一个在 AI 长时间思考时向对话流推送热点新闻或提醒卡片的 DSH 插件，低频率、不打扰。",
+    "usage": {
+      "prompt_tokens": 3064,
+      "completion_tokens": 342,
+      "total_tokens": 3406,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2552
+    }
+  }
+}

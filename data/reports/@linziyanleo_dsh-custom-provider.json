@@ -1,0 +1,34 @@
+{
+  "id": "@linziyanleo/dsh-custom-provider",
+  "analyzedAt": "2026-08-27T16:19:44.732Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@linziyanleo/dsh-custom-provider",
+      "evidence": "Install the published package directly into the DSH Web profile: npx @deepseek-ai/dsh plugin --profile web add @linziyanleo/dsh-custom-provider"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 里添加自定义的 AI 模型提供商。你可以通过网页设置界面或 settings.yaml 配置文件，添加自己的模型端点，选择不同的协议（OpenAI 兼容、Anthropic 等），并管理模型列表。配置好后，这些模型就会出现在 DSH 的模型选择器里，可以正常使用流式输出、工具调用等功能。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你的 settings.yaml 配置文件，但 API 密钥是通过 DSH 的凭据服务存储，不会明文保存在配置文件里。",
+      "postInstallNotes": "安装后需要在 DSH Web 的设置页面或 settings.yaml 中配置自定义提供商，包括 API 密钥、端点 URL 和模型列表。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，用于在 Web 设置界面或 settings.yaml 中配置自定义 AI 提供商（支持 OpenAI 兼容和 Anthropic 协议），并管理模型目录。",
+    "usage": {
+      "prompt_tokens": 4160,
+      "completion_tokens": 389,
+      "total_tokens": 4549,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3648
+    }
+  }
+}

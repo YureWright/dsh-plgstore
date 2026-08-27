@@ -1,0 +1,34 @@
+{
+  "id": "ccs-balance",
+  "analyzedAt": "2026-08-27T16:20:08.995Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime 和 @deepseek-ai/dsh-client-ui-slots，README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "ccs-balance",
+      "evidence": "dsh plugin add ccs-balance"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你查看和管理在 cc-switch 里各个 AI 服务商的余额，还能统计你在 DSH 里用掉的 token 数量和花费。它有三个页面：余额页显示每个服务商还剩多少钱，支持不同币种；用量页按天、月或总共统计 token 用量和花费，还有图表；会话页按会话查看每个对话的 token 和花费。适合想监控 AI 使用成本的人。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取 cc-switch 的数据库和 DSH 的会话记录，这些数据都在本地，不会上传到外部服务器。",
+      "postInstallNotes": "安装后，在侧边栏底部找到「CCS 余额」入口。如果服务商是美元计费，需要把汇率改成实际值（比如 7.2）；如果是按元计费就保持 1。每个服务商的币种可以在余额页设置。",
+      "notes": "无"
+    },
+    "summaryZh": "同步 cc-switch 余额并统计 DSH 会话 token 用量与花费的插件。",
+    "usage": {
+      "prompt_tokens": 2118,
+      "completion_tokens": 380,
+      "total_tokens": 2498,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1606
+    }
+  }
+}

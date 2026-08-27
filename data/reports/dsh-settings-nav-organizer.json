@@ -1,0 +1,34 @@
+{
+  "id": "dsh-settings-nav-organizer",
+  "analyzedAt": "2026-08-27T16:19:20.639Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-settings-nav-organizer",
+      "evidence": "dsh plugin --profile web add dsh-settings-nav-organizer"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你整理 DeepSeek Harness 的设置面板。当安装了很多插件时，设置侧边栏会变得很长，这个插件可以把所有第三方插件的入口折叠到一个可展开的组里，还能让你创建类似书签的命名分组，把设置项拖进去管理，并且可以一键折叠或展开。它还会自动根据市场分类或 AI 模型来给新插件分组，所有设置都会自动保存。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会把你的分组配置和折叠开关状态保存在浏览器的 localStorage 里，这些数据只存在你自己的电脑上，不会上传到任何服务器。如果你使用 AI 自动分类功能，需要配置 API key，这个 key 会保存在本地，但发送请求时会传给对应的 AI 服务商。",
+      "postInstallNotes": "安装后需要重启 dsh（主机部分），然后刷新浏览器页面，再打开设置面板（侧边栏底部的齿轮图标）进行使用。",
+      "notes": "无"
+    },
+    "summaryZh": "整理 DSH 设置面板导航的插件，可折叠第三方插件入口、创建书签式分组，并支持 AI 自动分类。",
+    "usage": {
+      "prompt_tokens": 2714,
+      "completion_tokens": 381,
+      "total_tokens": 3095,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2202
+    }
+  }
+}

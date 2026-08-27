@@ -1,0 +1,34 @@
+{
+  "id": "@alpacachen/dsh-kanban",
+  "analyzedAt": "2026-08-27T16:19:31.373Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@alpacachen/dsh-kanban",
+      "evidence": "dsh plugin --profile web add @alpacachen/dsh-kanban"
+    },
+    "evaluationReport": {
+      "intro": "这是一个看板插件，让你在 DeepSeek Harness 里直接管理任务。它会在对话旁边加一个“看板”标签页，你和 AI 可以一起创建卡片、拖拽排序、设置优先级和标签。AI 还能通过内置的 14 个工具帮你自动规划任务。每个工作区有独立的看板，数据会保存在本地磁盘。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会保存看板数据到本地磁盘，但这是正常功能。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后进入工作区，在对话视图旁边找到“看板”标签页即可使用。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-kanban 是一个为 DeepSeek Harness 设计的看板插件，提供可视化任务管理和 AI 协作功能。",
+    "usage": {
+      "prompt_tokens": 3160,
+      "completion_tokens": 318,
+      "total_tokens": 3478,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2648
+    }
+  }
+}

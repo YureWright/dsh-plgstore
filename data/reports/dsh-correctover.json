@@ -1,0 +1,34 @@
+{
+  "id": "dsh-correctover",
+  "analyzedAt": "2026-08-27T16:19:57.520Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且描述为 DSH 运行时安全插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-correctover",
+      "evidence": "Install with `dsh plugin add dsh-correctover`."
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 加安全防护的。它能检查 AI 工具调用，防止命令注入、SSRF（访问内网）、泄露密钥等风险，还会记录审计日志。默认只观察不拦截，你可以自己调成强制模式。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会监控工具调用和网络请求，但默认只记录日志，不主动拦截。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 运行时安全插件，提供 CCS 七维验证、命令注入/SSRF/凭据泄露防护、Ed25519 收据和审计功能。",
+    "usage": {
+      "prompt_tokens": 1810,
+      "completion_tokens": 276,
+      "total_tokens": 2086,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1298
+    }
+  }
+}

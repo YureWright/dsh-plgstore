@@ -1,0 +1,34 @@
+{
+  "id": "@xxxyz/dsh-mcp-manager",
+  "analyzedAt": "2026-08-27T16:19:50.765Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@xxxyz/dsh-mcp-manager@latest",
+      "evidence": "dsh plugin --profile web add @xxxyz/dsh-mcp-manager@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 的一个管理工具，让你能在设置界面里管理 MCP 服务器和技能。你可以添加、编辑、删除、启用或停用 MCP 服务器，还能查看它们的连接状态和工具数量。它也让你浏览和停用各种技能，不用手动改配置文件。另外，它还提供了一些给模型用的工具和 HTTP API，方便自动化操作。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会修改 DSH 的配置文件（cordis.patch.yml）和技能管理文件（dsh-skill-manager.json），但这是它正常功能的一部分。它可能通过 HTTP API 暴露管理功能，但默认没有开启 token 鉴权，如果你担心，可以设置 token 来保护写操作。",
+      "postInstallNotes": "装完后需要硬刷新浏览器（Cmd/Ctrl+Shift+R）才能看到设置里的新页面。如果你设置了 token，需要在设置页面输入或通过环境变量配置。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 MCP 服务器和技能管理器，提供图形界面和 API 来管理 MCP 服务与技能。",
+    "usage": {
+      "prompt_tokens": 4669,
+      "completion_tokens": 405,
+      "total_tokens": 5074,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4157
+    }
+  }
+}

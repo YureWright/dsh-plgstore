@@ -1,0 +1,34 @@
+{
+  "id": "@shendeguize/dsh-agent-sidecar",
+  "analyzedAt": "2026-08-27T16:20:11.786Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-client-runtime 等核心包，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@shendeguize/dsh-agent-sidecar",
+      "evidence": "dsh plugin --profile web add @shendeguize/dsh-agent-sidecar"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DSH 的网页界面里集中监控本机各种 AI 助手（比如 Cursor、Claude、Codex 等）的会话情况。你可以看到它们的运行状态、查看会话详情、甚至向某些助手发送消息（默认关闭），还能分析 AI 的回复是否被绕过。它还会自动管理一个后台服务（sidecar daemon），让监控更稳定。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要读取本机 AI 助手的会话数据，并通过本地服务进行监控。消息注入功能默认关闭，需要你手动开启。",
+      "postInstallNotes": "需要确保本机已安装 agent-sidecar CLI（可选，但推荐），否则插件只能读取已运行的 daemon。另外，如果使用 npm 镜像，可能需要配置 registry 指向官方源。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 原生插件，用于跨 agent 监控本机 AI 助手会话，提供看板、详情、注入和旁路分析等功能。",
+    "usage": {
+      "prompt_tokens": 5713,
+      "completion_tokens": 384,
+      "total_tokens": 6097,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5201
+    }
+  }
+}
