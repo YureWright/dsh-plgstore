@@ -1,0 +1,34 @@
+{
+  "id": "cleancache-plugin",
+  "analyzedAt": "2026-08-28T17:16:20.623Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-tools，README 提供了 DSH 安装和配置说明，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "cleancache-plugin",
+      "evidence": "npm install cleancache-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件，用来清理电脑上各种编程语言的缓存文件，比如 Python 的 __pycache__、Java 的编译缓存等。它有一个图形设置界面，你可以勾选要清理哪些类型的缓存，还能自定义规则。默认是演练模式，只告诉你哪些文件会被删，不会真的删，比较安全。",
+      "level": "ok",
+      "risks": "它会扫描并删除你指定目录下的缓存文件，默认是演练模式，但如果你勾选了高危项并执行，可能会误删重要文件。它会在浏览器本地存储（localStorage）保存你的设置，也会在 DSH 的存储目录写配置文件。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。另外，默认情况下 AI 不能直接调用清理工具，需要在 agent 预设中启用 tool-cleancache。",
+      "notes": "无"
+    },
+    "summaryZh": "一个带图形界面的 DSH 缓存清理插件，支持多种语言和自定义规则，默认演练模式安全。",
+    "usage": {
+      "prompt_tokens": 4708,
+      "completion_tokens": 347,
+      "total_tokens": 5055,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4196
+    }
+  }
+}

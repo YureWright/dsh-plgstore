@@ -1,0 +1,34 @@
+{
+  "id": "dsh-refine",
+  "analyzedAt": "2026-08-28T17:16:21.144Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖了 @deepseek-ai/dsh-home-paths 和 @deepseek-ai/dsh-typert-protocol，README 提供了安装到 dsh profile 的说明，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-refine",
+      "evidence": "README 中安装部分提到 'plugins: - dsh-refine'，且 package.json 的 name 为 dsh-refine，可通过 npm 安装。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的一个界面增强工具，主要提供一个 /refine 命令和一个设置面板。它能让你查看和管理 AI 自我改进的记录，比如浏览条目、查看历史、一键回滚到之前的版本，还能审计自动门控的决策。如果底层引擎没装，它也不会报错，而是给出操作提示。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要操作的是 dsh 的会话数据和配置文件，不会碰其他敏感文件。",
+      "postInstallNotes": "需要在 dsh 的配置文件（如 ~/.dsh/profiles/web/cordis.yml）中添加插件声明，并重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-refine 是 DeepSeek Harness 的 /refine 命令和设置面板插件，提供条目浏览、历史时间线、一键回滚和自动门控审计功能。",
+    "usage": {
+      "prompt_tokens": 2996,
+      "completion_tokens": 381,
+      "total_tokens": 3377,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2484
+    }
+  }
+}

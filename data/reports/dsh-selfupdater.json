@@ -1,0 +1,34 @@
+{
+  "id": "dsh-selfupdater",
+  "analyzedAt": "2026-08-28T17:16:03.967Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-client-connection 和 @deepseek-ai/dsh-client-runtime，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-selfupdater",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个用于 DeepSeek Harness 的自动更新插件，可以帮你一键更新 DSH 主程序和已安装的插件，无需手动操作。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 主程序与已装插件的一站式在线更新插件。",
+    "usage": {
+      "prompt_tokens": 1329,
+      "completion_tokens": 217,
+      "total_tokens": 1546,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 817
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-smooth-cursor",
+  "analyzedAt": "2026-08-28T17:16:08.847Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-client-* 包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-smooth-cursor",
+      "evidence": "dsh plugin --profile web add dsh-smooth-cursor"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DSH 的网页聊天输入框加一个彗星样式的光标，输入时光标会平滑滑动而不是闪烁，还带拖尾效果。你可以自己调颜色、粗细，开关特效。设置存在浏览器本地，不用重启。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只改输入框的光标样式，设置存在浏览器 localStorage，不会碰其他文件或连外部服务器。",
+      "postInstallNotes": "装完重启 dsh web，然后在设置 → 通用 → 输入光标 里配置。注意 DSH 版本要 >= 0.1.0-rc.8，否则插件加载不了。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 网页聊天输入框提供彗星动画光标的插件，支持自定义颜色和拖尾。",
+    "usage": {
+      "prompt_tokens": 2522,
+      "completion_tokens": 329,
+      "total_tokens": 2851,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2010
+    }
+  }
+}

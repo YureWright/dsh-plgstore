@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-security-review",
+  "analyzedAt": "2026-08-28T17:16:13.293Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-security-review",
+      "evidence": "dsh plugin --profile web add dsh-plugin-security-review"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 的安全审查守卫。它会在你安装或运行其他插件时，自动检查这些插件的代码有没有危险行为（比如偷密码、连外部服务器、搞乱系统），然后根据风险程度决定是放行、警告、还是直接拦下来。如果遇到需要你确认的情况，它会在浏览器里弹窗让你选择同意、拒绝，或者同意并加入白名单。它还能记录审查历史，方便你查看。",
+      "level": "ok",
+      "risks": "没发现明显风险。它本身是安全工具，会读取其他插件的源码和你的配置文件（比如 DSH 的存储目录），但这是为了做安全检查。它可能会在浏览器里弹窗，需要你点击确认。",
+      "postInstallNotes": "安装后重启 dsh web 即可生效。可选配置：在 <DSH_HOME>/storages/plugin-security-gate/config.json 中设置 askMode 为 'seam' 可回退到官方审批 UI。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件安装安全审查守卫，自动拦截危险插件并提供审批弹窗。",
+    "usage": {
+      "prompt_tokens": 5093,
+      "completion_tokens": 383,
+      "total_tokens": 5476,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4581
+    }
+  }
+}

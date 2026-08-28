@@ -1,0 +1,34 @@
+{
+  "id": "@eternalnight/dsh-theme",
+  "analyzedAt": "2026-08-28T17:16:05.152Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@eternalnight/dsh-theme",
+      "evidence": "dsh plugin --profile web add @eternalnight/dsh-theme"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页界面换背景用的。你可以选内置的主题配色，或者用自己电脑上的图片、视频当背景，视频还能跟着鼠标动。装好后在侧边栏底部有个'主题'按钮，点开就能切换，设置里也能管理。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你导入的图片和视频文件，并保存到插件自己的目录里，但不会上传到别处。",
+      "postInstallNotes": "装完需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "给 DeepSeek Harness 网页界面换背景的主题皮肤插件，支持内置主题、图片和动态视频背景。",
+    "usage": {
+      "prompt_tokens": 3217,
+      "completion_tokens": 305,
+      "total_tokens": 3522,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2705
+    }
+  }
+}

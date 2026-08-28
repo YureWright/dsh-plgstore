@@ -1,0 +1,34 @@
+{
+  "id": "dsh-mimir",
+  "analyzedAt": "2026-08-28T17:15:57.646Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 明确描述为 DSH 插件，符合插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mimir",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 dsh-mimir，且发布在 npm 上。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个学术研究助手插件，能帮你搜索 arXiv 论文、管理研究笔记、编译 LaTeX 文档，还能让独立的子代理审查你的研究过程。它把整个研究流程（从想法到论文）都整合到 DeepSeek Harness 里，适合做科研的人使用。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读写你指定的工作目录（默认 .research），可能调用系统上的 LaTeX 工具（如 latexmk、tectonic）来编译文档，还会访问 arXiv 的公开 API 来搜索论文。",
+      "postInstallNotes": "需要在配置中设置 workspaceDir（工作目录），并确保系统安装了 LaTeX 编译工具（latexmk 或 tectonic），否则编译功能无法使用。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-mimir 是一个学术研究助手插件，提供文献搜索、研究笔记、LaTeX 编译和独立审查功能。",
+    "usage": {
+      "prompt_tokens": 4255,
+      "completion_tokens": 354,
+      "total_tokens": 4609,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3743
+    }
+  }
+}

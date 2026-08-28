@@ -1,0 +1,34 @@
+{
+  "id": "@morlay/session-rdb",
+  "analyzedAt": "2026-08-28T17:15:58.081Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，明确是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@morlay/session-rdb",
+      "evidence": "dsh plugin --profile=web add \"@morlay/session-rdb\""
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，用来把会话数据保存到数据库（SQLite 或 PostgreSQL），这样你聊天记录不会丢，还能支持回退、重试、分叉等高级功能。简单说，就是给 AI 对话加个'存档'和'读档'的能力。",
+      "level": "caution",
+      "risks": "它会连接你配置的数据库（SQLite 文件或 PostgreSQL 服务器），需要你提供数据库连接信息。如果配置不当，数据库可能被外部访问。另外，安装时需要配置 GitHub Packages 的访问令牌，这个令牌如果泄露，别人可能访问你的私有包。",
+      "postInstallNotes": "需要在 settings.yaml 里配置数据库类型和连接信息（比如 SQLite 文件路径或 PostgreSQL 连接串），还要在 profile 的 .npmrc 里配置 GitHub Packages 的访问令牌。",
+      "notes": "包发布在 GitHub Packages，安装时需要额外配置 registry 和认证，可能增加安装复杂度。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供基于 SQLite/PostgreSQL 的持久化会话后端，支持会话分支（回退/重试/分叉）。",
+    "usage": {
+      "prompt_tokens": 2683,
+      "completion_tokens": 398,
+      "total_tokens": 3081,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2171
+    }
+  }
+}

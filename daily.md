@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-08-27）
+# 🛒 DSH 插件市场 · 每日日报（2026-08-28）
 
 ## 🆕 新推出的插件
-- **dshline** [链接](https://github.com/riesbri/dshline) — dshline 是 DeepSeek Harness 的终端原生界面插件，让 Harness 能力在终端里以原生 UI 呈现。
-- **dsh-evolution-host** [链接](https://github.com/lmzhen/dsh-evolution) — 为 DeepSeek Harness 提供自进化基础设施的插件包，本身不直接暴露模型接口，而是作为底层服务被其他插件消费。
-- **dsh-agent-team** [链接](https://github.com/limuyang2/agent-team) — 在 DeepSeek Harness 中创建和管理多智能体团队，每个成员可独立配置模型、工具和权限，共享工作区协作。
-- **dsh-messenger** [链接](https://github.com/syncended/deepseek-harness-messenger) — DSH 的 Telegram 桥接插件，让你通过聊天控制 DeepSeek Harness。
-- **rundao-brand**  — 润道星算品牌插件，替换 DSH 界面品牌并重定向 API 到润道云。
-- **dsh-agent-sidecar** [链接](https://github.com/shendeguize/agent_sidecar) — DSH 原生插件，用于跨 agent 监控本机 AI 助手会话，提供看板、详情、注入和旁路分析等功能。
-- **ccs-balance** [链接](https://github.com/kikomaotu/ccs-balance) — 同步 cc-switch 余额并统计 DSH 会话 token 用量与花费的插件。
-- **dsh-plugin-shop** [链接](https://github.com/LivXue/dsh-plugin-shop) — DSH 插件商店，让你在设置界面里浏览、安装和管理 DSH 插件。
-- **dsh-plugin-wallpaper** [链接](https://github.com/JerryPhoenixCKY/dsh-plugin-wallpaper) — 为 DeepSeek Harness 网页工作区设置自定义壁纸的插件，支持上传、裁剪、调整显示效果。
-- **skill-scan**  — skill-scan 是一个可配置的 DSH 技能发现插件，支持多层级扫描和优先级调整。
+- **deepseek-harness-opentui**  — DeepSeek Harness 的终端界面客户端，提供会话管理、流式渲染、工具卡片和权限审批等功能。
+- **cleancache-plugin**  — 一个带图形界面的 DSH 缓存清理插件，支持多种语言和自定义规则，默认演练模式安全。
+- **dsh-refine** [链接](https://github.com/dushaobindoudou/dsh-refine) — dsh-refine 是 DeepSeek Harness 的 /refine 命令和设置面板插件，提供条目浏览、历史时间线、一键回滚和自动门控审计功能。
+- **dsh-mv-session** [链接](https://github.com/birdmanhj/dsh-mv-session) — DSH 插件：安全迁移会话/工作区到新路径或新标题，支持备份、预览和只读验证。
+- **dsh-reasoning-efforts** [链接](https://github.com/bamboostrip/dsh-reasoning-efforts) — 为 DSH 自定义模型自动配置思考级别（reasoningEfforts）的插件，提供可视化设置界面和端点检测功能。
+- **dsh-conversation-ui** [链接](https://github.com/DamonBao/dsh-codex-suite) — DSH 的 Codex 风格对话界面增强插件，将对话重绘为有序事件流，支持打字机/提词器模式、智能滚动跟随和产物卡片。
+- **dsh-gsv-tts** [链接](https://github.com/TaoruiLiu19/dsh-gsv) — 为 DSH 接入本地 TTS 引擎，支持音色克隆、流式合成、自动朗读和一键朗读，全程本地运行。
+- **talon-ui** [链接](https://github.com/awnlight/talon-ui) — Talon 是一个为 DeepSeek Harness 代理设计的终端 UI 插件，提供流式转录、工具审批、用户提问和会话恢复等功能。
+- **dsh-plugin-security-review** [链接](https://github.com/ShanHaiFish/dsh-plugin-security-review) — DSH 插件安装安全审查守卫，自动拦截危险插件并提供审批弹窗。
+- **dsh-smooth-cursor** [链接](https://github.com/Lacquervii/smooth-cursor) — 为 DSH 网页聊天输入框提供彗星动画光标的插件，支持自定义颜色和拖尾。
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）

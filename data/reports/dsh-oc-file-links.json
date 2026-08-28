@@ -1,0 +1,34 @@
+{
+  "id": "dsh-oc-file-links",
+  "analyzedAt": "2026-08-28T17:15:55.981Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-oc-file-links",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DeepSeek Harness 的每一轮回答下面，显示该轮真正生成的文件和网址，方便你一键打开、预览或定位文件。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 中按轮次展示产出文件与网址的卡片插件。",
+    "usage": {
+      "prompt_tokens": 1380,
+      "completion_tokens": 212,
+      "total_tokens": 1592,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 868
+    }
+  }
+}

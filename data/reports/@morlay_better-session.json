@@ -1,0 +1,34 @@
+{
+  "id": "@morlay/better-session",
+  "analyzedAt": "2026-08-28T17:16:06.281Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且依赖了 @deepseek-ai/cordis 和 @deepseek-ai/dsh-invariants，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@morlay/better-session",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个 DSH 的配置包，它把几个功能模块组合在一起，让你在聊天会话中能实现回退（rewind）、重试（retry）和分支（fork）操作，并且这些操作会保存到数据库里，方便你管理会话历史。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是组合了其他几个包，没有看到执行安装脚本或连接外部服务器的迹象。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 配置包，组合了会话存储和界面操作，实现会话的回退、重试和分支功能。",
+    "usage": {
+      "prompt_tokens": 1382,
+      "completion_tokens": 272,
+      "total_tokens": 1654,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 870
+    }
+  }
+}

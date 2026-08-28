@@ -1,0 +1,34 @@
+{
+  "id": "@morlay/session-branch",
+  "analyzedAt": "2026-08-28T17:16:05.675Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/cordis 和 dsh-* 核心包，且 README 描述为 DSH 会话分支插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@morlay/session-branch",
+      "evidence": "README 安装命令：nub install @morlay/session-branch"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的会话增加了分支功能，就像给聊天记录加了个'时光机'：可以回退到之前的某个节点，或者从那个节点分叉出新会话，方便尝试不同的对话路径。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要操作会话数据，不碰个人文件或外部服务器。",
+      "postInstallNotes": "需要确保已安装 peer 依赖：@deepseek-ai/cordis、@deepseek-ai/dsh-session、@deepseek-ai/dsh-invariants、@deepseek-ai/dsh-session-persistence。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供会话分支、回退和重试能力的插件。",
+    "usage": {
+      "prompt_tokens": 2031,
+      "completion_tokens": 311,
+      "total_tokens": 2342,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1519
+    }
+  }
+}

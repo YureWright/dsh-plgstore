@@ -1,0 +1,34 @@
+{
+  "id": "dsh-gsv-tts",
+  "analyzedAt": "2026-08-28T17:16:18.764Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-tools 和 @deepseek-ai/schemastery，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-gsv-tts",
+      "evidence": "dsh plugin --profile web add dsh-gsv-tts"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DeepSeek Harness 说话！它连接一个本地运行的语音合成引擎（GSV-TTS-Lite），可以克隆音色、把文字变成语音，还能在每条助手消息旁边加一个朗读按钮，点一下就能听到回复。它还能自动朗读、一键启动或停止引擎，所有处理都在你自己的电脑上完成，不经过云端。",
+      "level": "ok",
+      "risks": "插件会启动本地 Python 进程（GSV-TTS-Lite 引擎），并可能通过 child_process 执行 pip 和 git 命令来安装引擎。它会读取和写入系统临时目录（%TEMP%/dsh-gsv-tts）来存放合成的音频文件。配置保存在 ~/.dsh/settings.yaml。没有发现明显的隐私泄露风险，但请注意它需要访问本地文件路径作为参考音频。",
+      "postInstallNotes": "安装后需要重启 DSH，然后在设置中启用插件。接着需要安装 GSV-TTS-Lite 引擎（可以自动或手动），启动引擎，并添加至少一个音色预设（需要提供参考音频路径等）。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 接入本地 TTS 引擎，支持音色克隆、流式合成、自动朗读和一键朗读，全程本地运行。",
+    "usage": {
+      "prompt_tokens": 4408,
+      "completion_tokens": 431,
+      "total_tokens": 4839,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3896
+    }
+  }
+}

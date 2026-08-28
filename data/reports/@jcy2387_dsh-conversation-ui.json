@@ -1,0 +1,34 @@
+{
+  "id": "@jcy2387/dsh-conversation-ui",
+  "analyzedAt": "2026-08-28T17:16:18.483Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@jcy2387/dsh-conversation-ui",
+      "evidence": "dsh plugin --profile web add @jcy2387/dsh-conversation-ui"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 的网页对话界面加一个 Codex 风格的增强皮肤。它会把对话变成一条有序的事件流，把思考过程、工具调用、重试、最终答案按顺序展示，还带打字机或提词器效果，自动跟随滚动，最后还能看到生成的文件和网站列表。装完之后不用额外配置，新对话自动生效。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只改对话界面的显示方式，不碰系统文件，也不连外部服务器。",
+      "postInstallNotes": "无。安装后发起新对话即自动启用，历史会话不受影响。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 的 Codex 风格对话界面增强插件，将对话重绘为有序事件流，支持打字机/提词器模式、智能滚动跟随和产物卡片。",
+    "usage": {
+      "prompt_tokens": 3865,
+      "completion_tokens": 352,
+      "total_tokens": 4217,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3353
+    }
+  }
+}

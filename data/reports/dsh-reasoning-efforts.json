@@ -1,0 +1,34 @@
+{
+  "id": "dsh-reasoning-efforts",
+  "analyzedAt": "2026-08-28T17:16:16.963Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://registry.npmjs.org/dsh-reasoning-efforts/-/dsh-reasoning-efforts-0.1.1.tgz",
+      "evidence": "Published/tarball install: pnpm pack # -> dsh-reasoning-efforts-0.1.0.tgz; dsh plugin --profile web add ./dsh-reasoning-efforts-0.1.0.tgz"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你在 DSH 的模型设置里，为自定义模型自动配置思考级别（reasoningEfforts），不用手动编辑 settings.yaml。它提供一个设置页面，可以一键切换思考级别，还能自动检测模型的能力和列出未配置的模型。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只修改你明确应用的 llm-pi-ai 设置字段，不碰 cordis.yml，卸载后无残留。",
+      "postInstallNotes": "安装后需要重启 DSH（或重新加载）才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 自定义模型自动配置思考级别（reasoningEfforts）的插件，提供可视化设置界面和端点检测功能。",
+    "usage": {
+      "prompt_tokens": 3117,
+      "completion_tokens": 369,
+      "total_tokens": 3486,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2605
+    }
+  }
+}

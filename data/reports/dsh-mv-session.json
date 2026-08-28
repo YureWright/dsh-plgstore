@@ -1,0 +1,34 @@
+{
+  "id": "dsh-mv-session",
+  "analyzedAt": "2026-08-28T17:16:16.351Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mv-session",
+      "evidence": "dsh plugin --profile web add dsh-mv-session"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你把 DSH 里的会话和工作区从一个路径迁移到另一个路径，或者改个标题。比如你重命名了工作区目录，旧会话还绑在旧路径上，用这个插件一步就能搞定，还会自动备份，防止出错。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会修改你的会话文件和工作区配置，但会先备份，而且有只读验证功能。",
+      "postInstallNotes": "安装后需要重启一次 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件：安全迁移会话/工作区到新路径或新标题，支持备份、预览和只读验证。",
+    "usage": {
+      "prompt_tokens": 2240,
+      "completion_tokens": 281,
+      "total_tokens": 2521,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1728
+    }
+  }
+}
