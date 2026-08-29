@@ -1,0 +1,34 @@
+{
+  "id": "@canonmsg/deepseek-harness-plugin",
+  "analyzedAt": "2026-08-29T11:32:52.394Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@canonmsg/deepseek-harness-plugin",
+      "evidence": "dsh plugin --profile my-dsh-profile add @canonmsg/deepseek-harness-plugin"
+    },
+    "evaluationReport": {
+      "intro": "这个插件把 Canon 消息应用接入 DeepSeek Harness，让你能用 Canon 应用来批准 AI 代理的操作、发消息，并在 DSH 界面之外多一个控制入口。它不替换 DSH 原有的网页界面，只是增加一个渠道。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取 ~/.canon 下的配置文件，但不会把项目工作区外的数据写入。它只处理消息和审批，不执行额外脚本。",
+      "postInstallNotes": "需要先注册 Canon 代理（运行 canon-dsh-register 命令），然后设置环境变量 CANON_AGENT 指向你的 Canon 配置，再启动 DSH。",
+      "notes": "无"
+    },
+    "summaryZh": "将 Canon 消息应用集成到 DeepSeek Harness，提供额外的消息和审批渠道。",
+    "usage": {
+      "prompt_tokens": 3479,
+      "completion_tokens": 335,
+      "total_tokens": 3814,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2967
+    }
+  }
+}

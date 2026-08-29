@@ -1,0 +1,34 @@
+{
+  "id": "@aiwayds/dsh-mcp-adapter",
+  "analyzedAt": "2026-08-29T11:32:52.641Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且描述为 dsh 插件，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@aiwayds/dsh-mcp-adapter",
+      "evidence": "dsh plugin --profile <name> add @aiwayds/dsh-mcp-adapter"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你省下很多 token。它把 MCP 工具的一大堆详细说明从每次对话的提示词里藏起来，换成两个简单的工具，你需要的时候再展开看。这样每次对话花的 token 就少多了，而且不影响你正常使用 MCP 工具。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会修改你的 dsh 配置文件（cordis.patch.yml 和 settings.yaml），但这是正常操作。",
+      "postInstallNotes": "需要在 cordis.patch.yml 里添加插件配置（见 README 的 Setup 部分），然后运行 dsh plugin add 命令安装。",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 设计的 MCP 适配器，通过折叠工具 schema 来节省 token，同时提供 mcp_list 和 mcp_call 两个元工具。",
+    "usage": {
+      "prompt_tokens": 3530,
+      "completion_tokens": 333,
+      "total_tokens": 3863,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3018
+    }
+  }
+}

@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-08-28）
+# 🛒 DSH 插件市场 · 每日日报（2026-08-29）
 
 ## 🆕 新推出的插件
-- **deepseek-harness-opentui**  — DeepSeek Harness 的终端界面客户端，提供会话管理、流式渲染、工具卡片和权限审批等功能。
-- **cleancache-plugin**  — 一个带图形界面的 DSH 缓存清理插件，支持多种语言和自定义规则，默认演练模式安全。
-- **dsh-refine** [链接](https://github.com/dushaobindoudou/dsh-refine) — dsh-refine 是 DeepSeek Harness 的 /refine 命令和设置面板插件，提供条目浏览、历史时间线、一键回滚和自动门控审计功能。
-- **dsh-mv-session** [链接](https://github.com/birdmanhj/dsh-mv-session) — DSH 插件：安全迁移会话/工作区到新路径或新标题，支持备份、预览和只读验证。
-- **dsh-reasoning-efforts** [链接](https://github.com/bamboostrip/dsh-reasoning-efforts) — 为 DSH 自定义模型自动配置思考级别（reasoningEfforts）的插件，提供可视化设置界面和端点检测功能。
-- **dsh-conversation-ui** [链接](https://github.com/DamonBao/dsh-codex-suite) — DSH 的 Codex 风格对话界面增强插件，将对话重绘为有序事件流，支持打字机/提词器模式、智能滚动跟随和产物卡片。
-- **dsh-gsv-tts** [链接](https://github.com/TaoruiLiu19/dsh-gsv) — 为 DSH 接入本地 TTS 引擎，支持音色克隆、流式合成、自动朗读和一键朗读，全程本地运行。
-- **talon-ui** [链接](https://github.com/awnlight/talon-ui) — Talon 是一个为 DeepSeek Harness 代理设计的终端 UI 插件，提供流式转录、工具审批、用户提问和会话恢复等功能。
-- **dsh-plugin-security-review** [链接](https://github.com/ShanHaiFish/dsh-plugin-security-review) — DSH 插件安装安全审查守卫，自动拦截危险插件并提供审批弹窗。
-- **dsh-smooth-cursor** [链接](https://github.com/Lacquervii/smooth-cursor) — 为 DSH 网页聊天输入框提供彗星动画光标的插件，支持自定义颜色和拖尾。
+- **wali-dsh-plugin** [链接](https://github.com/fuzhengwei/wali-dsh-plugin) — 一个给 DSH 网页版添加桌面宠物的插件，支持换形象、背景图和股票行情主题。
+- **deepseek-harness-plugin** [链接](https://github.com/HeyBobChan/canon-deepseek-harness-plugin) — 将 Canon 消息应用集成到 DeepSeek Harness，提供额外的消息和审批渠道。
+- **dsh-mcp-adapter** [链接](https://github.com/fan56/dsh-mcp-adapter) — 一个为 DeepSeek Harness 设计的 MCP 适配器，通过折叠工具 schema 来节省 token，同时提供 mcp_list 和 mcp_call 两个元工具。
+- **dsh-tauri-panel** [链接](https://github.com/dsh-tauri-desk/dsh-tauri-plugins) — dsh-tauri-panel 是 Tauri 桌面端的面板扩展插件，提供侧边栏面板注册和内容切换能力。
+- **dsh-hub-agent** [链接](https://github.com/dsh-ai-org/dsh-hub-agent) — DSH 插件市场的运行时 agent，收集插件清单和运行状态，可选匿名上报，并提供 Web UI 面板。
+- **dsh-tauri** [链接](https://github.com/dsh-tauri-desk/dsh-tauri-plugins) — dsh-tauri 是 DSH Tauri 桌面壳的基础插件，负责在网页界面和桌面导航栏之间同步侧边栏状态、历史导航等，并隐藏重复控件。
+- **dsh-cli-bridge** [链接](https://github.com/hviana/dsh-cli-bridge) — dsh-cli-bridge 是一个 DSH 插件，让 DeepSeek 能实时指挥 Claude Code 和 Codex 干活，全程可视化，支持多账号和自动合并。
+- **deepseek-harness-opentui**  — DeepSeek Harness - OpenTUI terminal interface
+- **cleancache-plugin**  — DSH plugin: Universal cache cleaner for Python, Java, C++, CMake, MSVC, Rust, Node.js, with collapsible categories and theme-adaptive UI.
+- **dsh-refine** [链接](https://github.com/dushaobindoudou/dsh-refine) — DeepSeek Harness (dsh) plugin: /refine command + settings panel for the dsh-continual-harness self-refinement engine — entry browsing, refinement history timeline, one-click rollback, auto-gate audit; engine optional at runtime.
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）

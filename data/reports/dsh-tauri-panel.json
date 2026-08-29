@@ -1,0 +1,34 @@
+{
+  "id": "dsh-tauri-panel",
+  "analyzedAt": "2026-08-29T11:32:48.487Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，且依赖了 @deepseek-ai/dsh-client-runtime 和 @deepseek-ai/dsh-client-ui-layout，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tauri-panel",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 dsh-tauri-panel，可通过 npm 安装。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 Tauri 桌面版 DeepSeek Harness 用的，它提供了一个面板扩展入口，让开发者可以往侧边栏加自定义面板，并且能切换面板内容和官方会话内容。目前它只是搭好了框架，具体面板组件还在开发中。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是提供客户端注入点，没有提到会访问用户文件或连接外部服务器。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-tauri-panel 是 Tauri 桌面端的面板扩展插件，提供侧边栏面板注册和内容切换能力。",
+    "usage": {
+      "prompt_tokens": 1967,
+      "completion_tokens": 303,
+      "total_tokens": 2270,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1455
+    }
+  }
+}

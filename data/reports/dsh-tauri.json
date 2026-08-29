@@ -1,0 +1,34 @@
+{
+  "id": "dsh-tauri",
+  "analyzedAt": "2026-08-29T11:32:48.588Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，并依赖 @deepseek-ai/dsh-client-runtime 和 @deepseek-ai/dsh-client-ui-layout，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-tauri",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 dsh-tauri，且为 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH Tauri 桌面壳的基础插件，主要功能是让网页版 DSH 界面和桌面壳的导航栏互相配合。比如，点桌面导航栏的侧边栏开关，网页里的侧边栏也会跟着开合；网页里的前进后退按钮，会控制桌面壳的浏览器历史记录。它还会把侧边栏的状态告诉桌面壳，并隐藏网页里和桌面导航栏重复的按钮，避免界面混乱。如果插件自己出问题，也会主动报告，不会悄悄失败。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要是在 DSH 界面和桌面壳之间传递消息，不直接碰用户文件或隐私。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-tauri 是 DSH Tauri 桌面壳的基础插件，负责在网页界面和桌面导航栏之间同步侧边栏状态、历史导航等，并隐藏重复控件。",
+    "usage": {
+      "prompt_tokens": 1919,
+      "completion_tokens": 367,
+      "total_tokens": 2286,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1407
+    }
+  }
+}

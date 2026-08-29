@@ -1,0 +1,34 @@
+{
+  "id": "dsh-hub-agent",
+  "analyzedAt": "2026-08-29T11:32:48.561Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-hub-agent",
+      "evidence": "dsh plugin --profile web add dsh-hub-agent"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DSH 插件市场的一个小助手，它会自动记录你当前安装的插件清单和运行状态，并保存到本地。它还可以选择性地匿名上报给 dsh-ai.org，帮助统计插件使用情况，但默认是关闭的。安装后，在 dsh web 界面右下角会多一个 Hub 面板，方便你查看和管理插件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它默认不上报数据，只写本地文件，不碰隐私。",
+      "postInstallNotes": "无。默认配置即可使用，如需开启匿名上报，可设置环境变量 DSH_HUB_AGENT_REPORT=1。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件市场的运行时 agent，收集插件清单和运行状态，可选匿名上报，并提供 Web UI 面板。",
+    "usage": {
+      "prompt_tokens": 1954,
+      "completion_tokens": 315,
+      "total_tokens": 2269,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1442
+    }
+  }
+}
