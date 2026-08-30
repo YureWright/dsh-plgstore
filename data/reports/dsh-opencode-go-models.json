@@ -1,0 +1,34 @@
+{
+  "id": "dsh-opencode-go-models",
+  "analyzedAt": "2026-08-30T10:25:37.707Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-opencode-go-models",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add dsh-opencode-go-models"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能自动同步 OpenCode Go 套餐的模型清单到 DSH 里，让 DSH 知道有哪些模型可用、哪些支持图片或视频输入。它会定期检查线上模型列表，有变化就更新本地文件，还能在卸载时恢复原状。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会修改 DSH 的模型配置文件（data/opencode-go.json），但会先备份，卸载时能恢复。它也会访问 opencode.ai 的公开接口拉取模型列表，但不会上传你的数据。",
+      "postInstallNotes": "装完需要重启 DSH 才能生效。同步模型后也需要重启才能看到新模型。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，自动同步 OpenCode Go 套餐的模型清单并标记多模态支持，带备份恢复功能。",
+    "usage": {
+      "prompt_tokens": 4336,
+      "completion_tokens": 336,
+      "total_tokens": 4672,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3824
+    }
+  }
+}

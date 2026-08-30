@@ -1,0 +1,34 @@
+{
+  "id": "@telosmaylx/dsh-session-notify",
+  "analyzedAt": "2026-08-30T10:25:26.816Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@telosmaylx/dsh-session-notify",
+      "evidence": "dsh plugin --profile web add @telosmaylx/dsh-session-notify"
+    },
+    "evaluationReport": {
+      "intro": "这个插件会在你使用 DeepSeek Harness 进行对话时，每当一轮对话结束（比如完成、出错、被阻塞等），自动提醒你。它会在浏览器里弹出系统通知和页面右下角的浮动提示，还会在会话日志里加一条可折叠的提示，告诉你这轮对话用了多长时间、消耗了多少 token。如果 AI 在对话中向你提问，它也会立刻弹窗提醒你，不用一直盯着屏幕。你还可以自定义通知的文案、语言和风格，内置了多种预设。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会请求浏览器通知权限，并可能读取会话信息（如标题、token 用量）用于生成通知内容。自定义预设会保存在浏览器 localStorage 中。",
+      "postInstallNotes": "安装后需要刷新一次浏览器页面，然后发起一轮对话，首次收到完成事件时浏览器会请求通知权限，允许后即可正常使用。可在设置面板中调整语言、文案模板等。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 会话完成提醒插件，在每轮对话结束或 AI 提问时推送浏览器通知和页内 toast，支持多语言和自定义文案。",
+    "usage": {
+      "prompt_tokens": 5687,
+      "completion_tokens": 403,
+      "total_tokens": 6090,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5175
+    }
+  }
+}

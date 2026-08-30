@@ -1,0 +1,34 @@
+{
+  "id": "@goodandready/dsh-russian-lang",
+  "analyzedAt": "2026-08-30T10:25:37.029Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-settings，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@goodandready/dsh-russian-lang",
+      "evidence": "dsh plugin --profile web add @goodandready/dsh-russian-lang"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 的网页界面加上俄语翻译。装上之后，你可以在设置里的语言菜单中选俄语，整个界面就会变成俄语。它还附带一些贴心功能：自动把引号改成俄式引号、修正键盘布局错误（比如你本来想打俄语却打成了英语）、给输入框加拼写检查等。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只修改浏览器里的界面显示，不碰系统文件，也不上传你的数据。",
+      "postInstallNotes": "装完后需要到 设置 → 通用 → 语言 里选择“Русский”才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页界面提供俄语本地化，并附带排版优化、键盘布局修正等增强功能。",
+    "usage": {
+      "prompt_tokens": 3142,
+      "completion_tokens": 342,
+      "total_tokens": 3484,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2630
+    }
+  }
+}

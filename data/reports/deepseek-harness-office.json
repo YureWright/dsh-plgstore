@@ -1,0 +1,34 @@
+{
+  "id": "deepseek-harness-office",
+  "analyzedAt": "2026-08-30T10:25:30.325Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-harness-office",
+      "evidence": "dsh plugin add deepseek-harness-office"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 能读写和编辑办公文档，包括 PPT、Word、Excel 和 PDF。你可以让它读取文档内容、创建新文档、修改文字或合并 PDF 等。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只处理你指定的文件，不会偷偷上传或修改其他文件。",
+      "postInstallNotes": "安装后需要重启会话，工具列表里会出现 office_pptx、office_docx、office_xlsx、office_pdf 这四个工具。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 办公文档插件，支持 PPTX/DOCX/XLSX/PDF 的读写、创建和编辑。",
+    "usage": {
+      "prompt_tokens": 3100,
+      "completion_tokens": 299,
+      "total_tokens": 3399,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2588
+    }
+  }
+}
