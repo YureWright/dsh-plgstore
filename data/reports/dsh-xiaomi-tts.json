@@ -1,0 +1,34 @@
+{
+  "id": "dsh-xiaomi-tts",
+  "analyzedAt": "2026-08-31T11:30:13.587Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-xiaomi-tts",
+      "evidence": "从 npm 安装 **（推荐）**：```bash dsh plugin --profile web add dsh-xiaomi-tts```"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的网页助手把回复用语音读出来，用的是小米的 MiMo 语音合成技术。你可以选不同的音色，甚至用文字描述来创造自己的声音。它还能自动清理要朗读的文本，去掉网址、代码块这些，让朗读更干净。",
+      "level": "ok",
+      "risks": "需要提供小米 MiMo 的 API Key，这个 Key 只存在服务器上，不会发给浏览器。朗读时会把回复内容发给小米的服务器。音频只在浏览器内存里播放，不会存到硬盘。没发现其他明显风险。",
+      "postInstallNotes": "安装后重启 dsh web，然后在设置里找到插件配置，填入小米 MiMo 的 API Key 并保存。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 网页助手添加小米 MiMo 语音朗读功能，支持多种音色和自定义声音。",
+    "usage": {
+      "prompt_tokens": 4366,
+      "completion_tokens": 360,
+      "total_tokens": 4726,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3854
+    }
+  }
+}

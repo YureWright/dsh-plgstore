@@ -1,0 +1,34 @@
+{
+  "id": "dsh-concurrency-guard",
+  "analyzedAt": "2026-08-31T11:30:15.682Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-client-runtime 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-concurrency-guard",
+      "evidence": "dsh plugin --profile web add dsh-concurrency-guard"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）用的，主要功能是监控和管理并发请求。它会统计所有正在进行的模型请求，按来源分类（比如主会话、子代理、插件等），当并发数达到上限时，新请求会排队等待，防止因为请求太多被供应商封号。它还提供了一个网页面板，可以实时查看并发情况、历史记录、异常统计等，也可以调整并发上限、清空历史等。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取和写入状态文件（默认在 DSH 主目录下），但这是正常功能。它不连接外部服务器，也不执行安装脚本。",
+      "postInstallNotes": "安装后需要重启 DSH 宿主，然后刷新 WebUI 才能看到「并发监控」页签。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 并发请求监控与门闩插件，防止并发超限被锁号，提供 WebUI 面板和 HTTP 接口。",
+    "usage": {
+      "prompt_tokens": 5389,
+      "completion_tokens": 366,
+      "total_tokens": 5755,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4877
+    }
+  }
+}

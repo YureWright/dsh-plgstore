@@ -1,0 +1,34 @@
+{
+  "id": "@ran-sh/dsh-vision",
+  "analyzedAt": "2026-08-31T11:30:25.318Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和 @deepseek-ai/dsh-llm，且描述明确为 DeepSeek Harness 的视觉服务接口，属于 DSH 插件生态的一部分。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 的视觉服务接口，它负责管理视觉相关的功能，比如让其他插件能接入不同的视觉服务提供商。它本身不包含具体的视觉服务，而是提供一个框架，让其他插件（比如 dsh-plugin-image-mind）来注册和提供视觉能力。",
+      "level": "ok",
+      "risks": "没发现明显风险。它不包含任何 API 密钥或外部连接，只是定义接口和注册机制。",
+      "postInstallNotes": "无。它通常作为其他插件的依赖自动安装，不需要单独配置。",
+      "notes": "经评估，这是一个 DSH 插件，但它是社区维护的，不是官方 DeepSeek 包。"
+    },
+    "summaryZh": "dsh-vision 是 DeepSeek Harness 的视觉服务接口插件，提供统一的视觉服务注册和发现机制。",
+    "usage": {
+      "prompt_tokens": 1641,
+      "completion_tokens": 318,
+      "total_tokens": 1959,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1129
+    }
+  }
+}

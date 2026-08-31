@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-08-30）
+# 🛒 DSH 插件市场 · 每日日报（2026-08-31）
 
 ## 🆕 新推出的插件
-- **dsh-home-paths** [链接](https://github.com/deepseek-ai/deepseek-harness) — 为 DeepSeek Harness 提供共享的文件系统路径辅助工具，帮助管理用户数据目录。
-- **deepseek-harness-office** [链接](https://github.com/Qithird/deepseek-harness-office) — DSH 办公文档插件，支持 PPTX/DOCX/XLSX/PDF 的读写、创建和编辑。
-- **dsh-password**  — DSH 插件：生成强密码或 Diceware 口令，支持多种参数，使用加密安全随机源。
-- **dsh-opencode-go-models**  — DSH 插件，自动同步 OpenCode Go 套餐的模型清单并标记多模态支持，带备份恢复功能。
-- **dsh-round-inject** [链接](https://github.com/Sharl210/dsh-round-inject) — 一个为 DeepSeek Harness 网页界面提供周期性提示词注入的插件，可自定义注入间隔和内容。
-- **forge-dsh** [链接](https://github.com/MjxUpUp/Forge) — 为 DeepSeek Harness 提供质量门禁的插件，通过 forge CLI 拦截危险操作并评分。
-- **dsh-session-notify** [链接](https://github.com/TelosmaYLX/dsh-session-notify) — DSH 会话完成提醒插件，在每轮对话结束或 AI 提问时推送浏览器通知和页内 toast，支持多语言和自定义文案。
-- **dsh-russian-lang** [链接](https://github.com/GooDAnDReaDY/dsh-russian-lang) — 为 DeepSeek Harness 网页界面提供俄语本地化，并附带排版优化、键盘布局修正等增强功能。
-- **wali-dsh-plugin** [链接](https://github.com/fuzhengwei/wali-dsh-plugin) — 一个给 DSH 网页版添加桌面宠物的插件，支持换形象、背景图和股票行情主题。
-- **deepseek-harness-plugin** [链接](https://github.com/HeyBobChan/canon-deepseek-harness-plugin) — Canon channel plugin for DeepSeek Harness
+- **dsh-tools** [链接](https://github.com/deepseek-ai/deepseek-harness) — DeepSeek Harness 的工具注册与执行管道，管理工具调用流程，支持权限控制、超时重试等。
+- **dsh-codex-auth** [链接](https://github.com/tnnevol/fn-os-apps) — 为 DeepSeek Harness 提供 ChatGPT OAuth 登录管理，支持 Codex 模型。
+- **dsh-router-codebuddy** [链接](https://github.com/CARVIN94/dsh-router-codebuddy) — 为 dsh-router 提供 CodeBuddy 供应商的 DSH 插件，支持 OAuth 登录、OpenAI 兼容聊天、token 自动刷新和签到积分。
+- **dsh-vision**  — dsh-vision 是 DeepSeek Harness 的视觉服务接口插件，提供统一的视觉服务注册和发现机制。
+- **wechat-clawbot**  — 将 DeepSeek Harness 连接到微信的官方 ClawBot 桥接插件，让你通过微信远程操控 AI 助手。
+- **dsh-refactoring-guide**  — DSH 插件，提供安全、增量、保持行为的重构指南技能。
+- **dsh-vera** [链接](https://github.com/VineLink-Lab/dsh-Vera) — VineLink 维护的 dsh 插件组合包，通过 Cordis 为 DeepSeek Harness 提供扩展功能。
+- **dsh-asciinema**  — DSH 插件，用于录制终端输出为 asciinema 格式并支持离线回放和 HTML 导出。
+- **dsh-audiogen** [链接](https://github.com/shimingming520/dsh-audiogen) — 为 DSH 网页界面提供 AI 音频生成功能，支持多服务商的 TTS、音乐、音效和声音设计，并集成 Agent 工具和资源库。
+- **dsh-privmask** [链接](https://github.com/JunyuZhan/dsh-privmask) — dsh-privmask 是一个本地脱敏插件，在请求发往云端前替换敏感信息，并在返回时还原，保护隐私。
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）

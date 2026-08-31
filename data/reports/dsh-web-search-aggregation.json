@@ -1,0 +1,34 @@
+{
+  "id": "dsh-web-search-aggregation",
+  "analyzedAt": "2026-08-31T11:30:14.319Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 给出 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-web-search-aggregation",
+      "evidence": "From the npm registry (prebuilt — no build permission needed): dsh plugin --profile web add dsh-web-search-aggregation"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个聚合网页搜索功能。它把多个搜索服务（比如 AnySearch、Tavily、Brave 等）排成一个队列，按顺序尝试，哪个先成功就用哪个的结果。每个服务可以配多个 API 密钥，自动轮换，一个失败就换下一个。默认配置下，即使不填任何密钥也能用（AnySearch 允许匿名访问）。你可以在设置界面里调整队列顺序、添加密钥、改超时时间等。",
+      "level": "ok",
+      "risks": "它会向配置的搜索服务发送你的搜索请求，这些请求会经过外部服务器。你提供的 API 密钥会存储在 DSH 的凭据区域，不会明文显示在日志里。没有发现其他明显风险。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。之后可以在设置 → 插件 → 插件配置 → 聚合网页搜索 里调整队列和密钥。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供聚合网页搜索，支持多服务队列、多密钥轮换和自动回退。",
+    "usage": {
+      "prompt_tokens": 4363,
+      "completion_tokens": 402,
+      "total_tokens": 4765,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3851
+    }
+  }
+}

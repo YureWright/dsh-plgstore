@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-admin",
+  "analyzedAt": "2026-08-31T11:30:15.260Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 描述了作为 dsh web UI 插件的功能，明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-admin",
+      "evidence": "README 未明确给出安装命令，但 package.json 中 name 为 dsh-plugin-admin，且描述为 dsh web UI 插件，可通过 npm 安装。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness（DSH）的网页界面加管理功能的。它能在设置里增加几个新页面：一个扩展插件市场页，可以安装、卸载、更新插件；一个 MCP 服务器管理页，可以添加、测试、删除 MCP 服务器；一个子智能体管理页，可以创建、编辑、删除子智能体，还能挂载外部命令行工具；一个命令与钩子管理页，可以管理斜杠命令和钩子；还有一个历史会话页，可以查看、搜索、删除会话。另外，在侧边栏的会话和工作区上点右键，还能复制会话 ID、删除会话、在文件管理器中打开工作区。",
+      "level": "ok",
+      "risks": "这个插件会修改你的 DSH 配置文件（比如 package.json 和 cordis.patch.yml），还会在 profile 目录下运行 pnpm 命令来安装或卸载插件。它也会读写一些数据文件，比如命令和钩子配置文件（默认在 ~/.dsh/ 下），以及子智能体的配置和台账文件。它可能会启动子进程（比如 MCP 服务器或 CLI 后端），这些进程可能会访问网络或执行命令。不过，它看起来是正常的管理功能，没有发现明显的恶意行为。",
+      "postInstallNotes": "安装后可能需要重启 DSH 才能生效。另外，如果你之前装过 dsh-plugin-subagents 或 dsh-command-hook-admin 插件，需要先卸载它们，避免冲突。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页管理插件，提供扩展插件市场、MCP 服务器、子智能体、命令与钩子、历史会话等管理功能。",
+    "usage": {
+      "prompt_tokens": 5547,
+      "completion_tokens": 516,
+      "total_tokens": 6063,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5035
+    }
+  }
+}

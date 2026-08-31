@@ -1,0 +1,34 @@
+{
+  "id": "@tnnevol/dsh-codex-auth",
+  "analyzedAt": "2026-08-31T11:30:27.162Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@tnnevol/dsh-codex-auth",
+      "evidence": "dsh plugin --profile web add @tnnevol/dsh-codex-auth"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的网页界面里，用 ChatGPT 账号登录（OAuth），这样就能用 OpenAI 的 Codex 模型。它会帮你生成一次性授权码，你拿去 Codex 授权页面提交，登录后它会把登录状态同步到模型列表里。还提供一些设置选项，比如图片识别开关。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读写 DSH 的配置文件（比如 $DSH_HOME/.openai-codex-auth.json），这是正常功能。",
+      "postInstallNotes": "安装后需要重启 Web profile。如果之前装过旧的 dsh-codex-connect 插件，要先停用旧插件再启用这个，避免冲突。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 ChatGPT OAuth 登录管理，支持 Codex 模型。",
+    "usage": {
+      "prompt_tokens": 3095,
+      "completion_tokens": 347,
+      "total_tokens": 3442,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2583
+    }
+  }
+}

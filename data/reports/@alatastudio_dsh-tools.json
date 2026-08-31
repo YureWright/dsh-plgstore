@@ -1,0 +1,34 @@
+{
+  "id": "@alatastudio/dsh-tools",
+  "analyzedAt": "2026-08-31T11:30:31.658Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 peerDependencies 包含 @deepseek-ai/cordis 和多个 @alatastudio/dsh-* 核心包，且 README 描述的是 DSH 的工具注册与执行管道，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@alatastudio/dsh-tools",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 字段为 @alatastudio/dsh-tools，且发布在 npm 上。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是 DeepSeek Harness 的核心工具管理模块，负责管理各种工具（比如代码执行、文件操作等）的注册和调用流程。它让 AI 助手能安全地调用工具，并支持自定义工具的权限控制、超时和重试等。普通用户不需要直接操作它，它通常作为其他插件的基础。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要管理工具调用流程，不直接访问用户文件或网络，但作为核心模块，如果配置不当可能影响 AI 助手的工具使用。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 的工具注册与执行管道，管理工具调用流程，支持权限控制、超时重试等。",
+    "usage": {
+      "prompt_tokens": 3678,
+      "completion_tokens": 340,
+      "total_tokens": 4018,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3166
+    }
+  }
+}
