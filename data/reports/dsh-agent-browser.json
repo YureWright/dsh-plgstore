@@ -1,0 +1,34 @@
+{
+  "id": "dsh-agent-browser",
+  "analyzedAt": "2026-09-01T09:52:50.989Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-tools，README 给出 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-agent-browser",
+      "evidence": "dsh plugin --profile web add dsh-agent-browser"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DSH 助手能控制你的 Chrome 浏览器，比如打开网页、点击按钮、填写表单、截图等，还能在 DSH 的网页界面上实时看到浏览器画面，必要时你可以手动接管操作。",
+      "level": "ok",
+      "risks": "它会启动和控制 Chrome 浏览器，可能访问你指定的网站，并读取网页内容。默认会隐藏 cookie，但如果你允许，它可能访问内部网站。需要你手动允许某些域名。",
+      "postInstallNotes": "需要先修改 ~/.dsh/profiles/web/pnpm-workspace.yaml 允许 agent-browser 的构建脚本，然后安装插件，重启 DSH web profile。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 原生浏览器自动化插件，提供九个 browser_* 工具和实时视图面板，支持人工接管。",
+    "usage": {
+      "prompt_tokens": 2358,
+      "completion_tokens": 327,
+      "total_tokens": 2685,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1846
+    }
+  }
+}

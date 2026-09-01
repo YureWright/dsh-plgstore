@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-voice",
+  "analyzedAt": "2026-09-01T09:52:55.072Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 @deepseek-ai/dsh，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-voice",
+      "evidence": "dsh plugin --profile web add dsh-plugin-voice"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DeepSeek Harness 助手用语音和你说话，还能发桌面通知和提示音。比如你让它查完项目状态后叫你，它就会用语音喊你回来。它支持两种云端语音合成（小米和火山），如果没网或没配置会自动用 Windows 自带的离线语音，不会报错。你还可以在设置面板里调音色、音量、语速，甚至设置不同场景的提示音。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要调用云端 TTS 服务（需要你提供 API Key），这些 Key 会存在本地配置里，不会上传到其他地方。",
+      "postInstallNotes": "装完后需要重启 DSH（dsh web）。如果要使用云端语音，需要去对应平台申请 API Key 并在设置面板或环境变量里配置；不配置也能用，会自动用 Windows 离线语音。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 语音通知插件：让助手通过云端 TTS 或 Windows 离线语音主动叫你，支持桌面通知和提示音。",
+    "usage": {
+      "prompt_tokens": 2636,
+      "completion_tokens": 372,
+      "total_tokens": 3008,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2124
+    }
+  }
+}

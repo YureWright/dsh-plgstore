@@ -1,0 +1,34 @@
+{
+  "id": "dsh-api-designer",
+  "analyzedAt": "2026-09-01T09:52:55.346Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/your-username/dsh-api-designer.git",
+      "evidence": "README 中 Option A 提到 'dsh plugin --profile web add github:your-username/dsh-api-designer'，但实际仓库地址未知，故采用 git 方式。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，它会把一套 API 设计的最佳实践（比如怎么设计 REST 或 GraphQL 接口、怎么处理版本控制、分页、错误格式等）注入到 AI 助手的系统提示里，这样 AI 在帮你设计或审查 API 时就能给出更专业的建议。装好后不用配置，自动生效。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是往系统提示里加了一段文字，不会碰你的文件或连外部服务器。",
+      "postInstallNotes": "装完后需要重启 DSH 的 web 服务器（运行 dsh web），然后刷新浏览器。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DSH 注入 API 设计技能，让 AI 助手在 REST/GraphQL 设计上更专业。",
+    "usage": {
+      "prompt_tokens": 2011,
+      "completion_tokens": 345,
+      "total_tokens": 2356,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1499
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "deepseek-harness-dingtalk",
+  "analyzedAt": "2026-09-01T09:52:58.437Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/sliverp/DeepSeek-harness-dingtalk.git",
+      "evidence": "README 中安装命令为 `pnpm dsh plugin --profile web add github:sliverp/DeepSeek-harness-dingtalk`，但该命令使用 GitHub 简写，实际安装应使用 git+https 格式。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的钉钉机器人接入 DeepSeek Harness，通过钉钉的官方流式接口收发消息，支持文字、图片、文件等，还能在钉钉里审批工具调用。",
+      "level": "ok",
+      "risks": "插件会连接钉钉服务器，需要提供 Client ID 和 Client Secret（相当于账号密码），这些信息会存在本地配置里。文件会存到工作目录，有大小限制。没有发现其他明显风险。",
+      "postInstallNotes": "需要在钉钉开发者后台创建应用并获取 Client ID 和 Client Secret，然后设置环境变量 DINGTALK_CLIENT_ID 和 DINGTALK_CLIENT_SECRET，或写入 ~/.dsh/.env 文件。",
+      "notes": "无"
+    },
+    "summaryZh": "钉钉渠道插件，让 DeepSeek Harness 通过钉钉机器人收发消息和文件。",
+    "usage": {
+      "prompt_tokens": 3478,
+      "completion_tokens": 390,
+      "total_tokens": 3868,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2966
+    }
+  }
+}

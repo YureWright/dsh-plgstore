@@ -1,0 +1,34 @@
+{
+  "id": "@tianbuyu-wwx/dsh-formatforge",
+  "analyzedAt": "2026-09-01T09:52:44.242Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 peerDependencies 依赖 @deepseek-ai/dsh-tools 和 @deepseek-ai/dsh-skill-filesystem，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@tianbuyu-wwx/dsh-formatforge",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把各种文件格式（比如 PDF、Word、Excel、PPT、邮件等）转换成 AI 能读懂的格式，方便 DeepSeek Harness 处理。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "FormatForge 是一个 DSH 插件，用于将多种文件格式转换为 AI 可读的结构化数据。",
+    "usage": {
+      "prompt_tokens": 1621,
+      "completion_tokens": 242,
+      "total_tokens": 1863,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1109
+    }
+  }
+}

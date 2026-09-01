@@ -1,0 +1,34 @@
+{
+  "id": "deepseek-harness-lark",
+  "analyzedAt": "2026-09-01T09:52:59.192Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 配置，依赖了 @deepseek-ai/cordis 和多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "github:sliverp/DeepSeek-harness-lark",
+      "evidence": "README 中安装命令为 `pnpm dsh plugin --profile web add github:sliverp/DeepSeek-harness-lark`"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DeepSeek Harness 机器人接入飞书或 Lark 聊天，支持收发文字、图片和文件，还能在聊天里直接批准工具操作。它使用官方 WebSocket 连接，不需要公网服务器。",
+      "level": "ok",
+      "risks": "它会下载用户发送的图片和文件到工作目录下的 .dsh-lark/inbox/ 文件夹，并可能上传文件到 Lark。需要配置 App ID 和 App Secret，这些是敏感信息，不要泄露。",
+      "postInstallNotes": "需要在飞书开发者后台创建应用并配置权限，然后设置 LARK_APP_ID 和 LARK_APP_SECRET 环境变量或通过 Harness 凭据服务存储。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 的飞书/Lark 聊天插件，支持文本、图片、文件收发和工具审批。",
+    "usage": {
+      "prompt_tokens": 3721,
+      "completion_tokens": 366,
+      "total_tokens": 4087,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3209
+    }
+  }
+}

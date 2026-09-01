@@ -1,0 +1,34 @@
+{
+  "id": "dsh-command-code-review",
+  "analyzedAt": "2026-09-01T09:52:46.187Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-command-code-review",
+      "evidence": "From the npm registry: `dsh plugin --profile web add dsh-command-code-review`"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的斜杠命令插件，装上之后你可以在聊天里输入 /code-review 来让 AI 帮你审查代码。它既能审查 GitHub 上的 Pull Request，也能审查你本地的代码。它会用多个角度（比如是否符合规范、有没有 bug、安不安全等）来看代码，然后给每个问题打分，告诉你哪些是真问题、严重程度如何。审查结果会直接显示在聊天里，如果是 PR 还会自动回复到 PR 上。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在你本地运行代码审查，可能会读取你指定的代码文件，但不会上传到外部服务器（除了审查 PR 时通过 gh 命令与 GitHub 交互）。",
+      "postInstallNotes": "装完后需要重启或重新启动对应的 dsh profile 才能生效。如果要审查 PR，还需要在系统里安装并登录 GitHub CLI（gh）。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 斜杠命令插件，提供 /code-review 命令，支持多角度审查 PR 和本地代码，并给出置信度和严重性评分。",
+    "usage": {
+      "prompt_tokens": 3365,
+      "completion_tokens": 388,
+      "total_tokens": 3753,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2853
+    }
+  }
+}

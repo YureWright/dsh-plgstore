@@ -1,0 +1,34 @@
+{
+  "id": "dsh-tool-memory-manager",
+  "analyzedAt": "2026-09-01T09:52:48.148Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/your-username/dsh-tool-memory-manager.git",
+      "evidence": "README 中安装步骤为 git clone https://github.com/your-username/dsh-tool-memory-manager.git"
+    },
+    "evaluationReport": {
+      "intro": "这个插件帮你管理 AI 工具的使用记忆，比如记录哪些工具常用、设置提醒让 AI 主动用它们，还能编辑技能文件、查看记忆历史、一键切换工具组合，甚至自动学习你的偏好。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "安装后需要在 cordis.patch.yml 中添加配置（见 README），并可能需要手动创建配置文件 ~/.dsh/tool-memory-manager/config.json。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，用于可视化管理 AI 工具使用记忆、技能配置和提示词笔记。",
+    "usage": {
+      "prompt_tokens": 2058,
+      "completion_tokens": 290,
+      "total_tokens": 2348,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1546
+    }
+  }
+}

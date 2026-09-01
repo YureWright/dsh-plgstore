@@ -1,0 +1,34 @@
+{
+  "id": "dsh-observe",
+  "analyzedAt": "2026-09-01T09:52:45.801Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dshWorkshop 字段，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-observe",
+      "evidence": "dsh plugin --profile web add dsh-observe"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 DeepSeek Harness 的运行过程（每一步、工具调用、大模型请求）变成标准的监控数据，发给 OpenTelemetry 或 Langfuse 这类监控平台，方便你查看 token 消耗、费用和调用详情。它默认关闭，需要你主动开启并配置后端地址。",
+      "level": "ok",
+      "risks": "它会读取你的会话数据（包括大模型请求和回复），但默认会脱敏（去掉敏感字段、截断内容）后才发送。它需要联网把数据发到配置的监控服务器，所以你的会话元数据（比如模型、耗时）会被外部看到。它还会在本地写一些缓存文件（离线缓冲），但不会碰其他隐私文件。",
+      "postInstallNotes": "装完后需要在 cordis.yml 里配置至少一个后端（OTLP 或 Langfuse），并设置 enabled: true，然后重启 DSH 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-observe 是一个 DSH 可观测性插件，能把会话事件转为 OpenTelemetry 和 Langfuse 的追踪与指标，支持脱敏、缓冲和重试。",
+    "usage": {
+      "prompt_tokens": 4455,
+      "completion_tokens": 391,
+      "total_tokens": 4846,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3943
+    }
+  }
+}

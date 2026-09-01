@@ -1,0 +1,34 @@
+{
+  "id": "@flowingspring/dsh-workspace-memory",
+  "analyzedAt": "2026-09-01T09:52:45.447Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@flowingspring/dsh-workspace-memory@0.2.14",
+      "evidence": "dsh plugin --profile web add --config.minimumReleaseAge=0 @flowingspring/dsh-workspace-memory@0.2.14"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 增加了一个按项目（工作区）隔离的长期记忆功能。它能让 AI 助手记住你在不同项目里确认过的事实、技术决策、工作习惯和偏好，下次对话时还能用上。不同项目的记忆互不混淆，全局偏好可以跨项目共享。你可以在设置里查看、修改、删除记忆，还能看到历史版本。它不需要额外装数据库，安装后正常对话就行。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会把记忆数据保存在你电脑的 ~/.dsh/workspace-memory 目录（或 DSH_HOME 指定的目录），不会写进项目目录。它会读取对话内容来整理记忆，但会过滤掉像密码之类的敏感信息，并在显示时脱敏。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后在设置里找到“记忆”页面，正常对话即可。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供按工作区隔离的长期记忆，支持检索、纠错和审计。",
+    "usage": {
+      "prompt_tokens": 4144,
+      "completion_tokens": 413,
+      "total_tokens": 4557,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3632
+    }
+  }
+}

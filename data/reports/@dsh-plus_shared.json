@@ -1,0 +1,34 @@
+{
+  "id": "@dsh-plus/shared",
+  "analyzedAt": "2026-09-01T09:52:49.215Z",
+  "result": {
+    "classification": {
+      "type": "other",
+      "confidence": 0.95,
+      "reason": "package.json 描述明确写着 'not a dsh plugin'，且无 dsh.bundle/client 声明，仅作为共享辅助库。"
+    },
+    "install": {
+      "method": "none",
+      "packageSpec": null,
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个名为 shared 的共享辅助库，属于 dsh-plus 工作区的一部分，提供一些纯函数和工具，供其他插件或项目使用。它不是可以直接安装的 DSH 插件，更像是一个开发依赖。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "经评估可能并非 DSH 插件（理由：package.json 描述明确说明 'not a dsh plugin'，且无插件入口声明）。"
+    },
+    "summaryZh": "dsh-plus 工作区的共享辅助库，非 DSH 插件。",
+    "usage": {
+      "prompt_tokens": 1309,
+      "completion_tokens": 240,
+      "total_tokens": 1549,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 797
+    }
+  }
+}

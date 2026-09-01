@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-model-proxy",
+  "analyzedAt": "2026-09-01T09:52:49.994Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.98,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-llm，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-model-proxy",
+      "evidence": "dsh plugin --profile <name> add dsh-plugin-model-proxy"
+    },
+    "evaluationReport": {
+      "intro": "这个插件可以让你给特定的模型（比如某个供应商的某个模型）单独设置代理，其他模型不受影响。比如某个模型直连会报错，但其他模型正常，你就可以只给这个模型走代理。它有一个设置界面，也可以改配置文件。支持 http、https、socks5 等代理协议。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只是包装了网络请求，不会碰你的隐私文件。代理密码可以存在 DSH 的凭据服务里，也可以写在配置里。",
+      "postInstallNotes": "装完后需要到设置界面（Settings → Plugins → Model Proxy）或编辑 ~/.dsh/settings.yaml 来配置代理规则。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件：为特定模型单独配置代理（http/https/socks5），带设置界面，不影响其他模型。",
+    "usage": {
+      "prompt_tokens": 3563,
+      "completion_tokens": 346,
+      "total_tokens": 3909,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3051
+    }
+  }
+}

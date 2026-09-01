@@ -1,0 +1,34 @@
+{
+  "id": "dsh-harness-one",
+  "analyzedAt": "2026-09-01T09:53:02.019Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，并依赖了 dsh-better-sidebar 等 DSH 相关包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-harness-one",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个用于 DeepSeek Harness 的可视化 AI 工作流编排插件，可以让你用图形化方式创建多智能体 DAG 工作流，支持实时执行、故障恢复，还能集成飞书。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-harness-one 是一个可视化 AI 工作流编排插件，支持多智能体 DAG、实时执行和飞书集成。",
+    "usage": {
+      "prompt_tokens": 1664,
+      "completion_tokens": 241,
+      "total_tokens": 1905,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1152
+    }
+  }
+}
