@@ -1,0 +1,34 @@
+{
+  "id": "dsh-stability-audit",
+  "analyzedAt": "2026-09-02T09:24:13.616Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，README 提供了 dsh plugin add 安装命令，且功能是扫描 DSH 插件稳定性，明显是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-stability-audit",
+      "evidence": "dsh plugin --profile web add dsh-stability-audit"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你检查已安装的 DeepSeek Harness 插件是否稳定，会不会搞坏你的工具链。它会扫描每个插件，给出红黄绿评级和修复建议，让你在安装或保留插件前心里有数。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只做静态扫描，不会运行被检查的插件，也不会修改你的配置。",
+      "postInstallNotes": "安装后需要重启 dsh web，然后让 agent 调用 stability_audit 工具，或用命令行 node cli.mjs 扫描。",
+      "notes": "无"
+    },
+    "summaryZh": "扫描已安装 DSH 插件的稳定性风险并给出评级和修复建议。",
+    "usage": {
+      "prompt_tokens": 3210,
+      "completion_tokens": 290,
+      "total_tokens": 3500,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2698
+    }
+  }
+}

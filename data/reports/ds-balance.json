@@ -1,0 +1,34 @@
+{
+  "id": "ds-balance",
+  "analyzedAt": "2026-09-02T09:24:18.317Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且 README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "ds-balance",
+      "evidence": "npm install ds-balance\ndsh plugin --profile web add ds-balance"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你实时查看 DeepSeek API 的余额和每次调用的花费。它会在侧边栏显示余额和今日消费，每 30 秒更新一次。它还会记录每次调用的成本，按天汇总，并支持高峰时段加倍计费。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取 DeepSeek API 的余额信息，并在本地存储调用记录。",
+      "postInstallNotes": "安装后可能需要配置 pricing 覆盖（可选），默认使用 DeepSeek 官方定价。",
+      "notes": "无"
+    },
+    "summaryZh": "一个 DSH 插件，用于跟踪 DeepSeek API 余额和每次调用的成本，在侧边栏实时显示。",
+    "usage": {
+      "prompt_tokens": 1973,
+      "completion_tokens": 289,
+      "total_tokens": 2262,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1461
+    }
+  }
+}

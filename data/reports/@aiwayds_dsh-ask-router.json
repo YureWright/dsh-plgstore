@@ -1,0 +1,34 @@
+{
+  "id": "@aiwayds/dsh-ask-router",
+  "analyzedAt": "2026-09-02T09:24:25.046Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 明确说明是 dsh 插件，提供安装和配置方式，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@aiwayds/dsh-ask-router",
+      "evidence": "npm install -D @aiwayds/dsh-ask-router   # 或作为 dsh-tui-pi 的依赖自动带上"
+    },
+    "evaluationReport": {
+      "intro": "这个插件解决一个问题：当 AI 在对话中需要向你提问时，它会把问题同时发送到你所有正在使用的界面（比如电脑上的终端面板、手机上的飞书卡片），哪个界面你先回答，就用哪个答案，其他界面会自动关闭。这样你无论在电脑前还是用手机，都能及时回答 AI 的问题，不会错过。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只处理 AI 提问的路由，不涉及敏感文件或外部服务器连接。",
+      "postInstallNotes": "需要在 dsh 配置中把插件加入 bundles 列表，并确保放在 dsh-base 之后。具体见 README 中的配置示例。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-ask-router 是一个 DSH 插件，将 AI 提问同时路由到多个交互界面，实现先答先得，避免漏答。",
+    "usage": {
+      "prompt_tokens": 2952,
+      "completion_tokens": 342,
+      "total_tokens": 3294,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2440
+    }
+  }
+}

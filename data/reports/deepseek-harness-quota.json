@@ -1,0 +1,34 @@
+{
+  "id": "deepseek-harness-quota",
+  "analyzedAt": "2026-09-02T09:24:22.426Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "deepseek-harness-quota",
+      "evidence": "dsh plugin --profile web add deepseek-harness-quota"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能在 DeepSeek Harness 的侧边栏显示你的账户余额、余额组成（充值余额、赠送余额等）以及每一轮对话大概花了多少钱。它还会在余额低的时候变颜色提醒你，支持隐私模式隐藏金额，并且可以一键跳转到 DeepSeek 官方充值或用量页面。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只会在浏览器本地保存你的隐私模式偏好，不会把 API Key 发给浏览器，也不会偷偷上传数据。",
+      "postInstallNotes": "安装后需要重启 dsh web，并确保已配置 DeepSeek API Key（或设置 DEEPSEEK_API_KEY 环境变量）。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 侧边栏显示余额、余额组成和单轮消耗的插件，支持隐私模式和官方用量跳转。",
+    "usage": {
+      "prompt_tokens": 4460,
+      "completion_tokens": 333,
+      "total_tokens": 4793,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3948
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "dsh-better-reasoning-effort",
+  "analyzedAt": "2026-09-02T09:24:14.232Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖了多个 @deepseek-ai/dsh-* 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-better-reasoning-effort",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 字段为 dsh-better-reasoning-effort，且已发布到 npm。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的官方模型页面里，直接给第三方模型设置思考强度（reasoning effort）和图片输入支持。它内置了一个模型知识库，能根据模型自动推荐合适的设置，还能在模型菜单里加一个快速调节思考强度的滑块。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你配置的第三方模型信息，并可能向模型提供商的 /models 接口发送请求以获取能力信息，但凭证在服务器端解析，不会回显。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 中为第三方模型提供思考强度和图片输入设置的编辑器，支持自动适配和快速调节。",
+    "usage": {
+      "prompt_tokens": 4146,
+      "completion_tokens": 320,
+      "total_tokens": 4466,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3634
+    }
+  }
+}

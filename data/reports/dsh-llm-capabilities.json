@@ -1,0 +1,34 @@
+{
+  "id": "dsh-llm-capabilities",
+  "analyzedAt": "2026-09-02T09:24:22.508Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-* 核心包，README 给出 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-llm-capabilities",
+      "evidence": "dsh plugin --profile web add dsh-llm-capabilities"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能自动检测并配置模型的能力，比如思考级别（reasoning efforts）和是否支持图片输入（vision）。它主要解决官方 llm-pi-ai 设置页里无法配置这些字段的问题。你可以在设置里选一个模型，点一下自动检测，它就会从模型接口拉取信息，然后帮你填好配置，这样对话时就能用上思考级别和图片功能了。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会读取你配置的模型接口地址和密钥（但不会泄露），并修改 llm-pi-ai 的配置文件（providers.<route>.models），只改模型相关字段，不影响其他设置。",
+      "postInstallNotes": "装完后，需要先在 Settings → Models 里添加你的 provider（包括 baseURL 和 apiKeyEnv），然后到 Settings → Model Capabilities 里选择 provider，点击 Detect from endpoint 或 Pre-fill from catalog，再根据需求调整每个模型的思考级别和视觉选项，最后点 Apply to settings 保存。",
+      "notes": "无"
+    },
+    "summaryZh": "自动检测并配置模型能力（思考级别和视觉输入）的 DSH 插件，解决官方 llm-pi-ai 设置不完整的问题。",
+    "usage": {
+      "prompt_tokens": 3127,
+      "completion_tokens": 425,
+      "total_tokens": 3552,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2615
+    }
+  }
+}
