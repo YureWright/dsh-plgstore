@@ -1,0 +1,34 @@
+{
+  "id": "hi-dsh",
+  "analyzedAt": "2026-09-03T09:34:04.286Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis，README 给出了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "hi-dsh",
+      "evidence": "dsh plugin --profile <name> add hi-dsh"
+    },
+    "evaluationReport": {
+      "intro": "hi-dsh 是一个 dsh 插件市场，用来发现、整理和安装其他 dsh 插件。目前它只是个骨架，能挂载一个市场服务，提供列表查询和计数功能，还注册了一个 /hi-dsh 命令，但命令只返回占位文字。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "安装后，在 web 配置文件中输入 /hi-dsh 命令可以看到占位文字。",
+      "notes": "无"
+    },
+    "summaryZh": "hi-dsh 是一个 dsh 插件市场，目前处于骨架阶段，提供市场服务占位。",
+    "usage": {
+      "prompt_tokens": 1871,
+      "completion_tokens": 272,
+      "total_tokens": 2143,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1359
+    }
+  }
+}

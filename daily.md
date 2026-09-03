@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-02）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-03）
 
 ## 🆕 新推出的插件
-- **deepseek-harness-quota** [链接](https://github.com/qx0657/deepseek-harness-quota) — 在 DeepSeek Harness 侧边栏显示余额、余额组成和单轮消耗的插件，支持隐私模式和官方用量跳转。
-- **dsh-llm-capabilities** [链接](https://github.com/bamboostrip/dsh-llm-capabilities) — 自动检测并配置模型能力（思考级别和视觉输入）的 DSH 插件，解决官方 llm-pi-ai 设置不完整的问题。
-- **dsh-ask-router** [链接](https://github.com/fan56/dsh-ask-router) — dsh-ask-router 是一个 DSH 插件，将 AI 提问同时路由到多个交互界面，实现先答先得，避免漏答。
-- **ds-balance**  — 一个 DSH 插件，用于跟踪 DeepSeek API 余额和每次调用的成本，在侧边栏实时显示。
-- **dsh-prompt-customizer** [链接](https://github.com/DreamsTOF/dsh-prompt-customizer) — DeepSeek Harness 的系统提示词与工具目录定制器，支持按名称屏蔽/替换/注入/排序提示词段，按会话阶段和 agent 预设分层，并可在设置面板中管理。
-- **dsh-websearch** [链接](https://github.com/240xu/dsh-websearch) — 一个聚合搜索插件，把十一个搜索后端合并成一个统一的搜索入口，零配置即可用，支持 API key 后端。
-- **dsh-phone**  — DSH 智能体电话终端插件，让智能体拥有可寻址的电话号码，支持通话、短信、群聊和信任验证。
-- **dsh-ppt** [链接](https://github.com/STARDUSTLC666/dsh-ppt) — dsh-ppt 是一个 DSH 插件，可将一句话或 Markdown 文档转换为 HTML 演示文稿和 PPTX 文件，支持多种主题和动画。
-- **dsh-stability-audit**  — 扫描已安装 DSH 插件的稳定性风险并给出评级和修复建议。
-- **dsh-better-reasoning-effort** [链接](https://github.com/HaoyueQin/dsh-better-reasoning-effort) — 在 DeepSeek Harness 中为第三方模型提供思考强度和图片输入设置的编辑器，支持自动适配和快速调节。
+- **insar-genie-dsh**  — SBAS-InSAR 全链路自动化 DSH 插件，一句话即可触发从下载到形变图的全流程处理，内置脚本和防呆校验。
+- **dsh-loader** [链接](https://github.com/dsh-plugins/dsh-loader) — dsh-loader 是一个版本感知的运行时兼容层，让第三方插件在 DeepSeek Harness 升级时无需修改即可继续工作。
+- **hi-dsh** [链接](https://github.com/hi-dsh/hi-dsh) — hi-dsh 是一个 dsh 插件市场，目前处于骨架阶段，提供市场服务占位。
+- **dsh-updater**  — DSH 更新检查插件，检测版本并支持一键更新。
+- **dsh-get-balance** [链接](https://github.com/jsoncode/dsh-get-balance) — 一个用于 DeepSeek Harness 的余额与成本统计插件，支持多账户余额查询、实时 token 用量和费用估算，并提供可编辑的价格表。
+- **dsh-wewrite** [链接](https://github.com/jerryjiao/dsh-wewrite) — 一个把微信公众号 AI 写作全流程（选题到草稿箱）产品化的 DSH 插件，本地运行，凭据自持。
+- **deepseek-harness-quota** [链接](https://github.com/qx0657/deepseek-harness-quota) — DeepSeek Harness Web plugin for viewing DeepSeek balance, quota details, and per-turn cost in the sidebar.
+- **dsh-llm-capabilities** [链接](https://github.com/bamboostrip/dsh-llm-capabilities) — DSH plugin: auto-detect and configure model capabilities (reasoningEfforts + input modalities) for llm-pi-ai. Successor to dsh-reasoning-efforts.
+- **dsh-ask-router** [链接](https://github.com/fan56/dsh-ask-router) — dsh plugin: routes ask-user questions to every interaction surface bound to the asking session (TUI panel, Feishu card, web, ...) — first answer wins
+- **ds-balance**  — DeepSeek API balance + per-call cost tracker — a dsh plugin (cordis host half + sidebar client half)
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）

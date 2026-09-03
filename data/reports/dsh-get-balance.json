@@ -1,0 +1,34 @@
+{
+  "id": "dsh-get-balance",
+  "analyzedAt": "2026-09-03T09:34:04.841Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，README 描述为 DSH 插件，符合插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-get-balance",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 dsh-get-balance，且为 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你查看 DeepSeek 账户余额和花费。它会把你的多个 API 密钥（包括官方和第三方）的余额都列出来，还能统计每次对话、每个会话、今天的花费，并且可以自己调整价格表。界面有中文和英文，操作简单。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你的 DeepSeek API 密钥配置来查询余额，但密钥不会传到浏览器，而是通过主机代理请求。它会在本地保存一些设置（比如额外添加的 API 密钥），存放在 DSH 主目录下的一个 JSON 文件里。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个用于 DeepSeek Harness 的余额与成本统计插件，支持多账户余额查询、实时 token 用量和费用估算，并提供可编辑的价格表。",
+    "usage": {
+      "prompt_tokens": 4227,
+      "completion_tokens": 340,
+      "total_tokens": 4567,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3715
+    }
+  }
+}

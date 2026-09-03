@@ -1,0 +1,34 @@
+{
+  "id": "dsh-wewrite",
+  "analyzedAt": "2026-09-03T09:34:05.948Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.97,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-client-* 包，README 给出 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "git",
+      "packageSpec": "git+https://github.com/jerryjiao/dsh-wewrite.git",
+      "evidence": "npx @deepseek-ai/dsh plugin --profile web add github:jerryjiao/dsh-wewrite#v0.2.0"
+    },
+    "evaluationReport": {
+      "intro": "这是一个微信公众号 AI 写作插件，帮你从选题、写大纲、生成文章、质量检查、排版到配图，最后推送到公众号草稿箱，全程在本地网页界面操作，模型和密钥都用你自己的账号。",
+      "level": "ok",
+      "risks": "插件会读取和写入本地文件（~/.dsh 目录），存储你的公众号凭据和 API 密钥，但只保存在本地。它会连接微信 API 和图片供应商 API，需要你提供密钥。它还会抓取网页内容（如 Hacker News）用于选题，但只抓取你点开的条目。没有发现上传数据到第三方或执行危险脚本的行为。",
+      "postInstallNotes": "安装后需在 DSH Web 界面（http://127.0.0.1:3080）的「wewrite 工作台」设置页填写公众号 AppID 和 AppSecret，以及可选的图片供应商 API Key，然后点击「连接测试」。",
+      "notes": "无"
+    },
+    "summaryZh": "一个把微信公众号 AI 写作全流程（选题到草稿箱）产品化的 DSH 插件，本地运行，凭据自持。",
+    "usage": {
+      "prompt_tokens": 6099,
+      "completion_tokens": 427,
+      "total_tokens": 6526,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5587
+    }
+  }
+}

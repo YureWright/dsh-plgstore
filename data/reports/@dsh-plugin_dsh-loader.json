@@ -1,0 +1,34 @@
+{
+  "id": "@dsh-plugin/dsh-loader",
+  "analyzedAt": "2026-09-03T09:34:13.269Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 字段，且依赖了 @deepseek-ai/dsh-client-ui-primitives，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@dsh-plugin/dsh-loader",
+      "evidence": "dsh plugin --profile <name> add /path/to/dshloader"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个兼容层，让第三方插件在 DeepSeek Harness 升级后不用改代码也能继续用。它把插件对内部服务名、模块路径的依赖都转接到自己身上，升级时只需更新这个插件。",
+      "level": "ok",
+      "risks": "没发现明显风险。它默认不绕过官方设置白名单，除非你主动开启。",
+      "postInstallNotes": "需要按 README 配置，插件要依赖它而不是直接依赖 @deepseek-ai/* 包。",
+      "notes": "无"
+    },
+    "summaryZh": "dsh-loader 是一个版本感知的运行时兼容层，让第三方插件在 DeepSeek Harness 升级时无需修改即可继续工作。",
+    "usage": {
+      "prompt_tokens": 4295,
+      "completion_tokens": 304,
+      "total_tokens": 4599,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3783
+    }
+  }
+}
