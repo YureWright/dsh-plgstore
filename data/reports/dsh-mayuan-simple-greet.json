@@ -1,0 +1,34 @@
+{
+  "id": "dsh-mayuan-simple-greet",
+  "analyzedAt": "2026-09-04T09:26:40.701Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 keywords 包含 dsh-plugin，符合 DSH 插件结构。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-mayuan-simple-greet",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这是一个极简的 DSH 插件，功能是向用户打招呼。它可能在你与 DSH 交互时触发问候语，具体触发方式需查看代码。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件代码量极小（仅 3 个文件），未发现执行安装脚本或连接外部服务器的迹象。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个极简的 DSH 问候插件，用于在交互时打招呼。",
+    "usage": {
+      "prompt_tokens": 1188,
+      "completion_tokens": 229,
+      "total_tokens": 1417,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 676
+    }
+  }
+}

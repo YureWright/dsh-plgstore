@@ -1,0 +1,34 @@
+{
+  "id": "dsh-miopiik-model-auth",
+  "analyzedAt": "2026-09-04T09:26:33.903Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段并依赖 @deepseek-ai/dsh-tools 和 @deepseek-ai/schemastery，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-miopiik-model-auth",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是一个模型授权闸门，用来控制子代理（subagent）能使用哪些模型。它确保子代理拉取模型时，必须在你预先设定的允许列表（allowlist）里，防止未经授权的模型被调用。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要读取配置中的允许列表，并拦截模型调用，不会主动连接外部服务器或访问隐私文件。",
+      "postInstallNotes": "需要配置允许列表（allowlist），指定哪些模型或提供商可以使用。",
+      "notes": "无"
+    },
+    "summaryZh": "模型授权闸门插件，限制子代理只能使用用户允许列表中的模型。",
+    "usage": {
+      "prompt_tokens": 1444,
+      "completion_tokens": 271,
+      "total_tokens": 1715,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 932
+    }
+  }
+}

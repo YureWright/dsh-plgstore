@@ -1,0 +1,34 @@
+{
+  "id": "dsh-omc-tui",
+  "analyzedAt": "2026-09-04T09:26:44.509Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，peerDependencies 包含 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-omc-tui",
+      "evidence": "npx --yes @deepseek-ai/dsh@0.1.2-rc.1 plugin --profile tui add dsh-omc-tui"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 用的终端界面插件，让你在终端里用键盘操作 AI 编程助手。它保留了终端原本的滚动和复制功能，还支持直接粘贴图片、自动识别图片内容、在终端里审批文件修改、显示状态栏等。适合喜欢在终端里干活、不想切窗口的人。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要是在终端里显示界面和交互，会读取和写入你的会话数据（存在 ~/.dsh 或你设置的 DSH_HOME 目录），导出功能会创建目录和文件，但权限设置比较安全。",
+      "postInstallNotes": "需要安装 DeepSeek Harness 0.1.2-rc.1 版本（npm 上要指定版本），并确保 Node.js 20 以上。建议在终端配置里加个别名方便启动。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供键盘优先的终端 TUI，支持图片直贴、视觉子代理、行内审批等，保留终端原生滚动与复制。",
+    "usage": {
+      "prompt_tokens": 5713,
+      "completion_tokens": 410,
+      "total_tokens": 6123,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5201
+    }
+  }
+}

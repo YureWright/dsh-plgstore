@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-03）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-04）
 
 ## 🆕 新推出的插件
-- **insar-genie-dsh**  — SBAS-InSAR 全链路自动化 DSH 插件，一句话即可触发从下载到形变图的全流程处理，内置脚本和防呆校验。
-- **dsh-loader** [链接](https://github.com/dsh-plugins/dsh-loader) — dsh-loader 是一个版本感知的运行时兼容层，让第三方插件在 DeepSeek Harness 升级时无需修改即可继续工作。
-- **hi-dsh** [链接](https://github.com/hi-dsh/hi-dsh) — hi-dsh 是一个 dsh 插件市场，目前处于骨架阶段，提供市场服务占位。
-- **dsh-updater**  — DSH 更新检查插件，检测版本并支持一键更新。
-- **dsh-get-balance** [链接](https://github.com/jsoncode/dsh-get-balance) — 一个用于 DeepSeek Harness 的余额与成本统计插件，支持多账户余额查询、实时 token 用量和费用估算，并提供可编辑的价格表。
-- **dsh-wewrite** [链接](https://github.com/jerryjiao/dsh-wewrite) — 一个把微信公众号 AI 写作全流程（选题到草稿箱）产品化的 DSH 插件，本地运行，凭据自持。
-- **deepseek-harness-quota** [链接](https://github.com/qx0657/deepseek-harness-quota) — DeepSeek Harness Web plugin for viewing DeepSeek balance, quota details, and per-turn cost in the sidebar.
-- **dsh-llm-capabilities** [链接](https://github.com/bamboostrip/dsh-llm-capabilities) — DSH plugin: auto-detect and configure model capabilities (reasoningEfforts + input modalities) for llm-pi-ai. Successor to dsh-reasoning-efforts.
-- **dsh-ask-router** [链接](https://github.com/fan56/dsh-ask-router) — dsh plugin: routes ask-user questions to every interaction surface bound to the asking session (TUI panel, Feishu card, web, ...) — first answer wins
-- **ds-balance**  — DeepSeek API balance + per-call cost tracker — a dsh plugin (cordis host half + sidebar client half)
+- **dsh-omc-tui** [链接](https://github.com/ipromise2021/dsh-omc-tui) — 为 DeepSeek Harness 提供键盘优先的终端 TUI，支持图片直贴、视觉子代理、行内审批等，保留终端原生滚动与复制。
+- **deepseek-harness** [链接](https://github.com/braintrustdata/braintrust-sdk-javascript) — 为 DeepSeek Harness 提供 Braintrust 追踪功能的插件。
+- **dsh-siyuan** [链接](https://github.com/coolgech/dsh-siyuan) — 让 AI 助手操作思源笔记的 DSH 插件，提供 30+ 工具用于笔记管理、搜索、导入导出等。
+- **dsh-simple-greet**  — 一个极简的 DSH 插件，用于向用户打招呼，但缺乏文档和明确证据。
+- **dsh-mayuan-simple-greet**  — 一个极简的 DSH 问候插件，用于在交互时打招呼。
+- **dsh-miopiik-learn** [链接](https://github.com/Chillizu/mop-plugins) — 枚举项目 .dsh/skills 目录下带 SKILL.md 的技能清单。
+- **dsh-crosspost** [链接](https://github.com/buchylx/dsh-crosspost) — 一个内容自动化 DSH 插件，可将文章自动发布到 Dev.to、GitHub、Bluesky 和 Mastodon 等多个平台。
+- **dsh-miopiik-capabilities** [链接](https://github.com/Chillizu/mop-plugins) — DSH 能力探测插件，生成双证据级别的能力清单。
+- **dsh-miopiik-tool-recovery** [链接](https://github.com/Chillizu/mop-plugins) — 基于检查点文件的 DSH 恢复工具包，支持 checkpoint、rewind、prune 操作。
+- **dsh-miopiik-run-stats** [链接](https://github.com/Chillizu/mop-plugins) — DSH 插件，提供会话累计 token 使用量的编程读取接口。
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）

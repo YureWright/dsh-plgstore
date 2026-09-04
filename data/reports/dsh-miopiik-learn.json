@@ -1,0 +1,34 @@
+{
+  "id": "dsh-miopiik-learn",
+  "analyzedAt": "2026-09-04T09:26:36.913Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且依赖 @deepseek-ai/dsh-tools，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-miopiik-learn",
+      "evidence": "README 未说明"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能帮你自动找出项目里所有带说明文档的技能（.dsh/skills 文件夹下的 SKILL.md），方便你管理和了解有哪些技能可用。",
+      "level": "ok",
+      "risks": "没发现明显风险",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "枚举项目 .dsh/skills 目录下带 SKILL.md 的技能清单。",
+    "usage": {
+      "prompt_tokens": 1511,
+      "completion_tokens": 210,
+      "total_tokens": 1721,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 999
+    }
+  }
+}
