@@ -1,0 +1,34 @@
+{
+  "id": "@waterwx/dsh-novel-forge",
+  "analyzedAt": "2026-09-06T09:15:08.785Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 描述为 DSH 插件，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@waterwx/dsh-novel-forge",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 @waterwx/dsh-novel-forge，且存在 npm 包。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 AI 小说写作工作台插件，装在 DSH 的网页界面里。你可以把一份小说大纲（docx 或粘贴文本）导进去，它会帮你规划卷和章节，然后一章一章地生成 3000-4000 字正文，还能自动审稿、修订、检查敏感词，最后把整本书导出成 Markdown 或 TXT 文件。",
+      "level": "caution",
+      "risks": "它会在你电脑上读写文件（比如导入大纲、导出小说），需要你指定输出文件夹。它还会调用 LLM（大模型）来生成和审稿，所以你的小说内容会发送给 AI 服务商。另外，安装后有个 postinstall 脚本会运行，可能会修改一些配置。",
+      "postInstallNotes": "需要在 DSH 中配置 LLM 的 API 密钥或相关设置，因为生成和审稿依赖大模型。",
+      "notes": "版本为 1.0.0-alpha，属于早期版本，可能存在不稳定。安装脚本 postinstall 会执行 node scripts/patch-schemastery.mjs，建议留意。"
+    },
+    "summaryZh": "AI 小说创作工作台：导入大纲，规划章节，逐章生成并审校，最终导出整本小说。",
+    "usage": {
+      "prompt_tokens": 5467,
+      "completion_tokens": 436,
+      "total_tokens": 5903,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4955
+    }
+  }
+}
