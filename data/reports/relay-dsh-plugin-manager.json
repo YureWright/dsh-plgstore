@@ -1,0 +1,34 @@
+{
+  "id": "relay-dsh-plugin-manager",
+  "analyzedAt": "2026-09-07T10:04:04.039Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "relay-dsh-plugin-manager@latest",
+      "evidence": "dsh plugin --profile web add relay-dsh-plugin-manager@latest"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的聊天界面里直接搜索、安装、更新、启用、禁用和删除其他插件，不用手动编辑配置文件。你只需要用大白话说出需求，比如“找一个连接 Lark 的插件”，它就会帮你找到并安装。搜索和查看是只读的，任何修改都会先显示计划，等你确认后才执行。",
+      "level": "caution",
+      "risks": "它默认会发送匿名使用数据到 dsh-plugins.tech 的服务器，用于统计插件使用情况。虽然不发送搜索词、对话内容等敏感信息，但会在你的 Profile 目录下创建一个 .relay-plugin-manager/telemetry.json 文件来存储匿名 ID。你可以通过设置环境变量 RELAY_PLUGIN_MANAGER_TELEMETRY=0 来关闭遥测。",
+      "postInstallNotes": "安装后需要重启 DSH Web 才能生效。如果不想发送匿名数据，启动 DSH Web 时设置环境变量 RELAY_PLUGIN_MANAGER_TELEMETRY=0。",
+      "notes": "无"
+    },
+    "summaryZh": "在聊天中直接管理 DSH 插件的工具，支持搜索、安装、更新、禁用和删除，操作前需确认。",
+    "usage": {
+      "prompt_tokens": 4340,
+      "completion_tokens": 422,
+      "total_tokens": 4762,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3828
+    }
+  }
+}

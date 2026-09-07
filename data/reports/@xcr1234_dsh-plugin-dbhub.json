@@ -1,0 +1,34 @@
+{
+  "id": "@xcr1234/dsh-plugin-dbhub",
+  "analyzedAt": "2026-09-07T10:04:03.170Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-settings 等核心包，README 描述为 DSH 插件，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@xcr1234/dsh-plugin-dbhub",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 @xcr1234/dsh-plugin-dbhub，且发布在 npm 上。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DSH 的设置面板里管理数据库连接（比如 PostgreSQL、MySQL、SQLite），它把 DBHub 这个数据库 MCP 服务器变成面板的一部分。你可以在面板里添加、编辑、删除数据库连接，插件会自动启动 DBHub 并让 AI 模型看到这些数据库工具，这样模型就能直接操作你的数据库了。",
+      "level": "caution",
+      "risks": "它会启动一个子进程来运行 DBHub，这个进程会监听本地端口（默认 127.0.0.1），可能暴露你的数据库连接信息给本机其他程序。它会读写你的配置文件（如 ~/.dsh/settings.yaml 和 dbhub.toml），这些文件包含数据库连接字符串，可能包含敏感信息。另外，它依赖一个内部包 @deepseek-ai/dsh-typert-protocol，这个包没有发布到 npm，插件通过特殊方式加载，可能在某些环境下不稳定。",
+      "postInstallNotes": "可能需要设置环境变量 DSH_HARNESS_ROOT 指向 deepseek-harness 的根目录，以便正确加载内部包。如果 DBHub 二进制路径不对，可能需要设置 DBHUB_BIN 环境变量。",
+      "notes": "该插件依赖的 @deepseek-ai/dsh-typert-protocol 是内部包，未发布到 npm，可能导致安装后无法正常工作。"
+    },
+    "summaryZh": "DSH 插件，用于在设置面板中管理 DBHub 数据库 MCP 服务器，支持多种数据库，并让 AI 模型自动使用这些数据库工具。",
+    "usage": {
+      "prompt_tokens": 4781,
+      "completion_tokens": 508,
+      "total_tokens": 5289,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4269
+    }
+  }
+}

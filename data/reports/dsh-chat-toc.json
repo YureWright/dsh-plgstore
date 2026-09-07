@@ -1,0 +1,34 @@
+{
+  "id": "dsh-chat-toc",
+  "analyzedAt": "2026-09-07T10:04:00.014Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 及 dsh-client-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-chat-toc",
+      "evidence": "dsh plugin --profile web add dsh-chat-toc"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DSH 网页版聊天界面加一个目录和导航功能的。它能让对话的右侧轨道更好用：鼠标悬停可以看到每条消息的提问和回答预览，还能收藏重要的对话、搜索关键词、过滤只看代码或工具消息，以及把整个对话导出成 Markdown 大纲。它完全融入原生界面，不会增加多余的视觉元素。",
+      "level": "ok",
+      "risks": "没发现明显风险。它只操作浏览器本地存储（用于保存收藏状态），不连接外部服务器，也不碰用户文件。",
+      "postInstallNotes": "安装或更新后，刷新 dsh web 页面即可生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 网页版对话目录增强插件，为原生导航轨添加悬停预览、收藏、搜索和 Markdown 导出功能。",
+    "usage": {
+      "prompt_tokens": 2750,
+      "completion_tokens": 328,
+      "total_tokens": 3078,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2238
+    }
+  }
+}

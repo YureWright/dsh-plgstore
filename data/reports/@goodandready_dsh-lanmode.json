@@ -1,0 +1,34 @@
+{
+  "id": "@goodandready/dsh-lanmode",
+  "analyzedAt": "2026-09-07T10:03:56.075Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 和 @deepseek-ai/dsh-host-webserver，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@goodandready/dsh-lanmode",
+      "evidence": "dsh plugin --profile web add @goodandready/dsh-lanmode"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 DeepSeek Harness 的网页界面在局域网（比如家里或办公室的 WiFi）里被手机、平板等设备访问，并且功能完整。它解决了浏览器在非本机地址访问时的一些限制，比如设置页面打不开、复制粘贴失效、语音输入不能用等问题。它还能提供二维码方便手机扫码连接，支持 PWA（把网页当应用安装到手机桌面），自动发现设备（dsh.local），生成 HTTPS 证书让连接更安全，以及后台通知等功能。",
+      "level": "caution",
+      "risks": "它会修改网页的 HTML 注入脚本，并可能开启一个额外的网络端口（默认 3088）供局域网访问。它会生成一个本地根证书（Root CA），如果你安装到设备上，它就能解密你通过该设备访问的 HTTPS 流量（仅限该设备）。它还允许从局域网修改设置和 API 密钥（默认开启 unlockPrivileged），如果局域网不安全，其他人可能看到或修改你的配置。",
+      "postInstallNotes": "安装后需要在 settings.yaml 中配置 dsh-lanmode 相关选项，例如设置 LAN PIN 或调整 CIDR 过滤以增强安全性。如果使用 HTTPS，需要下载并安装生成的 Root CA 证书到你的设备。",
+      "notes": "无"
+    },
+    "summaryZh": "让 DeepSeek Harness 在局域网内可访问，解决浏览器限制，提供二维码、PWA、mDNS、HTTPS 和后台通知等功能。",
+    "usage": {
+      "prompt_tokens": 3766,
+      "completion_tokens": 472,
+      "total_tokens": 4238,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3254
+    }
+  }
+}
