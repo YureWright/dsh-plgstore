@@ -1,0 +1,34 @@
+{
+  "id": "@kiwifruit/dsh-jit-viewer",
+  "analyzedAt": "2026-09-08T09:29:20.872Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@kiwifruit/dsh-jit-viewer",
+      "evidence": "dsh plugin --profile web add @kiwifruit/dsh-jit-viewer"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在对话中直接预览本机上的各种文档，比如 PDF、Word、Excel、PPT、图片和视频等，不用切换软件。它给模型提供了一个工具，模型可以调用它来打开文件，并在界面上弹出预览窗口。",
+      "level": "ok",
+      "risks": "插件会读取你指定的本地文件路径，并通过 HTTP 端点提供文件内容，因此可能暴露你允许预览的文件给对话的另一端。但它有路径校验，防止读取任意文件。",
+      "postInstallNotes": "安装后需要重启 dsh web 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "在对话中直接预览本地文档的 DSH 插件，支持多种格式。",
+    "usage": {
+      "prompt_tokens": 2684,
+      "completion_tokens": 302,
+      "total_tokens": 2986,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2172
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "@xiaoso/dsh-tool-plus",
+  "analyzedAt": "2026-09-08T09:29:18.329Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 及多个 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@xiaoso/dsh-tool-plus",
+      "evidence": "dsh plugin --profile web add @xiaoso/dsh-tool-plus"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的工具增强包，它把常用的 bash、文件读写、搜索、图片查看等功能都升级了：bash 能记住你之前的目录和变量，输出太长会自动压缩，还能把删除的文件放进回收站防止误删；读文件可以按行读、读压缩包、读图片，甚至能抓网页；写文件更安全，改完能看到差异。另外还提供可选的代码结构搜索和重写功能。装好后它会自动替换掉官方自带的一些基础工具，让 AI 干活更顺手。",
+      "level": "caution",
+      "risks": "它会在你电脑上运行 bash 命令，可能执行文件操作（包括删除，但默认进回收站）、读取本地文件、抓取网页内容，还可能调用本机浏览器渲染网页。这些操作都在 DeepSeek Harness 的权限框架下进行，但建议在完全权限模式下使用，注意它可能读取你指定范围内的文件内容。",
+      "postInstallNotes": "安装插件后，还需要安装对应的 agent 预设（标准版或 PTC），否则默认配置可能缺少工具能力。预设安装可以用 npx 命令，或者把 README 里的大段配置说明发给 AI 让它帮你配置。装完预设后需要重启 dsh 才能生效。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 基础工具增强插件，提供持久 bash、安全删除、结构化读取、原子写入、全文搜索、图片直读等能力，并可选 ast_grep 代码结构搜索。",
+    "usage": {
+      "prompt_tokens": 4132,
+      "completion_tokens": 484,
+      "total_tokens": 4616,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3620
+    }
+  }
+}

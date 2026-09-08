@@ -1,0 +1,34 @@
+{
+  "id": "@zaimokuza/dsh-plugin-hub",
+  "analyzedAt": "2026-09-08T09:29:28.446Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖了 @deepseek-ai/dsh-client-locale 等核心包，README 自称 DSH 市场插件，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@zaimokuza/dsh-plugin-hub",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 @zaimokuza/dsh-plugin-hub，且发布在 npm 上。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个 DSH 插件市场，让你能在 DSH 里浏览、安装和卸载其他插件。它有中英文界面，支持多个来源标签页，会检查插件兼容性。",
+      "level": "ok",
+      "risks": "没发现明显风险。它可能会从网络获取插件列表，但这是其功能所需。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件市场，提供多来源插件浏览、兼容性检查和安装卸载功能。",
+    "usage": {
+      "prompt_tokens": 2189,
+      "completion_tokens": 278,
+      "total_tokens": 2467,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1677
+    }
+  }
+}

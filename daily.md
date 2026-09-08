@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-07）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-08）
 
 ## 🆕 新推出的插件
-- **relay-dsh-plugin-manager** [链接](https://github.com/yangbobo2021/relay-dsh-plugin-manager) — 在聊天中直接管理 DSH 插件的工具，支持搜索、安装、更新、禁用和删除，操作前需确认。
-- **kiokuko-dsh** [链接](https://github.com/askdkc/kiokuko-dsh) — Kiokuko 为 DeepSeek Harness 提供项目记忆、规划和验证功能，支持可选的 Orca 录制与导出。
-- **deepseek-harness-playwright** [链接](https://github.com/civilization-os/dsh-playwright) — 为 DeepSeek Harness 提供安全的本地浏览器自动化能力，支持 Chrome/Edge，提供多种模型工具。
-- **dsh-chat-toc** [链接](https://github.com/a792883583/dsh-chat-toc) — DSH 网页版对话目录增强插件，为原生导航轨添加悬停预览、收藏、搜索和 Markdown 导出功能。
-- **dsh-plugin-dbhub** [链接](https://github.com/xcr1234/dbhub) — DSH 插件，用于在设置面板中管理 DBHub 数据库 MCP 服务器，支持多种数据库，并让 AI 模型自动使用这些数据库工具。
-- **codsh-bundle** [链接](https://github.com/Blackman99/codsh) — codsh-bundle 是 codsh 的 DSH 插件包，提供交互式终端界面和代码助手预设，通过 dsh plugin add 安装。
-- **dsh-legal-suite**  — AgentLex Legal Suite 是一个运行在 DeepSeek Harness 上的 AI 法律案件管理与文书工具，支持自然语言办案、期限盯防和文书自动落盘。
-- **dsh-tiddlywiki** [链接](https://github.com/bbqisbbq/dsh-tiddlywiki) — 将 TiddlyWiki 作为 DSH 的持久知识库，提供 AI 工具读写笔记、内嵌编辑器、快速笔记和 git 同步功能。
-- **dsh-partner** [链接](https://github.com/lemoncat7/dsh-partner) — 为 DeepSeek Harness 提供长期 AI 伙伴，支持微信渠道、记忆、技能、定时任务和任务看板。
-- **dsh-lanmode** [链接](https://github.com/GooDAnDReaDY/dsh-lanmode) — 让 DeepSeek Harness 在局域网内可访问，解决浏览器限制，提供二维码、PWA、mDNS、HTTPS 和后台通知等功能。
+- **agent-knock-knock-deepseek-harness** [链接](https://github.com/scotthuang/agent-knock-knock) — 为 DeepSeek Harness 提供 Agent Knock Knock 原生连接器，添加 /akk 命令和 16 个语义工具，支持异步回调。
+- **dsh-plugin-hub** [链接](https://github.com/zaimokuza-yoshiteru/dsh-plugin-hub) — DSH 插件市场，提供多来源插件浏览、兼容性检查和安装卸载功能。
+- **dsh-plugin-runcat-inventory** [链接](https://github.com/runcat-tommy/dsh-plugin-runcat-inventory) — 一个更友好的 DSH 插件列表，提供表格视图、状态过滤、启用/停用开关、卸载、更新提醒和配置查看等功能。
+- **dev-flow-deepseek** [链接](https://github.com/Innocent-children/dev-flow) — dev-flow-deepseek 是一个 DSH 插件，让 DeepSeek Harness 在独立工作树中运行持久开发任务，支持多仓库、任务恢复和本地 WebUI 状态查看。
+- **dsh-futu-mcp**  — DSH 插件，通过 OAuth 2.1 连接富途 MCP，把股票行情和交易工具暴露给 AI 助手，默认只读，凭证安全存储在用户主目录。
+- **dsh-file-viewer** [链接](https://github.com/liguobao/dsh-file-viewer) — 在 DeepSeek Harness 中直接预览多种文件类型的只读插件，支持大文件分块加载。
+- **dsh-plugin-yolo** [链接](https://github.com/hanshanyike/dsh-yolo) — YOLO 是 deepseek-harness 的个人助理插件，自动整理对话中的待办和计划，跨会话跟踪并提醒。
+- **dsh-plugin-pscad-expert-vyma** [链接](https://github.com/jionmark11-hub/PSCAD) — PSCAD 自动化建模与仿真控制专家插件，让 AI 能自动操作 PSCAD 进行电力系统仿真。
+- **huaweicloud-devkit** [链接](https://github.com/huaweicloud/huaweicloud-devkit) — 华为云官方工具包，让 AI 编程助手安全调用华为云服务。
+- **dsh-session-sync** [链接](https://github.com/PerryLink/dsh-session-sync) — 跨设备同步 DeepSeek Harness 会话的插件，基于 git 镜像，支持冲突保留双方。
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）

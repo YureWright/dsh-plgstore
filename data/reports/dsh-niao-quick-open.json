@@ -1,0 +1,34 @@
+{
+  "id": "dsh-niao-quick-open",
+  "analyzedAt": "2026-09-08T09:29:16.504Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/dsh-client-runtime，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-niao-quick-open",
+      "evidence": "dsh plugin --profile web add dsh-niao-quick-open"
+    },
+    "evaluationReport": {
+      "intro": "这是一个给 DeepSeek Harness 网页界面用的增强插件，让你不用离开页面就能快速打开工作区文件夹、用常用编辑器打开、复制路径，还能在会话里快速定位到某条提问，标记待办会话，以及一键重启服务。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会读取你的工作区路径和编辑器列表，但只在本地操作；配置保存在 ~/.dsh/ 下，不会上传到外部服务器。",
+      "postInstallNotes": "安装后可在 DSH 设置面板的「界面功能」页中按需开关各项功能，并配置常用编辑器。",
+      "notes": "无"
+    },
+    "summaryZh": "DeepSeek Harness 界面增强插件：一键打开工作区、编辑器自动发现、用户消息导航、会话待办标记、硬性重启等。",
+    "usage": {
+      "prompt_tokens": 3417,
+      "completion_tokens": 325,
+      "total_tokens": 3742,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2905
+    }
+  }
+}

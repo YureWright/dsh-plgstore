@@ -1,0 +1,34 @@
+{
+  "id": "@goodandready/dsh-live-canvas",
+  "analyzedAt": "2026-09-08T09:29:11.622Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖 @deepseek-ai/cordis 等核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@goodandready/dsh-live-canvas",
+      "evidence": "README 未明确给出安装命令，但 package.json 提供了 npm 包名和 tarball 地址。"
+    },
+    "evaluationReport": {
+      "intro": "这是一个为 DeepSeek Harness 设计的可视化前端开发工具，让你能在聊天窗口里直接预览和编辑 HTML、React 组件、SVG 和图表，支持实时热更新。它还包含类似 Retool 的 CRUD 管理界面、时间旅行调试器、一键部署到 Vercel 等平台、Figma 矢量桥接、UI 音效等功能，并提供了 30 个 Agent 工具。",
+      "level": "ok",
+      "risks": "没发现明显风险。它主要在浏览器沙箱中运行，但会读取和写入工作区文件（用于保存内容），并可能将代码部署到外部平台（如 Vercel、GitHub Gist），需要你授权。",
+      "postInstallNotes": "无",
+      "notes": "无"
+    },
+    "summaryZh": "一个为 DeepSeek Harness 打造的可视化前端开发套件，支持实时预览、CRUD 管理、时间旅行调试和一键部署。",
+    "usage": {
+      "prompt_tokens": 4178,
+      "completion_tokens": 353,
+      "total_tokens": 4531,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3666
+    }
+  }
+}

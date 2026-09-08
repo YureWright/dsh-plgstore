@@ -1,0 +1,34 @@
+{
+  "id": "dsh-session-sync",
+  "analyzedAt": "2026-09-08T09:29:20.223Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle.patch 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-session-sync",
+      "evidence": "dsh plugin --profile web add dsh-session-sync"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让你的 DeepSeek Harness 会话在不同设备之间同步。它把你的会话记录变成一个 git 仓库，你可以推送到自己控制的远程仓库（比如 GitHub 私有仓库），然后在另一台设备上拉取。如果两边都有修改，它会保留两边的内容，不会覆盖丢失。你可以用 /sync 命令查看状态、同步，也可以设置自动同步。",
+      "level": "ok",
+      "risks": "它会读取和写入你的会话存储目录（默认是 $DSH_HOME/sessions），并在本地创建一个 git 仓库来镜像这些数据。同步时会把你的会话内容推送到你配置的远程仓库，所以如果你用公共仓库，别人可能看到你的会话内容。它还会调用 git 命令，但所有写操作都需要确认。",
+      "postInstallNotes": "需要在配置中设置 remote（远程仓库地址），建议使用私有仓库。可选配置如 autoPushOnTurnEnd 等。",
+      "notes": "无"
+    },
+    "summaryZh": "跨设备同步 DeepSeek Harness 会话的插件，基于 git 镜像，支持冲突保留双方。",
+    "usage": {
+      "prompt_tokens": 4410,
+      "completion_tokens": 370,
+      "total_tokens": 4780,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3898
+    }
+  }
+}

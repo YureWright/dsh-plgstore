@@ -1,0 +1,34 @@
+{
+  "id": "huaweicloud-devkit",
+  "analyzedAt": "2026-09-08T09:29:22.775Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.9,
+      "reason": "package.json 声明了 dsh.bundle 字段，且 README 提供了针对 DSH 的安装命令，表明它是 DSH 插件。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "huaweicloud-devkit",
+      "evidence": "npx --yes huaweicloud-devkit install --target dsh"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是华为云官方出的一个工具包，专门给各种 AI 编程助手（比如 DeepSeek Harness、OpenCode、Codex 等）装上华为云的能力。装上之后，AI 助手就能安全地调用华为云的命令行工具、API 和 SDK，帮你操作云资源，比如查信息、部署东西。它还带了一些安全护栏，防止 AI 乱执行危险命令。",
+      "level": "caution",
+      "risks": "安装时会自动检测你电脑上装了哪些 AI 助手，并可能给所有检测到的都装上。它还会安装华为云的命令行工具 KooCLI，并可能修改这些 AI 助手的配置文件（比如 Hermes 的 config.yaml），添加安全钩子来拦截某些终端命令。卸载时可以选择删除全局配置和 KooCLI。另外，它有一个 postinstall 脚本，会在安装后自动运行。",
+      "postInstallNotes": "安装后需要重启对应的 AI 助手会话。对于某些助手（如 Hermes），可能需要手动批准安全钩子的权限，或设置 hooks_auto_accept。如果 DSH 客户端未检测到，需要运行 npx @deepseek-ai/dsh plugin --profile web add @deepseek-ai/dsh-mcp-client。",
+      "notes": "该插件是华为云官方发布的，但安装脚本会修改多个 AI 助手的配置，且包含 postinstall 脚本，建议安装前了解其行为。"
+    },
+    "summaryZh": "华为云官方工具包，让 AI 编程助手安全调用华为云服务。",
+    "usage": {
+      "prompt_tokens": 4055,
+      "completion_tokens": 460,
+      "total_tokens": 4515,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3543
+    }
+  }
+}

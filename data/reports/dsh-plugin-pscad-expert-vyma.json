@@ -1,0 +1,34 @@
+{
+  "id": "dsh-plugin-pscad-expert-vyma",
+  "analyzedAt": "2026-09-08T09:29:25.438Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 等核心包，README 给出了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-plugin-pscad-expert-vyma",
+      "evidence": "以 DSH 组合包（bundle）方式从 npm 安装到目标 profile（正式使用请用 **desktop 激活 profile**，勿用已弃用的 demo）：\n\n```powershell\n# 首次安装（dsh 不在 PATH 时用宿主命令全路径调用）\n& \"$env:APPDATA\\DSH Desktop\\host-commands\\desktop\\bin\\dsh.cmd\" plugin add dsh-plugin-pscad-expert-vyma@^1.0.14 --profile desktop"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给电力仿真软件 PSCAD 用的，它能让 AI 助手（比如 DeepSeek）自动操作 PSCAD 来搭建电路模型、运行仿真、分析结果。它自带一些已经验证过的电路模板，还有一套工具函数，AI 可以调用这些函数来加载模板、添加元件、连线、设置参数、运行仿真，最后读取输出数据。简单说，就是让 AI 帮你做电力系统仿真，不用手动点来点去。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要操作 PSCAD 软件，可能会读写 PSCAD 的工程文件，但不会碰其他隐私文件。安装时会从 npm 下载，但这是正常流程。",
+      "postInstallNotes": "装完后需要重启 DSH Desktop 才能生效。如果 PSCAD 安装路径不是默认的，需要在对话里调用 pscad_init_environment 告诉它路径。一般不用额外配置。",
+      "notes": "无"
+    },
+    "summaryZh": "PSCAD 自动化建模与仿真控制专家插件，让 AI 能自动操作 PSCAD 进行电力系统仿真。",
+    "usage": {
+      "prompt_tokens": 3982,
+      "completion_tokens": 492,
+      "total_tokens": 4474,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3470
+    }
+  }
+}

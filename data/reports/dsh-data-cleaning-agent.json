@@ -1,0 +1,34 @@
+{
+  "id": "dsh-data-cleaning-agent",
+  "analyzedAt": "2026-09-08T09:29:20.996Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，依赖了 @deepseek-ai/dsh-client-ui-layout 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-data-cleaning-agent@0.8.17",
+      "evidence": "dsh plugin --profile web add dsh-data-cleaning-agent@0.8.17"
+    },
+    "evaluationReport": {
+      "intro": "这个插件是给 DeepSeek Harness 用的，主要帮你清洗和补全 Excel、CSV、JSON 格式的企业名单数据。比如你有一堆客户名单，里面有重复、格式不对或者缺字段的，它能自动去重、规范化手机号、剔除无效行，还能补全缺失的信息。它还能连企查查的 MCP 服务，帮你查企业的工商信息来补全数据，但需要你自己有企查查的账号和授权。处理完的结果可以导出成干净的 CSV 或 Excel 文件。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件主要处理你上传的表格文件，数据留在本机工作台。如果使用企查查补全，需要你授权自己的企查查账号，调用会消耗你的套餐额度，但插件不会读取或保存你的凭据。图片解析功能会把图片上传到企查查的网关，但需要你明确提交。",
+      "postInstallNotes": "安装后需要完全重启 DeepSeek Harness（停止后重新运行 dsh web）。如果要用企查查补全，还需要另外配置企查查 MCP 连接器（如 qcc-dsh-mcp-oauth），并确保已授权。",
+      "notes": "无"
+    },
+    "summaryZh": "一个用于清洗和补全企业名单表格的 DSH 插件，支持去重、字段补全和企查查数据增强。",
+    "usage": {
+      "prompt_tokens": 5998,
+      "completion_tokens": 464,
+      "total_tokens": 6462,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 5486
+    }
+  }
+}

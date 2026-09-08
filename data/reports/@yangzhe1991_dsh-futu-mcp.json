@@ -1,0 +1,34 @@
+{
+  "id": "@yangzhe1991/dsh-futu-mcp",
+  "analyzedAt": "2026-09-08T09:29:30.522Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖了 @deepseek-ai/cordis 和 dsh-* 核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@yangzhe1991/dsh-futu-mcp",
+      "evidence": "dsh plugin --profile web add @yangzhe1991/dsh-futu-mcp"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能让 AI 助手连接富途证券的官方服务，帮你查股票行情、看账户信息等。第一次用的时候会打开浏览器让你登录富途账号授权，之后就能直接让 AI 帮你查腾讯股价之类的了。默认只读，不会乱动你的账户。",
+      "level": "ok",
+      "risks": "它会把你的富途登录凭证（token）存在你电脑的 ~/.dsh/credentials/ 文件夹里，文件权限设成了只有你能读。它只在你主动让它查股票时才联网，平时不连。授权时它会打开浏览器让你登录富途，别人如果能看到你屏幕可能会看到你的操作。",
+      "postInstallNotes": "装完后重启 dsh web，第一次查股价时会自动弹出浏览器让你登录富途授权。如果想让它能下单或管理自选股，需要改配置加上 quote:write 和 trade:write 权限，然后重新授权。",
+      "notes": "无"
+    },
+    "summaryZh": "DSH 插件，通过 OAuth 2.1 连接富途 MCP，把股票行情和交易工具暴露给 AI 助手，默认只读，凭证安全存储在用户主目录。",
+    "usage": {
+      "prompt_tokens": 2917,
+      "completion_tokens": 407,
+      "total_tokens": 3324,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2405
+    }
+  }
+}

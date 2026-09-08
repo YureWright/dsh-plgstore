@@ -1,0 +1,34 @@
+{
+  "id": "dsh-matrix-connector",
+  "analyzedAt": "2026-09-08T09:29:11.327Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，且依赖 cordis 和 dsh-agora-plugin，README 描述为 Cordis 插件，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-matrix-connector",
+      "evidence": "README 未说明安装命令，但 package.json 中 name 为 dsh-matrix-connector，且可从 npm 安装。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件能把 Matrix 聊天室和 Agora 治理系统连接起来。你可以在 Matrix 房间里用 /agora 开头的命令来创建任务、查看任务、搜索资料、管理公司信息等，相当于给 Agora 加了一个聊天入口。",
+      "level": "caution",
+      "risks": "它会连接你配置的 Matrix 服务器和 Agora 服务器，需要提供 API 令牌。它可能会读取房间里的消息（但只处理 /agora 开头的命令），并上传文件到 Matrix。另外，它禁用了端到端加密，敏感信息可能以明文传输。",
+      "postInstallNotes": "需要在 cordis.patch.yml 中配置 matrix-connector 的选项，包括 Matrix 服务器地址、房间 ID、Agora API 地址和令牌等。",
+      "notes": "README 提到 E2EE 被禁用，且依赖的 dsh-agora-plugin 可能未发布（peerDependencies 中标记为 optional）。"
+    },
+    "summaryZh": "DSH 的 Matrix 适配器，让用户通过 Matrix 聊天命令操作 Agora 治理系统。",
+    "usage": {
+      "prompt_tokens": 3536,
+      "completion_tokens": 394,
+      "total_tokens": 3930,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3024
+    }
+  }
+}

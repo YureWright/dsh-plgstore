@@ -1,0 +1,34 @@
+{
+  "id": "dsh-file-viewer",
+  "analyzedAt": "2026-09-08T09:29:23.997Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client，并依赖多个 @deepseek-ai/dsh-* 核心包，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "dsh-file-viewer",
+      "evidence": "README 未明确给出安装命令，但 package.json 中 name 为 dsh-file-viewer，且发布在 npm 上。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让你在 DeepSeek Harness 的网页界面里直接预览各种文件，比如图片、PDF、CSV、Markdown、JSON、YAML、源代码等，不用打开外部程序。它只读不执行，安全地显示文件内容，还支持大文件的分块加载，避免卡顿。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件只读文件，不执行脚本，但会读取你指定的文件内容并在界面显示，注意不要预览敏感文件。",
+      "postInstallNotes": "可能需要运行补丁脚本 scripts/patch-workspace-menu.mjs 来在文件浏览菜单中添加入口，具体见 README。",
+      "notes": "无"
+    },
+    "summaryZh": "在 DeepSeek Harness 中直接预览多种文件类型的只读插件，支持大文件分块加载。",
+    "usage": {
+      "prompt_tokens": 4507,
+      "completion_tokens": 333,
+      "total_tokens": 4840,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3995
+    }
+  }
+}

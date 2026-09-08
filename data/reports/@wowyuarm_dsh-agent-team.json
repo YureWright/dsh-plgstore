@@ -1,0 +1,34 @@
+{
+  "id": "@wowyuarm/dsh-agent-team",
+  "analyzedAt": "2026-09-08T09:29:15.895Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 和 dsh.client 配置，依赖了 @deepseek-ai/dsh-* 核心包，README 提供了 dsh plugin add 安装命令，代码明显调用 DSH 接口。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@wowyuarm/dsh-agent-team",
+      "evidence": "dsh plugin --profile web add @wowyuarm/dsh-agent-team"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个“团队模式”，让你能创建多个 AI 智能体（agent），它们各自有记忆和职责，可以分工协作完成复杂任务。你可以把不同项目分到不同工作区，每个工作区有自己的智能体和频道，通过任务线程来跟踪进度。适合需要多个 AI 角色长期配合的场景。",
+      "level": "caution",
+      "risks": "插件会修改你的 DSH 配置文件（profile），并可能访问你的会话数据库。团队管理的智能体会被授予“完全访问权限”（danger-full-access），这意味着它们能执行高权限操作，所以只能在可信的工作区使用。另外，升级时可能需要删除旧数据库，导致历史会话丢失。",
+      "postInstallNotes": "安装后需要重启 DSH Web UI，并在界面中进入“Team mode”来创建工作区和智能体。建议先查看配置确认插件已生效（dsh --profile web --dump-config）。",
+      "notes": "该插件是官方 DSH 生态的一部分，但需要 DSH 0.1.2-rc.1 或更高版本，旧版本不兼容。"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供持久的 AI 智能体团队协作功能，支持工作区、频道和任务线程。",
+    "usage": {
+      "prompt_tokens": 3670,
+      "completion_tokens": 423,
+      "total_tokens": 4093,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 3158
+    }
+  }
+}

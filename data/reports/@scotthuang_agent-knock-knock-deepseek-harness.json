@@ -1,0 +1,34 @@
+{
+  "id": "@scotthuang/agent-knock-knock-deepseek-harness",
+  "analyzedAt": "2026-09-08T09:29:34.382Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 并依赖 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "npm",
+      "packageSpec": "@scotthuang/agent-knock-knock-deepseek-harness@next",
+      "evidence": "dsh plugin --profile web add @scotthuang/agent-knock-knock-deepseek-harness@next"
+    },
+    "evaluationReport": {
+      "intro": "这个插件给 DeepSeek Harness 加了一个叫 Agent Knock Knock 的功能，装上后每个 Agent 都会多出 /akk 命令和 16 个工具，用来做异步的、带回调的对话或任务，比如让 Agent 在后台跑完再通知你。它不修改 Harness 本身，只是加个连接器。",
+      "level": "ok",
+      "risks": "没发现明显风险。它会在临时目录创建私有文件（权限 0700），但只用于内部通信，不会碰你的个人文件。",
+      "postInstallNotes": "装完后可能需要配置，比如在插件配置里设置 storeDir 等，但默认也能用。",
+      "notes": "无"
+    },
+    "summaryZh": "为 DeepSeek Harness 提供 Agent Knock Knock 原生连接器，添加 /akk 命令和 16 个语义工具，支持异步回调。",
+    "usage": {
+      "prompt_tokens": 3052,
+      "completion_tokens": 359,
+      "total_tokens": 3411,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 2540
+    }
+  }
+}

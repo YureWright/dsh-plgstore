@@ -1,0 +1,34 @@
+{
+  "id": "dev-flow-deepseek",
+  "analyzedAt": "2026-09-08T09:29:30.241Z",
+  "result": {
+    "classification": {
+      "type": "plugin",
+      "confidence": 0.95,
+      "reason": "package.json 声明了 dsh.bundle 字段，依赖 @deepseek-ai/dsh-mcp-client 和 @deepseek-ai/cordis 等核心包，README 提供了 dsh plugin add 安装命令，符合 DSH 插件特征。"
+    },
+    "install": {
+      "method": "tarball",
+      "packageSpec": "https://registry.npmjs.org/dev-flow-deepseek/-/dev-flow-deepseek-0.9.4.tgz",
+      "evidence": "README 中给出 'TARBALL=\"$(npm pack dev-flow-deepseek@latest --silent)\"' 和 'dsh plugin --profile \"$PROFILE\" add \"$PWD/$TARBALL\"'，说明通过 tarball 安装。"
+    },
+    "evaluationReport": {
+      "intro": "这个插件让 DeepSeek Harness 在一个独立的工作树里运行一个持久的开发任务。它先只读评估你的开发请求，不直接动手；等你明确确认后，它才创建独立的工作分支和目录，然后由 DeepSeek 负责执行你授权的操作，比如拉取代码、创建分支、修改文件等。它还能帮你管理多个仓库、跟踪任务进度、恢复中断的任务，并提供一个本地网页界面查看状态。",
+      "level": "ok",
+      "risks": "没发现明显风险。插件会创建独立的工作目录（默认在 ~/.dev-flow/data 或 %LOCALAPPDATA%\\dev-flow\\data），并可能修改 Git 仓库（创建分支、worktree），但所有操作都需要用户明确授权。WebUI 只监听本机回环地址，不会暴露到外网。",
+      "postInstallNotes": "安装后需要重启对应的 DSH Profile。默认数据目录在 macOS 为 $HOME/.dev-flow/data，Windows 为 %LOCALAPPDATA%\\dev-flow\\data；如需自定义，需设置 DEV_FLOW_DATA_DIR 环境变量，且该目录必须已存在并通过检查。",
+      "notes": "无"
+    },
+    "summaryZh": "dev-flow-deepseek 是一个 DSH 插件，让 DeepSeek Harness 在独立工作树中运行持久开发任务，支持多仓库、任务恢复和本地 WebUI 状态查看。",
+    "usage": {
+      "prompt_tokens": 4990,
+      "completion_tokens": 525,
+      "total_tokens": 5515,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 4478
+    }
+  }
+}
