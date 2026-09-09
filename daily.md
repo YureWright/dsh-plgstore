@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-08）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-09）
 
 ## 🆕 新推出的插件
-- **agent-knock-knock-deepseek-harness** [链接](https://github.com/scotthuang/agent-knock-knock) — 为 DeepSeek Harness 提供 Agent Knock Knock 原生连接器，添加 /akk 命令和 16 个语义工具，支持异步回调。
-- **dsh-plugin-hub** [链接](https://github.com/zaimokuza-yoshiteru/dsh-plugin-hub) — DSH 插件市场，提供多来源插件浏览、兼容性检查和安装卸载功能。
-- **dsh-plugin-runcat-inventory** [链接](https://github.com/runcat-tommy/dsh-plugin-runcat-inventory) — 一个更友好的 DSH 插件列表，提供表格视图、状态过滤、启用/停用开关、卸载、更新提醒和配置查看等功能。
-- **dev-flow-deepseek** [链接](https://github.com/Innocent-children/dev-flow) — dev-flow-deepseek 是一个 DSH 插件，让 DeepSeek Harness 在独立工作树中运行持久开发任务，支持多仓库、任务恢复和本地 WebUI 状态查看。
-- **dsh-futu-mcp**  — DSH 插件，通过 OAuth 2.1 连接富途 MCP，把股票行情和交易工具暴露给 AI 助手，默认只读，凭证安全存储在用户主目录。
-- **dsh-file-viewer** [链接](https://github.com/liguobao/dsh-file-viewer) — 在 DeepSeek Harness 中直接预览多种文件类型的只读插件，支持大文件分块加载。
-- **dsh-plugin-yolo** [链接](https://github.com/hanshanyike/dsh-yolo) — YOLO 是 deepseek-harness 的个人助理插件，自动整理对话中的待办和计划，跨会话跟踪并提醒。
-- **dsh-plugin-pscad-expert-vyma** [链接](https://github.com/jionmark11-hub/PSCAD) — PSCAD 自动化建模与仿真控制专家插件，让 AI 能自动操作 PSCAD 进行电力系统仿真。
-- **huaweicloud-devkit** [链接](https://github.com/huaweicloud/huaweicloud-devkit) — 华为云官方工具包，让 AI 编程助手安全调用华为云服务。
-- **dsh-session-sync** [链接](https://github.com/PerryLink/dsh-session-sync) — 跨设备同步 DeepSeek Harness 会话的插件，基于 git 镜像，支持冲突保留双方。
+- **dsh-router-core** [链接](https://github.com/CARVIN94/dsh-router) — DSH plugin: a simplified 9router (AI routing gateway). Adds a 路由系统 (Routing System) sidebar entry beside 记忆系统; the panel shows suppliers, account pool, combos, and endpoint/API keys.
+- **dsh-sidebar** [链接](https://github.com/auggie246/dsh-sidebar) — A Git sidebar for DeepSeek Harness Web
+- **dsh-discord** [链接](https://github.com/addozhang/dsh-discord) — Discord-first adapter for DeepSeek Harness
+- **dsh-pubmed** [链接](https://github.com/aiyacharley/dsh-pubmed) — DSH plugin for DeepSeek Harness: 25 model tools across PubMed, Europe PMC, OpenAlex, PubTator3 & Semantic Scholar — cross-source unified search, article metadata, full text, citations, MeSH & ID tools, citation counts & recommendations — plus a personal l
+- **dsh-agy-safe** [链接](https://github.com/Jonah-Wu23/dsh-agy-safe) — dsh plugin: use a logged-in Antigravity CLI (agy) headless session as the chat and subagent model provider
+- **dsh-router-traework** [链接](https://github.com/CARVIN94/dsh-router-traework) — DSH plugin: TRAE SOLO supplier for dsh-router. Provides the traework supplier (free SOLO chat channel, ported from traework2api) to dsh-router through the router.suppliers cordis service.
+- **dsh-plugin-width-slider** [链接](https://github.com/djs326/dsh-plugin-width-slider) — DSH 个人多功能插件：对话宽度滑块 + 思考块增强（整合 dsh-think-zh-expand）+ Open With 打开方式（整合 dsh-plugin-open-with 本地修改版）+ 界面中文化 + 官方面板补丁 + 入场动效（整合 dsh-client-ui-custom），全部功能独立开关。Settings feature control page with width slider, thinking-block enhancements, an Open With launcher 
+- **dsh-llm-proxy** [链接](https://github.com/fan56/dsh-llm-proxy) — dsh plugin: SYSTEM proxy (env) + LLM traffic-splitting proxy via a process-global undici routing dispatcher
+- **dsh-time-machine** [链接](https://github.com/GooDAnDReaDY/dsh-time-machine) — DSH plugin for smart checkpoints, workspace safety guards, and instant rollback
+- **dsh-mattpocock-skills-deck** [链接](https://github.com/FeatherHunter/dsh-mattpocock-skills-deck) — Matt Pocock 技能面板（DSH Deck）：安装即自带 25 个工程与效率技能（mattpocock/skills v1.2.3：triage、grilling、wayfinder、handoff 等），右侧面板直接调用，无需手动装技能。当前主力支持 GitHub issue；Markdown 本地文件为预览版；GitLab 暂不在支持范围。希望它能帮你把想法更快变成现实。
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
