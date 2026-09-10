@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-09）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-10）
 
 ## 🆕 新推出的插件
-- **dsh-router-core** [链接](https://github.com/CARVIN94/dsh-router) — DSH plugin: a simplified 9router (AI routing gateway). Adds a 路由系统 (Routing System) sidebar entry beside 记忆系统; the panel shows suppliers, account pool, combos, and endpoint/API keys.
-- **dsh-sidebar** [链接](https://github.com/auggie246/dsh-sidebar) — A Git sidebar for DeepSeek Harness Web
-- **dsh-discord** [链接](https://github.com/addozhang/dsh-discord) — Discord-first adapter for DeepSeek Harness
-- **dsh-pubmed** [链接](https://github.com/aiyacharley/dsh-pubmed) — DSH plugin for DeepSeek Harness: 25 model tools across PubMed, Europe PMC, OpenAlex, PubTator3 & Semantic Scholar — cross-source unified search, article metadata, full text, citations, MeSH & ID tools, citation counts & recommendations — plus a personal l
-- **dsh-agy-safe** [链接](https://github.com/Jonah-Wu23/dsh-agy-safe) — dsh plugin: use a logged-in Antigravity CLI (agy) headless session as the chat and subagent model provider
-- **dsh-router-traework** [链接](https://github.com/CARVIN94/dsh-router-traework) — DSH plugin: TRAE SOLO supplier for dsh-router. Provides the traework supplier (free SOLO chat channel, ported from traework2api) to dsh-router through the router.suppliers cordis service.
-- **dsh-plugin-width-slider** [链接](https://github.com/djs326/dsh-plugin-width-slider) — DSH 个人多功能插件：对话宽度滑块 + 思考块增强（整合 dsh-think-zh-expand）+ Open With 打开方式（整合 dsh-plugin-open-with 本地修改版）+ 界面中文化 + 官方面板补丁 + 入场动效（整合 dsh-client-ui-custom），全部功能独立开关。Settings feature control page with width slider, thinking-block enhancements, an Open With launcher 
-- **dsh-llm-proxy** [链接](https://github.com/fan56/dsh-llm-proxy) — dsh plugin: SYSTEM proxy (env) + LLM traffic-splitting proxy via a process-global undici routing dispatcher
-- **dsh-time-machine** [链接](https://github.com/GooDAnDReaDY/dsh-time-machine) — DSH plugin for smart checkpoints, workspace safety guards, and instant rollback
-- **dsh-mattpocock-skills-deck** [链接](https://github.com/FeatherHunter/dsh-mattpocock-skills-deck) — Matt Pocock 技能面板（DSH Deck）：安装即自带 25 个工程与效率技能（mattpocock/skills v1.2.3：triage、grilling、wayfinder、handoff 等），右侧面板直接调用，无需手动装技能。当前主力支持 GitHub issue；Markdown 本地文件为预览版；GitLab 暂不在支持范围。希望它能帮你把想法更快变成现实。
+- **cordis-plugin-subagent-wait** [链接](https://github.com/argszero/cordis-plugin-subagent-wait) — wait_for_agent for the dsh harness: block until a continuable background subagent settles (via the subagent-settled notice) instead of polling list_agents and misreading idle.
+- **cordis-plugin-schedule-cron** [链接](https://github.com/argszero/cordis-plugin-schedule-cron) — Cron-driven autonomous task runs for the dsh harness: fire a calendar cron rule and spawn a fresh agent run via ctx.agents.create(), unlike the official @deepseek-ai/dsh-schedule which only messages the live session.
+- **dsh-augmentor** [链接](https://github.com/ManoloRemiddi/augmentor-dsh-extension-plugin) — Augmentor for DeepSeek Harness: DSH plugin + Chrome extension that drives the user's real browser from any DSH session — live page snapshot, click, type, tabs — with save-to-workspace chat sessions.
+- **deepseek-harness-chatroom** [链接](https://github.com/sliverp/DeepSeek-harness-chatroom) — Multi-user AI chatroom plugin for DeepSeek Harness Web
+- **dsh-autoresearch** [链接](https://github.com/EveGoodEvening/dsh-autoresearch) — Bounded metric-driven autoresearch plugin for DeepSeek Harness
+- **dsh-log-contract** [链接](https://github.com/yamingmou/dsh-log-contract) — 日志契约守护 — DSH session log contract guard: offline health check (CLI) + pre-write validation for DeepSeek Harness session logs
+- **dsh-voice-mode** [链接](https://github.com/qishuilalala/dsh-voice-mode) — Full-duplex voice plugin for DeepSeek Harness: local zipformer2 streaming ASR (no API key) → editable draft; Edge TTS or local VITS / Kokoro read-aloud with live captions; true barge-in; hardened HTTP surface + model SHA256 pinning; compatible with dsh 0.
+- **dsh-skills-manager** [链接](https://github.com/Xichun123/dsh-skills-manager) — A DeepSeek Harness plugin for installing and managing skills by global or workspace scope.
+- **dsh-cron** [链接](https://github.com/GooDAnDReaDY/dsh-cron) — Scheduled cron tasks, background automation and agent execution for DeepSeek Harness.
+- **dsh-retrace** [链接](https://github.com/yamingmou/dsh-retrace) — Retrace · 回溯 — Recall, edit-and-resend, regenerate, and conversation/artifact versioning (timeline, rollback, fork map) for DeepSeek Harness — Web and Desktop
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
