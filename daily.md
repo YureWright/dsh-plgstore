@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-10）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-11）
 
 ## 🆕 新推出的插件
-- **cordis-plugin-subagent-wait** [链接](https://github.com/argszero/cordis-plugin-subagent-wait) — wait_for_agent for the dsh harness: block until a continuable background subagent settles (via the subagent-settled notice) instead of polling list_agents and misreading idle.
-- **cordis-plugin-schedule-cron** [链接](https://github.com/argszero/cordis-plugin-schedule-cron) — Cron-driven autonomous task runs for the dsh harness: fire a calendar cron rule and spawn a fresh agent run via ctx.agents.create(), unlike the official @deepseek-ai/dsh-schedule which only messages the live session.
-- **dsh-augmentor** [链接](https://github.com/ManoloRemiddi/augmentor-dsh-extension-plugin) — Augmentor for DeepSeek Harness: DSH plugin + Chrome extension that drives the user's real browser from any DSH session — live page snapshot, click, type, tabs — with save-to-workspace chat sessions.
-- **deepseek-harness-chatroom** [链接](https://github.com/sliverp/DeepSeek-harness-chatroom) — Multi-user AI chatroom plugin for DeepSeek Harness Web
-- **dsh-autoresearch** [链接](https://github.com/EveGoodEvening/dsh-autoresearch) — Bounded metric-driven autoresearch plugin for DeepSeek Harness
-- **dsh-log-contract** [链接](https://github.com/yamingmou/dsh-log-contract) — 日志契约守护 — DSH session log contract guard: offline health check (CLI) + pre-write validation for DeepSeek Harness session logs
-- **dsh-voice-mode** [链接](https://github.com/qishuilalala/dsh-voice-mode) — Full-duplex voice plugin for DeepSeek Harness: local zipformer2 streaming ASR (no API key) → editable draft; Edge TTS or local VITS / Kokoro read-aloud with live captions; true barge-in; hardened HTTP surface + model SHA256 pinning; compatible with dsh 0.
-- **dsh-skills-manager** [链接](https://github.com/Xichun123/dsh-skills-manager) — A DeepSeek Harness plugin for installing and managing skills by global or workspace scope.
-- **dsh-cron** [链接](https://github.com/GooDAnDReaDY/dsh-cron) — Scheduled cron tasks, background automation and agent execution for DeepSeek Harness.
-- **dsh-retrace** [链接](https://github.com/yamingmou/dsh-retrace) — Retrace · 回溯 — Recall, edit-and-resend, regenerate, and conversation/artifact versioning (timeline, rollback, fork map) for DeepSeek Harness — Web and Desktop
+- **dshtui** [链接](https://github.com/xp266/dsh-tui) — ink-based terminal UI plugin for DeepSeek Harness
+- **dsh-conversation-language**  — DSH plugin for switching conversation language between Chinese and English
+- **noogenesis-dsh** [链接](https://github.com/ZK-Andy/noogenesis) — Noogenesis (心源) DSH adapter — swarm evolution framework on the DSH plugin architecture: zero-dependency evolution engine (P1) wired into the session lifecycle.
+- **dsh-llm-stats** [链接](https://github.com/fan56/dsh-llm-stats) — dsh plugin: persistent whole-machine LLM usage ledger with a markdown /llm-stats report (GFM tables + emoji: tokens, cache hit, model/tool time, per-day bars)
+- **dsh-plugin-gate** [链接](https://github.com/863683348/dsh-plugin-gate) — Installation safety gate & data-protection guard for DeepSeek Harness: 60 static signature rules scan plugin sources for malicious install scripts, credential theft, obfuscation and network callbacks before 'dsh plugin add', with scan baselines (gate_diff
+- **dsh-context-milvus**  — DSH plugin for semantic code search via Milvus vector database
+- **plugin-loader** [链接](https://github.com/dsh-cc/dsh-cc) — Load Claude Code plugin.json manifests as in-memory dsh plugin mounts
+- **dsh-notify-me** [链接](https://github.com/chromoany/dsh-notify-me) — DSH 桌面消息提醒插件：模型需要你操作（审批/方案确认/提问的可操作提醒）或回复在后台完成时，系统通知+提示音+标签页标题提醒你；可在设置页开关并切换通知语言。Desktop notification & message alerts for DeepSeek Harness web — toasts, sounds and a tab-title marker when the agent needs your input (approval / plan review / question) or 
+- **dsh-server-deck** [链接](https://github.com/meyaomiao/dsh-server-deck) — DSH 能力插件:服务器卡片仪表盘——实时状态/CPU/内存/磁盘 + 趋势记录与可视化(1h/24h/7d/30d) + 点卡片进入 xterm 交互终端
+- **relay-dsh-plugin-codex** [链接](https://github.com/yangbobo2021/relay-dsh-plugin-codex) — Codex conversation backend for DeepSeek Harness, powered by the Codex App Server with approvals and DSH tool support.
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
