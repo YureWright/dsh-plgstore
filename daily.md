@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-12）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-13）
 
 ## 🆕 新推出的插件
-- **dsh-tylina-native** [链接](https://github.com/tylina/dsh-tylina) — Tylina native runtime bundle for DeepSeek Harness
-- **dsh-tylina** [链接](https://github.com/tylina/dsh-tylina) — Tylina wasm runtime bundle for DeepSeek Harness
-- **dsh-plugin-ops-core** [链接](https://github.com/f-infinite-z/dsh-plugin-ops) — Shared engine for dsh-plugin-ops: profile readers, scan rules, fault memory, fix planner, panel API
-- **relay-dsh-plugin-skill-creator** [链接](https://github.com/yangbobo2021/relay-dsh-plugin-skill-creator) — A DSH plugin that turns a completed conversation into a reusable, validated DSH Skill bundle.
-- **dsh-plugin-ops-bundle** [链接](https://github.com/f-infinite-z/dsh-plugin-ops) — Embedded dsh bundle for dsh-plugin-ops: a settings-page health panel (scan, plugin rows, diagnosis chat) over the shared engine
-- **acp** [链接](https://github.com/22-ai-00/dsh-enhanced) — Use DeepSeek Harness as an Agent Client Protocol (ACP) stdio agent.
-- **dsh-plugin-parallel**  — [![npm 版本](https://img.shields.io/npm/v/@jw-king/dsh-plugin-parallel.svg)](https://www.npmjs.com/package/@jw-king/dsh-plugin-parallel) [![许可证: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![DSH 规范](https
-- **dshtui** [链接](https://github.com/xp266/dsh-tui) — ink-based terminal UI plugin for DeepSeek Harness
-- **dsh-conversation-language**  — DSH plugin for switching conversation language between Chinese and English
-- **noogenesis-dsh** [链接](https://github.com/ZK-Andy/noogenesis) — Noogenesis (心源) DSH adapter — swarm evolution framework on the DSH plugin architecture: zero-dependency evolution engine (P1) wired into the session lifecycle.
+- **cordis-plugin-session-audit** [链接](https://github.com/argszero/cordis-plugin-session-audit) — Proactive session-log completeness audit for the dsh harness: detects seq gaps, index-reuse, format-version drift, unknown-required types (hard-fail on reload), empty text blocks (#5773), orphan tool calls, and open-turn tails — before replay crashes.
+- **cordis-plugin-preset-tool-filter** [链接](https://github.com/argszero/cordis-plugin-preset-tool-filter) — Per-preset tool allowlist for the dsh harness: apply a ToolRestriction to an agent's scope so a preset (e.g. minimal) exposes only its intended tools and hides plugin-registered global tools (#5786).
+- **dsh-hardssh** [链接](https://github.com/tiphareth0/dsh-hardssh) — Generic workspace base for the dsh harness (local + remote workspace providers with per-workspace routing), with SSH as one concrete provider: bind a server directory as an SSH workspace so the session's file I/O and commands run on that host, manage host
+- **deepseek-harness-skill-mcp** [链接](https://github.com/civilization-os/dsh-skill-mcp) — Skill path and MCP server management for DeepSeek Harness Web
+- **dashi** [链接](https://github.com/antst/dashi) — A terminal UI for DeepSeek Harness
+- **deepseek-harness-plugin**  — Foggy Java data analysis engine integration for DeepSeek Harness
+- **dsh-cert-mcp** [链接](https://github.com/PerryLink/dsh-cert-mcp) — Read-only MCP server exposing the dsh-plugin-certification registry: certification grades, snapshots and five-dimension evidence for DeepSeek Harness plugins.
+- **dsh-plan-and-execute** [链接](https://github.com/jimmyzhang219/dsh-plan-and-execute) — dsh plugin: plan-and-execute orchestration over ReactLoopAgent
+- **start-dsh-plugin** [链接](https://github.com/ikuokuo/start-dsh-plugin) — start dsh plugin
+- **dsh-web-searxng** [链接](https://github.com/biyuhao/dsh-web-searxng) — DSH plugin: SearXNG-backed search provider for ctx.web (self-hosted, 1GB-VPS friendly)
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
