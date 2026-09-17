@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-16）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-17）
 
 ## 🆕 新推出的插件
-- **dsh-outlook** [链接](https://github.com/UnknowCao/dsh-outlook) — Zero-credential Outlook automation for DSH Harness on Windows: the AI agent drives your LOCAL desktop Outlook client via COM — search/read mail, drafts, reply/forward, calendar, address book, rooms, free/busy. No Graph API app registration, no SMTP passwo
-- **dsh-tui** [链接](https://github.com/jame100101/dsh-terminal-ui) — Out-of-tree DeepSeek Harness TUI bundle (plugin mode)
-- **dsh-qa** [链接](https://github.com/naodeng/dsh-qa) — dsh-qa QA Workbench: a local software testing workbench plugin for DeepSeek Harness. Project/iteration dual-mode, full-flow requirements / test cases / defects / milestones / reports, native QA preset, themes, kanban and calendar.
-- **dsh-plugin-preview**  — DeepSeek Harness Markdown 文档与工作空间文件浏览器右侧预览插件 (支持查看/切换隐藏文件与点文件、工作区文件树、文件夹创建与文件移动、JSON 交互结构树/格式化、Java/C++/Python/JS/TS/YAML/Go/Rust 多语言语法高亮与符号大纲、自动换行与多标签 FileTabs)
-- **deepseek-harness-channel-imessage** [链接](https://github.com/mapan0424/deepseek-harness-plugins) — Channel plugin for DeepSeek Harness: local-only iMessage transport through Messages.app and chat.db. Thin facade on @anarkhgatsby/deepseek-harness-core.
-- **dsh-harness-tags**  — DSH plugin: watch new GitHub tags of deepseek-ai/deepseek-harness (optionally through an HTTP proxy) — background poll, in-app reminder banner, /harness-tags command, check_harness_tags tool, settings card
-- **dsh-topics-memory** [链接](https://github.com/fan56/dsh-topics-memory) — dsh-plugin: quality-first topic memory for dsh — a topic keeps the starting question, conclusion, impact and dependencies, not the process; local-first git-traced OKF bundle, budgeted LLM-free injection
-- **dsh-chat-image-lightbox** [链接](https://github.com/loyalchiiina/dsh-chat-image-lightbox) — DSH plugin: display images inline in chat with lightbox zoom, download (save-as), and prev/next navigation
-- **deepseek-harness-channel-wecom** [链接](https://github.com/mapan0424/deepseek-harness-plugins) — Channel plugin for DeepSeek Harness: 企业微信 behind one message bus. Thin facade on @anarkhgatsby/deepseek-harness-core.
-- **deepseek-harness-channel-feishu** [链接](https://github.com/mapan0424/deepseek-harness-plugins) — Channel plugin for DeepSeek Harness: 飞书 behind one message bus. Thin facade on @anarkhgatsby/deepseek-harness-core.
+- **cordis-plugin-goal-ask-guard** [链接](https://github.com/argszero/cordis-plugin-goal-ask-guard) — Deny ask_user_question during autonomous goal rounds for the dsh harness: an agent-scoped ctx.tools.guard() on the agent/created + agent/inbox/claimed seam, as interim mitigation for #6074 (a nested ask during a goal run is not model-visible in code mode,
+- **oh-my-deepseek-harness** [链接](https://github.com/YYTbit/oh-my-deepseek-harness) — Multi-agent orchestration for DeepSeek Harness -- specialized agents, task orchestration, workflow skills
+- **dsh-tool-codegraph** [链接](https://github.com/m1khal3v/dsh-tool-codegraph) — CodeGraph integration for DeepSeek Harness
+- **dsh-skills-bucket** [链接](https://github.com/auggie246/dsh-skills-bucket) — DSH plugin bundle serving this repository's skills as runtime skills.
+- **dsh-nova-ui-task-board**  — Task board plugin for the DeepSeek Harness (DSH) Web GUI: real session execution, cron & one-shot scheduling, tags & projects, drag-and-drop, and conversation task capture.
+- **dsh-video-preview** [链接](https://github.com/zemul/dsh-video-preview) — Inline video preview for dsh-better-sidebar: plays .mp4/.webm/.mov/.mkv/.avi etc. in the sidebar editor with HTTP Range (seeking) support via a dedicated /video host route
+- **dsh-composer-layout** [链接](https://github.com/lavapapa/dsh-composer-layout) — Keep long answers and detailed prompts side by side with a dockable DSH Composer.
+- **meow-smooth** [链接](https://github.com/Phant0Meow/dsh-meow-smooth) — 喵丝滑：dsh 前端行为增强——输入框失焦折叠高度 + 窄屏选中 Session 自动收起侧边栏（纯 client 插件，零 dsh 本体改动）
+- **dsh-image-viewer** [链接](https://github.com/WSL043/dsh-image-viewer) — Zoom, pan, download, gallery, and region-note image viewer for DeepSeek Harness
+- **dsh-workbuddy-connect** [链接](https://github.com/corrinehu/dsh-workbuddy-connect) — 将 WorkBuddy 桌面 App 包含的模型自动接入 DeepSeek Harness — bring WorkBuddy desktop app models into DeepSeek Harness with zero configuration.
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
