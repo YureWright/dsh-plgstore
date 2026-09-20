@@ -1,16 +1,14 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-19）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-20）
 
 ## 🆕 新推出的插件
+- **dsh-weknora** [链接](https://github.com/Tencent/WeKnora) — WeKnora knowledge retrieval tools for DeepSeek Harness (dsh): semantic search, document reading and RAG/agent answers over your own knowledge bases.
+- **dsh-plugin-content-policy** [链接](https://github.com/L-ingqin12/dsh-redaction) — Preventive content policy for DeepSeek Harness tool results: rewrite matched text with regex rules, or drop/truncate unpredictable payloads by field path before they are normalised, rendered, or persisted. The upstream counterpart to dsh-plugin-redact.
+- **dsh-desktop-shell** [链接](https://github.com/zerorigin-studio/dsh-desktop-shell) — dsh desktop shell: a real desktop client for DeepSeek Harness — works both as a dsh plugin (wraps a running harness) and standalone (downloads the official runtime and boots harness itself)
+- **dsh-muv-table** [链接](https://github.com/chen731215-dev/dsh-muv-table) — MUV 变量表格编辑器 —— 树形变量面板、宏测试浮窗（random/pick/roll）、骰子快捷栏、pick 缓存管理；支持直接读取 SillyTavern PNG 角色卡（含正则脚本、世界书、变量表）。dsh-muv-engine 的伴生插件
+- **dsh-muv-engine** [链接](https://github.com/chen731215-dev/dsh-muv-engine) — DSH 原生 MUV 引擎 —— 正则脚本、状态栏级联（任意字段/行动选项）、变量追踪、LaTeX、宏展开、标签 CSS、visual 代码块渲染（信纸/终端/报纸/手机），内置 diag.mjs 诊断工具。需与伴生插件 dsh-muv-table 一起安装
+- **dsh-fund-research** [链接](https://github.com/PerryLink/dsh-fund-research) — Research plugin for Chinese public mutual funds on DeepSeek Harness: collects fund data from public sources (Tiantian Fund / Eastmoney), computes deterministic metrics (manager profile, holdings penetration, style attribution, performance decomposition), 
+- **dsh-better-workspace** [链接](https://github.com/KannaKuron/dsh-better-workspace) — 侧边栏工作区树:按官方磁盘目录嵌套(官方 workspace-tree 语义),可选按名称中的 / 分组(默认关闭,设置里开启);添加工作区走官方目录流。Workspace tree for the DSH sidebar: disk-path nesting (official workspace-tree semantics), with optional "/"-name grouping (off by default); add-workspace rides the official dire
 - **agnes-image** [链接](https://github.com/Dingpenghui-good/dsh-tool-agnes) — DSH plugin for Agnes AI text-to-image generation
-- **dsh-astraworks**  — Native DeepSeek Harness host for the AstraWorks work engine
-- **dsh-harness-manager** [链接](https://github.com/sss-1012/DeepSeek-Harness-Manager) — 在 DSH 界面里一键打开 DeepSeek Harness Manager(Windows 控制中心:环境/插件/诊断/更新回滚)
-- **dsh-im-connect** [链接](https://github.com/MichengAI/dsh-im-connect) — DSH IM Connect — 将主流即时通讯平台接入本机 DeepSeek Harness · Connect major messaging platforms to local DeepSeek Harness agents
-- **dsh-scheduled-send** [链接](https://github.com/OTTTTTO/dsh-scheduled-send) — DSH plugin: scheduled sending (⏰ composer button, dock list of pending tasks, sidebar 定时任务 panel with cross-session cancel, due-time delivery as a normal user bubble)
-- **dsh-zhihu-search** [链接](https://github.com/zlZayn/dsh-zhihu-search) — DSH plugin: Zhihu in-site search, global web search, and Zhida over the official Zhihu Open Platform API — with a native settings card and source-cited results.
-- **dsh-llm-verifier** [链接](https://github.com/Aa728848/dsh-llm-verifier) — Configurable DSH-native LLM verifier with a Web settings page
-- **dsh-plugin-tool-management** [链接](https://github.com/ouli-1242/dsh-plugin-tool-management) — DSH plugin: one settings panel for MCP servers, skills, scenes, memories, subagents, AGENTS.md presets and archived sessions — scene memory injects into the system prompt, scene lock freezes all five domains, deleted workspaces re-register with one click.
-- **dsh-palimpsest** [链接](https://github.com/cnkids/dsh-palimpsest) — 让 DSH 智能体在新会话里按需检索同一工作目录下历史会话的记忆
-- **dsh-pre-duediligence** [链接](https://github.com/duhu2000/dsh-pre-duediligence) — Pre-visit due diligence and company research in DeepSeek Harness with Host-tracked progress, fixed-route Qichacha MCP calls, entity confirmation, and downloadable reports.
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
