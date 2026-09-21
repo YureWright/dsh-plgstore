@@ -1,14 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-20）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-21）
 
 ## 🆕 新推出的插件
-- **dsh-weknora** [链接](https://github.com/Tencent/WeKnora) — WeKnora knowledge retrieval tools for DeepSeek Harness (dsh): semantic search, document reading and RAG/agent answers over your own knowledge bases.
-- **dsh-plugin-content-policy** [链接](https://github.com/L-ingqin12/dsh-redaction) — Preventive content policy for DeepSeek Harness tool results: rewrite matched text with regex rules, or drop/truncate unpredictable payloads by field path before they are normalised, rendered, or persisted. The upstream counterpart to dsh-plugin-redact.
-- **dsh-desktop-shell** [链接](https://github.com/zerorigin-studio/dsh-desktop-shell) — dsh desktop shell: a real desktop client for DeepSeek Harness — works both as a dsh plugin (wraps a running harness) and standalone (downloads the official runtime and boots harness itself)
-- **dsh-muv-table** [链接](https://github.com/chen731215-dev/dsh-muv-table) — MUV 变量表格编辑器 —— 树形变量面板、宏测试浮窗（random/pick/roll）、骰子快捷栏、pick 缓存管理；支持直接读取 SillyTavern PNG 角色卡（含正则脚本、世界书、变量表）。dsh-muv-engine 的伴生插件
-- **dsh-muv-engine** [链接](https://github.com/chen731215-dev/dsh-muv-engine) — DSH 原生 MUV 引擎 —— 正则脚本、状态栏级联（任意字段/行动选项）、变量追踪、LaTeX、宏展开、标签 CSS、visual 代码块渲染（信纸/终端/报纸/手机），内置 diag.mjs 诊断工具。需与伴生插件 dsh-muv-table 一起安装
-- **dsh-fund-research** [链接](https://github.com/PerryLink/dsh-fund-research) — Research plugin for Chinese public mutual funds on DeepSeek Harness: collects fund data from public sources (Tiantian Fund / Eastmoney), computes deterministic metrics (manager profile, holdings penetration, style attribution, performance decomposition), 
-- **dsh-better-workspace** [链接](https://github.com/KannaKuron/dsh-better-workspace) — 侧边栏工作区树:按官方磁盘目录嵌套(官方 workspace-tree 语义),可选按名称中的 / 分组(默认关闭,设置里开启);添加工作区走官方目录流。Workspace tree for the DSH sidebar: disk-path nesting (official workspace-tree semantics), with optional "/"-name grouping (off by default); add-workspace rides the official dire
-- **agnes-image** [链接](https://github.com/Dingpenghui-good/dsh-tool-agnes) — DSH plugin for Agnes AI text-to-image generation
+- **dsh-context-compression-improved** [链接](https://github.com/drscrewdriver/dsh-context-compression-improved) — One-install context-compression selector bundle for DeepSeek Harness
+- **dsh-anp-identity** [链接](https://github.com/agent-network-protocol/anp-identity) — ANP Identity management plugin for DeepSeek Harness
+- **dsh-plugin-android-use**  — DSH plugin exposing adb-based tools that let the model operate an Android phone (screenshot, UI dump, tap, swipe, input text, press keys, open apps). | 让模型通过 adb 操作安卓手机的 DSH 插件（截图、UI 树、点击、滑动、输入文本、按键、打开应用）。
+- **dsh-chat-cost** [链接](https://github.com/igormel81/dsh-chat-cost) — DeepSeek Harness (dsh) plugin: live token cost of every chat, its subagents and the whole session tree, the price of each finished answer in the transcript, budget planning that packs a work plan under a money limit, and scenario comparison that names whi
+- **dsh-tokensaver**  — DSH plugin: reversible memory layer (CCR) + auto context compaction to save tokens. Bridges the TokenSaver Python CLI into DeepSeek Harness.
+- **dsh-plugins-all** [链接](https://github.com/dale0525/dsh-plugins) — DSH plugin aggregate bundle: one install for every plugin in this repo.
+- **dsh-gitea** [链接](https://github.com/GooDAnDReaDY/dsh-gitea) — Enterprise Gitea & Forgejo integration for DeepSeek Harness: 20+ issue/PR/worktree tools and a real-time Git status chip in chat.
+- **dsh-life-pack** [链接](https://github.com/FeatherHunter/ilife) — 爱生活总管插件：单 DSH设置面板槽（爱生活卡）+ 爱生活页签槽 children，技能设置页动态聚合，不依赖单品、不 import 单品页
+- **dsh-task-board** [链接](https://github.com/FiretrUCK666/dsh-task-board) — Task board plugin for the DSH web GUI: a sidebar entry plus a multi-column kanban view with real execution through DSH sessions, schedules, session rules and auto-cruise automation. Board truth lives on the host and syncs to every device over SSE (the bro
+- **dsh-engram** [链接](https://github.com/kenz1117/dsh-engram) — Cross-session long-term memory for DeepSeek Harness (memory palace · AGI Architecture Exploration on dsh-market): dual-scope SQLite memory graph, hybrid retrieval, provenance audit, and a knowledge flywheel.
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
