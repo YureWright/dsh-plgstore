@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-21）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-22）
 
 ## 🆕 新推出的插件
-- **dsh-context-compression-improved** [链接](https://github.com/drscrewdriver/dsh-context-compression-improved) — One-install context-compression selector bundle for DeepSeek Harness
-- **dsh-anp-identity** [链接](https://github.com/agent-network-protocol/anp-identity) — ANP Identity management plugin for DeepSeek Harness
-- **dsh-plugin-android-use**  — DSH plugin exposing adb-based tools that let the model operate an Android phone (screenshot, UI dump, tap, swipe, input text, press keys, open apps). | 让模型通过 adb 操作安卓手机的 DSH 插件（截图、UI 树、点击、滑动、输入文本、按键、打开应用）。
-- **dsh-chat-cost** [链接](https://github.com/igormel81/dsh-chat-cost) — DeepSeek Harness (dsh) plugin: live token cost of every chat, its subagents and the whole session tree, the price of each finished answer in the transcript, budget planning that packs a work plan under a money limit, and scenario comparison that names whi
-- **dsh-tokensaver**  — DSH plugin: reversible memory layer (CCR) + auto context compaction to save tokens. Bridges the TokenSaver Python CLI into DeepSeek Harness.
-- **dsh-plugins-all** [链接](https://github.com/dale0525/dsh-plugins) — DSH plugin aggregate bundle: one install for every plugin in this repo.
-- **dsh-gitea** [链接](https://github.com/GooDAnDReaDY/dsh-gitea) — Enterprise Gitea & Forgejo integration for DeepSeek Harness: 20+ issue/PR/worktree tools and a real-time Git status chip in chat.
-- **dsh-life-pack** [链接](https://github.com/FeatherHunter/ilife) — 爱生活总管插件：单 DSH设置面板槽（爱生活卡）+ 爱生活页签槽 children，技能设置页动态聚合，不依赖单品、不 import 单品页
-- **dsh-task-board** [链接](https://github.com/FiretrUCK666/dsh-task-board) — Task board plugin for the DSH web GUI: a sidebar entry plus a multi-column kanban view with real execution through DSH sessions, schedules, session rules and auto-cruise automation. Board truth lives on the host and syncs to every device over SSE (the bro
-- **dsh-engram** [链接](https://github.com/kenz1117/dsh-engram) — Cross-session long-term memory for DeepSeek Harness (memory palace · AGI Architecture Exploration on dsh-market): dual-scope SQLite memory graph, hybrid retrieval, provenance audit, and a knowledge flywheel.
+- **dsh-invariants** [链接](https://github.com/deepseek-ai/deepseek-harness) — Registry service for package-owned DeepSeek Harness runtime invariants
+- **dsh-memory-palace** [链接](https://github.com/lovezi0/dsh-memory-palace) — 把 WorkBuddy 的文件式记忆系统移植进 DeepSeek Harness：用户级 + 工作区的人类可读 Markdown 记忆（~/.deepseek-harness/MEMORY.md 与 <cwd>/.deepseek-harness/memory/）。
+- **dsh-auto-approval-llm** [链接](https://github.com/cuddly-guacamole/dsh-auto-approval-llm) — LLM-assisted auto approval with timeout fallback for DeepSeek Harness
+- **dsh-pi-agent-providers** [链接](https://github.com/52sujiu/dsh-pi-agent-providers) — The pi agent's provider catalog (~/.pi/agent/models.json) as DeepSeek Harness LLM routes — installable and removable with `dsh plugin`, no dsh source patch
+- **dsh-openviking-memory** [链接](https://github.com/xarleyn/dsh-plugins) — OpenViking memory integration for DeepSeek Harness with configurable automatic context injection; derived from the official OpenViking DSH plugin.
+- **dsh-remote-shell** [链接](https://github.com/wutian122/dsh-remote-shell) — DSH plugin bundling the remote-shell skill: secure SSH/SFTP/Telnet/WinRM remote operations with an encrypted credential vault.
+- **dsh-suite**  — DeepSeek Harness 一键全功能增强套件 (自动化调度 + WebStorm Git 提交对比 + 代码文档多标签预览 + 对话快捷栏)
+- **dsh-tty** [链接](https://github.com/hyzyn/dsh-plugin-kit) — DSH Web GUI 的终端面板插件：侧边栏「终端」大弹窗，xterm.js + PTY 全交互终端（路线1），ssh2 原生 SSH 远程连接（方案 C），tmux 会话持久化（0.10.0），连接栏扩展点 ttyConnbar（0.13.0）、终端服务 ttyTerminal（0.14.0 open / 0.15.0 mount 就地嵌入）、面板内挂载位 ttyPanel（0.16.0 右侧 dock）、服务器状态条（0.17.0：按标签可见性采端主机 CPU / 内存 / 磁盘 / 在线时长 / 
+- **dsh-solution-explorer** [链接](https://github.com/xiaoksio/dsh-solution-explorer) — DSH Web GUI right sidebar, replaced end to end: VS Code-style file explorer plus full source control (git status, stage/unstage/discard, commit, diff, commit graph, fetch/pull/push sync, branch/remote management, git init, multi-repo switch, color-coded s
+- **dsh-plugin-automation**  — DeepSeek Harness 自动化任务与调度中心插件 (WorkBuddy 原生交互对齐版)
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
