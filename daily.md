@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-22）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-23）
 
 ## 🆕 新推出的插件
-- **dsh-invariants** [链接](https://github.com/deepseek-ai/deepseek-harness) — Registry service for package-owned DeepSeek Harness runtime invariants
-- **dsh-memory-palace** [链接](https://github.com/lovezi0/dsh-memory-palace) — 把 WorkBuddy 的文件式记忆系统移植进 DeepSeek Harness：用户级 + 工作区的人类可读 Markdown 记忆（~/.deepseek-harness/MEMORY.md 与 <cwd>/.deepseek-harness/memory/）。
-- **dsh-auto-approval-llm** [链接](https://github.com/cuddly-guacamole/dsh-auto-approval-llm) — LLM-assisted auto approval with timeout fallback for DeepSeek Harness
-- **dsh-pi-agent-providers** [链接](https://github.com/52sujiu/dsh-pi-agent-providers) — The pi agent's provider catalog (~/.pi/agent/models.json) as DeepSeek Harness LLM routes — installable and removable with `dsh plugin`, no dsh source patch
-- **dsh-openviking-memory** [链接](https://github.com/xarleyn/dsh-plugins) — OpenViking memory integration for DeepSeek Harness with configurable automatic context injection; derived from the official OpenViking DSH plugin.
-- **dsh-remote-shell** [链接](https://github.com/wutian122/dsh-remote-shell) — DSH plugin bundling the remote-shell skill: secure SSH/SFTP/Telnet/WinRM remote operations with an encrypted credential vault.
-- **dsh-suite**  — DeepSeek Harness 一键全功能增强套件 (自动化调度 + WebStorm Git 提交对比 + 代码文档多标签预览 + 对话快捷栏)
-- **dsh-tty** [链接](https://github.com/hyzyn/dsh-plugin-kit) — DSH Web GUI 的终端面板插件：侧边栏「终端」大弹窗，xterm.js + PTY 全交互终端（路线1），ssh2 原生 SSH 远程连接（方案 C），tmux 会话持久化（0.10.0），连接栏扩展点 ttyConnbar（0.13.0）、终端服务 ttyTerminal（0.14.0 open / 0.15.0 mount 就地嵌入）、面板内挂载位 ttyPanel（0.16.0 右侧 dock）、服务器状态条（0.17.0：按标签可见性采端主机 CPU / 内存 / 磁盘 / 在线时长 / 
-- **dsh-solution-explorer** [链接](https://github.com/xiaoksio/dsh-solution-explorer) — DSH Web GUI right sidebar, replaced end to end: VS Code-style file explorer plus full source control (git status, stage/unstage/discard, commit, diff, commit graph, fetch/pull/push sync, branch/remote management, git init, multi-repo switch, color-coded s
-- **dsh-plugin-automation**  — DeepSeek Harness 自动化任务与调度中心插件 (WorkBuddy 原生交互对齐版)
+- **engine-intelligence-dsh**  — Host-side DeepSeek Harness provider for ForgeaX intelligence Activities.
+- **relay-dsh-plugin-claude** [链接](https://github.com/yangbobo2021/relay-dsh-plugin-claude) — Claude Code integration plugin for DeepSeek Harness, providing native Claude conversations powered by the Claude Agent SDK, with model selection, approvals, questions, tools, and session continuation.
+- **dsh-plugins-token-tracing-bundle** [链接](https://github.com/qihongmu/dsh-plugins) — Aggregate install bundle for the token-tracing plugin: pulls the host/remotes/client halves and mounts all three with a single `dsh plugin add`.
+- **dsh-opencode-go-plus** [链接](https://github.com/yumusb/dsh-opencode-go-plus) — DSH plugin: standalone OpenCode GO LlmAdapter — owns its provider route outright (per-model wire protocol incl. union-alpha's anthropic-messages), manages models/context/modality/effort declarations in its own settings namespace, never touches llm-pi-ai
+- **dsh-composer-glass** [链接](https://github.com/Lbunc/dsh-composer-glass) — DSH plugin: turn the composer into a uniformly translucent frosted-glass pane, with a persisted on/off preference row in Settings → General.
+- **dsh-better-input** [链接](https://github.com/DIAG5/dsh-better-input) — Better input experience for DeepSeek Harness: voice input, AI polishing, prompt optimization, and local file input / file-to-Markdown
+- **dsh-msg9-kit** [链接](https://github.com/ice5kysl/dsh-msg9-kit) — dsh (DeepSeek Harness) msg9 kit: one msg9.io inbox per workspace. Model tools (send/receive/read/contacts/resolve) plus a /msg9 command in the agent, and a ✉ sidebar icon that opens the same mailbox in the GUI — inbox, outbox and address book, with an unr
+- **dsh-tool-monitoring** [链接](https://github.com/LJH-snow/dsh-tool-monitoring) — Monitoring and alerting tools for DeepSeek Harness: Prometheus queries, targets, alerts, rules, series, labels, metric metadata, TSDB, config and runtime status, discovered Alertmanagers, Alertmanager, Loki LogQL, Grafana dashboards, admin stats, plugins,
+- **dsh-tender-workbench** [链接](https://github.com/duhu2000/dsh-tender-workbench) — Tender search and bid intelligence in DeepSeek Harness with proposed project search, rule screening, human review and Excel/PDF exports using user-authorized Qichacha MCP.
+- **dsh-fast** [链接](https://github.com/PerryLink/dsh-fast) — Read-only performance diagnostics for DeepSeek Harness: session load (open/restore) timing, spill-hit counts, compaction count and trigger, context-injection volume (AGENTS.md/skills/tool-schema token share), and LLM cache hit rate — surfaced via the /fas
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
