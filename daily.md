@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-28）
+# 🛒 DSH 插件市场 · 每日日报（2026-09-29）
 
 ## 🆕 新推出的插件
-- **dsh-feishu-beacon** [链接](https://github.com/jiangdunchun/dsh-feishu-beacon) — DSH plugin that pushes agent progress and human-attention events to a Feishu (Lark) custom-bot webhook
-- **dsh-mint** [链接](https://github.com/yanqd0/dsh-mint) — DSH plugin: mint issue tracking integration — session context injection, event reminders, plan binding, a zero-approval `mint` tool, and a session tab.
-- **dsh-ds-balance** [链接](https://github.com/zlZayn/dsh-ds-balance) — DSH plugin: shows the DeepSeek account balance at the bottom of the sidebar, with a configuration card on the Plugins page.
-- **dsh-home-hosted** [链接](https://github.com/NamesMT/dsh-home-hosted) — DeepSeek Harness (dsh) plugin: start your dsh web server automatically at boot, and manage home-hosted's panel and servers from inside dsh.
-- **dsh-deepseek-web-login** [链接](https://github.com/cv-superding/dsh-deepseek-web-login) — Unofficial DSH plugin: use chat.deepseek.com web models as a DSH LLM provider (browser login capture + PoW solving + SSE streaming + prompting-based tool calls), provider route deepseek-web
-- **dsh-plugin-manager-companion** [链接](https://github.com/LX2000WASD/dsh-plugin-manager-companion) — Companion to the official DSH plugin manager: pre-install quality gate, deep environment diagnostics, plugin marketplace, and skills/presets management.
-- **veyra** [链接](https://github.com/LoveDoLove/Veyra) — Veyra — Engineering Intelligence for Coding Agents. Persistent, evidence-aware, project-isolated engineering memory and unified hybrid search (memory + RAG documentation) for DeepSeek Harness.
-- **dsh-force-compact** [链接](https://github.com/falling-ts/dsh-force-compact) — DSH Cordis plugin: hooks the core model-request seam (agent/pre-step + agent/request) to force-compact a session's context and disable thinking per the "强制压缩配置" settings namespace (disableThinking, autoThresholdTokens, retainLatestTokens, turnEndForceComp
-- **dsh-prime-memory** [链接](https://github.com/drscrewdriver/dsh-prime-memory) — L0~L3 分层蒸馏记忆插件 for DeepSeek Harness：自动捕获对话（L0）、抽取原子记忆（L1）、整合场景块（L2）、蒸馏核心画像/团队方法论（L3），并在模型步骤前自动召回注入。移植自 MemoryCore (TencentDB Agent Memory) 的管线设计。
-- **dsh-kb** [链接](https://github.com/weibaohui/dsh-kb) — dsh 插件 · 团队知识库：多库各有加工约定，上传素材由 bot 会话串行蒸馏成结构化文章；支持全文检索、问 AI 检索带来源作答、版本历史可回滚、页面反馈后台 agent 自动修正。
+- **dsh-usage-state** [链接](https://github.com/takboo/dsh-usage-state) — DSH plugin: show account balance (API mode) or coding-plan quota (5h/7d/30d) for the model in use
+- **dsh-agent-loop-guard** [链接](https://github.com/GooDAnDReaDY/dsh-agent-loop-guard) — Fail-closed runtime tool-call loop guard for DeepSeek Harness.
+- **dsh-web-search-enhanced** [链接](https://github.com/Yurzi/dsh-web-search-enhanced) — Session-scoped search connections for DeepSeek Harness
+- **dsh-plugin-devkit** [链接](https://github.com/CkEFFAF/dsh-plugin-devkit) — DSH Plugin DevKit: runtime observation kernel, isolated debug boot, host contract tests, slot preview
+- **dsh-desktopify** [链接](https://github.com/morlay/dsh-plugin) — Desktop packaging tool for dsh workspaces: dev (workspace-linked) and bundle (static, unsigned) modes around the @morlay/dsh-desktop-shell Electron app, whose @morlay/dsh-desktop-host child boots the profile over byte pipes.
+- **dsh-decision-room** [链接](https://github.com/JinhangShi/dsh-decision-room) — DSH 多模型决策室：独立评审、持续质询、证据与分歧、方案修订及人工续议
+- **dsh-mermaid** [链接](https://github.com/MrmoLabs/dsh-mermaid) — Render Mermaid code blocks in DeepSeek Harness with a diagram/code toggle.
+- **dsh-workbench-ecs** [链接](https://github.com/nishuoyang/dsh-workbench-ecs) — DeepSeek Harness (Cordis) plugin: control Alibaba Cloud ECS instances through the local Workbench CLI — find/list/exec/log/upload/download/diagnose/deploy/session model tools plus a visual settings panel
+- **dsh-connect-trae** [链接](https://github.com/dingminhua/dsh-connect-trae) — 把本机登录的 Trae 模型接入 DeepSeek Harness：国内版与国际版双供应商并行，提供用量/积分概览与每日签到领取。
+- **dsh-ui-balance** [链接](https://github.com/EasyTZ/dsh-ui-balance) — 余额与费用：DeepSeek 余额、日/周/月花费、各模型用量与实时单价。Balance and cost panel for DeepSeek Harness: balance, spend, per-model usage, live pricing.
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
