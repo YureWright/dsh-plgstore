@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-09-30）
+# 🛒 DSH 插件市场 · 每日日报（2026-10-01）
 
 ## 🆕 新推出的插件
-- **dsh-local-agent-dsh**  — dsh harness for dsh-local-agent: delegate to dsh itself as a local CLI — scoped DSH_HOME under the shared homes root, one-shot sub-dsh runs visible in the 子代理 surface, caller-supplied session ids, resume across rounds, DeepSeek toggle in settings
-- **dsh-local-agent-dsh-headless**  — Sub-dsh headless bundle for the local-agent-dsh harness: a direct Agent/Session runner over dsh-base — one-shot (caller-supplied --session-id/--resume, prints the final assistant text, exits) or resident (--serve) driving turns over the family stdio wire
-- **engine-dsh**  — Lifecycle-safe federation bridge between ForgeaX Engine and DeepSeek Harness.
-- **sabi-deepseek-harness** [链接](https://github.com/vizuh/sabi) — Sabi inference adapter bundle for DeepSeek Harness (DSH).
-- **dsh-plugin-manager-lite** [链接](https://github.com/ShanHaiFish/dsh-plugin-manager-lite) — DSH 静态 bundle 插件：在设置页管理第三方插件——列表、启用/停用（持久化到 ~/.dsh/cordis.patch.yml）、卸载、检查更新、一键升级。A static-bundle DSH plugin that manages third-party plugins on the settings page: list, enable/disable (persisted), uninstall, check for updates, and one-click upgrade.
-- **dsh-util-values** [链接](https://github.com/deepseek-ai/deepseek-harness) — Duplicate-install-safe value primitives for the DeepSeek Harness
-- **dsh-plugin-backup** [链接](https://github.com/deepseek-ai/deepseek-harness) — Full-stack Plus user-data Backup plugin with streamed Host archive routes and Settings UI
-- **dsh-glm-quota** [链接](https://github.com/young1lin/dsh-glm-quota) — DSH plugin: Zhipu/GLM Coding Plan quota — host fetch/cache/backoff plus a compact sidebar status and on-demand quota popover
-- **dsh-dhe-lore**  — DSH plugin: project-level shared memory for DeepSeek Harness — every session in a project shares one human-readable, git-committable memory store. · DSH 项目级共享记忆插件。
-- **dsh-soup** [链接](https://github.com/lyhue1991/dsh-soup) — dsh 体验增强四件套 = Jupyter风格SideBar + 中央文件预览Tab + 多行GoalBar + 实时Token流速徽标
+- **deepseek-harness-novel-studio** [链接](https://github.com/qinpeizhan77/deepseek-harness-novel-studio) — A professional local-first fiction canvas for DeepSeek Harness with native conversation, manuscript revision, human gates, and transactional canon state.
+- **dsh-plugin** [链接](https://github.com/busabase/busabase-dsh-plugin) — Busabase MCP, cards, and live inspector for DeepSeek Harness
+- **dsh-plus-standalone** [链接](https://github.com/deepseek-ai/deepseek-harness) — Install and run DeepSeek Harness Plus from the registry: no source checkout and no build.
+- **dsh-extras** [链接](https://github.com/CatheadOwl/dsh-extras) — Curated extras for dsh: one npm package, several independent plugin modules — gates (turn-close quality gates), markdown (md_rename tool + doc-link gate), enrichment (declarative context enrichment), routes (any_nav knowledge routing). `dsh plugin add @ca
+- **dsh-sidenote** [链接](https://github.com/g-yixuan/dsh-sidenote) — DSH web plugin: Codex-style side chat (fork the current session into a persistent side panel) + selection annotations with numbered badges and a composer chip. Runs directly on the DSH native right sidebar (DSH ≥ 0.1.5); dsh-better-sidebar is an optional 
+- **dsh-chat2learn**  — Local-first learning workflows for DeepSeek Harness
+- **dsh-harmonyos** [链接](https://github.com/ystyle/dsh-harmonyos) — DeepSeek Harness for HarmonyOS — 一条命令装好:JS-only 替代/裁剪 profile、鸿蒙文件系统补丁、compat loader(zstd/fs-ext/sharp shim)、内置预设 bundle、自启脚本(优先原生 zstd 的 node)。装完跑 dsh-ohos 即可。
+- **dsh-redteam-mode** [链接](https://github.com/Jueze-2019/dsh-redteam-mode) — DSH RedTeam 模式：一句话拉起红队作战智能体（资产测绘 / 攻击链 / 得分目标 / 报告 / POC 知识库），含六个角色、23 个原生技能、常驻右侧控制台与一键自动更新
+- **dsh-lowtide** [链接](https://github.com/KelaoHu/dsh-lowtide) — lowtide: human-adjudicated off-peak batch task pipeline for dsh (peak/valley pricing aware)
+- **dsh-plugin-ideas-manager** [链接](https://github.com/EiffelBS/dsh-plugin-ideas-manager) — Generic idea manager for the DSH Web GUI: Host-authoritative /api/ideas ledger, capture, 4-column kanban (open / under review / archived / declined), one-click execution launch (mirrored TaskBoard card or a direct session), optional TaskBoard mirror; moun
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
