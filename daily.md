@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-10-01）
+# 🛒 DSH 插件市场 · 每日日报（2026-10-02）
 
 ## 🆕 新推出的插件
-- **deepseek-harness-novel-studio** [链接](https://github.com/qinpeizhan77/deepseek-harness-novel-studio) — A professional local-first fiction canvas for DeepSeek Harness with native conversation, manuscript revision, human gates, and transactional canon state.
-- **dsh-plugin** [链接](https://github.com/busabase/busabase-dsh-plugin) — Busabase MCP, cards, and live inspector for DeepSeek Harness
-- **dsh-plus-standalone** [链接](https://github.com/deepseek-ai/deepseek-harness) — Install and run DeepSeek Harness Plus from the registry: no source checkout and no build.
-- **dsh-extras** [链接](https://github.com/CatheadOwl/dsh-extras) — Curated extras for dsh: one npm package, several independent plugin modules — gates (turn-close quality gates), markdown (md_rename tool + doc-link gate), enrichment (declarative context enrichment), routes (any_nav knowledge routing). `dsh plugin add @ca
-- **dsh-sidenote** [链接](https://github.com/g-yixuan/dsh-sidenote) — DSH web plugin: Codex-style side chat (fork the current session into a persistent side panel) + selection annotations with numbered badges and a composer chip. Runs directly on the DSH native right sidebar (DSH ≥ 0.1.5); dsh-better-sidebar is an optional 
-- **dsh-chat2learn**  — Local-first learning workflows for DeepSeek Harness
-- **dsh-harmonyos** [链接](https://github.com/ystyle/dsh-harmonyos) — DeepSeek Harness for HarmonyOS — 一条命令装好:JS-only 替代/裁剪 profile、鸿蒙文件系统补丁、compat loader(zstd/fs-ext/sharp shim)、内置预设 bundle、自启脚本(优先原生 zstd 的 node)。装完跑 dsh-ohos 即可。
-- **dsh-redteam-mode** [链接](https://github.com/Jueze-2019/dsh-redteam-mode) — DSH RedTeam 模式：一句话拉起红队作战智能体（资产测绘 / 攻击链 / 得分目标 / 报告 / POC 知识库），含六个角色、23 个原生技能、常驻右侧控制台与一键自动更新
-- **dsh-lowtide** [链接](https://github.com/KelaoHu/dsh-lowtide) — lowtide: human-adjudicated off-peak batch task pipeline for dsh (peak/valley pricing aware)
-- **dsh-plugin-ideas-manager** [链接](https://github.com/EiffelBS/dsh-plugin-ideas-manager) — Generic idea manager for the DSH Web GUI: Host-authoritative /api/ideas ledger, capture, 4-column kanban (open / under review / archived / declined), one-click execution launch (mirrored TaskBoard card or a direct session), optional TaskBoard mirror; moun
+- **dsh-harness-jarvis** [链接](https://github.com/CroissanTTs/dsh-harness-jarvis) — A floating desktop assistant for DSH Desktop — a particle orb for quick permission approvals and fast floating conversations.
+- **dsh-llm-provider** [链接](https://github.com/imchangchang/dsh-llm-provider) — A dsh plugin that replaces the built-in llm-pi-ai and llm-deepseek adapters, the model selector and the Models settings page with self-maintained versions, tracks upstream @earendil-works/pi-ai, adds OAuth/device-code sign-in for subscription providers (C
+- **dsh-blueprint** [链接](https://github.com/klarkxy/dsh-plugins) — Import and export plugin blueprints from the official DSH plugin manager.
+- **dsh-github-copilot** [链接](https://github.com/cloga/dsh-github-copilot) — DSH companion for GitHub Copilot sign-in, account-aware model profiles, tool compatibility, and provider-hosted search.
+- **cc-safety-net** [链接](https://github.com/kenryu42/cc-safety-net) — A coding agent CLI hook - block destructive commands and secret file access
+- **dsh-command-context-trim** [链接](https://github.com/snailium/dsh-command-context-trim) — Model-free /trim for DeepSeek Harness — drop the oldest, least valuable span of context on demand (the `/trim` command) or automatically when a request hits the model's context wall, without any model call.
+- **dsh-click** [链接](https://github.com/PerryLink/dsh-click) — Cross-platform native desktop control tools for DeepSeek Harness (Windows first): screen_shot, screen_read (accessibility tree + pixel description for text-only models), click/type/scroll/key, and app_list/app_launch — every mutating action gated by appro
+- **dsh-git-badge** [链接](https://github.com/Kevin-McIsaac/dsh-workspace-git-badge) — Git status badges for DeepSeek Harness: an input-row chip on every install, plus sidebar session-row badges (git status, PR/CI action tokens) after one manual step: `npx dsh-git-badge apply`, then restart dsh web. Event-driven freshness over SSE.
+- **canvas-workbench** [链接](https://github.com/elangan1997-cmyk/canvas-workbench) — 本地生图工作台,零订阅费:开自己的 API 生图(任意 OpenAI 兼容接口,零订阅),画布排版+修图/擦除/去背景/OCR/转矢量,可编辑 PSD/AI 交付,Photoshop/Illustrator 图层级双向桥接
+- **dsh-industry-research** [链接](https://github.com/PerryLink/dsh-industry-research) — Industry and company research domain pack for DeepSeek Harness: methodology skills, an industry-chain structure model (industry_map), public-source policy/news tracking over ctx.web (industry_track), company scan cards (company_scan), and auditable resear
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
