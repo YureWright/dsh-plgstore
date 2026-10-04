@@ -1,12 +1,12 @@
 {
   "schemaVersion": "0.1.0",
-  "generatedAt": "2026-10-03T10:18:46Z",
+  "generatedAt": "2026-10-04T11:02:22Z",
   "generator": "dsh-market-index@0.1.0 (merge)",
   "stats": {
-    "total": 2316,
+    "total": 2319,
     "byTrustLayer": {
       "official": 3,
-      "unverified": 2313
+      "unverified": 2316
     }
   },
   "plugins": [
@@ -553,7 +553,7 @@
       "npm": {
         "name": "dshmarket",
         "version": "1.66.8",
-        "downloadsLastMonth": 501640,
+        "downloadsLastMonth": 509966,
         "keywords": [
           "deepseek",
           "harness",
@@ -845,7 +845,7 @@
       },
       "npm": {
         "name": "dsh-vision-router",
-        "version": "3.0.0",
+        "version": "3.0.1",
         "downloadsLastMonth": 36564,
         "keywords": [
           "deepseek-harness",
@@ -1216,8 +1216,8 @@
       },
       "npm": {
         "name": "@liustack/modsearch",
-        "version": "5.10.5",
-        "downloadsLastMonth": 40660,
+        "version": "5.10.6",
+        "downloadsLastMonth": 40887,
         "keywords": [
           "search",
           "web-fetch",
@@ -1836,7 +1836,7 @@
       },
       "npm": {
         "name": "dsh-builtin-browser",
-        "version": "0.4.1",
+        "version": "0.4.2",
         "downloadsLastMonth": 13878,
         "keywords": [
           "dsh-plugin",
@@ -1851,7 +1851,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:21:39Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-builtin-browser"
@@ -1905,7 +1905,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:21:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-pocket"
@@ -1997,7 +1997,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:21:59Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-find-plugin"
@@ -2042,8 +2042,8 @@
       },
       "npm": {
         "name": "dsh-mnemon",
-        "version": "0.5.22",
-        "downloadsLastMonth": 39981,
+        "version": "0.5.24",
+        "downloadsLastMonth": 40581,
         "keywords": [
           "deepseek-harness",
           "deepseek-harness-plugin",
@@ -2086,7 +2086,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:22:15Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-mnemon"
@@ -2103,8 +2103,8 @@
       "github": null,
       "npm": {
         "name": "@microi.net/cli",
-        "version": "5.8.0",
-        "downloadsLastMonth": 7366,
+        "version": "5.8.2",
+        "downloadsLastMonth": 7241,
         "keywords": [
           "microi",
           "吾码",
@@ -2150,7 +2150,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:21:39Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@microi.net/cli"
@@ -2187,7 +2187,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:22:20Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@memtensor/memos-local-plugin"
@@ -2296,7 +2296,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:22:27Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "pi2dsh"
@@ -2337,7 +2337,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:22:29Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-design-playbook"
@@ -2463,7 +2463,7 @@
       "npm": {
         "name": "@michengai/dsh-skills-manager",
         "version": "1.1.8",
-        "downloadsLastMonth": 141590,
+        "downloadsLastMonth": 142279,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -2479,7 +2479,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:22:56Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@michengai/dsh-skills-manager"
@@ -2664,7 +2664,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:22:56Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-win32"
@@ -2709,8 +2709,8 @@
       },
       "npm": {
         "name": "dsh-chat-import",
-        "version": "0.23.2",
-        "downloadsLastMonth": 19067,
+        "version": "0.24.0",
+        "downloadsLastMonth": 19366,
         "keywords": [
           "deepseek-harness",
           "dsh-plugin",
@@ -2742,7 +2742,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:23:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-chat-import"
@@ -2816,7 +2816,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:23:33Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@1e0zj/dsh-plugin-mall"
@@ -2865,7 +2865,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:23:45Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-remote"
@@ -2895,8 +2895,8 @@
       },
       "npm": {
         "name": "dsh-any-background",
-        "version": "0.3.3",
-        "downloadsLastMonth": 5307,
+        "version": "0.3.4",
+        "downloadsLastMonth": 6097,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -2913,7 +2913,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:23:42Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-any-background"
@@ -3406,8 +3406,8 @@
       },
       "npm": {
         "name": "dsh-plugin-marketplace",
-        "version": "0.4.1",
-        "downloadsLastMonth": 7021,
+        "version": "0.4.2",
+        "downloadsLastMonth": 7500,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -3422,7 +3422,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:24:37Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-marketplace"
@@ -3480,7 +3480,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:24:17Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "github:PerryLink/dsh-permission-rules#main"
@@ -3760,8 +3760,8 @@
       },
       "npm": {
         "name": "dsh-soul-md",
-        "version": "0.9.1",
-        "downloadsLastMonth": 3745,
+        "version": "0.9.2",
+        "downloadsLastMonth": 3903,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -3779,7 +3779,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:25:31Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-soul-md"
@@ -4396,7 +4396,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:26:37Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-checkpoint-rewind"
@@ -4477,7 +4477,7 @@
       "npm": {
         "name": "@mstar-harness/dsh",
         "version": "3.11.2",
-        "downloadsLastMonth": 4916,
+        "downloadsLastMonth": 4645,
         "keywords": [
           "dsh",
           "dsh-plugin"
@@ -4489,7 +4489,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:26:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@mstar-harness/dsh"
@@ -4716,7 +4716,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:27:13Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-doublecheck"
@@ -4863,7 +4863,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:27:36Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-lsp-actions"
@@ -5033,7 +5033,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:28:08Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-auto-review"
@@ -5085,7 +5085,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:27:42Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-harmony"
@@ -5157,7 +5157,7 @@
       "npm": {
         "name": "dsh-codex-connect",
         "version": "0.2.0-alpha.1",
-        "downloadsLastMonth": 16249,
+        "downloadsLastMonth": 16086,
         "keywords": [
           "dsh-plugin",
           "deepseek-harness",
@@ -5173,7 +5173,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:28:12Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-codex-connect@alpha"
@@ -5428,7 +5428,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:28:49Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-writing-guard"
@@ -5473,7 +5473,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:28:54Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-dafeiyu@alpha"
@@ -5589,7 +5589,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:29:05Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-http"
@@ -5621,7 +5621,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:29:09Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-dead-links"
@@ -5653,7 +5653,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:29:06Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-pkg-info"
@@ -6546,7 +6546,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:30:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@perrylink/dsh-github"
@@ -6589,7 +6589,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:30:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "iterate-plugin"
@@ -7185,7 +7185,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:32:14Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "noatmark-dsh-plugin"
@@ -9330,7 +9330,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:36:33Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-lookatstudy"
@@ -10168,7 +10168,7 @@
       "npm": {
         "name": "dsh-routing-suite",
         "version": "0.1.2",
-        "downloadsLastMonth": 2624,
+        "downloadsLastMonth": 3001,
         "keywords": [
           "deepseek",
           "deepseek-harness",
@@ -10183,7 +10183,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:38:28Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-routing-suite"
@@ -10972,7 +10972,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:40:06Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-url-tools"
@@ -11233,7 +11233,7 @@
       "npm": {
         "name": "@anysearch/anysearch-dsh",
         "version": "0.1.6",
-        "downloadsLastMonth": 5577,
+        "downloadsLastMonth": 6574,
         "keywords": [
           "anysearch",
           "deepseek-harness",
@@ -11326,7 +11326,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:40:39Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-lan-access"
@@ -12488,7 +12488,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:43:36Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-notifier"
@@ -12619,7 +12619,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:43:39Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@dsh-market/plugin"
@@ -12697,7 +12697,7 @@
       },
       "npm": {
         "name": "@mars-sea/dsh-commandcode-provider",
-        "version": "0.12.3",
+        "version": "0.12.4",
         "downloadsLastMonth": 16005,
         "keywords": [
           "deepseek-harness",
@@ -12717,7 +12717,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:43:46Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@mars-sea/dsh-commandcode-provider"
@@ -12807,7 +12807,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:44:01Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@vascent/dsh-tui"
@@ -12913,8 +12913,8 @@
       },
       "npm": {
         "name": "@a9i5k4/dsh-auto-memory",
-        "version": "3.2.7",
-        "downloadsLastMonth": 13324,
+        "version": "3.2.8",
+        "downloadsLastMonth": 13667,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -12929,7 +12929,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:44:21Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@a9i5k4/dsh-auto-memory"
@@ -12983,7 +12983,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:44:18Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-workbench"
@@ -13670,7 +13670,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:45:08Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "github:caoyiwei850/dsh-ssh-ops#v0.1.1"
@@ -13963,7 +13963,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T13:45:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "deepseek-harness-acp"
@@ -15659,7 +15659,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T14:48:14Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-om"
@@ -16187,8 +16187,8 @@
       },
       "npm": {
         "name": "dsh-passwords",
-        "version": "2.7.6",
-        "downloadsLastMonth": 5016,
+        "version": "2.7.7",
+        "downloadsLastMonth": 5341,
         "keywords": [
           "deepseek",
           "harness",
@@ -16207,7 +16207,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T14:49:01Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-passwords"
@@ -16760,7 +16760,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T14:50:34Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@hyzyn/dsh-all"
@@ -16908,7 +16908,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T14:52:11Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@aiwayds/dsh-vault"
@@ -17184,7 +17184,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T14:52:46Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@linxin666/dsh-remote-web-ui"
@@ -17542,7 +17542,7 @@
       "npm": {
         "name": "dsh-doctor",
         "version": "0.4.3",
-        "downloadsLastMonth": 3293,
+        "downloadsLastMonth": 3608,
         "keywords": [
           "deepseek",
           "deepseek-harness",
@@ -17884,7 +17884,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-16T14:53:16Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@michengai/dsh-agency-agents"
@@ -18995,7 +18995,7 @@
       },
       "npm": {
         "name": "dsh-context",
-        "version": "0.62.3",
+        "version": "0.63.0",
         "downloadsLastMonth": 126606,
         "keywords": [
           "deepseek-harness",
@@ -19395,7 +19395,7 @@
       },
       "npm": {
         "name": "@zaofan/dsh-qqbot",
-        "version": "1.6.3",
+        "version": "1.6.6",
         "downloadsLastMonth": 7428,
         "keywords": [
           "deepseek-harness",
@@ -22382,7 +22382,7 @@
       "npm": {
         "name": "dsh-desktop-windows-launcher",
         "version": "0.1.0",
-        "downloadsLastMonth": 207,
+        "downloadsLastMonth": 320,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -22493,8 +22493,8 @@
       },
       "npm": {
         "name": "dsh-status-rotator",
-        "version": "0.34.1",
-        "downloadsLastMonth": 9826,
+        "version": "0.35.0",
+        "downloadsLastMonth": 10549,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -26655,8 +26655,8 @@
       },
       "npm": {
         "name": "@nonamelego/dsh-catppuccin",
-        "version": "0.5.9",
-        "downloadsLastMonth": 10552,
+        "version": "0.6.0",
+        "downloadsLastMonth": 10793,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -27825,7 +27825,7 @@
       "npm": {
         "name": "deepseek-harness-tui",
         "version": "0.3.0",
-        "downloadsLastMonth": 1052,
+        "downloadsLastMonth": 1148,
         "keywords": [
           "deepseek",
           "deepseek-harness",
@@ -28462,8 +28462,8 @@
       },
       "npm": {
         "name": "deepseek-harness-zh_pro",
-        "version": "0.9.5",
-        "downloadsLastMonth": 5036,
+        "version": "0.9.6",
+        "downloadsLastMonth": 4994,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -29301,7 +29301,7 @@
       },
       "npm": {
         "name": "@furongjun1999/dsh-memory",
-        "version": "0.7.1",
+        "version": "0.7.2",
         "downloadsLastMonth": 22236,
         "keywords": [
           "deepseek",
@@ -30857,7 +30857,7 @@
       "npm": {
         "name": "@chushixixin/dsh-harness-mcp-server",
         "version": "0.1.10",
-        "downloadsLastMonth": 454,
+        "downloadsLastMonth": 544,
         "keywords": [
           "deepseek-harness",
           "dsh-plugin",
@@ -32945,7 +32945,7 @@
       },
       "npm": {
         "name": "dsh-email",
-        "version": "0.15.1",
+        "version": "0.15.3",
         "downloadsLastMonth": 4760,
         "keywords": [
           "dsh-plugin",
@@ -35355,7 +35355,7 @@
       },
       "npm": {
         "name": "dsh-free-search",
-        "version": "0.6.7",
+        "version": "0.7.3",
         "downloadsLastMonth": 28791,
         "keywords": [
           "deepseek-harness",
@@ -40118,7 +40118,7 @@
       },
       "npm": {
         "name": "@anweat/dsh-browser",
-        "version": "0.1.17",
+        "version": "0.2.0",
         "downloadsLastMonth": 8410,
         "keywords": [
           "dsh",
@@ -42448,7 +42448,7 @@
       },
       "npm": {
         "name": "dsh-pet",
-        "version": "0.3.1",
+        "version": "0.3.3",
         "downloadsLastMonth": 29353,
         "keywords": [
           "dsh",
@@ -42468,7 +42468,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:49:15Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-pet"
@@ -42493,7 +42493,7 @@
       "npm": {
         "name": "@dsh-suite/plugin-team-board",
         "version": "0.2.1",
-        "downloadsLastMonth": 775,
+        "downloadsLastMonth": 718,
         "keywords": [
           "deepseek-harness",
           "dsh-plugin",
@@ -42532,8 +42532,8 @@
       },
       "npm": {
         "name": "dsh-mobile",
-        "version": "0.5.4",
-        "downloadsLastMonth": 12312,
+        "version": "0.5.5",
+        "downloadsLastMonth": 12639,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -42551,7 +42551,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:49:15Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-mobile@alpha"
@@ -42610,7 +42610,7 @@
       },
       "npm": {
         "name": "@eddyskywalker/dsh-chatgpt-subscription",
-        "version": "0.11.3",
+        "version": "0.11.5",
         "downloadsLastMonth": 15651,
         "keywords": [
           "dsh-plugin",
@@ -42628,7 +42628,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:49:15Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@eddyskywalker/dsh-chatgpt-subscription"
@@ -42717,7 +42717,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:49:40Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-diagram"
@@ -42879,7 +42879,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:49:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "billion-context-dsh"
@@ -43012,7 +43012,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:50:09Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@tt-a1i/archify-dsh@0.1.0"
@@ -43165,7 +43165,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:50:20Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@shengsheng/dsh-taskboard"
@@ -43284,7 +43284,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:50:35Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-auth-gate"
@@ -43329,7 +43329,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:50:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-memento"
@@ -43769,7 +43769,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:51:39Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-honcho-memory"
@@ -43928,7 +43928,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:51:53Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "meow-memory"
@@ -43970,7 +43970,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:51:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@jieai/dsh-malong-bridge"
@@ -44056,7 +44056,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:52:07Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@loongsuite/dsh-plugin"
@@ -44114,8 +44114,8 @@
       "github": null,
       "npm": {
         "name": "dshbase-catalog",
-        "version": "0.3.45",
-        "downloadsLastMonth": 5237,
+        "version": "0.3.46",
+        "downloadsLastMonth": 5617,
         "keywords": [
           "dsh-plugin",
           "deepseek-harness",
@@ -44129,7 +44129,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:52:26Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dshbase-catalog"
@@ -44239,7 +44239,7 @@
       },
       "npm": {
         "name": "dsh-vibe-math",
-        "version": "2.7.3",
+        "version": "2.8.3",
         "downloadsLastMonth": 10997,
         "keywords": [
           "deepseek-harness",
@@ -44261,7 +44261,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:52:34Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-vibe-math"
@@ -44728,7 +44728,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:53:28Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-skill-hub"
@@ -44849,7 +44849,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:53:46Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-wechat"
@@ -45046,7 +45046,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:54:06Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-approval-gate"
@@ -45427,7 +45427,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:54:49Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@dexthemes/deepseek-harness-plugin@0.6.4"
@@ -45808,7 +45808,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:55:18Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "deepseek-acp"
@@ -45850,7 +45850,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:55:27Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-config-manager@latest"
@@ -46093,7 +46093,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:56:07Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "deepseek-harness-wallet"
@@ -46461,7 +46461,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:56:54Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@mlgbnb/dsh-archive-manager"
@@ -46571,7 +46571,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:57:08Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@hyzyn/dsh-kit"
@@ -46669,7 +46669,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:57:08Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "rolebox"
@@ -46709,7 +46709,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:57:08Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "odai-dsh-agent"
@@ -46898,7 +46898,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-18T14:57:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@a9i5k4/dsh-literature"
@@ -47416,7 +47416,7 @@
       "npm": {
         "name": "@roarpeng/graphflow",
         "version": "2.2.0",
-        "downloadsLastMonth": 31028,
+        "downloadsLastMonth": 31578,
         "keywords": [
           "multi-agent",
           "orchestration",
@@ -47435,7 +47435,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-19T05:36:12Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@roarpeng/graphflow"
@@ -47875,8 +47875,8 @@
       },
       "npm": {
         "name": "@ran-sh/dsh-crew",
-        "version": "2.2.12",
-        "downloadsLastMonth": 11054,
+        "version": "2.2.13",
+        "downloadsLastMonth": 11496,
         "keywords": [
           "dsh",
           "deepseek",
@@ -47937,7 +47937,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:37:11Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@cocofhu/skillhub"
@@ -47979,7 +47979,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:37:12Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-wallpaper-engine"
@@ -48021,7 +48021,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:37:14Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-chat-sync"
@@ -48064,7 +48064,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:37:15Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@aiwayds/dsh-tui-pi"
@@ -48148,7 +48148,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:37:16Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-ima-sync"
@@ -48527,7 +48527,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:37:28Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-bridge"
@@ -48613,7 +48613,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:37:29Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@awiki/dsh-plugin@latest"
@@ -48658,7 +48658,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:37:32Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-mcp-sync"
@@ -48826,7 +48826,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:37:36Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-install"
@@ -49279,7 +49279,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:37:51Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-univer-office"
@@ -49417,7 +49417,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:37:53Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-coding-subscription-oauth@0.5.6"
@@ -50184,8 +50184,8 @@
       },
       "npm": {
         "name": "@goodandready/dsh-image-gen",
-        "version": "0.11.29",
-        "downloadsLastMonth": 10521,
+        "version": "0.11.33",
+        "downloadsLastMonth": 11021,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -50207,7 +50207,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:38:16Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-image-gen"
@@ -50378,7 +50378,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:38:21Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "github:mrpulor-gh/dsh-nuphus-mcp"
@@ -50628,7 +50628,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:38:28Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-wallpaper-engine-mac"
@@ -50780,8 +50780,8 @@
       },
       "npm": {
         "name": "@zhangfengshun/dsh-remote-ssh",
-        "version": "2.4.18",
-        "downloadsLastMonth": 5966,
+        "version": "2.4.19",
+        "downloadsLastMonth": 6810,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -50798,7 +50798,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:38:32Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@zhangfengshun/dsh-remote-ssh"
@@ -50844,7 +50844,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:38:34Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@aident-ai/cli"
@@ -51109,7 +51109,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:38:46Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-easyrewrite"
@@ -51195,7 +51195,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:38:45Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-ui-tweaks"
@@ -51359,7 +51359,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:38:51Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@wingsky-1/dsh-notifier"
@@ -51384,7 +51384,7 @@
       "npm": {
         "name": "dsh-ssh-tui",
         "version": "0.8.1",
-        "downloadsLastMonth": 5748,
+        "downloadsLastMonth": 6172,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -51400,7 +51400,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:38:53Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-ssh-tui"
@@ -51441,7 +51441,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:38:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@hytime/dsh-thinking-effort"
@@ -51671,7 +51671,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:39:03Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@wingsky-1/dsh-mcp-manager"
@@ -51751,7 +51751,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:39:04Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@double-coding/flow2spec-deepseek-harness"
@@ -52047,7 +52047,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:39:13Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@rezti/dsh-rez-suite@0.1.50"
@@ -52131,7 +52131,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:39:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "agents-gitflow-guard"
@@ -52206,7 +52206,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:39:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@hqzhao95/dscode"
@@ -52249,7 +52249,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:39:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-air"
@@ -52294,7 +52294,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-20T05:39:24Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-dev-kb"
@@ -53271,7 +53271,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:38:18Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-meme"
@@ -53306,7 +53306,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:38:18Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-omni-router"
@@ -53347,7 +53347,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:38:18Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-agy-link"
@@ -53452,7 +53452,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:38:23Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "github:huanlinoto/dsh-plugin-better-sidebar-plugin-office"
@@ -53754,7 +53754,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:38:32Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-archived-chats@latest"
@@ -54379,7 +54379,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:38:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "github:huanlinoto/dsh-plugin-mineru"
@@ -54436,7 +54436,7 @@
       },
       "npm": {
         "name": "beauticode-dsh",
-        "version": "1.0.27",
+        "version": "1.0.28",
         "downloadsLastMonth": 9521,
         "keywords": [
           "dsh",
@@ -54453,7 +54453,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:38:56Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "beauticode-dsh"
@@ -54619,7 +54619,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:38:59Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@shuind/dsh-codex-harness@0.1.10"
@@ -54689,7 +54689,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:39:00Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "github:huanlinoto/dsh-plugin-sleep"
@@ -54848,7 +54848,7 @@
       },
       "npm": {
         "name": "dsh-mpkg-wallpaper",
-        "version": "3.15.7",
+        "version": "3.16.3",
         "downloadsLastMonth": 5199,
         "keywords": [
           "dsh",
@@ -54865,7 +54865,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:39:03Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-mpkg-wallpaper"
@@ -55191,8 +55191,8 @@
       },
       "npm": {
         "name": "dsh-rewind-plugin",
-        "version": "0.15.0",
-        "downloadsLastMonth": 21941,
+        "version": "0.15.1",
+        "downloadsLastMonth": 22270,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -55209,7 +55209,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:39:14Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-rewind-plugin"
@@ -55927,7 +55927,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:39:40Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-console"
@@ -55971,7 +55971,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:39:42Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "capto-dsh-plugin"
@@ -56054,7 +56054,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:39:44Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "git+https://github.com/fan56/dsh-subagent-registry.git"
@@ -56095,7 +56095,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:39:46Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-superpowers"
@@ -56137,7 +56137,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:39:45Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-experience-plugin"
@@ -56171,7 +56171,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:39:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@ycp424c/dsh-browser-bridge"
@@ -56198,7 +56198,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:39:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-boom"
@@ -56429,7 +56429,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:39:59Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-open-browser"
@@ -57241,7 +57241,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-21T05:40:24Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-edge"
@@ -57868,7 +57868,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:01Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-session-pin"
@@ -58423,7 +58423,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:18Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "stratagate-dsh"
@@ -58870,7 +58870,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:36Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-browser-control"
@@ -58930,7 +58930,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:38Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "github:dsh-external/dsh-aigc-canvas"
@@ -58957,7 +58957,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:37Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-thread"
@@ -58990,7 +58990,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:42Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-fmt"
@@ -59021,7 +59021,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:43Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-clipboard"
@@ -59052,7 +59052,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:40Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-case"
@@ -59095,7 +59095,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:43Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@ag-dsh/dsh-gen-commit-msg-zh"
@@ -59128,7 +59128,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-greeter"
@@ -59159,7 +59159,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-jwt"
@@ -59351,7 +59351,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@kt11/dsh-deepseek-balance"
@@ -59378,7 +59378,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-mobile-control"
@@ -59453,7 +59453,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-22T05:33:56Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@memorylake/dsh-plugin"
@@ -61112,7 +61112,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:09Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "github:kw78/dsh-office-tools"
@@ -61231,7 +61231,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:13Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-whale-widget"
@@ -61413,8 +61413,8 @@
       },
       "npm": {
         "name": "dsh-mcp-connector",
-        "version": "0.2.64",
-        "downloadsLastMonth": 18955,
+        "version": "0.2.66",
+        "downloadsLastMonth": 19293,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -61460,7 +61460,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-mcp-connector"
@@ -61485,7 +61485,7 @@
       "npm": {
         "name": "@qiqiangvae/dsh-obsidian",
         "version": "0.1.2",
-        "downloadsLastMonth": 662,
+        "downloadsLastMonth": 283,
         "keywords": [
           "dsh-plugin",
           "deepseek-harness",
@@ -61622,7 +61622,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:23Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-lcx-codex"
@@ -61780,7 +61780,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:27Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@ajchemist/openviking-dsh-memory-plugin"
@@ -61813,7 +61813,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:30Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@tencent-connect/dsh-qqbot"
@@ -61935,7 +61935,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:36Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-drop-caret"
@@ -62104,7 +62104,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:40Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin"
@@ -62186,7 +62186,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:41Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-uisfx"
@@ -62246,7 +62246,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:43Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "github:dhicoc/dsh-chinese-traditional-wisdom-skill"
@@ -62293,7 +62293,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:44Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-appshot"
@@ -62327,7 +62327,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:44Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "openharness-rule-for-dsh-plugin"
@@ -62352,7 +62352,7 @@
       "npm": {
         "name": "@dsh-mixxed/dsh-client-ui-filesystem",
         "version": "0.1.3",
-        "downloadsLastMonth": 537,
+        "downloadsLastMonth": 540,
         "keywords": [
           "dsh",
           "plugin",
@@ -62367,7 +62367,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@dsh-mixxed/dsh-client-ui-filesystem"
@@ -62385,7 +62385,7 @@
       "npm": {
         "name": "@niyongsheng/free-vision-skill",
         "version": "0.3.1",
-        "downloadsLastMonth": 435,
+        "downloadsLastMonth": 478,
         "keywords": [
           "dsh-plugin",
           "deepseek-harness",
@@ -62400,7 +62400,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@niyongsheng/free-vision-skill"
@@ -62545,7 +62545,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "qmd-autosearch"
@@ -62585,7 +62585,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@dsh-mixxed/dsh-client-ui-settings-skills"
@@ -62610,7 +62610,7 @@
       "npm": {
         "name": "dsh-xmemo",
         "version": "0.1.0",
-        "downloadsLastMonth": 277,
+        "downloadsLastMonth": 245,
         "keywords": [
           "dsh-plugin",
           "deepseek-harness",
@@ -62625,7 +62625,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:35:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "git+https://github.com/yonro/xmemo-deepseek-plugin.git"
@@ -63912,7 +63912,7 @@
       "npm": {
         "name": "dsh-patchouli-workspace-indexer",
         "version": "0.1.7",
-        "downloadsLastMonth": 1009,
+        "downloadsLastMonth": 1129,
         "keywords": [],
         "dshDeclarations": {
           "bundle": false,
@@ -63921,7 +63921,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-23T05:36:38Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-patchouli-workspace-indexer"
@@ -64088,7 +64088,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:43:25Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@michengai/dsh-archive-manager@latest"
@@ -64302,8 +64302,8 @@
       },
       "npm": {
         "name": "@gehennawu/dsh-service",
-        "version": "2.0.4",
-        "downloadsLastMonth": 7608,
+        "version": "2.0.5",
+        "downloadsLastMonth": 7494,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -64318,7 +64318,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:43:30Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@gehennawu/dsh-service"
@@ -64360,7 +64360,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:43:30Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dshhub-market"
@@ -64406,7 +64406,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:43:31Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-memory-eternal"
@@ -64714,7 +64714,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:43:38Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-vscode-mode"
@@ -64825,8 +64825,8 @@
       },
       "npm": {
         "name": "@goodandready/dsh-voice",
-        "version": "0.9.18",
-        "downloadsLastMonth": 8512,
+        "version": "0.9.23",
+        "downloadsLastMonth": 8924,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -64847,7 +64847,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:43:53Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-voice"
@@ -65260,8 +65260,8 @@
       },
       "npm": {
         "name": "@oh-story/dsh",
-        "version": "0.1.12",
-        "downloadsLastMonth": 2774,
+        "version": "0.1.13",
+        "downloadsLastMonth": 3613,
         "keywords": [
           "deepseek-harness",
           "dsh-plugin",
@@ -65281,7 +65281,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:44:09Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@oh-story/dsh@0.1.4"
@@ -65315,7 +65315,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:44:09Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-mgr"
@@ -65357,7 +65357,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:44:11Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@cromus-ai/dsh-plugin"
@@ -65394,7 +65394,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:44:21Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-wsl-tray"
@@ -65505,7 +65505,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:44:21Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@omicverse/dsh-omicos"
@@ -65588,7 +65588,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:44:26Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@dsh-mixxed/dsh-client-ui-filesystem-manager"
@@ -65663,7 +65663,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:44:26Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@koanjan/dsh-plugin-boundary"
@@ -66447,7 +66447,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:44:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@aiwayds/dsh-llm-net-retry"
@@ -66725,7 +66725,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:45:08Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@ai-thinker/deepseek-harness-cli"
@@ -66752,7 +66752,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:45:08Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@zhengcankai/deepseek-harness"
@@ -66786,7 +66786,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:45:07Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@anarkhgatsby/deepseek-harness-insights"
@@ -66943,7 +66943,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:45:11Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@syncended/dsh-automations"
@@ -66968,7 +66968,7 @@
       "npm": {
         "name": "dsh-harness-zh-cn",
         "version": "0.1.2",
-        "downloadsLastMonth": 905,
+        "downloadsLastMonth": 941,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -66986,7 +66986,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-24T05:45:26Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-harness-zh-cn"
@@ -67548,8 +67548,8 @@
       },
       "npm": {
         "name": "dsh-gitbash-shell",
-        "version": "0.33.1",
-        "downloadsLastMonth": 9460,
+        "version": "0.34.0",
+        "downloadsLastMonth": 9793,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -67565,7 +67565,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:16Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-gitbash-shell"
@@ -67671,7 +67671,7 @@
       },
       "npm": {
         "name": "lunheng-article-pipeline",
-        "version": "18.69.0",
+        "version": "18.75.0",
         "downloadsLastMonth": 24486,
         "keywords": [
           "deepseek-harness",
@@ -67689,7 +67689,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:24Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "lunheng-article-pipeline"
@@ -67731,7 +67731,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:24Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-deja"
@@ -68036,7 +68036,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:36Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@lcthe/dsh-skills-hub"
@@ -68063,7 +68063,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:36Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@michengai/dsh-codex-suite"
@@ -68096,7 +68096,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:38Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-trajectory-teacher"
@@ -68133,7 +68133,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:42Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@mkaliezz/dsh-api-client"
@@ -68170,7 +68170,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:42Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@mkaliezz/dsh-repo-map"
@@ -68207,7 +68207,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:42Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@mkaliezz/dsh-error-explainer"
@@ -68244,7 +68244,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@mkaliezz/dsh-dev-server"
@@ -68365,7 +68365,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dshplugin-registry"
@@ -68437,7 +68437,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:53Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@huangzhaoyu/zhaoyu-restart"
@@ -68464,7 +68464,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@dsh-io/identity-sentinel"
@@ -68501,7 +68501,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@mkaliezz/dsh-test-runner"
@@ -68560,7 +68560,7 @@
       "npm": {
         "name": "@mkaliezz/dsh-task-board",
         "version": "0.3.0",
-        "downloadsLastMonth": 646,
+        "downloadsLastMonth": 499,
         "keywords": [
           "dsh-plugin",
           "deepseek-harness"
@@ -68572,7 +68572,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:37:57Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@mkaliezz/dsh-task-board"
@@ -68817,7 +68817,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:38:10Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-store-optimized"
@@ -69040,8 +69040,8 @@
       },
       "npm": {
         "name": "dsh-ptc-cordis-preset",
-        "version": "0.16.0",
-        "downloadsLastMonth": 2943,
+        "version": "0.17.0",
+        "downloadsLastMonth": 3761,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -69058,7 +69058,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:38:14Z",
-      "updatedAt": "2026-10-01T11:28:50Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-ptc-cordis-preset"
@@ -69348,7 +69348,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:38:30Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@agentduel/agentduel-dsh"
@@ -69387,7 +69387,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:38:30Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-harness-audit"
@@ -69523,7 +69523,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-25T05:38:34Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@linxin666/dsh-web-all"
@@ -69791,7 +69791,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:39:58Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-ai4scholar"
@@ -70022,8 +70022,8 @@
       },
       "npm": {
         "name": "@goodandready/dsh-key-rotation",
-        "version": "0.8.48",
-        "downloadsLastMonth": 9859,
+        "version": "0.8.49",
+        "downloadsLastMonth": 10270,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -70041,7 +70041,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:40:07Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-key-rotation"
@@ -70529,7 +70529,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:40:49Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-model-health"
@@ -70564,7 +70564,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:40:49Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-studio"
@@ -70606,7 +70606,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:40:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-timeline"
@@ -70640,7 +70640,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:40:56Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-novel"
@@ -70711,7 +70711,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:40:59Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@harrylabsj/kiwi-dsh-plugin"
@@ -70772,7 +70772,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:41:10Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-session-fork"
@@ -70853,7 +70853,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:41:10Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@weaxs/dsh-stock-analysis"
@@ -71120,7 +71120,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:41:29Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-bundle-dedup-guard"
@@ -71259,7 +71259,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:41:38Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-stock-analysis"
@@ -71291,7 +71291,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:41:39Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "deepseek-harness-agentchat"
@@ -71497,7 +71497,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:41:58Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@xorne/dsh-deepseek-session-cost"
@@ -71539,7 +71539,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:41:59Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-harness-call"
@@ -71582,7 +71582,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-26T05:41:58Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "deepseek-harness-background"
@@ -71672,7 +71672,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:14Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-tts"
@@ -71753,7 +71753,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:14Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@wxg-prc-cpg/browser-skill-dsh-plugin"
@@ -71887,7 +71887,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:20Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-subscriptions"
@@ -72115,8 +72115,8 @@
       },
       "npm": {
         "name": "dsh-tavern",
-        "version": "2.5.1",
-        "downloadsLastMonth": 6327,
+        "version": "2.5.5",
+        "downloadsLastMonth": 6255,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -72133,7 +72133,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:29Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-tavern"
@@ -72216,7 +72216,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:31Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-observatory"
@@ -72257,7 +72257,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:40Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@linziyanleo/dsh-custom-provider"
@@ -72297,7 +72297,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:40Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-diepi@0.1.0-alpha.1"
@@ -72339,7 +72339,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:40Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@choate/dsh-plugin-token-stat"
@@ -72380,7 +72380,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:40Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-gap-feed"
@@ -72414,7 +72414,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:45Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-electro-lab"
@@ -72441,7 +72441,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:45Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@yiln-dsh/dsh-plugin-web-daemon@latest"
@@ -72468,7 +72468,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:44Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-scorecard"
@@ -72509,7 +72509,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:45Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@xxxyz/dsh-mcp-manager@latest"
@@ -72571,7 +72571,7 @@
       },
       "npm": {
         "name": "dsh-aimail",
-        "version": "0.1.34",
+        "version": "0.1.35",
         "downloadsLastMonth": 5784,
         "keywords": [],
         "dshDeclarations": {
@@ -72581,7 +72581,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-aimail"
@@ -72852,7 +72852,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:59Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@mutocenew/dsh-plugin-catalog"
@@ -72913,7 +72913,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:19:59Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@jianxx/dsh-cc-plugin-loader"
@@ -72989,7 +72989,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:20:04Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-shop@0.4.6"
@@ -73164,7 +73164,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:20:11Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@limuyang2/dsh-agent-team"
@@ -73206,7 +73206,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-27T16:20:11Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@syncended/dsh-messenger"
@@ -73366,7 +73366,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-28T17:15:53Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@morlay/session-rdb"
@@ -73410,7 +73410,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-28T17:15:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@morlay/ui-conversation-message-actions"
@@ -73439,7 +73439,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-28T17:15:57Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@huanlin/dsh-plugin-better-locale"
@@ -73602,7 +73602,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-28T17:15:59Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@morlay/session-branch"
@@ -73642,7 +73642,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-28T17:16:02Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@morlay/dsh-agent-instructions-as-prompt"
@@ -73667,7 +73667,7 @@
       "npm": {
         "name": "@objectivex666/dsh-settings-search",
         "version": "1.12.0",
-        "downloadsLastMonth": 3633,
+        "downloadsLastMonth": 1969,
         "keywords": [
           "dsh",
           "cordis",
@@ -73684,7 +73684,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-28T17:16:03Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@objectivex666/dsh-settings-search"
@@ -73724,7 +73724,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-28T17:16:05Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-smooth-cursor"
@@ -73765,7 +73765,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-28T17:16:05Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-mission-control"
@@ -73804,7 +73804,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-28T17:16:08Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "talon-ui"
@@ -73845,7 +73845,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-28T17:16:06Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-security-review"
@@ -74013,7 +74013,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-28T17:16:13Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-gsv-tts"
@@ -74388,7 +74388,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-29T11:32:48Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@canonmsg/deepseek-harness-plugin"
@@ -74422,7 +74422,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-29T11:32:48Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@auggieteo/dsh-mcp-adapter"
@@ -74506,7 +74506,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-30T10:25:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@agent_forge/forge-dsh"
@@ -74566,7 +74566,7 @@
       "npm": {
         "name": "dsh-password",
         "version": "0.1.0",
-        "downloadsLastMonth": 280,
+        "downloadsLastMonth": 248,
         "keywords": [
           "dsh-plugin",
           "password",
@@ -74579,7 +74579,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-30T10:25:24Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-password"
@@ -74698,7 +74698,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-30T10:25:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-russian-lang"
@@ -74716,7 +74716,7 @@
       "npm": {
         "name": "dsh-opencode-go-models",
         "version": "0.1.5",
-        "downloadsLastMonth": 447,
+        "downloadsLastMonth": 459,
         "keywords": [
           "dsh-plugin",
           "opencode",
@@ -74730,7 +74730,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-30T10:25:23Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-opencode-go-models"
@@ -74852,8 +74852,8 @@
       },
       "npm": {
         "name": "dsh-plugin-admin",
-        "version": "1.27.0",
-        "downloadsLastMonth": 6388,
+        "version": "1.27.5",
+        "downloadsLastMonth": 6443,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -74872,7 +74872,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-31T11:30:08Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-admin"
@@ -74955,7 +74955,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-31T11:30:13Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-privmask"
@@ -75000,7 +75000,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-31T11:30:14Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-audiogen"
@@ -75039,7 +75039,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-31T11:30:15Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@vinelink-lab/dsh-vera"
@@ -75072,7 +75072,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-31T11:30:15Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "git+https://github.com/jerryweizhihao/dsh-asciinema.git"
@@ -75130,8 +75130,8 @@
       },
       "npm": {
         "name": "dsh-router-codebuddy",
-        "version": "0.3.18",
-        "downloadsLastMonth": 2528,
+        "version": "0.3.19",
+        "downloadsLastMonth": 2476,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -75140,7 +75140,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-31T11:30:20Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-router-codebuddy"
@@ -75202,7 +75202,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-31T11:30:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "wechat-clawbot"
@@ -75236,7 +75236,7 @@
       },
       "score": 5,
       "firstSeen": "2026-08-31T11:30:22Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@tnnevol/dsh-fnos"
@@ -75406,7 +75406,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-01T09:52:41Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-observe"
@@ -75521,7 +75521,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-01T09:52:45Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "git+https://github.com/your-username/dsh-tool-memory-manager.git"
@@ -75563,7 +75563,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-01T09:52:45Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@muzi3/dsh-plugin-next-step-waiting"
@@ -75592,7 +75592,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-01T09:52:46Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-model-proxy"
@@ -75676,7 +75676,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-01T09:52:48Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@lcthe/dsh-usage-monitor"
@@ -75725,7 +75725,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-01T09:52:49Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-voice"
@@ -75803,7 +75803,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-01T09:52:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "github:sliverp/DeepSeek-harness-weixin"
@@ -75844,7 +75844,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-01T09:52:53Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "git+https://github.com/sliverp/DeepSeek-harness-dingtalk.git"
@@ -75885,7 +75885,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-01T09:52:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "github:sliverp/DeepSeek-harness-lark"
@@ -75933,7 +75933,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-01T09:52:59Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-harness-one"
@@ -75951,7 +75951,7 @@
       "npm": {
         "name": "@anarkhgatsby/deepseek-harness-channel-config",
         "version": "0.1.12",
-        "downloadsLastMonth": 1421,
+        "downloadsLastMonth": 1432,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -75960,7 +75960,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-01T09:52:59Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@anarkhgatsby/deepseek-harness-channel-config"
@@ -76067,7 +76067,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-02T09:24:09Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@cola1900/dsh-ppt"
@@ -76144,7 +76144,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-02T09:24:09Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-better-reasoning-effort"
@@ -76220,7 +76220,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-02T09:24:15Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "ds-balance"
@@ -76434,7 +76434,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-02T09:24:18Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-llm-capabilities"
@@ -76474,7 +76474,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-02T09:24:18Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@aiwayds/dsh-ask-router"
@@ -76514,7 +76514,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-03T09:34:00Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "hi-dsh"
@@ -76618,7 +76618,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-03T09:34:00Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "git+https://github.com/jerryjiao/dsh-wewrite.git"
@@ -76804,7 +76804,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-04T09:26:28Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@kenz1117/dsh-ui-usage-billing"
@@ -76887,7 +76887,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-04T09:26:28Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "ds-harness-remote@0.4.9"
@@ -77112,7 +77112,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-04T09:26:34Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "git",
         "packageSpec": "git+https://github.com/buchylx/dsh-crosspost.git"
@@ -77185,7 +77185,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-04T09:26:37Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-siyuan"
@@ -77265,7 +77265,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-04T09:26:40Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-omc-tui"
@@ -77306,7 +77306,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-05T08:54:12Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "lynkr-dsh-plugin"
@@ -77394,7 +77394,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-07T10:03:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-legal-suite"
@@ -77439,7 +77439,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-07T10:03:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-tiddlywiki"
@@ -77480,7 +77480,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-07T10:03:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@lemoncat7/dsh-partner"
@@ -77504,8 +77504,8 @@
       },
       "npm": {
         "name": "@goodandready/dsh-lanmode",
-        "version": "0.8.19",
-        "downloadsLastMonth": 8329,
+        "version": "0.8.25",
+        "downloadsLastMonth": 8306,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -77525,7 +77525,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-07T10:03:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-lanmode"
@@ -77567,7 +77567,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-07T10:03:54Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "codsh-bundle"
@@ -77632,8 +77632,8 @@
       },
       "npm": {
         "name": "kiokuko-dsh",
-        "version": "0.1.90",
-        "downloadsLastMonth": 12594,
+        "version": "0.1.92",
+        "downloadsLastMonth": 13321,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -77642,7 +77642,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-07T10:03:58Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "kiokuko-dsh"
@@ -77667,7 +77667,7 @@
       "npm": {
         "name": "@civilization/deepseek-harness-playwright",
         "version": "0.6.1",
-        "downloadsLastMonth": 1401,
+        "downloadsLastMonth": 1565,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -77676,7 +77676,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-07T10:03:56Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@civilization/deepseek-harness-playwright"
@@ -77719,7 +77719,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-07T10:03:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@xcr1234/dsh-plugin-dbhub"
@@ -77759,7 +77759,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-07T10:04:00Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "relay-dsh-plugin-manager@latest"
@@ -77817,7 +77817,7 @@
       },
       "npm": {
         "name": "dsh-m",
-        "version": "0.9.23",
+        "version": "0.9.31",
         "downloadsLastMonth": 7429,
         "keywords": [
           "dsh",
@@ -77833,7 +77833,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-08T09:29:07Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-m"
@@ -77887,7 +77887,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-08T09:29:07Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-live-canvas"
@@ -77929,7 +77929,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-08T09:29:07Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-pentester@latest"
@@ -77970,7 +77970,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-08T09:29:11Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@wowyuarm/dsh-agent-team"
@@ -78013,7 +78013,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-08T09:29:11Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@yolk_vat-y/dsh-project-memory"
@@ -78106,7 +78106,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-08T09:29:12Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@xiaoso/dsh-tool-plus"
@@ -78151,7 +78151,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-08T09:29:16Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-session-sync"
@@ -78263,7 +78263,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-08T09:29:15Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-data-cleaning-agent@0.8.17"
@@ -78314,7 +78314,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-08T09:29:18Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "huaweicloud-devkit"
@@ -78513,7 +78513,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-08T09:29:25Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-runcat-inventory"
@@ -78608,7 +78608,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-08T09:29:28Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@scotthuang/agent-knock-knock-deepseek-harness@next"
@@ -78652,7 +78652,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-09T09:31:26Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-research-report"
@@ -78787,7 +78787,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-09T09:31:26Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@flowingspring/dsh-voco"
@@ -79007,7 +79007,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-09T09:31:44Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-bottom-info-bar"
@@ -79186,7 +79186,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-09T09:31:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-mattpocock-skills-deck"
@@ -79227,7 +79227,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-09T09:31:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-shadow-auditor"
@@ -79251,8 +79251,8 @@
       },
       "npm": {
         "name": "@goodandready/dsh-time-machine",
-        "version": "0.1.25",
-        "downloadsLastMonth": 4340,
+        "version": "0.1.26",
+        "downloadsLastMonth": 4455,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -79268,7 +79268,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-09T09:31:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-time-machine"
@@ -79308,7 +79308,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-09T09:32:03Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-agy-safe"
@@ -79332,8 +79332,8 @@
       },
       "npm": {
         "name": "dsh-router-traework",
-        "version": "0.3.18",
-        "downloadsLastMonth": 2071,
+        "version": "0.3.19",
+        "downloadsLastMonth": 2034,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -79342,7 +79342,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-09T09:32:03Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-router-traework"
@@ -79431,7 +79431,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-09T09:32:03Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@aiwayds/dsh-llm-proxy"
@@ -79476,7 +79476,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-09T09:32:10Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-pubmed"
@@ -79500,8 +79500,8 @@
       },
       "npm": {
         "name": "dsh-router-core",
-        "version": "0.4.2",
-        "downloadsLastMonth": 3144,
+        "version": "0.4.3",
+        "downloadsLastMonth": 4136,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -79510,7 +79510,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-09T09:32:11Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-router-core"
@@ -79595,7 +79595,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-09T09:32:11Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@addozhang/dsh-discord"
@@ -79639,7 +79639,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-10T09:30:56Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-voice-mode"
@@ -79719,7 +79719,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-10T09:30:56Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@aiwayds/dsh-cron"
@@ -79744,7 +79744,7 @@
       "npm": {
         "name": "dsh-retrace",
         "version": "0.4.32",
-        "downloadsLastMonth": 5309,
+        "downloadsLastMonth": 4278,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -79771,7 +79771,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-10T09:30:56Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-retrace"
@@ -79814,7 +79814,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-10T09:31:05Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-augmentor"
@@ -79984,7 +79984,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-10T09:31:12Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@argszero/cordis-plugin-schedule-cron"
@@ -80027,7 +80027,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-10T09:31:13Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@argszero/cordis-plugin-subagent-wait"
@@ -80051,7 +80051,7 @@
       },
       "npm": {
         "name": "dsh-notify-me",
-        "version": "1.3.1",
+        "version": "1.5.3",
         "downloadsLastMonth": 7521,
         "keywords": [
           "deepseek-harness",
@@ -80085,7 +80085,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-11T09:28:10Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-notify-me"
@@ -80110,7 +80110,7 @@
       "npm": {
         "name": "dsh-server-deck",
         "version": "0.3.0",
-        "downloadsLastMonth": 20664,
+        "downloadsLastMonth": 21159,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -80130,7 +80130,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-11T09:28:10Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-server-deck"
@@ -80193,7 +80193,7 @@
       "npm": {
         "name": "dsh-token-usage-stats",
         "version": "0.3.14",
-        "downloadsLastMonth": 28715,
+        "downloadsLastMonth": 30081,
         "keywords": [
           "dsh",
           "deepseek",
@@ -80210,7 +80210,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-11T09:28:10Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-token-usage-stats"
@@ -80257,7 +80257,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-11T09:28:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-gate"
@@ -80284,7 +80284,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-11T09:28:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-context-milvus"
@@ -80307,9 +80307,9 @@
         "pushedAt": null
       },
       "npm": {
-        "name": "@dsh-cc/plugin-loader",
-        "version": "0.8.2",
-        "downloadsLastMonth": 2679,
+        "name": "@dsh-cc/skill-loader",
+        "version": "0.8.3",
+        "downloadsLastMonth": 3187,
         "keywords": [],
         "dshDeclarations": {
           "bundle": false,
@@ -80318,10 +80318,10 @@
       },
       "score": 5,
       "firstSeen": "2026-09-11T09:28:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
-        "packageSpec": "@dsh-cc/plugin-loader"
+        "packageSpec": "@dsh-cc/skill-loader"
       }
     },
     {
@@ -80360,7 +80360,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-11T09:28:20Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@aiwayds/dsh-llm-stats"
@@ -80421,7 +80421,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-11T09:28:27Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "noogenesis-dsh"
@@ -80463,7 +80463,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-11T09:28:28Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@xp266/dshtui"
@@ -80503,7 +80503,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-12T09:09:03Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "relay-dsh-plugin-skill-creator"
@@ -80527,8 +80527,8 @@
       },
       "npm": {
         "name": "dsh-plugin-ops-bundle",
-        "version": "0.15.0",
-        "downloadsLastMonth": 4693,
+        "version": "0.15.2",
+        "downloadsLastMonth": 4856,
         "keywords": [
           "deepseek",
           "harness",
@@ -80546,7 +80546,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-12T09:09:03Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-ops-bundle"
@@ -80569,25 +80569,26 @@
         "pushedAt": null
       },
       "npm": {
-        "name": "@dsh-enhanced/assistant-deepseek-budget",
+        "name": "@dsh-enhanced/llm-route-capabilities",
         "version": "0.1.48",
-        "downloadsLastMonth": 3105,
+        "downloadsLastMonth": 5215,
         "keywords": [
           "deepseek",
           "deepseek-harness",
-          "dsh-plugin"
+          "llm",
+          "tool-calls"
         ],
         "dshDeclarations": {
-          "bundle": true,
+          "bundle": false,
           "client": false
         }
       },
       "score": 5,
       "firstSeen": "2026-09-12T09:09:03Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
-        "packageSpec": "@dsh-enhanced/assistant-deepseek-budget"
+        "packageSpec": "@dsh-enhanced/llm-route-capabilities"
       }
     },
     {
@@ -80619,7 +80620,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-12T09:09:03Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@jw-king/dsh-plugin-parallel"
@@ -80643,8 +80644,8 @@
       },
       "npm": {
         "name": "dsh-plugin-ops-core",
-        "version": "0.15.0",
-        "downloadsLastMonth": 4905,
+        "version": "0.15.2",
+        "downloadsLastMonth": 4995,
         "keywords": [
           "deepseek",
           "harness",
@@ -80662,7 +80663,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-12T09:09:11Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-ops-core"
@@ -80696,7 +80697,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-12T09:09:12Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-tylina"
@@ -80730,7 +80731,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-12T09:09:13Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-tylina-native"
@@ -80770,7 +80771,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-13T10:06:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-livebench-panel"
@@ -80811,7 +80812,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-13T10:06:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-telegram-multiagent"
@@ -80879,7 +80880,7 @@
       },
       "npm": {
         "name": "dsh-calendar",
-        "version": "0.10.0",
+        "version": "0.10.1",
         "downloadsLastMonth": 7105,
         "keywords": [
           "dsh",
@@ -80897,7 +80898,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-13T10:06:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-calendar"
@@ -80931,7 +80932,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-13T10:06:27Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plan-and-execute"
@@ -80956,7 +80957,7 @@
       "npm": {
         "name": "start-dsh-plugin",
         "version": "0.1.0",
-        "downloadsLastMonth": 354,
+        "downloadsLastMonth": 137,
         "keywords": [
           "dsh-plugin",
           "deepseek-harness"
@@ -80968,7 +80969,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-13T10:06:27Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "start-dsh-plugin"
@@ -81008,7 +81009,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-13T10:06:27Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-web-searxng"
@@ -81033,7 +81034,7 @@
       "npm": {
         "name": "dsh-cert-mcp",
         "version": "0.2.2",
-        "downloadsLastMonth": 502,
+        "downloadsLastMonth": 759,
         "keywords": [
           "mcp",
           "mcp-server",
@@ -81076,7 +81077,7 @@
       "npm": {
         "name": "@civilization/deepseek-harness-skill-mcp",
         "version": "0.1.2",
-        "downloadsLastMonth": 526,
+        "downloadsLastMonth": 578,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -81085,7 +81086,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-13T10:06:35Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@civilization/deepseek-harness-skill-mcp"
@@ -81119,7 +81120,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-13T10:06:35Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@antst/dsh-file-uploads-none"
@@ -81146,7 +81147,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-13T10:06:35Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@foggy-projects/deepseek-harness-plugin"
@@ -81188,7 +81189,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-13T10:06:36Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@tiphareth/dsh-hardssh"
@@ -81213,7 +81214,7 @@
       "npm": {
         "name": "@argszero/cordis-plugin-session-audit",
         "version": "0.1.5",
-        "downloadsLastMonth": 713,
+        "downloadsLastMonth": 792,
         "keywords": [
           "deepseek",
           "dsh",
@@ -81230,7 +81231,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-13T10:06:43Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@argszero/cordis-plugin-session-audit"
@@ -81272,7 +81273,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-13T10:06:43Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@argszero/cordis-plugin-preset-tool-filter"
@@ -81315,7 +81316,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-14T10:29:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@aiwayds/dsh-topics-memory"
@@ -81381,7 +81382,7 @@
       "npm": {
         "name": "@anarkhgatsby/deepseek-harness-channel-wecom",
         "version": "0.1.9",
-        "downloadsLastMonth": 811,
+        "downloadsLastMonth": 1213,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -81390,7 +81391,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-14T10:29:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@anarkhgatsby/deepseek-harness-channel-wecom"
@@ -81415,7 +81416,7 @@
       "npm": {
         "name": "@anarkhgatsby/deepseek-harness-channel-feishu",
         "version": "0.1.7",
-        "downloadsLastMonth": 793,
+        "downloadsLastMonth": 1196,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -81424,7 +81425,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-14T10:29:19Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@anarkhgatsby/deepseek-harness-channel-feishu"
@@ -81449,7 +81450,7 @@
       "npm": {
         "name": "@anarkhgatsby/deepseek-harness-locale-pack",
         "version": "0.1.8",
-        "downloadsLastMonth": 905,
+        "downloadsLastMonth": 1255,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -81458,7 +81459,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-14T10:29:28Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@anarkhgatsby/deepseek-harness-locale-pack"
@@ -81495,7 +81496,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-14T10:29:28Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-harness-tags"
@@ -81537,7 +81538,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-16T09:47:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-outlook"
@@ -81695,7 +81696,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-17T09:54:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-image-viewer"
@@ -81735,7 +81736,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-17T09:54:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-workbuddy-connect"
@@ -81788,7 +81789,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-17T09:54:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-chat-manager"
@@ -81871,7 +81872,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-17T09:54:58Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-video-preview"
@@ -82111,7 +82112,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-17T09:55:05Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-skills-bucket"
@@ -82154,7 +82155,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-17T09:55:07Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@argszero/cordis-plugin-goal-ask-guard"
@@ -82195,7 +82196,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-18T09:32:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-palimpsest"
@@ -82250,7 +82251,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-18T09:32:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-pre-duediligence"
@@ -82284,7 +82285,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-18T09:32:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-mnemosyne"
@@ -82331,7 +82332,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-18T09:32:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-opencode-session"
@@ -82371,7 +82372,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-18T09:32:56Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@ottttto/dsh-scheduled-send"
@@ -82413,7 +82414,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-18T09:32:56Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-zhihu-search"
@@ -82454,7 +82455,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-18T09:32:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-llm-verifier"
@@ -82497,7 +82498,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-18T09:32:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-tool-management"
@@ -82538,7 +82539,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-18T09:33:04Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-harness-manager"
@@ -82562,7 +82563,7 @@
       },
       "npm": {
         "name": "@michengai/dsh-im-connect",
-        "version": "0.1.62",
+        "version": "0.1.63",
         "downloadsLastMonth": 128712,
         "keywords": [],
         "dshDeclarations": {
@@ -82572,7 +82573,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-18T09:33:04Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@michengai/dsh-im-connect"
@@ -82599,7 +82600,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-18T09:33:08Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@astraworks/dsh-astraworks"
@@ -82641,7 +82642,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-19T09:19:13Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@dingpenghui/agnes-video"
@@ -82683,7 +82684,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-20T09:41:35Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-muv-table"
@@ -82723,7 +82724,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-20T09:41:35Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-muv-engine"
@@ -82767,7 +82768,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-20T09:41:35Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-fund-research"
@@ -82791,8 +82792,8 @@
       },
       "npm": {
         "name": "dsh-better-workspace",
-        "version": "0.27.0",
-        "downloadsLastMonth": 6401,
+        "version": "0.27.1",
+        "downloadsLastMonth": 5938,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -82808,7 +82809,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-20T09:41:35Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-better-workspace"
@@ -82851,7 +82852,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-20T09:41:43Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@wxg-prc-cpg/dsh-weknora"
@@ -82876,7 +82877,7 @@
       "npm": {
         "name": "dsh-plugin-content-policy",
         "version": "0.2.1",
-        "downloadsLastMonth": 377,
+        "downloadsLastMonth": 559,
         "keywords": [
           "dsh-plugin",
           "dsh",
@@ -82896,7 +82897,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-20T09:41:43Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-content-policy"
@@ -82938,7 +82939,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-20T09:41:43Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@zerorigin-studio/dsh-desktop-shell"
@@ -82980,7 +82981,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-21T10:34:25Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-gitea"
@@ -83004,7 +83005,7 @@
       },
       "npm": {
         "name": "dsh-home-ilife",
-        "version": "0.3.30",
+        "version": "0.3.32",
         "downloadsLastMonth": 4604,
         "keywords": [
           "dsh",
@@ -83019,7 +83020,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-21T10:34:25Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-home-ilife"
@@ -83060,7 +83061,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-21T10:34:25Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@firetruck666/dsh-task-board"
@@ -83084,8 +83085,8 @@
       },
       "npm": {
         "name": "@kenz1117/dsh-engram",
-        "version": "0.7.13",
-        "downloadsLastMonth": 5836,
+        "version": "0.7.15",
+        "downloadsLastMonth": 5786,
         "keywords": [
           "dsh-plugin",
           "deepseek-harness",
@@ -83110,7 +83111,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-21T10:34:25Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@kenz1117/dsh-engram"
@@ -83145,7 +83146,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-21T10:34:33Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-tokensaver"
@@ -83179,7 +83180,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-21T10:34:33Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@logictan/dsh-plugins-all"
@@ -83208,7 +83209,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-21T10:34:34Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@huanlin/dsh-plugin-android-use"
@@ -83289,7 +83290,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-21T10:34:34Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-chat-cost"
@@ -83369,7 +83370,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-21T10:34:42Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@agent-network-protocol/dsh-anp-identity"
@@ -83464,7 +83465,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-22T09:46:36Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-custom-mode"
@@ -83591,7 +83592,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-22T09:46:44Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-sessions-manager"
@@ -83656,7 +83657,7 @@
       "npm": {
         "name": "@weibaohui/user-management",
         "version": "0.9.9",
-        "downloadsLastMonth": 3276,
+        "downloadsLastMonth": 4186,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -83674,7 +83675,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-22T09:46:44Z",
-      "updatedAt": "2026-10-02T10:58:30Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@weibaohui/user-management"
@@ -83799,7 +83800,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-22T09:46:52Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@hyzyn/dsh-docker"
@@ -83919,7 +83920,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-22T09:47:00Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-remote-shell"
@@ -83962,7 +83963,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-22T09:47:01Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-pi-agent-providers"
@@ -84006,7 +84007,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-22T09:47:01Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@yadsh/dsh-session-scope"
@@ -84040,7 +84041,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-22T09:47:09Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@x1a0f3n9/dsh-invariants"
@@ -84074,7 +84075,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-22T09:47:09Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-memory-palace"
@@ -84098,8 +84099,8 @@
       },
       "npm": {
         "name": "@quill507/dsh-auto-approval-llm",
-        "version": "0.0.39",
-        "downloadsLastMonth": 6135,
+        "version": "0.0.41",
+        "downloadsLastMonth": 6245,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -84108,7 +84109,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-22T09:47:09Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@quill507/dsh-auto-approval-llm"
@@ -84152,7 +84153,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:50:39Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-t-expert"
@@ -84176,7 +84177,7 @@
       },
       "npm": {
         "name": "@noob-stupid/dsh-plugin-console",
-        "version": "0.5.35",
+        "version": "0.5.38",
         "downloadsLastMonth": 16739,
         "keywords": [
           "dsh-plugin",
@@ -84201,7 +84202,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:50:39Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@noob-stupid/dsh-plugin-console"
@@ -84242,7 +84243,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:50:39Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@zaimokuza/dsh-acp-adapter"
@@ -84329,7 +84330,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:50:48Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-swarm-orchestrator"
@@ -84374,7 +84375,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:50:48Z",
-      "updatedAt": "2026-10-02T10:58:30Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-budget"
@@ -84421,7 +84422,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:50:48Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-library"
@@ -84462,7 +84463,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:50:48Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-messenger-gateway"
@@ -84486,8 +84487,8 @@
       },
       "npm": {
         "name": "dsh-fast",
-        "version": "0.2.14",
-        "downloadsLastMonth": 2859,
+        "version": "0.2.17",
+        "downloadsLastMonth": 3407,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -84507,7 +84508,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:50:55Z",
-      "updatedAt": "2026-09-23T09:50:55Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-fast"
@@ -84552,7 +84553,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:50:57Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-msg9-kit"
@@ -84657,7 +84658,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:50:56Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-tender-workbench"
@@ -84741,7 +84742,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:51:05Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-opencode-go-plus"
@@ -84784,7 +84785,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:51:05Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-composer-glass"
@@ -84811,7 +84812,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:51:14Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@forgeax/engine-intelligence-dsh"
@@ -84874,7 +84875,7 @@
       "npm": {
         "name": "@qihongmu/dsh-plugins-token-tracing-bundle",
         "version": "0.1.1",
-        "downloadsLastMonth": 435,
+        "downloadsLastMonth": 626,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -84883,7 +84884,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-23T09:51:14Z",
-      "updatedAt": "2026-09-23T09:51:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@qihongmu/dsh-plugins-token-tracing-bundle"
@@ -84969,7 +84970,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:13Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-qwen-token-plan-cn-responses"
@@ -84993,7 +84994,7 @@
       },
       "npm": {
         "name": "dsh-connect-workbuddy",
-        "version": "3.4.3",
+        "version": "3.6.0",
         "downloadsLastMonth": 8846,
         "keywords": [
           "dsh-plugin",
@@ -85010,7 +85011,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:13Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-connect-workbuddy"
@@ -85053,7 +85054,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:13Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@weibaohui/skills-management"
@@ -85120,7 +85121,7 @@
       "npm": {
         "name": "@yangdcm/dsh-expert-team",
         "version": "1.5.3",
-        "downloadsLastMonth": 4355,
+        "downloadsLastMonth": 5774,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -85146,7 +85147,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:21Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@yangdcm/dsh-expert-team"
@@ -85340,7 +85341,7 @@
       },
       "npm": {
         "name": "dsh-quick-toc",
-        "version": "0.9.0",
+        "version": "0.9.2",
         "downloadsLastMonth": 5148,
         "keywords": [
           "dsh",
@@ -85359,7 +85360,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:29Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-quick-toc"
@@ -85482,7 +85483,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:37Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-opencode-omo"
@@ -85516,7 +85517,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:37Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@99galaxy/dsh-plugin-market"
@@ -85555,7 +85556,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "relay-dsh-plugin-session-import"
@@ -85579,7 +85580,7 @@
       },
       "npm": {
         "name": "@sparkelf/dsh-plus",
-        "version": "0.2.0-rc.52",
+        "version": "0.2.1-alpha.3",
         "downloadsLastMonth": 10207,
         "keywords": [],
         "dshDeclarations": {
@@ -85589,7 +85590,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@sparkelf/dsh-plus"
@@ -85632,7 +85633,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@aiwayds/dsh-profile-switch"
@@ -85673,7 +85674,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@aiwayds/dsh-web-search-anysearch"
@@ -85697,7 +85698,7 @@
       },
       "npm": {
         "name": "dsh-plugin-remote-connect-beta",
-        "version": "0.1.0-beta.8",
+        "version": "0.1.0-beta.9",
         "downloadsLastMonth": 646,
         "keywords": [
           "dsh",
@@ -85713,7 +85714,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:54Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-remote-connect-beta"
@@ -85747,7 +85748,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-24T09:49:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-harness-browser-connector"
@@ -85788,7 +85789,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-25T10:05:40Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-damage-pulse"
@@ -85830,7 +85831,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-25T10:05:40Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@angelyeye/dsh-cost-tracker"
@@ -85864,7 +85865,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-25T10:05:40Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "context-guardian-deepseek-harness"
@@ -85939,7 +85940,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-25T10:05:49Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@sparkelf/dsh-officecli"
@@ -86007,7 +86008,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-25T10:05:49Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@smartpiai/dsh-jx-crm"
@@ -86048,7 +86049,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-26T09:46:27Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-tinyfish-search"
@@ -86082,7 +86083,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-26T09:46:27Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@michengai/dsh-simplify"
@@ -86127,7 +86128,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-26T09:46:27Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-clinebot"
@@ -86158,7 +86159,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:27:46Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-agentone"
@@ -86239,7 +86240,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:27:46Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@iasiv5/dsh-obmc-web"
@@ -86263,8 +86264,8 @@
       },
       "npm": {
         "name": "dsh-claude-style",
-        "version": "0.10.3",
-        "downloadsLastMonth": 4939,
+        "version": "0.10.4",
+        "downloadsLastMonth": 6183,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -86285,7 +86286,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:27:46Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-claude-style"
@@ -86310,7 +86311,7 @@
       "npm": {
         "name": "dsh-plugin-wwrs-comfyui",
         "version": "0.1.1",
-        "downloadsLastMonth": 317,
+        "downloadsLastMonth": 362,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -86325,7 +86326,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:27:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-wwrs-comfyui"
@@ -86350,7 +86351,7 @@
       "npm": {
         "name": "dsh-plugin-wwrs-voice",
         "version": "0.1.1",
-        "downloadsLastMonth": 312,
+        "downloadsLastMonth": 372,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -86365,7 +86366,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:27:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-wwrs-voice"
@@ -86390,7 +86391,7 @@
       "npm": {
         "name": "dsh-plugin-wwrs-whisper",
         "version": "0.1.1",
-        "downloadsLastMonth": 293,
+        "downloadsLastMonth": 337,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -86406,7 +86407,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:27:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-wwrs-whisper"
@@ -86440,7 +86441,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:03Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@treeseed/dsh-chapters"
@@ -86465,7 +86466,7 @@
       "npm": {
         "name": "dsh-plugin-wwrs-ffmpeg",
         "version": "0.1.1",
-        "downloadsLastMonth": 285,
+        "downloadsLastMonth": 324,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -86480,7 +86481,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:06Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-wwrs-ffmpeg"
@@ -86505,7 +86506,7 @@
       "npm": {
         "name": "@bhzhangsun/dsh-computer-use",
         "version": "0.3.8",
-        "downloadsLastMonth": 28875,
+        "downloadsLastMonth": 29133,
         "keywords": [
           "dsh",
           "computer-use",
@@ -86520,7 +86521,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:27:54Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@bhzhangsun/dsh-computer-use"
@@ -86545,7 +86546,7 @@
       "npm": {
         "name": "dsh-plugin-wwrs-image",
         "version": "0.1.1",
-        "downloadsLastMonth": 308,
+        "downloadsLastMonth": 350,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -86560,7 +86561,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:02Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-wwrs-image"
@@ -86584,8 +86585,8 @@
       },
       "npm": {
         "name": "dsh-market-gist-autosync",
-        "version": "0.1.8",
-        "downloadsLastMonth": 1207,
+        "version": "0.1.9",
+        "downloadsLastMonth": 1609,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -86603,7 +86604,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:11Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-market-gist-autosync"
@@ -86621,7 +86622,7 @@
       "npm": {
         "name": "@sidleo3/dsh-wiki",
         "version": "0.7.2",
-        "downloadsLastMonth": 2968,
+        "downloadsLastMonth": 4140,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -86630,7 +86631,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:14Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@sidleo3/dsh-wiki"
@@ -86655,7 +86656,7 @@
       "npm": {
         "name": "@comecaramelos/dsh-docker-desktop-mcp",
         "version": "0.0.2",
-        "downloadsLastMonth": 297,
+        "downloadsLastMonth": 331,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -86664,7 +86665,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:14Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@comecaramelos/dsh-docker-desktop-mcp"
@@ -86689,7 +86690,7 @@
       "npm": {
         "name": "@zmainer/dsh-wx-bridge",
         "version": "1.1.8",
-        "downloadsLastMonth": 2476,
+        "downloadsLastMonth": 3174,
         "keywords": [
           "deepseek-harness",
           "dsh-plugin",
@@ -86705,7 +86706,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:14Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@zmainer/dsh-wx-bridge"
@@ -86739,7 +86740,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:23Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@x1a0f3n9/dsh-brand"
@@ -86773,7 +86774,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:23Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@x1a0f3n9/dsh-system-prompt"
@@ -86798,7 +86799,7 @@
       "npm": {
         "name": "@antst/roller",
         "version": "0.1.3",
-        "downloadsLastMonth": 1780,
+        "downloadsLastMonth": 2078,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -86807,7 +86808,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:23Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@antst/roller"
@@ -86841,7 +86842,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:23Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@x1a0f3n9/dsh-llm"
@@ -86875,7 +86876,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:31Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@x1a0f3n9/dsh-session"
@@ -86900,7 +86901,7 @@
       "npm": {
         "name": "dsh-harness-ui",
         "version": "0.1.2",
-        "downloadsLastMonth": 564,
+        "downloadsLastMonth": 757,
         "keywords": [
           "deepseek-harness",
           "dsh",
@@ -86916,7 +86917,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:32Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-harness-ui"
@@ -86950,7 +86951,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:31Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@x1a0f3n9/dsh-home-paths"
@@ -86974,8 +86975,8 @@
       },
       "npm": {
         "name": "@michengai/dsh-codex-ui",
-        "version": "1.1.25",
-        "downloadsLastMonth": 173686,
+        "version": "1.1.26",
+        "downloadsLastMonth": 174559,
         "keywords": [],
         "dshDeclarations": {
           "bundle": true,
@@ -86984,7 +86985,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-27T10:28:33Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@michengai/dsh-codex-ui"
@@ -87049,7 +87050,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:35:41Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@dfy-plugins/dsh-bundle"
@@ -87090,7 +87091,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:35:41Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-cards"
@@ -87127,7 +87128,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:35:41Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@dfy-plugins/dsh-image-generation"
@@ -87151,8 +87152,8 @@
       },
       "npm": {
         "name": "@goodandready/dsh-moa",
-        "version": "0.2.37",
-        "downloadsLastMonth": 5783,
+        "version": "0.2.42",
+        "downloadsLastMonth": 5887,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -87167,7 +87168,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:35:41Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-moa"
@@ -87204,7 +87205,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:35:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@dfy-plugins/dsh-appearance"
@@ -87245,7 +87246,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:35:50Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-goal"
@@ -87288,7 +87289,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:35:51Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-kimi-subscription"
@@ -87352,7 +87353,7 @@
       },
       "npm": {
         "name": "dsh-prime-memory",
-        "version": "0.20.1",
+        "version": "0.21.0",
         "downloadsLastMonth": 6646,
         "keywords": [
           "dsh",
@@ -87368,7 +87369,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:35:58Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-prime-memory"
@@ -87504,7 +87505,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:36:01Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@lovedolove/veyra"
@@ -87548,7 +87549,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:36:06Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-manager-companion"
@@ -87603,7 +87604,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:36:09Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-home-hosted"
@@ -87644,7 +87645,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:36:07Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-deepseek-web-login"
@@ -87688,7 +87689,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:36:20Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-feishu-beacon"
@@ -87770,7 +87771,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-28T11:36:20Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-ds-balance"
@@ -87794,8 +87795,8 @@
       },
       "npm": {
         "name": "dsh-thoughtdag",
-        "version": "0.5.15",
-        "downloadsLastMonth": 4549,
+        "version": "0.5.16",
+        "downloadsLastMonth": 5074,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -87810,7 +87811,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-29T11:13:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-thoughtdag"
@@ -87852,7 +87853,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-29T11:13:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-opencode-go"
@@ -87902,7 +87903,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-29T11:13:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@perrylink/dsh-plugin-doctor"
@@ -87948,7 +87949,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-29T11:13:55Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@liustack/pptwise"
@@ -88037,7 +88038,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-29T11:14:04Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-perm-gate"
@@ -88172,7 +88173,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-29T11:14:12Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-connect-trae"
@@ -88259,7 +88260,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-29T11:14:12Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "memory-eternal"
@@ -88468,7 +88469,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-29T11:14:31Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-usage-state"
@@ -88502,7 +88503,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-29T11:14:31Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@goodandready/dsh-agent-loop-guard"
@@ -88542,7 +88543,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-29T11:14:31Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-web-search-enhanced"
@@ -88585,7 +88586,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-29T11:14:31Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@effaf/dsh-plugin-devkit"
@@ -88663,7 +88664,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:02:29Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-grok-subscription"
@@ -88687,8 +88688,8 @@
       },
       "npm": {
         "name": "@opencode2dsh/dsh-plugin",
-        "version": "0.3.6",
-        "downloadsLastMonth": 3456,
+        "version": "0.3.7",
+        "downloadsLastMonth": 4214,
         "keywords": [
           "dsh",
           "dsh-plugin",
@@ -88713,7 +88714,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:02:29Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@opencode2dsh/dsh-plugin"
@@ -88757,7 +88758,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:02:29Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@eternalloveone/dsh-palm"
@@ -88799,7 +88800,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:02:37Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-workbuddy-xdpool"
@@ -88915,7 +88916,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:02:47Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@shundoo-ai/dsh-cosmic"
@@ -88940,7 +88941,7 @@
       "npm": {
         "name": "dsh-display-panel",
         "version": "0.8.1",
-        "downloadsLastMonth": 3390,
+        "downloadsLastMonth": 3999,
         "keywords": [
           "dsh",
           "deepseek-harness",
@@ -88960,7 +88961,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:02:52Z",
-      "updatedAt": "2026-09-30T11:02:52Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-display-panel"
@@ -89071,7 +89072,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:02:38Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-pocket-console"
@@ -89095,7 +89096,7 @@
       },
       "npm": {
         "name": "@yottameta/yotta-skills-plugin",
-        "version": "0.28.1",
+        "version": "0.28.3",
         "downloadsLastMonth": 7169,
         "keywords": [
           "yottameta",
@@ -89113,7 +89114,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:02:58Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@yottameta/yotta-skills-plugin"
@@ -89195,7 +89196,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:03:03Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-dhe-lore"
@@ -89238,7 +89239,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:03:05Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@young1lin/dsh-glm-quota"
@@ -89278,7 +89279,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:03:32Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@vizuh/sabi-deepseek-harness"
@@ -89321,7 +89322,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:03:32Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-plugin-manager-lite"
@@ -89355,7 +89356,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:03:32Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@x1a0f3n9/dsh-util-values"
@@ -89388,7 +89389,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:03:41Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@khorsheed/dsh-local-agent-dsh-headless"
@@ -89415,7 +89416,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:03:41Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@forgeax/engine-dsh"
@@ -89448,7 +89449,7 @@
       },
       "score": 5,
       "firstSeen": "2026-09-30T11:03:42Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@khorsheed/dsh-local-agent-dsh"
@@ -89811,7 +89812,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-01T11:29:10Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-harmonyos"
@@ -89879,7 +89880,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-01T11:29:18Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@busabase/dsh-plugin"
@@ -89903,7 +89904,7 @@
       },
       "npm": {
         "name": "@sparkelf/dsh-plus-standalone",
-        "version": "0.2.0-rc.52",
+        "version": "0.2.1-alpha.3",
         "downloadsLastMonth": 8518,
         "keywords": [],
         "dshDeclarations": {
@@ -89913,7 +89914,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-01T11:29:18Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@sparkelf/dsh-plus-standalone"
@@ -89995,7 +89996,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-02T10:58:36Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-git-badge"
@@ -90036,7 +90037,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-02T10:58:36Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "canvas-workbench"
@@ -90128,7 +90129,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-02T10:58:36Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-composer-ux"
@@ -90174,7 +90175,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-02T10:58:45Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-github-copilot"
@@ -90220,7 +90221,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-02T10:58:45Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "cc-safety-net"
@@ -90263,7 +90264,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-02T10:58:45Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-command-context-trim"
@@ -90308,7 +90309,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-02T10:58:44Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-click"
@@ -90342,7 +90343,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-02T10:58:53Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@klarkxy/dsh-blueprint"
@@ -90395,7 +90396,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-02T10:58:54Z",
-      "updatedAt": "2026-10-03T10:18:14Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-harness-jarvis"
@@ -90487,7 +90488,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-03T10:18:20Z",
-      "updatedAt": "2026-10-03T10:18:20Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-skills-anywhere"
@@ -90529,7 +90530,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-03T10:18:20Z",
-      "updatedAt": "2026-10-03T10:18:20Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-mc-art-panel"
@@ -90570,7 +90571,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-03T10:18:20Z",
-      "updatedAt": "2026-10-03T10:18:20Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@lolkda/dsh-skills-manager"
@@ -90594,7 +90595,7 @@
       },
       "npm": {
         "name": "dsh-background-by-model",
-        "version": "0.7.3",
+        "version": "0.7.5",
         "downloadsLastMonth": 4199,
         "keywords": [
           "deepseek-harness",
@@ -90612,7 +90613,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-03T10:18:20Z",
-      "updatedAt": "2026-10-03T10:18:20Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-background-by-model"
@@ -90653,7 +90654,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-03T10:18:29Z",
-      "updatedAt": "2026-10-03T10:18:29Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-task-progress"
@@ -90694,7 +90695,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-03T10:18:29Z",
-      "updatedAt": "2026-10-03T10:18:29Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@dingpenghui/dsh-conversation-language"
@@ -90734,7 +90735,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-03T10:18:29Z",
-      "updatedAt": "2026-10-03T10:18:29Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "dsh-dpk-manager"
@@ -90768,7 +90769,7 @@
       },
       "score": 5,
       "firstSeen": "2026-10-03T10:18:32Z",
-      "updatedAt": "2026-10-03T10:18:32Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "@1agents/feature-blueprint"
@@ -90808,10 +90809,120 @@
       },
       "score": 5,
       "firstSeen": "2026-10-03T10:18:38Z",
-      "updatedAt": "2026-10-03T10:18:38Z",
+      "updatedAt": "2026-10-04T11:02:05Z",
       "install": {
         "method": "npm",
         "packageSpec": "owndsh-plugin"
+      }
+    },
+    {
+      "id": "@8kugames/dsh-zed-acp",
+      "name": "dsh-zed-acp",
+      "summary": "Zed-oriented Agent Client Protocol server for DeepSeek Harness: installable dsh plugin (`dsh plugin --profile zed add @8kugames/dsh-zed-acp`) exposing persistent sessions, inclusive session/fork, turn steering, plan mode, agent presets, permission presets",
+      "sources": [
+        "npm-registry"
+      ],
+      "trustLayer": "unverified",
+      "github": {
+        "owner": "8kugames",
+        "repo": "dsh-zed-acp",
+        "url": "https://github.com/8kugames/dsh-zed-acp",
+        "stars": null,
+        "topics": [],
+        "pushedAt": null
+      },
+      "npm": {
+        "name": "@8kugames/dsh-zed-acp",
+        "version": "0.3.0",
+        "downloadsLastMonth": 840,
+        "keywords": [],
+        "dshDeclarations": {
+          "bundle": true,
+          "client": false
+        }
+      },
+      "score": 5,
+      "firstSeen": "2026-10-04T11:02:13Z",
+      "updatedAt": "2026-10-04T11:02:13Z",
+      "install": {
+        "method": "npm",
+        "packageSpec": "@8kugames/dsh-zed-acp"
+      }
+    },
+    {
+      "id": "dsh-reckoner",
+      "name": "dsh-reckoner",
+      "summary": "DSH plugin: a deterministic calculation engine - values, formulas, dimensional analysis and a step-by-step record",
+      "sources": [
+        "npm-registry"
+      ],
+      "trustLayer": "unverified",
+      "github": {
+        "owner": "curtainsmall",
+        "repo": "dsh-reckoner",
+        "url": "https://github.com/curtainsmall/dsh-reckoner",
+        "stars": null,
+        "topics": [],
+        "pushedAt": null
+      },
+      "npm": {
+        "name": "dsh-reckoner",
+        "version": "0.1.1",
+        "downloadsLastMonth": 697,
+        "keywords": [],
+        "dshDeclarations": {
+          "bundle": true,
+          "client": true
+        }
+      },
+      "score": 5,
+      "firstSeen": "2026-10-04T11:02:13Z",
+      "updatedAt": "2026-10-04T11:02:13Z",
+      "install": {
+        "method": "npm",
+        "packageSpec": "dsh-reckoner"
+      }
+    },
+    {
+      "id": "dsh-comfyui",
+      "name": "dsh-comfyui",
+      "summary": "Let the DeepSeek Harness agent smartly drive a local or remote ComfyUI to generate anything, with workflow and asset management panels, per-workflow skill packs, a companion skill and a same-origin media proxy. / 让 DeepSeek Harness 的 Agent 智能驱动本地或远程 Comfy",
+      "sources": [
+        "npm-registry"
+      ],
+      "trustLayer": "unverified",
+      "github": {
+        "owner": "fandc520",
+        "repo": "dsh-comfyui",
+        "url": "https://github.com/fandc520/dsh-comfyui",
+        "stars": null,
+        "topics": [],
+        "pushedAt": null
+      },
+      "npm": {
+        "name": "dsh-comfyui",
+        "version": "0.5.4",
+        "downloadsLastMonth": 4261,
+        "keywords": [
+          "deepseek",
+          "harness",
+          "dsh",
+          "dsh-plugin",
+          "comfyui",
+          "image-generation",
+          "video-generation"
+        ],
+        "dshDeclarations": {
+          "bundle": true,
+          "client": true
+        }
+      },
+      "score": 5,
+      "firstSeen": "2026-10-04T11:02:13Z",
+      "updatedAt": "2026-10-04T11:02:13Z",
+      "install": {
+        "method": "npm",
+        "packageSpec": "dsh-comfyui"
       }
     }
   ]
