@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-10-05）
+# 🛒 DSH 插件市场 · 每日日报（2026-10-06）
 
 ## 🆕 新推出的插件
-- **dsh-client-ui-community-plugins** [链接](https://github.com/zhu1090093659/dsh-community-plugins) — Community plugin index data source for the dsh web ecosystem: community.json is the single source of the Workshop store plugin list and the dsh-market.com plugin manifest.
-- **dsh-session-archive**  — Session archive management for DSH Web: centralized inventory, batch archive/restore, physical delete with family cascade, and optional auto-archive / auto-cleanup policies.
-- **dsh-i18n**  — DSH web GUI language pack plugin: registers the Русский language into the locale catalog and centrally carries the ru dictionaries for every family plugin namespace (missing keys fall back to English through the SDK chain).
-- **dsh-server-monitor** [链接](https://github.com/GooDAnDReaDY/dsh-server-monitor) — SSH server monitor and terminal sidebar for DeepSeek Harness
-- **dsh-git-panel** [链接](https://github.com/xbzbing/dsh-git-panel) — DeepSeek Harness (dsh) plugin: an IDE-style Git panel in the Web GUI — branch/history overview, uncommitted changes with commit & amend, diff stats, and a zsh-style branch marker in the input bar.
-- **dsh-advisor-group** [链接](https://github.com/xingzhen199186/dsh-advisor-group) — DSH plugin: consult multiple expert advisor models in a retro chat-group card — auto-deepen consultation pipeline with real streaming, SSE replay, and 26 provider presets.
-- **dsh-auto-title** [链接](https://github.com/WhatCannotBeSaid/dsh-auto-title) — DSH plugin: model-generated session titles that follow the latest task, remember manual renames, persist their settings, and never fail silently.
-- **dsh-composition-doctor** [链接](https://github.com/lemonxiny55/dsh-composition-doctor) — Explain DSH plugin failures through observable composition paths. Read-only, offline by default, with snapshots and upgrade preflight.
-- **dsh-personal-workbench** [链接](https://github.com/Dely0/dsh-personal-workbench) — DSH 个人工作台：日历 + 层级任务 + AI 澄清/拆解/执行/复盘 + AI 智能排序/日报周报 + 桌面提醒
-- **dsh-apis-plugin** [链接](https://github.com/xianmua/dsh-apis-plugin) — 通用接口管理插件：把任意一套 HTTP 接口注册成 agent 可用的文档查询与请求双工具
+- **mbh-chat**  — DeepSeek Harness host plugin and headless sidecar bridge for MBHChat/Mobook
+- **dsh-agy-ui** [链接](https://github.com/Erick0412-dev/dsh-agy-ui) — DeepSeek Harness Antigravity UI & Experience Enhancement Plugin
+- **deepseek-harness-marketplace** [链接](https://github.com/web-casa/DeepSeek-Harness-Marketplace-Cordis) — Cordis marketplace plugin for DeepSeek Harness
+- **dsh-web-search-tavily** [链接](https://github.com/fan56/dsh-web-search-tavily) — Tavily-backed web search provider for DeepSeek Harness (dsh)
+- **dsh-jx-docs** [链接](https://github.com/JX-t11/dsh-jx-docs) — Integration plugin for DeepSeek Harness
+- **dsh-security-assurance**  — Evidence-backed application-security assurance for DeepSeek Harness
+- **dsh-plugin-piggy** [链接](https://github.com/CLICGGER-TYPES/dsh-piggy) — DSH plugin alias for dsh-piggy, the pet that grows with your real work
+- **dsh-gacha-calendar** [链接](https://github.com/EastMG/dsh-gacha-calendar) — 二游活动/卡池排期速查：侧边栏底部按钮，点击展开各游戏当前版本、卡池与活动起止；覆盖 28 款游戏，支持联网自动刷新与刷新频率设置。
+- **dsh-dream** [链接](https://github.com/STARDUSTLC666/dsh-dream) — 回顾会话、保存反思，并把经过核验和审阅的经验用于后续任务。
+- **dsh-web-search-litellm** [链接](https://github.com/yunxiyang/dsh-web-search-litellm) — Web search provider for the DeepSeek Harness ctx.web seam via the LiteLLM proxy OpenAI Responses API: DeepSeek's native server-side web_search through your proxy. Fixes web_search 'Authentication Fails, Your api key is invalid' (DEEPSEEK_API_KEY that is a
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
