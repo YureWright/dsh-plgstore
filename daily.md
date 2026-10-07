@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-10-06）
+# 🛒 DSH 插件市场 · 每日日报（2026-10-07）
 
 ## 🆕 新推出的插件
-- **mbh-chat**  — DeepSeek Harness host plugin and headless sidecar bridge for MBHChat/Mobook
-- **dsh-agy-ui** [链接](https://github.com/Erick0412-dev/dsh-agy-ui) — DeepSeek Harness Antigravity UI & Experience Enhancement Plugin
-- **deepseek-harness-marketplace** [链接](https://github.com/web-casa/DeepSeek-Harness-Marketplace-Cordis) — Cordis marketplace plugin for DeepSeek Harness
-- **dsh-web-search-tavily** [链接](https://github.com/fan56/dsh-web-search-tavily) — Tavily-backed web search provider for DeepSeek Harness (dsh)
-- **dsh-jx-docs** [链接](https://github.com/JX-t11/dsh-jx-docs) — Integration plugin for DeepSeek Harness
-- **dsh-security-assurance**  — Evidence-backed application-security assurance for DeepSeek Harness
-- **dsh-plugin-piggy** [链接](https://github.com/CLICGGER-TYPES/dsh-piggy) — DSH plugin alias for dsh-piggy, the pet that grows with your real work
-- **dsh-gacha-calendar** [链接](https://github.com/EastMG/dsh-gacha-calendar) — 二游活动/卡池排期速查：侧边栏底部按钮，点击展开各游戏当前版本、卡池与活动起止；覆盖 28 款游戏，支持联网自动刷新与刷新频率设置。
-- **dsh-dream** [链接](https://github.com/STARDUSTLC666/dsh-dream) — 回顾会话、保存反思，并把经过核验和审阅的经验用于后续任务。
-- **dsh-web-search-litellm** [链接](https://github.com/yunxiyang/dsh-web-search-litellm) — Web search provider for the DeepSeek Harness ctx.web seam via the LiteLLM proxy OpenAI Responses API: DeepSeek's native server-side web_search through your proxy. Fixes web_search 'Authentication Fails, Your api key is invalid' (DEEPSEEK_API_KEY that is a
+- **deepseek-harness-win32-picker** [链接](https://github.com/civilization-os/deepseek-harness-win32-picker) — Foreground-owned Windows folder picker for DeepSeek Harness
+- **dsh-settings** [链接](https://github.com/deepseek-ai/deepseek-harness) — Abstract user-settings seam (ctx.settings) for the DeepSeek Harness
+- **dsh-experience-map** [链接](https://github.com/alcheme-labs/dsh-experience-map) — Evidence-governed experience memory for DeepSeek Harness
+- **dsh-engineering-control-plane**  — Evidence-backed engineering Mission governance for DeepSeek Harness
+- **dsh-plugin-dataops** [链接](https://github.com/deepseek-ai/deepseek-harness) — Standalone DataOps MCP integration with delegated browser authorization and Settings UI
+- **dsh-toolong-warning** [链接](https://github.com/Hjdd14/dsh-toolong-warning) — DSH plugin: counts completed compactions per session and raises a floating reminder — with bilingual UI — only after repeated compactions plus heavy extra token spend.
+- **dsh-session-guard** [链接](https://github.com/drscrewdriver/dsh-session-guard) — 高峰自动会话门：周末模式 + 高峰自动暂停 + 官方源二维判定 + 会话级冻结 + 后端自动重试。
+- **dsh-review-float** [链接](https://github.com/calltelemetry/dsh-review-float) — Floating PR/review status bar for DeepSeek Harness: a shell.overlay bar with a docked detail pane and an exploded review board.
+- **dsh-computer-use-win** [链接](https://github.com/Yu-tao-Li/dsh-computer-use-win) — Windows computer use for DeepSeek Harness: an MCP stdio server + PowerShell UIA backend, bridged into DSH via @deepseek-ai/dsh-mcp-client. Read/act on real Windows desktop apps (UI Automation tree, screenshots, typed input, OCR, window management).
+- **dsh-session-steward** [链接](https://github.com/drscrewdriver/dsh-session-steward) — DSH Web 插件：会话管家（合并包）—— 会话历史文件（归档浏览与清理）与健康检查（体检 → 处方 → 出院），外加独立 FTS5 会话内容搜索索引（标题/内容双模式、增量同步、非破坏性整理与快照导入导出）。不碰会话日志、只做可逆处置。
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
