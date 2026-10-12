@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-10-11）
+# 🛒 DSH 插件市场 · 每日日报（2026-10-12）
 
 ## 🆕 新推出的插件
-- **dsh-cli** [链接](https://github.com/askdkc/dsh-cli) — Interactive terminal interface for DeepSeek Harness agents, sessions and tools.
-- **dsh-plugin-stats** [链接](https://github.com/HuakunShen/dsh-plugin-stats) — General usage stats for DeepSeek Harness: throughput, tokens, cost, tool calls, and activity — charted in the Web UI. TypeScript superset of dsh-plugin-tokspeed.
-- **dsh-wisp** [链接](https://github.com/969246694/dsh-wisp) — DeepSeek娘 — an unofficial floating desktop companion for the DeepSeek Harness UI. Zero dependencies; sprites inlined as data URIs; schedules on the Client timer service instead of the trapped browser timer globals.
-- **dsh-official-homepage-theme** [链接](https://github.com/JohnnyTing/dsh-official-homepage-theme) — DeepSeek Harness官方首页主题插件，包含流体鼠标效果、弹性网格与动态小鱼。
-- **dsh-vcs** [链接](https://github.com/f-e-n-g-0531/dsh-vcs) — Read-only Git and SVN change preview for DSH
-- **dsh-fonttune** [链接](https://github.com/LyaxZ/dsh-fonttune) — Font plugin for the DeepSeek Harness Web GUI: the conversation gets its own font, size, line height and weight, the interface font and weight follow it, code keeps its own axis with ligature control, and whole setups save as presets.
-- **dsh-zai-coding-models** [链接](https://github.com/auuduu/dsh-zai-coding-models) — DeepSeek Harness bridge plugin: exposes the newest Zhipu/Z.AI coding-plan models (e.g. glm-5.3) on the zai-coding-cn route before the bundled pi-ai catalog catches up.
-- **dsh-musage-card** [链接](https://github.com/Lin-Dongg/dsh-musage-card) — Multi-provider quota & balance glass card for the DSH sidebar footer (11 providers incl. StepFun / Xiaomi MiMo / Claude with one-click browser login; Step Plan credit). Installable from the dsh-plugin marketplace (GitHub topic "dsh-plugin") or via file: l
-- **dsh-business-context** [链接](https://github.com/openbkn-ai/bkn-dsh) — OpenBKN business knowledge-network context for DeepSeek Harness
-- **dsh-heartbeat** [链接](https://github.com/Kanadego/dsh-heartbeat) — Heartbeat plugin for DeepSeek Harness: scheduled autonomous reflection loop with user profile, material pool, pace gate, and gated proactive expression.
+- **dsh-harness-restart**  — 重启 DeepSeek Harness 进程并自动继续未完成工作：四层重启引擎（触发→审批→PRE 等待→EXIT→POST 恢复）、AI 二次认证、定时/每日/脚本回调、重启后按方案 B 渐进恢复已注册回调的会话（等 1 分钟、每 5 秒一个、回执超时提醒）、演练模式（simulateOnly 不真重启）、自愈双保险（supervisor 让位 + detached helper 健康探测重试）。Restart the DeepSeek Harness process and resume unfini
+- **harness-relay-mcp** [链接](https://github.com/tonytanglab/deepseek-harness-relay-mcp) — Delegate and monitor DeepSeek Harness work from any MCP agent.
+- **dsh-subagent-watchdog** [链接](https://github.com/quaner1234-cmd/dsh-subagent-watchdog) — DSH plugin: safe auto-continue-once recovery for native continuable subagents that end with explicit max-tokens termination. No timers, no polling, no private APIs.
+- **deepseek-harness-humanity** [链接](https://github.com/Thr33H/Deepseek-Harness-Humanity) — Humanity: a personification suite for DeepSeek Harness — persona, memory, skills, self-evolution and dreaming behind one native Web workbench.
+- **reme-dsh-plugin** [链接](https://github.com/agentscope-ai/ReMe) — ReMe memory and context integration for DeepSeek Harness
+- **dsh-web-search-duckduckgo** [链接](https://github.com/tadreamk/web-search-duckduckgo) — DSH plugin: DuckDuckGo-backed web search provider for ctx.web (no API key)
+- **dsh-plugin-share** [链接](https://github.com/HGT158/dsh-plugin-share) — Offline DSH plugin set sharing with a compact D1/NP1 code
+- **dsh-ab-memory** [链接](https://github.com/deepseek-ai/deepseek-harness) — --- description: "The dsh-ab-memory package: a cross-session, file-backed agent memory with five tools (remember / recall / forget / load_skill / distill) and an always-on light injection." kind: "package-reference" ---
+- **dsh-tracescope** [链接](https://github.com/rebornace/dsh-tracescope) — TraceScope DeepSeek Harness plugin: impact analysis + design diff sidebar UI
+- **dsh-ops** [链接](https://github.com/T-Auto/dsh-ops) — Provides bash, PowerShell 7, and a suite of high-performance tools written in Rust for Windows DSH to enhance token efficiency
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）

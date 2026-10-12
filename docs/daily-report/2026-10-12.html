@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DSH 插件市场 · 每日日报 2026-10-12</title>
+<style>
+:root{--bg:#0f1117;--card:#171a23;--fg:#e8eaf0;--dim:#9aa0b0;--line:#2a2f42;--green:#3ddc84;--orange:#ffb020;--red:#ff5c5c;--blue:#5aa2ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:32px 20px 80px}
+h1{font-size:24px;margin:0 0 4px}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.sub{color:var(--dim);font-size:13px;margin-bottom:24px}
+h2{font-size:18px;margin:32px 0 6px;border-left:3px solid var(--blue);padding-left:10px}
+.muted{color:var(--dim);font-size:12px;margin:0 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:10px}
+.hd{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-weight:700}
+.b{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11px}.b.ok{background:#123524;color:var(--green)}.b.caution{background:#33290f;color:var(--orange)}.b.warn{background:#3a1515;color:var(--red)}.b.grow{background:#0f2440;color:var(--blue)}
+.dim{color:var(--dim);font-size:12px;font-weight:400;margin-left:auto}
+.sum{font-size:13px;margin-top:4px}
+.intro{font-size:13px;color:var(--fg);background:#1c2030;border-radius:8px;padding:8px 10px;margin-top:8px}
+.foot{margin-top:40px;color:var(--dim);font-size:12px;border-top:1px solid var(--line);padding-top:12px}
+.nav-card{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1c2030,#17203a);border:1px solid #3a4a7a;border-radius:14px;padding:12px 18px;margin-bottom:20px;text-decoration:none;color:var(--fg);transition:transform .15s}
+.nav-card:hover{transform:translateY(-2px)}
+.nav-icon{font-size:26px}.nav-body{flex:1}.nav-title{font-size:15px;font-weight:700}.nav-stats{font-size:12px;color:var(--dim);margin-top:2px}.nav-go{background:var(--blue);color:#0b1220;font-size:13px;font-weight:600;padding:7px 14px;border-radius:9px;white-space:nowrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:18px 0 14px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.tab{background:var(--card);border:1px solid var(--line);color:var(--dim);padding:8px 16px;border-radius:10px;font-size:14px;cursor:pointer}
+.tab:hover{border-color:var(--blue);color:var(--fg)}
+.tab.active{background:var(--blue);border-color:var(--blue);color:#0b1220;font-weight:600}
+.tab.his{margin-left:auto;text-decoration:none;color:var(--blue);border-color:#3a4a7a}
+.tabpane{min-height:300px}
+.his{display:flex;flex-wrap:wrap;gap:10px}
+.his-item{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;color:var(--fg);font-size:14px}
+.his-item:hover{border-color:var(--blue)}
+</style></head><body><div class="wrap">
+<a class="nav-card" href="index.html">
+  <div class="nav-icon">🛒</div>
+  <div class="nav-body">
+    <div class="nav-title">DSH 插件市场 <span class="dim">共 2405 个插件</span></div>
+    <div class="nav-stats">浏览全部插件 · 分类筛选排序检索 · 每个插件带 AI 评估报告</div>
+  </div>
+  <div class="nav-go">逛市场 →</div>
+</a>
+<h1>📰 每日日报</h1>
+<div class="sub">2026-10-12 · 数据每天 13:00 自动更新</div>
+<div class="tabs">
+  <button class="tab active" data-tab="tab-new">🆕 新推出的插件</button>
+  <button class="tab" data-tab="tab-hot">🔥 涨星最快</button>
+  <button class="tab" data-tab="tab-upd">✨ 热门更新</button>
+  <a class="tab his" href="docs/daily-report/index.html">📜 历史日报 →</a>
+</div>
+<div class="tabpane" id="tab-new"><h2>🆕 新推出的插件</h2><p class="muted">最近 48 小时首次收录</p><div class="card">
+  <div class="hd"><a href="https://www.npmjs.com/package/dsh-harness-restart" target="_blank">dsh-harness-restart</a><span class="dim">质量分 5</span></div>
+  <div class="sum">重启 DeepSeek Harness 进程并自动继续未完成工作：四层重启引擎（触发→审批→PRE 等待→EXIT→POST 恢复）、AI 二次认证、定时/每日/脚本回调、重启后按方案 B 渐进恢复已注册回调的会话（等 1 分钟、每 5 秒一个、回执超时提醒）、演练模式（simulateOnly 不真重启）、自愈双保险（supervisor 让位 + detached helper 健康探测重试）。Restart the DeepSeek Harness process and resume unfini</div>
+  
+</div><div class="card">
+  <div class="hd"><a href="https://github.com/tonytanglab/deepseek-harness-relay-mcp" target="_blank">harness-relay-mcp</a><span class="dim">质量分 5</span></div>
+  <div class="sum">Delegate and monitor DeepSeek Harness work from any MCP agent.</div>
+  
+</div><div class="card">
+  <div class="hd"><a href="https://github.com/quaner1234-cmd/dsh-subagent-watchdog" target="_blank">dsh-subagent-watchdog</a><span class="dim">质量分 5</span></div>
+  <div class="sum">DSH plugin: safe auto-continue-once recovery for native continuable subagents that end with explicit max-tokens termination. No timers, no polling, no private APIs.</div>
+  
+</div><div class="card">
+  <div class="hd"><a href="https://github.com/Thr33H/Deepseek-Harness-Humanity" target="_blank">deepseek-harness-humanity</a><span class="dim">质量分 5</span></div>
+  <div class="sum">Humanity: a personification suite for DeepSeek Harness — persona, memory, skills, self-evolution and dreaming behind one native Web workbench.</div>
+  
+</div><div class="card">
+  <div class="hd"><a href="https://github.com/agentscope-ai/ReMe" target="_blank">reme-dsh-plugin</a><span class="dim">质量分 5</span></div>
+  <div class="sum">ReMe memory and context integration for DeepSeek Harness</div>
+  
+</div><div class="card">
+  <div class="hd"><a href="https://github.com/tadreamk/web-search-duckduckgo" target="_blank">dsh-web-search-duckduckgo</a><span class="dim">质量分 5</span></div>
+  <div class="sum">DSH plugin: DuckDuckGo-backed web search provider for ctx.web (no API key)</div>
+  
+</div><div class="card">
+  <div class="hd"><a href="https://github.com/HGT158/dsh-plugin-share" target="_blank">dsh-plugin-share</a><span class="dim">质量分 5</span></div>
+  <div class="sum">Offline DSH plugin set sharing with a compact D1/NP1 code</div>
+  
+</div><div class="card">
+  <div class="hd"><a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank">dsh-ab-memory</a><span class="dim">质量分 5</span></div>
+  <div class="sum">--- description: &quot;The dsh-ab-memory package: a cross-session, file-backed agent memory with five tools (remember / recall / forget / load_skill / distill) and an always-on light injection.&quot; kind: &quot;package-reference&quot; ---</div>
+  
+</div><div class="card">
+  <div class="hd"><a href="https://github.com/rebornace/dsh-tracescope" target="_blank">dsh-tracescope</a><span class="dim">质量分 5</span></div>
+  <div class="sum">TraceScope DeepSeek Harness plugin: impact analysis + design diff sidebar UI</div>
+  
+</div><div class="card">
+  <div class="hd"><a href="https://github.com/T-Auto/dsh-ops" target="_blank">dsh-ops</a><span class="dim">质量分 5</span></div>
+  <div class="sum">Provides bash, PowerShell 7, and a suite of high-performance tools written in Rust for Windows DSH to enhance token efficiency</div>
+  
+</div></div>
+<div class="tabpane" id="tab-hot" hidden><h2>🔥 涨星最快的插件</h2><p class="muted">按「今日星数 − 昨日星数」排序（历史快照积累中）</p><p class="muted">今日暂无</p></div>
+<div class="tabpane" id="tab-upd" hidden><h2>✨ 热门插件的更新</h2><p class="muted">近 48 小时有代码推送的高星插件</p><p class="muted">今日暂无</p></div>
+<div class="foot">评估报告由 AI 生成，仅供参考，非安全认证。历史快照：data/history/（每日一份，用于涨星统计）。</div>
+<script>
+var tabs = document.querySelectorAll(".tab[data-tab]");
+var panes = {};
+tabs.forEach(function (b) {
+  panes[b.dataset.tab] = document.getElementById(b.dataset.tab);
+  b.onclick = function () {
+    tabs.forEach(function (x) { x.classList.toggle("active", x === b); });
+    Object.keys(panes).forEach(function (k) { panes[k].hidden = (k !== b.dataset.tab); });
+  };
+});
+</script>
+</div></body></html>
