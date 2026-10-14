@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-10-13）
+# 🛒 DSH 插件市场 · 每日日报（2026-10-14）
 
 ## 🆕 新推出的插件
-- **dsh-web-search** [链接](https://github.com/lemoncat7/dsh-web-search) — Configurable and secure multi-provider web search for DeepSeek Harness
-- **mbh-memory**  — DeepSeek Harness memory plugin for Mobook
-- **dsh-plugin-model-tuning** [链接](https://github.com/tofu-zyc/dsh-plugin-tofu-box) — 「设置 → 模型调参」页：模型参数（推理档位/上下文/最大输出/输入模态）、「用途」页（标题生成独立路由，替换宿主标题行）、「绘图」页（绘图模型配置 + generate_image 工具 + 直接绘图面板）。v2 合并了原 dsh-plugin-title-model 与 dsh-plugin-image-generation。
-- **dsh-router-loomy** [链接](https://github.com/2404723600/dsh-router-loomy) — DSH plugin: Loomy（讯飞 Loomy 办公助手云端通道，OpenAI 兼容）供应商 —— 通过 router.suppliers 把 loomy 通道接入 dsh-router。
-- **dsh-tools** [链接](https://github.com/deepseek-ai/deepseek-harness) — Tool registry and execution pipeline for the DeepSeek Harness
-- **dsh-ai-novel-writer** [链接](https://github.com/EthanYoQ/AI-Novel-Writer) — A local-first novel project plugin for DeepSeek Harness
-- **dsh-undo-savepoint** [链接](https://github.com/lire1131/dsh-undo-savepoint) — DSH undo/rollback system: snapshot config files on change, undo/redo the last action from the WebUI or by chat, and roll back broken plugin trees without reinstalling. Works even when DSH fails to boot (offline CLI + GUI).
-- **dsh-arena-kit**  — Model Arena kit for DeepSeek Harness: arena tools (get_task/submit_result), web routes (/zcode-arena/*) and the hero task dock (client.js).
-- **studymate** [链接](https://github.com/Miaotofu01/Study-Mate) — StudyMate learning skills and lesson engine for DeepSeek Harness, Google Antigravity, Codex and ChatGPT Work.
-- **dsh-patch-edit-plus** [链接](https://github.com/drscrewdriver/dsh-patch-edit-plus) — Patch-style file editing for DeepSeek Harness: one apply_patch tool accepting git/unified diff (default) and Codex apply_patch syntax (opt-in), with all-or-nothing application, read-before-write intent dance, sandbox-aware delete/move,  (declarative volat
+- **voice** [链接](https://github.com/marius-patrik/dsh-stack) — Natural, human-sounding voice for the dsh harness: server-proxied neural TTS read-aloud and agent speech tools over OpenAI-compatible endpoints, browser-native or Whisper speech input, and a Voice settings section
+- **agent-loops** [链接](https://github.com/marius-patrik/dsh-stack) — Goal-based file-defined automation loops for the dsh harness
+- **agents** [链接](https://github.com/marius-patrik/dsh-stack) — Custom agents as JSON/MD persona files for the dsh harness
+- **agent-tools** [链接](https://github.com/marius-patrik/dsh-stack) — Config-file custom tools for the dsh harness
+- **dsh-maintainer-workbench** [链接](https://github.com/Acckion/dsh-maintainer-workbench) — Repository maintenance workbench for DeepSeek Harness
+- **repos** [链接](https://github.com/marius-patrik/dsh-stack) — Repo workflows (status/branch/commit/push/PR) for the dsh harness, consuming the shared vault GitHub token
+- **visionforge** [链接](https://github.com/LR611415/visionforge) — VisionForge: vision understanding + image generation for DeepSeek Harness (DSH)
+- **dsh-model-search** [链接](https://github.com/GooDAnDReaDY/dsh-model-search) — DSH web plugin: searchable model selector for DeepSeek Harness WebUI
+- **dsh-mcp-registry**  — dsh-mcp-registry: DSH plugin — a governed registry for MCP connectors (stdio / streamable-http). Multi-level fail-closed authorization (global switch → per-connector permission mode → per-tool grants → live server-annotation evidence), mcpServers JSON imp
+- **dsh-message-ops** [链接](https://github.com/240xu/dsh-message-ops) — DSH web 插件：消息级回滚 / 删除 / 恢复（补 dsh 官方没有的部分）。分支与导出用官方内置能力。
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
