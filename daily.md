@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-10-14）
+# 🛒 DSH 插件市场 · 每日日报（2026-10-15）
 
 ## 🆕 新推出的插件
-- **voice** [链接](https://github.com/marius-patrik/dsh-stack) — Natural, human-sounding voice for the dsh harness: server-proxied neural TTS read-aloud and agent speech tools over OpenAI-compatible endpoints, browser-native or Whisper speech input, and a Voice settings section
-- **agent-loops** [链接](https://github.com/marius-patrik/dsh-stack) — Goal-based file-defined automation loops for the dsh harness
-- **agents** [链接](https://github.com/marius-patrik/dsh-stack) — Custom agents as JSON/MD persona files for the dsh harness
-- **agent-tools** [链接](https://github.com/marius-patrik/dsh-stack) — Config-file custom tools for the dsh harness
-- **dsh-maintainer-workbench** [链接](https://github.com/Acckion/dsh-maintainer-workbench) — Repository maintenance workbench for DeepSeek Harness
-- **repos** [链接](https://github.com/marius-patrik/dsh-stack) — Repo workflows (status/branch/commit/push/PR) for the dsh harness, consuming the shared vault GitHub token
-- **visionforge** [链接](https://github.com/LR611415/visionforge) — VisionForge: vision understanding + image generation for DeepSeek Harness (DSH)
-- **dsh-model-search** [链接](https://github.com/GooDAnDReaDY/dsh-model-search) — DSH web plugin: searchable model selector for DeepSeek Harness WebUI
-- **dsh-mcp-registry**  — dsh-mcp-registry: DSH plugin — a governed registry for MCP connectors (stdio / streamable-http). Multi-level fail-closed authorization (global switch → per-connector permission mode → per-tool grants → live server-annotation evidence), mcpServers JSON imp
-- **dsh-message-ops** [链接](https://github.com/240xu/dsh-message-ops) — DSH web 插件：消息级回滚 / 删除 / 恢复（补 dsh 官方没有的部分）。分支与导出用官方内置能力。
+- **deepseek-harness-channel-bcn** [链接](https://github.com/inclusionAI/Avernet) — DeepSeek Harness channel bundle for the Avernet Bot Collaboration Network.
+- **dsh-issue-reporter** [链接](https://github.com/GooDAnDReaDY/dsh-issue-reporter) — Preview and submit actionable GitHub bug reports from DeepSeek Harness
+- **dsh-deepseek-chat** [链接](https://github.com/xingxingbk-git/dsh-deepseek-chat) — CHAT / HARNESS mode switcher for DeepSeek Harness
+- **deepseek-harness** [链接](https://github.com/MrRopke/adaptiq-harness-plugins) — AdaptiqAI for DeepSeek Harness: models with 5M-token native memory and Knowledge. Sign up, get a model and work without leaving the harness
+- **dsh-better-display** [链接](https://github.com/copylee711/dsh-better-display) — DeepSeek Harness Web plugin: illustrated assistant replies with GPT-style citation chips and a sources panel for web-search results, on top of streaming markstream-react Markdown.
+- **dsh-key-limits** [链接](https://github.com/GooDAnDReaDY/dsh-key-limits) — DeepSeek Harness plugin: API key / subscription quota limits (float chip, composer bar, settings).
+- **dsh-jev-tools** [链接](https://github.com/HorusJiang/dsh-jev-tools) — Gives DeepSeek Harness three automatic Jev judgments — prune oversized tool output, screen fetched pages for injected instructions, suggest which skill to use — plus the jev_ask and jev_gate tools, a persistent judgment ledger, and a /jev-status diagnosis
+- **dsh-knit** [链接](https://github.com/PolinniZhong/dsh-knit) — Context retrieval for DeepSeek Harness: ranks docs, code and media by relevance into a sidebar Context Pack. Lexical and fully local by default. Hybrid is off until you configure a provider; it sends your query and file titles/summaries, not bodies.
+- **dsh-im-companion** [链接](https://github.com/FeatherHunter/dsh-im-companion) — dsh-im-companion：以助理和家的概念增强 dsh-im——哪个工作区有助理在管、在不在线尽收眼底，搬家拖一下就行。
+- **dsh-office** [链接](https://github.com/copylee711/dsh-office) — DeepSeek Harness Office 插件（Windows）：AI 直接在你打开的 Word / Excel / PowerPoint 里改文档，改动实时出现在窗口中，你可以同时编辑；读结构、批量编辑、渲染成图核对、保存。
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
