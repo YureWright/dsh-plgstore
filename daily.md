@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-10-15）
+# 🛒 DSH 插件市场 · 每日日报（2026-10-16）
 
 ## 🆕 新推出的插件
-- **deepseek-harness-channel-bcn** [链接](https://github.com/inclusionAI/Avernet) — DeepSeek Harness channel bundle for the Avernet Bot Collaboration Network.
-- **dsh-issue-reporter** [链接](https://github.com/GooDAnDReaDY/dsh-issue-reporter) — Preview and submit actionable GitHub bug reports from DeepSeek Harness
-- **dsh-deepseek-chat** [链接](https://github.com/xingxingbk-git/dsh-deepseek-chat) — CHAT / HARNESS mode switcher for DeepSeek Harness
-- **deepseek-harness** [链接](https://github.com/MrRopke/adaptiq-harness-plugins) — AdaptiqAI for DeepSeek Harness: models with 5M-token native memory and Knowledge. Sign up, get a model and work without leaving the harness
-- **dsh-better-display** [链接](https://github.com/copylee711/dsh-better-display) — DeepSeek Harness Web plugin: illustrated assistant replies with GPT-style citation chips and a sources panel for web-search results, on top of streaming markstream-react Markdown.
-- **dsh-key-limits** [链接](https://github.com/GooDAnDReaDY/dsh-key-limits) — DeepSeek Harness plugin: API key / subscription quota limits (float chip, composer bar, settings).
-- **dsh-jev-tools** [链接](https://github.com/HorusJiang/dsh-jev-tools) — Gives DeepSeek Harness three automatic Jev judgments — prune oversized tool output, screen fetched pages for injected instructions, suggest which skill to use — plus the jev_ask and jev_gate tools, a persistent judgment ledger, and a /jev-status diagnosis
-- **dsh-knit** [链接](https://github.com/PolinniZhong/dsh-knit) — Context retrieval for DeepSeek Harness: ranks docs, code and media by relevance into a sidebar Context Pack. Lexical and fully local by default. Hybrid is off until you configure a provider; it sends your query and file titles/summaries, not bodies.
-- **dsh-im-companion** [链接](https://github.com/FeatherHunter/dsh-im-companion) — dsh-im-companion：以助理和家的概念增强 dsh-im——哪个工作区有助理在管、在不在线尽收眼底，搬家拖一下就行。
-- **dsh-office** [链接](https://github.com/copylee711/dsh-office) — DeepSeek Harness Office 插件（Windows）：AI 直接在你打开的 Word / Excel / PowerPoint 里改文档，改动实时出现在窗口中，你可以同时编辑；读结构、批量编辑、渲染成图核对、保存。
+- **dsh-fnos** [链接](https://github.com/FNOSP/fnos-dsh) — fnOS-specific integrations for DeepSeek Harness.
+- **dsh-harness-preset** [链接](https://github.com/dg17dog/dsh-harness-preset) — 驾驭工程模式（Harness Engineering）agent preset：判型 → 三层子代理执行 → 证据验收；纯提示词工程。DeepSeek Harness 桌面端/网页端插件页直接安装。
+- **dsh-dev-env** [链接](https://github.com/cszi666/dsh-dev-env) — DSH plugin: inventory your Windows dev/test toolchain, spot the gaps, and fill them with one click.
+- **jina-cohere** [链接](https://github.com/Firefox2100/dsh-ai-providers) — DSH plugin that supplies reranking from any Jina- or Cohere-style /rerank API (Jina, Cohere, LocalAI, vLLM...), to dsh-ai-providers.
+- **dsh-plugin-next-step-waiting**  — DSH plugin: wait_for_condition tool — pause and wait for an external action to complete, or ask the user whether to continue. Pluggable detectors (shell command polling / sub-agent judgement) with round-based human check-ins.
+- **runtime** [链接](https://github.com/Firefox2100/dsh-ai-providers) — DSH plugin that selects and exposes embedding, reranking, speech, and image generation providers.
+- **dsh-plugin-save-token** [链接](https://github.com/vibe-any/dsh-plugin-save-token) — Cut token cost without cutting model intelligence — a DeepSeek Harness (dsh) bundle plugin: structure-aware compression + TOON-style lossless encoding first + reversible spill-to-disk + real-time dashboard.
+- **dsh-cad** [链接](https://github.com/LAU-MARS/dsh-cad) — CAD visualization plugin for DeepSeek Harness: cad_view / cad_info tools with an embedded 3D (STL/OBJ/STEP/IGES) and 2D (DXF/SVG) viewer card in the Web UI
+- **dsh-plugin-debugging** [链接](https://github.com/dsh-plugin-lab/dsh-plugin-debugging) — For DSH plugin development: runtime diagnostics and in-place fixes your agent can run itself.
+- **dsh-web-search-zhipu** [链接](https://github.com/PartinGQAQ/dsh-web-search-zhipu) — GLM (Zhipu bigmodel) web search provider for DeepSeek Harness: native web_search via the Anthropic-compatible Messages API, with GLM response-format translation.
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
