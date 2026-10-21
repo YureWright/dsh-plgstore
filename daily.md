@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-10-20）
+# 🛒 DSH 插件市场 · 每日日报（2026-10-21）
 
 ## 🆕 新推出的插件
-- **dsh-harness-trace** [链接](https://github.com/oihai/dsh-harness-trace) — 持续监听并记录本地 Harness 调用 LLM 的全过程：完整提示词（用户输入 + DSH/插件注入）、技能加载、工具调用与命令执行、本地文件读写、联网搜索抓取。按「轮次 → 步骤」依时间汇总为高可读 Markdown，落在会话对应工作区内，序号加时间命名。内置审阅页与可调配置。
-- **dsh-pptx-editor** [链接](https://github.com/yunfeizhu/dsh-pptx-editor) — PPTX editor for DeepSeek Harness
-- **dsh-plugin-harness-whale** [链接](https://github.com/HeShen-1/deepseek-whale-wallpaper) — DeepSeek Harness particle-whale wallpaper for the web client
-- **dsh-workload-report** [链接](https://github.com/tableau-China/dsh-workload-report) — DeepSeek Harness (DSH) plugin — see your effort and token usage by date and workspace: calendar heatmap, time-of-day analysis, workspace share, and a shareable self-contained HTML report.
-- **dsh-plugin-easy2restart** [链接](https://github.com/SMPcosy/dsh-plugin-easy2restart) — DSH plugin: double-click the sidebar restart button to fully relaunch DeepSeek Harness; it is greyed out while an agent session is running. （中文：DSH 重启插件：双击侧边栏重启按钮即可整体重启 DeepSeek Harness，会话运行时按钮置灰禁用。）
-- **cordis-plugin-sandbox-grant-advisor** [链接](https://github.com/argszero/cordis-plugin-sandbox-grant-advisor) — Turns seven sandbox environment failures that name neither their cause nor a remedy into a diagnosis with a path forward. Family 1, the Windows workspace ACL: twelve reports (#7538, #7622, #7646, #7720, #7750, #7735, #7771, #7804, #7816, #8232, #8272, #82
-- **state** [链接](https://github.com/Firefox2100/dsh-agentic-roleplay) — DSH plugin for roleplay session state: one SQLite database per session, exposed to other plugins as a service over canonical models.
-- **dsh-connect-sensenova-token-plan** [链接](https://github.com/eghrhegpe/dsh-connect-sensenova-token-plan) — Bring SenseNova into DSH: opt-in registration of SenseNova language models and the draw tool as an OpenAI-compatible provider (model list follows your key, vision models take images automatically), a Token Plan quota panel — credit pools, per-model consum
-- **dsh-expert-orchestrator** [链接](https://github.com/mario841859784/dsh-expert-orchestrator) — Expert Orchestrator — multi-agent orchestration agent preset for DeepSeek Harness (dsh): triage → PM planning → delegate implementation to domain experts via a merged roster (summon_expert), dependency-DAG taskboard, file message bus, tiered delivery gate
-- **dsh-whale-pet-plugin** [链接](https://github.com/dleaf6211-hash/dsh-whale-pet) — Whale girl desktop pet for DeepSeek Harness: browser floating mascot + Windows desktop pet, balance watching, task notices, 19 voiced lines with per-line emotion, head-pat interaction and presence-aware idle speech.
+- **clutch-dsh-title** [链接](https://github.com/Cerbur/clutch-dsh) — Configurable deterministic session titles for DeepSeek Harness.
+- **dsh-port-inspector** [链接](https://github.com/ianho7/dsh-port-inspector) — Windows Port Inspector Bundle for DeepSeek Harness
+- **dsh-true-delete** [链接](https://github.com/YIYuNCU/DSHTrueDelete) — DSH plugin: delete an archived session's local files — transcript, projection cache, and its subagent sessions — after a two-step confirmation.
+- **dsh-plugin-whale-pet** [链接](https://github.com/Yifffan/dsh-plugin-whale-pet) — Your little whale buddy for work, wins, and well-earned naps.
+- **dsh-canvas-tsx-sidebar** [链接](https://github.com/drscrewdriver/dsh-canvas-tsx-sidebar) — DSH web plugin (dsh-better-sidebar consumer) for the DSH 0.2.0 line: render Qoder Canvas `*.canvas.tsx` reports as a structured page in the right sidebar. Static parse only — no code execution.
+- **dsh-orb** [链接](https://github.com/mini-yifan/dsh-orb-cordis) — Installable Orb bundle. Inserts the Computer Use preset and the floating-ball host.
+- **whale-persona** [链接](https://github.com/shenA2024/whale-persona) — Persona engine for AI coding harnesses (DeepSeek Harness; the ZCode adapter is retired as of 2026-09-19 and kept for history only): self-name per model, self-image (appearance) and reply tone per model (both opt-in), user address, stance, character, per-i
+- **dsh-astrbot-ingress** [链接](https://github.com/CCYellowStar2/dsh-astrbot-ingress) — HTTP ingress that lets AstrBot drive DeepSeek Harness agents (OneBot / official IM via AstrBot).
+- **dsh-delete-turn** [链接](https://github.com/DDDMUC/dsh-delete-turn) — Per-message delete for DeepSeek Harness: remove a user message, one reply step, or a whole assistant reply from the derived model context through the official surface-replace contract, and hide it from the visible transcript without rewriting the append-o
+- **dsh-opencode-patch** [链接](https://github.com/viztor/dsh-opencode-patch) — OpenCode on DeepSeek Harness — session affinity, Zen/Go gateway origin headers, free-tier tool fallback, and live Go quota display.
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
