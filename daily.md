@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-10-27）
+# 🛒 DSH 插件市场 · 每日日报（2026-10-28）
 
 ## 🆕 新推出的插件
-- **dsh-coopanion** [链接](https://github.com/takboo/dsh-coopanion) — DeepSeek Whale desktop companion and task notifications for DeepSeek Harness
-- **dsh-gentle-engram** [链接](https://github.com/ForeverYoungPp/dsh-gentle-engram) — HTTP-native Engram persistent memory integration for DeepSeek Harness
-- **dsh-profile-multica** [链接](https://github.com/caizhihaoczh/dsh-profile-multica) — Installable Multica JSONL bridge profile for DeepSeek Harness
-- **dsh-auto-approval-llm-m**  — LLM-assisted auto approval with timeout fallback for DeepSeek Harness
-- **dsh-system-prompt** [链接](https://github.com/deepseek-ai/deepseek-harness) — System prompt assembly registry for the DeepSeek Harness
-- **deepseek-harness-intelligent-ui** [链接](https://github.com/dreamfarer-space/deepseek-harness-intelligent-ui) — DeepSeek Harness Intelligent UI: generative, interactive UI in the chat (declarative component catalog + sandboxed streaming HTML widgets), inspired by CopilotKit OpenIntelligentUI.
-- **dsh-specflow** [链接](https://github.com/lonelymoon87/dsh-specflow) — Specification-driven development workflows for DeepSeek Harness.
-- **dsh-chaos** [链接](https://github.com/hanxuanliang/dsh-chaos) — Peer multi-Agent collaboration for DeepSeek Harness
-- **dsh-agent-loop** [链接](https://github.com/deepseek-ai/deepseek-harness) — The concrete agent loop plugin for the DeepSeek Harness
-- **dsh-skill-auto-load-typesafe** [链接](https://github.com/kibuniverse/dsh-skill-auto-load-typesafe) — Preload DeepSeek Harness skills selected by TypeSafe AI.
+- **dsh-llm**  — Provider-neutral LLM service interface for the DeepSeek Harness
+- **dsh-model-switch** [链接](https://github.com/vandoor7-droid/dsh-model-switch) — Explicit model routing plus composer/Plan picker for DeepSeek Harness
+- **dsh-brand** [链接](https://github.com/deepseek-ai/deepseek-harness) — Stateless branded primitive types for the DeepSeek Harness
+- **dsh-harness-switch** [链接](https://github.com/AlyceStocking/dsh-harness-switch) — Kimi API and per-model harness selection in native DSH sessions
+- **dsh-plugin-herdr-tools**  — DSH plugin: herdr_layout / herdr_pane / herdr_agent tools — inspect and create Herdr terminal topology, drive ordinary commands in panes, and control coding agents. Port of @muzi3/herdr's pane-agent-tools.
+- **dsh-plugin-manager** [链接](https://github.com/fegnze/dsh-plugin-manager) — Search and filter the DSH plugin inventory using the official plugin manager service
+- **dsh-plugin-relay** [链接](https://github.com/jdz321/dsh-plugin-relay) — DeepSeek Harness (dsh) plugin that routes model traffic through new-api-family relay panels (one-api / new-api / Veloera / done-hub / ...) — several panels at once, each its own model provider: manage panels (accordion with inline keys / models / dashboar
+- **dsh-tavern-stages** [链接](https://github.com/ai4rpg/tavern-stages) — DSH plugin that brings tavern-design, tavern-cards, and tavern-ui workflows into dsh-stage-switch stages
+- **dsh-plugin-getweather**  — dsh-plugin-getweather from tcxa
+- **dsh-user-sync**  — DSH用户级配置同步插件，更新需重启DSH
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
