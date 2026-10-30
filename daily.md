@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-10-29）
+# 🛒 DSH 插件市场 · 每日日报（2026-10-30）
 
 ## 🆕 新推出的插件
-- **dsh-office-kit** [链接](https://github.com/hairyf/dsh-office-kit) — Office documents, PDF, presentations, and spreadsheets for DeepSeek Harness
-- **dsh-provider-qoder** [链接](https://github.com/mo-n/dsh-provider-qoder) — Global Qoder subscription adapter for the DeepSeek Harness LLM seam
-- **dsh-qoder-connect** [链接](https://github.com/masknull/dsh-qoder-connect) — 将 Qoder（国内版 / 国际版）的模型接入 DeepSeek Harness — bring Qoder (CN & international) models into DeepSeek Harness.
-- **dsh-lark-agent** [链接](https://github.com/Nirvana-Jie/dsh-lark-agent) — Reach your DeepSeek Harness assistant from Feishu / Lark: a dsh plugin built on the official Lark CLI
-- **dsh-home-paths**  — Shared filesystem path helpers for the DeepSeek Harness
-- **dsh-starlite** [链接](https://github.com/StarCried/starlite-dsh) — StarLite for DSH: a lightweight Windows companion managed by one DSH plugin
-- **dsh-system-prompt**  — System prompt assembly registry for the DeepSeek Harness
-- **dsh-token-diet** [链接](https://github.com/ybh618618/dsh-token-diet) — Token 统计与按会话预算：汇总所有会话、子智能体和自动化任务的用量与成本，并在预算耗尽时停止任务。
-- **plugin** [链接](https://github.com/dsh-remote/plugin) — DSH Remote Control 的宿主侧插件：把本机 DeepSeek Harness 与中继配对，微信小程序可发指令、看流式输出、回答审批。载荷级端到端加密。
-- **dsh-wallpaper-bg** [链接](https://github.com/nishuoyang/dsh-wallpaper-bg) — DeepSeek Harness（dsh web 网页界面与 0.2 桌面端）独立壁纸背景插件：内置壁纸 / 自定义上传 / Wallpaper Engine 壁纸库（只读）三种来源，支持图片、视频、网页与场景工坊预览图，含遮罩·模糊·亮度·安全放大调节。WE 壁纸库来源需安装配套插件 dsh-wallpaper-engine-api（一条命令，随 DSH 启停，无需独立服务）。
+- **dsh-github-harness** [链接](https://github.com/yintaocheng/dsh-github-harness) — Reusable DSH plugin and CLI for a single GitHub Issue-to-PR task in a target repository
+- **dsh-harness-push** [链接](https://github.com/QingJing5906/dsh-push) — DeepSeek Harness 的 GitHub 与 Git 管理插件：多账号登录切换、仓库浏览与管理、工作区版本树、一键推送、推送前 Agent 审查。
+- **dsh-harness-dev-context** [链接](https://github.com/deepseek-ai/deepseek-harness) — Model context naming the DeepSeek Harness checkout and Web GUI URL without letting either change the system prompt
+- **dsh-better-subagent** [链接](https://github.com/Menghuan1918/dsh-better-subagent) — Standalone DSH plugin: Codex/Claude continuable CLI subagents, wait_subagent, child exit guard and model tiers. Pure ESM, no build step.
+- **dsh-plugin-windows-use**  — DSH plugin exposing PowerShell-based tools to operate the local Windows machine (screenshot, UI tree dump, mouse/keyboard input, foreground app). Rebuilt for the 0.2.1 API line; works on both the web profile and the desktop app.
+- **dsh-rss-news-daily**  — dsh plugin: daily curated RSS briefing (overall summary + top-N items), sidebar reader, preference tuning — panel/reader only, never touches the conversation.
+- **dsh-plugin-health** [链接](https://github.com/EasonMWS/dsh-plugin-health) — The DSH plugin checker that can actually repair what it finds. Scans every installed plugin, rehearses each rejected one in a throwaway home to prove it boots, and only then writes a reversible exemption — or tells you honestly that it cannot be saved. Al
+- **dsh-custom-env** [链接](https://github.com/ownduck/dsh-custom-env) — DSH plugin: manage $DSH_HOME/.env from Settings
+- **dsh-plugin-radar-ysr** [链接](https://github.com/yangshourong/dsh-plugin-radar) — Plugin discovery for DeepSeek Harness: multi-source, star-ranked search across GitHub's dsh-plugin topic and the awesome-dsh-plugin curated list, with a bundled offline index and a real offline keyword engine.
+- **dsh-assistant-plugin-dev** [链接](https://github.com/fegnze/dsh-assistant-plugin-dev) — Portable DSH plugin development assistant with native OpenSpec and baseline-bound delivery tools
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
