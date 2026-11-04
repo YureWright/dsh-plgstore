@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-11-03）
+# 🛒 DSH 插件市场 · 每日日报（2026-11-04）
 
 ## 🆕 新推出的插件
-- **dsh-skills-ext** [链接](https://github.com/ancircle0/dsh-skills-ext) — DSH Harness plugin: keep preset skill directories and link their skills into the user skill root (directory junction on Windows, symlink elsewhere).
-- **deepseek-harness-codearts**  — DeepSeek Harness plugin: one hub for AI coding providers — account login, multi-account pools, silent credential refresh, credit claiming, and a local OpenAI-compatible gateway
-- **dsh-ollama-cloud-provider** [链接](https://github.com/GooDAnDReaDY/dsh-ollama-cloud-provider) — Ollama Cloud LLM provider plugin for DeepSeek Harness (dsh).
-- **dsh-plugin-resolver** [链接](https://github.com/sakikoTGW/dsh-plugin-resolver) — Agent-facing DSH plugin resolver: search the catalog, pick a version the running DSH accepts, install (registry or GitHub-source build), and verify - no trial and error.
-- **dsh-astriax-native** [链接](https://github.com/gongyubai/dsh-astrbot) — Native DSH plugin for AstrBot/NapCat management, QQ bridge, session panel, tool gateway and DSH provider integration.
-- **dsh** [链接](https://github.com/risense-ai/respire-dsh) — Native Respire memory plugin for DeepSeek Harness
-- **dsh-opencode-provider** [链接](https://github.com/GooDAnDReaDY/dsh-opencode-provider) — OpenCode / OpenCode Go LLM provider plugin for DeepSeek Harness (dsh).
-- **dsh-plugin-release-probe**  — A throwaway plugin used to test dsh-plugin release end to end.
-- **dsh-plugin-xp-gate** [链接](https://github.com/boyingliu01/xp-gate) — XP-Gate deterministic quality gates + AI workflow skills as a DeepSeek Harness (DSH) native plugin: gate-check / gate-principles / gate-arch tools + 12 SKILL.md skills
-- **jbc-dssi**  — 鲸编程 - 不只是手机遥控操作电脑,而是将电脑级的Agent能力装进手机
+- **dsh-client-ui-browser-view**  — Right-docked live browser view for the DSH Web GUI: a CDP-driven Chromium the agent operates, a screencast panel the user watches, and screenshots attached to every tool result.
+- **dsh-plugin-resolver-dshgo** [链接](https://github.com/sakikoTGW/dsh-plugin-resolver-dshgo) — dsh-plugin-resolver adapted for dsh-go (the phone harness): native dsh-go cards for every tool result, phone-aware registries, GitHub mirrors, pnpm 11 build-script reporting and engine-restart wording.
+- **dsh-plugin-locale-ko** [链接](https://github.com/dungsil/dsh-plugins) — Korean UI language pack for DeepSeek Harness.
+- **dsh-connections** [链接](https://github.com/xunz3/dsh-connections) — SSH connections to remote DeepSeek Harness hosts
+- **dsh-mojie-model-provider** [链接](https://github.com/MoJIeAIGC/dsh-mojie-model-provider) — Standalone DeepSeek Harness (dsh) plugin: Mojie (mojieaigc.com) LLM model provider
+- **dsh-rss** [链接](https://github.com/STARDUSTLC666/dsh-rss) — DSH RSS / Atom 工作台：分类来源目录、订阅读取、搜索与 OPML 导入导出，由用户选择来源。欢迎提交 issues 和 PR。
+- **dsh-plugin-upgrader** [链接](https://github.com/zuwenyin/dsh-plugin-upgrader) — DSH plugin for DeepSeek Harness: upgrade plugins from the Plugins page, version history, rollback, live pnpm progress
+- **mcp-stdio**  — Official MCP stdio proxy and DSH plugin bundle for CapClaw (开刻) AI Video Editor
+- **computer-user** [链接](https://github.com/jing-hy/computer-user) — Codex-style computer use for DeepSeek Harness on Windows: screenshot, UI Automation controls, pointer and keyboard.
+- **dsh-plugin-rea** [链接](https://github.com/czcdr/dsh-plugin-rea) — One-plugin bundle: provisions Node/REA/JDK/Ghidra for you, then registers the upstream REA MCP server as mcp__rea__* tools. · 一体包：自动准备 Node/REA/JDK/Ghidra，并把上游 REA 的 MCP 服务接入 DeepSeek Harness。
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
