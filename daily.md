@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-11-04）
+# 🛒 DSH 插件市场 · 每日日报（2026-11-05）
 
 ## 🆕 新推出的插件
-- **dsh-client-ui-browser-view**  — Right-docked live browser view for the DSH Web GUI: a CDP-driven Chromium the agent operates, a screencast panel the user watches, and screenshots attached to every tool result.
-- **dsh-plugin-resolver-dshgo** [链接](https://github.com/sakikoTGW/dsh-plugin-resolver-dshgo) — dsh-plugin-resolver adapted for dsh-go (the phone harness): native dsh-go cards for every tool result, phone-aware registries, GitHub mirrors, pnpm 11 build-script reporting and engine-restart wording.
-- **dsh-plugin-locale-ko** [链接](https://github.com/dungsil/dsh-plugins) — Korean UI language pack for DeepSeek Harness.
-- **dsh-connections** [链接](https://github.com/xunz3/dsh-connections) — SSH connections to remote DeepSeek Harness hosts
-- **dsh-mojie-model-provider** [链接](https://github.com/MoJIeAIGC/dsh-mojie-model-provider) — Standalone DeepSeek Harness (dsh) plugin: Mojie (mojieaigc.com) LLM model provider
-- **dsh-rss** [链接](https://github.com/STARDUSTLC666/dsh-rss) — DSH RSS / Atom 工作台：分类来源目录、订阅读取、搜索与 OPML 导入导出，由用户选择来源。欢迎提交 issues 和 PR。
-- **dsh-plugin-upgrader** [链接](https://github.com/zuwenyin/dsh-plugin-upgrader) — DSH plugin for DeepSeek Harness: upgrade plugins from the Plugins page, version history, rollback, live pnpm progress
-- **mcp-stdio**  — Official MCP stdio proxy and DSH plugin bundle for CapClaw (开刻) AI Video Editor
-- **computer-user** [链接](https://github.com/jing-hy/computer-user) — Codex-style computer use for DeepSeek Harness on Windows: screenshot, UI Automation controls, pointer and keyboard.
-- **dsh-plugin-rea** [链接](https://github.com/czcdr/dsh-plugin-rea) — One-plugin bundle: provisions Node/REA/JDK/Ghidra for you, then registers the upstream REA MCP server as mcp__rea__* tools. · 一体包：自动准备 Node/REA/JDK/Ghidra，并把上游 REA 的 MCP 服务接入 DeepSeek Harness。
+- **dsh-harness-reflex**  — DSH Host plugin exposing the harness-reflex System One decision runtime (choice, score, route, screen, gate) as in-process reflex_* tools; pruning, stagnation detection and turn closing run as automatic interventions, and the ledger is the /reflex-ledger 
+- **dsh-onebot**  — OneBot v11 HTTP and WebSocket adapter for DeepSeek Harness
+- **dsh-jj** [链接](https://github.com/AQian0/dsh-jj) — First-class Jujutsu (jj) support for DeepSeek Harness
+- **dsh-peak-reminder** [链接](https://github.com/54nanmiao/dsh-peak-reminder) — DSH plugin: reminds you when DeepSeek is on peak-hour pricing, tracks this week's peak spend, and can pause running tasks during peak hours and resume them in the valley.
+- **dsh-plugin-git-worktrees**  — DSH plugin: lists every Git repository, linked worktree and submodule of the current workspace in a right-sidebar tab, with live status, inline diffs and workspace references.
+- **dsh-loop-rescue** [链接](https://github.com/citydirector/dsh-loop-rescue) — DSH plugin that cuts model repetition loops mid-stream, prunes the loop out of the committed message, and resumes automatically.
+- **argo-dsh**  — Argo 阿尔戈 — DSH plugin：argo 原生搜索/抓取工具 + web_search seam + wide_research 编排；自带设置页（接入/工具/API 密钥/研究/高级）；argo MCP 19 工具全量面按需挂载。安装：dsh plugin --profile web add @taxueseek/argo-dsh（或从 GitHub main 装：dsh plugin --profile web add "github:taxueseek/argo#main&path:pa
+- **workflow-master** [链接](https://github.com/JavierFrancoLeal/jfranco-agentic-suite) — Agentic-workflow trigger layer: listening mode that captures conversations, decodes the requests, and builds the workflow — automatic actions, proposals, and questions.
+- **dsh** [链接](https://github.com/Lincyaw/presmium) — Presmium's bundle for DeepSeek Harness: the workbench of presmium studio, its host side (Presmium's tools, approvals, document context, skills and routes) and its client side (the root layout and the workbench's panels, precompiled) (experimental)
+- **bailian-kb-dsh** [链接](https://github.com/modelstudioai/cli) — Bailian knowledge-base tools for DeepSeek Harness: kb_search and kb_chat over the DashScope RAG API, plus the bl CLI management skill.
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
