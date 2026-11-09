@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-11-08）
+# 🛒 DSH 插件市场 · 每日日报（2026-11-09）
 
 ## 🆕 新推出的插件
-- **dsh-harness-chat-control**  — Selection quoting, independent side-chat follow-ups, stop-and-rewrite during generation, and batch tab close for DSH Desktop.
-- **dsh-plugin-conversation-purge** [链接](https://github.com/rz-123/dsh-plugin-conversation-purge) — DSH plugin: permanently delete conversations, optionally together with their documents, attachments and subagent records.
-- **deepseek-prices**  — Live DeepSeek API token price bar for the web GUI: peak/off-peak tariff, UTC + local (Quebec) clocks, countdown to the next tariff change, and a daily self-verification against the official DeepSeek pricing page.
-- **dsh-xai-auth** [链接](https://github.com/pzyyll/dsh-plugins) — dsh plugin that signs in to an xAI SuperGrok subscription and serves it as the xai-supergrok model route.
-- **plugin-authoring**  — Plugin-authoring skill for DeepSeek Harness: the distilled anatomy, client-UI recipe, slots, locale, theme tokens, install steps, gotchas, and validation checklist for building and publishing new DSH plugins.
-- **dsh-as-aistudio** [链接](https://github.com/DDDMUC/dsh-as-aistudio) — Google-AI-Studio-style turn controls for DeepSeek Harness, in one install: edit a prompt and re-run it, re-run a reply in place, delete a turn from the model context, render sent prompts as Markdown, and trim idle session logs on boot. Self-contained: the
-- **dsh-remember** [链接](https://github.com/Arborsm/dsh-remember) — Cross-session long-term memory for the DeepSeek Harness: idle sessions are extracted and consolidated into a searchable file-based memory workspace, then recalled through prompt injection with citation tracking, a settings page, a sidebar status entry and
-- **dsh-armory** [链接](https://github.com/2026heshao/dsh-armory) — Unified Skill + MCP + Expert + Plugin board for DeepSeek Harness (desktop app and Web GUI) — custom skill suites, skill install/uninstall with live refresh, global panel page, JSON import, WorkBuddy connector & SkillHub & Expert & DSH community plugin mar
-- **dsh-gufa-code** [链接](https://github.com/liujiangnanchenjbguo/dsh-gufa-code) — 古法编程 · AI 辅助：一键把 DSH 主面板变成 VS Code 风格 IDE（Monaco 编辑器、文件树、Git、SSH、真实终端 + 右侧官方会话）；主张亲手写、每个改动心中有数，AI 是助理、你是第一责任人
-- **dsh-arya-maildesk** [链接](https://github.com/KonnectSuite/dsh-arya-maildesk) — Zero-credential Outlook automation for DSH Harness on Windows: the AI agent drives your LOCAL desktop Outlook client via COM: search/read mail, drafts, reply/forward, calendar, address book, rooms, free/busy. No Graph API app registration, no SMTP passwor
+- **dsh-artcraft-plugin-filmcraft** [链接](https://github.com/lznnnnn1998/dsh-artcraft) — DSH plugin: drive FilmCraft (video editing) headlessly through its own CLI and MCP server.
+- **dsh-chrome-use** [链接](https://github.com/tao1020/dsh-chrome-use) — Control Google Chrome tabs from DeepSeek Harness.
+- **dsh-log**  — DSH plugin: external API calls + whitelisted script execution with structured audit logging (v1.1.2)
+- **dsh-suzu-memory** [链接](https://github.com/eryucheng/dsh-suzu-memory) — Suzu Memory integration for DeepSeek Harness sessions
+- **dsh-artcraft-plugin-gridcraft** [链接](https://github.com/lznnnnn1998/dsh-artcraft) — DSH plugin: drive GridCraft (spreadsheets) headlessly through its own CLI and MCP server.
+- **dsh-server-connector** [链接](https://github.com/niechao136/dsh-server-connector) — DSH plugin: SSH execution for servers configured on this machine, with a built-in high-risk command policy (block / confirm / allow).
+- **dsh-recorder-card** [链接](https://github.com/SynSwarm/dsh-recorder-card) — Development-preview DSH plugin to import recordings from compatible BLE recorder cards, with optional transcription and fingerprint-linked archives. Requires recorder hardware, Host Bluetooth and Python dependencies.
+- **dsh-a2a-groups** [链接](https://github.com/evlon/dsh-a2a-groups) — A2A protocol for DSH: expose a DSH Session as a standard A2A agent, call remote A2A agents, and run invite-only collaboration groups where a group is itself an A2A agent behind a gateway.
+- **dsh-artcraft-plugin-deckcraft** [链接](https://github.com/lznnnnn1998/dsh-artcraft) — DSH plugin: drive DeckCraft (presentations) headlessly through its own CLI and MCP server.
+- **memsearch-dsh** [链接](https://github.com/zilliztech/memsearch) — MemSearch plugin for DeepSeek Harness: shared markdown memory across agents, with capture, on-demand recall, memory-recall skill, and a skill-candidate review panel.
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
