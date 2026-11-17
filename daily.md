@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-11-16）
+# 🛒 DSH 插件市场 · 每日日报（2026-11-17）
 
 ## 🆕 新推出的插件
-- **dsh-rtk-minimal**  — Minimal DSH plugin: rewrites every bash tool call through `rtk`.
-- **dsh-xingxi** [链接](https://github.com/Yuuyuko-uu/dsh-xingxi) — 星汐：把整理好的记忆档案连成一张看得见的星图。八章散成星群，日记排成时间星带，点一颗星看见原话。
-- **ppt-assistant** [链接](https://github.com/YujpVc/ppt-assistant) — PPT 助手 agent preset for DeepSeek Harness: a visual-director workflow with eight style recipes, plan-first editable decks, GPT imagery/vision QC, showcase layouts, and a verified scoped-edit ledger.
-- **dsh-skill-mcp-market** [链接](https://github.com/kuailexiaozixin/dsh-skill-mcp-market) — DSH 技能市场与 MCP 连接器市场：浏览实时技能源，一键安装 SKILL.md 技能与 MCP 连接器，装完即刻可用、无需重启。SKILL & MCP marketplace for DeepSeek Harness — browse live sources, install skills and MCP connectors, effective immediately.
-- **dsh-reference-session-collector** [链接](https://github.com/drscrewdriver/dsh-reference-session-collector) — DSH Web 插件：会话原文投影同步器（DRS）——只读扫描 ~/.dsh/sessions 会话日志，解码后投影进自有 SQLite（segments/replaces/FTS5），经 /api/dsh-reference-session-collector 提供 surface 标记、召回对账与内容检索面。绝不写会话文件。
-- **dsh-memory-nebula** [链接](https://github.com/hanhan9999999999999999999/dsh-memory-nebula) — Local-first memory nebula for DeepSeek Harness — read-only graph, spreading recall, evidence chains, offline snapshots. 记忆星图：把 DSH 各工作区的记忆只读连成一张可交互星云。
-- **dsh-chatgpt-connect** [链接](https://github.com/yiyunet/dsh-chatgpt-connect) — ChatGPT OAuth and Codex models for DeepSeek Harness.
-- **dsh-skill-market** [链接](https://github.com/montersy123/dsh-skill-market) — Browse, search and install SkillHub skills inside DeepSeek Harness. / 在 DeepSeek Harness 内浏览、搜索并安装 SkillHub 技能。
-- **dsh-plugin-copilot**  — DSH plugin that lets a harness session drive a cehub story canvas: read nodes, break a screenplay into characters/scenes/props/shots, and write them back through batch-operation.
-- **dsh-minimax-image** [链接](https://github.com/ffpinkle/dsh-minimax-image) — DSH plugin for MiniMax H3-Image: text-to-image generation and image-to-image editing.
+- **dsh-web-push-notification** [链接](https://github.com/blauerberg/dsh-web-push-notification) — Web Push notifications for DeepSeek Harness
+- **dsh-volcengine-plugin**  — 火山方舟官方 DeepSeek Harness 插件
+- **dsh-tokeneconomizer** [链接](https://github.com/lksa09871234/dsh-tokeneconomizer) — DeepSeek Harness (DSH) plugin porting Microsoft TokenEconomizer's micro-skills, tool pruning, loop guard and usage ledger to DSH.
+- **dsh-plugin-opencode-go-usage** [链接](https://github.com/keyblues/dsh-plugin-opencode-go-usage) — DeepSeek Harness (DSH) plugin: live OpenCode Go subscription usage (rolling 5h, weekly and monthly windows) beside the composer, with a click-open detail card. DSH 插件：在输入框下方实时查看 OpenCode Go 套餐额度用量。
+- **dsh-plugin-waves** [链接](https://github.com/Sophiacyl/dsh-plugin-waves) — 鸣潮 dsh-go 原生测试适配：查询、面板、练度与设置；基于 Loping151/dsh-plugin-waves
+- **deepseek-harness**  — Connect DeepSeek Harness to YegoTV through OAuth-protected MCP
+- **oh-my-clm** [链接](https://github.com/DevZjQx/oh-my-clm) — Pi extension + DSH plugin: manual live-context cleanup and automatic, replay-safe tool-result clearing.
+- **dsh-desktop-kit** [链接](https://github.com/Bulavackii/dsh-desktop-kit) — DeepSeek Harness desktop kit 2.23.26: 18 plugins and 30 skills вЂ” MCP tools/resources/prompts with OAuth 2.1, sampling and elicitation, project agents, git worktrees, background runs and a read-only/writer swarm with a shared board, plus self-applying sk
+- **dsh-plugin-deepseek-chat** [链接](https://github.com/sweet560/dsh-plugin-deepseek-chat) — A DSH plugin that embeds chat.deepseek.com and two-way bridges desktop conversations with the web chat: three chat entries, an optional auto-loop (web reply → desktop draft only), and a v1.4.0 full auto-pilot channel that extracts a delimited review block
+- **dsh-sidebar-organizer** [链接](https://github.com/TLEWA/dsh-sidebar-organizer) — DSH 七区域布局整理器：左侧边栏/侧栏底部/对话标签/输入框/会话头部/右侧栏/设置导航长按拖拽排序与收纳，附分区拖动开关的设置页
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
