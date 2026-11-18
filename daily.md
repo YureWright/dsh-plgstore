@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-11-17）
+# 🛒 DSH 插件市场 · 每日日报（2026-11-18）
 
 ## 🆕 新推出的插件
-- **dsh-web-push-notification** [链接](https://github.com/blauerberg/dsh-web-push-notification) — Web Push notifications for DeepSeek Harness
-- **dsh-volcengine-plugin**  — 火山方舟官方 DeepSeek Harness 插件
-- **dsh-tokeneconomizer** [链接](https://github.com/lksa09871234/dsh-tokeneconomizer) — DeepSeek Harness (DSH) plugin porting Microsoft TokenEconomizer's micro-skills, tool pruning, loop guard and usage ledger to DSH.
-- **dsh-plugin-opencode-go-usage** [链接](https://github.com/keyblues/dsh-plugin-opencode-go-usage) — DeepSeek Harness (DSH) plugin: live OpenCode Go subscription usage (rolling 5h, weekly and monthly windows) beside the composer, with a click-open detail card. DSH 插件：在输入框下方实时查看 OpenCode Go 套餐额度用量。
-- **dsh-plugin-waves** [链接](https://github.com/Sophiacyl/dsh-plugin-waves) — 鸣潮 dsh-go 原生测试适配：查询、面板、练度与设置；基于 Loping151/dsh-plugin-waves
-- **deepseek-harness**  — Connect DeepSeek Harness to YegoTV through OAuth-protected MCP
-- **oh-my-clm** [链接](https://github.com/DevZjQx/oh-my-clm) — Pi extension + DSH plugin: manual live-context cleanup and automatic, replay-safe tool-result clearing.
-- **dsh-desktop-kit** [链接](https://github.com/Bulavackii/dsh-desktop-kit) — DeepSeek Harness desktop kit 2.23.26: 18 plugins and 30 skills вЂ” MCP tools/resources/prompts with OAuth 2.1, sampling and elicitation, project agents, git worktrees, background runs and a read-only/writer swarm with a shared board, plus self-applying sk
-- **dsh-plugin-deepseek-chat** [链接](https://github.com/sweet560/dsh-plugin-deepseek-chat) — A DSH plugin that embeds chat.deepseek.com and two-way bridges desktop conversations with the web chat: three chat entries, an optional auto-loop (web reply → desktop draft only), and a v1.4.0 full auto-pilot channel that extracts a delimited review block
-- **dsh-sidebar-organizer** [链接](https://github.com/TLEWA/dsh-sidebar-organizer) — DSH 七区域布局整理器：左侧边栏/侧栏底部/对话标签/输入框/会话头部/右侧栏/设置导航长按拖拽排序与收纳，附分区拖动开关的设置页
+- **dsmm** [链接](https://github.com/hugefiver/dsmm) — Native Deepwork roles, routing, profiles, and permission controls for DeepSeek Harness.
+- **dsh-undohaven** [链接](https://github.com/OWNER/undohaven) — dsh plugin that keeps rolling, daily, and pre-upgrade snapshots for UndoHaven.
+- **dsh** [链接](https://github.com/backnotprop/plannotator) — Plannotator plugin for DeepSeek Harness - review DSH plans with visual annotation
+- **dsh-tam** [链接](https://github.com/wst7/tam) — DSH plugin: native tam task tools (JSON CLI wrapper) for agent task management.
+- **dsh-chatgpt-sub** [链接](https://github.com/songoao25/dsh-chatgpt-sub) — Sign in with your ChatGPT account to use ChatGPT models in DSH.
+- **dsh-plugin-lark-cli-core**  — Implementation of dsh-plugin-lark-cli (host API and Plugins-page panel). Install dsh-plugin-lark-cli instead.
+- **dsh-plugin-update-entry** [链接](https://github.com/createjy/dsh-plugin-update-entry) — Update entry before each DSH plugin card switch: pick a version and read its release notes without opening the detail page.
+- **dsh-tako** [链接](https://github.com/tako-dev/dsh-tako) — Tako models for the official DeepSeek Harness (dsh): live model list with context windows, plus browser sign-in
+- **dsh-napcat-keeper** [链接](https://github.com/waning-sun/dsh-napcat-keeper) — 发现没有能够随着dsh打开自动启动napcat的插件，遂使用大肥鱼制作此插件，建议搭配Yuuyuko-uu的dsh-qq-link使用~
+- **dsh-mmpl** [链接](https://github.com/cup319/dsh-mmpl) — MMPL (Memory Palace) memory plugin for DeepSeek Harness — configurable MCP endpoint, local-server supervisor, and auto memory capture via the Rust DuckDB vector-memory MCP server.
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
