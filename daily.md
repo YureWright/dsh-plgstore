@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-11-18）
+# 🛒 DSH 插件市场 · 每日日报（2026-11-19）
 
 ## 🆕 新推出的插件
-- **dsmm** [链接](https://github.com/hugefiver/dsmm) — Native Deepwork roles, routing, profiles, and permission controls for DeepSeek Harness.
-- **dsh-undohaven** [链接](https://github.com/OWNER/undohaven) — dsh plugin that keeps rolling, daily, and pre-upgrade snapshots for UndoHaven.
-- **dsh** [链接](https://github.com/backnotprop/plannotator) — Plannotator plugin for DeepSeek Harness - review DSH plans with visual annotation
-- **dsh-tam** [链接](https://github.com/wst7/tam) — DSH plugin: native tam task tools (JSON CLI wrapper) for agent task management.
-- **dsh-chatgpt-sub** [链接](https://github.com/songoao25/dsh-chatgpt-sub) — Sign in with your ChatGPT account to use ChatGPT models in DSH.
-- **dsh-plugin-lark-cli-core**  — Implementation of dsh-plugin-lark-cli (host API and Plugins-page panel). Install dsh-plugin-lark-cli instead.
-- **dsh-plugin-update-entry** [链接](https://github.com/createjy/dsh-plugin-update-entry) — Update entry before each DSH plugin card switch: pick a version and read its release notes without opening the detail page.
-- **dsh-tako** [链接](https://github.com/tako-dev/dsh-tako) — Tako models for the official DeepSeek Harness (dsh): live model list with context windows, plus browser sign-in
-- **dsh-napcat-keeper** [链接](https://github.com/waning-sun/dsh-napcat-keeper) — 发现没有能够随着dsh打开自动启动napcat的插件，遂使用大肥鱼制作此插件，建议搭配Yuuyuko-uu的dsh-qq-link使用~
-- **dsh-mmpl** [链接](https://github.com/cup319/dsh-mmpl) — MMPL (Memory Palace) memory plugin for DeepSeek Harness — configurable MCP endpoint, local-server supervisor, and auto memory capture via the Rust DuckDB vector-memory MCP server.
+- **dsh-harness-kit** [链接](https://github.com/LaoLiang-agent/HarnessKit) — Multi-agent engineering workflow for DeepSeek Harness: roles, flows, guards and workspace assets.
+- **dsh-harness-codex** [链接](https://github.com/SpecterShell/dsh-harness-codex) — Codex-style agent preset for DeepSeek Harness
+- **agentero-dsh-pdf** [链接](https://github.com/poco-ai/Agentero) — Agentero PDF panel for DeepSeek Harness
+- **dsh-copilot-api** [链接](https://github.com/caozhiyuan/dsh-copilot-api) — DeepSeek Harness provider for a copilot-api gateway
+- **agentero-dsh-host** [链接](https://github.com/poco-ai/Agentero) — Agentero host plugin for DeepSeek Harness
+- **dsh-caveman** [链接](https://github.com/Lornatang/dsh-caveman) — Caveman integration for DeepSeek Harness.
+- **dsh-thinking-lang** [链接](https://github.com/aymidasing/dsh-thinking-lang) — DSH plugin: set the agent's reasoning language (Settings → General)
+- **dsh-prompt-rewriter** [链接](https://github.com/huaguoxingkong/dsh-prompt-rewriter) — One-click prompt enhancement beside the DeepSeek Harness composer: rewrites a draft in place without sending it.
+- **dsh-plugin** [链接](https://github.com/88208555/entrorove-dsh-plugin) — Guided Entrorove SDK installation for DeepSeek Harness
+- **dsh-hub**  — The native DSH plugin marketplace backed by dsh-hub.cc
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
