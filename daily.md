@@ -1,14 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-11-23）
+# 🛒 DSH 插件市场 · 每日日报（2026-11-24）
 
 ## 🆕 新推出的插件
-- **dsh-paste-dock** [链接](https://github.com/drscrewdriver/dsh-paste-dock) — dsh-paste-dock — DeepSeek Harness 插件:大段文本粘贴自动存为 pastes/*.txt,输入框上方 dock 卡片管理,草稿内只留最小徽标。
-- **dsh-blender-plugin** [链接](https://github.com/sixtysevenlf/dsh-blender-plugin) — DSH × Blender 直连插件（v3.0.6，GUI 优先，无头备用）：15 个模型工具让 AI 直接驱动 Blender——视口/自定义视角、持久内核 Python、时间窗/帧序列观察、内环参数搜索、无头进程与热会话（see/watch/reset/preload/warmup）、作业层、事务回滚、配方库，以及 34 family / 228 op 的契约层（catalog / 判定 / 验收 / 造型 / 装配 / 白模 / 导出）。v3.0.0 为工程重构版（runtime TypeScrip
-- **dsh-harness-compat** [链接](https://github.com/kirkchinese/harness-forge) — Harness Forge: layered Claude Code / Codex / OpenCode compatibility for DeepSeek Harness
-- **dsh-teamwork** [链接](https://github.com/dsh-teamwork/dsh-teamwork) — Shared team models, agent presets, and approved plugins for DeepSeek Harness
-- **dsh-tokenbank** [链接](https://github.com/skillpie/dsh-plugins) — DSH 免费模型：一键注册 TokenBank 领免费 APIKey 送 $3 体验金（充值或托管 Key 再解锁 $2），免费 GLM 模型直接进模型列表；自带余额查询、API Key 密钥托管（临时额度转永久）、每日签到、充值入口（支付宝），获取免费模型无需自建中转。致敬 dsh-our-free-model。官网 https://bank.skillpie.cn
-- **dsh-desk-one** [链接](https://github.com/peiyucn/dsh-sparrow) — Desk One — a shared desk for you and your DSH harness: notes, tasks, a read-only calendar and annotations on workspace files in one panel.
-- **dsh-plugin-polza** [链接](https://github.com/polza-ai/dsh-plugin-polza) — Polza.ai — российский LLM-агрегатор как провайдер моделей DeepSeek Harness
-- **dsh-claude-cache-guard** [链接](https://github.com/Huakira/dsh-claude-cache-guard) — Event-driven Claude cache protection for DSH plugin and prompt changes
+- **dsh-analytics**  — Huaqiu Sensors Analytics integration for DeepSeek Harness
+- **dsh**  — Arcfold for DeepSeek Harness Desktop
+- **dsh-feiyu-memgate** [链接](https://github.com/N0rmal-114/feiyu-memgate) — DeepSeek Harness (DSH) plugin for the feiyu-memgate memory gateway: automatic recall, remember and search tools, with a bundled gateway.
+- **dsh-commandcode-subscription** [链接](https://github.com/LingBrian/dsh-commandcode-subscription) — Command Code Go models for DeepSeek Harness
+- **dsh-sidebar-row-menu** [链接](https://github.com/TLEWA/dsh-sidebar-row-menu) — Adds open-with and cleanup entries to the DSH sidebar context menus (interleaved on 0.2.2+, self-drawn workspace menu on 0.2.1), plus a conversation-body right-click menu that mirrors the session header toolbar with in-menu open-with and more-actions subm
+- **dsh-go-token-usage** [链接](https://github.com/boyexquisite/dsh-go-token-usage) — Token usage for the dsh-go app: status strip, native panel, per-turn notes and a PNG card. Counted from local session logs; no network.
+- **dsh-revive-love** [链接](https://github.com/123kiana/dsh-revive-love) — Unofficial third-party DSH plugin: revive an over-long DeepSeek chat export by importing only its most recent turns.
+- **dsh-magic-context** [链接](https://github.com/elvisw/dsh-plugin-magic-context) — Magic Context for DeepSeek Harness — elvisw fork: reversible context reclaim, an out-of-band historian, an m[0]/m[1] baseline, project memories in the plugin's own corpus, and the compaction seam.
+- **dsh-inbox-bridge** [链接](https://github.com/c3115644151/dsh-inbox-bridge) — DSH 插件：让每个会话自己盯 GitHub——它提的 PR 被评审、CI 挂了、派给它的 issue 有人回，下一轮自动进上下文，空闲时还能自己开一轮。只读，不改仓库。
+- **dsh-site-bridge** [链接](https://github.com/kesha4/dsh-site-bridge) — Chrome/Edge MV3 bridge for DeepSeek Harness: capture page markup (DOM, styles, selectors) and BFF traffic (xhr/fetch with headers and bodies) into a workspace snapshot bundle, drive the page with trusted CDP input, and verify injected scripts. Authorizati
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
