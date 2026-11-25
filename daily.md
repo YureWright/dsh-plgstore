@@ -1,16 +1,16 @@
-# 🛒 DSH 插件市场 · 每日日报（2026-11-24）
+# 🛒 DSH 插件市场 · 每日日报（2026-11-25）
 
 ## 🆕 新推出的插件
-- **dsh-analytics**  — Huaqiu Sensors Analytics integration for DeepSeek Harness
-- **dsh**  — Arcfold for DeepSeek Harness Desktop
-- **dsh-feiyu-memgate** [链接](https://github.com/N0rmal-114/feiyu-memgate) — DeepSeek Harness (DSH) plugin for the feiyu-memgate memory gateway: automatic recall, remember and search tools, with a bundled gateway.
-- **dsh-commandcode-subscription** [链接](https://github.com/LingBrian/dsh-commandcode-subscription) — Command Code Go models for DeepSeek Harness
-- **dsh-sidebar-row-menu** [链接](https://github.com/TLEWA/dsh-sidebar-row-menu) — Adds open-with and cleanup entries to the DSH sidebar context menus (interleaved on 0.2.2+, self-drawn workspace menu on 0.2.1), plus a conversation-body right-click menu that mirrors the session header toolbar with in-menu open-with and more-actions subm
-- **dsh-go-token-usage** [链接](https://github.com/boyexquisite/dsh-go-token-usage) — Token usage for the dsh-go app: status strip, native panel, per-turn notes and a PNG card. Counted from local session logs; no network.
-- **dsh-revive-love** [链接](https://github.com/123kiana/dsh-revive-love) — Unofficial third-party DSH plugin: revive an over-long DeepSeek chat export by importing only its most recent turns.
-- **dsh-magic-context** [链接](https://github.com/elvisw/dsh-plugin-magic-context) — Magic Context for DeepSeek Harness — elvisw fork: reversible context reclaim, an out-of-band historian, an m[0]/m[1] baseline, project memories in the plugin's own corpus, and the compaction seam.
-- **dsh-inbox-bridge** [链接](https://github.com/c3115644151/dsh-inbox-bridge) — DSH 插件：让每个会话自己盯 GitHub——它提的 PR 被评审、CI 挂了、派给它的 issue 有人回，下一轮自动进上下文，空闲时还能自己开一轮。只读，不改仓库。
-- **dsh-site-bridge** [链接](https://github.com/kesha4/dsh-site-bridge) — Chrome/Edge MV3 bridge for DeepSeek Harness: capture page markup (DOM, styles, selectors) and BFF traffic (xhr/fetch with headers and bodies) into a workspace snapshot bundle, drive the page with trusted CDP input, and verify injected scripts. Authorizati
+- **dsh-gpt-adapter** [链接](https://github.com/oh-dsh-plugins/dsh-gpt-adapter) — GPT model adaptation and Codex environment compatibility for DeepSeek Harness.
+- **dsh-harness-dev-context** [链接](https://github.com/deepseek-ai/deepseek-harness) — Model context naming the DeepSeek Harness checkout and Web GUI URL without letting either change the system prompt
+- **bothouse-dsh** [链接](https://github.com/zuiho-kai/bothouse) — BotHouse channels for DeepSeek Harness: Discord-style rooms whose members (DSH models, Claude Code, Codex, Gemini) run as bothouse roles
+- **dsh-sidebar-fold** [链接](https://github.com/drscrewdriver/dsh-sidebar-fold) — Folds the sidebar's add-on panel rows under the shipped "More" row, and from host 0.2.2 on gives every row three states — show, fold, or hide in the host's own "More" list. The fold state persists per window, rows are read from the live sidebar, and the m
+- **dsh-tidychat** [链接](https://github.com/BananaSoldier01/dsh-tidychat) — DSH Web 会话时间线整理：已完成轮次自动折叠（只留最终结论）+ 过程/结论分隔线 + 边缘导航消息轨（左右贴边、横线/圆点）+ 智能加载更早历史。0.4.0+ 适配 DSH 0.2.x；0.1.0-rc.7 ~ 0.1.6 请用 0.3.1。0.1.2+ 可用「接管官方消息轨」开关替代官方右缘 TurnNavigator。
+- **dsh-qq-access** [链接](https://github.com/Applepinea/dsh-qq-access) — DeepSeek Harness 的 QQ 接入插件：NapCat 托管、消息归档、QQ 空间、表情包、虚拟人生、情感关系、长期记忆与群聊智能回复。
+- **dsh-memu-memory** [链接](https://github.com/Tkingxiao/dsh-memu-memory) — 面向长篇 RP 与陪伴对话的 DeepSeek Harness 记忆插件：三层记忆、逐轮召回、来源标注、关系图、图片附件与独立 WebUI。
+- **dsh-vertex-argon** [链接](https://github.com/higekibaka/dsh-vertex-argon) — Gemini 4 Adapter for DSH: official Vertex AI & Gemini API channels (Argon, Carbon, Hydrogen & Neon), resilient long decode, explicit service tiers, and request diagnostics.
+- **dsh-superagent** [链接](https://github.com/LittleChenLiya/dsh-superagent) — 长周期自主执行插件：一个目标拆成可并行的子任务，交付一份合并报告，重启后仍可继续。
+- **dsh-live-compact** [链接](https://github.com/Tranquillitatis-Lab/dsh-live-compact) — In-place newest-turn compaction for DeepSeek Harness. Compress while the task runs and keep the prefix.
 
 ## 🔥 涨星最快的插件
 按「今日星数 − 昨日星数」排序（历史快照积累中）
